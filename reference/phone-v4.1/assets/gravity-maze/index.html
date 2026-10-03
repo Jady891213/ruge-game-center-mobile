@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0B141E">
+<title>重力钢珠 · 吃果子进袋</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{background:#080F17;font-family:"Noto Sans CJK SC","PingFang SC",system-ui,sans-serif;
+    color:#DCE8F2;display:flex;flex-direction:column;
+    padding:calc(env(safe-area-inset-top,0px) + 5px) 0 calc(env(safe-area-inset-bottom,0px) + 3px)}
+  header{display:flex;align-items:center;gap:8px;padding:0 13px;flex:none;font-size:13px}
+  .lv{font-weight:700;color:#7FA6C4;white-space:nowrap}
+  .lv b{color:#4FC3EC;font-size:17px}
+  .hud{display:flex;gap:11px;flex:1;align-items:center;font-weight:700;white-space:nowrap}
+  .hud span{color:#F5C15A}
+  .hud .fr{color:#7FE08A}
+  .hud .hf{color:#F0705A}
+  .ico{flex:none;width:32px;height:32px;border-radius:50%;border:1.5px solid #22384C;
+    background:#111E2B;color:#7FA6C4;font-size:16px;font-family:inherit;cursor:pointer;
+    display:flex;align-items:center;justify-content:center}
+  #stage{flex:1;min-height:0;position:relative}
+  canvas{display:block;width:100%;height:100%}
+  #tip{flex:none;text-align:center;font-size:12.5px;color:#6E8AA3;padding:3px 16px 0;min-height:40px;line-height:1.55}
+  #tip em{font-style:normal;color:#4FC3EC;font-weight:700}
+  #level{position:absolute;right:10px;bottom:10px;width:80px;height:80px;border-radius:50%;
+    background:rgba(14,26,38,.82);border:1.5px solid #22384C;pointer-events:none}
+  #level::before,#level::after{content:'';position:absolute;background:#22384C}
+  #level::before{left:50%;top:12%;bottom:12%;width:1px}
+  #level::after{top:50%;left:12%;right:12%;height:1px}
+  #dot{position:absolute;left:50%;top:50%;width:13px;height:13px;margin:-6.5px 0 0 -6.5px;
+    border-radius:50%;background:radial-gradient(circle at 35% 35%,#BFF0FF,#3FB0E0)}
+  #buffs{position:absolute;left:10px;bottom:10px;display:flex;gap:7px;pointer-events:none}
+  .buff{background:rgba(14,26,38,.86);border:1.5px solid #2A4056;border-radius:11px;
+    padding:4px 10px;font-size:13px;color:#9FC0D8;font-weight:700;display:none}
+  .buff.on{display:block}
+  #win{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
+    justify-content:center;text-align:center;padding:0 30px;z-index:200;
+    background:radial-gradient(60% 45% at 50% 46%,rgba(8,15,23,.95),rgba(8,15,23,.99))}
+  #win.show{display:flex}
+  #winIcon{font-size:clamp(56px,17vw,92px);line-height:1}
+  #winT{font-size:22px;font-weight:800;color:#4FC3EC;margin-top:6px;letter-spacing:1px}
+  #winS{font-size:14px;color:#7FA6C4;margin-top:9px;line-height:1.7}
+  #next{margin-top:22px;border:none;border-radius:28px;padding:15px 46px;font-family:inherit;
+    font-size:17px;font-weight:800;letter-spacing:2px;color:#08131C;
+    background:linear-gradient(180deg,#7FE0FF,#3FB0E0);box-shadow:0 8px 20px rgba(63,176,224,.3);cursor:pointer}
+  #dbg{display:none;position:fixed;left:0;right:0;bottom:0;z-index:400;pointer-events:none;
+    background:#050C12;color:#8FE8C0;font:11px/1.5 ui-monospace,monospace;padding:5px 8px;
+    white-space:pre-wrap;word-break:break-all}
+  body.dbg #dbg{display:block}
+  #toast{position:absolute;left:50%;top:14%;transform:translateX(-50%);
+    background:rgba(14,26,38,.94);border:1.5px solid #2A4056;border-radius:13px;
+    padding:11px 17px;font-size:13px;color:#9FC0D8;text-align:center;line-height:1.65;
+    opacity:0;transition:opacity .3s;pointer-events:none;z-index:150;max-width:84%}
+  #toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <div class="lv">第 <b id="lvnum">1</b> 关</div>
+  <div class="hud">
+    <span id="score">0</span>
+    <span class="fr" id="fruit">🍎 0/0</span>
+    <span class="hf" id="life">❤❤❤</span>
+  </div>
+  <button class="ico" id="flip" aria-label="左右反向" title="左右反向">⇄</button>
+  <button class="ico" id="reset" aria-label="重来这一关">↺</button>
+</header>
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <div id="level"><div id="dot"></div></div>
+  <div id="buffs">
+    <div class="buff" id="bShield">🛡 护盾</div>
+    <div class="buff" id="bMagnet">🧲 磁铁</div>
+  </div>
+  <div id="toast"></div>
+  <div id="win">
+    <div id="winIcon">🏆</div>
+    <div id="winT">进袋啦！</div>
+    <div id="winS"></div>
+    <button id="next">下一关</button>
+  </div>
+</div>
+<div id="tip"></div>
+<div id="dbg"></div>
+
+<script>
+'use strict';
+/* ════════════════════════════════════════════════════════════
+   重力钢珠 —— 俯视角（从上往下看一块木板，像看台球桌）
+   倾斜手机，钢珠朝低的那边滚。躲开洞、吃果子（吃一个长一点力气），
+   果子吃光金袋才开，滚进去通关。世界坐标 1000 × 1440，渲染时等比缩放。
+   ════════════════════════════════════════════════════════════ */
+const WW = 1000, WH = 1440;
+const BALL_R = 26;           // 初始半径
+const GROW = 2.6;            // 每吃一个果子长多少 —— 这就是「长力」
+const R_MAX = 42;            // 封顶；关卡缝隙按这个上限设计，长得再大也过得去
+const ACC = 1700;            // 满倾斜时的加速度
+const FRIC = 0.85;           // 板面摩擦（每秒衰减）
+const BOUNCE = 0.36;         // 撞墙弹性
+const HOLE_R = 62;
+const LIVES = 3;
+
+const FRUIT_KINDS = ['🍎','🍊','🍇','🍋','🍑','🍒','🍓','🥝'];
+const PU = { shield: '🛡', magnet: '🧲', star: '⭐' };
+
+const LEVELS = [
+  { tip: '把手机往哪边倒，钢珠就往哪边滚',
+    walls: [], holes: [],
+    fruits: [[300,420],[700,420],[300,1000],[700,1000]],
+    powerups: [], goal: [420,1230,160,150], start: [500,180] },
+
+  { tip: '中间有个洞 —— 别掉进去',
+    walls: [], holes: [[500,720,HOLE_R]],
+    fruits: [[250,400],[750,400],[250,1040],[750,1040]],
+    powerups: [{ x:500, y:300, kind:'star' }],
+    goal: [420,1230,160,150], start: [500,180] },
+
+  { tip: '墙上有缺口，从缺口钻过去',
+    walls: [[0,700,620,46]], holes: [[830,480,HOLE_R]],
+    fruits: [[200,400],[480,400],[820,400],[300,1050],[700,1100]],
+    powerups: [{ x:480, y:1050, kind:'shield' }],
+    goal: [420,1230,160,150], start: [500,180] },
+
+  { tip: '三个洞，绕开走',
+    walls: [], holes: [[300,560,HOLE_R],[700,780,HOLE_R],[340,1100,HOLE_R]],
+    fruits: [[180,320],[820,320],[500,560],[180,900],[820,1000],[620,1200]],
+    powerups: [{ x:500, y:900, kind:'magnet' }],
+    goal: [420,1260,160,150], start: [500,170] },
+
+  { tip: '走 Z 字形，别撞墙',
+    walls: [[0,460,700,44],[300,940,700,44]],
+    holes: [[870,740,HOLE_R]],
+    fruits: [[200,300],[820,300],[200,740],[600,740],[200,1180],[700,1180]],
+    powerups: [{ x:830, y:1160, kind:'star' }],
+    goal: [120,1250,160,150], start: [820,180] },
+
+  { tip: '窄道中间有洞，别冲太快',
+    walls: [[0,620,340,44],[660,620,340,44],[0,1060,340,44],[660,1060,340,44]],
+    holes: [[500,840,HOLE_R],[500,340,HOLE_R]],
+    fruits: [[200,300],[800,300],[200,830],[800,830],[200,1250],[800,1250]],
+    powerups: [{ x:500, y:1250, kind:'shield' }],
+    goal: [430,1230,150,140], start: [500,150] },
+
+  { tip: '绕着圈走 —— 磁铁能帮你吸果子',
+    walls: [[180,300,640,42],[180,300,42,720],[180,980,640,42],
+            [778,600,42,422],[400,600,420,42]],
+    holes: [[600,800,HOLE_R],[300,1180,HOLE_R]],
+    fruits: [[320,420],[660,420],[320,860],[660,860],[500,1140],[860,1140],[860,420]],
+    powerups: [{ x:500, y:420, kind:'magnet' }, { x:430, y:1110, kind:'star' }],
+    goal: [450,430,150,130], start: [840,1300] },
+
+  { tip: '中间一堵墙，两边都有洞',
+    walls: [[440,280,120,900]],
+    holes: [[180,520,HOLE_R],[180,1020,HOLE_R],[820,520,HOLE_R],[820,1020,HOLE_R]],
+    fruits: [[280,300],[720,300],[280,780],[720,780],[280,1240],[720,1240]],
+    powerups: [{ x:500, y:1240, kind:'shield' }],
+    goal: [420,1280,160,140], start: [500,130] },
+
+  { tip: '门开在侧面，别漏了',
+    walls: [[0,380,800,42],[200,780,800,42],[0,1180,800,42]],
+    holes: [[890,580,HOLE_R],[890,980,HOLE_R]],
+    fruits: [[200,280],[600,280],[400,600],[200,1000],[600,1000],[200,1320]],
+    powerups: [{ x:700, y:600, kind:'magnet' }, { x:700, y:1000, kind:'star' }],
+    goal: [110,1290,160,140], start: [820,170] },
+
+  { tip: '最后一关 —— 果子多，洞也多',
+    walls: [[300,240,42,560],[660,660,42,560]],
+    holes: [[170,1150,HOLE_R],[500,460,HOLE_R],[830,1150,HOLE_R],[500,1020,HOLE_R]],
+    fruits: [[150,300],[500,300],[850,300],[150,700],[850,700],[150,1300],[850,1300],[500,1250]],
+    powerups: [{ x:500, y:700, kind:'magnet' }, { x:500, y:1250, kind:'shield' },
+               { x:150, y:950, kind:'star' }],
+    goal: [430,1290,160,130], start: [140,150] },
+];
+
+/* ════════════════ ENGINE-START ════════════════ */
+function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+function hypot(x,y){ return Math.sqrt(x*x + y*y); }
+function ballR(eaten){ return Math.min(R_MAX, BALL_R + (eaten || 0) * GROW); }
+
+function allWalls(lv){
+  return [[-60,-60,WW+120,60],[-60,WH-4,WW+120,60],[-60,-60,60,WH+120],[WW-4,-60,60,WH+120]]
+         .concat(lv.walls);
+}
+
+/** 圆 vs 矩形：把圆推出的最小位移，没重叠返回 null */
+function pushOut(cx, cy, r, rect){
+  const rx = rect[0], ry = rect[1], rw = rect[2], rh = rect[3];
+  const nx = clamp(cx, rx, rx + rw), ny = clamp(cy, ry, ry + rh);
+  const dx = cx - nx, dy = cy - ny, d = hypot(dx, dy);
+  if (d > r) return null;
+  if (d > 0.0001) return { nx: dx/d, ny: dy/d, depth: r - d };
+  const left = cx - rx, right = rx + rw - cx, top = cy - ry, bot = ry + rh - cy;
+  const m = Math.min(left, right, top, bot);
+  if (m === left)  return { nx:-1, ny:0, depth: left + r };
+  if (m === right) return { nx: 1, ny:0, depth: right + r };
+  if (m === top)   return { nx:0, ny:-1, depth: top + r };
+  return { nx:0, ny:1, depth: bot + r };
+}
+
+function inHole(lv, x, y){
+  for (let i = 0; i < lv.holes.length; i++){
+    const h = lv.holes[i];
+    if (hypot(x - h[0], y - h[1]) < h[2]) return true;
+  }
+  return false;
+}
+function inGoal(lv, x, y){
+  const g = lv.goal;
+  return x > g[0] && x < g[0] + g[2] && y > g[1] && y < g[1] + g[3];
+}
+function fruitR(){ return 27; }
+function allFruitEaten(lv){ for (const f of lv.fruits) if (!f[2]) return false; return true; }
+function fruitLeft(lv){ let n = 0; for (const f of lv.fruits) if (!f[2]) n++; return n; }
+function nearestHole(lv, x, y){
+  let best = lv.holes[0] || [x,y,0], bd = 1e9;
+  for (const h of lv.holes){ const d = hypot(h[0]-x, h[1]-y); if (d < bd){ bd = d; best = h; } }
+  return best;
+}
+
+function newBall(lv){
+  return { x: lv.start[0], y: lv.start[1], vx:0, vy:0, t:0, spin:0,
+           eaten:0, score:0, lives: LIVES, shield:false, magnet:0, invuln:0 };
+}
+
+/** 掉洞后复位：**果子保留**（不让孩子白吃一场），球回起点 */
+function respawn(lv, b){
+  b.x = lv.start[0]; b.y = lv.start[1]; b.vx = 0; b.vy = 0; b.invuln = 1.2;
+  return b;
+}
+
+/**
+ * 推进一帧。返回 'run' | 'eat' | 'power' | 'fall' | 'win'
+ * 注意：lv.fruits 是 [x, y, got] 三元组，会被就地修改。
+ */
+function step(lv, b, tx, ty, dt){
+  b.t += dt;
+  if (b.invuln > 0) b.invuln -= dt;
+  if (b.magnet > 0) b.magnet -= dt;
+
+  b.vx += tx * ACC * dt;
+  b.vy += ty * ACC * dt;
+  const f = Math.exp(-FRIC * dt);
+  b.vx *= f; b.vy *= f;
+  b.x += b.vx * dt; b.y += b.vy * dt;
+  const R = ballR(b.eaten);
+  b.spin += hypot(b.vx, b.vy) * dt / R;
+
+  const ws = allWalls(lv);
+  for (let k = 0; k < 3; k++){
+    let hit = null;
+    for (let i = 0; i < ws.length; i++){
+      const p = pushOut(b.x, b.y, R, ws[i]);
+      if (p && (!hit || p.depth > hit.depth)) hit = p;
+    }
+    if (!hit) break;
+    b.x += hit.nx * hit.depth; b.y += hit.ny * hit.depth;
+    const vn = b.vx * hit.nx + b.vy * hit.ny;
+    if (vn < 0){ b.vx -= (1 + BOUNCE) * vn * hit.nx; b.vy -= (1 + BOUNCE) * vn * hit.ny; }
+  }
+
+  let ev = 'run';
+  const fr = fruitR();
+
+  // 吃果子（磁铁会把果子吸过来）
+  for (let i = 0; i < lv.fruits.length; i++){
+    const ft = lv.fruits[i];
+    if (ft[2]) continue;
+    if (b.magnet > 0){
+      const d = hypot(ft[0]-b.x, ft[1]-b.y);
+      if (d < 350 && d > 1){
+        ft[0] += (b.x - ft[0]) / d * 200 * dt;
+        ft[1] += (b.y - ft[1]) / d * 200 * dt;
+      }
+    }
+    if (hypot(ft[0]-b.x, ft[1]-b.y) < fr + R * 0.55){ ft[2] = true; b.eaten++; b.score += 10; ev = 'eat'; }
+  }
+
+  // 吃道具
+  for (let i = 0; i < lv.powerups.length; i++){
+    const p = lv.powerups[i];
+    if (p.got) continue;
+    if (hypot(p.x-b.x, p.y-b.y) < fr + R * 0.6){
+      p.got = true;
+      if (p.kind === 'shield') b.shield = true;
+      else if (p.kind === 'magnet') b.magnet = 9;
+      else b.score += 50;
+      ev = 'power';
+    }
+  }
+
+  // 掉洞
+  if (inHole(lv, b.x, b.y)){
+    if (b.shield){
+      b.shield = false; b.invuln = 1.2;
+      const h = nearestHole(lv, b.x, b.y);
+      const a = Math.atan2(b.y - h[1], b.x - h[0]) || 0;
+      b.x = h[0] + Math.cos(a) * (h[2] + R + 28);
+      b.y = h[1] + Math.sin(a) * (h[2] + R + 28);
+      b.vx *= -0.3; b.vy *= -0.3;
+      return 'power';
+    }
+    return 'fall';
+  }
+
+  if (allFruitEaten(lv) && inGoal(lv, b.x, b.y)) return 'win';
+  return ev;
+}
+
+/**
+ * 在栅格上找一条从 from 到 to 的路（和 reachable 用同一套阻挡判定）。
+ * 返回一串路点；找不到返回 null。
+ */
+function findPath(lv, from, to, cell, radius){
+  cell = cell || 26;
+  const R = (radius || R_MAX) + cell;      // 同 reachable，留一个格子的余量
+  const cols = Math.ceil(WW/cell), rows = Math.ceil(WH/cell);
+  const ws = allWalls(lv);
+  const blocked = new Uint8Array(cols*rows);
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++){
+    const x = (c+.5)*cell, y = (r+.5)*cell;
+    let bad = inHole(lv, x, y) ? 1 : 0;
+    if (!bad) for (let i = 0; i < ws.length; i++){
+      if (x > ws[i][0]-R && x < ws[i][0]+ws[i][2]+R &&
+          y > ws[i][1]-R && y < ws[i][1]+ws[i][3]+R){ bad = 1; break; }
+    }
+    blocked[r*cols+c] = bad;
+  }
+  const idx = (x,y) => clamp(Math.floor(y/cell),0,rows-1)*cols + clamp(Math.floor(x/cell),0,cols-1);
+  const s = idx(from[0], from[1]), g = idx(to[0], to[1]);
+  if (blocked[g]) return null;
+  const prev = new Int32Array(cols*rows).fill(-1);
+  const seen = new Uint8Array(cols*rows);
+  const q = [s]; seen[s] = 1;
+  let found = false;
+  while (q.length){
+    const cur = q.shift();
+    if (cur === g){ found = true; break; }
+    const c = cur % cols, r = (cur/cols)|0;
+    for (const [nc,nr] of [[c+1,r],[c-1,r],[c,r+1],[c,r-1]]){
+      if (nc<0||nr<0||nc>=cols||nr>=rows) continue;
+      const ni = nr*cols+nc;
+      if (seen[ni] || blocked[ni]) continue;
+      seen[ni] = 1; prev[ni] = cur; q.push(ni);
+    }
+  }
+  if (!found) return null;
+  const pts = []; let cur = g;
+  while (cur !== s && cur >= 0){ pts.push([(cur%cols+.5)*cell, (((cur/cols)|0)+.5)*cell]); cur = prev[cur]; }
+  pts.reverse();
+  pts.push([to[0], to[1]]);          // 最后一段精确瞄准
+  return pts;
+}
+
+/**
+ * 模拟一个会玩的人：**先寻路**到最近的果子，吃光了再寻路到金袋。
+ * 第一版是直线冲的，撞墙就卡死 —— 迷宫关里 4 关被误判成"过不去"。
+ */
+
+function simulate(lv, kp, maxT){
+  kp = kp || 0.0045;
+  const s = { walls: lv.walls, holes: lv.holes, goal: lv.goal, start: lv.start,
+              fruits: lv.fruits.map(f => [f[0], f[1], false]),
+              powerups: lv.powerups.map(p => ({ x:p.x, y:p.y, kind:p.kind, got:false })) };
+  const b = newBall(s);
+  const dt = 1/120, n = Math.floor((maxT || 90) / dt);
+  let path = null, pi = 0, repath = 0, stuck = 0, lastD = 1e9;
+
+  const pickTarget = () => {
+    if (!allFruitEaten(s)){
+      let best = null, bd = 1e9;
+      for (const f of s.fruits){ if (f[2]) continue;
+        const d = hypot(f[0]-b.x, f[1]-b.y); if (d < bd){ bd = d; best = f; } }
+      // 顺路吃道具（不加权，能路过就吃）
+      return [best[0], best[1]];
+    }
+    return [s.goal[0] + s.goal[2]/2, s.goal[1] + s.goal[3]/2];
+  };
+
+  for (let i = 0; i < n; i++){
+    if (!path || repath <= 0){
+      const tgt = pickTarget();
+      path = findPath(s, [b.x, b.y], tgt) || [tgt];
+      pi = 0; repath = 2.0;
+    }
+    repath -= dt;
+    while (pi < path.length - 1 && hypot(path[pi][0]-b.x, path[pi][1]-b.y) < 60) pi++;
+    let tgx = path[pi][0], tgy = path[pi][1];
+
+    let tx = clamp((tgx - b.x) * kp, -1, 1);
+    let ty = clamp((tgy - b.y) * kp, -1, 1);
+    const d = hypot(tgx - b.x, tgy - b.y);
+    if (d > lastD - 0.4) stuck++; else stuck = 0;
+    lastD = d;
+    if (stuck > 150){ const a2 = (i * 0.11) % 6.2832; tx = Math.cos(a2); ty = Math.sin(a2); }
+
+    const r = step(s, b, tx, ty, dt);
+    if (r === 'fall'){
+      b.lives--;
+      if (b.lives <= 0) return { ok:false, why:'dead', x:b.x, y:b.y, eaten:b.eaten };
+      respawn(s, b);
+      path = null;                       // 回起点要重新规划
+    } else if (r === 'eat'){
+      path = null;                       // 果子吃到了，换目标
+    }
+    if (r === 'win') return { ok:true, t:b.t, score:b.score, lives:b.lives };
+  }
+  return { ok:false, why:'timeout', x:b.x, y:b.y, eaten:b.eaten, left: fruitLeft(s) };
+}
+
+/**
+ * 静态连通性：栅格化 + BFS。
+ * ★ 半径用**上限 R_MAX**（球会越吃越大），这样长到最大也保证走得通。
+ *   而且每个果子/道具都必须从起点走得到，否则就是设计错误。
+ */
+function reachable(lv, cell, radius){
+  cell = cell || 20;
+  // ★ 再加**一个格子**的余量：栅格化会造出只有 1 格宽的"幻影通道"，
+  //   半径 42 的球物理上挤不过去，但 BFS 会以为能过 —— 第 9 关就是这么漏掉的。
+  const R = (radius || R_MAX) + cell;
+  const cols = Math.ceil(WW / cell), rows = Math.ceil(WH / cell);
+  const ws = allWalls(lv);
+  const blocked = new Uint8Array(cols * rows);
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++){
+    const x = (c + .5) * cell, y = (r + .5) * cell;
+    let bad = inHole(lv, x, y) ? 1 : 0;
+    if (!bad) for (let i = 0; i < ws.length; i++){
+      if (x > ws[i][0]-R && x < ws[i][0]+ws[i][2]+R &&
+          y > ws[i][1]-R && y < ws[i][1]+ws[i][3]+R){ bad = 1; break; }
+    }
+    blocked[r*cols + c] = bad;
+  }
+  const idx = (x, y) => clamp(Math.floor(y/cell), 0, rows-1) * cols + clamp(Math.floor(x/cell), 0, cols-1);
+  const s = idx(lv.start[0], lv.start[1]);
+  const g = idx(lv.goal[0] + lv.goal[2]/2, lv.goal[1] + lv.goal[3]/2);
+  const seen = new Uint8Array(cols*rows);
+  if (blocked[s]) return { ok:false, why:'起点被堵', bad:[] };
+  const q = [s]; seen[s] = 1;
+  while (q.length){
+    const cur = q.shift();
+    const c = cur % cols, r = (cur / cols) | 0;
+    for (const [nc, nr] of [[c+1,r],[c-1,r],[c,r+1],[c,r-1]]){
+      if (nc < 0 || nr < 0 || nc >= cols || nr >= rows) continue;
+      const ni = nr*cols + nc;
+      if (seen[ni] || blocked[ni]) continue;
+      seen[ni] = 1; q.push(ni);
+    }
+  }
+  const bad = [];
+  for (const f of lv.fruits) if (!seen[idx(f[0], f[1])]) bad.push('果子(' + f[0] + ',' + f[1] + ')');
+  for (const p of lv.powerups) if (!seen[idx(p.x, p.y)]) bad.push('道具(' + p.x + ',' + p.y + ')');
+  return { ok: seen[g] === 1 && bad.length === 0, goalOk: seen[g] === 1, startOk: !blocked[s], bad, blocked, cols, rows, cell };
+}
+/* ════════════════ ENGINE-END ════════════════ */
+
+
+/* ══════════ 倾斜输入：原生桥 → Web 传感器 → 触摸/键盘兜底 ══════════ */
+/* 方向约定（按 Android 传感器坐标系推导，并用「横屏时 a.x=+9.81」这条已知行为校验过）：
+     设备坐标 x 向右、y 向上、z 出屏幕；读数 = −重力在设备坐标下的分量。
+     平放桌面 → z=+9.81（探针实测一致）
+     **右边缘压下 → a.x 为负**，可甲板明明是往右低、钢珠该往右滚 → **x 要取反**
+     顶边压下 → a.y 为负，钢珠该往屏幕上方滚（世界 y 更小）→ **y 不取反**
+   万一机型/握法不同，游戏里有个「⇄ 反向」按钮可以一键翻过来。 */
+let FLIP_X = false;
+try { FLIP_X = localStorage.getItem('gmFlipX') === '1'; } catch(e){}
+
+const Tilt = {
+  mode:'none', x:0, y:0, native:null, touchActive:false, touchX:.5, touchY:.5,
+  init(){
+    if (window.RugeTilt && window.RugeTilt.available){
+      try { if (window.RugeTilt.available()){ this.native = window.RugeTilt; this.mode = 'native'; return; } } catch(e){}
+    }
+    if (typeof DeviceMotionEvent !== 'undefined'){
+      this.mode = 'web';
+      addEventListener('devicemotion', (e) => {
+        const a = e.accelerationIncludingGravity;
+        if (!a || a.x === null) return;
+        this.x = clamp((FLIP_X ? 1 : -1) * a.x / 9.81, -1, 1);
+        this.y = clamp(a.y / 9.81, -1, 1);
+      }, true);
+      return;
+    }
+    this.mode = 'touch';
+  },
+  read(){
+    if (this.mode === 'native'){
+      try {
+        const sx = FLIP_X ? 1 : -1;                       // 默认取反（见上面的推导）
+        return { x: clamp(this.native.gx() * sx, -1, 1), y: clamp(this.native.gy(), -1, 1) };
+      } catch(e){ return { x:0, y:0 }; }
+    }
+    if (this.mode === 'web') return { x: this.x, y: this.y };
+    if (!this.touchActive) return { x:0, y:0 };
+    return { x: clamp((this.touchX-.5)*4.2, -1, 1), y: clamp((this.touchY-.5)*4.2, -1, 1) };
+  },
+};
+Tilt.init();
+
+const stage = document.getElementById('stage');
+function ptr(e){ Tilt.touchActive = true; Tilt.touchX = e.clientX/innerWidth; Tilt.touchY = e.clientY/innerHeight; }
+stage.addEventListener('pointerdown', (e) => { if (e.target.closest && e.target.closest('button')) return; ptr(e); }, { passive:true });
+stage.addEventListener('pointermove', (e) => { if (Tilt.touchActive) ptr(e); }, { passive:true });
+stage.addEventListener('pointerup',     () => { Tilt.touchActive = false; }, { passive:true });
+stage.addEventListener('pointercancel', () => { Tilt.touchActive = false; }, { passive:true });
+
+const keys = {};
+addEventListener('keydown', (e) => { keys[e.key] = 1; });
+addEventListener('keyup',   (e) => { keys[e.key] = 0; });
+const _read = Tilt.read.bind(Tilt);
+Tilt.read = function(){
+  if (Tilt.mode === 'touch' && !Tilt.touchActive){
+    const kx = (keys.ArrowRight?1:0) - (keys.ArrowLeft?1:0);
+    const ky = (keys.ArrowDown?1:0) - (keys.ArrowUp?1:0);
+    if (kx || ky) return { x:kx, y:ky };
+  }
+  return _read();
+};
+
+/* ══════════ 渲染 ══════════ */
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let VW=0, VH=0, SC=1, OX=0, OY=0, DPR=1;
+function layout(){
+  const r = stage.getBoundingClientRect();
+  VW = Math.max(200, Math.round(r.width));
+  VH = Math.max(200, Math.round(r.height));
+  DPR = clamp(window.devicePixelRatio || 1, 1, 3);
+  cv.width = Math.round(VW*DPR); cv.height = Math.round(VH*DPR);
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  SC = Math.min(VW/WW, VH/WH);
+  OX = (VW - WW*SC)/2; OY = (VH - WH*SC)/2;
+}
+layout();
+addEventListener('resize', layout);
+
+const DEBUG = /[?&]debug=1/.test(location.search);
+if (DEBUG) document.body.classList.add('dbg');
+
+let li = 0, lv = null, ball = null, result = 'run', lastMsg = '-', dbgT = 0, toastT = 0;
+let fallT = 0, pops = [], stars = [];
+
+function cloneLevel(i){
+  const L = LEVELS[i];
+  return { tip: L.tip,
+    walls: L.walls.map(w => w.slice()),
+    holes: L.holes.map(h => h.slice()),
+    goal: L.goal.slice(), start: L.start.slice(),
+    fruits: L.fruits.map(f => [f[0], f[1], false]),
+    powerups: L.powerups.map(p => ({ x:p.x, y:p.y, kind:p.kind, got:false })) };
+}
+
+function toast(msg, secs){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show'); toastT = secs || 2.4;
+}
+function addPop(x, y, txt, col){ pops.push({ x, y, txt, col: col || '#F5C15A', life:1 }); }
+
+function reset(){
+  lv = cloneLevel(li);
+  ball = newBall(lv);
+  result = 'run'; lastMsg = '-'; fallT = 0; pops = [];
+  document.getElementById('lvnum').textContent = li + 1;
+  document.getElementById('win').classList.remove('show');
+  const how = Tilt.mode === 'touch'
+    ? '<em>按住屏幕往哪边拖，钢珠就往哪边滚</em>'
+    : '<em>把手机往哪边倒，钢珠就往哪边滚</em>';
+  document.getElementById('tip').innerHTML = lv.tip + '<br>' + how;
+  syncHud(); layout();
+}
+
+function syncHud(){
+  document.getElementById('score').textContent = ball.score;
+  document.getElementById('fruit').textContent = '🍎 ' + (lv.fruits.length - fruitLeft(lv)) + '/' + lv.fruits.length;
+  document.getElementById('life').textContent = '❤'.repeat(Math.max(0, ball.lives)) || '—';
+  document.getElementById('bShield').classList.toggle('on', !!ball.shield);
+  document.getElementById('bMagnet').classList.toggle('on', ball.magnet > 0);
+}
+
+function render(){
+  const bg = ctx.createLinearGradient(0, 0, 0, VH);
+  bg.addColorStop(0, '#0B1622'); bg.addColorStop(1, '#16283A');
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, VW, VH);
+
+  ctx.save();
+  ctx.translate(OX, OY); ctx.scale(SC, SC);
+
+  const wood = ctx.createLinearGradient(0, 0, WW, WH);
+  wood.addColorStop(0, '#4A3625'); wood.addColorStop(.5, '#5C4530'); wood.addColorStop(1, '#3E2D1E');
+  ctx.fillStyle = wood; ctx.fillRect(0, 0, WW, WH);
+  ctx.strokeStyle = 'rgba(255,220,170,.05)'; ctx.lineWidth = 3;
+  for (let y = 26; y < WH; y += 44){
+    ctx.beginPath(); ctx.moveTo(0, y);
+    for (let x = 0; x <= WW; x += 100) ctx.lineTo(x, y + Math.sin((x+y)*.011)*7);
+    ctx.stroke();
+  }
+
+  for (const h of lv.holes){
+    ctx.fillStyle = '#080D12';
+    ctx.beginPath(); ctx.arc(h[0], h[1], h[2], 0, 6.2832); ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,.55)'; ctx.lineWidth = 8;
+    ctx.beginPath(); ctx.arc(h[0], h[1], h[2]+4, 0, 6.2832); ctx.stroke();
+    ctx.strokeStyle = 'rgba(255,235,200,.18)'; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(h[0], h[1], h[2]+10, -2.5, -.6); ctx.stroke();
+  }
+
+  for (const w of lv.walls){
+    ctx.fillStyle = '#7A5A3C'; ctx.fillRect(w[0], w[1], w[2], w[3]);
+    ctx.fillStyle = 'rgba(255,228,186,.22)';
+    ctx.fillRect(w[0], w[1], w[2], Math.min(7, w[3]*.35));
+    ctx.fillStyle = 'rgba(0,0,0,.3)';
+    ctx.fillRect(w[0], w[1]+w[3]-Math.min(7, w[3]*.35), w[2], Math.min(7, w[3]*.35));
+  }
+
+  const g = lv.goal, open = allFruitEaten(lv);
+  ctx.fillStyle = open ? 'rgba(245,193,90,.30)' : 'rgba(120,120,120,.18)';
+  ctx.fillRect(g[0]-9, g[1]-9, g[2]+18, g[3]+18);
+  ctx.fillStyle = '#0A0F14';
+  ctx.beginPath();
+  ctx.ellipse(g[0]+g[2]/2, g[1]+g[3]/2, g[2]*.46, g[3]*.46, 0, 0, 6.2832); ctx.fill();
+  ctx.strokeStyle = open ? '#F5C15A' : '#555'; ctx.lineWidth = 6;
+  ctx.beginPath();
+  ctx.ellipse(g[0]+g[2]/2, g[1]+g[3]/2, g[2]*.46, g[3]*.46, 0, 0, 6.2832); ctx.stroke();
+  ctx.fillStyle = open ? 'rgba(255,240,200,.92)' : 'rgba(190,190,190,.5)';
+  ctx.font = '700 40px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText(open ? '进袋' : '🔒', g[0]+g[2]/2, g[1]+g[3]/2);
+
+  ctx.font = '52px sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  lv.fruits.forEach((f, i) => {
+    if (f[2]) return;
+    ctx.fillText(FRUIT_KINDS[i % FRUIT_KINDS.length], f[0], f[1] + Math.sin(ball.t*2.4 + i)*4);
+  });
+  lv.powerups.forEach((p, i) => {
+    if (p.got) return;
+    const bob = Math.sin(ball.t*3 + i*1.7)*5;
+    ctx.globalAlpha = .34;
+    ctx.fillStyle = p.kind === 'shield' ? '#5FD98A' : p.kind === 'magnet' ? '#4FC3EC' : '#F5C15A';
+    ctx.beginPath(); ctx.arc(p.x, p.y + bob, 34, 0, 6.2832); ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.font = '46px sans-serif';
+    ctx.fillText(PU[p.kind], p.x, p.y + bob);
+  });
+
+  const R = ballR(ball.eaten);
+  ctx.save();
+  ctx.translate(ball.x, ball.y);
+  ctx.globalAlpha = .32; ctx.fillStyle = '#000';
+  ctx.beginPath(); ctx.ellipse(5, 8, R*.95, R*.68, 0, 0, 6.2832); ctx.fill();
+  ctx.globalAlpha = 1;
+  ctx.rotate(ball.spin);
+  const rg = ctx.createRadialGradient(-R*.38, -R*.38, R*.1, 0, 0, R);
+  rg.addColorStop(0, '#FFFFFF'); rg.addColorStop(.34, '#DCEBF5'); rg.addColorStop(1, '#6E8AA3');
+  ctx.fillStyle = rg;
+  ctx.beginPath(); ctx.arc(0, 0, R, 0, 6.2832); ctx.fill();
+  ctx.strokeStyle = 'rgba(60,85,105,.5)'; ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.arc(0, 0, R*.6, 0, 6.2832); ctx.stroke();
+  ctx.restore();
+
+  if (ball.shield){
+    ctx.strokeStyle = 'rgba(95,217,138,.85)'; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.arc(ball.x, ball.y, R+13, 0, 6.2832); ctx.stroke();
+  }
+  if (ball.magnet > 0){
+    ctx.strokeStyle = 'rgba(79,195,236,.6)'; ctx.lineWidth = 3;
+    ctx.setLineDash([12,10]);
+    ctx.beginPath(); ctx.arc(ball.x, ball.y, R+34, 0, 6.2832); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  if (result === 'fall' && fallT > 0){
+    const k = clamp(fallT/.7, 0, 1);
+    ctx.globalAlpha = k; ctx.fillStyle = '#000';
+    ctx.beginPath(); ctx.arc(ball.x, ball.y, R*clamp(k,.2,1), 0, 6.2832); ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+  ctx.textAlign = 'center';
+  for (const p of pops){
+    ctx.globalAlpha = clamp(p.life, 0, 1);
+    ctx.fillStyle = p.col; ctx.font = '700 40px sans-serif';
+    ctx.fillText(p.txt, p.x, p.y - (1 - p.life)*90);
+  }
+  ctx.globalAlpha = 1;
+  ctx.restore();
+}
+
+let last = 0;
+function frame(t){
+  const dt = Math.min(0.033, (t - last)/1000 || 0.016);
+  last = t;
+  const tv = Tilt.read();
+
+  const dot = document.getElementById('dot');
+  dot.style.left = (50 + tv.x*40) + '%';
+  dot.style.top  = (50 + tv.y*40) + '%';
+
+  if (toastT > 0){ toastT -= dt; if (toastT <= 0) document.getElementById('toast').classList.remove('show'); }
+  for (let i = pops.length-1; i >= 0; i--){ pops[i].life -= dt*1.5; if (pops[i].life <= 0) pops.splice(i,1); }
+
+  if (result === 'run' && dt > 0){
+    const b4 = { e: ball.eaten, s: ball.score, sh: ball.shield, m: ball.magnet, lf: fruitLeft(lv) };
+    const r = step(lv, ball, tv.x, tv.y, dt);
+    lastMsg = r;
+    if (ball.eaten > b4.e){ addPop(ball.x, ball.y-44, '+10', '#7FE08A'); syncHud(); }
+    if (ball.shield && !b4.sh){ addPop(ball.x, ball.y-44, '护盾!', '#5FD98A'); toast('护盾到手 —— 下次掉洞会弹回来', 2.2); syncHud(); }
+    if (ball.magnet > 0 && b4.m === 0){ addPop(ball.x, ball.y-44, '磁铁!', '#4FC3EC'); toast('磁铁！果子会自己飞过来', 2.2); syncHud(); }
+    if (ball.score > b4.s && ball.eaten === b4.e){ addPop(ball.x, ball.y-44, '+50', '#F5C15A'); syncHud(); }
+    if (b4.lf > 0 && fruitLeft(lv) === 0) toast('果子吃光啦 —— 金袋开了！', 2.8);
+
+    if (r === 'fall'){
+      ball.lives--; result = 'fall'; fallT = .7; syncHud();
+      if (ball.lives <= 0) toast('没命啦，重新来一次', 2.2);
+    } else if (r === 'win'){ result = 'win'; winNow(); }
+  } else if (result === 'fall'){
+    fallT -= dt;
+    if (fallT <= 0){
+      if (ball.lives <= 0) reset();
+      else { respawn(lv, ball); result = 'run'; syncHud(); }
+    }
+  }
+  render();
+
+  if (DEBUG && (dbgT += dt) > 0.12){
+    dbgT = 0;
+    document.getElementById('dbg').textContent =
+      `L${li+1} mode=${Tilt.mode} flipX=${FLIP_X?1:0} tilt=(${tv.x.toFixed(2)},${tv.y.toFixed(2)}) ` +
+      `x=${ball.x.toFixed(0)} y=${ball.y.toFixed(0)} v=(${ball.vx.toFixed(0)},${ball.vy.toFixed(0)}) ` +
+      `R=${ballR(ball.eaten).toFixed(0)} 果${lv.fruits.length-fruitLeft(lv)}/${lv.fruits.length} ` +
+      `分=${ball.score} 命=${ball.lives} 盾=${ball.shield?1:0} 磁=${ball.magnet.toFixed(1)} ` +
+      `袋开=${allFruitEaten(lv)?1:0} res=${result} last=${lastMsg}`;
+  }
+  requestAnimationFrame(frame);
+}
+
+function winNow(){
+  const bonus = ball.lives * 30;
+  ball.score += bonus;
+  document.getElementById('winS').innerHTML =
+    `得分 <b style="color:#F5C15A">${ball.score}</b>　·　剩 ${ball.lives} 条命（+${bonus}）<br>` +
+    `用了 ${ball.t.toFixed(1)} 秒`;
+  document.getElementById('win').classList.add('show');
+  syncHud();
+}
+document.getElementById('flip').addEventListener('click', () => {
+  FLIP_X = !FLIP_X;
+  try { localStorage.setItem('gmFlipX', FLIP_X ? '1' : '0'); } catch(e){}
+  toast(FLIP_X ? '左右已反向（⇄）' : '左右恢复默认', 1.8);
+});
+document.getElementById('reset').addEventListener('click', reset);
+document.getElementById('next').addEventListener('click', () => {
+  if (li < LEVELS.length - 1){ li++; reset(); }
+  else {
+    document.getElementById('winIcon').textContent = '🏆';
+    document.getElementById('winT').textContent = '全部通关！';
+    document.getElementById('winS').textContent = '十个台面都清空啦';
+    document.getElementById('next').textContent = '再来一遍';
+    document.getElementById('next').onclick = () => { li = 0; reset();
+      document.getElementById('next').textContent = '下一关'; };
+  }
+});
+
+if (Tilt.mode === 'touch') setTimeout(() =>
+  toast('这台设备读不到重力计\n用手指按住屏幕拖动也能玩', 3.6), 1200);
+
+window.__game = {
+  LEVELS, WW, WH, BALL_R, R_MAX, HOLE_R, ACC, LIVES, GROW,
+  allWalls, pushOut, inHole, inGoal, newBall, step, simulate, reachable,
+  ballR, allFruitEaten, fruitLeft, respawn, clamp, findPath,
+  flipX: () => FLIP_X,
+  state: () => ({ li, x: ball.x, y: ball.y, eaten: ball.eaten, score: ball.score,
+                  lives: ball.lives, shield: ball.shield, magnet: ball.magnet,
+                  result, mode: Tilt.mode, tilt: Tilt.read() }),
+};
+
+reset();
+requestAnimationFrame(frame);
+</script>
+
+<!-- ── 回游戏中心的出口：**长按 1.2 秒**才触发，短按无效，防误触 ── -->
+<div id="rugeHome" aria-label="长按回游戏中心">🏠</div>
+<style>
+  #rugeHome{position:fixed;right:9px;bottom:9px;z-index:900;width:46px;height:46px;
+    border-radius:50%;background:rgba(255,255,255,.9);border:1.5px solid rgba(0,0,0,.14);
+    display:flex;align-items:center;justify-content:center;font-size:21px;line-height:1;
+    box-shadow:0 2px 9px rgba(0,0,0,.16);user-select:none;-webkit-user-select:none;
+    cursor:pointer;opacity:.5;transition:opacity .18s,transform .18s;touch-action:none}
+  #rugeHome.press{opacity:1;transform:scale(1.18)}
+  #rugeHome .rtip{position:absolute;right:54px;top:50%;transform:translateY(-50%);
+    white-space:nowrap;font-size:11.5px;color:#3A4A58;background:rgba(255,255,255,.95);
+    border:1px solid rgba(0,0,0,.1);border-radius:9px;padding:5px 9px;opacity:0;
+    pointer-events:none;transition:opacity .18s}
+  #rugeHome.press .rtip{opacity:1}
+</style>
+<script>
+(function(){
+  // 浏览器里没有原生桥 —— 不显示这个按钮，免得点了没反应
+  if (!window.RugeNav || !window.RugeNav.home) return;
+  var b = document.createElement('div');
+  b.id = 'rugeHome';
+  b.innerHTML = '🏠<span class="rtip">松手即取消 · 长按 1.2 秒回游戏中心</span>';
+  document.body.appendChild(b);
+  var timer = null;
+  function down(e){
+    if (e.cancelable) e.preventDefault();
+    b.classList.add('press');
+    timer = setTimeout(function(){
+      timer = null; b.classList.remove('press');
+      try { window.RugeNav.home(); } catch(err){}
+    }, 1200);
+  }
+  function up(){ if (timer){ clearTimeout(timer); timer = null; } b.classList.remove('press'); }
+  b.addEventListener('pointerdown', down);
+  b.addEventListener('pointerup', up);
+  b.addEventListener('pointercancel', up);
+  b.addEventListener('pointerleave', up);
+  b.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+})();
+</script>
+
+</body>
+</html>

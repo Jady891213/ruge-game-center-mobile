@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FBF7EF">
+<title>乳鸽游戏中心</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:"Noto Sans CJK SC","PingFang SC",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);overflow-x:hidden;
+    padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 20px);
+    transition:background .25s,color .25s;
+  }
+  /* ── 换肤：全用 CSS 变量，切换只改 body 的 class ── */
+  body{--bg:#FBF7EF;--card:#FFFFFF;--ink:#2E2417;--sub:#8A7A5E;--line:#E8DFC9;
+       --accent:#C2410C;--soft:#F5EEDC;--shadow:rgba(120,100,70,.10)}
+  body.t-mint{--bg:#F1F9F4;--card:#FFFFFF;--ink:#1E3A2A;--sub:#6E8E7C;--line:#D5E9DD;
+       --accent:#0F7B3D;--soft:#E4F4EA;--shadow:rgba(60,120,90,.10)}
+  body.t-sun{--bg:#FFF8EC;--card:#FFFFFF;--ink:#3A2C14;--sub:#9A8A6E;--line:#F0DFB8;
+       --accent:#C2410C;--soft:#FDF0D8;--shadow:rgba(160,120,50,.12)}
+  body.t-sky{--bg:#F0F7FD;--card:#FFFFFF;--ink:#1C2E3E;--sub:#6E8AA3;--line:#D3E4F0;
+       --accent:#0B6BCB;--soft:#E3F0FB;--shadow:rgba(60,110,160,.10)}
+
+  header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .logo{flex:1;display:flex;align-items:center;gap:10px;min-width:0}
+  .logo .badge{width:40px;height:40px;border-radius:12px;flex:none;
+    background:linear-gradient(160deg,var(--accent),var(--soft));
+    display:flex;align-items:center;justify-content:center;font-size:21px}
+  .logo h1{font-size:21px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+  .logo .eng{font-size:10px;letter-spacing:3px;color:var(--sub);margin-top:1px}
+  .hbtn{flex:none;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
+    background:var(--card);color:var(--sub);font-size:17px;font-family:inherit;cursor:pointer}
+  .hbtn:active{background:var(--soft)}
+
+  .intro{font-size:13px;color:var(--sub);line-height:1.7;margin-bottom:18px}
+
+  /* ── 分类卡 ── */
+  .cats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cat{font-family:inherit;text-align:left;cursor:pointer;border:2px solid var(--line);
+    background:var(--card);border-radius:18px;padding:16px 15px;
+    box-shadow:0 2px 0 var(--line);transition:transform .12s}
+  .cat:active{transform:translateY(2px);box-shadow:none}
+  .cat .ci{font-size:30px;line-height:1}
+  .cat .cn{font-size:19px;font-weight:800;margin-top:7px}
+  .cat .cd{font-size:12px;color:var(--sub);margin-top:3px}
+  .cat .cc{font-size:12px;color:var(--accent);font-weight:700;margin-top:7px}
+
+  /* ── 游戏列表 ── */
+  .list{display:flex;flex-direction:column;gap:11px}
+  .game{display:flex;align-items:center;gap:13px;text-decoration:none;color:inherit;
+    border:2px solid var(--line);background:var(--card);border-radius:18px;
+    padding:12px 13px;box-shadow:0 2px 0 var(--line);transition:transform .12s}
+  .game:active{transform:translateY(2px);box-shadow:none}
+  .gico{width:54px;height:54px;border-radius:15px;flex:none;display:flex;
+    align-items:center;justify-content:center;background:var(--soft);overflow:hidden}
+  .gico svg{width:38px;height:38px}
+  .gmeta{flex:1;min-width:0}
+  .gname{font-size:16.5px;font-weight:700;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .tag{font-size:10.5px;font-weight:700;color:var(--accent);background:var(--soft);
+    border-radius:7px;padding:2px 7px}
+  .gdesc{font-size:12.5px;color:var(--sub);line-height:1.55;margin-top:3px}
+  .gstat{font-size:11.5px;color:var(--sub);margin-top:4px}
+  .gstat b{color:var(--accent)}
+  .go{flex:none;color:var(--sub);font-size:19px;opacity:.5}
+
+  h2.sec{font-size:15px;color:var(--accent);letter-spacing:2px;margin:22px 0 11px;
+    display:flex;align-items:center;gap:9px}
+  h2.sec::after{content:'';flex:1;height:1px;background:var(--line)}
+
+  .back{font-family:inherit;font-size:14px;color:var(--accent);background:none;border:none;
+    cursor:pointer;padding:6px 0 10px;letter-spacing:1px}
+  .cathead{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+  .cathead .ci{font-size:26px}
+  .cathead h2{font-size:22px;font-weight:800}
+  .cathead span{font-size:12.5px;color:var(--sub)}
+
+  .empty{font-size:13px;color:var(--sub);padding:14px 2px;line-height:1.8}
+  footer{margin-top:26px;text-align:center;font-size:11.5px;color:var(--sub);line-height:1.9}
+
+  /* 换肤面板 */
+  #themePanel{position:fixed;inset:0;display:none;align-items:flex-end;z-index:100;
+    background:rgba(0,0,0,.28)}
+  #themePanel.on{display:flex}
+  .sheet{width:100%;background:var(--card);border-radius:22px 22px 0 0;
+    padding:18px 18px calc(env(safe-area-inset-bottom,0px) + 20px)}
+  .sheet h3{font-size:15px;margin-bottom:13px;color:var(--accent);letter-spacing:1px}
+  .themes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .th{border:2.5px solid var(--line);border-radius:14px;padding:9px 6px;cursor:pointer;
+    font-family:inherit;background:var(--card);text-align:center}
+  .th.on{border-color:var(--accent)}
+  .th .sw{width:100%;height:30px;border-radius:8px;margin-bottom:6px;
+    display:flex;align-items:center;justify-content:center;font-size:15px}
+  .th .tn{font-size:11.5px;color:var(--sub)}
+  .th.on .tn{color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="badge">🎮</div>
+    <div>
+      <h1>乳鸽游戏中心</h1>
+      <div class="eng">GAME CENTER</div>
+    </div>
+  </div>
+  <button class="hbtn" id="btnTheme" aria-label="换主题色">🎨</button>
+</header>
+
+<!-- ══════════ 首页：分类 ══════════ -->
+<div id="viewHome">
+  <div class="intro">本机离线游戏合集 —— 全部由 DSH 在这台手机上构建，不联网、无广告、无内购。</div>
+  <div class="cats" id="cats"></div>
+  <div id="recentBox"></div>
+  <footer>
+    点分类进去选游戏 · 游戏里按「←」回本游戏主界面<br>
+    游戏主界面按「🏠 回游戏中心」才退出这个循环
+  </footer>
+</div>
+
+<!-- ══════════ 分类页 ══════════ -->
+<div id="viewCat" hidden>
+  <button class="back" id="btnBack">← 全部分类</button>
+  <div class="cathead"><div class="ci" id="catIcon">📖</div>
+    <div><h2 id="catName">学习</h2><span id="catDesc"></span></div></div>
+  <div class="list" id="catList"></div>
+</div>
+
+<!-- ══════════ 换肤 ══════════ -->
+<div id="themePanel">
+  <div class="sheet">
+    <h3>选一个主题色</h3>
+    <div class="themes" id="themeList"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+const GAMES  = [{"id": "hanzi-typing", "cat": "learn", "name": "看字打拼音", "tag": "学习", "desc": "屏幕上一个超大的字，用键盘打拼音。6 关 + 挑战，S/A/B/C/D 评级。", "href": "hanzi-typing/index.html", "color": "#0B6BCB", "icon": "<svg width=\"38\" height=\"38\" viewBox=\"0 0 36 36\"> <rect x=\"2.5\" y=\"3\" width=\"31\" height=\"30\" rx=\"5\" fill=\"#FFFFFF\" stroke=\"#C9D6E0\" stroke-width=\"1.6\"/> <text x=\"18\" y=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17\" font-weight=\"700\" fill=\"#111111\" font-family=\"serif\">天</text> <text x=\"18\" y=\"27\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"8.6\" font-weight=\"700\" fill=\"#0B6BCB\" font-family=\"sans-serif\" letter-spacing=\"0.5\">tiān</text> </svg>"}, {"id": "hanzi-puzzle", "cat": "learn", "name": "汉字拼一拼", "tag": "学习", "desc": "把「日」和「月」拖到一起，会变成什么字？拼不成也没关系，试试看。", "href": "hanzi-puzzle/index.html", "color": "#E2453C", "icon": "<svg width=\"38\" height=\"38\" viewBox=\"0 0 36 36\"> <rect x=\"2.5\" y=\"8\" width=\"17\" height=\"20\" rx=\"5.5\" fill=\"#D9533A\"/> <rect x=\"16.5\" y=\"8\" width=\"17\" height=\"20\" rx=\"5.5\" fill=\"#E8B33A\"/> <rect x=\"17.4\" y=\"9.5\" width=\"1.8\" height=\"17\" rx=\".9\" fill=\"#FBF3E4\" opacity=\".9\"/> <rect x=\"5.5\" y=\"12\" width=\"2.6\" height=\"8\" rx=\"1.3\" fill=\"#fff\" opacity=\".55\"/> <rect x=\"12\" y=\"12\" width=\"2.6\" height=\"8\" rx=\"1.3\" fill=\"#fff\" opacity=\".55\"/> </svg>"}, {"id": "flappy-bird", "cat": "react", "name": "扑翼小鸟", "tag": "反应", "desc": "点屏幕拍翅膀穿越水管。每根 +1，贴边宝石 +3，每 18 分昼夜交替。", "href": "flappy-bird/index.html", "color": "#F2B33D", "icon": "<svg width=\"36\" height=\"36\" viewBox=\"0 0 34 34\"> <rect x=\"25\" y=\"1\" width=\"7\" height=\"13\" rx=\"2.4\" fill=\"#5aab4e\"/> <rect x=\"23.6\" y=\"12\" width=\"9.8\" height=\"3.4\" rx=\"1.6\" fill=\"#4a9440\"/> <rect x=\"2\" y=\"20\" width=\"7\" height=\"13\" rx=\"2.4\" fill=\"#5aab4e\"/> <rect x=\"0.6\" y=\"18.6\" width=\"9.8\" height=\"3.4\" rx=\"1.6\" fill=\"#4a9440\"/> <ellipse cx=\"16\" cy=\"16\" rx=\"8.6\" ry=\"7.6\" fill=\"#f4c542\"/> <ellipse cx=\"16\" cy=\"18.6\" rx=\"5.6\" ry=\"4.2\" fill=\"#ffeab0\"/> <ellipse cx=\"12.4\" cy=\"17\" rx=\"4\" ry=\"2.5\" fill=\"#dfa932\"/> <path d=\"M23.4 13.4l5.2 2.6-5.2 2.6z\" fill=\"#ef8b3a\"/> <circle cx=\"19\" cy=\"13.4\" r=\"2.7\" fill=\"#fff\"/> <circle cx=\"20\" cy=\"13.4\" r=\"1.25\" fill=\"#20262e\"/> </svg>"}, {"id": "dino-runner", "cat": "react", "name": "小恐龙冲刺", "tag": "反应", "desc": "点一下起跳，按住跳更高。躲仙人掌、别撞高飞的鸟，越跑越快。", "href": "dino-runner/index.html", "color": "#4F9BD9", "icon": "<svg width=\"36\" height=\"36\" viewBox=\"0 0 34 34\"> <rect x=\"1\" y=\"27.4\" width=\"32\" height=\"2.6\" rx=\"1.3\" fill=\"#3d4d78\"/> <path d=\"M8 27V15.5a5 5 0 0 1 5-5h5.5a4 4 0 0 1 4 4V18h2.6v4.2h-2.6V27h-3.8v-3.4h-3V27H11v-4H8z\" fill=\"#4fae63\"/> <path d=\"M8 18.6L2.6 16v6.4L8 20.6z\" fill=\"#4fae63\"/> <path d=\"M19.6 20.4h2.8v2.2h-2.8z\" fill=\"#a8e6a3\"/> <circle cx=\"20.4\" cy=\"14.2\" r=\"2.1\" fill=\"#fff\"/> <circle cx=\"21.1\" cy=\"14.2\" r=\"1\" fill=\"#12181f\"/> <path d=\"M9.4 10.6h6.2v2.5H9.4z\" fill=\"#f2704f\" transform=\"rotate(-14 12.5 11.8)\"/> </svg>"}, {"id": "frog-pond", "cat": "react", "name": "小青蛙跳池塘", "tag": "反应", "desc": "点一下起跳，空中再点一下＝二段跳。躲开跳出水面的鱼和蜻蜓，顺手捡宝石。", "href": "frog-pond/index.html", "color": "#5FC46A", "icon": "<svg width=\"38\" height=\"38\" viewBox=\"0 0 36 36\"> <circle cx=\"12\" cy=\"10.5\" r=\"6.2\" fill=\"#63c96e\"/> <circle cx=\"24\" cy=\"10.5\" r=\"6.2\" fill=\"#63c96e\"/> <circle cx=\"12\" cy=\"10.5\" r=\"3.5\" fill=\"#ffffff\"/> <circle cx=\"24\" cy=\"10.5\" r=\"3.5\" fill=\"#ffffff\"/> <circle cx=\"12.7\" cy=\"10.5\" r=\"1.8\" fill=\"#16261c\"/> <circle cx=\"24.7\" cy=\"10.5\" r=\"1.8\" fill=\"#16261c\"/> <ellipse cx=\"18\" cy=\"22\" rx=\"13\" ry=\"10.6\" fill=\"#63c96e\"/> <ellipse cx=\"18\" cy=\"25\" rx=\"8\" ry=\"6.2\" fill=\"#eaf9c4\"/> <path d=\"M12 19.5 Q18 26 24 19.5\" stroke=\"#2f7a42\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/> </svg>"}, {"id": "pipe-flow", "cat": "puzzle", "name": "接水管", "tag": "益智", "desc": "点管子转方向，把云朵的水引到小花那儿。10 关，转错了也没关系。", "href": "pipe-flow/index.html", "color": "#4FC3EC", "icon": "<svg width=\"38\" height=\"38\" viewBox=\"0 0 36 36\"> <!-- 弯头水管：灰色的管子 + 已经流进来的蓝色水 + 一滴水 --> <path d=\"M9 29 L9 15 Q9 11 13 11 L27 11\" stroke=\"#9FB9C6\" stroke-width=\"7.4\" fill=\"none\" stroke-linecap=\"round\"/> <path d=\"M9 29 L9 15 Q9 11 13 11 L17 11\" stroke=\"#3FB0E0\" stroke-width=\"7.4\" fill=\"none\" stroke-linecap=\"round\"/> <path d=\"M27.5 16 q3.1 4.2 3.1 6.6 a3.1 3.1 0 0 1 -6.2 0 q0 -2.4 3.1 -6.6 z\" fill=\"#4FC3EC\"/> </svg>"}, {"id": "gravity-maze", "cat": "puzzle", "name": "重力钢珠", "tag": "重力", "desc": "俯视角，把手机往哪边倒钢珠就往哪边滚。吃果子会长力气，果子吃光金袋才开。", "href": "gravity-maze/index.html", "color": "#F5C15A", "icon": "<svg width=\"38\" height=\"38\" viewBox=\"0 0 36 36\"> <!-- 俯视木台 + 钢珠 + 洞 + 果子 --> <rect x=\"3\" y=\"4\" width=\"30\" height=\"28\" rx=\"5\" fill=\"#5C4530\"/> <rect x=\"3\" y=\"4\" width=\"30\" height=\"28\" rx=\"5\" fill=\"none\" stroke=\"#7A5A3C\" stroke-width=\"2\"/> <circle cx=\"26\" cy=\"11\" r=\"4.6\" fill=\"#0A0F14\"/> <circle cx=\"10.5\" cy=\"25\" r=\"4.2\" fill=\"#0A0F14\"/> <circle cx=\"11.5\" cy=\"12\" r=\"5.6\" fill=\"#DCEBF5\"/> <circle cx=\"9.8\" cy=\"10.3\" r=\"2.2\" fill=\"#ffffff\"/> <circle cx=\"25\" cy=\"25\" r=\"3.4\" fill=\"#E2453C\"/> <path d=\"M25 18.6 q1.6 2.2 1.6 3.2 a1.6 1.6 0 0 1 -3.2 0 q0 -1 1.6 -3.2z\" fill=\"#5FD98A\"/> </svg>"}];
+const CATS   = [{"id": "learn", "name": "学习", "icon": "📖", "desc": "认字 · 打字"}, {"id": "react", "name": "反应", "icon": "⚡", "desc": "手快 · 眼快"}, {"id": "puzzle", "name": "益智", "icon": "🧩", "desc": "动脑筋"}];
+const THEMES = [{"id": "paper", "name": "米白", "bg": "#FBF7EF", "card": "#FFFFFF", "ink": "#2E2417", "sub": "#8A7A5E", "line": "#E8DFC9", "accent": "#C2410C", "soft": "#F5EEDC"}, {"id": "mint", "name": "薄荷", "bg": "#F1F9F4", "card": "#FFFFFF", "ink": "#1E3A2A", "sub": "#6E8E7C", "line": "#D5E9DD", "accent": "#0F7B3D", "soft": "#E4F4EA"}, {"id": "sun", "name": "暖阳", "bg": "#FFF8EC", "card": "#FFFFFF", "ink": "#3A2C14", "sub": "#9A8A6E", "line": "#F0DFB8", "accent": "#C2410C", "soft": "#FDF0D8"}, {"id": "sky", "name": "天蓝", "bg": "#F0F7FD", "card": "#FFFFFF", "ink": "#1C2E3E", "sub": "#6E8AA3", "line": "#D3E4F0", "accent": "#0B6BCB", "soft": "#E3F0FB"}];
+
+const $ = s => document.querySelector(s);
+const STAT_KEY = 'rugeStat';     // 各游戏往这里报「最高分 / 最近玩」
+
+/* ── 中心自己记的：玩过几次 / 最近什么时候点的 ── */
+function loadMine(){ try{ return JSON.parse(localStorage.getItem('rugeCenter')||'{}'); }catch(e){ return {}; } }
+function saveMine(v){ try{ localStorage.setItem('rugeCenter', JSON.stringify(v)); }catch(e){} }
+/* ── 游戏自己报的：最高分 ── */
+function loadStat(){ try{ return JSON.parse(localStorage.getItem(STAT_KEY)||'{}'); }catch(e){ return {}; } }
+
+function ago(ts){
+  if (!ts) return '';
+  const d = Date.now() - ts;
+  if (d < 60000) return '刚刚';
+  if (d < 3600000) return Math.floor(d/60000) + ' 分钟前';
+  if (d < 86400000) return Math.floor(d/3600000) + ' 小时前';
+  const n = Math.floor(d/86400000);
+  return n === 1 ? '昨天' : (n < 30 ? n + ' 天前' : new Date(ts).toLocaleDateString());
+}
+
+/* ── 主题 ── */
+const THEME_KEY = 'rugeTheme';
+function applyTheme(id){
+  for (const t of THEMES) document.body.classList.remove('t-' + t.id);
+  if (id && id !== 'paper') document.body.classList.add('t-' + id);
+  try{ localStorage.setItem(THEME_KEY, id || 'paper'); }catch(e){}
+  const th = THEMES.find(t => t.id === (id || 'paper'));
+  const m = document.querySelector('meta[name=theme-color]');
+  if (m && th) m.setAttribute('content', th.bg);
+  renderThemes();
+}
+function renderThemes(){
+  const cur = localStorage.getItem(THEME_KEY) || 'paper';
+  $('#themeList').innerHTML = THEMES.map(t =>
+    `<button class="th ${t.id===cur?'on':''}" data-t="${t.id}">
+       <div class="sw" style="background:${t.bg};border:1px solid ${t.line}">
+         <span style="width:16px;height:16px;border-radius:50%;background:${t.accent};display:inline-block"></span>
+       </div>
+       <div class="tn">${t.name}</div>
+     </button>`).join('');
+  $('#themeList').querySelectorAll('.th').forEach(b =>
+    b.addEventListener('click', () => { applyTheme(b.dataset.t); $('#themePanel').classList.remove('on'); }));
+}
+
+/* ── 首页 ── */
+function renderHome(){
+  const mine = loadMine();
+  $('#cats').innerHTML = CATS.map(c => {
+    const n = GAMES.filter(g => g.cat === c.id).length;
+    return `<button class="cat" data-c="${c.id}">
+      <div class="ci">${c.icon}</div>
+      <div class="cn">${c.name}</div>
+      <div class="cd">${c.desc}</div>
+      <div class="cc">${n} 款游戏 →</div>
+    </button>`;
+  }).join('');
+  $('#cats').querySelectorAll('.cat').forEach(b =>
+    b.addEventListener('click', () => openCat(b.dataset.c)));
+
+  // 最近玩过
+  const recent = GAMES.filter(g => mine[g.id] && mine[g.id].last)
+                      .sort((a,b) => mine[b.id].last - mine[a.id].last).slice(0,3);
+  $('#recentBox').innerHTML = recent.length
+    ? `<h2 class="sec">最近玩过</h2><div class="list">${recent.map(g => cardHTML(g, true)).join('')}</div>`
+    : '';
+  bindCards($('#recentBox'));
+}
+
+function cardHTML(g, compact){
+  const mine = loadMine()[g.id] || {};
+  const stat = loadStat()[g.id] || {};
+  const bits = [];
+  if (stat.best) bits.push('最高分 <b>' + stat.best + '</b>');
+  if (mine.plays) bits.push('玩过 ' + mine.plays + ' 次');
+  if (mine.last) bits.push(ago(mine.last));
+  return `<a class="game" href="${g.href}" data-id="${g.id}">
+    <div class="gico" style="background:${g.color}22">${g.icon}</div>
+    <div class="gmeta">
+      <div class="gname">${g.name} <span class="tag">${g.tag}</span></div>
+      ${compact ? '' : `<div class="gdesc">${g.desc}</div>`}
+      ${bits.length ? `<div class="gstat">${bits.join(' · ')}</div>` : ''}
+    </div>
+    <div class="go">›</div>
+  </a>`;
+}
+
+function bindCards(root){
+  root.querySelectorAll('a.game').forEach(a =>
+    a.addEventListener('click', () => {
+      const mine = loadMine(), id = a.dataset.id;
+      mine[id] = mine[id] || { plays: 0 };
+      mine[id].plays = (mine[id].plays || 0) + 1;
+      mine[id].last = Date.now();
+      saveMine(mine);
+    }));
+}
+
+/* ── 分类页 ── */
+let curCat = null;
+function openCat(id){
+  const c = CATS.find(x => x.id === id);
+  if (!c) return;
+  curCat = id;
+  $('#catIcon').textContent = c.icon;
+  $('#catName').textContent = c.name;
+  $('#catDesc').textContent = c.desc;
+  const list = GAMES.filter(g => g.cat === id);
+  const mine = loadMine(), stat = loadStat();
+  // 分类内排序：先玩过的、再按最高分
+  list.sort((a,b) => {
+    const la = (mine[a.id] && mine[a.id].last) || 0, lb = (mine[b.id] && mine[b.id].last) || 0;
+    if (la !== lb) return lb - la;
+    return ((stat[b.id] && stat[b.id].best) || 0) - ((stat[a.id] && stat[a.id].best) || 0);
+  });
+  $('#catList').innerHTML = list.map(g => cardHTML(g, false)).join('');
+  bindCards($('#catList'));
+  $('#viewHome').hidden = true;
+  $('#viewCat').hidden = false;
+  window.scrollTo(0, 0);
+  try { if (window.RugeScreen && RugeScreen.set) RugeScreen.set('portrait'); } catch(e){}
+}
+function goHome(){ $('#viewCat').hidden = true; $('#viewHome').hidden = false; window.scrollTo(0,0); }
+
+$('#btnBack').addEventListener('click', goHome);
+$('#btnTheme').addEventListener('click', () => $('#themePanel').classList.add('on'));
+$('#themePanel').addEventListener('click', (e) => {
+  if (e.target.id === 'themePanel') $('#themePanel').classList.remove('on');
+});
+
+/* 每次回到这个页面都重画（从游戏返回时统计要刷新） */
+function refresh(){ applyTheme(localStorage.getItem(THEME_KEY) || 'paper'); renderHome(); goHome(); }
+refresh();
+addEventListener('pageshow', refresh);
+/* 入口页要竖屏；从横屏游戏返回时转回来 */
+try { if (window.RugeScreen && RugeScreen.set) RugeScreen.set('portrait'); } catch(e){}
+
+window.__center = { GAMES, CATS, THEMES, openCat, goHome, state: () => ({
+  view: $('#viewCat').hidden ? 'home' : 'cat', cat: curCat,
+  theme: localStorage.getItem(THEME_KEY) || 'paper',
+  mine: loadMine(), stat: loadStat() }) };
+</script>
+</body>
+</html>

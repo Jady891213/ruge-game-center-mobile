@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,maximum-scale=1">
+<meta name="theme-color" content="#fdf3d8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>小恐龙冲刺 · Dino Dash</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#fdf3d8;
+ font-family:system-ui,-apple-system,"PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+ -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
+ touch-action:none;overscroll-behavior:none;
+ transition:background .7s ease}
+body.night{background:#101a2e}
+#stage{position:fixed;inset:0;overflow:hidden}
+canvas{display:block;width:100%;height:100%}
+#hud{position:absolute;inset:0;pointer-events:none;z-index:10}
+#mute{pointer-events:auto;position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);left:14px;
+ width:44px;height:44px;border-radius:13px;border:0;font-size:19px;line-height:1;
+ background:rgba(0,0,0,.07);color:#4a3b22;cursor:pointer;transition:background .7s,color .7s}
+#mute:active{transform:scale(.94)}
+body.night #mute{background:rgba(255,255,255,.13);color:#e8eef8}
+#scores{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:16px;text-align:right;
+ font-variant-numeric:tabular-nums;color:#4a3b22;transition:color .7s}
+body.night #scores{color:#e8eef8}
+#score{font-size:32px;font-weight:800;letter-spacing:.5px;line-height:1.05;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+body.night #score{text-shadow:0 1px 0 rgba(0,0,0,.4)}
+#hi{font-size:13px;font-weight:700;opacity:.55;margin-top:3px}
+.screen{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:26px;
+ background:rgba(253,243,216,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ z-index:5;transition:background .7s}
+body.night .screen{background:rgba(16,26,46,.88)}
+.screen.hide{display:none}
+.card{width:100%;max-width:360px;text-align:center;color:#3f3220;transition:color .7s}
+body.night .card{color:#e8eef8}
+.card h1{font-size:28px;letter-spacing:2px;margin-bottom:6px}
+.card .tag{font-size:12px;letter-spacing:1.5px;opacity:.6;margin-bottom:20px}
+.card ul{list-style:none;text-align:left;display:block;width:max-content;max-width:100%;margin:0 auto 22px;font-size:14px;line-height:2.05}
+.card li .k{display:inline-block;width:1.7em}
+.card button{border:0;border-radius:15px;padding:15px 36px;font-size:17px;font-weight:700;
+ color:#fff;background:#4fae63;box-shadow:0 8px 22px rgba(79,174,99,.34);cursor:pointer;
+ font-family:inherit;transition:transform .08s}
+.card button:active{transform:translateY(1px) scale(.985)}
+.card .big{font-size:56px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1;margin:6px 0 4px}
+.card .sub{font-size:13.5px;opacity:.68;margin-bottom:20px}
+.card .newhi{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;color:#fff;
+ background:#f2a33c;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+#hint{position:absolute;left:0;right:0;bottom:24%;text-align:center;font-size:14px;font-weight:700;
+ color:#4a3b22;opacity:0;transition:opacity .55s,color .7s;pointer-events:none}
+body.night #hint{color:#e8eef8}
+#hint.show{opacity:.6}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <div id="hud">
+    <button id="mute" aria-label="声音开关">🔊</button>
+    <div id="scores"><div id="score">0</div><div id="hi">HI 0</div></div>
+    <div id="hint">点屏幕起跳 · 按住跳更高</div>
+  </div>
+
+  <div id="startScreen" class="screen">
+    <div class="card">
+      <h1>小恐龙冲刺</h1>
+      <div class="tag">DINO DASH</div>
+      <ul>
+        <li><span class="k">🌵</span>仙人掌 —— 跳过去</li>
+        <li><span class="k">🦅</span>高飞的鸟 —— <b>别跳</b>，从底下钻</li>
+        <li><span class="k">💎</span>宝石 —— 空中顺手捡 +25</li>
+      </ul>
+      <button id="startBtn">开始跑</button>
+    </div>
+  </div>
+
+  <div id="overScreen" class="screen hide">
+    <div class="card">
+      <div id="newhi" class="newhi" style="display:none">新纪录！</div>
+      <div class="big" id="finalScore">0</div>
+      <div class="sub" id="finalSub"></div>
+      <button id="againBtn">再来一局</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+'use strict';
+
+/* ============================ 基础工具 ============================ */
+var cv = document.getElementById('cv');
+var ctx = cv.getContext('2d', { alpha: false });
+var elStage = document.getElementById('stage');
+var elScore = document.getElementById('score');
+var elHi = document.getElementById('hi');
+var elMute = document.getElementById('mute');
+var elStart = document.getElementById('startScreen');
+var elOver = document.getElementById('overScreen');
+var elFinal = document.getElementById('finalScore');
+var elFinalSub = document.getElementById('finalSub');
+var elNewHi = document.getElementById('newhi');
+var elHint = document.getElementById('hint');
+
+function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+function rand(a, b) { return a + Math.random() * (b - a); }
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+/* ============================ 配色（昼/夜插值） ============================ */
+var DAY = {
+  skyTop:'#b9e2ff', skyMid:'#e8f4ff', skyBot:'#fdf3d8', sun:'#ffd479',
+  far:'#f1e7ce', mid:'#e3d2ab', ground:'#d9c08a', gline:'#8a6a3d', dash:'#bb9d67',
+  body:'#4fae63', bodyDark:'#2f7a42', belly:'#c3f0bd',
+  eye:'#ffffff', pupil:'#1d2b23',
+  cactus:'#3f8f52', cactusDark:'#2c6b3c',
+  bird:'#5b6b8a', gem:'#39b9f0', gemHi:'#d6f5ff',
+  scarf:'#f2704f', cloud:'#ffffff'
+};
+var NIGHT = {
+  skyTop:'#0b1424', skyMid:'#132038', skyBot:'#22304c', sun:'#e9eef8',
+  far:'#182238', mid:'#1e2b48', ground:'#2a3350', gline:'#5b6790', dash:'#3d4a6e',
+  body:'#6fd08a', bodyDark:'#2f7a42', belly:'#cdf5cf',
+  eye:'#ffffff', pupil:'#0d1a14',
+  cactus:'#2e7a54', cactusDark:'#1e5a3c',
+  bird:'#93a3c8', gem:'#7fe3ff', gemHi:'#eafcff',
+  scarf:'#ff8f6b', cloud:'#33436a'
+};
+function hex2rgb(h) {
+  h = h.replace('#', '');
+  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+}
+var DAYR = {}, NIGHTR = {}, palette = {}, lastMix = -1;
+for (var pk in DAY) { DAYR[pk] = hex2rgb(DAY[pk]); NIGHTR[pk] = hex2rgb(NIGHT[pk]); palette[pk] = DAY[pk]; }
+
+var nightMix = 0, nightTarget = 0;
+function applyPalette() {
+  if (Math.abs(nightMix - lastMix) < 0.002 && (nightMix === 0 || nightMix === 1)) return;
+  lastMix = nightMix;
+  var t = nightMix;
+  for (var k in DAYR) {
+    var a = DAYR[k], b = NIGHTR[k];
+    palette[k] = 'rgb(' + Math.round(lerp(a[0],b[0],t)) + ',' +
+      Math.round(lerp(a[1],b[1],t)) + ',' + Math.round(lerp(a[2],b[2],t)) + ')';
+  }
+}
+
+/* ============================ 音效 ============================ */
+var AC = null, muted = false;
+function audioCtx() {
+  if (AC === null) {
+    try { AC = new (window.AudioContext || window.webkitAudioContext)(); }
+    catch (e) { AC = false; }
+  }
+  if (AC && AC.state === 'suspended') { AC.resume().catch(function () {}); }
+  return AC || null;
+}
+function blip(f1, f2, dur, type, vol) {
+  if (muted) return;
+  var ac = audioCtx();
+  if (!ac) return;
+  var t = ac.currentTime;
+  var o = ac.createOscillator(), g = ac.createGain();
+  o.type = type || 'square';
+  o.frequency.setValueAtTime(f1, t);
+  if (f2) o.frequency.exponentialRampToValueAtTime(Math.max(20, f2), t + dur);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(vol || 0.05, t + 0.008);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.connect(g); g.connect(ac.destination);
+  o.start(t); o.stop(t + dur + 0.03);
+}
+
+/* ============================ 布局常量 ============================ */
+var W = 360, H = 640, DPR = 1;
+var L = {};
+function layout() {
+  var r = cv.getBoundingClientRect();
+  W = Math.max(220, Math.round(r.width));
+  H = Math.max(240, Math.round(r.height));
+  DPR = clamp(window.devicePixelRatio || 1, 1, 3);
+  cv.width = Math.round(W * DPR);
+  cv.height = Math.round(H * DPR);
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+  var pH = clamp(H * 0.062, 26, 68);
+  L.playerH = pH;
+  L.playerW = pH * 1.18;
+  L.S = pH / 58;
+  L.groundY = H - Math.max(H * 0.15, 72);
+  L.G = 4448 * L.S;               // 重力 px/s²
+  L.JUMP_UP = 1223 * L.S;         // 起跳初速 px/s（向上）
+  L.airtime = 2 * L.JUMP_UP / L.G; // ≈0.55s
+  L.baseSpeed = W * 0.70;
+  L.maxSpeed = L.baseSpeed * 1.85;
+  L.accel = L.baseSpeed * 0.035;
+  L.playerX = W * 0.17;
+  L.span = W * 1.9 + 420;
+}
+function wrapX(base, par) {
+  var x = base - worldX * par;
+  x = ((x % L.span) + L.span) % L.span;
+  return x - 200;
+}
+
+/* ============================ 状态 ============================ */
+var state = 'ready';            // ready | run | dead
+var paused = false, lastT = 0;
+var speed = 0, worldX = 0, distSinceSpawn = 0, nextGap = 0;
+var scoreF = 0, gemsGot = 0, prevBand = 0, nextNight = 700;
+var obstacles = [], gems = [], parts = [], pops = [], clouds = [], hills = [];
+var player = null, shake = 0, flash = 0, deadT = 0, newRecord = false;
+var hi = parseInt(localStorage.getItem('dinoDashHi') || '0', 10);
+if (!isFinite(hi) || hi < 0) hi = 0;
+
+/* ============================ 场景装饰 ============================ */
+function buildDecor() {
+  clouds = [];
+  for (var i = 0; i < 6; i++) {
+    clouds.push({ x: rand(0, L.span), y: rand(H * 0.06, H * 0.40), s: rand(0.55, 1.3), p: rand(0.16, 0.30) });
+  }
+  hills = [];
+  for (var j = 0; j < 8; j++) {
+    var far = j % 2 === 0;
+    hills.push({
+      x: rand(0, L.span), p: far ? 0.10 : 0.20,
+      w: rand(W * 0.26, W * 0.52), h: rand(H * 0.028, H * 0.072),
+      layer: far ? 0 : 1
+    });
+  }
+}
+
+/* ============================ 粒子 / 飘字 ============================ */
+function addDust(ax, ay, n, power) {
+  for (var i = 0; i < n; i++) {
+    parts.push({
+      x: ax + rand(-6, 6) * L.S, y: ay + rand(-4, 2) * L.S,
+      vx: -speed * rand(0.15, 0.45) + rand(-40, 40),
+      vy: -rand(30, 130) * L.S,
+      r: rand(1.4, 3.4) * L.S, life: rand(0.25, 0.55), max: 0.55
+    });
+  }
+}
+function addPop(ax, ay, text) {
+  pops.push({ x: ax, y: ay, text: text, life: 0.85, max: 0.85 });
+}
+
+/* ============================ 生命周期 ============================ */
+function reset() {
+  speed = L.baseSpeed;
+  worldX = 0; distSinceSpawn = 0; nextGap = W * 1.0;
+  scoreF = 0; gemsGot = 0; prevBand = 0; nextNight = 700;
+  obstacles = []; gems = []; parts = []; pops = [];
+  player = { yOff: 0, vy: 0, onGround: true, runPhase: 0, blink: 0, blinkT: rand(1.5, 4) };
+  shake = 0; flash = 0; deadT = 0; newRecord = false;
+  nightMix = 0; nightTarget = 0; lastMix = -1;
+  document.body.classList.remove('night');
+  buildDecor();
+  applyPalette();
+  syncScore();
+}
+
+function startGame() {
+  reset();
+  state = 'run';
+  elStart.classList.add('hide');
+  elOver.classList.add('hide');
+  elHint.classList.add('show');
+  setTimeout(function () { elHint.classList.remove('show'); }, 2600);
+  audioCtx();
+}
+
+function showOver() {
+  elFinal.textContent = String(Math.floor(scoreF));
+  elFinalSub.textContent = '跑了 ' + Math.floor(worldX / 10) + ' m　·　宝石 ' + gemsGot + ' 颗';
+  elNewHi.style.display = newRecord ? 'inline-block' : 'none';
+  elOver.classList.remove('hide');
+}
+
+function die() {
+  if (state === 'dead') return;
+  state = 'dead';
+  deadT = 0; shake = 1; flash = 0.42;
+  var s = Math.floor(scoreF);
+  if (s > hi) { hi = s; newRecord = true; try { localStorage.setItem('dinoDashHi', String(hi)); } catch (e) {} }
+  blip(340, 55, 0.42, 'sawtooth', 0.085);
+  var cxp = L.playerX + L.playerW * 0.5;
+  addDust(cxp, L.groundY, 16);
+  setTimeout(function () { if (state === 'dead') showOver(); }, 640);
+}
+
+/* ============================ 输入 ============================ */
+function pressJump() {
+  if (state !== 'run' || !player.onGround) return;
+  player.vy = L.JUMP_UP;
+  if (player.yOff <= 0) player.yOff = 0.6;
+  player.onGround = false;
+  blip(520, 780, 0.07, 'square', 0.042);
+  addDust(L.playerX + L.playerW * 0.5, L.groundY, 5);
+}
+function releaseJump() {
+  if (state === 'run' && !player.onGround && player.vy > L.JUMP_UP * 0.62) {
+    player.vy = L.JUMP_UP * 0.62;
+  }
+}
+
+elStage.addEventListener('pointerdown', function (e) {
+  if (e.target && e.target.closest && e.target.closest('button')) return;
+  e.preventDefault();
+  audioCtx();
+  if (state === 'ready') { startGame(); return; }
+  if (state === 'run') pressJump();
+}, { passive: false });
+elStage.addEventListener('pointerup', function (e) {
+  if (e.target && e.target.closest && e.target.closest('button')) return;
+  releaseJump();
+});
+elStage.addEventListener('pointercancel', releaseJump);
+window.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+
+window.addEventListener('keydown', function (e) {
+  if (e.repeat) return;
+  if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {
+    e.preventDefault();
+    audioCtx();
+    if (state === 'ready') startGame();
+    else if (state === 'run') pressJump();
+  }
+  if (e.code === 'Enter' && state === 'dead') startGame();
+});
+window.addEventListener('keyup', function (e) {
+  if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') releaseJump();
+});
+
+document.getElementById('startBtn').addEventListener('click', function (e) { e.stopPropagation(); startGame(); });
+document.getElementById('againBtn').addEventListener('click', function (e) { e.stopPropagation(); startGame(); });
+elMute.addEventListener('click', function (e) {
+  e.stopPropagation();
+  muted = !muted;
+  elMute.textContent = muted ? '🔇' : '🔊';
+  if (!muted) blip(700, 1050, 0.08, 'sine', 0.05);
+});
+
+document.addEventListener('visibilitychange', function () {
+  paused = document.hidden;
+  lastT = 0;
+});
+window.addEventListener('resize', function () {
+  layout(); buildDecor(); lastT = 0;
+});
+window.addEventListener('orientationchange', function () {
+  setTimeout(function () { layout(); buildDecor(); lastT = 0; }, 220);
+});
+
+/* ============================ 得分 UI ============================ */
+var lastShown = -1;
+function syncScore() {
+  var s = Math.floor(scoreF);
+  if (s !== lastShown) { lastShown = s; elScore.textContent = String(s); }
+  elHi.textContent = 'HI ' + Math.max(hi, s);
+}
+
+/* ============================ 生成物 ============================ */
+function spawnObstacle() {
+  var pH = L.playerH;
+  var jumpDist = speed * L.airtime;
+  var r = Math.random();
+  var o;
+
+  if (r < 0.40) {
+    o = { kind: 'cactus', n: 1, w: pH * 0.42, h: pH * 0.82, base: 0 };
+  } else if (r < 0.60) {
+    o = { kind: 'cactus', n: 1, w: pH * 0.56, h: pH * 1.22, base: 0 };
+  } else if (r < 0.78) {
+    var n = Math.random() < 0.45 ? 3 : 2;
+    o = { kind: 'cactus', n: n, w: pH * 0.44 * n, h: pH * 0.82, base: 0 };
+  } else if (r < 0.90) {
+    o = { kind: 'bird', w: pH * 0.80, h: pH * 0.56, base: pH * 0.38, mul: 1.0, flap: rand(0, 6) };
+  } else {
+    o = { kind: 'bird', w: pH * 0.80, h: pH * 0.56, base: pH * 1.18, mul: 1.30, flap: rand(0, 6) };
+  }
+
+  o.x = W + 24;
+  o.passed = false;
+  obstacles.push(o);
+
+  var gap = jumpDist * 0.92 + pH * 1.7 + Math.random() * W * 0.55;
+  if (o.kind === 'bird' && o.base > pH) gap += jumpDist * 0.85;
+  nextGap = gap;
+  distSinceSpawn = 0;
+
+  // 宝石：只在仙人掌后面挂一颗，落在间隙中段，需要补一个跳
+  if (o.kind === 'cactus' && Math.random() < 0.55) {
+    gems.push({
+      x: o.x + gap * 0.52,
+      yOff: pH * rand(1.15, 2.05),
+      r: pH * 0.22,
+      ph: rand(0, 6.28),
+      got: false
+    });
+  }
+}
+
+/* ============================ 碰撞 ============================ */
+function playerBox() {
+  var pw = L.playerW, ph = L.playerH;
+  return {
+    x: L.playerX + pw * 0.17,
+    y: L.groundY - ph - player.yOff + ph * 0.12,
+    w: pw * 0.68,
+    h: ph * 0.78
+  };
+}
+function obsBox(o) {
+  var pad = o.h * 0.10;
+  return {
+    x: o.x + o.w * 0.09,
+    y: L.groundY - o.base - o.h + pad,
+    w: o.w * 0.82,
+    h: o.h - pad * 2
+  };
+}
+function hitRect(a, b) {
+  return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+}
+function circleRect(cx, cy, r, b) {
+  var nx = clamp(cx, b.x, b.x + b.w);
+  var ny = clamp(cy, b.y, b.y + b.h);
+  var dx = cx - nx, dy = cy - ny;
+  return dx * dx + dy * dy <= r * r;
+}
+
+/* ============================ 更新 ============================ */
+function updateParts(dt) {
+  var i, p;
+  for (i = parts.length - 1; i >= 0; i--) {
+    p = parts[i];
+    p.x += (p.vx - speed * 0.35) * dt;
+    p.y += p.vy * dt;
+    p.vy += 950 * L.S * dt;
+    p.life -= dt;
+    if (p.life <= 0) parts.splice(i, 1);
+  }
+  for (i = pops.length - 1; i >= 0; i--) {
+    p = pops[i];
+    p.x -= speed * dt;
+    p.y -= 46 * dt;
+    p.life -= dt;
+    if (p.life <= 0) pops.splice(i, 1);
+  }
+}
+
+function update(dt) {
+  // 昼夜插值
+  nightMix += (nightTarget - nightMix) * Math.min(1, dt * 1.5);
+  if (nightMix < 0.004) nightMix = 0;
+  if (nightMix > 0.996) nightMix = 1;
+  applyPalette();
+
+  if (shake > 0) shake = Math.max(0, shake - dt * 2.6);
+  if (flash > 0) flash = Math.max(0, flash - dt * 3.2);
+
+  if (state === 'ready') {
+    worldX += 62 * dt;
+    player.runPhase += dt * 7.5;
+    blinkTick(dt);
+    updateParts(dt);
+    return;
+  }
+
+  if (state === 'dead') {
+    deadT += dt;
+    updateParts(dt);
+    return;
+  }
+
+  /* ---- running ---- */
+  speed = Math.min(L.maxSpeed, speed + L.accel * dt);
+  var move = speed * dt;
+  worldX += move;
+  distSinceSpawn += move;
+
+  scoreF += move * 0.10;
+  var band = Math.floor(scoreF / 100);
+  if (band > prevBand) {
+    prevBand = band;
+    flash = Math.max(flash, 0.14);
+    blip(660, 1000, 0.09, 'square', 0.045);
+  }
+  if (scoreF >= nextNight) {
+    nextNight += 700;
+    nightTarget = nightTarget ? 0 : 1;
+    document.body.classList.toggle('night', nightTarget === 1);
+    blip(nightTarget ? 420 : 720, nightTarget ? 300 : 980, 0.22, 'sine', 0.05);
+  }
+
+  // 玩家物理
+  if (player.onGround) {
+    player.runPhase += dt * (7 + (speed / L.baseSpeed) * 7);
+    blinkTick(dt);
+  } else {
+    player.yOff += player.vy * dt;
+    player.vy -= L.G * dt;
+    if (player.yOff <= 0) {
+      player.yOff = 0; player.vy = 0; player.onGround = true;
+      addDust(L.playerX + L.playerW * 0.5, L.groundY, 7);
+    }
+  }
+
+  // 生成
+  if (distSinceSpawn >= nextGap) spawnObstacle();
+
+  // 障碍前进
+  var i, o;
+  for (i = 0; i < obstacles.length; i++) {
+    o = obstacles[i];
+    o.x -= move * (o.mul || 1);
+    if (o.kind === 'bird') o.flap += dt * 9;
+  }
+  for (i = obstacles.length - 1; i >= 0; i--) {
+    if (obstacles[i].x + obstacles[i].w < -90) obstacles.splice(i, 1);
+  }
+
+  // 宝石前进
+  for (i = 0; i < gems.length; i++) { gems[i].x -= move; gems[i].ph += dt * 4; }
+  for (i = gems.length - 1; i >= 0; i--) {
+    if (gems[i].got || gems[i].x < -70) gems.splice(i, 1);
+  }
+
+  // 碰撞
+  var pb = playerBox();
+  for (i = 0; i < obstacles.length; i++) {
+    if (hitRect(pb, obsBox(obstacles[i]))) { die(); return; }
+  }
+
+  // 吃宝石
+  for (i = gems.length - 1; i >= 0; i--) {
+    var g = gems[i];
+    var gy = L.groundY - g.yOff + Math.sin(g.ph) * L.playerH * 0.10;
+    if (circleRect(g.x, gy, g.r, pb)) {
+      g.got = true;
+      gemsGot++;
+      scoreF += 25;
+      blip(900, 1400, 0.09, 'triangle', 0.05);
+      addPop(g.x, gy, '+25');
+    }
+  }
+
+  updateParts(dt);
+  syncScore();
+}
+
+function blinkTick(dt) {
+  player.blinkT -= dt;
+  if (player.blinkT <= 0) { player.blinkT = rand(2.4, 6); player.blink = 0.11; }
+  if (player.blink > 0) player.blink -= dt;
+}
+
+/* ============================ 绘制 ============================ */
+function rr(x, y, w, h, r) {
+  r = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+  ctx.fill();
+}
+
+function drawSky() {
+  var g = ctx.createLinearGradient(0, 0, 0, L.groundY);
+  g.addColorStop(0, palette.skyTop);
+  g.addColorStop(0.55, palette.skyMid);
+  g.addColorStop(1, palette.skyBot);
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, L.groundY + 2);
+
+  var sx = W * 0.76, sy = H * 0.15, sr = Math.min(W, H) * 0.072;
+  ctx.globalAlpha = 0.9;
+  ctx.fillStyle = palette.sun;
+  ctx.beginPath(); ctx.arc(sx, sy, sr, 0, 6.2832); ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function drawHills() {
+  for (var i = 0; i < hills.length; i++) {
+    var h = hills[i];
+    var x = wrapX(h.x, h.p);
+    if (x < -h.w || x > W + h.w) continue;
+    ctx.fillStyle = h.layer === 0 ? palette.far : palette.mid;
+    ctx.beginPath();
+    ctx.moveTo(x - h.w / 2, L.groundY + 1);
+    ctx.lineTo(x - h.w * 0.20, L.groundY - h.h);
+    ctx.lineTo(x + h.w * 0.14, L.groundY - h.h * 0.84);
+    ctx.lineTo(x + h.w / 2, L.groundY + 1);
+    ctx.closePath();
+    ctx.fill();
+  }
+}
+
+function drawClouds() {
+  ctx.fillStyle = palette.cloud;
+  ctx.globalAlpha = 0.88;
+  for (var i = 0; i < clouds.length; i++) {
+    var c = clouds[i];
+    var x = wrapX(c.x, c.p), y = c.y, s = c.s * L.playerH * 0.62;
+    if (x < -s * 2 || x > W + s * 2) continue;
+    ctx.beginPath();
+    ctx.arc(x, y, s * 0.52, 0, 6.2832);
+    ctx.arc(x + s * 0.60, y + s * 0.10, s * 0.40, 0, 6.2832);
+    ctx.arc(x - s * 0.58, y + s * 0.14, s * 0.34, 0, 6.2832);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+
+function drawGround() {
+  ctx.fillStyle = palette.ground;
+  ctx.fillRect(0, L.groundY, W, H - L.groundY);
+  ctx.fillStyle = palette.gline;
+  ctx.fillRect(0, L.groundY, W, Math.max(2.5, 3 * L.S));
+
+  ctx.fillStyle = palette.dash;
+  var step = 78, off = worldX % step;
+  for (var x = -off; x < W + step; x += step) {
+    ctx.fillRect(x, L.groundY + 15 * L.S, 26 * L.S, 3 * L.S);
+    ctx.fillRect(x + 46 * L.S, L.groundY + 32 * L.S, 14 * L.S, 2.5 * L.S);
+  }
+}
+
+function drawCactus(o) {
+  var n = o.n || 1;
+  var cw = o.w / n;
+  for (var i = 0; i < n; i++) {
+    var x = o.x + i * cw + cw * 0.17;
+    var w = cw * 0.66;
+    var y = L.groundY - o.h;
+    var ar = w * 0.46;
+    ctx.fillStyle = palette.cactus;
+    rr(x, y, w, o.h, ar);
+    var aw = w * 0.52, ah = o.h * 0.32;
+    rr(x - aw * 0.86, y + o.h * 0.30, aw, ah, aw * 0.46);
+    rr(x + w - aw * 0.14, y + o.h * 0.43, aw, ah, aw * 0.46);
+    ctx.fillStyle = palette.cactusDark;
+    ctx.globalAlpha = 0.5;
+    rr(x + w * 0.18, y + o.h * 0.10, w * 0.16, o.h * 0.78, w * 0.08);
+    ctx.globalAlpha = 1;
+  }
+}
+
+function drawBird(o) {
+  var x = o.x, w = o.w, h = o.h;
+  var y = L.groundY - o.base - h;
+  var f = Math.sin(o.flap || 0);
+  ctx.fillStyle = palette.bird;
+
+  // 尾羽
+  ctx.beginPath();
+  ctx.moveTo(x + w * 0.28, y + h * 0.52);
+  ctx.lineTo(x - w * 0.16, y + h * 0.34);
+  ctx.lineTo(x + w * 0.30, y + h * 0.70);
+  ctx.closePath(); ctx.fill();
+
+  // 身体
+  ctx.beginPath();
+  ctx.ellipse(x + w * 0.50, y + h * 0.54, w * 0.33, h * 0.29, 0, 0, 6.2832);
+  ctx.fill();
+  // 头
+  ctx.beginPath();
+  ctx.arc(x + w * 0.82, y + h * 0.36, h * 0.23, 0, 6.2832);
+  ctx.fill();
+  // 嘴
+  ctx.beginPath();
+  ctx.moveTo(x + w * 0.97, y + h * 0.30);
+  ctx.lineTo(x + w * 1.20, y + h * 0.44);
+  ctx.lineTo(x + w * 0.97, y + h * 0.52);
+  ctx.closePath(); ctx.fill();
+  // 翅膀
+  ctx.beginPath();
+  ctx.moveTo(x + w * 0.44, y + h * 0.42);
+  ctx.lineTo(x + w * 0.02, y + h * 0.34 + f * h * 0.26);
+  ctx.lineTo(x + w * 0.52, y + h * 0.72);
+  ctx.closePath(); ctx.fill();
+  // 眼
+  ctx.fillStyle = palette.eye;
+  ctx.beginPath(); ctx.arc(x + w * 0.88, y + h * 0.30, h * 0.075, 0, 6.2832); ctx.fill();
+  ctx.fillStyle = palette.pupil;
+  ctx.beginPath(); ctx.arc(x + w * 0.90, y + h * 0.30, h * 0.038, 0, 6.2832); ctx.fill();
+}
+
+function drawGem(g) {
+  var x = g.x;
+  var y = L.groundY - g.yOff + Math.sin(g.ph) * L.playerH * 0.10;
+  var r = g.r * (1 + Math.sin(g.ph * 1.7) * 0.07);
+
+  ctx.globalAlpha = 0.20;
+  ctx.fillStyle = palette.gemHi;
+  ctx.beginPath(); ctx.arc(x, y, r * 2.2, 0, 6.2832); ctx.fill();
+  ctx.globalAlpha = 1;
+
+  ctx.fillStyle = palette.gem;
+  ctx.beginPath();
+  ctx.moveTo(x, y - r * 1.30);
+  ctx.lineTo(x + r, y - r * 0.14);
+  ctx.lineTo(x, y + r * 1.30);
+  ctx.lineTo(x - r, y - r * 0.14);
+  ctx.closePath(); ctx.fill();
+
+  ctx.globalAlpha = 0.55;
+  ctx.fillStyle = palette.gemHi;
+  ctx.beginPath();
+  ctx.moveTo(x, y - r * 1.30);
+  ctx.lineTo(x - r, y - r * 0.14);
+  ctx.lineTo(x, y + r * 0.18);
+  ctx.closePath(); ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function drawPlayer() {
+  var pw = L.playerW, ph = L.playerH;
+  var px = L.playerX;
+  var py = L.groundY - ph - player.yOff;
+
+  ctx.save();
+  if (state === 'dead') {
+    ctx.translate(px + pw / 2, py + ph / 2);
+    ctx.rotate(Math.min(1.55, deadT * 2.6));
+    ctx.translate(-pw / 2, -ph / 2);
+  } else {
+    ctx.translate(px, py);
+  }
+
+  var body = palette.body, dark = palette.bodyDark, belly = palette.belly;
+  var running = (state === 'run' || state === 'ready') && player.onGround;
+  var legPh = running ? Math.sin(player.runPhase) : 0;
+
+  // 尾巴
+  ctx.fillStyle = body;
+  ctx.beginPath();
+  ctx.moveTo(pw * 0.12, ph * 0.50);
+  ctx.lineTo(-pw * 0.24, ph * 0.34 + legPh * ph * 0.05);
+  ctx.lineTo(pw * 0.12, ph * 0.80);
+  ctx.closePath(); ctx.fill();
+
+  // 腿
+  ctx.fillStyle = dark;
+  var lw = pw * 0.20, lh = ph * 0.25;
+  var l1 = running ? legPh * pw * 0.11 : (player.onGround ? 0 : -pw * 0.06);
+  var l2 = running ? -legPh * pw * 0.11 : (player.onGround ? 0 : pw * 0.06);
+  rr(pw * 0.20 + l1, ph * 0.71, lw, lh, lw * 0.42);
+  rr(pw * 0.54 + l2, ph * 0.71, lw, lh, lw * 0.42);
+
+  // 身体
+  ctx.fillStyle = body;
+  rr(pw * 0.06, ph * 0.27, pw * 0.76, ph * 0.56, ph * 0.21);
+
+  // 肚皮
+  ctx.fillStyle = belly;
+  ctx.globalAlpha = 0.85;
+  rr(pw * 0.20, ph * 0.50, pw * 0.44, ph * 0.27, ph * 0.13);
+  ctx.globalAlpha = 1;
+
+  // 头
+  ctx.fillStyle = body;
+  rr(pw * 0.42, ph * 0.02, pw * 0.52, ph * 0.46, ph * 0.17);
+  // 吻部
+  rr(pw * 0.80, ph * 0.17, pw * 0.27, ph * 0.20, ph * 0.09);
+
+  // 围巾
+  ctx.fillStyle = palette.scarf;
+  var fl = Math.sin(worldX * 0.055) * ph * 0.05;
+  ctx.beginPath();
+  ctx.moveTo(pw * 0.46, ph * 0.33);
+  ctx.lineTo(pw * 0.06, ph * 0.30 + fl);
+  ctx.lineTo(pw * 0.04, ph * 0.45 + fl);
+  ctx.lineTo(pw * 0.48, ph * 0.48);
+  ctx.closePath(); ctx.fill();
+
+  // 眼睛
+  ctx.fillStyle = palette.eye;
+  ctx.beginPath(); ctx.arc(pw * 0.78, ph * 0.17, ph * 0.088, 0, 6.2832); ctx.fill();
+  if (player.blink > 0 && state !== 'dead') {
+    ctx.fillStyle = palette.pupil;
+    ctx.fillRect(pw * 0.69, ph * 0.155, pw * 0.19, ph * 0.035);
+  } else {
+    ctx.fillStyle = palette.pupil;
+    ctx.beginPath(); ctx.arc(pw * 0.805, ph * 0.17, ph * 0.047, 0, 6.2832); ctx.fill();
+  }
+
+  ctx.restore();
+}
+
+function drawParts() {
+  var i, p;
+  for (i = 0; i < parts.length; i++) {
+    p = parts[i];
+    ctx.globalAlpha = clamp(p.life / p.max, 0, 1) * 0.55;
+    ctx.fillStyle = palette.dash;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.2832); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  ctx.textAlign = 'center';
+  ctx.font = '700 ' + Math.round(14 * L.S + 6) + 'px system-ui,-apple-system,sans-serif';
+  for (i = 0; i < pops.length; i++) {
+    p = pops[i];
+    ctx.globalAlpha = clamp(p.life / p.max, 0, 1);
+    ctx.fillStyle = palette.gem;
+    ctx.fillText(p.text, p.x, p.y);
+  }
+  ctx.globalAlpha = 1;
+  ctx.textAlign = 'start';
+}
+
+function render() {
+  ctx.save();
+  if (shake > 0) {
+    ctx.translate(rand(-1, 1) * shake * 10 * L.S, rand(-1, 1) * shake * 8 * L.S);
+  }
+  drawSky();
+  drawHills();
+  drawClouds();
+  drawGround();
+
+  var i;
+  for (i = 0; i < obstacles.length; i++) {
+    if (obstacles[i].kind === 'bird') drawBird(obstacles[i]);
+    else drawCactus(obstacles[i]);
+  }
+  for (i = 0; i < gems.length; i++) drawGem(gems[i]);
+  drawParts();
+  drawPlayer();
+  ctx.restore();
+
+  if (flash > 0) {
+    ctx.fillStyle = 'rgba(255,255,255,' + (flash * 0.45).toFixed(3) + ')';
+    ctx.fillRect(0, 0, W, H);
+  }
+}
+
+/* ============================ 主循环 ============================ */
+function frame(t) {
+  requestAnimationFrame(frame);
+  if (paused) { lastT = 0; return; }
+  if (!lastT) lastT = t;
+  var dt = (t - lastT) / 1000;
+  lastT = t;
+  if (dt <= 0) return;
+  if (dt > 1 / 30) dt = 1 / 30;
+  update(dt);
+  render();
+}
+
+/* ============================ 启动 ============================ */
+layout();
+reset();
+state = 'ready';
+elHi.textContent = 'HI ' + hi;
+requestAnimationFrame(frame);
+
+})();
+</script>
+
+<!-- ── 回游戏中心的出口：**长按 1.2 秒**才触发，短按无效，防误触 ── -->
+<div id="rugeHome" aria-label="长按回游戏中心">🏠</div>
+<style>
+  #rugeHome{position:fixed;right:9px;bottom:9px;z-index:900;width:46px;height:46px;
+    border-radius:50%;background:rgba(255,255,255,.9);border:1.5px solid rgba(0,0,0,.14);
+    display:flex;align-items:center;justify-content:center;font-size:21px;line-height:1;
+    box-shadow:0 2px 9px rgba(0,0,0,.16);user-select:none;-webkit-user-select:none;
+    cursor:pointer;opacity:.5;transition:opacity .18s,transform .18s;touch-action:none}
+  #rugeHome.press{opacity:1;transform:scale(1.18)}
+  #rugeHome .rtip{position:absolute;right:54px;top:50%;transform:translateY(-50%);
+    white-space:nowrap;font-size:11.5px;color:#3A4A58;background:rgba(255,255,255,.95);
+    border:1px solid rgba(0,0,0,.1);border-radius:9px;padding:5px 9px;opacity:0;
+    pointer-events:none;transition:opacity .18s}
+  #rugeHome.press .rtip{opacity:1}
+</style>
+<script>
+(function(){
+  // 浏览器里没有原生桥 —— 不显示这个按钮，免得点了没反应
+  if (!window.RugeNav || !window.RugeNav.home) return;
+  var b = document.createElement('div');
+  b.id = 'rugeHome';
+  b.innerHTML = '🏠<span class="rtip">松手即取消 · 长按 1.2 秒回游戏中心</span>';
+  document.body.appendChild(b);
+  var timer = null;
+  function down(e){
+    if (e.cancelable) e.preventDefault();
+    b.classList.add('press');
+    timer = setTimeout(function(){
+      timer = null; b.classList.remove('press');
+      try { window.RugeNav.home(); } catch(err){}
+    }, 1200);
+  }
+  function up(){ if (timer){ clearTimeout(timer); timer = null; } b.classList.remove('press'); }
+  b.addEventListener('pointerdown', down);
+  b.addEventListener('pointerup', up);
+  b.addEventListener('pointercancel', up);
+  b.addEventListener('pointerleave', up);
+  b.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#FBF3E4">
+<link rel="stylesheet" href="../shared/ui.css"><title>汉字拼一拼</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{
+    font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    background:radial-gradient(120% 80% at 50% 0%,#FFFBF0 0%,#FBF1DE 55%,#F4E4C8 100%);
+    color:#2B2118;-webkit-user-select:none;user-select:none;
+    display:flex;flex-direction:column;
+    padding:calc(env(safe-area-inset-top,0px) + 10px) 0 calc(env(safe-area-inset-bottom,0px) + 8px);
+  }
+  header{display:flex;align-items:center;gap:10px;padding:0 16px;flex:none}
+  .lv{font-size:14px;font-weight:700;color:#8A7355;letter-spacing:.5px;white-space:nowrap}
+  .lv b{color:#C8462F;font-size:19px}
+  .dots{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+  .dots i{width:6px;height:6px;border-radius:50%;background:#E0CFB0;transition:background .3s}
+  .dots i.on{background:#7FB069}
+  .dots i.now{background:#C8462F;transform:scale(1.4)}
+  .bank{display:flex;align-items:center;gap:6px;flex:none;
+    background:#fff;border:1.5px solid #EADCC2;border-radius:20px;padding:4px 11px 4px 8px;
+    font-size:12px;color:#8A7355;font-weight:700;box-shadow:0 2px 8px rgba(140,110,70,.07)}
+  .bank .ch{font-size:19px;color:#2B2118;font-weight:400;line-height:1}
+  .reset{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid #EADCC2;
+    background:#fff;color:#A8906C;font-size:17px;line-height:1;cursor:pointer;padding:0;
+    display:flex;align-items:center;justify-content:center}
+  .reset:active{background:#F6EEDF}
+
+  #stage{flex:1;position:relative;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;padding:4px 16px 0}
+  #hint{font-size:14.5px;color:#9C8564;text-align:center;line-height:1.7;
+    max-width:320px;transition:opacity .3s;min-height:48px;
+    display:flex;align-items:center;justify-content:center}
+  #hint em{font-style:normal;color:#C8462F;font-weight:700}
+  #parts{position:relative;width:100%;max-width:360px;flex:1;
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+    gap:14px;align-content:center;min-height:220px}
+
+  /* 卡片是真 <button>：好点、可聚焦、能被无障碍与自动化看到 */
+  .part{
+    width:104px;height:104px;border-radius:24px;padding:0;
+    font-family:inherit;font-size:62px;line-height:1;color:#2B2118;
+    background:linear-gradient(180deg,#FFFFFF,#FDF7EC);
+    border:2.5px solid #E8D8BB;
+    box-shadow:0 6px 16px rgba(150,115,70,.13),0 1px 0 #fff inset;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;touch-action:none;position:relative;
+    transition:box-shadow .16s,border-color .16s,transform .16s;
+  }
+  .part::after{content:'';position:absolute;inset:6px;border-radius:18px;
+    border:1.5px dashed #F0E2C8;pointer-events:none}
+  .part:focus-visible{outline:3px solid #7FB069;outline-offset:3px}
+  .part.sel{border-color:#7FB069;transform:translateY(-8px) scale(1.06);
+    box-shadow:0 0 0 5px rgba(127,176,105,.25),0 14px 26px rgba(150,115,70,.24)}
+  .part.drag{cursor:grabbing;z-index:99;transition:none;
+    box-shadow:0 18px 34px rgba(150,115,70,.3);border-color:#D9BE8E}
+  .part.near{border-color:#7FB069;box-shadow:0 0 0 5px rgba(127,176,105,.22),0 10px 24px rgba(150,115,70,.2)}
+  .part.bounce{animation:bounce .44s cubic-bezier(.34,1.56,.64,1)}
+  @keyframes bounce{0%{transform:scale(1)}35%{transform:scale(.9)}70%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+  .pile{display:flex;gap:2px;align-items:center;justify-content:center;
+    padding:7px 13px;border-radius:28px;background:rgba(127,176,105,.10);
+    border:2.5px dashed #A8CB94;animation:pop .3s cubic-bezier(.34,1.56,.64,1);
+    cursor:pointer;transition:border-color .16s,background .16s}
+  .pile.hot{border-color:#7FB069;background:rgba(127,176,105,.22)}
+  @keyframes pop{0%{transform:scale(.9)}100%{transform:scale(1)}}
+  .pile .part{width:92px;height:92px;font-size:54px;border-radius:20px;
+    box-shadow:0 4px 12px rgba(150,115,70,.12);cursor:default}
+
+  #reveal{position:absolute;inset:0;display:none;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    background:radial-gradient(60% 45% at 50% 42%,rgba(255,250,235,.97),rgba(251,241,222,.99));
+    z-index:200;padding:0 26px}
+  #reveal.show{display:flex}
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
+  /* 关键：**只用 transform 做动画，绝不用 opacity/filter 起步**。
+     动画被节流/冻结时，内容仍然是可见的 —— 只是不动而已。
+     （踩过：原来 0% 是 opacity:0，后台 WebView 动画不跑 → 字整个看不见） */
+  #bigchar{font-size:150px;line-height:1.05;text-shadow:0 10px 30px rgba(200,70,47,.18);
+    animation:grow .6s cubic-bezier(.34,1.4,.5,1)}
+  /* 幅度收窄到"冻结也读得清"：原来 0% 是 scale(.2)，动画一冻字就小得看不见 */
+  @keyframes grow{0%{transform:scale(.78) rotate(-5deg)}
+                 60%{transform:scale(1.06) rotate(1.5deg)}
+                 100%{transform:scale(1) rotate(0)}}
+  @keyframes rise{0%{transform:translateY(9px) scale(.97)}100%{transform:none}}
+  #py{font-size:23px;color:#C8462F;letter-spacing:3px;font-weight:600;margin-top:2px}
+  #why{font-size:16.5px;color:#6E5A3E;margin-top:16px;line-height:1.85;
+    max-width:300px;background:#fff;border-radius:16px;padding:13px 20px;
+    border:1.5px solid #F0E2C8;box-shadow:0 4px 14px rgba(150,115,70,.09);
+    animation:rise .5s cubic-bezier(.34,1.4,.5,1)}
+  #next{margin-top:26px;border:none;border-radius:30px;padding:16px 52px;
+    font-size:19px;font-weight:800;letter-spacing:2px;color:#fff;font-family:inherit;
+    background:linear-gradient(180deg,#E0603F,#C8462F);
+    box-shadow:0 8px 20px rgba(200,70,47,.32);cursor:pointer;
+    animation:rise .5s .12s cubic-bezier(.34,1.4,.5,1)}
+  #next:active{transform:translateY(2px);box-shadow:0 4px 12px rgba(200,70,47,.3)}
+  body.noanim *{animation:none !important;transition:none !important}
+  canvas#fx{position:fixed;inset:0;pointer-events:none;z-index:300}
+  #dbg{display:none;position:fixed;left:0;right:0;bottom:0;z-index:400;
+    background:#2B2118;color:#9FE8B0;font:11px/1.5 ui-monospace,monospace;
+    padding:5px 8px;white-space:pre-wrap;word-break:break-all}
+  body.dbg #dbg{display:block}
+  footer{flex:none;text-align:center;font-size:11.5px;color:#B8A385;
+    padding:6px 20px 2px;line-height:1.6}
+
+body{background:#FBF7EF;color:#243A35;font-family:"Noto Serif CJK SC","Songti SC",serif;padding-top:calc(env(safe-area-inset-top,0px) + 24px)}
+header{gap:9px;padding:0 18px}.lv{font:700 12px system-ui;letter-spacing:0;color:#758780}.lv b{color:#268FAB}.bank{font-family:system-ui;background:#EAF0E5;border:0;box-shadow:none;font-size:11px}.dots{display:none}.reset{width:44px;height:44px;color:#268FAB}.home{font:600 12px system-ui;padding:8px 12px;min-height:44px;background:#fffdf7;border:1px solid #DCE5DB;border-radius:24px;color:#243A35}#parts{max-width:400px;min-height:210px}.part{width:110px;height:128px;border-radius:14px;border:1.5px solid #D5CBB4;background:#fffdf7;box-shadow:0 4px 0 #E8DECA;font-weight:400}.part::after{border-radius:9px;border-color:#E4DCCB}.part.sel{border-color:#268FAB;box-shadow:0 0 0 4px #268fab20,0 8px 0 #E8DECA}#stage{padding-top:18px}#hint{font-family:system-ui;font-size:13px;line-height:1.6;color:#758780;min-height:42px}#hint em{color:#268FAB}#reveal{background:#FBF7EF}#bigchar{font-weight:500;color:#243A35;text-shadow:none}#why{font-family:system-ui;font-size:14px;line-height:1.7;border-color:#DCE5DB;box-shadow:none;background:#fffdf7}#py{color:#268FAB}#next{background:#268FAB;box-shadow:0 4px 0 #196f87;letter-spacing:1px;font-family:system-ui;padding:14px 42px}footer{font-family:system-ui;color:#8A978D;padding-bottom:22px}#collection{font:12px system-ui;color:#758780;text-align:center;margin:0 15px 16px}@media(orientation:landscape){#hint{min-height:28px}#parts{min-height:120px}.part{height:94px;width:88px;font-size:54px}#bigchar{font-size:100px}#why{margin-top:6px}#next{margin-top:12px}header{flex:none}#stage{padding-top:4px}footer{padding-bottom:8px}}
+</style>
+</head>
+<body>
+<header><button class="home" id="home">← 游戏中心</button>
+  <div class="lv">第 <b id="lvnum">1</b> 关</div>
+  <div class="dots" id="dots"></div>
+  <div class="bank"><span class="ch" id="bankch">·</span><span id="banknum">0</span></div>
+  <button class="reset" id="reset" title="重来这一关" aria-label="重来这一关">↺</button>
+</header>
+
+<div id="stage">
+  <div id="hint"></div>
+  <div id="parts"></div>
+</div>
+
+<div id="reveal">
+  <div id="bigchar"></div>
+  <div id="py"></div>
+  <div id="why"></div>
+  <button id="next">下一个</button>
+</div>
+
+<div id="collection"></div><canvas id="fx"></canvas>
+<div id="dbg"></div>
+<footer>点一下这张，再点一下那张 · 也可以直接拖</footer>
+
+<script>
+'use strict';
+/* ════════════════════════════════════════════════════
+   关卡数据
+   p = 答案部件（顺序无关）   c = 合成的字
+   py = 拼音                 why = 字理（讲"为什么"）
+   extra = 干扰部件
+   ════════════════════════════════════════════════════ */
+const LEVELS = [
+  { p:['木','木'],       c:'林', py:'lín',   why:'两棵树站在一起，就成了树林' },
+  { p:['日','月'],       c:'明', py:'míng',  why:'太阳和月亮，都很亮' },
+  { p:['女','子'],       c:'好', py:'hǎo',   why:'女在左，子在右，合起来就是好' },
+  { p:['小','大'],       c:'尖', py:'jiān',  why:'上面小、下面大，就是尖尖的', extra:['木','日'] },
+  { p:['人','人'],       c:'从', py:'cóng',  why:'一个人跟着另一个人，就是跟从' },
+  { p:['不','正'],       c:'歪', py:'wāi',   why:'不正，就是歪', extra:['小','力'] },
+  { p:['日','生'],       c:'星', py:'xīng',  why:'日和生，合成星。夜空中，星星亮晶晶', extra:['月','田'] },
+  { p:['木','木','木'],  c:'森', py:'sēn',   why:'三棵树，树好多好多' },
+  { p:['口','口','口'],  c:'品', py:'pǐn',   why:'三张嘴，一起品尝味道', extra:['日'] },
+  { p:['人','人','人'],  c:'众', py:'zhòng', why:'三个人，就是很多人', extra:['木'] },
+  { p:['亻','木'],       c:'休', py:'xiū',   why:'亻就是人 —— 一个人靠在树边休息' },
+  { p:['氵','可'],       c:'河', py:'hé',    why:'三点水放左边，可放右边，就拼成河', extra:['木','日'] },
+];
+
+/* ════════════════ ENGINE-START ════════════════
+   纯状态机：不碰 DOM，可被 Node 直接抽出来测。
+   所有游戏规则都在这段里，DOM 层只负责画和收事件。
+   ═══════════════════════════════════════════════ */
+const sameSet = (a, b) =>
+  a.length === b.length && [...a].sort().join('\u0000') === [...b].sort().join('\u0000');
+
+const isSubset = (sub, sup) => {
+  const c = [...sup];
+  for (const x of sub) { const i = c.indexOf(x); if (i < 0) return false; c.splice(i, 1); }
+  return true;
+};
+
+/** 开一局 */
+function newGame(levelIndex){
+  const L = LEVELS[levelIndex];
+  return {
+    li: levelIndex, need: [...L.p], char: L.c, py: L.py, why: L.why,
+    free: [...L.p, ...(L.extra || [])],   // 还在桌上的卡片
+    pile: [],                             // 已经合到一起的部件
+    done: false,
+  };
+}
+
+/**
+ * 一次操作。targetCh 为 null 表示"放到堆上"。
+ * 返回 'fuse' | 'merge' | 'reject'
+ *
+ * 规则（**这里就是修掉卡死 bug 的地方**）：
+ *   · 放到**另一张卡**上 → 两张一起进堆
+ *   · 放到**堆**上       → 只有这一张进堆
+ * 旧版只把"被拖的那张"记进堆，另一张被白白吞掉 —— 三部件关（木木木）必然走死：
+ *   堆=[木] → 堆=[木,木] → 卡用完了，凑不齐三张。
+ */
+function tryDrop(g, ch, targetCh){
+  if (g.done) return 'reject';
+  const onPile = (targetCh == null);
+  if (onPile  && g.pile.length === 0) return 'reject';   // 空堆不能单张放
+  if (!onPile && g.pile.length > 0)   return 'reject';   // 有堆时只能往堆上放
+  const add = onPile ? [ch] : [ch, targetCh];
+  if (!isSubset([...g.pile, ...add], g.need)) return 'reject';
+
+  const f = [...g.free];
+  for (const x of add) if (f.indexOf(x) < 0) return 'reject';   // 先确认都在桌上
+  for (const x of add) f.splice(f.indexOf(x), 1);
+
+  g.free = f;
+  g.pile = [...g.pile, ...add];
+  if (sameSet(g.pile, g.need)) { g.done = true; return 'fuse'; }
+  return 'merge';
+}
+
+/**
+ * 不变量：**永远不会卡死**。
+ * 「答案里还差的部件」必须都还在桌上 —— 只要它成立，这关一定能拼完。
+ * 旧版正是在这里违规（差的比手上多），这就是卡死的本质。
+ */
+function invariantHolds(g){
+  const missing = [...g.need];
+  for (const x of g.pile) { const i = missing.indexOf(x); if (i >= 0) missing.splice(i, 1); }
+  return isSubset(missing, g.free);
+}
+/* ════════════════ ENGINE-END ════════════════ */
+
+
+/* ══════════ 以下为 DOM 层（引擎不依赖它）══════════ */
+const $ = s => document.querySelector(s);
+let AC = null;
+
+function tone(freq, dur, type, vol, delay){
+  try{
+    if(!AC) AC = new (window.AudioContext||window.webkitAudioContext)();
+    if(AC.state === 'suspended') AC.resume();
+    const t0 = AC.currentTime + (delay||0);
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || 'sine'; o.frequency.setValueAtTime(freq, t0);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(vol||0.16, t0+0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0+(dur||0.18));
+    o.connect(g); g.connect(AC.destination);
+    o.start(t0); o.stop(t0+(dur||0.18)+0.03);
+  }catch(e){}
+}
+const sfx = {
+  tap:    () => tone(660, 0.06, 'sine', 0.06),
+  merge:  () => { tone(587,0.13,'sine',0.13); tone(880,0.16,'sine',0.10,0.07); },
+  bounce: () => { tone(300,0.13,'sine',0.09); tone(240,0.15,'sine',0.07,0.08); },
+  win:    () => { [523,659,784,1047].forEach((f,i)=>tone(f,0.3,'triangle',0.12,i*0.09)); },
+};
+
+/** 朗读：① 原生桥（WebView 没有 Web Speech API）② 真浏览器兜底 */
+function speak(text){
+  try{ if(window.RugeTTS && RugeTTS.speak && RugeTTS.speak(text)) return true; }catch(e){}
+  try{
+    if(!('speechSynthesis' in window)) return false;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang='zh-CN'; u.rate=0.82; u.pitch=1.15;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+    return true;
+  }catch(e){ return false; }
+}
+
+// 支持 #8 这样直接跳到第 8 关（方便验证，家长也能用来跳关）
+const DEBUG  = /[?&]debug=1/.test(location.search);
+const NOANIM = /[?&]noanim=1/.test(location.search);
+if (NOANIM) document.addEventListener('DOMContentLoaded', () => document.body.classList.add('noanim'));
+let lastResult = '-';
+function dbg(extra){
+  if(!DEBUG) return;
+  document.body.classList.add('dbg');
+  const st = { level: idx+1, need: G.need.join(''), pile: G.pile.join('|'),
+               free: G.free.join('|'), done: G.done, sel: sel ? sel.dataset.ch : null,
+               last: lastResult, inv: invariantHolds(G) };
+  const rv = document.getElementById('reveal');
+  const cs = getComputedStyle(rv), bs = getComputedStyle(document.getElementById('bigchar'));
+  document.getElementById('dbg').textContent =
+    `L${st.level} need=${st.need} pile=[${st.pile}] free=[${st.free}] done=${st.done} sel=${st.sel} last=${st.last} inv=${st.inv}` +
+    ` | reveal=${cs.display}/${cs.opacity} big=${bs.opacity}` +
+    ` | tts=${ttsStatus()}`;
+}
+
+let lastDragEndAt = 0;
+let idx = (() => {
+  const n = parseInt((location.hash || '').slice(1), 10);
+  return Number.isFinite(n) ? Math.max(0, Math.min(LEVELS.length - 1, n - 1)) : 0;
+})(), bank = [], G = null, sel = null;
+try { const saved=JSON.parse(localStorage.getItem('hzPuzzleProgress1')||'{}'); if(!location.hash)idx=Math.max(0,Math.min(LEVELS.length-1,saved.idx||0));bank=Array.isArray(saved.bank)?saved.bank.filter(c=>LEVELS.some(l=>l.c===c)):[];} catch(e){}
+function saveProgress(){try{localStorage.setItem('hzPuzzleProgress1',JSON.stringify({idx,bank}));let stat=JSON.parse(localStorage.getItem('rugeStat')||'{}');stat['hanzi-puzzle']={best:bank.length,last:Date.now()};localStorage.setItem('rugeStat',JSON.stringify(stat));}catch(e){}}
+let campaignComplete=false;
+
+function render(){
+  saveProgress();$('#next').textContent='下一个';
+  $('#collection').textContent=bank.length?'字卡收藏 · '+bank.join(' '):'把部件拼在一起，收集你的第一张字卡';
+  G = newGame(idx); sel = null;
+  $('#lvnum').textContent = idx + 1;
+  $('#bankch').textContent = bank.length ? bank[bank.length-1] : '·';
+  $('#banknum').textContent = bank.length;
+  $('#dots').innerHTML = LEVELS.map((_,i)=>
+    `<i class="${i<idx?'on':''} ${i===idx?'now':''}"></i>`).join('');
+  $('#reveal').classList.remove('show');
+  $('#hint').style.opacity = 1;
+  $('#hint').innerHTML = G.need.length >= 3
+    ? '这次要拼 <em>三个</em> 部件<br>一个一个放上去'
+    : (LEVELS[idx].extra
+        ? '把能拼成字的部件点起来<br><em>有几个是来捣乱的</em>'
+        : '点一张，再点另一张<br><em>看看能变出什么字</em>');
+  $('#stage').style.display = 'flex';
+  draw();
+  dbg();
+}
+
+function draw(){
+  const parts = $('#parts');
+  parts.innerHTML = '';
+  if(G.pile.length){
+    const p = document.createElement('div');
+    p.className = 'pile'; p.dataset.pile = '1';
+    p.setAttribute('role','button'); p.setAttribute('aria-label','已拼合的部件');
+    G.pile.forEach(ch => p.appendChild(makeCard(ch, true)));
+    p.addEventListener('click', e => { e.stopPropagation(); onPileTap(); });
+    parts.appendChild(p);
+  }
+  G.free.forEach(ch => parts.appendChild(makeCard(ch, false)));
+}
+
+/** 卡片 = 真 <button>：既能点，也能拖，自动化工具也看得到 */
+function makeCard(ch, inPile){
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'part'; b.textContent = ch;
+  b.dataset.ch = ch;
+  b.setAttribute('aria-label', '部件 ' + ch);
+  if(inPile){ b.tabIndex = -1; }
+  else{
+    b.addEventListener('click', () => {
+      if(Date.now() - lastDragEndAt < 320) return;   // 刚拖完，忽略这次 click
+      onCardTap(b);
+    });
+    attachDrag(b);
+  }
+  return b;
+}
+
+/* ── 点击式交互（5 岁用点击比拖拽可靠得多）── */
+function onCardTap(btn){
+  if(G.done) return;
+  if(G.pile.length > 0){ doDrop(btn, null); return; }      // 已有堆：点卡片 = 放进堆
+  if(!sel){ sel = btn; btn.classList.add('sel'); sfx.tap(); lastResult='select'; dbg(); return; }
+  if(sel === btn){ sel.classList.remove('sel'); sel = null; lastResult='deselect'; dbg(); return; }
+  doDrop(btn, sel.dataset.ch);
+}
+function onPileTap(){
+  if(G.done || !sel) return;
+  doDrop(sel, null);
+}
+
+/* ── 统一入口：走引擎，再按结果更新界面 ── */
+function doDrop(btn, targetCh){
+  const r = tryDrop(G, btn.dataset.ch, targetCh);
+  lastResult = r;
+  if(r === 'reject'){
+    sfx.bounce();
+    btn.classList.add('bounce');
+    setTimeout(()=>btn.classList.remove('bounce'), 460);
+    if(sel){ sel.classList.remove('sel'); sel = null; }
+    dbg();
+    return;
+  }
+  if(sel){ sel.classList.remove('sel'); sel = null; }
+  if(!invariantHolds(G)) console.error('不变量被破坏 —— 会卡死', G);
+  sfx.merge();
+  if(r === 'fuse') fuse(); else draw();
+  dbg();
+}
+
+/* ── 拖拽（点击之外的补充方式）── */
+function attachDrag(el){
+  let sx=0, sy=0, moved=false, near=null;
+  el.addEventListener('pointerdown', e => {
+    if(G.done || el.classList.contains('drag')) return;
+    try{ el.setPointerCapture(e.pointerId); }catch(_){}
+    sx = e.clientX; sy = e.clientY; moved = false;
+    el.classList.add('drag');
+  });
+  el.addEventListener('pointermove', e => {
+    if(!el.classList.contains('drag')) return;
+    const dx = e.clientX - sx, dy = e.clientY - sy;
+    if(Math.abs(dx)+Math.abs(dy) > 8) moved = true;
+    el.style.transform = `translate(${dx}px,${dy}px)`;
+    const r = el.getBoundingClientRect(), cx = r.left+r.width/2, cy = r.top+r.height/2;
+    let best = null, bd = 1e9;
+    const cands = G.pile.length
+      ? [$('#parts .pile')]
+      : [...document.querySelectorAll('#parts .part:not(.drag)')];
+    for(const c of cands){
+      if(!c) continue;
+      const q = c.getBoundingClientRect();
+      const d = Math.hypot(cx-(q.left+q.width/2), cy-(q.top+q.height/2));
+      if(d < bd){ bd = d; best = c; }
+    }
+    if(near && near !== best) near.classList.remove('near');
+    near = (best && bd < 150) ? best : null;
+    if(near) near.classList.add('near');
+  });
+  const end = () => {
+    if(!el.classList.contains('drag')) return;
+    el.classList.remove('drag');
+    el.style.transform = '';
+    const t = near; if(near) near.classList.remove('near'); near = null;
+    if(moved){
+      // 拖完别再触发一次 click。用时间戳而不是 setTimeout ——
+      // 定时器被冻结时 suppressClick 会永远卡住 true，那样**点击就彻底失效了**。
+      lastDragEndAt = Date.now();
+      if(t){ t.dataset.pile ? doDrop(el, null) : doDrop(el, t.dataset.ch); }
+    }
+  };
+  el.addEventListener('pointerup', end);
+  el.addEventListener('pointercancel', end);
+}
+
+/* ── 合成成功 ── */
+function fuse(){
+  const L = LEVELS[idx];
+  // 立刻切到揭晓层 —— **不要用 setTimeout 延后**。
+  // 后台/被节流的 WebView 里定时器可能根本不跑，那样内容就永远不出现了。
+  // 视觉节拍交给 CSS 动画：动画不跑也不影响"看得见"。
+  const p = $('#parts .pile');
+  if(p){ p.style.transform='scale(.85)'; p.style.opacity='0'; }
+
+  sfx.win(); speak(L.c);
+  burst(innerWidth/2, innerHeight*0.42);
+
+  $('#stage').style.display = 'none';
+  $('#bigchar').textContent = L.c;
+  $('#py').textContent = L.py;
+  $('#why').textContent = L.why;
+  $('#reveal').classList.add('show');
+  if(!bank.includes(L.c)) bank.push(L.c);saveProgress();
+  $('#bankch').textContent = L.c;
+  $('#banknum').textContent = bank.length;
+  refreshReveal();      // 用 transition 做视觉节拍（属性变化，不依赖计时器）
+  dbg();
+}
+
+/** 朗读通道的真实状态，供调试条显示（正常玩看不到） */
+function ttsStatus(){
+  try{
+    if(!window.RugeTTS) return 'no-bridge';
+    const av = (typeof RugeTTS.available === 'function') ? RugeTTS.available() : null;
+    const why = (typeof RugeTTS.status === 'function') ? RugeTTS.status() : '';
+    return (av ? 'ready' : 'unavailable') + (why ? '(' + why + ')' : '');
+    return 'bridge?';
+  }catch(e){ return 'err:' + e.message; }
+}
+
+/** 让大字/说明有一个"长出来"的节拍：靠 CSS transition，不靠计时器。
+ *  transition 不跑时元素停在最终状态，永远是读得清的。 */
+function refreshReveal(){
+  const bc = $('#bigchar'), wy = $('#why'), nx = $('#next');
+  [bc, wy, nx].forEach(el => { el.style.transition = 'none'; el.style.transform = 'scale(.8)'; el.style.opacity = '1'; });
+  requestAnimationFrame(() => {
+    [bc, wy, nx].forEach(el => {
+      el.style.transition = 'transform .5s cubic-bezier(.34,1.4,.5,1)';
+      el.style.transform = 'none';
+    });
+  });
+}
+
+/* ── 粒子 ── */
+const cv = $('#fx'), cx2 = cv.getContext('2d');
+let bits = [];
+function sizeCanvas(){
+  const d = window.devicePixelRatio || 1;
+  cv.width = innerWidth*d; cv.height = innerHeight*d;
+  cv.style.width = innerWidth+'px'; cv.style.height = innerHeight+'px';
+  cx2.setTransform(d,0,0,d,0,0);
+}
+sizeCanvas(); addEventListener('resize', sizeCanvas);
+function burst(x, y){
+  const cols = ['#E8B33A','#F2C94C','#C8462F','#7FB069','#FFF0B8'];
+  for(let i=0;i<56;i++){
+    const a = Math.random()*Math.PI*2, sp = 2.4+Math.random()*7.4;
+    bits.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-2.2,
+      r:2.6+Math.random()*5.2,life:1,col:cols[(Math.random()*cols.length)|0],
+      rot:Math.random()*6.28,vr:(Math.random()-.5)*.3});
+  }
+}
+function tick(){
+  cx2.clearRect(0,0,innerWidth,innerHeight);
+  bits = bits.filter(b=>b.life>0);
+  for(const b of bits){
+    b.x+=b.vx; b.y+=b.vy; b.vy+=0.28; b.vx*=0.985; b.life-=0.0135; b.rot+=b.vr;
+    cx2.save(); cx2.globalAlpha = Math.max(0,b.life);
+    cx2.translate(b.x,b.y); cx2.rotate(b.rot); cx2.fillStyle = b.col;
+    const s = b.r*2;
+    cx2.fillRect(-s/2, -s*(0.42+Math.random()*0.12), s, s*0.84);
+    cx2.restore();
+  }
+  requestAnimationFrame(tick);
+}
+tick();
+
+/* ── 按钮 ── */
+$('#reset').addEventListener('click', () => { sfx.tap(); render(); });
+$('#next').addEventListener('click', () => {
+  sfx.tap();
+  if(campaignComplete){campaignComplete=false;idx=0;render();return;}
+  if(idx < LEVELS.length - 1){ idx++; render(); }
+  else{
+    $('#bigchar').textContent = '🎉';
+    $('#py').textContent = '';
+    $('#why').innerHTML = `你一共拼出了 <b>${bank.length}</b> 个字<br>
+      <span style="font-size:27px;letter-spacing:5px">${bank.join(' ')}</span>`;
+    $('#next').textContent = '再来一遍';
+    campaignComplete=true;
+  }
+});
+document.addEventListener('pointerdown', function once(){
+  try{ if(!AC) AC = new (window.AudioContext||window.webkitAudioContext)(); AC.resume(); }catch(e){}
+  document.removeEventListener('pointerdown', once);
+}, {once:true});
+
+/* 给自动化测试留的口子（不影响游戏本身） */
+window.__game = {
+  LEVELS, newGame, tryDrop, invariantHolds, sameSet, isSubset,
+  state: () => ({ li: idx, free: [...G.free], pile: [...G.pile], done: G.done }),
+};
+
+render();
+</script>
+
+<script>document.querySelector('#home').onclick=()=>{try{if(window.RugeNav){RugeNav.home();return;}}catch(e){}location.href='../index.html'};</script></body></html>

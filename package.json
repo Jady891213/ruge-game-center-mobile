@@ -1,0 +1,15 @@
+{
+  "name": "ruge-game-center",
+  "version": "4.2.0",
+  "private": true,
+  "description": "乳鸽游戏中心：离线网页小游戏与 Android WebView 外壳",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "python3 scripts/build.py",
+    "build:dev": "python3 scripts/build.py --dev"
+  }
+}

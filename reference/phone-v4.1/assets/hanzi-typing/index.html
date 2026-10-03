@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#FFFFFF">
+<title>看字打拼音</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{background:#FFFFFF;color:#1A1A1A;
+    font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC",system-ui,sans-serif;
+    -webkit-user-select:none;user-select:none}
+
+  /* ══════════ 选关 ══════════ */
+  #menu{position:absolute;inset:0;display:flex;flex-direction:column;
+    padding:calc(env(safe-area-inset-top,0px) + 14px) 18px calc(env(safe-area-inset-bottom,0px) + 14px);
+    overflow-y:auto}
+  #menu.hide{display:none}
+  .mtitle{font-size:27px;font-weight:800;letter-spacing:2px;color:#0B4E96;text-align:center}
+  .msub{font-size:13px;color:#8E9BA6;text-align:center;margin-top:5px}
+  .mtotal{display:flex;justify-content:center;gap:26px;margin:16px 0 6px;font-size:13px;color:#6B7A88}
+  .mtotal b{font-size:21px;color:#C2410C;font-weight:800}
+  .mtotal .st{color:#E8A317}
+  #levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  @media (orientation:landscape){ #levels{grid-template-columns:1fr 1fr 1fr} }
+  .lvcard{border:2px solid #DCE5EC;background:#FBFDFF;border-radius:16px;padding:13px 14px;
+    cursor:pointer;text-align:left;font-family:inherit;transition:transform .12s}
+  .lvcard:active{transform:scale(.975)}
+  .lvcard .no{font-size:12px;color:#8E9BA6;letter-spacing:1px}
+  .lvcard .nm{font-size:17px;font-weight:700;margin:3px 0 2px;color:#1A1A1A}
+  .lvcard .cs{font-size:clamp(17px,4.4vw,23px);letter-spacing:2px;color:#5A6A78;
+    line-height:1.25;word-break:break-all}
+  .lvcard .stars{font-size:15px;letter-spacing:2px;margin-top:5px;color:#E8A317}
+  .lvcard .stars i{font-style:normal;color:#D6DEE5}
+  .lvcard.bonus{background:#FFF8EC;border-color:#F0D9AE}
+  #menuFoot{margin-top:auto;padding-top:16px;font-size:12px;color:#A8B4BE;text-align:center;line-height:1.8}
+
+  /* ══════════ 游戏 ══════════ */
+  #play{position:absolute;inset:0;display:none;flex-direction:column;text-align:center;
+    padding:calc(env(safe-area-inset-top,0px) + 7px) 12px calc(env(safe-area-inset-bottom,0px) + 7px)}
+  #play.on{display:flex}
+
+  header{flex:none;display:flex;justify-content:space-between;align-items:center;gap:8px;
+    padding:0 2px 4px;font-size:11.5px;color:#6B7A88;flex-wrap:nowrap}
+  .stat{display:flex;gap:10px;align-items:baseline;white-space:nowrap;flex:none}
+  .stat b{font-size:20px;color:#0B6BCB;font-weight:800;transition:transform .12s}
+  .stat b.bump{transform:scale(1.32)}
+  .stat .cb b{color:#C2410C}
+  .stat .ac b{color:#0F7B3D}
+  .stat .cb b.hot{color:#E8340C}
+  .tools{display:flex;gap:5px;flex:none}
+  .tb{border:1.5px solid #D3DCE4;background:#F7FAFC;color:#4A5A68;font-family:inherit;
+    font-size:11.5px;padding:5px 9px;border-radius:9px;cursor:pointer;white-space:nowrap}
+  .tb.on{background:#E3F0FB;border-color:#0B6BCB;color:#0B4E96}
+
+  /* 进度条 */
+  /* 分数行（HTML 里叫 .statrow，CSS 原来只写了 .stat，漏了样式 → 挤成一团） */
+  .statrow{flex:none;display:flex;justify-content:center;gap:24px;align-items:baseline;
+    font-size:12.5px;color:#6B7A88;padding:3px 0 5px}
+  .statrow b{font-size:22px;color:#0B6BCB;font-weight:800;transition:transform .12s}
+  .statrow .cb b{color:#C2410C}
+  .statrow .ac b{color:#0F7B3D}
+  .statrow .cb b.hot{color:#E8340C}
+  #prog{flex:none;height:7px;background:#EDF1F5;border-radius:5px;margin:2px 4px 0;overflow:hidden}
+  #progFill{height:100%;width:0;border-radius:5px;
+    background:linear-gradient(90deg,#5FD98A,#0B6BCB);transition:width .25s}
+
+  #body{flex:1;min-height:0;display:flex;flex-direction:column}
+  #main{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;position:relative}
+  @media (orientation:landscape){
+    body #play{padding:calc(env(safe-area-inset-top,0px) + 5px) 16px calc(env(safe-area-inset-bottom,0px) + 5px)}
+    #body{flex-direction:row;align-items:center;gap:2.2vw}
+    #main{flex:1.05;min-width:0}
+    #bar{flex:.95;min-width:0;padding-top:0}
+    #foot{padding-top:12px;line-height:1.7}
+  }
+
+  #prev,#next{position:absolute;top:50%;transform:translateY(-50%);text-align:center;opacity:.5}
+  #prev{left:1.5%} #next{right:1.5%}
+  #prev .c,#next .c{font-size:clamp(28px,min(12vh,5.6vw),66px);line-height:1;color:#3A3A3A;
+    font-family:"Noto Serif CJK SC","Songti SC",serif}
+  #prev .p,#next .p{font-size:clamp(10px,min(1.7vh,1.1vw),14px);color:#7A8894;margin-top:3px}
+  #prev .lab,#next .lab{font-size:10.5px;color:#B6C0C8;margin-bottom:3px}
+
+  /* 大字 / 笔画动画 共用一块地方 */
+  /* ★ 必须给个最小高度：原来 #stage 靠里面的大字撑开，
+     而打对后大字会被 display:none 藏掉 → #stage 塌成 0 高 →
+     绝对定位的笔画层也是 0 高，整个笔画动画画不出来（真机实测踩到）。 */
+  #stage{position:relative;display:flex;align-items:center;justify-content:center;
+    min-height:clamp(96px,min(60vh,30vw),416px);min-width:clamp(96px,min(60vh,30vw),416px)}
+  #big{font-size:clamp(90px,min(58vh,29vw),400px);line-height:.94;font-weight:700;color:#111;
+    font-family:"Noto Serif CJK SC","Songti SC","Noto Sans CJK SC",serif}
+  #big.hit{animation:pop .36s cubic-bezier(.34,1.6,.5,1)}
+  @keyframes pop{0%{transform:scale(1)}42%{transform:scale(1.10)}100%{transform:scale(1)}}
+  #big.miss{animation:shake .3s}
+  @keyframes shake{0%,100%{transform:translateX(0)}22%{transform:translateX(-12px)}
+    70%{transform:translateX(12px)}}
+
+  /* 笔画动画：宽度 = 大字宽度，高度 = 同比例 */
+  #ink{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+  #ink.on{display:flex}
+  #ink svg{width:clamp(96px,min(60vh,30vw),416px);height:clamp(96px,min(60vh,30vw),416px)}
+  .ghost{fill:#EEF2F6}
+  .inkS{fill:none;stroke:#111;stroke-linecap:round;stroke-linejoin:round}
+  /* ★ 动画的**终点就是自然状态**（实线画满），万一动画被冻结也不会卡在半截 */
+  .inkS{animation:draw .34s cubic-bezier(.4,.1,.3,1) both}
+  @keyframes draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+
+  #py{font-size:clamp(22px,min(10vh,5vw),72px);line-height:1.15;margin-top:clamp(2px,1.2vh,14px);
+    letter-spacing:3px;color:#0B6BCB;font-weight:700;min-height:1.15em}
+  #py.hidden-py{color:#F4F7F9}
+
+  #bar{flex:none;padding-top:clamp(6px,1.8vh,20px)}
+  #type{width:100%;max-width:min(640px,46vw);margin:0 auto;display:block;
+    background:#FFF;border:3px solid #C9D6E0;border-radius:16px;color:#111;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;
+    font-size:clamp(22px,min(5.6vh,3.2vw),50px);letter-spacing:5px;text-align:center;
+    padding:clamp(5px,1.2vh,14px) 14px;outline:none;caret-color:#0B6BCB}
+  #type.good{border-color:#0F7B3D;background:#ECFAF1;color:#0B5B2C}
+  #type.bad{border-color:#C62828;background:#FDECEC;color:#8E1B1B}
+  #type::placeholder{color:#A8B4BE;letter-spacing:2px;font-size:.5em}
+  #foot{flex:none;font-size:12.5px;color:#8E9BA6;padding-top:7px;min-height:20px}
+  #foot em{font-style:normal;color:#5A6A78}
+
+  /* 飘分 */
+  .pop{position:absolute;font-size:clamp(24px,4.6vh,44px);font-weight:800;color:#0F7B3D;
+    pointer-events:none;animation:rise .95s ease-out both;z-index:50}
+  @keyframes rise{from{opacity:1;transform:translateY(0) scale(.9)}
+    to{opacity:0;transform:translateY(-110px) scale(1.25)}}
+  .pop.combo{color:#E8340C}
+
+  /* ══════════ 结算 ══════════ */
+  #over{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
+    justify-content:center;background:rgba(255,255,255,.985);z-index:300;padding:0 26px;text-align:center}
+  #over.on{display:flex}
+  #over .big3{font-size:clamp(34px,7vh,64px);letter-spacing:6px;color:#E8A317}
+  #over .big3 i{font-style:normal;color:#DCE3E9}
+  #over h2{font-size:26px;color:#0B6BCB;letter-spacing:2px;margin-top:6px}
+  #over .rows{margin-top:16px;font-size:16px;line-height:2;color:#4A5A68}
+  #over .rows b{color:#C2410C;font-size:21px}
+  #over .btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  #over button{border:none;border-radius:24px;padding:13px 30px;font-family:inherit;
+    font-size:16px;font-weight:800;letter-spacing:1px;cursor:pointer}
+  .bp{background:linear-gradient(180deg,#2E9BD6,#0B6BCB);color:#fff}
+  .bs{background:#F1F5F9;color:#4A5A68;border:1.5px solid #D3DCE4 !important}
+
+  #dbg{display:none;position:fixed;left:0;right:0;bottom:0;z-index:400;pointer-events:none;
+    background:#F0F4F8;border-top:1px solid #D3DCE4;color:#0F5B3D;
+    font:11px/1.5 ui-monospace,monospace;padding:5px 8px;white-space:pre-wrap;word-break:break-all}
+  body.dbg #dbg{display:block}
+
+  /* ══════════ 评级徽章 ══════════ */
+  .gbadge{display:inline-flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border-radius:10px;font-weight:900;font-size:19px;
+    color:#fff;flex:none}
+  .g-S{background:linear-gradient(160deg,#FFD86B,#E8A317);box-shadow:0 2px 8px rgba(232,163,23,.45)}
+  .g-A{background:linear-gradient(160deg,#7FE0A0,#0F7B3D)}
+  .g-B{background:linear-gradient(160deg,#8FC7F0,#0B6BCB)}
+  .g-C{background:linear-gradient(160deg,#C9D3DC,#7C8A96)}
+  .g-D{background:linear-gradient(160deg,#E4E9ED,#AEB9C2)}
+  .gbadge.big{width:clamp(64px,13vh,110px);height:clamp(64px,13vh,110px);
+    border-radius:22px;font-size:clamp(38px,8vh,68px);letter-spacing:0}
+  .lvcard .top{display:flex;align-items:center;gap:8px;justify-content:space-between}
+  .lvcard .best{font-size:12px;color:#8E9BA6;margin-top:4px}
+  .lvcard .best b{color:#C2410C}
+  .lvcard.pass{border-color:#B9E3C8;background:#F7FDF9}
+
+  /* 组提示 */
+  #groupTag{font-size:12px;color:#8E9BA6;white-space:nowrap;flex:none}
+  #groupTag b{color:#0B6BCB}
+  #targetTag{font-size:12px;color:#8E9BA6;white-space:nowrap}
+  #targetTag b{color:#C2410C}
+
+  /* 组结算 / 统计 面板 */
+  .panel{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
+    justify-content:center;background:rgba(255,255,255,.985);z-index:320;padding:0 26px;text-align:center}
+  .panel.on{display:flex}
+  .panel h2{font-size:24px;color:#0B6BCB;letter-spacing:2px;margin-top:8px}
+  .panel .rows{margin-top:14px;font-size:16px;line-height:2;color:#4A5A68}
+  .panel .rows b{color:#C2410C;font-size:21px}
+
+  /* 统计表 */
+  #statsBody{width:100%;max-width:520px;margin-top:16px;font-size:13px;color:#4A5A68}
+  .srow{display:flex;justify-content:space-between;align-items:center;
+    padding:9px 12px;border-bottom:1px solid #EDF1F5;gap:8px}
+  .srow .d{color:#8E9BA6;flex:none;width:74px;text-align:left}
+  .srow .n{font-weight:700;color:#0B6BCB;flex:none;width:62px;text-align:right}
+  .srow .a{color:#0F7B3D;flex:none;width:54px;text-align:right}
+  .srow .t{color:#A8B4BE;flex:1;text-align:right;font-size:12px}
+  .sbar{height:8px;border-radius:4px;background:#EDF1F5;overflow:hidden;flex:1;margin:0 8px}
+  .sbar i{display:block;height:100%;background:linear-gradient(90deg,#7FE0A0,#0B6BCB)}
+  #statsEmpty{color:#A8B4BE;font-size:14px;margin-top:22px;line-height:1.9}
+</style>
+</head>
+<body>
+
+<!-- ══════════ 选关 ══════════ -->
+<div id="menu">
+  <div class="mtitle">看字打拼音</div>
+  <div class="msub">看着大字，用键盘把拼音打出来</div>
+  <div class="mtotal">
+    <span>总星星 <b class="st" id="mStars">0</b> / 21</span>
+    <span>最高分 <b id="mBest">0</b></span>
+    <span>练过 <b id="mDays">0</b> 天</span>
+  </div>
+  <div class="mbtns">
+    <button class="tb" id="mStats">📊 统计</button>
+    <button class="tb" id="mHome">🏠 回游戏中心</button>
+  </div>
+  <div id="levels"></div>
+  <div id="menuFoot">
+    共 60 个字 · 6 关 + 挑战 · 每关 2 组、每组 5 个字<br>
+    评分 <b>S</b> 完美 &nbsp;·&nbsp; <b>A</b> 优秀 &nbsp;·&nbsp; <b>B</b> 不错 &nbsp;·&nbsp; <b>C</b> 及格 &nbsp;·&nbsp; <b>D</b> 再来
+  </div>
+</div>
+
+<!-- ══════════ 游戏 ══════════ -->
+<div id="play">
+  <header>
+    <button class="tb" id="tBack">←</button>
+    <div id="groupTag">第 <b>1</b> 关 · 第 <b>1</b>/2 组</div>
+    <div id="targetTag">目标 <b>0</b></div>
+    <div class="tools">
+      <button class="tb" id="tSound">🔊</button>
+      <button class="tb" id="tPy">拼音</button>
+      <button class="tb" id="tKb">⌨</button>
+    </div>
+  </header>
+  <div class="statrow">
+    <span>分数 <b id="sScore">0</b></span>
+    <span class="cb">连击 <b id="sCombo">0</b></span>
+    <span class="ac">正确率 <b id="sAcc">–</b></span>
+  </div>
+  <div id="prog"><div id="progFill"></div></div>
+
+  <div id="body">
+    <div id="main">
+      <div id="prev"><div class="lab">上一个</div><div class="c">·</div><div class="p"></div></div>
+      <div id="next"><div class="lab">下一个</div><div class="c">·</div><div class="p"></div></div>
+      <div id="stage">
+        <div id="big">字</div>
+        <div id="ink"></div>
+      </div>
+      <div id="py">zì</div>
+    </div>
+    <div id="bar">
+      <input id="type" autocomplete="off" autocorrect="off" autocapitalize="off"
+             spellcheck="false" inputmode="none" placeholder="在这里打拼音">
+      <div id="foot"><em>看着大字，把它的拼音打出来</em> · 打对自动跳下一个</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 组结算 ══════════ -->
+<div class="panel" id="gpanel">
+  <div style="font-size:44px" id="gpIcon">👍</div>
+  <h2 id="gpTitle">第一组完成</h2>
+  <div class="rows" id="gpRows"></div>
+  <button class="bp" id="gpNext" style="margin-top:24px;border:none;border-radius:24px;
+    padding:13px 34px;font-family:inherit;font-size:16px;font-weight:800;color:#fff;
+    background:linear-gradient(180deg,#2E9BD6,#0B6BCB);cursor:pointer">继续</button>
+</div>
+
+<!-- ══════════ 关结算 ══════════ -->
+<div class="panel" id="over">
+  <div class="gbadge big" id="ovGrade">A</div>
+  <h2 id="ovTitle">过关！</h2>
+  <div class="rows" id="ovRows"></div>
+  <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <button id="ovNext" style="border:none;border-radius:24px;padding:13px 30px;font-family:inherit;
+      font-size:16px;font-weight:800;color:#fff;background:linear-gradient(180deg,#2E9BD6,#0B6BCB);cursor:pointer">下一关</button>
+    <button id="ovAgain" class="bs" style="border:none;border-radius:24px;padding:13px 30px;font-family:inherit;
+      font-size:16px;font-weight:800;color:#4A5A68;background:#F1F5F9;border:1.5px solid #D3DCE4;cursor:pointer">再来一次</button>
+    <button id="ovMenu" class="bs" style="border:none;border-radius:24px;padding:13px 30px;font-family:inherit;
+      font-size:16px;font-weight:800;color:#4A5A68;background:#F1F5F9;border:1.5px solid #D3DCE4;cursor:pointer">回选关</button>
+  </div>
+</div>
+
+<!-- ══════════ 统计 ══════════ -->
+<div class="panel" id="stats">
+  <h2>练习统计</h2>
+  <div class="rows" id="statsTop"></div>
+  <div id="statsBody"></div>
+  <div id="statsEmpty" style="display:none">还没有练习记录<br>去玩一关吧！</div>
+  <button id="statsClose" style="margin-top:22px;border:none;border-radius:24px;padding:13px 34px;
+    font-family:inherit;font-size:16px;font-weight:800;color:#4A5A68;background:#F1F5F9;
+    border:1.5px solid #D3DCE4;cursor:pointer">返回</button>
+</div>
+
+<div id="dbg"></div>
+
+<script>
+'use strict';
+/* 笔画数据（hanzi-writer-data, MIT）—— 由 build.py 注入 */
+window.STROKES = {"一":{"s":["M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 928 379 935 390 Q 944 405 930 419 Q 896 452 845 475 Q 829 482 798 473 Q 723 460 480 434 Q 180 409 137 408 Q 130 408 124 408 Q 108 408 106 395 Q 105 380 127 363 Q 146 348 183 334 Q 195 330 216 338 Q 232 344 306 354 Q 400 373 518 382 Z"],"m":[[[121,393],[193,372],[417,402],[827,434],[920,401]]]},"三":{"s":["M 326 667 Q 283 663 312 640 Q 369 610 428 623 Q 543 641 665 661 Q 720 671 729 678 Q 739 688 735 698 Q 728 711 693 722 Q 660 731 561 701 Q 420 673 326 667 Z","M 329 421 Q 304 417 332 392 Q 348 379 385 383 Q 557 405 685 416 Q 721 420 709 440 Q 694 462 657 472 Q 621 479 558 466 Q 435 441 329 421 Z","M 130 165 Q 102 162 122 139 Q 140 120 163 113 Q 191 104 212 110 Q 515 179 929 157 Q 930 158 933 157 Q 960 156 967 167 Q 974 183 953 201 Q 884 255 835 246 Q 643 210 130 165 Z"],"m":[[[316,655],[367,645],[416,648],[660,692],[722,692]],[[331,407],[375,405],[628,443],[657,443],[700,432]],[[127,152],[158,142],[195,139],[500,178],[846,204],[881,200],[955,174]]]},"上":{"s":["M 520 133 Q 523 296 525 442 L 525 479 Q 525 654 543 722 Q 556 746 540 761 Q 498 792 465 802 Q 449 805 432 791 Q 425 782 432 770 Q 462 727 462 629 Q 462 394 466 128 C 466 98 519 103 520 133 Z","M 525 442 Q 573 436 682 459 Q 769 477 776 484 Q 786 493 780 503 Q 771 516 738 523 Q 704 529 670 514 Q 637 502 601 493 Q 564 484 525 479 C 495 475 495 445 525 442 Z","M 528 82 Q 582 83 633 88 Q 781 100 911 81 Q 938 78 945 88 Q 954 103 940 116 Q 907 147 859 171 Q 843 178 813 169 Q 707 150 520 133 L 466 128 Q 363 121 309 114 Q 239 104 137 106 Q 121 106 120 93 Q 119 80 139 63 Q 184 30 234 41 Q 289 56 416 71 Q 468 78 528 82 Z"],"m":[[[446,781],[462,775],[498,734],[493,159],[472,136]],[[531,448],[551,462],[627,473],[698,493],[768,496]],[[134,92],[171,76],[212,72],[458,103],[841,132],[932,99]]]},"下":{"s":["M 520 688 Q 758 710 827 705 Q 920 702 927 705 Q 927 706 929 707 Q 936 722 923 735 Q 848 801 781 778 Q 673 757 477 733 Q 173 697 130 695 Q 123 696 116 695 Q 101 695 100 683 Q 99 670 120 654 Q 138 641 172 629 Q 184 625 203 633 Q 219 640 294 653 Q 376 674 478 684 L 520 688 Z","M 544 524 Q 544 642 547 654 Q 551 667 541 675 Q 534 682 520 688 C 494 703 470 713 478 684 Q 499 648 485 268 Q 473 39 480 22 Q 486 6 498 -8 Q 511 -24 523 -5 Q 553 53 546 104 Q 540 161 544 492 L 544 524 Z","M 544 492 Q 620 446 712 378 Q 733 360 749 359 Q 759 359 765 371 Q 775 387 753 430 Q 723 493 544 524 C 514 529 518 508 544 492 Z"],"m":[[[113,682],[145,669],[181,664],[440,706],[807,745],[870,736],[903,726],[924,710]],[[487,681],[516,656],[519,479],[510,-2]],[[555,519],[562,502],[645,466],[706,429],[729,407],[748,377]]]},"不":{"s":["M 606 682 Q 630 694 746 694 Q 878 694 880 695 Q 880 696 882 697 Q 889 710 877 722 Q 804 782 746 759 Q 467 702 200 680 Q 193 681 188 680 Q 175 679 174 668 Q 173 655 192 642 Q 210 630 241 619 Q 251 615 270 624 Q 337 646 474 667 Q 504 673 560 677 L 606 682 Z","M 560 677 Q 559 677 560 676 Q 561 649 550 612 Q 528 567 504 528 L 470 480 Q 463 473 457 464 Q 399 388 333 332 Q 269 274 111 165 Q 101 161 112 156 Q 157 156 322 262 Q 409 329 484 417 L 539 483 Q 635 609 644 615 Q 654 621 652 632 Q 651 644 639 658 Q 624 674 606 682 C 580 697 561 707 560 677 Z","M 504 528 Q 489 550 466 559 Q 454 560 450 553 Q 444 544 470 480 L 484 417 Q 490 222 461 87 Q 448 38 485 -17 Q 486 -20 490 -23 Q 511 -41 523 -11 Q 539 35 539 86 Q 529 386 536 454 Q 540 472 539 483 C 539 486 523 505 504 528 Z","M 632 397 Q 731 321 850 208 Q 868 189 884 184 Q 894 184 901 195 Q 913 210 897 255 Q 873 327 631 429 Q 621 435 620 421 Q 620 406 632 397 Z"],"m":[[[187,667],[251,651],[473,690],[771,730],[840,720],[868,709],[879,698]],[[568,677],[601,633],[527,510],[451,416],[369,331],[300,273],[168,187],[115,161]],[[459,548],[477,527],[506,472],[509,231],[498,73],[503,-13]],[[632,417],[751,340],[825,284],[863,245],[884,200]]]},"个":{"s":["M 519 700 Q 531 724 551 744 Q 560 750 558 760 Q 557 770 543 784 Q 507 815 475 811 Q 465 808 468 795 Q 486 692 300 485 Q 296 482 293 478 Q 241 423 110 316 Q 100 312 112 308 Q 178 317 306 429 Q 387 504 505 679 L 519 700 Z","M 505 679 Q 614 538 756 391 Q 777 367 812 369 Q 933 373 971 381 Q 983 384 984 389 Q 984 395 967 402 Q 790 456 742 495 Q 639 579 519 700 C 498 721 487 703 505 679 Z","M 472 486 Q 500 441 475 153 Q 474 143 472 131 Q 471 103 467 91 Q 454 37 508 -19 Q 509 -20 512 -22 Q 524 -23 529 -10 Q 535 8 536 92 Q 529 386 540 455 Q 541 468 535 474 Q 511 495 492 504 Q 479 508 470 500 Q 464 496 472 486 Z"],"m":[[[478,800],[498,780],[507,752],[477,686],[415,589],[320,473],[269,423],[198,365],[116,313]],[[522,690],[521,679],[623,568],[726,467],[780,425],[822,408],[976,388]],[[479,494],[490,488],[511,456],[500,70],[515,-13]]]},"中":{"s":["M 254 596 Q 244 603 202 608 Q 189 611 185 605 Q 178 598 189 580 Q 228 507 254 384 Q 260 347 282 324 Q 303 300 307 318 Q 310 328 310 343 L 306 381 Q 305 390 303 399 Q 276 513 267 556 C 261 585 259 594 254 596 Z","M 752 425 Q 765 462 777 498 Q 793 546 828 578 Q 853 603 821 624 Q 793 648 762 666 Q 743 679 717 668 Q 677 655 615 646 Q 575 642 535 636 L 476 628 Q 427 622 380 613 Q 307 603 254 596 C 224 592 237 551 267 556 Q 274 556 286 559 Q 400 587 476 593 L 534 600 Q 604 609 698 615 Q 717 616 724 607 Q 739 583 693 435 C 684 406 742 397 752 425 Z","M 530 370 Q 630 380 764 386 Q 776 387 778 397 Q 779 406 752 425 C 730 441 723 440 693 435 Q 606 420 530 407 L 475 399 Q 385 389 306 381 C 276 378 280 341 310 343 Q 314 343 321 343 Q 382 356 475 365 L 530 370 Z","M 475 365 Q 472 17 485 -11 Q 486 -12 488 -16 Q 503 -32 512 -10 Q 530 32 530 370 L 530 407 Q 531 519 534 600 L 535 636 Q 538 742 559 778 Q 566 794 545 811 Q 520 830 475 843 Q 454 847 441 833 Q 431 826 444 812 Q 472 787 475 753 Q 475 704 476 628 L 476 593 Q 476 517 476 419 Q 475 409 475 399 L 475 365 Z"],"m":[[[194,598],[229,572],[236,553],[295,323]],[[262,591],[281,579],[471,611],[719,641],[741,638],[777,596],[732,460],[702,446]],[[316,350],[330,365],[689,409],[749,405],[768,398]],[[449,823],[476,817],[513,781],[505,656],[499,-10]]]},"为":{"s":["M 324 704 Q 349 673 378 635 Q 390 619 406 617 Q 416 616 425 629 Q 432 644 428 676 Q 422 715 327 754 Q 311 761 304 759 Q 298 756 298 742 Q 299 730 324 704 Z","M 460 496 Q 367 331 357 314 Q 353 311 350 305 Q 263 187 115 58 Q 108 54 104 47 Q 98 37 110 35 Q 143 32 266 135 Q 308 172 349 220 Q 449 341 527 509 L 542 542 Q 558 582 574 622 Q 614 725 630 751 Q 643 764 639 780 Q 627 804 598 828 Q 580 846 565 844 Q 550 840 553 823 Q 563 786 552 735 Q 540 704 528 664 Q 503 594 475 530 L 460 496 Z","M 475 530 Q 459 529 443 525 Q 298 504 216 507 Q 194 510 192 497 Q 191 485 216 468 Q 247 446 277 454 Q 368 479 460 496 L 527 509 Q 612 525 699 534 Q 727 535 733 521 Q 742 502 738 454 Q 725 276 692 181 Q 674 121 655 103 Q 642 88 613 96 Q 571 109 533 121 Q 508 128 526 105 Q 581 50 612 6 Q 624 -19 648 -11 Q 670 -7 696 23 Q 772 101 798 406 Q 804 473 829 514 Q 848 539 838 551 Q 819 573 778 591 Q 748 606 717 591 Q 641 563 542 542 L 475 530 Z","M 496 321 Q 524 291 554 256 Q 564 243 580 242 Q 590 241 597 253 Q 603 266 598 296 Q 591 332 497 368 Q 482 372 476 371 Q 472 368 471 355 Q 472 345 496 321 Z"],"m":[[[308,751],[383,685],[406,637]],[[568,828],[597,773],[585,732],[492,498],[424,374],[377,298],[285,187],[207,112],[113,44]],[[203,495],[266,479],[720,562],[751,559],[777,539],[782,532],[746,249],[721,153],[697,94],[671,60],[646,45],[526,114]],[[480,365],[555,303],[581,260]]]},"么":{"s":["M 464 772 Q 476 682 334 526 Q 256 448 174 381 Q 164 375 176 372 Q 263 387 398 520 Q 401 524 405 528 Q 456 583 534 696 Q 544 711 552 717 Q 559 721 559 734 Q 558 744 544 759 Q 505 795 471 788 Q 461 787 464 772 Z","M 727 196 Q 574 180 407 145 Q 391 139 386 144 Q 382 153 397 172 Q 644 446 695 491 Q 713 501 707 518 Q 701 536 644 574 Q 625 587 611 584 Q 593 580 597 551 Q 603 515 574 472 Q 498 343 376 218 Q 342 178 273 142 Q 252 129 256 114 Q 260 92 290 62 Q 302 46 321 58 Q 390 107 741 166 Q 742 166 744 166 C 774 171 757 199 727 196 Z","M 744 166 Q 807 61 814 57 Q 823 53 834 62 Q 850 72 848 123 Q 849 192 672 329 Q 665 336 658 324 Q 654 309 663 296 Q 694 251 727 196 L 744 166 Z"],"m":[[[473,778],[488,766],[507,733],[463,647],[428,597],[330,487],[231,407],[180,378]],[[615,566],[642,521],[636,496],[524,348],[361,166],[341,124],[393,116],[543,151],[692,176],[718,179],[728,168]],[[669,316],[747,226],[802,146],[821,95],[819,65]]]},"也":{"s":["M 323 369 Q 375 396 449 430 L 496 452 Q 562 485 644 523 Q 663 532 669 520 Q 676 505 625 342 Q 615 291 580 308 Q 559 315 539 321 Q 523 324 527 315 Q 531 303 597 238 Q 619 208 640 231 Q 683 277 698 347 Q 714 407 729 467 Q 741 506 774 539 Q 789 555 771 569 Q 752 582 696 595 Q 674 599 660 586 Q 620 549 541 509 Q 519 499 498 486 L 451 463 Q 391 436 327 409 L 270 385 Q 158 340 92 320 Q 77 317 77 307 Q 76 300 122 285 Q 152 276 176 292 Q 198 307 271 343 L 323 369 Z","M 449 430 Q 442 343 434 278 Q 435 247 442 225 Q 448 212 458 218 Q 477 239 488 359 Q 491 407 496 452 L 498 486 Q 511 699 526 753 Q 536 774 523 787 Q 507 803 477 819 Q 453 829 428 820 Q 415 811 430 794 Q 451 746 456 707 Q 456 527 451 463 L 449 430 Z","M 328 97 Q 413 27 678 28 Q 835 29 923 59 Q 954 65 962 81 Q 966 91 956 115 Q 931 166 913 279 Q 909 295 900 301 Q 894 304 891 289 Q 881 228 869 176 Q 859 131 835 114 Q 811 102 689 93 Q 565 87 467 102 Q 394 114 366 134 Q 341 150 332 182 Q 320 228 322 326 Q 322 348 323 369 L 327 409 Q 331 457 343 485 Q 352 504 341 518 Q 326 531 286 548 Q 252 560 241 549 Q 232 540 247 519 Q 269 488 269 438 Q 269 413 270 385 L 271 343 Q 271 168 299 126 Q 309 111 328 97 Z"],"m":[[[84,309],[134,307],[165,316],[419,431],[662,553],[688,556],[713,541],[672,378],[651,309],[639,288],[621,270],[612,271],[588,279],[534,316]],[[438,808],[462,793],[484,766],[487,729],[478,500],[452,226]],[[251,540],[272,527],[303,493],[295,308],[308,172],[320,143],[338,122],[389,92],[479,70],[583,60],[759,64],[848,78],[900,108],[899,292]]]},"了":{"s":["M 526 549 Q 569 571 661 633 Q 704 664 732 669 Q 778 679 784 698 Q 787 708 749 753 Q 716 793 703 793 Q 336 721 301 716 Q 265 715 244 719 Q 225 723 216 711 Q 212 702 222 690 Q 232 675 260 657 Q 284 638 295 639 Q 305 638 328 653 Q 391 698 626 741 Q 671 750 677 746 Q 681 745 680 739 Q 679 729 522 577 Q 512 570 506 563 C 484 543 500 535 526 549 Z","M 506 563 Q 475 585 461 588 Q 448 591 448 567 Q 449 549 471 533 Q 513 497 525 417 Q 544 180 506 126 Q 505 126 505 124 Q 493 114 469 123 Q 430 130 383 141 Q 364 148 363 140 Q 363 137 456 50 Q 480 28 496 -3 Q 506 -13 518 -8 Q 534 -1 563 42 Q 614 127 585 436 Q 581 464 577 485 Q 568 528 526 549 L 506 563 Z"],"m":[[[228,705],[296,678],[401,712],[502,736],[666,768],[699,764],[716,739],[721,715],[534,568],[513,563]],[[461,574],[532,506],[551,451],[564,290],[556,153],[541,101],[515,68],[470,84],[367,141]]]},"二":{"s":["M 308 603 Q 260 597 293 574 Q 339 544 436 558 Q 551 576 673 596 Q 731 608 741 615 Q 753 625 747 636 Q 738 652 702 663 Q 669 672 559 641 Q 424 610 308 603 Z","M 517 212 Q 569 213 620 219 Q 756 229 896 214 Q 921 210 929 220 Q 938 235 924 248 Q 891 279 842 302 Q 826 309 797 301 Q 728 286 481 261 Q 172 236 155 234 Q 142 234 128 234 Q 113 234 111 221 Q 110 208 131 191 Q 150 176 185 163 Q 197 159 217 167 Q 233 173 306 183 Q 400 202 517 212 Z"],"m":[[[293,587],[386,581],[688,633],[733,629]],[[126,219],[195,200],[469,236],[823,263],[916,230]]]},"人":{"s":["M 475 485 Q 547 653 563 683 Q 573 695 565 708 Q 558 721 519 742 Q 491 757 480 754 Q 462 750 465 730 Q 484 537 292 308 Q 280 296 269 284 Q 212 217 68 102 Q 58 92 66 89 Q 76 86 90 92 Q 190 138 274 210 Q 380 294 462 456 L 475 485 Z","M 462 456 Q 480 423 575 292 Q 666 171 733 101 Q 764 67 793 69 Q 881 75 958 79 Q 991 80 992 89 Q 993 98 956 112 Q 772 178 740 205 Q 617 304 490 466 Q 481 476 475 485 C 457 509 447 482 462 456 Z"],"m":[[[483,736],[508,702],[511,678],[473,552],[408,416],[328,303],[271,244],[144,139],[72,95]],[[474,477],[477,459],[490,439],[571,333],[691,200],[753,145],[798,119],[986,90]]]},"什":{"s":["M 266 534 Q 309 589 356 661 Q 384 712 411 735 Q 421 747 417 763 Q 413 778 381 804 Q 350 825 329 825 Q 308 824 317 798 Q 332 764 318 736 Q 278 640 216 553 Q 158 468 76 375 Q 64 363 62 356 Q 58 343 74 346 Q 119 356 223 483 Q 230 493 240 502 L 266 534 Z","M 240 502 Q 261 433 262 403 Q 255 265 251 241 Q 244 189 229 135 Q 214 86 251 38 Q 252 35 256 32 Q 275 16 287 44 Q 302 86 302 134 Q 308 387 318 445 Q 325 473 315 484 Q 297 506 283 520 Q 276 529 266 534 C 242 552 231 531 240 502 Z","M 676 454 Q 755 464 874 468 Q 934 468 941 479 Q 945 492 928 505 Q 865 548 817 529 Q 760 516 677 498 L 622 488 Q 511 469 384 447 Q 362 444 379 427 Q 412 400 452 409 Q 530 433 622 446 L 676 454 Z","M 622 446 Q 622 233 618 163 Q 615 -26 636 -56 Q 651 -72 660 -50 Q 675 -14 676 454 L 677 498 Q 678 640 684 714 Q 685 748 703 778 Q 710 794 689 811 Q 664 830 619 842 Q 598 848 585 833 Q 575 824 588 812 Q 619 787 621 750 Q 622 657 622 488 L 622 446 Z"],"m":[[[329,809],[348,793],[368,756],[325,671],[250,555],[184,469],[122,398],[72,356]],[[267,525],[269,496],[286,465],[288,410],[279,239],[262,94],[268,41]],[[381,437],[441,432],[604,465],[840,501],[893,496],[932,485]],[[593,823],[621,816],[645,797],[658,775],[649,572],[650,306],[643,79],[647,-50]]]},"他":{"s":["M 250 530 Q 287 585 330 658 Q 354 707 377 731 Q 386 743 381 756 Q 377 769 346 791 Q 318 809 299 808 Q 280 805 289 783 Q 305 752 293 724 Q 236 568 86 372 Q 76 362 74 354 Q 71 344 85 346 Q 118 355 224 495 L 250 530 Z","M 224 495 Q 243 435 245 429 Q 244 428 245 425 Q 251 260 220 131 Q 208 80 242 41 Q 243 38 246 36 Q 262 20 274 46 Q 289 86 288 131 Q 284 393 292 451 Q 299 478 290 488 Q 266 513 250 530 C 229 552 215 524 224 495 Z","M 468 401 Q 507 423 573 456 L 618 479 Q 672 507 742 542 Q 760 549 765 539 Q 772 526 760 488 Q 745 436 725 372 Q 715 330 687 344 Q 668 353 650 360 Q 637 364 638 356 Q 642 344 698 279 Q 717 251 737 272 Q 777 312 791 377 Q 806 434 820 491 Q 830 527 860 557 Q 873 573 858 585 Q 839 598 789 608 Q 770 612 756 599 Q 726 571 668 540 Q 646 528 621 515 L 576 493 Q 477 451 475 448 L 423 426 Q 368 405 333 393 Q 320 392 319 381 Q 318 374 361 362 Q 385 355 422 376 L 468 401 Z","M 573 456 Q 567 368 560 302 Q 560 274 567 252 Q 573 240 582 246 Q 600 261 610 381 Q 613 432 618 479 L 621 515 Q 633 689 644 729 Q 654 748 641 761 Q 626 777 598 791 Q 576 801 552 792 Q 540 785 554 767 Q 581 713 581 592 Q 580 547 576 493 L 573 456 Z","M 960 171 Q 944 223 938 313 Q 937 329 930 334 Q 921 340 917 319 Q 898 210 880 191 Q 838 143 661 143 Q 564 147 523 164 Q 487 183 480 207 Q 453 273 468 401 L 475 448 Q 479 479 489 498 Q 501 529 482 546 Q 431 583 416 579 Q 401 573 408 556 Q 427 519 424 463 Q 423 444 423 426 L 422 376 Q 421 240 432 203 Q 444 157 478 133 Q 548 82 789 95 Q 898 102 941 126 Q 972 139 960 171 Z"],"m":[[[300,793],[317,780],[338,747],[308,679],[201,496],[136,410],[83,355]],[[250,521],[267,436],[266,292],[252,106],[258,46]],[[326,383],[378,384],[429,404],[756,569],[782,572],[804,560],[768,406],[739,327],[715,309],[677,329],[645,356]],[[562,780],[583,769],[606,740],[603,552],[576,254]],[[420,566],[442,543],[457,515],[441,364],[444,266],[453,212],[473,171],[509,143],[601,121],[710,117],[817,126],[895,150],[916,163],[927,326]]]},"以":{"s":["M 225 514 Q 229 492 229 411 Q 228 345 214 308 Q 210 268 173 219 Q 160 206 171 181 Q 183 150 200 138 Q 213 128 228 146 Q 288 239 477 437 Q 493 452 493 462 Q 494 469 487 467 Q 469 461 298 299 Q 283 287 276 291 Q 272 294 273 307 Q 282 532 286 557 Q 290 576 278 586 Q 265 599 217 612 Q 198 615 192 609 Q 185 602 197 582 Q 218 554 225 514 Z","M 446 658 Q 500 594 532 579 Q 548 575 559 589 Q 566 602 564 620 Q 552 668 461 698 Q 445 704 434 700 Q 427 699 429 686 Q 430 673 446 658 Z","M 695 336 Q 746 441 761 512 Q 794 656 810 685 Q 822 707 803 718 Q 748 761 717 752 Q 701 748 707 729 Q 723 693 716 602 Q 716 536 671 414 Q 599 240 430 137 Q 411 124 392 111 Q 376 101 391 97 Q 407 96 449 111 Q 524 142 580 192 Q 661 255 681 310 L 695 336 Z","M 681 310 Q 759 232 846 127 Q 862 105 879 98 Q 889 97 897 107 Q 912 120 900 169 Q 888 232 695 336 C 669 350 660 331 681 310 Z"],"m":[[[200,602],[243,569],[251,554],[254,397],[243,278],[252,253],[299,273],[488,462]],[[442,689],[525,625],[539,601]],[[720,737],[741,721],[762,691],[758,659],[742,552],[726,489],[691,389],[668,342],[628,277],[537,186],[490,152],[395,104]],[[703,324],[708,307],[784,248],[851,181],[870,152],[881,114]]]},"们":{"s":["M 207 513 Q 259 577 317 669 Q 342 718 367 741 Q 377 751 372 766 Q 368 779 337 803 Q 309 822 290 822 Q 271 821 279 797 Q 292 766 281 739 Q 244 648 188 563 Q 133 481 59 392 Q 49 382 46 375 Q 42 363 57 366 Q 91 370 187 488 L 207 513 Z","M 187 488 L 188 486 Q 192 470 199 458 Q 229 395 206 220 Q 199 169 185 115 Q 170 66 207 18 Q 208 15 212 12 Q 231 -4 243 24 Q 258 66 258 114 Q 261 361 270 417 Q 277 445 267 456 Q 249 478 235 492 Q 223 505 207 513 C 181 529 178 516 187 488 Z","M 448 683 Q 499 613 528 609 Q 541 608 549 627 Q 550 640 542 662 Q 532 680 508 690 Q 469 709 453 712 Q 443 713 442 702 Q 441 693 448 683 Z","M 354 604 Q 376 553 377 491 Q 383 263 346 141 Q 330 84 364 45 Q 376 30 386 45 Q 419 84 419 234 Q 419 495 432 571 Q 433 590 417 600 Q 395 619 366 628 Q 356 631 350 622 Q 346 615 354 604 Z","M 592 673 Q 576 674 580 664 Q 586 651 607 641 Q 620 632 643 636 Q 685 649 735 662 Q 757 663 767 650 Q 780 643 785 580 Q 798 369 786 129 Q 786 95 772 84 Q 756 71 669 91 Q 653 92 654 83 Q 655 76 669 71 Q 745 26 786 -10 Q 808 -29 820 -26 Q 833 -23 843 6 Q 858 52 855 117 Q 839 445 840 567 Q 841 606 853 629 Q 866 650 856 661 Q 846 677 800 701 Q 782 711 711 692 Q 603 674 592 673 Z"],"m":[[[290,807],[307,792],[326,757],[279,662],[165,491],[112,427],[55,375]],[[209,505],[212,483],[241,428],[236,241],[218,74],[224,21]],[[455,699],[510,655],[528,627]],[[361,617],[399,572],[401,523],[396,269],[391,199],[374,104],[375,49]],[[589,664],[644,658],[746,682],[787,674],[816,645],[812,594],[821,127],[815,75],[801,43],[752,51],[662,83]]]},"儿":{"s":["M 310 637 Q 340 577 311 357 Q 299 300 269 232 Q 236 163 146 80 Q 130 67 125 59 Q 122 50 136 50 Q 178 50 258 125 Q 354 224 386 446 Q 395 524 405 602 Q 412 627 389 639 Q 334 669 315 667 Q 293 663 310 637 Z","M 979 84 Q 954 144 939 247 Q 936 265 930 272 Q 920 279 916 262 Q 903 201 887 155 Q 880 124 852 105 Q 825 78 707 87 Q 641 96 622 132 Q 595 201 620 515 Q 627 621 641 666 Q 653 697 566 747 Q 547 760 526 749 Q 513 742 536 711 Q 564 671 565 570 Q 565 489 557 329 Q 542 128 591 71 Q 630 32 708 20 Q 753 16 816 16 Q 895 17 953 42 Q 993 54 979 84 Z"],"m":[[[317,651],[326,648],[363,606],[351,422],[330,317],[293,219],[259,165],[191,94],[134,59]],[[535,738],[564,719],[598,671],[580,233],[590,142],[613,93],[659,65],[704,53],[744,51],[839,55],[905,80],[917,89],[922,130],[925,264]]]},"出":{"s":["M 562 435 Q 655 460 729 458 C 759 458 769 501 739 498 Q 646 489 563 474 L 505 464 Q 411 449 330 425 Q 306 421 312 448 Q 327 554 317 572 Q 281 615 250 611 Q 237 607 246 585 Q 268 533 260 479 Q 254 430 233 407 Q 212 388 220 372 Q 233 356 251 343 Q 267 333 278 343 Q 308 376 505 422 L 562 435 Z","M 729 458 Q 728 458 729 457 Q 732 421 741 397 Q 750 376 766 389 Q 799 416 812 514 Q 836 572 843 581 Q 853 597 843 616 Q 822 637 786 662 Q 773 672 757 667 Q 747 663 749 647 Q 777 599 741 501 Q 740 501 739 498 L 729 458 Z","M 551 133 Q 557 289 562 435 L 563 474 Q 564 639 592 778 Q 596 793 570 812 Q 522 837 490 842 Q 468 846 458 835 Q 448 825 459 805 Q 499 747 499 707 Q 503 590 505 464 L 505 422 Q 504 280 495 123 C 493 93 550 103 551 133 Z","M 255 9 Q 274 -7 284 -7 Q 291 -7 299 0 Q 335 45 588 96 Q 595 99 755 123 Q 765 124 775 127 C 804 133 801 162 771 161 Q 677 158 551 133 L 495 123 Q 380 105 341 88 Q 332 85 329 89 Q 326 92 339 215 Q 340 257 288 280 Q 281 283 274 283 Q 259 284 254 281 Q 250 274 263 252 Q 302 179 257 86 Q 250 76 241 66 Q 225 53 228 41 Q 232 29 255 9 Z","M 775 127 Q 779 28 796 3 Q 815 -31 827 -10 Q 840 12 840 66 Q 841 208 844 237 Q 845 258 839 265 Q 824 278 774 294 Q 758 301 751 295 Q 741 288 750 263 Q 763 220 771 161 L 775 127 Z"],"m":[[[256,598],[288,559],[291,540],[281,399],[335,400],[412,423],[573,458],[714,477],[732,493]],[[765,652],[788,624],[802,593],[763,452],[755,398]],[[473,822],[537,770],[540,733],[525,156],[501,131]],[[259,276],[286,257],[308,219],[309,176],[294,57],[346,60],[429,86],[581,118],[751,142],[768,132]],[[759,285],[801,238],[817,-7]]]},"到":{"s":["M 337 694 Q 398 707 463 717 Q 503 726 510 731 Q 520 738 515 748 Q 508 760 478 768 Q 453 774 346 743 Q 276 728 199 722 Q 162 716 187 698 Q 232 674 287 685 Q 288 686 291 685 L 337 694 Z","M 343 476 Q 383 491 445 507 Q 454 510 461 513 C 489 523 477 541 448 535 Q 360 519 266 491 Q 257 487 254 490 Q 253 493 258 501 Q 355 619 375 638 Q 388 648 382 661 Q 376 673 337 694 C 311 709 291 715 291 685 Q 291 637 290 632 Q 236 524 165 478 Q 138 456 185 417 Q 195 407 210 417 Q 240 442 305 464 L 343 476 Z","M 461 513 Q 489 465 501 462 Q 510 461 517 469 Q 524 479 526 507 Q 526 540 446 592 Q 434 599 428 599 Q 424 596 421 586 Q 421 576 438 551 Q 442 544 448 535 L 461 513 Z","M 372 311 Q 475 335 483 341 Q 492 348 487 357 Q 480 367 452 375 Q 413 381 374 361 L 319 344 Q 313 344 308 342 Q 259 330 200 324 Q 166 318 191 302 Q 230 281 296 296 Q 306 299 320 300 L 372 311 Z","M 367 202 Q 368 260 372 311 L 374 361 Q 380 445 375 450 Q 359 466 343 476 C 318 493 296 493 305 464 Q 315 436 319 352 Q 318 349 319 344 L 320 300 Q 320 255 322 190 C 323 160 366 172 367 202 Z","M 322 190 Q 258 177 192 160 Q 170 154 133 156 Q 118 155 116 144 Q 113 129 123 120 Q 148 101 184 78 Q 194 74 209 83 Q 255 114 306 134 Q 384 162 460 192 Q 490 204 511 219 Q 526 226 527 236 Q 521 243 507 241 Q 440 222 367 202 L 322 190 Z","M 573 596 Q 606 524 585 344 Q 576 308 607 273 Q 617 263 627 274 Q 643 302 644 392 Q 640 500 647 567 Q 653 589 633 601 Q 617 611 599 619 Q 586 623 577 618 Q 568 611 573 596 Z","M 767 696 Q 771 662 772 134 Q 771 112 760 103 Q 753 100 679 117 Q 645 132 647 120 Q 648 113 669 96 Q 738 38 754 7 Q 773 -30 791 -32 Q 807 -33 823 4 Q 842 53 841 133 Q 802 575 843 725 Q 861 758 800 782 Q 763 801 743 793 Q 724 786 741 761 Q 765 733 767 696 Z"],"m":[[[191,711],[212,705],[276,706],[460,743],[504,742]],[[301,674],[331,651],[324,632],[278,560],[238,514],[220,470],[255,467],[428,518],[455,517]],[[430,590],[494,514],[504,473]],[[193,314],[252,309],[418,349],[477,351]],[[313,462],[341,442],[346,418],[345,227],[328,199]],[[131,140],[193,120],[520,234]],[[586,607],[615,574],[616,564],[618,401],[611,325],[617,280]],[[746,780],[768,768],[802,735],[796,400],[805,108],[784,56],[741,72],[654,120]]]},"去":{"s":["M 532 554 Q 700 587 710 593 Q 720 602 715 611 Q 708 624 676 633 Q 645 640 611 628 Q 572 616 535 605 L 481 592 Q 406 579 324 571 Q 284 567 312 547 Q 354 520 417 533 Q 448 539 482 545 L 532 554 Z","M 522 387 Q 528 472 532 554 L 535 605 Q 538 714 558 779 Q 561 791 540 807 Q 503 826 476 831 Q 458 835 450 825 Q 443 818 451 801 Q 476 765 476 740 Q 480 670 481 592 L 482 545 Q 481 467 478 382 C 477 352 520 357 522 387 Z","M 497 351 Q 599 363 923 363 Q 945 362 951 372 Q 957 385 939 400 Q 881 445 840 436 Q 722 414 522 387 L 478 382 Q 297 363 86 340 Q 64 339 80 319 Q 96 303 115 297 Q 139 291 156 296 Q 288 330 436 345 Q 440 346 447 346 L 497 351 Z","M 653 140 Q 518 121 378 100 Q 368 99 365 101 Q 362 105 370 114 Q 485 267 530 305 Q 546 320 537 331 Q 527 343 497 351 C 469 361 446 369 447 346 Q 446 340 448 329 Q 454 257 331 132 Q 304 111 266 89 Q 221 71 239 28 Q 240 27 242 22 Q 252 0 268 -7 Q 277 -11 289 -5 Q 403 61 657 116 Q 661 117 667 118 C 696 124 683 144 653 140 Z","M 667 118 Q 733 7 743 1 Q 752 -2 762 6 Q 778 16 775 65 Q 775 123 616 241 Q 607 248 602 236 Q 598 223 607 209 Q 629 178 653 140 L 667 118 Z"],"m":[[[315,561],[338,554],[389,553],[541,579],[636,605],[704,604]],[[463,815],[513,770],[502,412],[485,389]],[[83,329],[138,319],[368,355],[850,400],[900,393],[938,379]],[[454,342],[485,313],[427,216],[352,127],[327,71],[357,66],[632,125],[661,122]],[[612,229],[678,155],[734,79],[751,23],[748,9]]]},"又":{"s":["M 532 313 Q 539 325 549 337 Q 616 430 658 564 Q 673 612 708 643 Q 730 662 711 678 Q 686 696 653 704 Q 626 716 551 686 Q 404 646 283 635 Q 262 635 258 629 Q 254 616 280 599 Q 311 578 384 603 Q 568 658 589 652 Q 601 652 601 632 Q 568 473 491 354 L 468 322 Q 438 288 405 254 Q 317 175 148 91 Q 130 82 140 76 Q 147 72 175 81 Q 400 151 503 276 L 532 313 Z","M 503 276 Q 669 62 732 58 Q 844 49 936 57 Q 984 61 980 74 Q 979 80 932 96 Q 749 153 725 166 Q 623 221 532 313 L 491 354 Q 428 423 364 503 Q 327 549 289 553 Q 270 554 265 550 Q 262 543 278 530 Q 344 485 468 322 L 503 276 Z"],"m":[[[266,625],[310,613],[349,618],[590,676],[630,669],[648,653],[578,447],[522,348],[477,289],[422,233],[338,172],[233,116],[145,82]],[[271,547],[312,527],[345,499],[547,261],[627,183],[689,133],[730,110],[761,102],[937,77],[947,71],[974,72]]]},"只":{"s":["M 343 702 Q 330 708 297 713 Q 284 717 279 711 Q 272 704 282 685 Q 319 607 340 481 Q 344 442 365 417 Q 386 392 392 410 Q 396 423 396 440 L 393 479 Q 369 596 362 665 C 359 695 359 696 343 702 Z","M 681 517 Q 714 632 756 670 Q 777 691 759 712 Q 675 782 614 752 Q 509 719 343 702 C 313 699 332 661 362 665 Q 372 665 606 702 Q 633 708 643 696 Q 656 684 653 659 Q 640 580 622 518 C 614 489 672 488 681 517 Z","M 396 440 Q 402 440 409 441 Q 502 460 701 474 Q 713 475 715 485 Q 716 494 682 517 L 681 517 L 622 518 Q 495 491 393 479 C 363 475 366 438 396 440 Z","M 347 312 Q 329 225 118 70 Q 93 54 124 56 Q 203 60 352 196 Q 373 223 426 270 Q 439 283 437 293 Q 433 309 405 318 Q 374 331 360 328 Q 351 327 347 312 Z","M 612 320 Q 696 230 794 102 Q 810 77 826 71 Q 836 68 845 79 Q 861 92 851 143 Q 845 194 745 266 Q 712 299 616 355 Q 607 362 603 348 Q 602 333 612 320 Z"],"m":[[[287,703],[320,676],[330,654],[379,417]],[[353,699],[364,689],[393,688],[639,731],[676,718],[703,689],[700,676],[663,556],[629,523]],[[402,447],[416,463],[618,493],[680,495],[705,485]],[[420,290],[381,284],[332,219],[293,179],[186,96],[128,66]],[[615,342],[697,269],[791,173],[813,140],[830,88]]]},"可":{"s":["M 686 704 Q 770 716 912 703 Q 937 700 943 710 Q 950 723 938 736 Q 907 764 861 784 Q 846 790 819 781 Q 728 760 493 731 Q 156 695 143 694 Q 136 695 129 694 Q 114 694 113 682 Q 112 669 132 654 Q 150 641 182 629 Q 194 625 212 634 Q 257 649 406 674 Q 478 686 620 699 L 686 704 Z","M 293 536 Q 280 540 257 545 Q 244 549 241 543 Q 234 537 243 521 Q 270 463 285 367 Q 288 339 304 320 Q 322 298 327 313 Q 331 326 331 349 L 328 381 Q 313 477 311 505 C 309 531 309 531 293 536 Z","M 498 406 Q 520 481 545 503 Q 570 531 545 549 Q 523 562 493 583 Q 472 596 430 572 Q 367 548 293 536 C 263 531 281 501 311 505 Q 320 506 331 508 Q 380 518 422 527 Q 450 533 457 521 Q 464 515 456 482 Q 449 448 439 409 C 432 380 489 377 498 406 Z","M 331 349 Q 332 349 334 348 Q 344 345 359 349 Q 407 361 512 371 Q 524 372 524 382 Q 524 389 498 406 C 477 420 468 417 439 409 Q 378 391 328 381 C 299 375 302 357 331 349 Z","M 578 106 Q 556 113 526 120 Q 513 124 512 116 Q 513 107 524 96 Q 591 35 634 -13 Q 647 -23 663 -6 Q 711 57 707 146 Q 695 464 708 641 Q 715 672 708 685 Q 702 694 686 704 C 663 723 613 728 620 699 Q 629 678 637 576 Q 637 435 635 154 Q 634 117 622 104 Q 609 97 578 106 Z"],"m":[[[126,681],[187,663],[480,710],[845,747],[930,719]],[[250,535],[271,517],[283,497],[316,319]],[[302,534],[323,524],[451,554],[480,549],[503,523],[476,436],[447,415]],[[335,355],[348,366],[438,386],[490,388],[515,381]],[[627,698],[670,662],[670,122],[653,70],[636,56],[571,83],[520,114]]]},"和":{"s":["M 357 706 Q 471 751 500 757 Q 518 758 522 765 Q 526 777 514 788 Q 453 833 417 829 Q 410 825 409 814 Q 409 768 161 660 Q 155 651 162 648 Q 192 648 288 682 Q 297 685 309 688 L 357 706 Z","M 383 515 Q 441 528 512 538 Q 528 539 530 548 Q 531 561 512 570 Q 484 583 461 577 Q 421 568 386 559 L 334 546 Q 169 510 81 500 Q 68 499 65 490 Q 61 480 77 468 Q 119 438 161 454 Q 254 484 321 502 L 383 515 Z","M 380 391 Q 383 493 383 515 L 386 559 Q 390 607 401 642 Q 410 657 407 670 Q 400 679 357 706 C 332 722 295 714 309 688 Q 333 649 334 609 Q 334 579 334 546 L 334 416 Q 327 170 317 123 Q 299 42 312 3 Q 315 -6 320 -18 Q 327 -36 335 -39 Q 341 -46 348 -37 Q 375 -21 375 42 Q 374 79 380 367 L 380 391 Z","M 321 502 Q 255 358 63 147 Q 56 137 68 135 Q 90 132 219 260 Q 279 321 334 416 C 397 523 334 529 321 502 Z","M 380 367 Q 387 360 403 351 Q 436 329 470 303 Q 483 293 497 295 Q 506 296 509 308 Q 512 321 502 346 Q 495 365 462 378 Q 390 399 380 391 C 361 384 361 384 380 367 Z","M 596 494 Q 584 501 547 510 Q 534 514 529 509 Q 522 502 530 484 Q 564 399 576 260 Q 577 218 599 190 Q 617 165 624 181 Q 633 203 631 245 L 626 285 Q 608 418 605 459 C 602 489 602 491 596 494 Z","M 848 318 Q 872 436 909 470 Q 927 492 909 511 Q 890 526 829 551 Q 808 558 785 548 Q 719 518 596 494 C 567 488 576 453 605 459 Q 615 460 628 465 Q 790 498 798 491 Q 811 481 810 454 Q 803 381 790 320 C 784 291 842 289 848 318 Z","M 631 245 Q 658 260 866 277 Q 879 278 880 289 Q 880 298 848 318 C 830 330 819 327 790 320 Q 700 298 626 285 C 596 280 603 234 631 245 Z"],"m":[[[512,771],[443,783],[398,752],[320,713],[165,654]],[[77,486],[108,478],[146,479],[470,555],[519,551]],[[317,684],[349,673],[365,652],[340,-26]],[[329,497],[308,422],[266,356],[178,246],[69,143]],[[385,385],[467,343],[495,309]],[[536,501],[570,469],[573,457],[613,189]],[[609,466],[627,484],[639,482],[794,521],[810,522],[825,515],[856,485],[855,475],[825,348],[797,326]],[[631,252],[650,271],[787,295],[840,297],[870,289]]]},"哪":{"s":["M 106 610 Q 96 616 70 621 Q 58 625 55 620 Q 48 616 56 599 Q 81 535 92 429 Q 93 398 109 376 Q 125 354 131 369 Q 138 387 136 419 L 133 451 Q 120 560 120 586 C 119 604 119 604 106 610 Z","M 257 472 Q 270 568 295 598 Q 314 622 292 633 Q 235 661 230 660 Q 223 659 217 654 Q 181 629 106 610 C 77 602 91 577 120 586 Q 162 599 196 609 Q 220 616 225 606 Q 234 600 214 480 C 209 450 253 442 257 472 Z","M 136 419 Q 214 438 264 447 Q 274 448 274 457 Q 274 463 257 472 C 235 484 235 484 214 480 Q 207 479 200 476 Q 163 463 133 451 C 105 440 107 412 136 419 Z","M 419 715 Q 498 740 516 731 Q 529 722 530 680 Q 536 389 495 294 Q 486 279 467 285 Q 412 294 414 298 Q 386 305 408 281 Q 439 248 463 213 Q 485 188 501 200 Q 585 254 581 530 Q 578 686 596 712 Q 612 734 599 744 Q 577 763 543 773 Q 527 780 437 749 Q 395 737 329 727 Q 310 728 322 716 Q 337 701 373 704 L 419 715 Z","M 425 567 Q 444 574 469 582 Q 487 588 490 591 Q 496 598 491 604 Q 485 611 463 614 Q 444 615 429 609 L 379 588 Q 378 588 376 587 Q 351 580 322 573 Q 297 566 317 555 Q 344 546 376 551 L 425 567 Z","M 402 444 Q 432 453 467 461 Q 486 467 488 469 Q 495 476 491 483 Q 484 492 461 496 Q 436 500 413 488 Q 412 488 411 487 L 364 471 Q 339 467 313 463 Q 285 456 306 444 Q 328 432 356 435 L 402 444 Z","M 356 435 Q 323 306 230 163 Q 226 157 224 152 Q 221 142 231 145 Q 268 152 339 274 Q 345 287 352 300 Q 386 373 402 444 L 411 487 Q 418 527 425 567 L 429 609 Q 432 646 440 673 Q 447 685 442 697 Q 433 707 419 715 C 394 732 364 733 373 704 Q 389 667 379 588 L 376 551 Q 372 511 364 471 L 356 435 Z","M 725 688 Q 800 727 818 718 Q 830 711 822 687 Q 776 549 776 548 Q 776 535 798 529 Q 885 465 893 381 Q 893 357 881 346 Q 869 337 847 341 Q 813 348 783 351 Q 774 352 775 345 Q 776 338 792 326 Q 855 281 866 259 Q 873 244 886 243 Q 899 242 914 253 Q 953 299 955 355 Q 959 439 843 540 Q 801 559 861 639 Q 877 679 916 702 Q 946 721 918 740 Q 878 771 853 781 Q 834 787 818 775 Q 785 747 704 719 C 676 709 698 675 725 688 Z","M 666 -7 Q 670 -32 678 -41 Q 684 -48 691 -46 Q 707 -36 711 21 Q 720 115 716 206 Q 713 258 713 611 Q 713 632 725 688 C 728 704 728 704 704 719 Q 679 737 666 738 Q 653 742 638 733 Q 629 726 637 715 Q 664 667 665 627 Q 668 464 662 206 Q 661 46 666 -7 Z"],"m":[[[63,612],[92,579],[121,375]],[[116,608],[127,601],[224,633],[253,619],[261,610],[239,495],[252,483]],[[144,425],[151,440],[213,459],[265,456]],[[330,718],[364,717],[512,753],[535,749],[561,726],[552,428],[533,310],[520,275],[490,244],[407,291]],[[318,564],[367,566],[448,595],[482,598]],[[308,454],[360,453],[435,475],[481,478]],[[382,702],[411,675],[398,537],[377,428],[355,358],[317,272],[275,203],[232,153]],[[715,719],[732,710],[788,735],[833,747],[843,745],[867,722],[808,585],[803,553],[867,492],[898,450],[919,401],[921,350],[907,316],[892,301],[782,344]],[[645,724],[665,714],[682,696],[691,663],[687,-36]]]},"在":{"s":["M 448 583 Q 554 605 668 624 Q 743 640 754 649 Q 764 658 759 667 Q 752 680 720 689 Q 689 696 655 684 Q 570 656 478 635 Q 474 634 471 633 L 415 623 Q 339 611 256 603 Q 216 599 244 579 Q 284 554 362 568 Q 375 571 391 572 L 448 583 Z","M 327 374 Q 385 452 448 583 L 471 633 Q 520 736 550 769 Q 566 785 560 799 Q 551 830 496 853 Q 480 862 461 855 Q 448 846 457 833 Q 475 808 474 781 Q 474 747 415 623 L 391 572 Q 346 484 297 414 L 266 372 Q 262 368 259 363 Q 192 281 47 162 Q 34 147 46 144 Q 52 141 66 149 Q 178 203 273 306 L 327 374 Z","M 273 306 Q 273 180 248 79 Q 236 28 270 -11 Q 271 -14 274 -16 Q 290 -32 302 -6 Q 317 34 316 79 Q 317 302 324 351 Q 327 364 327 374 C 327 377 316 391 297 414 Q 285 432 262 443 Q 252 444 249 438 Q 243 426 266 372 L 273 306 Z","M 623 312 Q 671 324 721 333 Q 767 345 775 351 Q 784 358 779 368 Q 772 380 742 387 Q 718 393 625 363 L 572 348 Q 571 349 569 348 Q 505 333 430 326 Q 393 319 419 302 Q 464 278 522 293 Q 544 299 573 302 L 623 312 Z","M 614 133 Q 618 226 623 312 L 625 363 Q 628 423 643 486 Q 647 498 626 512 Q 590 531 566 535 Q 550 538 542 529 Q 535 522 543 507 Q 567 473 567 449 Q 570 400 572 348 L 573 302 Q 574 220 571 128 C 570 98 613 103 614 133 Z","M 571 128 Q 477 118 370 104 Q 348 101 364 83 Q 379 68 398 62 Q 420 56 438 61 Q 567 94 842 93 Q 855 93 872 92 Q 894 92 899 101 Q 905 114 887 129 Q 824 177 763 157 Q 702 148 614 133 L 571 128 Z"],"m":[[[247,593],[289,585],[349,589],[497,615],[681,659],[747,661]],[[467,843],[483,835],[511,802],[511,780],[424,585],[340,435],[278,348],[218,282],[127,204],[49,153]],[[258,433],[297,362],[291,159],[280,54],[286,-6]],[[422,315],[495,310],[699,357],[768,362]],[[555,519],[592,491],[602,470],[594,157],[577,136]],[[368,93],[420,84],[522,100],[801,128],[849,121],[887,108]]]},"地":{"s":["M 292 431 Q 376 461 382 466 Q 389 475 384 482 Q 377 492 349 495 Q 321 496 295 483 Q 294 483 294 482 L 244 459 Q 154 429 124 423 Q 91 413 117 401 Q 151 389 224 409 Q 233 412 245 415 L 292 431 Z","M 286 229 Q 290 334 292 431 L 294 482 Q 294 599 315 684 Q 318 696 296 711 Q 259 730 232 734 Q 214 738 206 728 Q 199 721 207 704 Q 237 662 237 634 Q 241 550 244 459 L 245 415 Q 245 318 242 211 C 241 181 285 199 286 229 Z","M 242 211 Q 190 190 134 167 Q 118 160 88 157 Q 75 154 74 143 Q 73 130 84 122 Q 109 109 146 93 Q 156 92 168 102 Q 195 129 346 223 Q 367 236 382 250 Q 394 260 393 269 Q 387 273 375 270 Q 332 251 286 229 L 242 211 Z","M 473 369 Q 513 393 580 428 L 627 454 Q 675 482 738 514 Q 757 521 762 510 Q 772 494 735 332 Q 731 289 700 300 Q 681 306 661 310 Q 648 311 651 304 Q 657 294 719 240 Q 741 216 757 237 Q 791 280 798 343 Q 808 406 818 470 Q 825 504 853 535 Q 863 551 848 562 Q 829 572 780 579 Q 761 582 749 569 Q 724 545 630 489 L 583 463 Q 541 444 497 421 Q 485 417 475 411 L 432 391 Q 377 369 341 355 Q 328 352 328 343 Q 328 336 369 326 Q 394 319 415 334 Q 419 338 432 345 L 473 369 Z","M 580 428 Q 565 263 574 233 Q 580 220 590 226 Q 612 250 617 331 Q 621 395 627 454 L 630 489 Q 643 699 658 753 Q 668 774 655 787 Q 639 803 609 819 Q 585 829 560 820 Q 547 811 562 794 Q 586 742 589 696 Q 593 597 583 463 L 580 428 Z","M 973 161 Q 958 201 944 318 Q 944 334 937 338 Q 931 341 927 324 Q 905 201 885 162 Q 869 135 811 120 Q 682 86 560 140 Q 512 165 497 197 Q 476 234 473 300 Q 472 333 473 369 L 475 411 Q 478 472 487 539 Q 491 557 479 566 Q 466 579 442 586 Q 429 590 421 585 Q 414 581 420 563 Q 435 526 433 488 Q 432 436 432 391 L 432 345 Q 433 221 451 176 Q 460 139 493 108 Q 604 20 811 49 Q 836 55 862 62 Q 916 80 966 121 Q 985 136 973 161 Z"],"m":[[[118,413],[175,416],[321,468],[375,475]],[[219,718],[270,677],[272,657],[265,244],[247,219]],[[90,142],[147,133],[388,265]],[[335,345],[397,351],[603,456],[729,531],[774,545],[798,533],[786,439],[754,290],[738,270],[728,270],[657,305]],[[570,808],[594,793],[616,767],[619,730],[610,502],[584,235]],[[429,577],[451,555],[458,535],[451,313],[463,217],[490,155],[548,110],[634,81],[693,74],[797,81],[880,108],[929,151],[936,332]]]},"多":{"s":["M 371 636 Q 419 669 477 726 L 493 742 Q 512 761 532 779 Q 545 788 535 806 Q 502 848 476 850 Q 466 851 464 836 Q 449 728 308 638 Q 274 617 256 603 Q 244 590 260 592 Q 278 592 352 625 L 371 636 Z","M 477 726 Q 476 726 477 725 Q 502 698 593 715 Q 612 716 618 708 Q 621 701 605 681 Q 553 605 464 527 Q 389 463 247 377 Q 231 367 246 364 Q 336 364 535 524 Q 538 528 543 531 Q 604 583 666 650 Q 690 677 729 701 Q 747 710 742 721 Q 741 731 681 764 Q 666 776 611 755 Q 512 743 493 742 C 463 739 458 739 477 726 Z","M 352 625 Q 355 618 373 599 Q 391 580 411 555 Q 420 545 432 543 Q 441 543 445 553 Q 449 563 446 587 Q 443 603 421 616 Q 400 625 371 636 C 343 647 339 648 352 625 Z","M 400 284 Q 499 359 524 381 L 552 409 Q 588 446 606 461 Q 616 471 614 481 Q 613 493 589 502 Q 564 512 551 511 Q 544 510 541 498 Q 511 405 285 251 Q 264 238 290 240 Q 324 243 375 270 L 400 284 Z","M 524 381 Q 564 360 646 388 Q 671 392 681 385 Q 688 378 658 323 Q 529 64 193 -47 Q 181 -50 182 -56 Q 182 -62 191 -62 Q 219 -66 283 -52 Q 344 -39 410 -4 Q 489 36 569 111 Q 648 184 734 311 Q 756 341 788 358 Q 807 365 808 376 Q 809 391 779 414 Q 742 445 725 447 Q 712 447 698 439 Q 641 424 552 409 C 522 404 495 389 524 381 Z","M 375 270 Q 375 267 460 175 Q 470 162 485 162 Q 495 161 501 173 Q 507 186 501 214 Q 495 247 400 284 C 372 295 358 294 375 270 Z"],"m":[[[476,838],[494,796],[452,737],[366,655],[336,634],[262,599]],[[484,726],[630,734],[666,717],[645,678],[606,630],[494,520],[354,421],[250,370]],[[358,625],[407,597],[421,583],[432,557]],[[596,478],[567,472],[505,397],[398,306],[331,264],[295,249]],[[531,383],[672,411],[722,402],[734,384],[682,294],[619,204],[510,93],[428,34],[338,-13],[270,-39],[190,-54]],[[382,273],[402,266],[460,220],[486,178]]]},"大":{"s":["M 494 476 Q 542 485 795 501 Q 817 502 822 512 Q 826 525 808 540 Q 750 580 707 569 Q 631 550 500 522 L 436 509 Q 331 490 213 469 Q 189 465 208 447 Q 241 420 294 432 Q 357 453 431 465 L 494 476 Z","M 487 437 Q 491 456 494 476 L 500 522 Q 510 711 528 763 Q 534 776 523 786 Q 501 805 459 822 Q 434 832 414 825 Q 390 816 410 796 Q 444 762 444 726 Q 445 602 436 509 L 431 465 Q 398 275 310 179 Q 303 173 297 166 Q 251 118 148 55 Q 133 48 130 43 Q 124 36 144 34 Q 195 34 300 104 Q 385 173 414 218 Q 444 266 480 396 L 487 437 Z","M 480 396 Q 501 357 575 245 Q 657 124 718 56 Q 746 22 774 22 Q 856 28 928 32 Q 959 33 959 41 Q 960 50 927 66 Q 753 144 719 174 Q 614 267 500 419 Q 493 429 487 437 C 469 461 465 422 480 396 Z"],"m":[[[210,458],[268,453],[514,503],[719,534],[770,529],[810,517]],[[416,810],[444,799],[482,759],[469,518],[448,394],[426,320],[386,231],[361,196],[307,140],[202,67],[138,41]],[[486,430],[500,393],[576,284],[660,182],[722,118],[774,77],[953,42]]]},"天":{"s":["M 499 681 Q 581 697 671 713 Q 726 725 734 732 Q 744 741 739 750 Q 732 763 699 773 Q 666 780 562 747 Q 439 719 336 709 Q 294 703 324 684 Q 369 659 430 668 L 499 681 Z","M 509 439 Q 615 454 771 455 Q 843 455 848 465 Q 854 478 836 493 Q 781 532 739 524 Q 652 505 506 478 L 447 470 Q 323 452 181 432 Q 159 429 175 411 Q 208 381 250 391 Q 340 416 442 430 L 509 439 Z","M 506 478 Q 512 583 534 637 Q 540 650 530 658 Q 518 670 499 681 C 474 698 413 693 430 668 Q 455 637 455 606 Q 454 531 447 470 L 442 430 Q 412 253 320 176 Q 232 113 145 75 Q 130 71 127 66 Q 121 60 138 57 Q 214 51 362 143 Q 390 167 413 194 Q 470 267 494 405 L 506 478 Z","M 494 405 Q 629 144 722 51 Q 740 33 762 31 Q 847 30 920 27 Q 951 26 952 33 Q 953 42 920 59 Q 752 134 710 180 Q 601 294 515 430 Q 511 434 509 439 C 493 464 473 446 494 405 Z"],"m":[[[326,698],[350,691],[403,691],[654,741],[700,747],[727,744]],[[179,421],[204,414],[238,414],[519,462],[749,490],[800,484],[839,472]],[[438,664],[485,643],[491,633],[466,401],[450,336],[424,268],[394,216],[340,158],[212,87],[134,63]],[[505,431],[510,408],[533,366],[596,270],[714,122],[771,78],[947,35]]]},"好":{"s":["M 330 202 Q 361 175 399 134 Q 415 119 424 118 Q 433 118 439 128 Q 446 138 442 170 Q 435 206 361 247 L 319 270 Q 292 286 258 304 Q 237 314 240 335 Q 261 393 281 453 L 293 492 Q 317 568 337 644 Q 347 690 366 715 Q 379 737 373 750 Q 360 769 313 797 Q 294 810 276 801 Q 263 794 273 778 Q 303 733 247 486 L 236 442 Q 218 373 195 336 Q 185 314 206 296 Q 254 268 294 233 L 330 202 Z","M 294 233 Q 287 226 281 217 Q 250 180 196 143 Q 183 134 165 124 Q 149 114 133 104 Q 120 95 131 92 Q 212 86 327 199 Q 328 200 330 202 L 361 247 Q 406 322 421 385 Q 449 488 463 510 Q 473 526 458 537 Q 416 576 387 569 Q 374 565 378 550 Q 387 531 387 507 L 385 481 Q 384 469 382 455 Q 375 376 319 270 L 294 233 Z","M 387 507 Q 341 501 293 492 L 247 486 Q 183 479 115 468 Q 94 465 61 471 Q 48 471 45 462 Q 41 450 49 441 Q 68 422 96 400 Q 106 396 118 402 Q 190 436 236 442 L 281 453 Q 320 463 362 474 Q 372 478 385 481 C 414 489 417 511 387 507 Z","M 671 521 Q 788 635 822 648 Q 843 655 835 672 Q 831 688 760 725 Q 739 735 716 725 Q 661 703 575 676 Q 553 669 498 669 Q 473 669 482 648 Q 491 635 511 623 Q 544 605 578 627 Q 597 636 691 676 Q 706 682 719 673 Q 732 664 726 649 Q 693 595 655 531 C 640 505 649 500 671 521 Z","M 717 430 Q 702 497 671 521 L 655 531 Q 648 535 640 538 Q 618 547 608 540 Q 595 533 608 519 Q 645 491 653 444 Q 656 434 659 421 L 668 384 Q 701 204 658 103 Q 643 76 607 83 Q 576 89 548 94 Q 536 97 542 85 Q 546 78 564 65 Q 604 31 618 5 Q 628 -14 645 -11 Q 660 -10 687 17 Q 775 107 726 391 L 717 430 Z","M 726 391 Q 783 397 947 397 Q 966 398 971 406 Q 977 416 960 430 Q 909 467 848 454 Q 793 445 717 430 L 659 421 Q 562 409 452 393 Q 431 392 447 375 Q 460 362 478 357 Q 497 351 514 356 Q 586 375 668 384 L 726 391 Z"],"m":[[[282,788],[307,769],[327,733],[264,465],[216,321],[235,298],[386,194],[411,166],[424,133]],[[390,556],[417,530],[424,516],[422,504],[387,361],[338,255],[304,207],[260,165],[206,127],[137,97]],[[59,457],[107,434],[373,491],[380,501]],[[493,656],[517,646],[550,644],[680,692],[706,699],[743,696],[771,669],[765,657],[677,546],[674,535],[663,536]],[[613,530],[637,519],[659,499],[674,474],[687,432],[711,289],[709,166],[692,92],[672,59],[648,41],[551,85]],[[449,384],[504,377],[860,427],[906,426],[960,412]]]},"子":{"s":["M 544 561 Q 575 580 648 638 Q 679 666 700 671 Q 737 683 739 698 Q 740 708 705 746 Q 672 782 661 780 Q 657 783 644 778 Q 575 748 344 719 Q 323 720 309 722 Q 290 726 283 715 Q 280 708 288 697 Q 298 684 322 666 Q 343 650 354 650 Q 364 649 384 662 Q 420 690 607 732 Q 632 738 637 735 Q 643 731 642 723 Q 642 714 543 589 Q 534 580 529 573 C 509 550 519 545 544 561 Z","M 529 573 Q 505 588 486 592 Q 474 596 466 591 Q 462 587 474 574 Q 495 544 508 451 L 513 407 Q 541 169 492 90 Q 489 83 482 81 Q 467 77 356 100 Q 349 100 346 97 Q 345 93 354 85 Q 429 30 470 -13 Q 483 -26 492 -24 Q 505 -23 527 -1 Q 575 44 576 136 Q 583 239 562 411 L 557 457 Q 551 505 549 542 Q 549 554 544 561 L 529 573 Z","M 508 451 Q 499 452 299 429 Q 227 419 121 418 Q 108 418 106 406 Q 105 393 124 378 Q 142 365 174 353 Q 186 349 204 357 Q 222 363 297 375 Q 393 397 513 407 L 562 411 Q 769 430 888 417 Q 937 417 940 418 Q 940 421 942 421 Q 949 434 937 447 Q 864 513 800 491 Q 739 479 675 469 Q 605 463 557 457 L 508 451 Z"],"m":[[[294,711],[355,686],[462,717],[620,752],[658,752],[675,732],[681,708],[549,578],[536,574]],[[472,588],[516,549],[530,478],[550,263],[549,179],[537,99],[523,64],[505,42],[490,34],[383,79],[368,91],[353,93]],[[119,405],[142,394],[186,386],[410,420],[826,459],[855,457],[916,439],[937,422]]]},"对":{"s":["M 367 367 Q 404 431 428 515 Q 438 558 468 590 Q 487 609 468 622 Q 444 635 414 642 Q 386 651 360 634 Q 335 624 292 609 Q 244 597 194 590 Q 175 590 170 584 Q 166 571 192 555 Q 222 536 291 560 Q 349 588 356 588 Q 375 588 375 569 Q 356 463 325 400 L 301 356 Q 279 323 253 293 Q 199 235 94 173 Q 79 166 88 160 Q 95 157 117 166 Q 205 199 261 237 Q 298 264 335 316 L 367 367 Z","M 335 316 Q 372 276 412 227 Q 425 208 438 203 Q 445 202 453 210 Q 465 220 456 260 Q 450 299 367 367 L 325 400 Q 246 461 201 491 Q 194 495 190 485 Q 189 473 198 464 Q 247 415 301 356 L 335 316 Z","M 771 530 Q 786 536 914 549 Q 926 548 936 562 Q 937 575 912 587 Q 870 612 786 586 Q 779 585 772 582 L 720 570 Q 657 558 481 537 Q 448 533 474 513 Q 513 483 543 490 Q 622 508 720 522 L 771 530 Z","M 720 522 Q 721 383 724 145 Q 724 123 711 113 Q 702 109 615 121 Q 579 131 583 120 Q 586 113 607 100 Q 683 51 705 21 Q 730 -13 748 -13 Q 763 -13 776 23 Q 792 71 787 146 Q 771 338 771 530 L 772 582 Q 772 688 789 747 Q 805 778 748 802 Q 714 820 693 813 Q 674 806 692 782 Q 714 754 716 719 Q 717 703 720 570 L 720 522 Z","M 510 363 Q 540 332 571 296 Q 584 281 600 281 Q 610 280 617 293 Q 623 306 617 338 Q 610 377 510 412 Q 495 416 488 415 Q 482 411 483 399 Q 486 387 510 363 Z"],"m":[[[178,580],[194,572],[243,572],[363,611],[394,610],[414,595],[388,488],[363,418],[308,322],[244,252],[151,192],[93,165]],[[200,481],[357,338],[406,286],[432,246],[440,216]],[[475,526],[527,515],[853,571],[924,564]],[[700,797],[718,789],[750,756],[744,583],[755,118],[746,88],[730,67],[590,120]],[[492,407],[575,343],[600,299]]]},"小":{"s":["M 499 695 Q 503 661 501 132 Q 500 110 488 101 Q 478 92 448 100 Q 414 107 383 113 Q 347 123 351 112 Q 352 105 375 91 Q 456 42 479 10 Q 504 -26 523 -25 Q 538 -26 552 11 Q 568 57 564 133 Q 531 583 572 723 Q 590 754 532 778 Q 498 797 477 789 Q 459 782 475 759 Q 497 731 499 695 Z","M 266 475 Q 223 408 170 349 Q 160 339 155 320 Q 148 292 154 273 Q 158 251 185 261 Q 213 274 237 308 Q 273 357 284 404 Q 297 441 293 470 Q 289 480 283 484 Q 273 484 266 475 Z","M 706 472 Q 769 411 842 323 Q 860 299 878 293 Q 888 292 897 303 Q 913 318 900 370 Q 887 431 709 508 Q 699 515 696 500 Q 695 484 706 472 Z"],"m":[[[484,773],[501,765],[533,730],[525,545],[532,191],[528,90],[510,54],[459,68],[358,112]],[[280,476],[254,405],[170,274]],[[709,494],[800,425],[848,380],[866,353],[879,311]]]},"少":{"s":["M 460 783 Q 502 714 482 443 Q 473 374 489 351 Q 489 348 492 344 Q 502 326 519 336 Q 529 345 531 420 Q 522 519 543 673 Q 544 704 564 743 Q 571 753 558 768 Q 501 816 468 804 Q 453 800 460 783 Z","M 292 583 Q 261 510 217 446 Q 193 406 212 371 Q 219 350 244 364 Q 269 382 286 417 Q 314 469 319 517 Q 326 554 318 582 Q 314 592 306 593 Q 296 592 292 583 Z","M 698 588 Q 747 542 807 475 Q 823 454 840 449 Q 849 448 857 459 Q 870 472 857 519 Q 848 561 773 593 Q 725 612 699 620 Q 689 626 687 613 Q 687 598 698 588 Z","M 643 470 Q 625 293 421 130 Q 405 120 388 107 Q 325 58 176 -19 Q 166 -26 172 -31 Q 181 -35 195 -33 Q 292 -11 382 38 Q 538 117 674 338 Q 698 374 726 407 Q 738 416 734 430 Q 728 443 696 471 Q 674 490 661 490 Q 645 489 643 470 Z"],"m":[[[470,791],[489,781],[518,745],[505,478],[509,346]],[[305,582],[287,502],[227,374]],[[698,608],[798,540],[821,514],[841,466]],[[662,471],[678,436],[679,417],[605,284],[513,172],[439,107],[375,64],[270,8],[179,-27]]]},"就":{"s":["M 296 754 Q 336 706 377 685 Q 393 682 403 697 Q 409 710 406 728 Q 394 771 309 796 Q 291 800 281 797 Q 274 796 277 782 Q 278 769 296 754 Z","M 89 580 Q 77 579 74 572 Q 71 562 85 551 Q 121 524 161 535 Q 320 583 485 601 Q 500 602 501 610 Q 502 622 486 631 Q 461 643 439 638 Q 198 590 89 580 Z","M 211 480 Q 201 484 174 487 Q 164 488 160 484 Q 156 478 164 464 Q 189 421 210 349 Q 214 327 229 313 Q 245 295 250 309 Q 251 316 251 326 L 247 354 Q 232 429 226 454 C 221 477 221 477 211 480 Z","M 409 380 Q 428 446 449 465 Q 471 487 449 502 Q 431 512 407 529 Q 389 539 371 530 Q 323 500 211 480 C 181 475 198 444 226 454 Q 259 466 338 483 Q 369 490 378 479 Q 382 475 362 384 C 356 355 400 351 409 380 Z","M 337 341 Q 370 348 419 353 Q 428 354 429 362 Q 429 368 409 380 L 362 384 L 361 384 Q 297 366 247 354 C 218 347 221 327 251 326 Q 257 325 265 327 Q 278 331 295 333 L 337 341 Z","M 265 137 Q 252 140 235 143 Q 225 146 225 140 Q 225 133 234 125 Q 277 85 304 50 Q 314 43 326 55 Q 362 103 357 215 Q 356 254 358 291 Q 364 313 359 323 Q 353 330 337 341 C 313 359 285 361 295 333 Q 304 324 308 171 Q 307 144 297 135 Q 288 129 265 137 Z","M 158 260 Q 139 217 113 177 Q 106 168 105 154 Q 104 132 110 119 Q 117 104 135 115 Q 180 146 180 209 Q 184 237 179 260 Q 175 267 169 268 Q 162 267 158 260 Z","M 397 231 Q 439 182 452 179 Q 461 179 465 189 Q 469 199 466 223 Q 463 238 442 250 Q 394 274 380 270 Q 376 269 376 258 Q 377 249 397 231 Z","M 645 465 Q 813 501 823 507 Q 832 514 827 524 Q 820 536 790 543 Q 759 550 728 537 Q 692 525 654 514 L 599 501 Q 559 495 514 490 Q 477 483 503 466 Q 539 448 590 452 L 645 465 Z","M 590 452 Q 539 226 436 88 Q 417 66 394 39 Q 384 30 381 26 Q 377 19 393 21 Q 450 31 548 182 Q 555 198 565 214 Q 616 319 645 465 L 654 514 Q 673 707 694 761 Q 700 771 691 780 Q 673 796 639 813 Q 618 823 601 818 Q 582 811 597 794 Q 622 763 622 734 Q 616 602 599 501 L 590 452 Z","M 965 90 Q 953 115 936 192 Q 936 208 929 214 Q 923 218 918 199 Q 887 117 868 92 Q 858 82 833 76 Q 776 61 730 77 Q 712 84 708 95 Q 678 158 720 373 Q 727 403 678 423 Q 666 427 657 423 Q 650 419 655 402 Q 667 362 663 326 Q 641 77 679 45 Q 745 -7 888 20 Q 889 21 893 21 Q 926 30 958 50 Q 977 65 965 90 Z","M 775 640 Q 806 621 838 597 Q 853 587 868 589 Q 878 590 881 604 Q 884 619 871 646 Q 862 665 831 675 Q 800 681 764 685 Q 749 686 743 683 Q 739 679 742 667 Q 748 657 775 640 Z"],"m":[[[288,787],[361,736],[382,708]],[[84,568],[116,559],[148,559],[432,617],[490,613]],[[168,479],[201,448],[240,314]],[[222,478],[232,470],[352,502],[385,507],[397,502],[415,481],[391,406],[371,395]],[[255,348],[264,342],[358,365],[400,367],[420,362]],[[304,330],[331,304],[333,169],[323,122],[309,100],[277,111],[231,138]],[[169,257],[152,188],[124,125]],[[384,262],[442,219],[453,189]],[[506,479],[581,474],[767,520],[817,517]],[[603,805],[625,795],[655,760],[631,528],[604,397],[567,282],[511,163],[454,83],[388,25]],[[664,415],[691,380],[675,215],[675,140],[684,90],[699,63],[737,46],[789,39],[854,47],[899,65],[917,81],[928,207]],[[749,677],[827,644],[865,605]]]},"山":{"s":["M 536 209 Q 546 407 552 587 Q 556 633 562 664 Q 569 691 574 710 Q 578 723 554 740 Q 512 762 484 767 Q 465 771 456 760 Q 447 751 457 734 Q 488 688 489 655 Q 499 444 488 200 C 487 170 534 179 536 209 Z","M 796 244 Q 657 232 536 209 L 488 200 Q 379 182 284 155 Q 256 148 263 180 Q 267 253 272 329 Q 275 357 263 373 Q 220 416 190 409 Q 178 403 188 382 Q 224 309 215 236 Q 211 166 182 133 Q 161 112 170 96 Q 183 78 203 66 Q 219 57 230 67 Q 243 83 283 99 Q 440 151 606 182 Q 757 210 789 197 C 819 193 826 247 796 244 Z","M 789 197 Q 783 166 774 145 Q 756 118 785 55 Q 795 36 809 49 Q 837 73 846 173 Q 868 386 890 427 Q 900 443 889 460 Q 867 479 831 501 Q 816 510 802 503 Q 793 499 796 484 Q 823 435 796 244 L 789 197 Z"],"m":[[[472,748],[525,700],[514,235],[493,208]],[[196,398],[217,379],[239,340],[243,263],[233,126],[282,127],[380,155],[575,197],[710,218],[772,221],[788,237]],[[810,490],[826,477],[849,433],[798,57]]]},"成":{"s":["M 563 539 Q 710 578 720 587 Q 729 596 724 604 Q 717 616 686 622 Q 656 628 553 587 L 510 573 Q 369 539 303 526 C 274 520 281 498 310 492 Q 346 483 383 495 Q 450 511 521 529 L 563 539 Z","M 303 526 Q 255 557 229 553 Q 208 549 225 526 Q 252 486 237 289 Q 228 240 206 182 Q 184 125 108 49 Q 93 36 89 29 Q 88 22 100 22 Q 137 22 202 90 Q 266 159 291 300 Q 291 309 294 317 L 298 350 Q 302 402 306 466 Q 307 482 310 492 C 315 519 315 519 303 526 Z","M 294 317 Q 300 316 307 318 Q 410 348 417 337 Q 424 327 422 296 Q 418 212 400 174 Q 387 149 367 153 Q 349 159 334 167 Q 312 177 325 153 Q 356 110 370 79 Q 386 61 402 77 Q 450 111 470 237 Q 482 324 494 341 Q 504 353 499 361 Q 490 371 446 389 Q 428 396 412 384 Q 391 372 298 350 C 269 343 264 314 294 317 Z","M 656 188 Q 734 59 842 -20 Q 929 -66 952 -49 Q 974 -39 966 4 Q 956 35 944 154 Q 944 179 937 182 Q 933 183 927 162 Q 900 77 881 62 Q 865 55 822 88 Q 738 155 690 228 L 659 280 Q 595 398 563 539 L 553 587 Q 531 707 550 783 Q 560 811 511 838 Q 472 859 452 854 Q 431 851 444 821 Q 472 778 479 729 Q 492 650 510 573 L 521 529 Q 567 358 630 236 L 656 188 Z","M 630 236 Q 570 164 495 99 Q 488 92 494 88 Q 503 85 514 90 Q 572 115 620 155 Q 639 171 656 188 L 690 228 Q 745 321 765 371 Q 775 396 790 419 Q 797 429 792 440 Q 785 450 752 469 Q 730 481 719 479 Q 704 475 707 458 Q 716 377 659 280 L 630 236 Z","M 668 745 Q 722 696 758 686 Q 774 685 783 700 Q 787 715 782 732 Q 766 772 700 783 Q 655 789 648 785 Q 642 782 646 770 Q 650 757 668 745 Z"],"m":[[[309,521],[327,510],[357,513],[570,565],[644,590],[713,598]],[[231,539],[263,515],[273,492],[268,337],[249,229],[229,173],[197,118],[153,68],[97,30]],[[300,322],[334,344],[419,362],[434,362],[454,343],[447,252],[435,191],[409,134],[392,118],[327,162]],[[452,841],[507,790],[524,616],[552,493],[616,315],[667,217],[700,168],[760,98],[814,49],[849,25],[893,12],[908,15],[918,44],[938,177]],[[722,463],[748,425],[723,347],[682,265],[650,219],[600,167],[499,93]],[[653,777],[727,741],[763,708]]]},"我":{"s":["M 350 571 Q 380 593 449 614 Q 465 615 468 623 Q 471 633 458 643 Q 439 656 396 668 Q 381 674 370 672 Q 363 668 363 657 Q 364 621 200 527 Q 196 518 201 516 Q 213 516 290 546 Q 303 550 316 556 L 350 571 Z","M 584 466 Q 666 485 734 497 Q 746 496 754 511 Q 755 524 729 533 Q 693 554 622 527 Q 598 520 575 511 L 537 499 Q 518 495 500 488 Q 442 472 386 457 L 337 446 Q 327 446 179 416 Q 148 409 173 392 Q 212 365 241 376 Q 287 389 339 404 L 387 416 Q 460 438 545 457 L 584 466 Z","M 386 457 Q 387 493 398 517 Q 405 535 390 548 Q 371 564 350 571 C 323 583 303 583 316 556 Q 315 556 316 555 Q 338 519 337 478 Q 337 462 337 446 L 339 404 Q 340 343 339 289 L 338 241 Q 337 180 334 133 Q 333 115 323 109 Q 317 105 250 119 Q 238 122 239 114 Q 240 108 249 100 Q 309 42 328 6 Q 341 -10 357 3 Q 390 36 390 126 Q 387 169 387 265 L 387 306 Q 387 355 387 416 L 386 457 Z","M 339 289 Q 254 261 161 229 Q 139 222 101 221 Q 86 220 85 207 Q 84 192 94 184 Q 119 166 157 147 Q 169 144 182 154 Q 239 199 338 241 L 387 265 Q 477 314 484 318 Q 499 327 498 337 Q 492 343 479 340 Q 434 324 387 306 L 339 289 Z","M 635 195 Q 690 75 797 -14 Q 876 -62 898 -47 Q 920 -37 914 3 Q 905 34 899 152 Q 900 174 894 178 Q 890 179 884 160 Q 857 75 838 60 Q 823 56 785 88 Q 710 155 670 226 L 644 279 Q 599 381 584 466 L 575 511 Q 547 659 576 752 Q 586 779 543 805 Q 509 827 489 825 Q 470 824 479 795 Q 503 752 507 707 Q 517 601 537 499 L 545 457 Q 573 334 612 245 L 635 195 Z","M 612 245 Q 558 197 452 138 Q 442 132 448 128 Q 455 124 468 126 Q 523 135 574 160 Q 608 175 635 195 L 670 226 Q 706 260 747 317 Q 762 336 778 354 Q 788 361 785 374 Q 781 386 753 410 Q 734 428 723 428 Q 708 427 707 411 Q 701 354 644 279 L 612 245 Z","M 687 669 Q 718 648 754 623 Q 770 613 786 615 Q 798 618 801 632 Q 802 648 789 678 Q 780 697 746 708 Q 665 726 651 715 Q 647 711 651 697 Q 655 687 687 669 Z"],"m":[[[458,627],[392,631],[336,588],[274,552],[258,550],[253,542],[220,530],[212,532],[203,522]],[[174,404],[215,398],[241,402],[672,514],[742,512]],[[323,556],[351,542],[365,522],[361,116],[340,67],[246,113]],[[100,206],[124,195],[163,189],[492,334]],[[492,807],[537,760],[538,627],[569,435],[612,299],[676,170],[717,112],[779,48],[817,22],[859,12],[880,78],[891,140],[886,147],[894,173]],[[723,412],[737,365],[664,259],[594,198],[489,142],[454,132]],[[657,710],[750,668],[781,634]]]},"方":{"s":["M 472 770 Q 506 739 544 700 Q 560 684 580 684 Q 593 684 600 701 Q 607 719 596 756 Q 584 798 467 830 Q 448 834 440 832 Q 433 828 435 811 Q 439 798 472 770 Z","M 514 542 Q 643 563 895 562 Q 919 563 924 573 Q 931 586 911 603 Q 848 646 789 635 Q 576 592 151 534 Q 126 531 144 511 Q 162 495 182 489 Q 207 483 226 489 Q 341 520 470 537 Q 471 538 474 537 L 514 542 Z","M 510 433 Q 528 415 615 398 Q 657 389 656 353 Q 653 343 650 324 Q 625 180 576 113 Q 566 101 551 96 Q 527 89 462 118 Q 422 133 418 126 Q 414 116 432 105 Q 492 69 520 19 Q 526 1 538 -5 Q 551 -9 586 14 Q 640 62 688 241 Q 709 334 734 348 Q 746 354 747 363 Q 748 373 725 399 Q 692 432 642 431 Q 584 435 528 459 C 500 470 484 449 510 433 Z","M 528 459 Q 531 463 534 466 Q 549 476 547 492 Q 540 516 515 542 Q 514 543 514 542 C 493 564 475 567 474 537 Q 481 465 324 257 Q 311 242 298 228 Q 234 162 126 90 Q 119 86 114 81 Q 107 72 118 69 Q 139 63 245 122 Q 270 140 298 162 Q 397 246 493 406 Q 500 421 510 433 L 528 459 Z"],"m":[[[446,823],[543,758],[557,745],[578,706]],[[148,522],[214,514],[511,565],[812,600],[874,592],[910,580]],[[518,437],[534,438],[649,409],[688,383],[695,370],[660,237],[635,160],[606,100],[584,71],[557,50],[423,122]],[[481,534],[503,510],[507,492],[418,339],[344,241],[288,184],[225,133],[122,77]]]},"日":{"s":["M 349 664 Q 348 665 347 666 Q 322 687 292 696 Q 282 697 274 689 Q 270 682 279 670 Q 331 531 294 261 Q 287 216 271 169 Q 262 141 267 118 Q 277 81 291 65 Q 304 50 314 66 Q 324 79 332 102 L 339 137 Q 349 186 350 238 Q 350 316 351 391 L 352 420 Q 353 576 361 626 C 364 652 364 652 349 664 Z","M 608 120 Q 641 78 665 39 Q 675 18 688 19 Q 707 20 724 59 Q 745 104 740 157 Q 728 310 721 593 Q 720 629 738 654 Q 748 669 738 681 Q 716 703 656 730 Q 635 740 617 729 Q 512 684 349 664 C 319 660 332 620 361 626 Q 410 635 590 672 Q 624 679 640 666 Q 691 615 658 164 Q 657 163 657 159 Q 653 143 640 144 C 621 121 602 128 608 120 Z","M 351 391 Q 390 378 433 387 Q 493 399 554 411 Q 582 417 587 421 Q 596 428 591 437 Q 584 447 556 455 Q 531 461 450 435 Q 375 423 352 420 C 322 416 322 400 351 391 Z","M 332 102 Q 345 98 361 100 Q 440 115 608 120 C 638 121 661 122 640 144 Q 633 153 614 166 Q 596 178 561 170 Q 438 146 339 137 C 309 134 303 108 332 102 Z"],"m":[[[284,684],[321,646],[328,617],[332,516],[323,261],[302,136],[302,70]],[[359,660],[374,648],[388,650],[635,703],[668,687],[690,665],[699,450],[699,159],[685,105],[688,37]],[[357,413],[369,404],[398,404],[534,432],[581,431]],[[340,106],[355,119],[432,130],[585,147],[632,143]]]},"是":{"s":["M 386 759 Q 374 763 348 769 Q 336 772 333 767 Q 326 760 335 744 Q 368 674 385 561 Q 389 527 408 503 Q 426 481 431 497 Q 434 507 435 522 L 434 546 Q 433 564 420 624 L 416 648 Q 406 706 403 728 C 399 755 399 755 386 759 Z","M 580 537 Q 598 513 613 505 Q 623 498 638 519 Q 653 544 681 679 Q 690 709 712 733 Q 725 745 714 758 Q 699 774 658 800 Q 643 809 572 793 Q 566 793 461 773 Q 421 766 386 759 C 357 753 374 720 403 728 Q 523 761 592 761 Q 610 764 619 755 Q 632 740 629 724 Q 608 585 591 567 C 577 541 577 541 580 537 Z","M 420 624 Q 424 623 430 624 Q 506 637 563 645 Q 585 649 577 661 Q 567 674 543 678 Q 513 681 416 648 C 388 638 390 627 420 624 Z","M 435 522 Q 438 521 447 522 Q 522 532 580 537 C 610 540 617 553 591 567 Q 585 571 577 572 Q 547 576 434 546 C 405 538 405 525 435 522 Z","M 525 418 Q 639 433 804 433 Q 882 433 888 443 Q 892 455 876 469 Q 816 514 753 494 Q 555 455 149 403 Q 127 400 143 383 Q 176 353 215 363 Q 344 399 477 413 L 525 418 Z","M 530 135 Q 534 204 538 262 L 540 287 Q 541 339 547 372 Q 554 393 525 418 C 503 438 464 440 477 413 Q 489 398 489 304 Q 488 253 487 160 C 487 130 528 105 530 135 Z","M 538 262 Q 547 258 563 260 Q 648 276 710 287 Q 737 293 726 307 Q 713 323 683 327 Q 653 330 540 287 C 512 276 509 271 538 262 Z","M 354 250 Q 375 292 386 301 Q 393 307 391 317 Q 388 327 375 337 Q 342 367 309 357 Q 300 354 304 342 Q 322 282 228 146 Q 224 142 220 136 Q 192 99 120 24 Q 113 18 123 16 Q 177 26 272 130 Q 278 140 287 149 Q 308 177 337 222 L 354 250 Z","M 337 222 Q 521 68 686 -15 Q 711 -28 771 -16 Q 822 -4 875 9 Q 909 19 916 30 Q 922 42 902 42 Q 823 52 775 53 Q 649 62 532 134 Q 531 135 530 135 L 487 160 Q 423 200 354 250 C 330 268 314 241 337 222 Z"],"m":[[[342,759],[364,740],[376,720],[420,502]],[[394,757],[412,747],[476,764],[607,781],[645,772],[660,757],[669,744],[629,579],[615,543],[619,524]],[[425,631],[451,644],[532,660],[567,655]],[[441,528],[450,537],[566,554],[581,562]],[[146,393],[193,384],[441,427],[792,467],[827,464],[880,449]],[[483,412],[517,380],[509,187],[512,167],[528,144]],[[545,268],[578,283],[666,303],[715,300]],[[318,346],[345,311],[321,251],[286,189],[249,136],[196,78],[126,22]],[[357,242],[359,226],[368,218],[463,149],[583,75],[686,28],[709,20],[755,18],[880,26],[907,34]]]},"有":{"s":["M 472 626 Q 601 647 868 646 Q 890 646 896 656 Q 902 669 883 684 Q 817 730 754 712 Q 714 705 486 666 L 435 659 Q 306 644 162 625 Q 138 622 156 603 Q 190 572 233 581 Q 321 606 421 619 L 472 626 Z","M 411 492 Q 442 549 472 626 L 486 666 Q 513 750 539 800 Q 546 810 540 821 Q 533 831 500 849 Q 476 861 466 857 Q 453 853 455 837 Q 465 753 437 664 Q 436 663 435 659 L 421 619 Q 354 462 198 305 Q 149 259 79 199 Q 72 190 78 188 Q 87 185 98 191 Q 291 290 388 451 L 411 492 Z","M 426 226 Q 430 283 435 324 L 438 351 Q 442 421 448 444 Q 449 451 449 456 C 451 474 451 474 427 485 Q 418 491 411 492 C 383 504 381 480 388 451 Q 418 337 366 150 Q 356 120 344 99 Q 323 63 353 17 L 355 15 Q 362 0 372 6 Q 408 27 424 197 L 426 226 Z","M 449 456 Q 525 472 604 489 Q 625 495 630 484 Q 651 429 649 119 Q 643 50 639 43 Q 635 37 615 41 Q 587 48 559 55 Q 540 61 540 51 Q 598 2 631 -35 Q 644 -54 660 -58 Q 670 -62 678 -52 Q 717 -1 716 52 Q 680 424 707 473 Q 719 492 707 503 Q 685 522 648 536 Q 629 543 614 536 Q 542 497 427 485 C 397 481 420 450 449 456 Z","M 435 324 Q 441 323 452 324 Q 531 337 590 346 Q 615 350 605 364 Q 593 379 567 383 Q 536 386 438 351 C 410 341 405 326 435 324 Z","M 424 197 Q 428 197 435 197 Q 526 209 593 215 Q 618 218 609 232 Q 599 248 572 253 Q 539 259 426 226 C 397 218 394 197 424 197 Z"],"m":[[[159,614],[213,605],[502,652],[789,682],[883,663]],[[470,842],[497,805],[484,745],[443,612],[386,497],[329,411],[251,324],[169,252],[83,193]],[[412,482],[418,471],[420,419],[414,294],[397,163],[370,73],[367,16]],[[436,484],[456,474],[484,478],[626,515],[656,500],[670,483],[671,314],[681,115],[677,34],[659,2],[628,10],[550,48]],[[439,330],[454,342],[548,361],[595,357]],[[430,204],[442,213],[482,223],[552,233],[598,226]]]},"来":{"s":["M 529 635 Q 590 645 655 653 Q 716 663 725 671 Q 735 678 730 688 Q 723 701 695 710 Q 664 717 633 708 Q 584 695 533 682 L 483 673 Q 401 660 308 657 Q 271 653 296 634 Q 341 606 395 617 Q 438 624 484 629 L 529 635 Z","M 321 517 Q 346 492 372 462 Q 384 450 398 449 Q 408 449 413 461 Q 417 474 412 501 Q 405 531 320 560 Q 307 564 300 563 Q 296 559 296 548 Q 297 538 321 517 Z","M 637 574 Q 615 540 572 490 Q 565 483 571 475 Q 578 474 587 478 Q 671 530 712 550 Q 731 554 727 565 Q 721 581 702 602 Q 683 621 660 624 Q 644 624 645 604 Q 646 589 637 574 Z","M 542 376 Q 555 377 847 377 Q 869 376 874 385 Q 881 398 863 413 Q 809 456 768 449 Q 677 433 527 413 L 484 409 Q 337 396 166 379 Q 144 378 160 359 Q 175 343 193 337 Q 215 330 233 335 Q 330 359 439 368 L 542 376 Z","M 481 326 Q 481 161 456 68 Q 444 29 471 -34 Q 478 -52 486 -55 Q 493 -62 500 -53 Q 507 -49 518 -28 Q 528 -3 526 29 Q 525 69 526 356 L 527 413 Q 527 602 529 635 L 533 682 Q 537 722 547 756 Q 556 772 553 785 Q 546 795 490 829 Q 466 845 445 830 Q 441 826 447 809 Q 483 757 483 673 L 484 629 Q 487 548 484 409 L 481 326 Z","M 439 368 Q 432 349 414 325 Q 359 250 297 199 Q 245 153 139 89 Q 120 76 137 73 Q 167 67 269 118 Q 336 161 405 229 Q 448 274 474 315 Q 477 321 481 326 C 515 380 464 424 439 368 Z","M 526 356 Q 616 221 733 77 Q 752 53 787 53 Q 905 52 943 57 Q 953 60 956 65 Q 957 71 941 79 Q 785 142 732 186 Q 644 265 542 376 C 522 398 509 381 526 356 Z"],"m":[[[300,647],[322,639],[384,638],[489,651],[647,682],[719,682]],[[304,554],[370,507],[397,465]],[[660,609],[678,574],[575,482]],[[163,369],[215,358],[372,381],[768,413],[812,409],[862,392]],[[456,824],[486,800],[510,770],[505,291],[489,47],[491,-41]],[[476,364],[392,253],[298,167],[211,110],[137,81]],[[535,370],[578,310],[669,204],[771,105],[947,65]]]},"没":{"s":["M 271 729 Q 293 707 319 680 Q 335 664 353 665 Q 366 665 372 681 Q 378 697 368 734 Q 362 753 331 767 Q 253 794 240 788 Q 234 784 236 768 Q 240 755 271 729 Z","M 153 545 Q 198 490 231 477 Q 249 474 258 489 Q 265 502 262 522 Q 255 549 235 563 Q 190 590 159 590 Q 146 593 137 589 Q 130 588 133 574 Q 134 561 153 545 Z","M 153 174 Q 140 171 141 152 Q 153 71 189 50 Q 196 43 207 44 Q 216 45 218 73 Q 224 113 340 382 Q 347 398 347 405 Q 347 415 336 410 Q 321 400 196 216 Q 183 194 153 174 Z","M 509 731 Q 466 758 442 748 Q 430 744 437 730 Q 462 697 450 599 Q 434 517 350 442 Q 338 432 350 431 Q 396 437 445 487 Q 500 547 508 631 Q 511 677 516 693 C 523 722 523 723 509 731 Z","M 889 486 Q 905 490 896 508 Q 881 527 863 540 Q 851 547 826 538 Q 786 522 737 525 Q 706 528 698 551 Q 685 573 698 637 Q 701 676 739 715 Q 758 731 740 746 Q 715 768 688 780 Q 678 786 658 775 Q 585 745 509 731 C 480 725 488 684 516 693 Q 633 732 648 727 Q 655 723 654 708 Q 639 546 659 513 Q 665 501 679 491 Q 715 469 785 468 Q 852 468 889 486 Z","M 622 188 Q 623 191 626 193 Q 669 250 698 340 Q 707 376 727 393 Q 743 406 726 423 Q 705 441 672 454 Q 650 463 628 452 Q 574 421 499 408 Q 471 405 460 398 Q 451 391 470 382 Q 497 369 537 382 Q 579 392 621 404 Q 639 411 640 390 Q 640 303 582 223 L 555 189 Q 473 123 337 86 Q 321 83 331 74 Q 338 68 368 71 Q 513 86 588 150 L 622 188 Z","M 588 150 Q 714 11 756 2 Q 868 2 940 13 Q 980 17 976 29 Q 973 38 870 65 Q 717 113 629 183 Q 625 186 622 188 L 582 223 Q 539 262 496 307 Q 457 349 420 349 Q 401 349 398 344 Q 397 337 413 325 Q 464 295 555 189 L 588 150 Z"],"m":[[[244,781],[332,722],[352,685]],[[145,579],[216,531],[237,501]],[[203,55],[190,95],[190,143],[340,403]],[[445,738],[466,726],[481,706],[482,644],[473,583],[435,506],[402,469],[356,437]],[[518,726],[530,716],[643,748],[679,745],[694,728],[677,671],[670,592],[674,544],[684,522],[706,506],[729,499],[779,497],[851,507],[887,499]],[[468,392],[512,393],[644,430],[666,419],[680,400],[663,326],[641,270],[615,224],[574,171],[537,144],[474,113],[394,87],[337,78]],[[404,342],[445,325],[466,309],[634,141],[748,59],[766,50],[833,39],[971,27]]]},"的":{"s":["M 211 528 Q 337 718 364 741 Q 382 759 365 772 Q 346 785 315 791 Q 287 797 275 789 Q 263 783 272 772 Q 287 739 241 640 Q 217 586 190 527 Q 189 526 189 524 C 177 496 194 503 211 528 Z","M 185 523 Q 163 542 139 550 Q 132 553 127 548 Q 120 544 127 531 Q 169 441 158 244 Q 155 174 192 151 Q 207 145 211 172 L 213 206 Q 203 326 203 357 L 202 383 Q 202 443 204 493 C 205 507 205 507 185 523 Z","M 321 185 Q 333 164 353 130 Q 362 114 371 117 Q 384 120 391 144 Q 421 217 418 314 Q 419 375 420 444 Q 423 486 441 512 Q 454 530 444 541 Q 425 559 384 574 Q 368 583 340 571 Q 306 555 264 541 Q 240 535 211 528 L 189 524 Q 185 524 185 523 C 156 517 175 486 204 493 Q 210 494 215 495 Q 345 534 354 526 Q 387 475 357 239 Q 356 217 348 215 Q 344 214 330 218 C 300 221 306 211 321 185 Z","M 203 357 Q 234 351 318 369 Q 330 372 332 373 Q 339 380 335 387 Q 328 396 305 401 Q 284 404 231 387 Q 216 387 202 383 C 173 375 173 362 203 357 Z","M 211 172 Q 215 172 220 173 Q 254 180 321 185 C 351 187 354 201 330 218 Q 326 221 324 222 Q 323 223 315 225 Q 311 228 311 226 Q 304 229 213 206 C 184 199 181 170 211 172 Z","M 581 551 Q 650 656 680 712 Q 699 755 718 776 Q 727 788 721 803 Q 714 816 681 838 Q 650 856 629 854 Q 608 850 620 827 Q 648 779 565 619 Q 528 546 472 462 Q 462 450 461 443 Q 458 430 473 435 Q 500 441 570 536 L 581 551 Z","M 710 74 Q 694 73 609 110 Q 599 114 599 108 Q 598 104 609 94 Q 661 43 684 6 Q 697 -18 712 -16 Q 733 -17 752 4 Q 822 64 840 212 Q 853 312 859 467 Q 859 501 880 528 Q 893 541 892 550 Q 891 559 871 572 Q 843 591 808 601 Q 786 608 719 585 Q 716 585 714 584 Q 683 575 581 551 C 552 544 548 543 570 536 Q 597 518 654 533 Q 781 549 787 541 Q 791 528 794 487 Q 801 231 746 111 Q 730 77 710 74 Z","M 535 339 Q 560 311 587 277 Q 600 261 618 260 Q 630 259 637 273 Q 644 289 638 322 Q 631 358 536 391 Q 520 398 512 395 Q 506 391 506 377 Q 509 364 535 339 Z"],"m":[[[278,780],[303,766],[314,753],[313,740],[225,565],[216,559],[212,543],[196,533]],[[135,540],[157,518],[174,485],[185,219],[196,166]],[[188,518],[225,512],[356,552],[381,543],[400,520],[391,288],[382,213],[365,182],[369,130]],[[208,364],[225,372],[291,383],[325,382]],[[215,177],[231,194],[292,202],[323,214]],[[630,839],[651,822],[672,790],[648,723],[613,651],[534,518],[470,444]],[[577,537],[775,572],[805,568],[834,541],[827,499],[816,261],[801,171],[772,87],[753,58],[719,32],[621,94],[619,102],[604,107]],[[517,386],[594,325],[619,279]]]},"看":{"s":["M 493 738 Q 622 771 657 772 Q 675 771 679 777 Q 685 787 674 800 Q 629 848 588 853 Q 581 850 578 839 Q 574 808 393 748 Q 347 735 291 719 Q 284 712 289 708 Q 307 702 428 726 Q 435 727 444 728 L 493 738 Z","M 478 589 Q 554 605 635 618 Q 690 630 698 637 Q 707 644 703 652 Q 696 664 668 672 Q 640 679 610 668 Q 553 650 495 636 L 429 624 Q 377 617 318 611 Q 282 607 307 590 Q 346 563 401 576 Q 407 577 414 577 L 478 589 Z","M 427 456 Q 463 474 691 483 Q 746 486 809 487 Q 890 487 896 497 Q 902 510 884 525 Q 821 568 756 549 Q 650 528 486 500 Q 464 497 442 492 L 380 484 Q 256 468 117 448 Q 95 445 112 427 Q 127 412 146 407 Q 168 401 186 407 Q 271 432 364 447 L 427 456 Z","M 391 383 Q 410 420 427 456 L 442 492 Q 460 540 478 589 L 495 636 Q 495 637 496 637 Q 503 656 515 676 Q 527 688 523 703 Q 513 722 493 738 C 471 759 442 758 444 728 Q 450 692 434 642 Q 431 635 429 624 L 414 577 Q 398 529 380 484 L 364 447 Q 295 278 154 141 Q 118 104 82 69 Q 75 65 71 58 Q 67 48 77 47 Q 110 46 222 146 Q 252 176 283 212 Q 331 273 374 350 L 391 383 Z","M 417 368 Q 405 378 391 383 C 366 394 369 380 374 350 Q 402 194 368 76 Q 353 27 386 -8 Q 396 -21 405 -8 Q 415 4 420 26 L 426 59 Q 429 89 430 127 L 430 152 Q 430 189 431 228 L 431 254 Q 431 317 435 337 C 437 353 437 353 417 368 Z","M 604 46 Q 637 9 660 -28 Q 670 -46 681 -45 Q 697 -44 711 -9 Q 727 30 723 76 Q 713 157 702 306 Q 701 337 716 360 Q 725 373 715 382 Q 696 401 644 424 Q 625 433 611 423 Q 554 396 417 368 C 388 362 405 332 435 337 Q 453 338 597 372 Q 619 376 631 368 Q 650 352 651 79 Q 651 78 651 76 Q 648 66 640 63 C 624 38 589 63 604 46 Z","M 431 228 Q 435 227 444 228 Q 526 243 587 251 Q 609 255 601 268 Q 591 283 565 287 Q 540 290 431 254 C 403 245 401 231 431 228 Z","M 430 127 Q 436 126 448 127 Q 530 140 590 148 Q 614 152 605 164 Q 595 179 569 183 Q 547 187 430 152 C 401 143 400 129 430 127 Z","M 420 26 Q 426 26 432 27 Q 487 39 604 46 C 634 48 652 49 640 63 Q 636 70 616 84 Q 601 93 572 86 Q 493 68 426 59 C 396 55 390 24 420 26 Z"],"m":[[[670,784],[605,805],[499,761],[389,730],[293,713]],[[309,602],[334,595],[388,595],[646,648],[691,648]],[[115,437],[167,429],[515,490],[793,521],[851,515],[888,504]],[[451,723],[483,697],[481,687],[410,484],[349,355],[277,243],[231,188],[148,106],[80,56]],[[395,374],[406,327],[409,264],[407,160],[393,37],[396,-4]],[[428,367],[437,359],[456,358],[629,399],[655,386],[673,367],[687,67],[675,31],[613,43]],[[438,235],[448,245],[523,262],[556,267],[591,262]],[[434,133],[447,144],[527,159],[573,165],[595,158]],[[426,31],[440,45],[477,52],[584,67],[632,64]]]},"着":{"s":["M 376 766 Q 397 747 420 724 Q 432 711 446 712 Q 456 713 461 725 Q 465 738 458 765 Q 449 789 372 810 Q 357 813 352 811 Q 348 807 349 796 Q 352 786 376 766 Z","M 595 818 Q 567 784 512 729 Q 506 722 511 715 Q 518 714 526 717 Q 620 772 665 792 Q 683 795 680 806 Q 676 822 658 842 Q 642 861 619 865 Q 604 866 604 847 Q 605 834 595 818 Z","M 494 635 Q 708 671 713 674 Q 722 681 718 689 Q 712 701 686 709 Q 665 715 548 686 Q 428 662 314 657 Q 281 653 304 637 Q 334 613 409 624 Q 425 627 444 628 L 494 635 Z","M 484 524 Q 530 533 654 543 Q 664 542 672 552 Q 673 562 653 573 Q 629 597 545 573 Q 526 570 508 566 Q 504 566 502 564 L 442 555 Q 438 555 329 546 Q 304 543 322 527 Q 343 509 384 509 Q 405 513 434 517 L 484 524 Z","M 441 416 Q 510 434 857 434 Q 878 434 883 443 Q 889 455 872 469 Q 806 520 765 499 Q 663 480 499 458 Q 477 457 456 452 L 411 447 Q 290 435 157 419 Q 135 418 151 399 Q 166 384 184 379 Q 206 373 223 377 Q 304 399 393 410 L 441 416 Z","M 398 333 Q 420 370 441 416 L 456 452 Q 469 483 482 518 Q 483 522 484 524 L 502 564 Q 509 580 518 596 Q 525 605 520 615 Q 516 624 494 635 C 469 651 443 658 444 628 Q 447 594 442 555 L 434 517 Q 430 498 422 475 Q 416 462 411 447 L 393 410 Q 305 242 79 65 Q 72 58 79 55 Q 86 52 96 57 Q 277 141 373 291 L 398 333 Z","M 408 326 Q 404 330 398 333 C 373 350 366 320 373 291 Q 392 215 369 90 Q 350 21 379 -9 Q 389 -21 397 -9 Q 404 1 409 17 L 415 50 Q 418 69 419 119 L 419 143 Q 419 173 420 204 L 420 228 Q 421 280 424 298 C 426 313 426 313 408 326 Z","M 588 27 Q 615 -6 634 -37 Q 643 -53 653 -53 Q 668 -52 681 -21 Q 697 13 693 55 Q 686 128 678 266 Q 677 294 691 314 Q 700 324 691 334 Q 675 352 627 373 Q 611 380 598 372 Q 529 342 408 326 C 378 322 394 294 424 298 Q 433 298 581 327 Q 603 331 615 323 Q 645 293 628 60 Q 628 59 628 57 Q 624 39 608 47 Q 605 48 602 50 C 573 56 569 50 588 27 Z","M 428 204 Q 501 217 556 226 Q 577 230 569 241 Q 559 254 537 257 Q 503 261 420 228 C 392 217 390 204 420 204 Q 423 204 428 204 Z","M 419 119 Q 423 119 430 119 Q 509 132 568 139 Q 589 142 581 153 Q 571 166 549 171 Q 521 175 419 143 C 390 134 389 119 419 119 Z","M 409 17 Q 413 16 423 17 Q 475 26 588 27 C 618 27 623 29 602 50 Q 578 78 496 61 Q 451 55 415 50 C 385 46 379 19 409 17 Z"],"m":[[[357,802],[431,754],[443,730]],[[618,851],[633,816],[518,722]],[[306,648],[378,640],[506,655],[668,688],[709,684]],[[325,537],[377,529],[614,563],[663,554]],[[154,409],[206,400],[493,442],[783,469],[831,463],[871,449]],[[451,622],[480,598],[465,541],[420,417],[357,308],[304,239],[218,154],[101,67],[84,60]],[[400,325],[401,181],[386,33],[388,-5]],[[417,325],[432,314],[614,351],[640,337],[655,320],[660,45],[650,15],[622,21],[602,42]],[[424,210],[454,226],[501,236],[560,236]],[[425,125],[435,135],[491,147],[538,154],[573,148]],[[416,21],[429,35],[510,46],[593,48]]]},"能":{"s":["M 415 603 Q 327 591 225 558 Q 209 554 217 566 Q 233 590 282 646 Q 357 733 372 743 Q 381 750 386 757 Q 390 770 371 786 Q 337 813 311 816 Q 298 817 291 811 Q 287 804 295 795 Q 310 774 286 727 Q 208 594 157 555 Q 120 534 132 494 Q 139 473 151 474 Q 157 475 171 484 Q 249 539 400 575 Q 412 578 421 579 Q 422 580 428 580 C 458 585 445 607 415 603 Z","M 428 580 Q 452 535 464 531 Q 473 528 481 537 Q 490 547 491 575 Q 492 596 469 621 Q 412 672 396 671 Q 392 670 389 658 Q 388 652 415 603 L 428 580 Z","M 241 210 Q 244 259 248 296 L 250 322 Q 253 370 256 387 Q 256 391 256 393 C 258 412 258 412 245 420 Q 244 423 240 424 Q 212 439 195 438 Q 182 434 187 423 Q 230 324 181 134 Q 148 64 180 22 Q 186 9 196 14 Q 238 41 238 175 Q 238 179 239 183 L 241 210 Z","M 256 393 Q 262 394 269 397 Q 314 407 359 419 Q 377 423 381 415 Q 402 352 391 105 Q 388 83 382 72 Q 381 72 322 75 Q 303 81 305 72 Q 350 32 376 3 Q 388 -13 402 -18 Q 409 -22 418 -13 Q 454 33 452 81 Q 430 366 450 404 Q 460 420 450 430 Q 431 446 398 460 Q 382 467 368 460 Q 320 433 245 420 C 216 414 227 385 256 393 Z","M 248 296 Q 249 296 254 296 Q 308 303 348 306 Q 369 310 361 321 Q 351 334 329 338 Q 298 342 250 322 C 222 311 218 296 248 296 Z","M 239 183 Q 240 183 245 183 Q 306 190 351 193 Q 373 197 365 209 Q 355 222 331 227 Q 307 231 241 210 C 212 201 209 183 239 183 Z","M 586 611 Q 622 626 744 683 Q 765 693 788 699 Q 810 705 803 723 Q 794 741 773 759 Q 754 777 741 776 Q 728 777 730 764 Q 730 733 658 682 Q 624 657 587 630 C 563 612 558 599 586 611 Z","M 867 511 Q 851 536 835 584 Q 832 597 825 602 Q 818 606 816 587 Q 803 532 794 521 Q 776 500 685 499 Q 637 502 617 510 Q 599 520 596 532 Q 587 556 586 611 L 587 630 Q 593 708 609 744 Q 621 771 603 787 Q 558 821 544 818 Q 531 814 537 797 Q 555 763 549 713 Q 540 530 568 495 Q 583 474 642 461 Q 687 452 759 452 Q 825 452 851 465 Q 879 481 867 511 Z","M 600 221 Q 705 255 812 291 Q 836 295 830 315 Q 823 336 801 357 Q 782 378 768 378 Q 755 381 755 366 Q 752 336 672 286 Q 638 267 603 243 C 578 226 571 212 600 221 Z","M 948 77 Q 930 123 919 201 Q 918 217 910 222 Q 901 226 898 207 Q 882 110 868 94 Q 837 64 726 62 Q 663 63 637 75 Q 613 87 608 103 Q 601 125 600 221 L 603 243 Q 609 307 624 338 Q 637 368 618 385 Q 569 424 552 420 Q 537 414 544 397 Q 563 360 558 304 Q 549 99 575 65 Q 596 32 673 19 Q 728 9 818 11 Q 897 14 930 30 Q 960 46 948 77 Z"],"m":[[[299,806],[320,792],[337,762],[276,668],[205,579],[193,539],[225,537],[312,568],[396,588],[424,585]],[[398,662],[452,597],[468,545]],[[196,428],[223,402],[229,332],[215,164],[191,24]],[[254,416],[264,410],[380,441],[396,435],[417,412],[421,92],[414,55],[401,36],[314,70]],[[251,302],[264,312],[303,320],[352,316]],[[242,190],[256,201],[292,207],[330,209],[355,203]],[[738,767],[752,746],[754,725],[685,676],[598,628],[588,616]],[[547,806],[581,761],[570,699],[565,611],[573,537],[591,502],[621,486],[689,476],[750,477],[803,486],[828,499],[824,595]],[[764,369],[773,356],[777,321],[720,287],[612,236],[607,226]],[[556,406],[593,357],[579,264],[579,143],[593,80],[620,58],[667,42],[760,37],[843,44],[895,62],[905,73],[908,214]]]},"要":{"s":["M 593 768 Q 707 792 709 793 Q 718 800 714 808 Q 708 821 680 829 Q 650 838 550 808 Q 424 787 347 783 Q 311 779 336 761 Q 375 736 429 745 Q 486 754 546 762 L 593 768 Z","M 300 617 Q 285 623 248 627 Q 235 628 233 623 Q 227 616 237 601 Q 270 550 295 464 Q 301 437 319 422 Q 338 403 342 418 Q 343 422 343 429 L 341 456 Q 340 466 337 476 Q 318 546 310 579 C 303 608 301 617 300 617 Z","M 656 459 Q 672 431 688 421 Q 698 412 716 433 Q 728 449 761 540 Q 773 573 798 598 Q 813 611 802 626 Q 786 645 742 675 Q 721 685 704 679 Q 661 670 606 662 L 558 656 Q 507 649 452 640 L 405 633 Q 347 624 300 617 C 270 613 281 571 310 579 Q 353 591 410 600 L 453 608 Q 499 617 556 624 L 600 628 Q 619 632 641 634 Q 689 640 703 623 Q 712 613 709 601 Q 684 493 667 486 C 652 466 652 466 656 459 Z","M 452 640 Q 452 665 454 673 Q 457 692 444 704 Q 425 719 400 727 Q 388 731 380 726 Q 373 720 379 707 Q 391 685 405 633 L 410 600 Q 414 554 423 466 C 426 436 459 440 458 470 Q 454 552 453 607 Q 452 608 453 608 L 452 640 Z","M 606 662 Q 607 668 608 673 Q 611 688 627 733 Q 631 742 616 755 Q 604 762 593 768 C 567 783 531 788 546 762 Q 558 750 560 689 Q 559 674 558 656 L 556 624 Q 550 557 541 482 C 537 452 571 457 576 487 Q 588 560 600 628 L 606 662 Z","M 450 438 Q 562 453 656 459 C 686 461 694 474 667 486 Q 660 490 652 492 Q 619 499 576 487 L 541 482 Q 498 478 458 470 L 423 466 Q 380 462 341 456 C 311 452 313 430 343 429 Q 355 428 372 429 Q 394 433 419 434 L 450 438 Z","M 456 329 Q 465 353 485 381 Q 494 388 491 397 Q 487 410 450 438 C 427 457 414 464 419 434 Q 428 413 415 357 Q 409 341 404 324 L 388 283 Q 370 243 352 217 Q 342 199 345 187 Q 348 177 365 173 Q 447 152 483 125 L 526 101 Q 596 61 695 -17 Q 720 -38 738 -37 Q 759 -37 759 -17 Q 759 2 730 48 Q 714 79 561 138 L 513 157 Q 453 182 409 193 Q 388 197 400 217 Q 419 257 434 287 L 456 329 Z","M 643 351 Q 631 367 616 376 Q 597 391 587 389 Q 577 386 578 375 Q 579 360 579 343 L 573 299 Q 563 232 513 157 L 483 125 Q 480 124 479 122 Q 398 62 240 39 Q 230 39 225 36 Q 218 33 227 27 Q 231 24 246 23 Q 340 17 413 39 Q 468 54 526 101 L 561 138 Q 604 196 633 278 Q 637 291 642 301 C 653 329 656 336 643 351 Z","M 642 301 Q 730 305 839 301 Q 872 300 901 300 Q 925 299 930 309 Q 937 322 918 339 Q 855 388 784 373 Q 723 364 643 351 L 579 343 Q 491 337 456 329 L 404 324 Q 271 312 124 298 Q 99 297 116 275 Q 152 239 197 249 Q 288 271 388 283 L 434 287 Q 443 290 454 290 Q 506 297 573 299 L 642 301 Z"],"m":[[[339,773],[403,764],[536,782],[659,807],[705,803]],[[243,616],[277,591],[331,423]],[[308,612],[325,602],[661,654],[724,648],[753,613],[695,464],[696,440]],[[387,718],[424,680],[439,484],[428,476]],[[554,762],[591,730],[561,503],[546,490]],[[349,450],[357,443],[410,448],[660,481]],[[427,431],[445,415],[454,392],[371,198],[398,179],[482,150],[625,77],[687,38],[741,-19]],[[590,377],[611,340],[602,280],[580,221],[545,158],[505,114],[447,75],[375,49],[303,35],[233,33]],[[120,286],[176,275],[499,316],[798,339],[869,333],[917,316]]]},"说":{"s":["M 278 746 Q 306 722 335 694 Q 350 681 367 681 Q 379 682 384 696 Q 390 712 379 745 Q 367 779 272 799 Q 256 803 248 799 Q 242 795 244 781 Q 248 768 278 746 Z","M 147 487 Q 98 474 71 472 Q 56 472 54 465 Q 50 458 60 449 Q 100 422 132 437 Q 243 483 249 482 Q 250 482 253 479 Q 260 475 253 368 Q 252 256 219 155 Q 203 127 245 75 Q 255 63 265 70 Q 272 77 284 100 Q 323 151 405 240 Q 417 250 414 258 Q 413 265 402 257 Q 360 229 320 198 Q 278 162 285 215 Q 285 279 310 438 Q 314 462 336 484 Q 349 494 339 507 Q 329 523 291 540 Q 279 547 262 536 Q 189 499 147 487 Z","M 490 720 Q 526 663 555 647 Q 568 643 579 653 Q 586 665 587 681 Q 580 724 507 755 Q 492 762 482 759 Q 476 759 477 747 Q 477 735 490 720 Z","M 723 790 Q 708 763 634 663 Q 624 645 642 650 Q 699 690 768 748 Q 787 766 810 777 Q 831 789 819 806 Q 804 822 777 836 Q 752 848 739 844 Q 726 843 732 828 Q 736 810 723 790 Z","M 484 566 Q 472 570 452 572 Q 440 575 437 570 Q 430 564 439 548 Q 467 494 484 407 Q 488 380 504 363 Q 522 341 527 357 Q 528 364 530 375 L 528 409 Q 521 424 508 535 C 505 560 505 560 484 566 Z","M 738 437 Q 766 524 800 545 Q 816 564 802 582 Q 786 597 731 622 Q 713 629 691 621 Q 618 588 484 566 C 454 561 479 527 508 535 Q 523 541 676 572 Q 695 576 703 570 Q 716 554 684 443 C 676 414 728 409 738 437 Z","M 651 393 Q 691 400 748 405 Q 758 406 760 415 Q 760 422 738 437 L 684 443 L 683 443 Q 598 421 528 409 C 498 404 500 376 530 375 Q 537 374 547 376 Q 572 383 611 388 L 651 393 Z","M 490 303 Q 500 204 416 112 Q 394 84 335 32 Q 328 25 335 23 Q 342 20 351 25 Q 450 65 512 169 Q 527 197 543 234 Q 550 252 561 270 Q 568 279 563 288 Q 557 297 529 312 Q 510 322 501 321 Q 488 317 490 303 Z","M 973 108 Q 960 136 941 224 Q 940 240 933 246 Q 927 250 922 231 Q 894 137 875 108 Q 865 95 834 88 Q 764 73 705 95 Q 683 107 676 121 Q 649 172 682 347 Q 686 372 651 393 C 627 411 603 417 611 388 Q 611 384 614 376 Q 627 336 624 297 Q 614 144 627 101 Q 631 79 651 60 Q 726 -4 882 26 Q 888 29 894 29 Q 931 39 966 65 Q 987 81 973 108 Z"],"m":[[[255,790],[346,733],[365,700]],[[64,461],[101,454],[138,460],[245,504],[266,507],[291,494],[257,184],[264,149],[301,159],[408,254]],[[488,749],[543,699],[563,667]],[[739,835],[760,815],[768,797],[686,703],[646,669],[644,660]],[[446,562],[466,547],[482,523],[516,362]],[[494,565],[518,555],[695,597],[727,591],[751,562],[719,467],[692,453]],[[534,381],[552,396],[684,421],[729,421],[750,415]],[[504,307],[525,275],[505,210],[480,160],[433,100],[367,44],[339,28]],[[618,383],[645,365],[652,352],[641,187],[649,117],[667,86],[693,67],[738,53],[782,49],[866,59],[907,79],[925,98],[932,239]]]},"起":{"s":["M 398 589 Q 503 616 508 621 Q 515 628 511 637 Q 504 647 476 654 Q 448 658 402 640 L 348 622 Q 251 604 232 600 Q 196 593 223 578 Q 256 557 327 574 Q 337 577 349 578 L 398 589 Z","M 389 478 Q 393 536 398 589 L 402 640 Q 402 707 423 786 Q 426 796 406 812 Q 370 831 346 835 Q 330 839 322 830 Q 315 823 323 807 Q 342 779 343 759 Q 347 693 348 622 L 349 578 Q 349 526 347 469 C 346 439 387 448 389 478 Z","M 376 438 Q 442 451 521 461 Q 537 462 537 470 Q 538 482 522 491 Q 497 501 475 498 Q 429 488 389 478 L 347 469 Q 191 439 89 428 Q 77 427 74 420 Q 71 410 85 399 Q 122 372 161 384 Q 305 432 335 431 L 376 438 Z","M 389 183 Q 393 249 396 304 L 398 334 Q 401 415 402 416 L 401 417 Q 388 430 376 438 C 352 456 323 459 335 431 Q 344 419 347 334 Q 347 289 347 208 C 347 178 387 153 389 183 Z","M 396 304 Q 399 304 403 304 Q 464 313 510 318 Q 535 322 525 336 Q 513 351 487 355 Q 448 359 398 334 C 371 321 366 304 396 304 Z","M 261 262 Q 279 290 298 314 Q 308 327 294 341 Q 255 377 228 373 Q 216 372 218 356 Q 227 247 102 120 Q 93 117 49 68 Q 42 53 56 57 Q 113 66 210 184 Q 241 235 245 237 L 261 262 Z","M 245 237 Q 401 113 676 -20 Q 710 -36 772 -20 Q 928 28 940 41 Q 940 42 941 42 Q 945 54 926 53 Q 833 59 777 57 Q 624 57 424 165 Q 406 174 389 183 L 347 208 Q 304 235 261 262 C 236 278 221 255 245 237 Z","M 778 492 Q 797 562 819 583 Q 841 608 819 622 Q 756 655 754 655 Q 744 655 736 650 Q 694 620 604 606 Q 592 606 595 599 Q 596 593 609 587 Q 624 580 686 592 Q 737 605 744 596 Q 751 590 743 559 Q 736 528 727 491 C 720 462 770 463 778 492 Z","M 640 433 Q 647 442 794 459 Q 804 460 805 469 Q 805 476 778 492 C 763 501 756 499 727 491 Q 669 475 625 464 C 596 457 614 419 640 433 Z","M 925 268 Q 910 302 898 360 Q 897 373 889 378 Q 882 382 879 364 Q 867 294 856 281 Q 832 254 730 254 Q 675 255 651 266 Q 630 276 626 291 Q 622 307 623 350 Q 627 396 637 419 Q 640 426 640 433 C 645 451 645 451 625 464 Q 585 492 573 488 Q 560 484 567 468 Q 585 437 581 388 Q 578 271 610 243 Q 634 225 684 216 Q 733 209 811 210 Q 881 211 910 227 Q 937 240 925 268 Z"],"m":[[[224,590],[280,587],[350,600],[459,631],[501,630]],[[334,821],[380,781],[370,504],[353,477]],[[84,416],[116,407],[148,408],[288,442],[457,474],[509,478],[526,473]],[[342,431],[372,402],[369,221],[387,191]],[[400,311],[414,324],[468,335],[515,329]],[[229,361],[256,323],[200,206],[161,155],[113,106],[59,66]],[[263,252],[266,240],[312,208],[463,118],[583,61],[686,22],[756,17],[936,46]],[[602,599],[623,596],[672,604],[745,625],[773,611],[783,599],[763,527],[758,516],[733,497]],[[638,439],[648,454],[734,472],[772,474],[796,468]],[[576,476],[603,450],[608,436],[601,356],[606,291],[622,260],[650,245],[693,235],[766,232],[837,238],[884,256],[889,280],[888,371]]]},"过":{"s":["M 712 553 Q 719 556 863 575 Q 875 574 885 587 Q 886 600 861 611 Q 825 635 746 610 Q 728 607 712 601 L 664 590 Q 607 578 413 551 Q 382 547 405 528 Q 441 500 473 508 Q 558 527 665 545 L 712 553 Z","M 665 545 Q 666 439 666 261 Q 665 243 656 236 Q 649 230 560 239 Q 527 246 531 237 Q 534 230 555 219 Q 628 177 649 151 Q 674 120 690 121 Q 703 121 716 154 Q 729 197 724 267 Q 712 411 712 553 L 712 601 Q 712 677 729 739 Q 745 767 692 789 Q 659 807 641 800 Q 625 794 640 772 Q 661 747 662 713 Q 663 700 664 590 L 665 545 Z","M 466 397 Q 488 375 512 349 Q 524 337 538 337 Q 548 337 553 349 Q 557 362 551 389 Q 544 417 464 441 Q 451 445 444 443 Q 440 439 440 428 Q 443 418 466 397 Z","M 241 717 Q 268 695 297 668 Q 313 655 331 656 Q 344 657 348 672 Q 352 690 341 723 Q 334 742 301 756 Q 270 765 233 772 Q 215 775 208 771 Q 202 767 205 752 Q 209 739 241 717 Z","M 321 180 Q 331 189 335 204 Q 342 246 300 317 Q 273 365 342 451 Q 345 455 349 458 Q 371 477 352 493 Q 331 509 297 523 Q 275 536 238 506 Q 159 461 132 466 Q 125 466 122 461 Q 121 457 129 452 Q 169 433 247 465 Q 257 469 265 458 Q 284 437 264 411 Q 221 369 252 316 Q 306 229 294 182 C 290 152 303 156 321 180 Z","M 294 182 Q 249 183 204 168 Q 170 155 118 149 Q 111 149 108 140 Q 105 133 114 123 Q 132 105 156 94 Q 168 88 186 103 Q 267 169 401 116 Q 449 100 513 71 Q 735 -31 816 -3 Q 879 19 931 58 Q 955 73 931 73 Q 720 64 571 104 Q 492 126 393 162 Q 357 177 321 180 L 294 182 Z"],"m":[[[407,540],[463,532],[808,596],[874,589]],[[648,786],[689,755],[694,741],[686,603],[696,257],[692,226],[676,193],[551,231],[548,237],[537,236]],[[449,434],[511,392],[537,353]],[[215,763],[301,715],[330,675]],[[129,459],[159,456],[185,462],[261,492],[277,492],[302,476],[306,464],[299,435],[266,358],[275,317],[308,254],[316,220],[316,204],[301,186]],[[121,136],[164,125],[245,157],[299,161],[352,154],[577,72],[670,47],[753,33],[837,39],[922,66]]]},"还":{"s":["M 635 632 Q 701 645 830 661 Q 842 660 852 674 Q 853 687 828 699 Q 789 723 707 698 Q 577 670 421 649 Q 388 645 413 625 Q 450 595 481 602 Q 532 612 591 624 L 635 632 Z","M 612 498 Q 631 528 653 564 Q 660 577 667 583 Q 674 589 672 598 Q 669 619 635 632 C 608 644 588 653 591 624 Q 598 594 573 536 L 555 497 Q 495 400 410 314 Q 386 292 357 263 Q 350 259 359 256 Q 419 266 521 373 Q 560 422 571 436 L 612 498 Z","M 571 436 Q 577 321 556 223 Q 544 172 578 133 Q 579 130 582 128 Q 598 112 610 138 Q 625 178 624 223 Q 620 409 624 451 Q 631 478 622 488 Q 616 494 612 498 L 573 536 Q 569 540 562 543 Q 552 544 549 538 Q 543 523 555 497 L 571 436 Z","M 690 414 Q 745 369 813 303 Q 829 284 845 281 Q 854 280 861 291 Q 871 304 857 347 Q 842 402 690 445 Q 680 449 679 437 Q 679 424 690 414 Z","M 253 732 Q 280 710 309 682 Q 324 669 340 670 Q 352 670 357 685 Q 361 700 351 731 Q 345 750 313 765 Q 238 790 224 783 Q 218 779 221 765 Q 225 755 253 732 Z","M 301 177 Q 316 189 324 207 Q 342 252 300 316 Q 258 358 325 445 Q 331 454 338 461 Q 360 480 340 495 Q 319 510 284 523 Q 265 535 228 506 Q 150 455 111 457 Q 104 458 102 453 Q 101 447 109 443 Q 149 425 236 463 Q 246 467 255 456 Q 274 437 256 412 Q 214 370 261 299 Q 288 245 283 215 Q 279 193 271 179 C 259 152 280 156 301 177 Z","M 271 179 Q 231 180 188 165 Q 152 150 98 145 Q 92 145 88 136 Q 85 129 94 119 Q 112 101 136 90 Q 148 84 166 99 Q 235 150 305 137 Q 371 124 504 65 Q 723 -35 812 -12 Q 813 -11 816 -11 Q 879 11 931 50 Q 955 65 931 65 Q 702 56 543 103 Q 468 124 377 158 Q 340 174 301 177 L 271 179 Z"],"m":[[[415,638],[472,628],[772,683],[840,676]],[[599,620],[628,593],[608,544],[556,455],[471,349],[410,293],[363,261]],[[559,530],[596,464],[597,321],[588,198],[594,138]],[[690,433],[752,397],[814,351],[845,298]],[[229,776],[305,732],[339,688]],[[109,450],[147,449],[251,491],[267,491],[291,476],[294,453],[288,429],[260,368],[265,333],[295,280],[306,240],[295,193],[279,182]],[[101,132],[145,122],[240,157],[321,155],[587,60],[677,37],[757,25],[810,26],[892,45],[922,58]]]},"这":{"s":["M 549 780 Q 633 696 665 698 Q 681 698 688 721 Q 688 737 674 762 Q 658 784 625 793 Q 573 812 551 814 Q 539 815 540 801 Q 539 791 549 780 Z","M 712 590 Q 740 602 846 617 Q 856 616 866 631 Q 867 644 841 654 Q 807 675 733 648 Q 526 597 455 584 Q 424 578 449 560 Q 485 536 526 546 Q 587 564 666 581 L 712 590 Z","M 664 357 Q 677 379 722 486 Q 731 514 747 536 Q 759 552 744 564 Q 729 579 712 590 C 688 607 659 610 666 581 Q 685 527 630 403 Q 627 400 626 395 Q 623 391 619 384 L 596 348 Q 535 273 430 224 Q 417 217 428 212 Q 441 209 478 217 Q 526 230 564 255 Q 607 280 633 313 Q 633 314 634 315 L 664 357 Z","M 634 315 Q 706 252 763 187 Q 776 168 792 159 Q 804 153 815 171 Q 822 187 817 218 Q 814 263 664 357 L 619 384 Q 496 465 481 461 Q 475 460 475 447 Q 476 438 493 427 Q 547 388 596 348 L 634 315 Z","M 269 726 Q 296 701 325 669 Q 340 653 358 654 Q 370 654 376 669 Q 383 685 374 720 Q 365 753 265 781 Q 247 785 240 783 Q 234 779 235 764 Q 239 751 269 726 Z","M 330 197 Q 339 206 344 218 Q 356 258 312 329 Q 282 381 349 472 Q 355 481 362 488 Q 384 506 364 522 Q 345 538 309 552 Q 287 565 269 547 Q 235 525 192 509 Q 134 487 116 490 Q 109 490 106 485 Q 105 481 113 476 Q 155 455 259 494 Q 269 497 278 485 Q 300 463 278 432 Q 230 378 271 316 Q 304 258 303 226 Q 303 210 299 199 C 293 170 312 173 330 197 Z","M 299 199 Q 256 202 212 187 Q 172 171 111 165 Q 104 165 101 157 Q 98 150 107 140 Q 123 121 148 109 Q 160 103 178 117 Q 254 171 328 157 Q 392 144 519 86 Q 741 -17 820 10 Q 883 32 936 69 Q 958 85 935 84 Q 713 84 593 114 Q 508 138 401 178 Q 365 193 330 197 L 299 199 Z"],"m":[[[549,804],[644,744],[665,718]],[[450,572],[514,569],[798,637],[854,632]],[[674,578],[706,551],[706,535],[662,411],[625,345],[592,305],[535,261],[482,233],[433,217]],[[483,452],[576,392],[715,285],[771,232],[798,176]],[[245,775],[339,709],[357,674]],[[113,483],[139,480],[176,486],[278,520],[293,520],[318,501],[313,457],[284,400],[277,370],[280,347],[308,294],[324,244],[321,217],[307,204]],[[112,153],[157,141],[252,176],[307,179],[402,157],[583,87],[722,52],[814,48],[925,76]]]},"那":{"s":["M 283 702 Q 320 714 387 733 Q 412 740 430 730 Q 443 720 442 675 Q 435 363 388 268 Q 379 252 359 258 Q 290 270 293 274 Q 266 280 289 258 Q 326 227 356 192 Q 378 165 395 178 Q 455 217 473 333 Q 483 423 485 520 Q 488 686 505 709 Q 521 734 507 745 Q 482 766 444 776 Q 426 782 320 747 Q 254 732 189 724 Q 165 725 180 709 Q 198 690 247 693 L 283 702 Z","M 304 562 Q 380 580 383 581 Q 390 588 386 595 Q 380 604 357 610 Q 333 614 310 605 L 257 590 Q 170 577 155 574 Q 125 570 146 555 Q 182 537 228 548 Q 238 551 252 552 L 304 562 Z","M 277 428 Q 322 438 379 447 Q 392 448 393 455 Q 394 467 379 474 Q 355 486 287 467 L 237 456 Q 141 440 95 433 Q 85 432 82 425 Q 79 416 92 407 Q 129 383 161 395 Q 197 408 228 416 L 277 428 Z","M 228 416 Q 198 304 95 147 Q 91 143 88 136 Q 85 127 95 129 Q 128 135 202 246 Q 211 262 221 280 Q 251 340 277 428 L 287 467 Q 297 515 304 562 L 310 605 Q 316 642 320 650 Q 327 663 322 675 Q 309 691 283 702 C 256 716 237 721 247 693 Q 262 660 259 609 Q 258 600 257 590 L 252 552 Q 246 503 237 456 L 228 416 Z","M 642 701 Q 658 702 676 711 Q 751 742 767 735 Q 779 728 770 702 Q 715 555 715 553 Q 714 540 738 531 Q 825 461 839 366 Q 843 329 823 308 Q 810 298 781 302 Q 739 309 703 312 Q 694 313 695 305 Q 698 298 714 286 Q 795 241 810 215 Q 817 202 830 200 Q 842 199 857 211 Q 903 262 908 326 Q 915 425 785 543 Q 742 564 813 655 Q 831 694 869 715 Q 900 734 873 754 Q 831 788 805 799 Q 786 806 769 795 Q 741 773 635 736 C 607 726 613 694 642 701 Z","M 582 -15 Q 586 -40 594 -49 Q 600 -56 607 -54 Q 623 -44 627 13 Q 637 110 634 207 Q 633 243 632 631 Q 632 661 642 701 C 648 727 648 727 635 736 Q 634 737 633 738 Q 602 760 586 762 Q 573 766 558 758 Q 549 749 557 739 Q 584 685 586 647 Q 587 476 579 208 Q 576 42 582 -15 Z"],"m":[[[183,717],[238,711],[415,755],[444,751],[473,724],[452,404],[442,328],[422,263],[401,231],[385,219],[286,267]],[[148,566],[217,564],[348,592],[379,589]],[[93,422],[149,416],[302,454],[362,462],[383,458]],[[254,689],[281,674],[290,661],[275,532],[254,426],[217,320],[180,245],[116,155],[96,137]],[[647,708],[657,724],[762,761],[793,763],[816,742],[819,737],[806,706],[757,610],[744,557],[830,464],[871,374],[872,322],[858,287],[835,260],[703,304]],[[566,748],[585,738],[604,717],[610,667],[603,-44]]]},"都":{"s":["M 386 656 Q 479 680 483 682 Q 490 689 487 697 Q 480 707 454 714 Q 421 720 390 704 L 334 687 Q 286 675 232 670 Q 198 664 223 649 Q 259 628 315 642 Q 322 645 334 645 L 386 656 Z","M 374 533 Q 380 597 386 656 L 390 704 Q 391 744 409 803 Q 412 813 393 828 Q 359 847 336 852 Q 320 856 312 847 Q 305 840 312 825 Q 331 800 331 781 Q 332 736 334 687 L 334 645 Q 334 587 332 523 C 331 493 371 503 374 533 Z","M 433 506 Q 499 521 580 530 Q 596 531 598 540 Q 599 553 580 563 Q 547 578 474 556 L 410 541 Q 391 538 374 533 L 332 523 Q 95 484 95 482 Q 94 481 93 478 Q 90 468 105 456 Q 145 428 189 441 Q 295 475 366 492 Q 367 493 373 493 L 433 506 Z","M 333 389 Q 345 404 358 417 Q 398 466 433 506 L 474 556 Q 535 632 554 658 Q 578 692 602 706 Q 615 713 615 722 Q 614 729 602 734 Q 571 750 544 753 Q 528 754 523 738 Q 513 683 410 541 L 373 493 Q 333 447 285 390 L 265 367 Q 258 361 253 353 Q 171 263 50 160 Q 43 156 45 153 Q 46 150 54 152 Q 121 180 154 209 Q 214 261 273 322 L 333 389 Z","M 285 390 Q 278 394 269 397 Q 262 398 257 391 Q 254 387 260 378 Q 261 372 265 367 L 273 322 Q 277 205 264 156 Q 252 116 279 83 Q 289 73 296 83 Q 305 93 309 114 L 314 148 Q 315 166 316 240 L 317 271 Q 317 337 320 355 L 285 390 Z","M 441 123 Q 456 99 468 74 Q 478 55 488 52 Q 498 52 507 74 Q 522 117 517 215 Q 510 338 520 368 Q 527 387 516 396 Q 509 406 474 423 Q 459 429 382 402 Q 367 401 333 389 C 289 374 291 348 320 355 Q 425 382 430 382 Q 446 383 452 378 Q 462 368 459 223 Q 460 171 455 161 Q 451 151 438 154 L 436 154 C 423 152 426 149 441 123 Z","M 316 240 Q 376 252 420 257 Q 442 261 433 273 Q 423 286 399 290 Q 360 293 317 271 C 290 258 287 234 316 240 Z","M 309 114 Q 313 114 320 115 Q 357 122 441 123 C 471 123 460 136 436 154 Q 432 157 428 160 Q 413 169 384 162 Q 345 155 314 148 C 285 141 279 112 309 114 Z","M 700 630 Q 707 633 714 636 Q 783 666 795 659 Q 805 653 797 632 Q 737 485 737 482 Q 736 470 758 462 Q 879 374 863 286 Q 859 276 852 268 Q 839 261 816 268 Q 782 278 751 286 Q 744 289 743 281 Q 744 274 758 262 Q 824 213 832 188 Q 839 173 853 170 Q 866 169 882 180 Q 921 228 922 286 Q 923 376 801 472 Q 759 493 835 587 Q 857 623 888 641 Q 916 659 891 677 Q 854 708 830 718 Q 812 724 773 697 Q 761 691 689 661 C 661 649 672 618 700 630 Z","M 637 -38 Q 643 -63 650 -73 Q 656 -80 663 -78 Q 678 -69 684 -9 Q 694 81 691 170 Q 691 186 690 559 Q 690 586 700 630 C 704 651 704 651 689 661 Q 656 683 641 686 Q 628 690 612 681 Q 603 674 611 663 Q 635 596 637 592 Q 637 270 634 169 Q 631 15 637 -38 Z"],"m":[[[225,661],[272,655],[425,691],[478,691]],[[324,837],[367,799],[355,559],[338,531]],[[97,478],[121,467],[176,467],[489,540],[550,548],[587,543]],[[605,721],[553,712],[454,564],[265,339],[140,217],[50,155]],[[267,386],[294,345],[296,318],[288,88]],[[320,364],[346,378],[439,401],[467,399],[487,378],[489,183],[480,132],[488,63]],[[323,248],[333,261],[369,269],[402,273],[424,267]],[[314,119],[329,134],[380,142],[419,142],[431,129]],[[705,638],[710,653],[798,684],[821,683],[842,661],[769,515],[764,485],[852,398],[878,360],[892,312],[893,281],[886,258],[875,238],[860,226],[750,279]],[[619,672],[659,637],[665,594],[659,-69]]]},"里":{"s":["M 285 715 Q 266 724 245 727 Q 238 730 233 723 Q 226 716 236 706 Q 287 640 307 467 Q 314 407 355 377 Q 356 377 359 375 Q 377 372 377 401 L 372 437 Q 368 456 360 477 Q 333 618 325 678 C 322 699 313 703 285 715 Z","M 628 430 Q 646 399 664 388 Q 674 378 694 402 Q 716 436 768 626 Q 781 662 809 689 Q 825 702 812 719 Q 796 740 748 772 Q 726 785 706 778 Q 663 768 604 761 Q 528 751 430 736 Q 351 723 285 715 C 255 711 296 670 325 678 Q 377 693 453 703 L 507 711 Q 568 721 644 729 Q 690 735 703 718 Q 719 696 715 675 Q 664 477 643 461 C 627 435 626 433 628 430 Z","M 396 570 Q 378 566 400 550 Q 407 546 479 553 L 533 561 Q 579 568 621 574 Q 646 578 637 592 Q 627 608 599 613 Q 575 616 535 606 L 479 591 Q 436 581 396 570 Z","M 530 422 Q 573 426 628 430 C 658 432 667 443 643 461 Q 618 486 531 464 L 478 453 Q 421 444 372 437 C 342 433 347 399 377 401 Q 383 401 390 402 Q 423 409 478 416 L 530 422 Z","M 523 119 Q 524 183 526 242 L 527 293 Q 528 360 530 422 L 531 464 Q 532 515 533 561 L 535 606 Q 538 682 536 687 Q 523 700 507 711 C 483 729 441 731 453 703 Q 477 651 479 609 Q 479 600 479 591 L 479 553 Q 479 517 478 453 L 478 416 Q 477 359 475 282 L 474 234 Q 473 179 472 113 C 472 83 522 89 523 119 Z","M 526 242 Q 691 273 697 277 Q 707 286 703 295 Q 696 308 665 317 Q 632 324 599 314 Q 563 304 527 293 L 475 282 Q 411 272 336 267 Q 296 263 324 243 Q 369 216 443 230 Q 456 233 474 234 L 526 242 Z","M 472 113 Q 309 97 121 79 Q 94 78 113 55 Q 131 37 152 30 Q 179 23 199 28 Q 503 101 919 80 Q 920 81 923 80 Q 948 79 955 90 Q 962 105 942 122 Q 873 179 798 158 Q 690 140 523 119 L 472 113 Z"],"m":[[[241,716],[270,697],[295,663],[336,461],[362,387]],[[292,713],[330,700],[662,750],[706,750],[727,744],[760,705],[710,535],[669,431],[672,398]],[[398,560],[561,589],[602,592],[626,586]],[[380,432],[392,421],[635,458]],[[461,698],[501,674],[508,618],[498,142],[478,121]],[[327,257],[399,248],[536,267],[633,292],[667,294],[691,288]],[[117,67],[178,55],[409,87],[836,124],[891,116],[942,97]]]},"面":{"s":["M 483 693 Q 579 708 678 722 Q 742 734 753 742 Q 763 749 759 759 Q 752 772 721 782 Q 688 791 595 763 Q 444 730 309 723 Q 269 719 296 699 Q 339 672 415 684 Q 428 687 445 687 L 483 693 Z","M 418 526 Q 443 556 471 592 Q 484 608 506 630 Q 522 640 515 651 Q 508 670 483 693 C 461 714 445 717 445 687 Q 448 648 379 531 Q 375 524 371 517 C 356 491 399 503 418 526 Z","M 199 487 Q 180 497 161 503 Q 152 506 147 500 Q 137 493 148 480 Q 200 389 205 159 Q 206 84 249 52 L 251 51 Q 270 45 273 79 L 272 117 Q 271 139 264 163 Q 243 404 242 438 Q 242 442 241 447 C 239 467 226 474 199 487 Z","M 730 106 Q 734 100 736 94 Q 746 60 761 45 Q 771 35 780 36 Q 792 37 803 59 Q 839 117 860 368 Q 864 431 883 472 Q 895 488 891 497 Q 891 513 849 548 Q 797 591 760 576 Q 757 576 754 574 Q 732 570 661 561 Q 502 543 418 526 L 371 517 Q 334 513 305 505 Q 235 493 199 487 C 169 482 212 438 241 447 Q 241 448 243 448 Q 295 466 363 478 L 395 485 Q 447 497 558 510 L 599 515 Q 675 525 746 528 Q 771 529 781 515 Q 797 502 798 472 Q 804 397 782 261 Q 769 153 761 139 Q 760 135 753 132 Q 749 132 743 133 C 725 117 725 117 730 106 Z","M 432 126 Q 432 181 432 230 L 432 259 Q 432 310 432 354 L 432 384 Q 432 457 431 459 L 430 460 Q 412 476 395 485 C 369 500 351 506 363 478 Q 363 475 376 452 Q 383 434 392 123 C 393 93 432 96 432 126 Z","M 613 148 Q 620 311 625 435 Q 626 454 627 467 Q 634 483 625 493 Q 612 506 599 515 C 575 533 548 538 558 510 Q 573 477 575 379 Q 574 304 572 142 C 572 112 612 118 613 148 Z","M 432 354 Q 487 364 529 372 Q 551 378 542 389 Q 530 402 506 404 Q 463 407 432 384 C 408 367 402 349 432 354 Z","M 432 230 Q 489 239 529 248 Q 551 254 542 265 Q 530 278 506 280 Q 464 283 432 259 C 408 241 402 225 432 230 Z","M 273 79 Q 283 78 297 78 Q 435 100 730 106 C 760 107 765 113 743 133 Q 734 142 722 151 Q 704 164 613 148 L 572 142 Q 499 135 432 126 L 392 123 Q 328 122 272 117 C 242 114 243 81 273 79 Z"],"m":[[[300,713],[331,705],[386,704],[696,755],[747,754]],[[452,683],[473,661],[475,649],[407,541],[382,525]],[[154,490],[186,463],[207,429],[224,308],[237,148],[256,63]],[[205,483],[257,474],[413,508],[674,545],[773,552],[807,537],[842,492],[810,212],[796,137],[777,99],[778,52]],[[369,476],[392,464],[405,446],[411,145],[425,134]],[[565,508],[592,488],[599,454],[593,166],[577,153]],[[439,362],[449,375],[471,382],[511,387],[532,383]],[[439,237],[449,250],[472,258],[532,259]],[[279,85],[295,99],[324,102],[651,130],[731,130]]]}};
+</script>
+
+<script>
+'use strict';
+/* ════════════════════════════════════════════════════════════
+   看字打拼音 —— 完整版
+   分组闯关 · 难度计分 · S/A/B/C/D 评级 · 进度持久化 · 每日统计
+   · 打对后逐笔演示这个字怎么写
+   ════════════════════════════════════════════════════════════ */
+
+const LEVELS = [
+  { name:'第一关', chars:'这那说着是的只个成就' },
+  { name:'第二关', chars:'看为什么我和你他哪里' },
+  { name:'第三关', chars:'来去又要还能起儿子也' },
+  { name:'第四关', chars:'都没不可以大小少多过' },
+  { name:'第五关', chars:'一二三方对面到好了有' },
+  { name:'第六关', chars:'天地人们山日出上中下' },
+];
+const PY = {
+  '这':['zhè'],'那':['nà'],'说':['shuō'],'着':['zhe'],'是':['shì'],'的':['de'],
+  '只':['zhǐ','zhī'],'个':['gè'],'成':['chéng'],'就':['jiù'],'看':['kàn'],
+  '为':['wèi','wéi'],'什':['shén'],'么':['me'],'我':['wǒ'],'和':['hé'],'你':['nǐ'],
+  '他':['tā'],'哪':['nǎ'],'里':['lǐ'],'来':['lái'],'去':['qù'],'又':['yòu'],
+  '要':['yào'],'还':['hái','huán'],'能':['néng'],'起':['qǐ'],'儿':['ér'],'子':['zǐ'],
+  '也':['yě'],'都':['dōu','dū'],'没':['méi','mò'],'不':['bù'],'可':['kě'],'以':['yǐ'],
+  '大':['dà'],'小':['xiǎo'],'少':['shǎo','shào'],'多':['duō'],'过':['guò'],
+  '一':['yī'],'二':['èr'],'三':['sān'],'方':['fāng'],'对':['duì'],'面':['miàn'],
+  '到':['dào'],'好':['hǎo'],'了':['le','liǎo'],'有':['yǒu'],'天':['tiān'],
+  '地':['dì','de'],'人':['rén'],'们':['men'],'山':['shān'],'日':['rì'],'出':['chū'],
+  '上':['shàng'],'中':['zhōng'],'下':['xià'],
+};
+const PER_GROUP = 5;
+
+/* ════════════════ ENGINE-START ════════════════ */
+const TONE_MAP = {
+  'ā':'a','á':'a','ǎ':'a','à':'a','ē':'e','é':'e','ě':'e','è':'e',
+  'ī':'i','í':'i','ǐ':'i','ì':'i','ō':'o','ó':'o','ǒ':'o','ò':'o',
+  'ū':'u','ú':'u','ǔ':'u','ù':'u','ǖ':'v','ǘ':'v','ǚ':'v','ǜ':'v','ü':'v'
+};
+function norm(s){
+  return String(s || '').toLowerCase()
+    .replace(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]/g, c => TONE_MAP[c] || c)
+    .replace(/[\s'’·]/g, '').replace(/[1-5]/g, '');
+}
+function answersOf(ch){ return PY[ch] || []; }
+function isPrefix(ch, typed){
+  const t = norm(typed);
+  if (!t) return true;
+  return answersOf(ch).some(a => norm(a).startsWith(t));
+}
+function isExact(ch, typed){
+  const t = norm(typed);
+  if (!t) return false;
+  return answersOf(ch).some(a => norm(a) === t);
+}
+/**
+ * 字的难度（1 易 / 2 中 / 3 难）—— 决定这个字值多少分。
+ * 依据：笔画数（有笔画数据就用，没有退回看拼音长度）+ 拼音长 + 多音字。
+ */
+function diffOf(ch, strokeCount, answers){
+  const n = strokeCount || 0;
+  let d = 1;
+  if (n){ if (n >= 10) d = 3; else if (n >= 6) d = 2; }
+  else { const L = (answers && answers[0] || '').length; d = L >= 4 ? 3 : (L === 3 ? 2 : 1); }
+  const py = (answers && answers[0]) || '';
+  if (py.length >= 5) d = Math.min(3, d + 1);
+  if (answers && answers.length > 1) d = Math.min(3, d + 1);
+  return d;
+}
+const DIFF_MULT = { 1: 1.0, 2: 1.3, 3: 1.6 };
+const DIFF_NAME = { 1: '简单', 2: '中等', 3: '难' };
+
+/** 计分：速度 + 准确率 + 连击 + **难度倍率** */
+function scoreFor(secs, wrong, streak, diff){
+  let pts = 100 - wrong * 30;
+  if (secs <= 2) pts += 50; else if (secs <= 4) pts += 25; else if (secs <= 7) pts += 10;
+  pts = Math.max(10, pts);
+  const combo = 1 + Math.min(streak, 10) * 0.1;
+  const dm = DIFF_MULT[diff || 1] || 1;
+  return Math.round(pts * combo * dm);
+}
+/** 标准分：每题 125（基础 100 + 速度 25），不含连击和难度加成 —— 用来算过关线和评级 */
+const PAR_PER_CHAR = 125;
+function parScore(nChars){ return PAR_PER_CHAR * nChars; }
+
+/**
+ * 评级：S 最好（完美）→ A → B → C → D
+ * S 要求**一次都没错**且分数够高 —— 给小朋友一个够得着的"完美"目标
+ */
+function gradeFor(score, par, wrongTotal){
+  const r = par > 0 ? score / par : 0;
+  if (wrongTotal === 0 && r >= 0.95) return 'S';
+  if (r >= 0.90) return 'A';
+  if (r >= 0.75) return 'B';
+  if (r >= 0.55) return 'C';
+  return 'D';
+}
+const GRADE_ORDER = { D:0, C:1, B:2, A:3, S:4 };
+function starsFromGrade(g){ return ({ S:3, A:3, B:2, C:1, D:0 })[g] || 0; }
+function passed(g){ return GRADE_ORDER[g] >= GRADE_ORDER['C']; }
+
+/** 把一关的字切成若干组。传字符串或数组都行，**一律返回数组的数组** */
+function groupsOf(chars, per){
+  per = per || PER_GROUP;
+  const arr = typeof chars === 'string' ? [...chars] : chars.slice();
+  const out = [];
+  for (let i = 0; i < arr.length; i += per) out.push(arr.slice(i, i + per));
+  return out;
+}
+function shuffled(n, rnd){
+  const a = []; for (let i = 0; i < n; i++) a.push(i);
+  rnd = rnd || Math.random;
+  for (let i = a.length - 1; i > 0; i--){ const j = (rnd() * (i + 1)) | 0; const t = a[i]; a[i] = a[j]; a[j] = t; }
+  return a;
+}
+/** 今天/昨天的日期键 */
+function dayKey(d){ d = d || new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+/* ════════════════ ENGINE-END ════════════════ */
+
+
+/* ══════════ 音效 ══════════ */
+const Snd = {
+  on: true, ac: null,
+  ctx(){ try{ if (!this.ac) this.ac = new (window.AudioContext||window.webkitAudioContext)();
+    if (this.ac.state==='suspended') this.ac.resume(); return this.ac; }catch(e){ return null; } },
+  tone(f1,f2,dur,type,vol,delay){
+    if (!this.on) return; const ac=this.ctx(); if(!ac) return;
+    try{ const t0=ac.currentTime+(delay||0), o=ac.createOscillator(), g=ac.createGain();
+      o.type=type||'sine'; o.frequency.setValueAtTime(f1,t0);
+      if(f2&&f2!==f1) o.frequency.exponentialRampToValueAtTime(Math.max(1,f2),t0+dur);
+      g.gain.setValueAtTime(0,t0); g.gain.linearRampToValueAtTime(vol||.12,t0+.008);
+      g.gain.exponentialRampToValueAtTime(.0001,t0+dur);
+      o.connect(g); g.connect(ac.destination); o.start(t0); o.stop(t0+dur+.04);
+    }catch(e){}
+  },
+  key(){ this.tone(1700,1500,.025,'sine',.028); },
+  right(streak){ const b=660+Math.min(streak,10)*42;
+    this.tone(b,b*1.5,.09,'triangle',.11); this.tone(b*2,b*2.6,.11,'sine',.055,.06); },
+  wrong(){ this.tone(190,130,.16,'sawtooth',.07); },
+  combo(n){ const f=780+Math.min(n,12)*60; this.tone(f,f*1.7,.13,'triangle',.1); },
+  group(){ [660,880].forEach((f,i)=>this.tone(f,f*1.2,.22,'triangle',.1,i*.1)); },
+  win(){ [523,659,784,1047,1319].forEach((f,i)=>this.tone(f,f,.34,'triangle',.1,i*.11)); },
+  fail(){ [400,330,260].forEach((f,i)=>this.tone(f,f*.8,.3,'sawtooth',.07,i*.14)); },
+  star(i){ this.tone(900+i*300,1500+i*400,.18,'sine',.12,i*.16); },
+};
+
+/* ══════════ 笔画动画 ══════════ */
+const Ink = {
+  medianPath(m){ return 'M ' + m.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L '); },
+  medianLen(m){ let L=0; for(let i=1;i<m.length;i++){ const dx=m[i][0]-m[i-1][0], dy=m[i][1]-m[i-1][1];
+    L+=Math.sqrt(dx*dx+dy*dy); } return L||1; },
+  build(ch){
+    const d = window.STROKES && window.STROKES[ch];
+    if (!d || !d.s || !d.s.length || !d.m || d.m.length !== d.s.length) return null;
+    const NS='http://www.w3.org/2000/svg';
+    const svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox','0 0 1024 1024');
+    svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+    // ★ hanzi-writer 数据 y 轴朝上，必须整体翻转，否则字是倒的
+    const root=document.createElementNS(NS,'g');
+    root.setAttribute('transform','translate(0,900) scale(1,-1)');
+    svg.appendChild(root);
+    const ghost=document.createElementNS(NS,'path');
+    ghost.setAttribute('class','ghost'); ghost.setAttribute('d', d.s.join(' '));
+    root.appendChild(ghost);
+    const defs=document.createElementNS(NS,'defs');
+    d.s.forEach((sd,i)=>{ const cp=document.createElementNS(NS,'clipPath');
+      cp.setAttribute('id','inkcp'+i); const pp=document.createElementNS(NS,'path');
+      pp.setAttribute('d',sd); cp.appendChild(pp); defs.appendChild(cp); });
+    svg.appendChild(defs);
+    d.m.forEach((med,i)=>{
+      const g=document.createElementNS(NS,'g');
+      g.setAttribute('clip-path','url(#inkcp'+i+')');
+      const p=document.createElementNS(NS,'path');
+      p.setAttribute('class','inkS'); p.setAttribute('d', this.medianPath(med));
+      p.setAttribute('stroke-width','150');
+      const L=this.medianLen(med);
+      p.style.strokeDasharray=L; p.style.strokeDashoffset=0;
+      p.style.setProperty('--len',L);
+      p.style.animationDelay=(i*0.30)+'s'; p.style.animationDuration='0.34s';
+      g.appendChild(p); root.appendChild(g);
+    });
+    svg.dataset.strokes=d.s.length;
+    return svg;
+  },
+};
+
+/* ══════════ 存档：进度 + 每日统计 ══════════ */
+const SAVE_KEY = 'hzTypingSave2';
+const Save = {
+  d: { lv: {}, best: 0, days: {} },
+  load(){ try{ const s=localStorage.getItem(SAVE_KEY); if(s) this.d=Object.assign(this.d, JSON.parse(s)); }catch(e){} },
+  put(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify(this.d)); }catch(e){} },
+  /** 一关的结果：只记更好的 */
+  level(key, grade, score){
+    const cur = this.d.lv[key] || { grade:'D', score:0, plays:0 };
+    cur.plays = (cur.plays||0) + 1;
+    if ((GRADE_ORDER[grade]||0) > (GRADE_ORDER[cur.grade]||0)) cur.grade = grade;
+    if (score > (cur.score||0)) cur.score = score;
+    this.d.lv[key] = cur;
+    if (score > this.d.best) this.d.best = score;
+    this.put();
+  },
+  /** 今天这一天的累计 */
+  today(patch){
+    const k = dayKey();
+    const t = this.d.days[k] || { chars:0, right:0, wrong:0, score:0, secs:0, levels:0 };
+    for (const p in patch) t[p] = (t[p]||0) + patch[p];
+    this.d.days[k] = t;
+    this.put();
+  },
+  totalStars(){ let n=0; for(const k in this.d.lv) n += starsFromGrade(this.d.lv[k].grade); return n; },
+  dayCount(){ return Object.keys(this.d.days).length; },
+  recentDays(n){
+    const out=[];
+    for (let i=0;i<(n||7);i++){
+      const dt=new Date(); dt.setDate(dt.getDate()-i);
+      const k=dayKey(dt);
+      out.push({ key:k, label: i===0?'今天':(i===1?'昨天':k.slice(5)), d: this.d.days[k]||null });
+    }
+    return out;
+  },
+};
+Save.load();
+
+/* ══════════ 状态 ══════════ */
+const $ = s => document.querySelector(s);
+const DEBUG = /[?&]debug=1/.test(location.search);
+if (DEBUG) document.body.classList.add('dbg');
+
+const S = {
+  li: 0, groups: [], gi: 0, list: [], pos: 0,
+  score: 0, combo: 0, bestCombo: 0, right: 0, wrong: 0,
+  t0: 0, wrongThis: 0, times: [], showPy: true, softKb: false, playing: false,
+  groupScore: 0, charsDone: 0, secsTotal: 0,
+};
+
+function strokeCount(ch){ return (window.STROKES && window.STROKES[ch] && window.STROKES[ch].s.length) || 0; }
+function diff(ch){ return diffOf(ch, strokeCount(ch), answersOf(ch)); }
+function levelChars(li){ return li < 0 ? LEVELS.map(l=>l.chars).join('') : LEVELS[li].chars; }
+function parOfLevel(li){
+  const chars = levelChars(li);
+  let par = 0;
+  for (const ch of chars) par += PAR_PER_CHAR * (DIFF_MULT[diff(ch)] || 1);
+  return Math.round(par);
+}
+function parOfGroup(chars){
+  let par = 0;
+  for (const ch of chars) par += PAR_PER_CHAR * (DIFF_MULT[diff(ch)] || 1);
+  return Math.round(par);
+}
+
+/* ══════════ 选关界面 ══════════ */
+const GRADE_ICON = { S:'★', A:'✓', B:'·', C:'·', D:'·' };
+function renderMenu(){
+  $('#mStars').textContent = Save.totalStars();
+  $('#mBest').textContent = Save.d.best || 0;
+  $('#mDays').textContent = Save.dayCount();
+  const box = $('#levels'); box.innerHTML='';
+  LEVELS.forEach((lv,i)=>{
+    const rec = Save.d.lv[i];
+    const chars = lv.chars;
+    const b = document.createElement('button');
+    b.className='lvcard' + (rec && passed(rec.grade) ? ' pass' : '');
+    b.innerHTML =
+      '<div class="top"><div class="no">第 '+(i+1)+' 关</div>' +
+      (rec ? '<div class="gbadge g-'+rec.grade+'">'+rec.grade+'</div>' : '<div class="no">未玩</div>') + '</div>' +
+      '<div class="cs">'+chars+'</div>' +
+      '<div class="best">过关线 '+parOfLevel(i)+' 分' + (rec ? '　最高 <b>'+rec.score+'</b>' : '') +
+      (rec && rec.plays ? '　玩了 '+rec.plays+' 次' : '') + '</div>';
+    b.addEventListener('click', ()=>startLevel(i));
+    box.appendChild(b);
+  });
+  const recA = Save.d.lv.all;
+  const b2=document.createElement('button');
+  b2.className='lvcard bonus';
+  b2.innerHTML =
+    '<div class="top"><div class="no">挑战</div>' +
+    (recA ? '<div class="gbadge g-'+recA.grade+'">'+recA.grade+'</div>' : '<div class="no">未玩</div>') + '</div>' +
+    '<div class="nm">全部 60 个字</div>' +
+    '<div class="cs" style="font-size:13px;letter-spacing:0">一次打完，看你能拿什么评级</div>' +
+    '<div class="best">过关线 '+parOfLevel(-1)+' 分' + (recA ? '　最高 <b>'+recA.score+'</b>' : '') + '</div>';
+  b2.addEventListener('click', ()=>startLevel(-1));
+  box.appendChild(b2);
+}
+
+/* ══════════ 开始 ══════════ */
+function startLevel(li){
+  S.li = li;
+  const chars = levelChars(li);
+  // 按组切，组内打乱
+  S.groups = groupsOf([...chars]).map(g => shuffled(g.length).map(k=>g[k]));
+  S.gi = 0; S.score = 0; S.combo = 0; S.bestCombo = 0;
+  S.right = 0; S.wrong = 0; S.times = []; S.charsDone = 0; S.secsTotal = 0;
+  S.playing = true;
+  $('#menu').classList.add('hide');
+  $('#play').classList.add('on');
+  $('#over').classList.remove('on');
+  $('#gpanel').classList.remove('on');
+  wantLandscape();
+  startGroup();
+  focusInput();
+}
+
+function startGroup(){
+  S.list = S.groups[S.gi];
+  S.pos = 0; S.groupScore = S.score;
+  $('#groupTag').innerHTML = (S.li<0?'挑战':'第 '+(S.li+1)+' 关') +
+    ' · 第 <b>'+(S.gi+1)+'</b>/'+S.groups.length+' 组';
+  $('#targetTag').innerHTML = '目标 <b>'+parOfGroup(S.list)+'</b>';
+  showCard();
+}
+
+/* ══════════ 出题 ══════════ */
+function cur(){ return S.list[S.pos]; }
+
+function showCard(){
+  const ch = cur();
+  $('#big').textContent = ch;
+  $('#big').style.display='';
+  $('#ink').classList.remove('on'); $('#ink').innerHTML='';
+  $('#py').textContent = answersOf(ch)[0] || '';
+  $('#py').style.visibility = S.showPy ? 'visible' : 'hidden';
+  const p = S.pos>0 ? S.list[S.pos-1] : null;
+  const n = S.pos<S.list.length-1 ? S.list[S.pos+1] : null;
+  $('#prev .c').textContent = p||'·'; $('#prev .p').textContent = p?(answersOf(p)[0]||''):'';
+  $('#next .c').textContent = n||'·'; $('#next .p').textContent = n?(answersOf(n)[0]||''):'';
+  $('#prev').style.opacity = p?.5:.1; $('#next').style.opacity = n?.5:.1;
+  const inp=$('#type'); inp.value=''; inp.className='';
+  S.t0 = performance.now(); S.wrongThis = 0; wasPrefix = true;
+  syncHud(); dbg();
+}
+
+function syncHud(){
+  $('#sScore').textContent = S.score;
+  const cb=$('#sCombo'); cb.textContent = S.combo; cb.classList.toggle('hot', S.combo>=5);
+  const tot = S.right + S.wrong;
+  $('#sAcc').textContent = tot ? Math.round(S.right/tot*100)+'%' : '–';
+  const done = S.charsDone, all = levelChars(S.li).length;
+  $('#progFill').style.width = (all ? done/all*100 : 0) + '%';
+}
+function bump(el){ el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
+  setTimeout(()=>el.classList.remove('bump'),150); }
+function flyPop(text, cls){
+  const st=$('#stage').getBoundingClientRect();
+  const d=document.createElement('div'); d.className='pop'+(cls?' '+cls:'');
+  d.textContent=text;
+  d.style.left=(st.left+st.width/2-30+(Math.random()*60-30))+'px';
+  d.style.top=(st.top+st.height*0.16)+'px';
+  document.body.appendChild(d); setTimeout(()=>d.remove(),1000);
+}
+
+/* ══════════ 输入 ══════════ */
+let wasPrefix = true;
+function focusInput(){ const i=$('#type'); try{ i.focus({preventScroll:true}); }catch(e){ i.focus(); } }
+
+$('#type').addEventListener('input', ()=>{
+  const inp=$('#type'), raw=inp.value;
+  if (!raw) return;
+  Snd.key();
+  const ch=cur();
+  if (isExact(ch, raw)){ hit(); return; }
+  const ok = isPrefix(ch, raw);
+  if (!ok && wasPrefix){
+    S.wrong++; S.wrongThis++; S.combo=0;
+    Snd.wrong();
+    inp.classList.remove('good'); inp.classList.add('bad');
+    const b=$('#big'); b.classList.remove('miss'); void b.offsetWidth; b.classList.add('miss');
+    syncHud();
+  } else if (ok){ inp.classList.remove('bad'); }
+  wasPrefix = ok; dbg();
+});
+
+function hit(){
+  const ch = cur();
+  const secs = (performance.now()-S.t0)/1000;
+  const d = diff(ch);
+  const gain = scoreFor(secs, S.wrongThis, S.combo, d);
+  S.score += gain; S.right++; S.times.push(secs);
+  S.charsDone++; S.secsTotal += secs;
+  if (S.wrongThis===0){ S.combo++; if (S.combo>1) Snd.combo(S.combo); } else S.combo=0;
+  if (S.combo>S.bestCombo) S.bestCombo=S.combo;
+
+  Snd.right(S.combo);
+  const inp=$('#type'); inp.classList.remove('bad'); inp.classList.add('good');
+  const b=$('#big'); b.classList.remove('hit'); void b.offsetWidth; b.classList.add('hit');
+  const mult = (DIFF_MULT[d]||1);
+  flyPop('+'+gain + (mult>1?' ('+DIFF_NAME[d]+')':''), S.combo>=3?'combo':'');
+  bump($('#sScore')); syncHud(); dbg();
+
+  const svg = Ink.build(ch);
+  const next = ()=>{
+    S.pos++;
+    if (S.pos >= S.list.length) endGroup();
+    else showCard();
+  };
+  if (svg){
+    $('#big').style.display='none';
+    const box=$('#ink'); box.innerHTML=''; box.appendChild(svg); box.classList.add('on');
+    const hold = Math.min(420 + svg.dataset.strokes*300, 3600);
+    setTimeout(next, hold);
+  } else setTimeout(next, 220);
+}
+
+/* ══════════ 组结算 ══════════ */
+function endGroup(){
+  const got = S.score - S.groupScore;
+  const par = parOfGroup(S.list);
+  const r = par ? got/par : 0;
+  $('#gpRows').innerHTML = '本组得分 <b>'+got+'</b>　标准分 '+par+'<br>' +
+    (r>=0.95?'太棒了，接近满分！': r>=0.8?'很好，继续保持':'再快一点就更好啦');
+  $('#gpIcon').textContent = r>=0.95?'🌟': r>=0.8?'👍':'💪';
+  $('#gpTitle').textContent = '第 '+(S.gi+1)+' 组完成';
+  $('#gpanel').classList.add('on');
+  Snd.group();
+  dbg();
+}
+$('#gpNext').addEventListener('click', ()=>{
+  $('#gpanel').classList.remove('on');
+  S.gi++;
+  if (S.gi >= S.groups.length) finish();
+  else { startGroup(); focusInput(); }
+});
+
+/* ══════════ 关结算 ══════════ */
+function finish(){
+  S.playing = false;
+  const par = parOfLevel(S.li);
+  const avg = S.times.length ? S.times.reduce((a,b)=>a+b,0)/S.times.length : 0;
+  const tot = S.right + S.wrong;
+  const acc = tot ? S.right/tot : 1;
+  const g = gradeFor(S.score, par, S.wrong);
+  const key = S.li < 0 ? 'all' : S.li;
+  Save.level(key, g, S.score);
+  Save.today({ chars: S.right, right: S.right, wrong: S.wrong,
+               score: S.score, secs: Math.round(S.secsTotal), levels: 1 });
+
+  $('#ovGrade').className = 'gbadge big g-' + g;
+  $('#ovGrade').textContent = g;
+  const okPass = passed(g);
+  $('#ovTitle').textContent = g==='S' ? '完美！一次都没错！'
+                            : okPass ? (S.li<0?'挑战完成！':LEVELS[S.li].name+' 过关！')
+                            : '差一点点，再来一次？';
+  $('#ovRows').innerHTML =
+    '得分 <b>'+S.score+'</b>　过关线 '+par+'<br>' +
+    '打对 '+S.right+' 个字　打错 '+S.wrong+' 次　正确率 <b>'+Math.round(acc*100)+'%</b><br>' +
+    '平均 <b>'+avg.toFixed(2)+'</b> 秒/字　最高连击 <b>'+S.bestCombo+'</b>';
+  $('#ovNext').style.display = (S.li>=0 && S.li<LEVELS.length-1) ? '' : 'none';
+  $('#over').classList.add('on');
+  if (okPass){ Snd.win(); for(let i=0;i<starsFromGrade(g);i++) Snd.star(i); }
+  else Snd.fail();
+  renderMenu(); dbg();
+}
+
+/* ══════════ 统计 ══════════ */
+function renderStats(){
+  const days = Save.recentDays(7);
+  const tot = { chars:0, right:0, wrong:0, secs:0, levels:0 };
+  for (const k in Save.d.days){ const d=Save.d.days[k];
+    tot.chars+=d.chars||0; tot.right+=d.right||0; tot.wrong+=d.wrong||0;
+    tot.secs+=d.secs||0; tot.levels+=d.levels||0; }
+  const acc = (tot.right+tot.wrong) ? Math.round(tot.right/(tot.right+tot.wrong)*100) : 0;
+  $('#statsTop').innerHTML =
+    '一共练了 <b>'+tot.chars+'</b> 个字　'+tot.levels+' 关<br>' +
+    '总正确率 <b>'+acc+'%</b>　累计 <b>'+Math.round(tot.secs/60)+'</b> 分钟';
+  const maxChars = Math.max(1, ...days.map(x=>x.d?(x.d.chars||0):0));
+  let html='';
+  let any=false;
+  for (const day of days){
+    if (day.d){ any=true;
+      const d=day.d, a=(d.right+d.wrong)?Math.round(d.right/(d.right+d.wrong)*100):0;
+      html += '<div class="srow"><span class="d">'+day.label+'</span>' +
+        '<span class="sbar"><i style="width:'+Math.round((d.chars||0)/maxChars*100)+'%"></i></span>' +
+        '<span class="n">'+(d.chars||0)+' 字</span>' +
+        '<span class="a">'+a+'%</span>' +
+        '<span class="t">'+Math.round((d.secs||0)/60)+' 分</span></div>';
+    } else {
+      html += '<div class="srow"><span class="d">'+day.label+'</span>' +
+        '<span class="sbar"><i style="width:0"></i></span>' +
+        '<span class="n">—</span><span class="a">—</span><span class="t">—</span></div>';
+    }
+  }
+  $('#statsBody').innerHTML = html;
+  $('#statsEmpty').style.display = any ? 'none' : '';
+  $('#stats').classList.add('on');
+}
+
+/* ══════════ 按钮 ══════════ */
+function backToMenu(){
+  S.playing = false;
+  $('#play').classList.remove('on');
+  $('#menu').classList.remove('hide');
+  $('#over').classList.remove('on');
+  $('#gpanel').classList.remove('on');
+  try{ if (window.RugeScreen && RugeScreen.set) RugeScreen.set('portrait'); }catch(e){}
+  renderMenu();
+}
+$('#tBack').addEventListener('click', backToMenu);
+$('#mStats').addEventListener('click', renderStats);
+$('#statsClose').addEventListener('click', ()=>$('#stats').classList.remove('on'));
+$('#mHome').addEventListener('click', ()=>{
+  try{ if (window.RugeNav && RugeNav.home){ RugeNav.home(); return; } }catch(e){}
+  alert('请按手机的返回键回到游戏中心');    // 浏览器里没有桥，给个提示
+});
+$('#tSound').addEventListener('click', ()=>{ Snd.on=!Snd.on;
+  $('#tSound').textContent = Snd.on?'🔊':'🔇'; if (Snd.on) Snd.right(0); });
+$('#tPy').addEventListener('click', ()=>{ S.showPy=!S.showPy;
+  $('#tPy').classList.toggle('on', !S.showPy);
+  $('#tPy').textContent = S.showPy?'拼音':'默写';
+  $('#py').style.visibility = S.showPy?'visible':'hidden'; });
+$('#tKb').addEventListener('click', ()=>{ S.softKb=!S.softKb;
+  $('#type').setAttribute('inputmode', S.softKb?'latin':'none');
+  $('#tKb').classList.toggle('on', S.softKb);
+  $('#tKb').textContent = S.softKb?'⌨ 开':'⌨'; focusInput(); });
+$('#ovAgain').addEventListener('click', ()=>startLevel(S.li));
+$('#ovNext').addEventListener('click', ()=>startLevel(Math.min(LEVELS.length-1, S.li+1)));
+$('#ovMenu').addEventListener('click', backToMenu);
+
+document.addEventListener('pointerdown', (e)=>{
+  if (e.target.closest && e.target.closest('button')) return;
+  if (S.playing) setTimeout(focusInput, 0);
+});
+addEventListener('blur', ()=>{ if (S.playing) focusInput(); });
+
+function wantLandscape(){ try{ if (window.RugeScreen && RugeScreen.set) RugeScreen.set('landscape'); }catch(e){} }
+addEventListener('pageshow', renderMenu);
+
+function dbg(){
+  if (!DEBUG) return;
+  const ch = cur() || '?';
+  document.getElementById('dbg').textContent =
+    `关=${S.li} 组=${S.gi+1}/${S.groups.length} #${S.pos+1}/${S.list.length} 字=${ch} ` +
+    `难度=${diff(ch)} 答案=${answersOf(ch).join('/')} 输入="${$('#type').value}" ` +
+    `分=${S.score} 连=${S.combo} 对=${S.right} 错=${S.wrong} 完成=${S.charsDone} ` +
+    `笔画=${strokeCount(ch)} 存档关=${Object.keys(Save.d.lv).length} 练过=${Save.dayCount()}天`;
+}
+
+window.__game = {
+  LEVELS, PY, PER_GROUP,
+  norm, isPrefix, isExact, scoreFor, shuffled, answersOf,
+  diffOf, DIFF_MULT, parScore, gradeFor, GRADE_ORDER, starsFromGrade, groupsOf,
+  Save, dayKey,
+  state: ()=>({ li:S.li, gi:S.gi, groups:S.groups.length, pos:S.pos, total:S.list.length,
+    score:S.score, combo:S.combo, right:S.right, wrong:S.wrong, playing:S.playing,
+    ch:cur()||null, ans:cur()?answersOf(cur()):[], diff:cur()?diff(cur()):0,
+    parLevel:parOfLevel(S.li), parGroup:parOfGroup(S.list),
+    savedLevels:Object.keys(Save.d.lv).length, days:Save.dayCount(), stars:Save.totalStars() }),
+  start: startLevel, menu: renderMenu, stats: renderStats,
+};
+
+renderMenu();
+</script>
+</body>
+</html>

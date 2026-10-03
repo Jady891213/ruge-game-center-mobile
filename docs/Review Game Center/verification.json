@@ -1,0 +1,27 @@
+{
+  "version": "4.2",
+  "versionCode": 25,
+  "apk_sha256": "1d72b3d9f4f8eb6e675b1e783c501dbccc7bc654b4e55d6daf20d2424dfc4673",
+  "installed_apk_identical": true,
+  "verified_assets": 16,
+  "game_tests": 34,
+  "back_swipe_device_check": "passed_left_and_right_in_pipe_and_active_dino; homepage_exits",
+  "deepcode_extension_persistent": true,
+  "foreground_preserves_paused_dino": true,
+  "real_renderer_intro_images_verified": true,
+  "game_screen_toggle_device_check": true,
+  "game_keep_screen_off": "mHoldScreenWindow=null",
+  "game_keep_screen_on": "com.dsh.gamecenter/.MainActivity",
+  "scoped_runtime_errors": [],
+  "deepcode_foreground_after_unlock": {
+    "boot_graph_contains_extension": true,
+    "enabled": true,
+    "held": true,
+    "phase": "held"
+  },
+  "deepcode_background_after_return": {
+    "visibility": "hidden",
+    "held": false,
+    "window_hold": null
+  }
+}

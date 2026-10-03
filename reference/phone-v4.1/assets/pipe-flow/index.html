@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#EAF6FF">
+<title>接水管 · 给小花浇水</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%;overflow:hidden}
+  body{
+    font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    background:radial-gradient(120% 80% at 50% 0%,#F4FBFF 0%,#E3F2FB 55%,#CFE8F5 100%);
+    color:#1E3A4A;-webkit-user-select:none;user-select:none;
+    display:flex;flex-direction:column;
+    padding:calc(env(safe-area-inset-top,0px) + 8px) 0 calc(env(safe-area-inset-bottom,0px) + 6px);
+  }
+  header{display:flex;align-items:center;gap:9px;padding:0 14px;flex:none}
+  .lv{font-size:14px;font-weight:700;color:#4E7E94;white-space:nowrap}
+  .lv b{color:#1D8FC4;font-size:19px}
+  .dots{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+  .dots i{width:6px;height:6px;border-radius:50%;background:#BBD9E6;transition:background .3s}
+  .dots i.on{background:#49B36B}
+  .dots i.now{background:#1D8FC4;transform:scale(1.4)}
+  .ico-btn{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid #BBD9E6;
+    background:#fff;color:#6E9CB0;font-size:17px;cursor:pointer;padding:0;
+    display:flex;align-items:center;justify-content:center}
+  .ico-btn:active{background:#EAF6FC}
+
+  #hint{flex:none;text-align:center;font-size:13.5px;color:#6E9CB0;
+    padding:8px 18px 2px;min-height:34px;line-height:1.6}
+  #hint em{font-style:normal;color:#1D8FC4;font-weight:700}
+
+  /* ── 棋盘 ── */
+  #board{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:6px 10px}
+  #grid{display:grid;gap:7px;width:100%;max-width:min(93vw,470px);max-height:100%}
+
+  .tile{border:none;padding:0;background:transparent;cursor:pointer;position:relative;
+    display:flex;align-items:center;justify-content:center}
+  /* 注意：这里**不能**用 overflow:hidden —— 管子要伸到格外，
+     才能跨过格子间隙和邻居接上。管子只从边的中点出入，碰不到圆角。 */
+  .tile .cell{width:100%;height:100%;border-radius:14px;
+    background:linear-gradient(180deg,#FBFEFF,#EDF7FD);
+    border:2px solid #D3E8F2;position:relative;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .12s,box-shadow .2s,border-color .2s}
+  .mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    font-size:clamp(18px,5.4vw,30px);line-height:1;pointer-events:none;
+    filter:drop-shadow(0 1px 2px rgba(0,0,0,.12))}
+  .tile:active .cell{transform:scale(.95)}
+  .tile.wet .cell{background:linear-gradient(180deg,#E7F7FF,#D2EFFC);border-color:#8FD3EE}
+  .tile.done .cell{box-shadow:0 0 0 3px rgba(73,179,107,.35)}
+  /* SVG 根元素默认 overflow:hidden —— 会把伸出 viewBox 的管子裁掉，
+     结果就是格子之间接不上。必须显式放开。 */
+  .tile svg{width:100%;height:100%;display:block;overflow:visible}
+  /* 转动的反馈用一次性 animation，end 状态就是自然状态（0°）。
+     这样即使动画被冻结/不执行，管子也停在**正确**的方向上 —— 不会卡在 -90°。 */
+  .tile svg.spin{animation:spin .19s cubic-bezier(.34,1.5,.5,1)}
+  @keyframes spin{from{transform:rotate(-90deg)}to{transform:rotate(0)}}
+  .pipe{fill:none;stroke:#9FB9C6;stroke-width:15;stroke-linecap:round}
+  .tile.wet .pipe{stroke:#3FB0E0}
+  .flow{fill:none;stroke:#CDF0FF;stroke-width:5.5;stroke-linecap:round;
+    stroke-dasharray:9 15;opacity:0}
+  .tile.wet .flow{opacity:.95;animation:flowmove 1s linear infinite}
+  @keyframes flowmove{from{stroke-dashoffset:0}to{stroke-dashoffset:-24}}
+  .tile:focus-visible .cell{outline:3px solid #1D8FC4;outline-offset:2px}
+
+  /* ── 揭晓 ── */
+  #win{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;
+    justify-content:center;text-align:center;z-index:200;padding:0 26px;
+    background:radial-gradient(60% 45% at 50% 42%,rgba(244,251,255,.97),rgba(227,242,251,.99))}
+  #win.show{display:flex}
+  #winIcon{font-size:clamp(64px,20vw,104px);line-height:1;
+    animation:bloom .55s cubic-bezier(.34,1.5,.5,1)}
+  @keyframes bloom{0%{transform:scale(.72) rotate(-8deg)}60%{transform:scale(1.09) rotate(3deg)}100%{transform:scale(1)}}
+  #winTitle{font-size:23px;font-weight:800;color:#1D8FC4;margin-top:6px;letter-spacing:1px}
+  #winSub{font-size:15px;color:#6E9CB0;margin-top:8px}
+  #next{margin-top:24px;border:none;border-radius:30px;padding:15px 50px;font-family:inherit;
+    font-size:18px;font-weight:800;letter-spacing:2px;color:#fff;
+    background:linear-gradient(180deg,#4FC3EC,#1D8FC4);
+    box-shadow:0 8px 20px rgba(29,143,196,.32);cursor:pointer}
+  #next:active{transform:translateY(2px)}
+
+  canvas#fx{position:fixed;inset:0;pointer-events:none;z-index:300}
+  #dbg{display:none;position:fixed;left:0;right:0;bottom:0;z-index:400;pointer-events:none;
+    background:#12303F;color:#9FE8D0;font:11px/1.5 ui-monospace,monospace;
+    padding:5px 8px;white-space:pre-wrap;word-break:break-all}
+  body.dbg #dbg{display:block}
+  body.noanim *{animation:none !important;transition:none !important}
+  footer{flex:none;text-align:center;font-size:11.5px;color:#8FB4C4;padding:4px 20px 2px}
+</style>
+</head>
+<body>
+<header>
+  <div class="lv">第 <b id="lvnum">1</b> 关</div>
+  <div class="dots" id="dots"></div>
+  <button class="ico-btn" id="reset" aria-label="重来这一关">↺</button>
+</header>
+
+<div id="hint"></div>
+<div id="board">
+  <div id="grid"></div>
+  <div id="win">
+    <div id="winIcon">🌸</div>
+    <div id="winTitle">小花喝到水啦！</div>
+    <div id="winSub"></div>
+    <button id="next">下一关</button>
+  </div>
+</div>
+
+<canvas id="fx"></canvas>
+<div id="dbg"></div>
+<footer>点管子，让它转个方向</footer>
+
+<script>
+'use strict';
+/* ════════════════════════════════════════════════════════════
+   方向用位掩码：北1 东2 南4 西8
+   一块管子的 mask 就是它**通**的那几个方向。
+   顺时针转 90°：1→2→4→8→1
+   ════════════════════════════════════════════════════════════ */
+const N = 1, E = 2, S = 4, W = 8;
+const OPP = { 1: 4, 2: 8, 4: 1, 8: 2 };
+const DX = { 1: 0, 2: 1, 4: 0, 8: -1 };
+const DY = { 1: -1, 2: 0, 4: 1, 8: 0 };
+
+/* 关卡表：(列, 行) —— 从 3×3 慢慢长到 5×5 */
+/* 现在每一格都在水路上，所以格子数要克制一点（9→25 格） */
+const LEVELS = [
+  { w: 3, h: 3 }, { w: 3, h: 4 }, { w: 4, h: 4 }, { w: 4, h: 4 }, { w: 4, h: 5 },
+  { w: 4, h: 5 }, { w: 5, h: 5 }, { w: 5, h: 5 }, { w: 5, h: 5 }, { w: 5, h: 6 },
+];
+
+/* ════════════════ ENGINE-START ════════════════
+   纯逻辑：不碰 DOM，可被 Node 抽出来跑
+   ═══════════════════════════════════════════════ */
+function rotCW(m){ return ((m << 1) | (m >> 3)) & 15; }
+function rotN(m, k){ var r = m; for (var i = 0; i < (k % 4 + 4) % 4; i++) r = rotCW(r); return r; }
+
+/**
+ * 生成一条**蛇形缠绕**的水路：从左边缘出发，走遍每一个格子，最后停到右边缘。
+ *
+ * 为什么不用「随机游走」：随机会生成近乎直线的路（往右走的概率高），
+ * 3×3 就只有 3 格、转两下就通 —— 那不叫关卡设计。
+ * 现在改成随机 DFS 找**汉密尔顿路径**，并且**优先拐弯**，
+ * 于是每一格都在路上、路径左拐右绕。
+ */
+function carvePath(w, h, rnd){
+  var best = null;
+  for (var attempt = 0; attempt < 150 && !best; attempt++){
+    var seen = {}, path = [];
+    var startY = (rnd() * h) | 0;
+    var dfs = function(x, y, pdx, pdy){
+      seen[x + ',' + y] = 1; path.push([x, y]);
+      if (path.length === w * h){
+        if (x === w - 1){ return true; }        // 必须停在最右列
+      } else {
+        var dirs = [[1,0], [-1,0], [0,1], [0,-1]];
+        for (var i = dirs.length - 1; i > 0; i--){        // 洗牌
+          var j = (rnd() * (i + 1)) | 0, tm = dirs[i]; dirs[i] = dirs[j]; dirs[j] = tm;
+        }
+        // 把「跟上一段同向」的排到最后 → 优先拐弯，路径才会缠绕
+        dirs.sort(function(A, B){
+          var ta = (A[0] === pdx && A[1] === pdy) ? 1 : 0;
+          var tb = (B[0] === pdx && B[1] === pdy) ? 1 : 0;
+          return ta - tb;
+        });
+        for (var k = 0; k < dirs.length; k++){
+          var nx = x + dirs[k][0], ny = y + dirs[k][1];
+          if (nx < 0 || ny < 0 || nx >= w || ny >= h) continue;
+          if (seen[nx + ',' + ny]) continue;
+          if (dfs(nx, ny, dirs[k][0], dirs[k][1])) return true;
+        }
+      }
+      seen[x + ',' + y] = 0; path.pop();
+      return false;
+    };
+    if (dfs(0, startY, 0, 0) && path.length === w * h && path[path.length - 1][0] === w - 1){
+      best = path;
+    }
+  }
+  if (best) return best;
+
+  // 兜底：蛇形（一定覆盖全部格子，且从左边缘走到右边缘）
+  var p2 = [], down = true;
+  for (var cx = 0; cx < w; cx++){
+    var ys = [];
+    for (var y2 = 0; y2 < h; y2++) ys.push(y2);
+    if (!down) ys.reverse();
+    for (var q = 0; q < ys.length; q++) p2.push([cx, ys[q]]);
+    down = !down;
+  }
+  return p2;
+}
+
+/** 路径拐了几个弯（关卡设计质量指标） */
+function countTurns(path){
+  var n = 0;
+  for (var i = 2; i < path.length; i++){
+    var a1 = path[i-1][0] - path[i-2][0], b1 = path[i-1][1] - path[i-2][1];
+    var a2 = path[i][0] - path[i-1][0],   b2 = path[i][1] - path[i-1][1];
+    if (a1 !== a2 || b1 !== b2) n++;
+  }
+  return n;
+}
+
+/**
+ * 开一局。
+ * 每块管子存：sol（基准朝向）、rot（转了几下）—— mask = rotN(sol, rot)
+ * 路径上的格子 sol 就是正解朝向，rot=0 即通关。
+ * 所以**这局一定解得开**（把路径格全转回 0 就行）。
+ */
+function newGame(li, rnd){
+  var L = LEVELS[li], w = L.w, h = L.h;
+  var path = carvePath(w, h, rnd);
+  var onPath = {}, t;
+  for (var i = 0; i < path.length; i++) onPath[path[i][0] + ',' + path[i][1]] = i;
+
+  var tiles = [];
+  for (var y = 0; y < h; y++) for (var x = 0; x < w; x++){
+    var idx = onPath[x + ',' + y];
+    var sol;
+    if (idx !== undefined){
+      sol = 0;
+      if (idx > 0){                                  // 连着上一格
+        var px = path[idx - 1][0], py = path[idx - 1][1];
+        // 方向是「从这一格指向上一格」：上一格在右边 → 这一格要朝东开口
+        sol |= (px > x) ? E : (px < x ? W : (py > y ? S : N));
+      }
+      if (idx < path.length - 1){                    // 连着下一格
+        var nx = path[idx + 1][0], ny = path[idx + 1][1];
+        sol |= (nx > x) ? E : (nx < x ? W : (ny > y ? S : N));
+      }
+      tiles.push({ x: x, y: y, sol: sol, rot: 0, onPath: true,
+                   src: idx === 0, dst: idx === path.length - 1 });
+    } else {
+      // 干扰块：随机直管或弯头
+      sol = (rnd() < 0.5) ? (N | S) : (N | E);
+      tiles.push({ x: x, y: y, sol: sol, rot: (rnd() * 4) | 0, onPath: false,
+                   src: false, dst: false });
+    }
+  }
+  // 打乱：路径块必须转错（rot ≠ 0），否则一上来就是通的
+  for (var j = 0; j < tiles.length; j++){
+    if (tiles[j].onPath) tiles[j].rot = 1 + ((rnd() * 3) | 0);
+  }
+  var g = { li: li, w: w, h: h, tiles: tiles, path: path, moves: 0 };
+  // 万一打乱后仍然是通的（干扰块凑出捷径），再拧一格路径块
+  var guard = 0;
+  while (isSolved(g) && guard++ < 40){
+    var p = path[1 + ((rnd() * (path.length - 1)) | 0)];
+    var tt = tileAt(g, p[0], p[1]);
+    tt.rot = (tt.rot + 1) % 4;
+  }
+  return g;
+}
+
+function tileAt(g, x, y){
+  if (x < 0 || y < 0 || x >= g.w || y >= g.h) return null;
+  return g.tiles[y * g.w + x];
+}
+function maskOf(t){ return rotN(t.sol, t.rot); }
+
+/** 点一下：顺时针转 90° */
+function rotate(g, i){
+  var t = g.tiles[i];
+  if (!t || isSolved(g)) return 'reject';
+  t.rot = (t.rot + 1) % 4;
+  g.moves++;
+  return 'ok';
+}
+
+/** 从水源漫水，返回「通了水」的下标集合 */
+function flood(g){
+  var wet = {}, src = -1;
+  for (var i = 0; i < g.tiles.length; i++) if (g.tiles[i].src) src = i;
+  if (src < 0) return wet;
+  wet[src] = 1;
+  var queue = [src];
+  while (queue.length){
+    var i2 = queue.shift(), t = g.tiles[i2], m = maskOf(t);
+    for (var d in DX){
+      d = +d;
+      if (!(m & d)) continue;                       // 这块管子不通这个方向
+      var nx = t.x + DX[d], ny = t.y + DY[d];
+      var nb = tileAt(g, nx, ny);
+      if (!nb) continue;
+      var ni = ny * g.w + nx;
+      if (wet[ni]) continue;
+      if (!(maskOf(nb) & OPP[d])) continue;          // 对面也得通
+      wet[ni] = 1; queue.push(ni);
+    }
+  }
+  return wet;
+}
+
+function isSolved(g){
+  for (var i = 0; i < g.tiles.length; i++){
+    if (g.tiles[i].dst) return !!flood(g)[i];
+  }
+  return false;
+}
+
+/**
+ * 一块管子该往哪几个方向画线。
+ * ★ 这是「画出来的样子」和「水怎么流」的**唯一来源** —— 两边都调它，
+ *   就不会再出现「看着朝下、其实是横的」那种错位。
+ *   伸出格外（R=64）只在**真有邻居**的方向，否则管子会戳到棋盘外面。
+ */
+function pipeDirs(mask, x, y, w, h, maskAt){
+  var out = [];
+  var list = [1, 2, 4, 8];
+  for (var i = 0; i < list.length; i++){
+    var d = list[i];
+    if (!(mask & d)) continue;
+    var nx = x + DX[d], ny = y + DY[d];
+    var has = (nx >= 0 && ny >= 0 && nx < w && ny < h);
+    // ★ 只有**邻居真的朝我开口**时才伸过去。
+    //   否则：朝上/左伸出的管子画在前一个格子上面 —— 看得见，
+    //   于是「看着接上了、水却不过去」。朝下/右伸出的会被后一个格子
+    //   的背景盖住，看不出问题，所以这个 bug 只在半边出现，特别难发现。
+    var joins = has && maskAt && ((maskAt(nx, ny) & OPP[d]) !== 0);
+    out.push({ dir: d, dx: DX[d], dy: DY[d], r: joins ? 64 : 50 });
+  }
+  return out;
+}
+
+/** 正解格：路径上的块都转回原朝向 */
+function solutionMovesLeft(g){
+  var n = 0;
+  for (var i = 0; i < g.tiles.length; i++) if (g.tiles[i].onPath && g.tiles[i].rot !== 0) n++;
+  return n;
+}
+/* ════════════════ ENGINE-END ════════════════ */
+
+
+/* ══════════ DOM 层 ══════════ */
+/** 取 (x,y) 那块的当前朝向；越界返回 0 */
+function maskAt(x, y){
+  var t = tileAt(G, x, y);
+  return t ? maskOf(t) : 0;
+}
+const $ = s => document.querySelector(s);
+const DEBUG = /[?&]debug=1/.test(location.search);
+if (/[?&]noanim=1/.test(location.search))
+  document.addEventListener('DOMContentLoaded', () => document.body.classList.add('noanim'));
+
+let AC = null;
+function tone(f, dur, type, vol, delay){
+  try{
+    if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
+    if (AC.state === 'suspended') AC.resume();
+    const t0 = AC.currentTime + (delay || 0);
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || 'sine'; o.frequency.setValueAtTime(f, t0);
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(vol || .14, t0 + .012);
+    g.gain.exponentialRampToValueAtTime(.0001, t0 + (dur || .16));
+    o.connect(g); g.connect(AC.destination);
+    o.start(t0); o.stop(t0 + (dur || .16) + .03);
+  }catch(e){}
+}
+const sfx = {
+  turn:  () => tone(520, .06, 'triangle', .10),
+  drip:  () => tone(1200, .05, 'sine', .05),
+  win:   () => { [523,659,784,1047].forEach((f,i) => tone(f,.3,'triangle',.12,i*.09)); },
+};
+function speak(t){
+  try{ if (window.RugeTTS && RugeTTS.speak && RugeTTS.speak(t)) return true; }catch(e){}
+  try{
+    if (!('speechSynthesis' in window)) return false;
+    const u = new SpeechSynthesisUtterance(t);
+    u.lang = 'zh-CN'; u.rate = .85; u.pitch = 1.1;
+    speechSynthesis.cancel(); speechSynthesis.speak(u); return true;
+  }catch(e){ return false; }
+}
+
+let li = (() => {
+  const n = parseInt(decodeURIComponent((location.hash || '').slice(1)), 10);
+  return Number.isFinite(n) ? Math.max(0, Math.min(LEVELS.length - 1, n - 1)) : 0;
+})(), G = null, lastMsg = '-';
+
+/**
+ * ★ 运行时自检：从 **DOM 里真实画出来的 <path d>** 反推方向，
+ *   和逻辑方向 maskOf() 逐块比对。
+ *   这是唯一能证明「看到的 == 判定的」的办法 —— 光看截图看不出来。
+ */
+function drawnMask(i){
+  var svg = document.querySelector('#grid .tile[data-i="' + i + '"] svg');
+  if (!svg) return -1;
+  var p = svg.querySelector('path');
+  if (!p) return -1;
+  var d = p.getAttribute('d') || '', m = 0, ext = 0;
+  var re = /L\s*(-?[\d.]+)[ ,]+(-?[\d.]+)/g, g;
+  while ((g = re.exec(d))){
+    var dx = parseFloat(g[1]) - 50, dy = parseFloat(g[2]) - 50;
+    var dir = (Math.abs(dy) > Math.abs(dx)) ? (dy < 0 ? 1 : 4) : (dx > 0 ? 2 : 8);
+    m |= dir;
+    if (Math.hypot(dx, dy) > 57) ext |= dir;      // r=64 = 伸出格外
+  }
+  return { mask: m, ext: ext };
+}
+
+function dbg(){
+  if (!DEBUG) return;
+  document.body.classList.add('dbg');
+  const wet = flood(G);
+  // 逐块打印：位置 / 名字 / 朝向掩码 / 有没有水
+  // 排查「看着朝下其实横着通」这类错位时，这是唯一的硬证据
+  const NAME = { 1: '北', 2: '东', 4: '南', 8: '西' };
+  const dirs = m => [1,2,4,8].filter(d => m & d).map(d => NAME[d]).join('') || '空';
+  const rowsTxt = G.tiles.map((t, i) => {
+    const tag = t.src ? '源' : t.dst ? '花' : '管';
+    return `${i}(${t.x},${t.y})${tag}[${dirs(maskOf(t))}]${wet[i] ? '水' : '·'}`;
+  }).join(' ');
+  document.getElementById('dbg').textContent =
+    `L${li+1} ${G.w}x${G.h} moves=${G.moves} wet=${Object.keys(wet).length}/${G.tiles.length}` +
+    ` left=${solutionMovesLeft(G)} solved=${isSolved(G)} last=${lastMsg}` +
+    ` | reveal=${getComputedStyle($('#win')).display}` +
+    `\n${rowsTxt}` +
+    `\n自检 画的vs判定: ` + G.tiles.map((t, i) => {
+      var dd = drawnMask(i), lm = maskOf(t);
+      return i + (dd.mask === lm ? '✓' : `✗画${dirs(dd.mask)}判${dirs(lm)}`);
+    }).join(' ') +
+    `\n自检 伸出vs该伸: ` + G.tiles.map((t, i) => {
+      var dd = drawnMask(i), want = 0;
+      var list = [1,2,4,8];
+      for (var k = 0; k < list.length; k++){
+        var d2 = list[k];
+        if (!(lm2(t) & d2)) continue;
+        var nx = t.x + DX[d2], ny = t.y + DY[d2];
+        if (nx < 0 || ny < 0 || nx >= G.w || ny >= G.h) continue;
+        if (maskAt(nx, ny) & OPP[d2]) want |= d2;
+      }
+      return i + (dd.ext === want ? '✓' : `✗伸${dirs(dd.ext)}应${dirs(want)}`);
+      function lm2(tt){ return maskOf(tt); }
+    }).join(' ');
+}
+
+/* 画一块管子：从中心往每个「通」的方向画一条线 */
+function pipeSVG(mask, x, y, w, h, maskAt){
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 100 100');
+  const C = 50;
+  let d = '';
+  for (const seg of pipeDirs(mask, x, y, w, h, maskAt)){
+    d += `M ${C} ${C} L ${C + seg.dx * seg.r} ${C + seg.dy * seg.r} `;
+  }
+  const mk = (cls) => {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', d); p.setAttribute('class', cls); return p;
+  };
+  svg.appendChild(mk('pipe'));
+  svg.appendChild(mk('flow'));
+  return svg;
+}
+
+function render(){
+  G = newGame(li, Math.random);
+  lastMsg = '-';
+  $('#lvnum').textContent = li + 1;
+  $('#dots').innerHTML = LEVELS.map((_, i) =>
+    `<i class="${i < li ? 'on' : ''} ${i === li ? 'now' : ''}"></i>`).join('');
+  $('#win').classList.remove('show');
+  $('#hint').innerHTML = li < 2
+    ? '点管子让它转方向<br><em>把小云朵的水引到小花那儿</em>'
+    : (li < 6 ? '水要一路通到小花那儿<br><em>转错也没关系</em>'
+              : '管子更多了，慢慢来<br><em>点一下就转 90°</em>');
+
+  const grid = $('#grid');
+  grid.style.gridTemplateColumns = `repeat(${G.w}, 1fr)`;
+  grid.style.gridTemplateRows = `repeat(${G.h}, 1fr)`;
+  grid.style.aspectRatio = `${G.w} / ${G.h}`;      // 正方形格子
+  grid.innerHTML = '';
+  G.tiles.forEach((t, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'tile'; b.dataset.i = i;
+    const cell = document.createElement('div'); cell.className = 'cell';
+    cell.appendChild(pipeSVG(maskOf(t), t.x, t.y, G.w, G.h, maskAt));
+    if (t.src || t.dst){
+      // 图标**不能**放进会旋转的 svg 里，否则管子一转它就跟着转
+      const mk = document.createElement('span');
+      mk.className = 'mark';
+      mk.textContent = t.src ? '☁️' : '🌸';
+      cell.appendChild(mk);
+    }
+    b.appendChild(cell);
+    b.setAttribute('aria-label',
+      (t.src ? '水源' : t.dst ? '小花' : '管子') + ' 第' + (i + 1) + '块');
+    b.addEventListener('click', () => onTile(i));
+    grid.appendChild(b);
+  });
+  syncWet(); dbg();
+
+  // 测试钩子：?solve=1 —— 走**真实的点击处理函数**把路径块转回正解，
+  // 用来验证「转对了会怎样」。正式玩不会带这个参数。
+  if (/[?&]solve=1/.test(location.search)){
+    G.tiles.forEach((t, i) => {
+      let guard = 0;
+      while (t.rot !== 0 && guard++ < 4) onTile(i);
+    });
+  }
+}
+
+/** 重画所有管子：伸出与否取决于邻居，所以转动后必须刷新 */
+function refreshPipes(){
+  G.tiles.forEach(function(t, i){
+    var svg = document.querySelector('#grid .tile[data-i="' + i + '"] svg');
+    if (!svg) return;
+    var d = '';
+    var segs = pipeDirs(maskOf(t), t.x, t.y, G.w, G.h, maskAt);
+    for (var k = 0; k < segs.length; k++){
+      d += 'M 50 50 L ' + (50 + segs[k].dx * segs[k].r) + ' ' + (50 + segs[k].dy * segs[k].r) + ' ';
+    }
+    svg.querySelectorAll('path').forEach(function(p){ p.setAttribute('d', d); });
+  });
+}
+
+function syncWet(){
+  const wet = flood(G);
+  const solved = isSolved(G);
+  G.tiles.forEach((t, i) => {
+    const el = $(`#grid .tile[data-i="${i}"]`);
+    if (!el) return;
+    el.classList.toggle('wet', !!wet[i]);
+    el.classList.toggle('done', solved && (t.src || t.dst));
+    // ★ 这里**绝对不能**再给 svg 加 rotate()：
+    //   svg 里的线条已经按当前 mask 画好了，再转一次 = 转两下 → 方向错位。
+    //   （用户实测反馈「看着朝下，水却横着通」就是这个。）
+  });
+}
+
+function onTile(i){
+  const r = rotate(G, i);
+  lastMsg = r;
+  if (r === 'reject') return;
+  sfx.turn();
+  refreshPipes();          // 邻居变了 → 伸出与否也跟着变
+  syncWet();
+  // 转动反馈：重放一次 spin 动画（强制 reflow 才能重触发）
+  var el = $(`#grid .tile[data-i="${i}"] svg`);
+  if (el && !/noanim/.test(document.body.className)){
+    el.classList.remove('spin');
+    void el.offsetWidth;
+    el.classList.add('spin');
+  }
+  if (isSolved(G)) winNow();          // 立刻判胜，不靠定时器（定时器会被冻结）
+  dbg();
+}
+
+function winNow(){
+  sfx.win(); speak('小花喝到水啦');
+  burst(innerWidth / 2, innerHeight * 0.40);
+  $('#winSub').textContent = `你转了 ${G.moves} 下`;
+  $('#win').classList.add('show');
+  dbg();
+}
+
+/* ── 粒子 ── */
+const cv = $('#fx'), cx2 = cv.getContext('2d');
+let bits = [];
+function sizeCanvas(){
+  const d = window.devicePixelRatio || 1;
+  cv.width = innerWidth * d; cv.height = innerHeight * d;
+  cv.style.width = innerWidth + 'px'; cv.style.height = innerHeight + 'px';
+  cx2.setTransform(d, 0, 0, d, 0, 0);
+}
+sizeCanvas(); addEventListener('resize', sizeCanvas);
+function burst(x, y){
+  const cols = ['#4FC3EC','#8FE0FF','#49B36B','#FFD86B','#FFFFFF'];
+  for (let i = 0; i < 48; i++){
+    const a = Math.random() * Math.PI * 2, sp = 2.2 + Math.random() * 6.4;
+    bits.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 2,
+      r: 2.4 + Math.random() * 4.6, life: 1, col: cols[(Math.random() * cols.length) | 0],
+      rot: Math.random() * 6.28, vr: (Math.random() - .5) * .3 });
+  }
+}
+function tick(){
+  cx2.clearRect(0, 0, innerWidth, innerHeight);
+  bits = bits.filter(b => b.life > 0);
+  for (const b of bits){
+    b.x += b.vx; b.y += b.vy; b.vy += .28; b.vx *= .985; b.life -= .0135; b.rot += b.vr;
+    cx2.save(); cx2.globalAlpha = Math.max(0, b.life);
+    cx2.translate(b.x, b.y); cx2.rotate(b.rot); cx2.fillStyle = b.col;
+    const s = b.r * 2;
+    cx2.fillRect(-s / 2, -s * (.42 + Math.random() * .12), s, s * .84);
+    cx2.restore();
+  }
+  requestAnimationFrame(tick);
+}
+tick();
+
+$('#reset').addEventListener('click', () => { sfx.drip(); render(); });
+$('#next').addEventListener('click', () => {
+  sfx.drip();
+  if (li < LEVELS.length - 1){ li++; render(); }
+  else {
+    $('#winIcon').textContent = '🎉';
+    $('#winTitle').textContent = '全部通关！';
+    $('#winSub').textContent = '小花园都浇好啦';
+    $('#next').textContent = '再来一遍';
+    $('#next').onclick = () => { li = 0; render(); $('#next').textContent = '下一关'; };
+  }
+});
+document.addEventListener('pointerdown', function once(){
+  try{ if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)(); AC.resume(); }catch(e){}
+  document.removeEventListener('pointerdown', once);
+}, { once: true });
+
+/* 给自动化测试留的口子 */
+window.__game = {
+  LEVELS, N, E, S, W, rotCW, rotN, newGame, rotate, flood, isSolved, maskOf,
+  solutionMovesLeft, tileAt, carvePath,
+  state: () => ({ li, w: G.w, h: G.h, moves: G.moves,
+                  wet: Object.keys(flood(G)).length, total: G.tiles.length,
+                  left: solutionMovesLeft(G), solved: isSolved(G) }),
+};
+
+render();
+</script>
+
+<!-- ── 回游戏中心的出口：**长按 1.2 秒**才触发，短按无效，防误触 ── -->
+<div id="rugeHome" aria-label="长按回游戏中心">🏠</div>
+<style>
+  #rugeHome{position:fixed;right:9px;bottom:9px;z-index:900;width:46px;height:46px;
+    border-radius:50%;background:rgba(255,255,255,.9);border:1.5px solid rgba(0,0,0,.14);
+    display:flex;align-items:center;justify-content:center;font-size:21px;line-height:1;
+    box-shadow:0 2px 9px rgba(0,0,0,.16);user-select:none;-webkit-user-select:none;
+    cursor:pointer;opacity:.5;transition:opacity .18s,transform .18s;touch-action:none}
+  #rugeHome.press{opacity:1;transform:scale(1.18)}
+  #rugeHome .rtip{position:absolute;right:54px;top:50%;transform:translateY(-50%);
+    white-space:nowrap;font-size:11.5px;color:#3A4A58;background:rgba(255,255,255,.95);
+    border:1px solid rgba(0,0,0,.1);border-radius:9px;padding:5px 9px;opacity:0;
+    pointer-events:none;transition:opacity .18s}
+  #rugeHome.press .rtip{opacity:1}
+</style>
+<script>
+(function(){
+  // 浏览器里没有原生桥 —— 不显示这个按钮，免得点了没反应
+  if (!window.RugeNav || !window.RugeNav.home) return;
+  var b = document.createElement('div');
+  b.id = 'rugeHome';
+  b.innerHTML = '🏠<span class="rtip">松手即取消 · 长按 1.2 秒回游戏中心</span>';
+  document.body.appendChild(b);
+  var timer = null;
+  function down(e){
+    if (e.cancelable) e.preventDefault();
+    b.classList.add('press');
+    timer = setTimeout(function(){
+      timer = null; b.classList.remove('press');
+      try { window.RugeNav.home(); } catch(err){}
+    }, 1200);
+  }
+  function up(){ if (timer){ clearTimeout(timer); timer = null; } b.classList.remove('press'); }
+  b.addEventListener('pointerdown', down);
+  b.addEventListener('pointerup', up);
+  b.addEventListener('pointercancel', up);
+  b.addEventListener('pointerleave', up);
+  b.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+})();
+</script>
+
+</body>
+</html>

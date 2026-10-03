@@ -1,0 +1,12 @@
+/.local-tools/
+/out/
+/TMP to delete-*/
+__pycache__/
+.DS_Store
+*.keystore
+*.jks
+*.p12
+*.idsig
+*password*.txt
+.env
+.env.*
