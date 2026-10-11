@@ -1,0 +1,13 @@
+{
+  "version": [
+    "versionCode=27 minSdk=21 targetSdk=34",
+    "versionName=4.4"
+  ],
+  "foreground": [
+    "topResumedActivity=ActivityRecord{bb640e3 u0 com.dsh.gamecenter/.MainActivity t354}"
+  ],
+  "apkSha256": "d2c0be9ae0f0fc41747267f44f321b0129c3186ea41df377d9534d3afd2aa2c7",
+  "installedApkSha256": "d2c0be9ae0f0fc41747267f44f321b0129c3186ea41df377d9534d3afd2aa2c7",
+  "debugSocketPresent": false,
+  "crashLog": ""
+}

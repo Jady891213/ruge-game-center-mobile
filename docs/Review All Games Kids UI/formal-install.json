@@ -1,0 +1,12 @@
+{
+  "version": [
+    "versionCode=28 minSdk=21 targetSdk=34",
+    "versionName=4.5"
+  ],
+  "sha256": "45994d4f5dd316750c8d0e0156362d42b24ca086d0ef9de97247d4078bd28d40",
+  "installedEqualsLocal": true,
+  "foreground": "mCurrentFocus=Window{d0e819c u0 com.dsh.gamecenter/com.dsh.gamecenter.MainActivity}",
+  "webviewDebugSocket": false,
+  "currentSessionGameCrash": false,
+  "retainedStorageKeys": 12
+}

@@ -1,6 +1,7 @@
-:root{--paper:#FBF7EF;--ink:#243A35;--blue:#268FAB;--coral:#D97051;--gold:#E7B75A;--muted:#758780;--line:#DCE5DB}
-.ruge-pill{font:600 14px system-ui,sans-serif;min-height:44px;padding:10px 17px;border:1px solid var(--line);border-radius:28px;color:var(--ink);background:#fffdf7;cursor:pointer;touch-action:manipulation}
-.ruge-primary{font:700 15px system-ui,sans-serif;min-height:48px;padding:13px 24px;border:0;border-radius:28px;color:white;background:var(--blue);box-shadow:0 4px 0 #186e84;cursor:pointer;touch-action:manipulation}
-.ruge-panel{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 40px #243a3520}
-.ruge-title{font-family:"Noto Serif CJK SC","Songti SC",serif;font-weight:800;letter-spacing:.03em}
-button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+:root{--paper:#fff6e8;--ink:#35544b;--blue:#559d7b;--coral:#df9b8d;--gold:#ffcf67;--muted:#87937d;--line:#dfdcc7;--mint:#bce8d1;--pink:#f9c8ba}
+.ruge-pill{font:800 18px ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;min-height:48px;padding:10px 17px;border:2px solid #e3dac5;border-radius:18px;color:var(--ink);background:#fffdf4;box-shadow:0 3px 0 #dbd2bb;cursor:pointer;touch-action:manipulation}
+.ruge-primary{font:850 23px ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;min-height:58px;padding:13px 24px;border:2px solid #69ab83;border-radius:21px;color:#355b42;background:#a9dbb6;box-shadow:0 5px 0 #619b75;cursor:pointer;touch-action:manipulation}
+.ruge-panel{background:var(--paper);color:var(--ink);border:3px solid #e2dac2;border-radius:29px;box-shadow:0 6px 0 #d7cdb450}
+.ruge-title{font-family:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;font-weight:850;letter-spacing:.02em}
+button:focus-visible,a:focus-visible{outline:4px solid #f2bb55;outline-offset:3px}
+button:active:not(:disabled),a:active{transform:translateY(2px)}

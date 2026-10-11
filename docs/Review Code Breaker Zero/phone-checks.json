@@ -1,0 +1,132 @@
+[
+  {
+    "name": "2 位随机密码可以零开头",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "2 位首个位置零键可用",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "2 位真实点按保留首位零",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "2 位反馈及历史保留零",
+    "pass": true,
+    "detail": {
+      "guess": "09",
+      "counts": [
+        "1",
+        "0"
+      ]
+    }
+  },
+  {
+    "name": "2 位密码历史草稿重载不丢零",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "2 位零开头答案可以通关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "2 位胜利存档重载不重复计分",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "3 位随机密码可以零开头",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "3 位首个位置零键可用",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "3 位真实点按保留首位零",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "3 位反馈及历史保留零",
+    "pass": true,
+    "detail": {
+      "guess": "098",
+      "counts": [
+        "1",
+        "0"
+      ]
+    }
+  },
+  {
+    "name": "3 位密码历史草稿重载不丢零",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "3 位零开头答案可以通关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "3 位胜利存档重载不重复计分",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "4 位随机密码可以零开头",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "4 位首个位置零键可用",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "4 位真实点按保留首位零",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "4 位反馈及历史保留零",
+    "pass": true,
+    "detail": {
+      "guess": "0987",
+      "counts": [
+        "1",
+        "0"
+      ]
+    }
+  },
+  {
+    "name": "4 位密码历史草稿重载不丢零",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "4 位零开头答案可以通关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "4 位胜利存档重载不重复计分",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "全部原有游戏存档精确恢复",
+    "pass": true,
+    "detail": {
+      "keys": 12
+    }
+  }
+]

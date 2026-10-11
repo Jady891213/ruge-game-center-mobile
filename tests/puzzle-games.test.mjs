@@ -324,3 +324,39 @@ test('hanzi puzzle: real clicks collect letters, restore the new save and advanc
   assert.equal(restored.state().li, 1);
   assert.equal(restored.state().done, false);
 });
+
+
+test('pipe: manual and background pauses preserve the route until explicit Continue', t => {
+  const { h, game } = puzzle(t, 'pipe-flow');
+  const tile = h.node('#grid').children.find(node => !node.classList.contains('locked'));
+  tile.dispatch('click');
+  h.click('#pause');
+  const paused = plain(game.state());
+  assert.equal(paused.paused, true);
+  assert.equal(h.node('#pausePanel').hidden, false);
+  tile.dispatch('click');
+  assert.deepEqual(plain(game.state()), paused);
+  h.emitWindow('ruge:resume');
+  assert.equal(game.state().paused, true);
+  h.click('#resume');
+  tile.dispatch('click');
+  assert.equal(game.state().moves, paused.moves + 1);
+  h.emitWindow('ruge:pause');
+  assert.equal(game.state().paused, true);
+  h.click('#resume');
+  assert.equal(game.state().paused, false);
+});
+
+test('gravity: the paused panel can switch an unavailable tilt sensor to touch and continue', async t => {
+  const { h, game } = gravity(t, { native: true });
+  h.click('#start'); h.emitWindow('ruge:pause');
+  h.window.__tilt.age = 1501;
+  h.click('#resume');
+  assert.equal(game.state().paused, true);
+  h.click('#pauseTouch');
+  await Promise.resolve();
+  assert.equal(game.state().mode, 'touch');
+  assert.equal(game.state().paused, false);
+  assert.equal(h.node('#pausePanel').hidden, true);
+  assert.equal(game.input.touch.active, false);
+});

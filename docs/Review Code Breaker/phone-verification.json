@@ -1,0 +1,210 @@
+{
+  "initial": {
+    "url": "file:///android_asset/code-breaker/index.html",
+    "width": 392,
+    "height": 872,
+    "state": {
+      "view": "home",
+      "paused": false,
+      "run": null,
+      "progress": {},
+      "free": {},
+      "modal": "",
+      "notice": ""
+    }
+  },
+  "tutorial": "×\n明牌教学 1 / 3\n先看一个小例子\n\n假设箱子的密码是 24：\n\n2\n4\n21\n✓ 1\n↔ 0\n× 1\n\n2 的数字和位置都对；1 不在密码里。\n\n这里展示答案是为了讲解。真正玩的时候，只能看到线索数量。\n\n返回\n下一个 →",
+  "misplaced": {
+    "view": "play",
+    "paused": false,
+    "run": {
+      "kind": "level",
+      "levelId": 0,
+      "length": 2,
+      "pool": "1234",
+      "secret": "24",
+      "guesses": [
+        "42"
+      ],
+      "draft": [
+        "",
+        ""
+      ],
+      "cursor": 0,
+      "hints": 0,
+      "limit": 0,
+      "challenge": false,
+      "won": false,
+      "ended": false
+    },
+    "progress": {},
+    "free": {},
+    "modal": "",
+    "notice": "0 个对位，2 个需要换位，0 个不在密码中。"
+  },
+  "win": {
+    "view": "play",
+    "paused": false,
+    "run": {
+      "kind": "level",
+      "levelId": 0,
+      "length": 2,
+      "pool": "1234",
+      "secret": "24",
+      "guesses": [
+        "42",
+        "24"
+      ],
+      "draft": [
+        "2",
+        "4"
+      ],
+      "cursor": 1,
+      "hints": 0,
+      "limit": 0,
+      "challenge": false,
+      "won": true,
+      "ended": true
+    },
+    "progress": {
+      "0": {
+        "best": 2,
+        "stars": 3
+      }
+    },
+    "free": {},
+    "modal": "result",
+    "notice": "2 个对位，0 个需要换位，0 个不在密码中。"
+  },
+  "free4": {
+    "view": "play",
+    "paused": false,
+    "run": {
+      "kind": "free",
+      "levelId": null,
+      "length": 4,
+      "pool": "0123456789",
+      "secret": "2430",
+      "guesses": [],
+      "draft": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cursor": 0,
+      "hints": 0,
+      "limit": 10,
+      "challenge": true,
+      "won": false,
+      "ended": false
+    },
+    "progress": {
+      "0": {
+        "best": 2,
+        "stars": 3
+      }
+    },
+    "free": {},
+    "modal": "",
+    "notice": "在 10 次内打开密码箱。每次反馈都能缩小范围。"
+  },
+  "layout": {
+    "submitBottom": 859.727294921875,
+    "height": 872,
+    "overflow": false,
+    "keys": [
+      {
+        "label": "1",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "2",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "3",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "4",
+        "width": 53.625,
+        "height": 45
+      },
+      {
+        "label": "5",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "6",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "7",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "8",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "9",
+        "width": 53.619319915771484,
+        "height": 45
+      },
+      {
+        "label": "0",
+        "width": 53.625,
+        "height": 45
+      },
+      {
+        "label": "⌫",
+        "width": 114.23863983154297,
+        "height": 45
+      }
+    ]
+  },
+  "backgroundPause": {
+    "view": "play",
+    "paused": true,
+    "run": {
+      "kind": "free",
+      "levelId": null,
+      "length": 4,
+      "pool": "0123456789",
+      "secret": "2430",
+      "guesses": [],
+      "draft": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "cursor": 0,
+      "hints": 0,
+      "limit": 10,
+      "challenge": true,
+      "won": false,
+      "ended": false
+    },
+    "progress": {
+      "0": {
+        "best": 2,
+        "stars": 3
+      }
+    },
+    "free": {},
+    "modal": "",
+    "notice": "在 10 次内打开密码箱。每次反馈都能缩小范围。"
+  },
+  "systemBackUrl": "file:///android_asset/index.html",
+  "package": "versionCode=26 minSdk=21 targetSdk=34\nversionName=4.3-dev",
+  "testSaveRestored": true
+}

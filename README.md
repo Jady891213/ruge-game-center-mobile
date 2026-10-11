@@ -1,14 +1,14 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含接水管、重力迷宫、汉字拼字、拼音练习、扑翼小鸟、恐龙跑酷和青蛙跳跃七个游戏，无需联网。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、重力迷宫、汉字拼字、拼音练习、扑翼小鸟、恐龙跑酷和青蛙跳跃八个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.2 / versionCode 25**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.6 / versionCode 29**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
 | 目录 | 用途 |
 |---|---|
-| `app/assets/` | 当前菜单、七个游戏和离线素材源码 |
+| `app/assets/` | 当前菜单、八个游戏和离线素材源码 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -20,6 +20,32 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 小小密码箱
+
+新增的猜数字游戏位于 `app/assets/code-breaker/`。密码是数字序列，数字不能重复，0 可以放在第一位或其他位置；记录只显示两类图标与数量：绿色勾表示数字和位置都对，黄色换位箭头表示数字对、位置错。
+
+- 18 个固定关卡：两位、三位、四位各 6 关，依次解锁；先缩小可选数字范围、提供起始线索，再逐步放开。
+- 儿童界面使用大数字、三列大键盘和图标反馈，取消常驻说明、教学入口与错误数量。练习不限尝试次数，有三星目标。
+- 自由模式每局随机：可选不限次数，或两位 6 次、三位 8 次、四位 10 次的步数挑战。
+- 自动保存当前输入、猜测和进度；入口封面由真实游戏页面生成。
+
+4.6 允许零放在任意位置，输入、随机密码与存档恢复均已同步；见 [零开头修复验收](docs/Review%20Code%20Breaker%20Zero/zero-prefix-fix.md)。
+
+首版规则见 [小小密码箱验收](docs/Review%20Code%20Breaker/code-breaker-review.md)，当前儿童界面与 MIX 4 实测见 [儿童界面调整](docs/Review%20Code%20Breaker%20Kids%20UI/kids-ui-review.md)。
+
+## 儿童版游戏界面（4.5）
+
+八款游戏和合集统一采用奶油底色、薄荷绿/暖黄/浅粉卡片、圆润粗体与大按钮；去掉常驻说明段落，只保留关卡、数字、图标和短动作词。汉字与拼音输入放大，三款动作游戏的角色与入口预览使用同一套实际绘制。
+
+封面统一由真实游戏页面生成：
+
+```bash
+python3 scripts/render-game-covers.py
+python3 scripts/render-game-covers.py --games pipe-flow gravity-maze
+```
+
+生成器调用本机 Chrome，每款游戏的 `?cover=1` 模式不写存档，结果保存在 `app/assets/shared/`。构建前生成，更新封面后重新打包。详细界面与真机验收见 [全游戏儿童界面](docs/Review%20All%20Games%20Kids%20UI/all-games-kids-review.md)。
 
 ## Mac 构建与测试
 
@@ -35,7 +61,7 @@ python3 scripts/build.py
 
 公开仓库不包含签名密钥；首次克隆需要自备签名材料并通过参数指定。覆盖更新已有应用必须使用原签名，由 Mac 发布端保管。已有 SDK 时可跳过安装步骤。本机已验证 JDK 18.0.2.1；JDK、SDK 和签名路径都可以通过构建参数或环境变量覆盖，详见 [构建说明](docs/build.md)。脚本只构建与校验，不会安装到手机。
 
-产物为 `out/game-center-v4.2-dev.apk` 和 `out/game-center-v4.2.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
+产物为 `out/game-center-v4.6-dev.apk` 和 `out/game-center-v4.6.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
 
 普通切后台会保留游戏状态并发送暂停/恢复事件；开发页面只有资源变化时才于回前台刷新。明确刷新开发页会重置页面状态。正式版关闭调试和外部开发页面能力。
 
@@ -49,7 +75,7 @@ export GAME_CENTER_ADB="$(pwd)/../../03-Android工具/platform-tools/adb"
 "$GAME_CENTER_ADB" connect '<手机IP:连接端口>'
 "$GAME_CENTER_ADB" devices -l
 export GAME_CENTER_SERIAL='<devices 列表中的目标设备标识>'
-"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.2-dev.apk
+"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.6-dev.apk
 "$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" shell am start -n com.dsh.gamecenter/.MainActivity
 ```
 

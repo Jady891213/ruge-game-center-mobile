@@ -1,0 +1,309 @@
+
+> ruge-game-center@4.6.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: flappy-bird: preview reuses live drawings and restores the active run
+ok 1 - flappy-bird: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 36.848333
+  ...
+# Subtest: flappy-bird: real page renders and DOM IDs are unique
+ok 2 - flappy-bird: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 5.749458
+  ...
+# Subtest: flappy-bird: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 3 - flappy-bird: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 24.363583
+  ...
+# Subtest: dino-runner: preview reuses live drawings and restores the active run
+ok 4 - dino-runner: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 118.554292
+  ...
+# Subtest: dino-runner: real page renders and DOM IDs are unique
+ok 5 - dino-runner: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 23.64925
+  ...
+# Subtest: dino-runner: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 6 - dino-runner: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 7.478375
+  ...
+# Subtest: frog-pond: preview reuses live drawings and restores the active run
+ok 7 - frog-pond: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 7.887792
+  ...
+# Subtest: frog-pond: real page renders and DOM IDs are unique
+ok 8 - frog-pond: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 7.51325
+  ...
+# Subtest: frog-pond: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 9 - frog-pond: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 7.366
+  ...
+# Subtest: flappy-bird: pipe cap collision matches its outer edge, three practice rescues do not write a ranked record
+ok 10 - flappy-bird: pipe cap collision matches its outer edge, three practice rescues do not write a ranked record
+  ---
+  duration_ms: 5.405666
+  ...
+# Subtest: dino-runner: generated obstacles fit jump height and high flyers leave a ground route
+ok 11 - dino-runner: generated obstacles fit jump height and high flyers leave a ground route
+  ---
+  duration_ms: 9.333792
+  ...
+# Subtest: frog-pond: generated obstacles fit jump height and high flyers leave a ground route
+ok 12 - frog-pond: generated obstacles fit jump height and high flyers leave a ground route
+  ---
+  duration_ms: 10.969334
+  ...
+# Subtest: frog-pond: landing on target pads builds a capped combo and missing resets it
+ok 13 - frog-pond: landing on target pads builds a capped combo and missing resets it
+  ---
+  duration_ms: 4.584708
+  ...
+# Subtest: frog-pond: releasing a tap keeps its full arc, double jump works and a third jump is ignored
+ok 14 - frog-pond: releasing a tap keeps its full arc, double jump works and a third jump is ignored
+  ---
+  duration_ms: 6.022167
+  ...
+# Subtest: codebreaker: works as a classic browser script and as a globalThis script
+ok 15 - codebreaker: works as a classic browser script and as a globalThis script
+  ---
+  duration_ms: 2.838625
+  ...
+# Subtest: codebreaker: exact positions, misplaced digits and absent digits are disjoint
+ok 16 - codebreaker: exact positions, misplaced digits and absent digits are disjoint
+  ---
+  duration_ms: 1.056583
+  ...
+# Subtest: codebreaker: all legal two-digit pairs preserve totals and score symmetry
+ok 17 - codebreaker: all legal two-digit pairs preserve totals and score symmetry
+  ---
+  duration_ms: 253.845917
+  ...
+# Subtest: codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+ok 18 - codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+  ---
+  duration_ms: 2.310417
+  ...
+# Subtest: codebreaker: candidates include every legal permutation exactly once
+ok 19 - codebreaker: candidates include every legal permutation exactly once
+  ---
+  duration_ms: 23.511417
+  ...
+# Subtest: codebreaker: all eighteen fixed levels are progressive, legal and solvable
+ok 20 - codebreaker: all eighteen fixed levels are progressive, legal and solvable
+  ---
+  duration_ms: 23.972833
+  ...
+# Subtest: codebreaker: candidate filtering keeps the real answer and matches the complete history
+ok 21 - codebreaker: candidate filtering keeps the real answer and matches the complete history
+  ---
+  duration_ms: 2.984791
+  ...
+# Subtest: codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+ok 22 - codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+  ---
+  duration_ms: 0.407166
+  ...
+# Subtest: codebreaker: random challenge samples all legal candidates without endpoint bias
+ok 23 - codebreaker: random challenge samples all legal candidates without endpoint bias
+  ---
+  duration_ms: 1573.576292
+  ...
+# Subtest: codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+ok 24 - codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+  ---
+  duration_ms: 1.146875
+  ...
+# Subtest: codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+ok 25 - codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+  ---
+  duration_ms: 8.423583
+  ...
+# Subtest: codebreaker UI: incomplete, duplicate and repeated-clue inputs do not consume attempts
+ok 26 - codebreaker UI: incomplete, duplicate and repeated-clue inputs do not consume attempts
+  ---
+  duration_ms: 144.030333
+  ...
+# Subtest: codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+ok 27 - codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+  ---
+  duration_ms: 51.4595
+  ...
+# Subtest: codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+ok 28 - codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+  ---
+  duration_ms: 21.266042
+  ...
+# Subtest: codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks
+ok 29 - codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks
+  ---
+  duration_ms: 41.3545
+  ...
+# Subtest: codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+ok 30 - codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+  ---
+  duration_ms: 22.543458
+  ...
+# Subtest: codebreaker UI: one and two stars follow actual attempts beyond the published target
+ok 31 - codebreaker UI: one and two stars follow actual attempts beyond the published target
+  ---
+  duration_ms: 59.2535
+  ...
+# Subtest: codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+ok 32 - codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+  ---
+  duration_ms: 68.97225
+  ...
+# Subtest: codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+ok 33 - codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+  ---
+  duration_ms: 105.815792
+  ...
+# Subtest: codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+ok 34 - codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+  ---
+  duration_ms: 4.136417
+  ...
+# Subtest: codebreaker UI: saved active guesses and draft restore through the actual continue button
+ok 35 - codebreaker UI: saved active guesses and draft restore through the actual continue button
+  ---
+  duration_ms: 10.341833
+  ...
+# Subtest: codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+ok 36 - codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+  ---
+  duration_ms: 16.354083
+  ...
+# Subtest: codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+ok 37 - codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+  ---
+  duration_ms: 13.658625
+  ...
+# Subtest: pipe: ten deterministic boards start unsolved and are solved through legal rotations
+ok 38 - pipe: ten deterministic boards start unsolved and are solved through legal rotations
+  ---
+  duration_ms: 101.291209
+  ...
+# Subtest: pipe: undo restores rotation and move count, locked/won boundaries reject writes
+ok 39 - pipe: undo restores rotation and move count, locked/won boundaries reject writes
+  ---
+  duration_ms: 11.998584
+  ...
+# Subtest: pipe: three hints consume no rotations, cannot record an unassisted best and reset on retry
+ok 40 - pipe: three hints consume no rotations, cannot record an unassisted best and reset on retry
+  ---
+  duration_ms: 72.903208
+  ...
+# Subtest: pipe: completing the tenth board starts a second campaign whose Next still advances
+ok 41 - pipe: completing the tenth board starts a second campaign whose Next still advances
+  ---
+  duration_ms: 865.921708
+  ...
+# Subtest: gravity: ten authored boards have reachable fruit, powerups and exits at the real ball radius
+ok 42 - gravity: ten authored boards have reachable fruit, powerups and exits at the real ball radius
+  ---
+  duration_ms: 340.363375
+  ...
+# Subtest: gravity: a shield escapes one hole safely and invulnerability delays a second fall
+ok 43 - gravity: a shield escapes one hole safely and invulnerability delays a second fall
+  ---
+  duration_ms: 5.719834
+  ...
+# Subtest: gravity: respawn preserves collected fruit and lives; the exit requires every fruit
+ok 44 - gravity: respawn preserves collected fruit and lives; the exit requires every fruit
+  ---
+  duration_ms: 4.026708
+  ...
+# Subtest: gravity: tilt calibration, dead zone, screen coordinates and stale input use the native bridge
+ok 45 - gravity: tilt calibration, dead zone, screen coordinates and stale input use the native bridge
+  ---
+  duration_ms: 5.0915
+  ...
+# Subtest: gravity: stale sensors cannot start/resume, and touch remains available
+ok 46 - gravity: stale sensors cannot start/resume, and touch remains available
+  ---
+  duration_ms: 23.376
+  ...
+# Subtest: gravity: background/orientation preserve a paused run and touch cancellation clears input
+ok 47 - gravity: background/orientation preserve a paused run and touch cancellation clears input
+  ---
+  duration_ms: 4.471792
+  ...
+# Subtest: gravity: the tenth-board Next wraps once and advances normally in the second campaign
+ok 48 - gravity: the tenth-board Next wraps once and advances normally in the second campaign
+  ---
+  duration_ms: 17.202958
+  ...
+# Subtest: hanzi puzzle: all twelve recipes conserve duplicate parts and reject illegal drops without mutation
+ok 49 - hanzi puzzle: all twelve recipes conserve duplicate parts and reject illegal drops without mutation
+  ---
+  duration_ms: 4.6015
+  ...
+# Subtest: hanzi puzzle: real clicks collect letters, restore the new save and advance through a second round
+ok 50 - hanzi puzzle: real clicks collect letters, restore the new save and advance through a second round
+  ---
+  duration_ms: 5.145292
+  ...
+# Subtest: pipe: manual and background pauses preserve the route until explicit Continue
+ok 51 - pipe: manual and background pauses preserve the route until explicit Continue
+  ---
+  duration_ms: 15.41575
+  ...
+# Subtest: gravity: the paused panel can switch an unavailable tilt sensor to touch and continue
+ok 52 - gravity: the paused panel can switch an unavailable tilt sensor to touch and continue
+  ---
+  duration_ms: 3.569916
+  ...
+# Subtest: typing: sixty unique practice characters have pinyin and complete offline stroke data
+ok 53 - typing: sixty unique practice characters have pinyin and complete offline stroke data
+  ---
+  duration_ms: 125.694916
+  ...
+# Subtest: typing: existing hzTypingSave2 progress is loaded without resetting it
+ok 54 - typing: existing hzTypingSave2 progress is loaded without resetting it
+  ---
+  duration_ms: 4.339584
+  ...
+# Subtest: typing: one question can score only once while its stroke animation is playing
+ok 55 - typing: one question can score only once while its stroke animation is playing
+  ---
+  duration_ms: 27.558209
+  ...
+# Subtest: typing: leaving or restarting during animation cancels the previous question advance
+ok 56 - typing: leaving or restarting during animation cancels the previous question advance
+  ---
+  duration_ms: 56.695042
+  ...
+# Subtest: typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+ok 57 - typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+  ---
+  duration_ms: 56.719
+  ...
+# Subtest: typing: animation resumes its remaining hold and visibility needs explicit Continue
+ok 58 - typing: animation resumes its remaining hold and visibility needs explicit Continue
+  ---
+  duration_ms: 9.369042
+  ...
+# Subtest: typing: full sixty-question sequence includes every character and saves its result once
+ok 59 - typing: full sixty-question sequence includes every character and saves its result once
+  ---
+  duration_ms: 140.357125
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2498.933291

@@ -1,0 +1,17 @@
+{
+  "version": [
+    "versionCode=26 minSdk=21 targetSdk=34",
+    "versionName=4.3"
+  ],
+  "foreground": [
+    "topResumedActivity=ActivityRecord{fb5904d u0 com.dsh.gamecenter/.MainActivity t350}"
+  ],
+  "apkSha256": "b59700f62a4ce91acf2669927bfa09828eb7879c18246d0ebdc59bfd80993e7c",
+  "installedApkSha256": "b59700f62a4ce91acf2669927bfa09828eb7879c18246d0ebdc59bfd80993e7c",
+  "debugSocketPresent": false,
+  "crashLog": "",
+  "windowEvidence": [
+    "fl=KEEP_SCREEN_ON LAYOUT_IN_SCREEN FULLSCREEN LAYOUT_INSET_DECOR SPLIT_TOUCH HARDWARE_ACCELERATED"
+  ],
+  "crashLogScope": "current application PID only"
+}

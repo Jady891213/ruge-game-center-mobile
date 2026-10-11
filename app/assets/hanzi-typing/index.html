@@ -3,23 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#FBF7EF">
+<meta name="theme-color" content="#fff6e8">
 <title>看字打拼音</title>
 <link rel="stylesheet" href="../shared/ui.css">
 <style>
-:root{--paper:#FBF7EF;--ink:#243A35;--blue:#268FAB;--coral:#D97051;--gold:#E7B75A;--app-height:100dvh;--char-size:clamp(110px,calc(var(--app-height)*.35),260px)}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}html,body{height:100%;overflow:hidden}body{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"PingFang SC",sans-serif;user-select:none}button{font-family:inherit;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(1px)}button:disabled{opacity:.45;cursor:default}.hide{display:none!important}
-#menu{position:absolute;inset:0;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 22px) 20px calc(env(safe-area-inset-bottom,0px) + 20px);overflow-y:auto}#menu.hide{display:none}.mtitle{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:32px;letter-spacing:1px;text-align:center}.msub{font-size:13px;color:#678077;text-align:center;margin-top:7px}.mtotal{display:flex;justify-content:center;gap:22px;margin:17px 0;font-size:12px;color:#678077}.mtotal b{font-size:17px;color:#476657}.mbtns{display:flex;justify-content:center;gap:9px}.tb{min-width:44px;min-height:44px;border:1px solid #d3d9c9;background:#fffaf1;color:#476657;padding:8px 12px;border-radius:15px;font-size:12px;white-space:nowrap}.tb.on{background:#e2edeb;border-color:#8fb8b7;color:#216f82}.tb svg{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-#levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.lvcard{background:#fffaf1;border:1px solid #d8dccd;border-radius:22px;padding:17px 15px;text-align:left;min-height:125px;box-shadow:0 4px 0 rgba(36,58,53,.06)}.lvcard .top{display:flex;justify-content:space-between;align-items:center;gap:8px}.lvcard .no{font-size:10px;color:#71847a}.lvcard .nm{font-size:17px;font-weight:750;margin:9px 0 7px;color:var(--ink)}.lvcard .cs{font-family:"Songti SC",serif;font-size:22px;letter-spacing:5px;color:#607567}.lvcard .done{font-size:10px;color:#43826d;border-radius:999px;padding:3px 6px;background:#e7efe1}.lvcard.pass{border-color:#a9c5a6}.lvcard.bonus{grid-column:1/-1;min-height:95px;background:#f5eedc;border-color:#ded0a9}.lvcard.bonus .nm{margin:5px 0}.lvcard .note{font-size:12px;color:#7c806c}#menuFoot{padding-top:19px;font-size:11px;line-height:1.8;text-align:center;color:#849184}
-#play{position:fixed;top:0;left:0;right:0;height:var(--app-height);display:none;flex-direction:column;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 9px) 18px calc(env(safe-area-inset-bottom,0px) + 10px);overflow-y:auto}#play.on{display:flex}header{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:#64796e}#groupTag{flex:1;min-width:0;text-align:center;font-size:12px}#groupTag b{color:var(--ink);font-weight:750}#targetTag,.statrow,#prev,#next{display:none}#prog{flex:none;height:5px;border-radius:999px;background:#e5e8db;margin:12px 2px 0;overflow:hidden}#progFill{height:100%;width:0;border-radius:999px;background:var(--blue);transition:width .2s}
-#body{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}#main{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:10px}#stage{position:relative;display:flex;align-items:center;justify-content:center;width:var(--char-size);height:var(--char-size);min-width:var(--char-size);min-height:var(--char-size);border:1px solid #d8dcca;border-radius:22px;background:linear-gradient(90deg,transparent 49.7%,#e2e5d9 49.7%,#e2e5d9 50.3%,transparent 50.3%),linear-gradient(transparent 49.7%,#e2e5d9 49.7%,#e2e5d9 50.3%,transparent 50.3%),#fffaf1;box-shadow:0 5px 0 rgba(36,58,53,.05)}#big{font-size:calc(var(--char-size)*.78);line-height:1;font-weight:650;font-family:"Noto Serif CJK SC","Songti SC",serif;color:var(--ink)}#big.hit{animation:pop .3s ease}#big.miss{animation:shake .25s}@keyframes pop{50%{transform:scale(1.05)}}@keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}#ink{position:absolute;inset:8px;display:none;align-items:center;justify-content:center}#ink.on{display:flex}#ink svg{width:100%;height:100%}.ghost{fill:#dce1d5}.inkS{fill:none;stroke:#243A35;stroke-linecap:round;stroke-linejoin:round;animation:draw .34s ease both}@keyframes draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}body.is-paused .inkS,body.is-paused #big{animation-play-state:paused}
-#py{font-size:clamp(22px,calc(var(--app-height)*.043),31px);font-weight:650;letter-spacing:1px;color:var(--blue);line-height:1.35;margin-top:15px;min-height:1.35em;max-width:100%}#bar{flex:none;width:100%;max-width:470px;margin:0 auto;padding-top:2px}#type{display:block;width:100%;min-height:58px;border:2px solid #b5c9c2;background:#fffaf1;border-radius:16px;font-family:ui-monospace,monospace;font-size:27px;letter-spacing:4px;text-align:center;padding:10px 12px;color:var(--ink);outline:none;caret-color:var(--blue);user-select:text}#type:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(38,143,171,.10)}#type.good{border-color:#70a68b;background:#edf3e7;color:#426953}#type.bad{border-color:#d97051;background:#fcf0e8}#type::placeholder{font-size:14px;letter-spacing:.5px;color:#97a197}#foot{font-size:11px;color:#71867a;line-height:1.6;margin:8px 0;min-height:18px}#foot em{font-style:normal}.tools{display:flex;justify-content:center;gap:8px}.tools .tb{border-color:transparent;background:transparent;font-size:11px;padding:5px 10px;min-height:38px}.tools .tb.on{color:var(--blue);background:#e4eeea}#tKb{display:none}.pop{position:absolute;pointer-events:none;font-size:25px;color:#43826d;animation:rise .8s ease-out both;z-index:40}@keyframes rise{to{opacity:0;transform:translateY(-40px)}}
-.panel{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:var(--paper);z-index:100;padding:28px 22px;text-align:center;overflow-y:auto}.panel.on{display:flex}.panel h2{font-size:24px;font-family:"Songti SC",serif;color:var(--ink);margin-top:12px;letter-spacing:0}.panel .rows{font-size:13px;line-height:2;color:#6c7f73;margin-top:17px}.panel .rows b{color:#365e54;font-size:19px}.panel button{min-height:46px;border-radius:16px!important;font-size:14px!important;padding:12px 22px!important;font-weight:700!important}.panel .bp,#gpNext,#ovNext{border:1px solid #21798f!important;background:var(--blue)!important;color:white!important}.panel .bs,#statsClose{background:#fffaf1!important;color:#476657!important;border:1px solid #d3d9c9!important}.gbadge{display:inline-flex;align-items:center;justify-content:center;background:#e5efdc;color:#476657;border:1px solid #becfb4;border-radius:18px;width:68px;height:68px;font-size:35px;font-weight:700}.g-S,.g-A{background:#f2e6bb;border-color:#d7bd80;color:#8a7036}.g-B{background:#e1edeb;border-color:#abc6c4;color:#267f94}.g-C,.g-D{background:#ebece3;border-color:#cdd3c4;color:#687e6e}#gpIcon{display:flex;width:68px;height:68px;justify-content:center;align-items:center;border:1px solid #c4d4b8;border-radius:22px;background:#e5efdc;color:#47765a;font-size:30px!important}
-#statsBody{width:100%;max-width:500px;font-size:12px;margin-top:20px}.srow{display:flex;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid #e3e7dc}.srow .d{width:52px;text-align:left;color:#829184}.srow .n{width:49px;text-align:right}.srow .a{width:43px;text-align:right;color:#487962}.srow .t{width:41px;font-size:11px;color:#829184}.sbar{height:7px;border-radius:999px;background:#e3e7dc;overflow:hidden;flex:1}.sbar i{display:block;height:100%;background:#83b8bc}#statsEmpty{font-size:13px;color:#829184;margin-top:22px;line-height:1.8}#dbg{display:none}body.dbg #dbg{display:block;position:fixed;bottom:0;left:0;right:0;z-index:1000;font:10px monospace;background:#eef3e8;padding:5px;pointer-events:none}
-#pausePanel{z-index:500;background:rgba(36,58,53,.3);backdrop-filter:blur(4px)}.pause-card{max-width:340px;width:100%;padding:28px 24px;border:1px solid #d1d9c8;border-radius:25px;background:var(--paper);box-shadow:0 14px 40px rgba(36,58,53,.18)}.pause-card p{font-size:13px;line-height:1.6;color:#71867a;margin:12px 0 20px}.pause-card .bp{width:100%}.pause-actions{display:flex;gap:8px;justify-content:center;margin-top:11px}.pause-actions button{flex:1}
-@media(orientation:landscape){#levels{grid-template-columns:repeat(3,1fr)}.lvcard.bonus{grid-column:auto}#body{flex-direction:row;align-items:center;gap:20px}#main{flex:1;padding:5px 0}#bar{flex:1;max-width:380px}#menu{padding:16px 24px}#py{margin-top:8px}#play{padding:8px 24px}header{min-height:44px}#prog{margin-top:7px}}
-@media(max-height:520px){:root{--char-size:clamp(96px,calc(var(--app-height)*.31),170px)}#py{margin-top:8px;font-size:22px}#main{padding-top:5px}#body{gap:4px}#type{min-height:48px;font-size:24px;padding:7px 12px}#foot{margin:5px 0}.tools .tb{min-height:32px}#play{padding-bottom:6px}.panel{justify-content:flex-start;padding-top:22px}}
-.keyboard-open .tools{display:none}.keyboard-open #main{justify-content:center}.keyboard-open #stage{border-radius:16px}
+:root{--paper:#fff6e8;--ink:#35544b;--blue:#559d7b;--coral:#d97051;--gold:#ffcf67;--app-height:100dvh;--char-size:clamp(130px,calc(var(--app-height)*.35),260px)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}html,body{height:100%;overflow:hidden}body{background:var(--paper);color:var(--ink);font-family:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;user-select:none}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(3px)}button:disabled{opacity:.45;cursor:default}button:focus-visible{outline:4px solid #ffcf67;outline-offset:3px}.hide{display:none!important}
+#menu{position:absolute;inset:0;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 17px) 17px calc(env(safe-area-inset-bottom,0px) + 20px);overflow-y:auto;max-width:500px;margin:auto}#menu.hide{display:none}.mtitle{font-size:27px;font-weight:850;text-align:center;line-height:52px}.msub,.mtotal,#menuFoot{display:none}.mbtns{display:flex;justify-content:space-between;position:absolute;top:calc(env(safe-area-inset-top,0px) + 17px);left:17px;right:17px;pointer-events:none}.mbtns button{pointer-events:auto}.tb{min-width:50px;min-height:50px;border:2px solid #e5dbc5;background:#fffdf4;color:#35544b;padding:9px 12px;border-radius:18px;font-size:20px;font-weight:800;white-space:nowrap;box-shadow:0 4px 0 #dfd3b9;display:flex;align-items:center;justify-content:center;gap:7px}.tb.on{background:#bce8d1;border-color:#83ba9c;color:#35544b}.tb svg{width:26px;height:26px;display:block;fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}
+#levels{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;margin-top:23px}.lvcard{background:#d3eedb;border:3px solid #a7ceb2;border-radius:27px;padding:14px 13px;text-align:center;min-height:147px;box-shadow:0 6px 0 #8fba9e}.lvcard:nth-child(3n+2){background:#ffe0a1;border-color:#e4c07d;box-shadow:0 6px 0 #d3ae67}.lvcard:nth-child(3n){background:#f9d1c4;border-color:#e0b3a4;box-shadow:0 6px 0 #d5a18e}.lvcard .top{display:flex;justify-content:center;align-items:center;gap:8px}.lvcard .no{font-size:26px;font-weight:850}.lvcard .nm{display:none}.lvcard .cs{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;font-size:36px;font-weight:600;letter-spacing:9px;margin-top:12px;display:block}.lvcard .done{font-size:20px;color:#397449}.lvcard.pass{border-color:#60a07a}.lvcard.bonus{grid-column:1/-1;min-height:84px;background:#ffdc85;border-color:#e2b866;box-shadow:0 6px 0 #d6a952;display:flex;align-items:center;justify-content:center;gap:18px}.lvcard.bonus .no{font-size:25px}.lvcard.bonus .nm{display:block;font-size:26px;font-weight:850}.lvcard .note{display:none}
+#play{position:fixed;top:0;left:0;right:0;height:var(--app-height);display:none;flex-direction:column;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 15px);overflow-y:auto;max-width:500px;margin:auto}#play.on{display:flex}header{flex:none;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#35544b;min-height:54px}#groupTag{flex:1;min-width:0;text-align:center;font-size:20px;font-weight:850}#groupTag b{font-size:21px}#targetTag,.statrow,#prev,#next{display:none}#prog{flex:none;height:9px;border-radius:999px;background:#e9e2cd;margin:15px 2px 0;overflow:hidden}#progFill{height:100%;width:0;border-radius:999px;background:#83c599;transition:width .2s}
+#body{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}#main{flex:1;min-height:calc(var(--char-size) + 68px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:12px}#stage{position:relative;display:flex;align-items:center;justify-content:center;width:var(--char-size);height:var(--char-size);min-width:var(--char-size);min-height:var(--char-size);border:3px solid #9bc6a6;border-radius:32px;background:linear-gradient(90deg,transparent 49.7%,#cfe4c4 49.7%,#cfe4c4 50.3%,transparent 50.3%),linear-gradient(transparent 49.7%,#cfe4c4 49.7%,#cfe4c4 50.3%,transparent 50.3%),#f6ffed;box-shadow:0 6px 0 #89b397}#big{font-size:calc(var(--char-size)*.78);line-height:1;font-weight:600;font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink)}#big.hit{animation:pop .3s ease}#big.miss{animation:shake .25s}@keyframes pop{50%{transform:scale(1.05)}}@keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}#ink{position:absolute;inset:9px;display:none;align-items:center;justify-content:center}#ink.on{display:flex}#ink svg{width:100%;height:100%}.ghost{fill:#d6e5c5}.inkS{fill:none;stroke:#35544b;stroke-linecap:round;stroke-linejoin:round;animation:draw .34s ease both}@keyframes draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}body.is-paused .inkS,body.is-paused #big{animation-play-state:paused}
+#py{font-size:clamp(27px,calc(var(--app-height)*.045),37px);font-weight:800;letter-spacing:1px;color:var(--blue);line-height:1.35;margin-top:18px;min-height:1.35em;max-width:100%}#bar{flex:none;width:100%;max-width:470px;margin:0 auto;padding-top:2px}#type{display:block;width:100%;min-height:70px;border:3px solid #a8c6a6;background:#fffdf4;border-radius:23px;font-family:ui-rounded,system-ui,sans-serif;font-size:36px;font-weight:800;letter-spacing:4px;text-align:center;padding:10px 12px;color:var(--ink);outline:none;caret-color:var(--blue);user-select:text;box-shadow:0 4px 0 #96b891}#type:focus{border-color:#559d7b;box-shadow:0 4px 0 #478866,0 0 0 3px #fff1a6}#type.good{border-color:#6aaa7b;background:#d9f1dc;color:#397449}#type.bad{border-color:#dfa294;background:#ffe3d6}#type::placeholder{font-size:26px;font-weight:750;letter-spacing:1px;color:#a4b196}#foot{font-size:22px;font-weight:800;color:#559d7b;line-height:1.3;margin:9px 0;min-height:29px}#foot em{font-style:normal}.tools{display:flex;justify-content:center;gap:14px}.tools .tb{min-width:74px;min-height:57px;font-size:20px;padding:9px 14px;background:#ffdc85;border-color:#e3bf75;box-shadow:0 4px 0 #d1ac62}.tools .tb:nth-child(2){background:#bce8d1;border-color:#91bfa5;box-shadow:0 4px 0 #7cac90}.tools .tb:nth-child(3){background:#f9c8ba;border-color:#dfb09d;box-shadow:0 4px 0 #d09d88}.tools .tb.on{opacity:.6}#tKb{display:none}.pop{position:absolute;pointer-events:none;font-size:30px;color:#397449;animation:rise .8s ease-out both;z-index:40}@keyframes rise{to{opacity:0;transform:translateY(-40px)}}
+.panel{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:var(--paper);z-index:100;padding:25px 20px;text-align:center;overflow-y:auto}.panel.on{display:flex}.panel h2{font-size:30px;font-weight:850;color:var(--ink);margin-top:17px}.panel .rows{font-size:25px;line-height:1.6;color:#559d7b;margin-top:19px;font-weight:800}.panel .rows b{font-size:30px}.panel button{min-height:60px;border-radius:22px!important;font-size:23px!important;padding:12px 22px!important;font-weight:850!important;box-shadow:0 5px 0 #97bda1}.panel .bp,#gpNext,#ovNext{border:3px solid #80b993!important;background:#bce8d1!important;color:#35544b!important}.panel .bs,#statsClose{background:#fffdf4!important;color:#35544b!important;border:3px solid #e5dac3!important;box-shadow:0 5px 0 #daceb5}.gbadge,#gpIcon{display:inline-flex;align-items:center;justify-content:center;background:#ffdc85;color:#997327;border:3px solid #dfb666;border-radius:29px;width:105px;height:105px;font-size:48px!important;font-weight:850}.g-B{background:#bce8d1;border-color:#8fc3a4;color:#397449}.g-C,.g-D{background:#f9c8ba;border-color:#dfaf9e;color:#8f6255}
+#statsBody{width:100%;max-width:500px;font-size:18px;margin-top:20px}.srow{display:flex;align-items:center;gap:8px;padding:14px 0;border-bottom:2px solid #e3dec9}.srow .d{width:58px;text-align:left}.srow .n{width:52px;text-align:right}.srow .a{width:52px;text-align:right;color:#397449}.srow .t{width:45px;font-size:15px;color:#889479}.sbar{height:11px;border-radius:999px;background:#e3e7dc;overflow:hidden;flex:1}.sbar i{display:block;height:100%;background:#83c599}#statsEmpty{font-size:23px;color:#889479;margin-top:22px}#dbg{display:none}body.dbg #dbg{display:block;position:fixed;bottom:0;left:0;right:0;z-index:1000;font:10px monospace;background:#eef3e8;padding:5px;pointer-events:none}
+#pausePanel{z-index:500;background:#35544b55;backdrop-filter:blur(4px)}.pause-card{max-width:365px;width:100%;padding:30px 20px;border:3px solid #e1d4b8;border-radius:32px;background:var(--paper);box-shadow:0 9px 0 #35544b20}.pause-card p{display:none}.pause-card h2{margin:0 0 24px}.pause-card .bp{width:100%}.pause-actions{display:flex;gap:10px;justify-content:center;margin-top:17px}.pause-actions button{flex:1;font-size:20px!important;padding:10px!important}
+@media(max-width:350px){#menu,#play{padding-left:12px;padding-right:12px}.mbtns{left:12px;right:12px}.mtitle{font-size:23px}.tb{min-width:44px;min-height:47px}.lvcard{min-height:129px;padding:12px 9px}.lvcard .cs{font-size:33px;letter-spacing:7px}#groupTag{font-size:18px}.tools{gap:10px}.tools .tb{min-width:69px}#type{font-size:32px}}
+@media(max-height:620px){:root{--char-size:clamp(110px,calc(var(--app-height)*.26),170px)}#py{margin-top:10px;font-size:28px}#main{padding-top:10px}#body{gap:7px}#type{min-height:60px;font-size:32px;padding:7px 12px}#foot{margin:7px 0;font-size:20px}.tools .tb{min-height:50px}#play{padding-bottom:11px}.panel{padding-top:20px}#levels{gap:13px}.lvcard{min-height:123px}.lvcard.bonus{min-height:72px}}
+@media(max-height:420px){:root{--char-size:105px}.keyboard-open #play{overflow-y:auto}.keyboard-open #main{flex:none;padding-top:12px;min-height:162px}.keyboard-open #body{flex:none}.keyboard-open #py{font-size:25px;margin-top:7px}.keyboard-open #type{min-height:55px;font-size:30px}.keyboard-open #bar{padding-bottom:14px}.panel{justify-content:flex-start}}
+@media(orientation:landscape){#levels{grid-template-columns:repeat(3,1fr)}.lvcard.bonus{grid-column:1/-1}#body{flex-direction:row;align-items:center;gap:20px}#main{flex:1;padding:10px 0}#bar{flex:1;max-width:380px}#menu{max-width:750px}#play{max-width:800px;padding:8px 22px}#prog{margin-top:9px}}
+.keyboard-open .tools{display:none}.keyboard-open #stage{border-radius:22px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-size:200px!important;overflow:hidden}.cover-mode #menu{display:none!important}.cover-mode #play{width:600px;max-width:none;height:360px;padding:20px 25px;overflow:hidden}.cover-mode header{height:43px;min-height:43px}.cover-mode header .tb{display:none}.cover-mode #groupTag{font-size:24px}.cover-mode #prog{margin-top:9px;height:8px}.cover-mode #body{flex-direction:row;gap:28px;align-items:center}.cover-mode #main{flex:1;padding:0;min-height:0}.cover-mode #stage{width:200px;height:200px;min-width:200px;min-height:200px}.cover-mode #py{font-size:29px;margin-top:10px}.cover-mode #bar{flex:1;padding:0}.cover-mode #type{font-size:36px;min-height:74px}.cover-mode .tools{display:flex;gap:9px}.cover-mode .tools .tb{min-width:65px;height:58px}.cover-mode #foot{font-size:25px;margin:13px 0}.cover-mode #big{font-size:154px}
 </style>
 </head>
 <body>
@@ -34,8 +38,8 @@
     <span>练过 <b id="mDays">0</b> 天</span>
   </div>
   <div class="mbtns">
-    <button class="tb" id="mStats">练习记录</button>
-    <button class="tb" id="mHome">游戏中心</button>
+    <button class="tb" id="mHome" aria-label="返回游戏中心"><svg viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></svg></button>
+    <button class="tb" id="mStats" aria-label="练习记录"><svg viewBox="0 0 24 24"><path d="M5 19V12M12 19V5M19 19V9"/></svg></button>
   </div>
   <div id="levels"></div>
   <div id="menuFoot">
@@ -46,7 +50,7 @@
 <!-- ══════════ 游戏 ══════════ -->
 <div id="play">
   <header>
-    <button class="tb" id="tBack" aria-label="返回选关">选关</button>
+    <button class="tb" id="tBack" aria-label="返回选关"><svg viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></svg></button>
     <div id="groupTag"></div><div id="targetTag"></div>
     <button class="tb" id="tPause" aria-label="暂停练习"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
   </header>
@@ -69,9 +73,9 @@
     </div>
     <div id="bar">
       <input id="type" autocomplete="off" autocorrect="off" autocapitalize="off"
-             spellcheck="false" inputmode="text" lang="en" enterkeyhint="next" aria-label="输入当前汉字的拼音" placeholder="输入拼音字母">
-      <div id="foot" aria-live="polite">输入拼音字母，答对自动继续</div>
-      <div class="tools"><button class="tb" id="tRead">朗读</button><button class="tb" id="tPy">拼音提示</button><button class="tb" id="tSound">声音开</button><button class="tb" id="tKb" aria-label="打开输入键盘">键盘</button></div>
+             spellcheck="false" inputmode="text" lang="en" enterkeyhint="next" aria-label="输入当前汉字的拼音" placeholder="拼音">
+      <div id="foot" aria-live="polite"></div>
+      <div class="tools"><button class="tb" id="tRead" aria-label="朗读当前汉字"><svg viewBox="0 0 24 24"><path d="m4 10 5 0 5-5v14l-5-5H4zM18 8a7 7 0 0 1 0 8"/></svg></button><button class="tb" id="tPy" aria-label="显示或隐藏拼音" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 18 9 6l5 12M6 14h6M17 8h4M19 6v12"/></svg></button><button class="tb" id="tSound" aria-label="游戏音效" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="m4 10 5 0 5-5v14l-5-5H4zM18 8a7 7 0 0 1 0 8M21 5a11 11 0 0 1 0 14"/></svg></button><button class="tb" id="tKb" aria-label="打开输入键盘">键盘</button></div>
     </div>
   </div>
 </div>
@@ -112,7 +116,7 @@
     border:1.5px solid #D3DCE4;cursor:pointer">返回</button>
 </div>
 
-<div class="panel" id="pausePanel"><div class="pause-card"><h2>练习已暂停</h2><p>休息多久都可以，准备好再继续。<br>暂停时间不会计入答题时间。</p><button class="bp" id="resumeBtn">继续练习</button><div class="pause-actions"><button class="bs" id="pauseMenuBtn">选关</button><button class="bs" id="pauseHomeBtn">游戏中心</button></div></div></div>
+<div class="panel" id="pausePanel"><div class="pause-card"><h2>暂停</h2><p>休息多久都可以，准备好再继续。<br>暂停时间不会计入答题时间。</p><button class="bp" id="resumeBtn">继续</button><div class="pause-actions"><button class="bs" id="pauseMenuBtn">选关</button><button class="bs" id="pauseHomeBtn">游戏中心</button></div></div></div>
 <div id="dbg"></div>
 
 <script>
@@ -311,11 +315,13 @@ const Ink = {
 };
 
 /* ══════════ 存档：进度 + 每日统计 ══════════ */
+const COVER = /[?&]cover=1/.test(location.search);
+if(COVER)document.body.classList.add('cover-mode');
 const SAVE_KEY = 'hzTypingSave2';
 const Save = {
   d: { lv: {}, best: 0, days: {} },
   load(){ try{ const s=localStorage.getItem(SAVE_KEY); if(s) this.d=Object.assign(this.d, JSON.parse(s)); }catch(e){} },
-  put(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify(this.d)); }catch(e){} },
+  put(){ if(COVER)return;try{ localStorage.setItem(SAVE_KEY, JSON.stringify(this.d)); }catch(e){} },
   /** 一关的结果：只记更好的 */
   level(key, grade, score){
     const cur = this.d.lv[key] || { grade:'D', score:0, plays:0 };
@@ -398,7 +404,9 @@ function syncViewport(){
   if(Math.abs(window.innerWidth-viewportWidth)>80){viewportReference=window.innerHeight;viewportWidth=window.innerWidth;}
   viewportReference=Math.max(viewportReference,window.innerHeight,h);
   document.documentElement.style.setProperty('--app-height',Math.max(180,h)+'px');
-  document.body.classList.toggle('keyboard-open',viewportReference-h>120);
+  const keyboardOpen=viewportReference-h>120;
+  document.body.classList.toggle('keyboard-open',keyboardOpen);
+  if(keyboardOpen&&S.playing)requestAnimationFrame(()=>$('#type').scrollIntoView?.({block:'end',behavior:'instant'}));
 }
 if(window.visualViewport){window.visualViewport.addEventListener('resize',syncViewport);window.visualViewport.addEventListener('scroll',syncViewport);}
 window.addEventListener('resize',syncViewport);
@@ -406,13 +414,13 @@ window.addEventListener('ruge:orientation',syncViewport);
 window.addEventListener('ruge:pause',()=>setPaused(true));
 window.addEventListener('ruge:resume',syncViewport);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)setPaused(true);else syncViewport();});
-function reportTyping(){try{const all=JSON.parse(localStorage.getItem('rugeStat')||'{}');const rec=all['hanzi-typing']||{};rec.best=Math.max(rec.best||0,Save.d.best||0);rec.last=Date.now();all['hanzi-typing']=rec;localStorage.setItem('rugeStat',JSON.stringify(all));}catch(e){}}
+function reportTyping(){if(COVER)return;try{const all=JSON.parse(localStorage.getItem('rugeStat')||'{}');const rec=all['hanzi-typing']||{};rec.best=Math.max(rec.best||0,Save.d.best||0);rec.last=Date.now();all['hanzi-typing']=rec;localStorage.setItem('rugeStat',JSON.stringify(all));}catch(e){}}
 function goHome(){backToMenu();try{if(window.RugeNav&&RugeNav.home){RugeNav.home();return;}}catch(e){}location.href='../index.html';}
 function readCurrent(){
   const ch=cur();if(!S.playing||S.paused||!ch)return;
-  try{if(window.RugeTTS&&RugeTTS.speak){if(RugeTTS.speak(ch)===false)$('#foot').textContent='朗读暂不可用，可以先看拼音提示';return;}}catch(e){}
+  try{if(window.RugeTTS&&RugeTTS.speak){if(RugeTTS.speak(ch)===false)$('#foot').textContent='声音不可用';return;}}catch(e){}
   try{if(window.speechSynthesis&&window.SpeechSynthesisUtterance){const u=new window.SpeechSynthesisUtterance(ch);u.lang='zh-CN';u.rate=.8;window.speechSynthesis.cancel();window.speechSynthesis.speak(u);return;}}catch(e){}
-  $('#foot').textContent='设备暂不支持朗读，可以先看拼音提示';
+  $('#foot').textContent='声音不可用';
 }
 
 function strokeCount(ch){ return (window.STROKES && window.STROKES[ch] && window.STROKES[ch].s.length) || 0; }
@@ -443,18 +451,18 @@ function renderMenu(){
     const chars = lv.chars;
     const b = document.createElement('button');
     b.className='lvcard' + (rec && passed(rec.grade) ? ' pass' : '');
-    b.innerHTML = '<div class="top"><span class="no">练习 '+(i+1)+'</span>' +
-      (rec&&passed(rec.grade)?'<span class="done">已完成 ✓</span>':'<span class="no">10 个字</span>') + '</div>' +
-      '<div class="nm">'+THEMES[i]+'</div><div class="cs">'+chars.slice(0,4)+'</div>';
+    b.innerHTML = '<div class="top"><span class="no">'+(i+1)+'</span>' +
+      (rec&&passed(rec.grade)?'<span class="done">✓</span>':'') + '</div>' +
+      '<div class="nm">'+THEMES[i]+'</div><div class="cs">'+chars.slice(0,2)+'</div>';
     b.addEventListener('click', ()=>startLevel(i));
     box.appendChild(b);
   });
   const recA = Save.d.lv.all;
   const b2=document.createElement('button');
   b2.className='lvcard bonus';
-  b2.innerHTML = '<div class="top"><span class="no">综合练习</span>'+
+  b2.innerHTML = '<div class="top"><span class="no">✦</span>'+
     (recA&&passed(recA.grade)?'<span class="done">已完成 ✓</span>':'')+'</div>'+
-    '<div class="nm">全部 60 个字</div><div class="note">按 5 字一组练习，随时可以休息</div>';
+    '<div class="nm">随机练习</div>';
   b2.addEventListener('click', ()=>startLevel(-1));
   box.appendChild(b2);
 }
@@ -506,7 +514,7 @@ function showCard(){
   $('#next .c').textContent = n||'·'; $('#next .p').textContent = n?(answersOf(n)[0]||''):'';
   $('#prev').style.opacity = p?.5:.1; $('#next').style.opacity = n?.5:.1;
   const inp=$('#type');inp.value='';inp.className='';inp.readOnly=false;inp.setAttribute('aria-disabled','false');S.lockedAnswer='';
-  $('#foot').textContent='输入拼音字母，答对自动继续';
+  $('#foot').textContent='';
   S.t0 = performance.now(); S.wrongThis = 0; wasPrefix = true;
   syncHud();dbg();focusInput();
 }
@@ -517,7 +525,7 @@ function syncHud(){
   const tot = S.right + S.wrong;
   $('#sAcc').textContent = tot ? Math.round(S.right/tot*100)+'%' : '–';
   const done=S.charsDone,all=levelChars(S.li).length;
-  $('#groupTag').innerHTML=(S.li<0?'综合练习':THEMES[S.li])+' · <b>'+Math.min(done+(S.accepting?1:0),all)+' / '+all+'</b>';
+  $('#groupTag').innerHTML=(S.li<0?'随机':'第 '+(S.li+1)+' 关')+' · <b>'+Math.min(done+(S.accepting?1:0),all)+' / '+all+'</b>';
   $('#progFill').style.width = (all ? done/all*100 : 0) + '%';
 }
 function bump(el){ el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
@@ -533,14 +541,14 @@ function flyPop(text, cls){
 
 /* ══════════ 输入 ══════════ */
 let wasPrefix = true;
-function focusInput(allowLocked){if(!S.playing||(!S.accepting&&!allowLocked)||S.paused||document.hidden)return;const i=$('#type'); try{ i.focus({preventScroll:true}); }catch(e){ i.focus(); } }
+function focusInput(allowLocked){if(COVER)return;if(!S.playing||(!S.accepting&&!allowLocked)||S.paused||document.hidden)return;const i=$('#type'); try{ i.focus({preventScroll:true}); }catch(e){ i.focus(); } }
 
 $('#type').addEventListener('input', ()=>{
   if(!S.playing||S.paused)return;
   if(!S.accepting){if(advanceAction)$('#type').value=S.lockedAnswer;return;}
   const inp=$('#type'),raw=inp.value;
   if(!raw)return;
-  if(/[\u3400-\u9fff]/.test(raw)){$('#foot').textContent='请切换英文键盘，输入拼音字母';return;}
+  if(/[\u3400-\u9fff]/.test(raw)){$('#foot').textContent='英文键盘';return;}
   Snd.key();
   const ch=cur();
   if (isExact(ch, raw)){ hit(); return; }
@@ -550,7 +558,7 @@ $('#type').addEventListener('input', ()=>{
     Snd.wrong();
     inp.classList.remove('good'); inp.classList.add('bad');
     const b=$('#big'); b.classList.remove('miss'); void b.offsetWidth; b.classList.add('miss');
-    $('#foot').textContent='再看看拼音提示，修改一下就可以';
+    $('#foot').textContent='再试试';
     syncHud();
   } else if (ok){ inp.classList.remove('bad'); }
   wasPrefix = ok; dbg();
@@ -570,7 +578,7 @@ function hit(){
 
   Snd.right(S.combo);
   const inp=$('#type');S.lockedAnswer=inp.value;inp.classList.remove('bad');inp.classList.add('good');inp.setAttribute('aria-disabled','true');
-  $('#foot').textContent='答对了，看看这个字的笔顺';
+  $('#foot').textContent='✓';
   const b=$('#big'); b.classList.remove('hit'); void b.offsetWidth; b.classList.add('hit');
   flyPop('✓','');
   bump($('#sScore')); syncHud(); dbg();
@@ -595,10 +603,9 @@ function endGroup(){
   const got = S.score - S.groupScore;
   const par = parOfGroup(S.list);
   const r = par ? got/par : 0;
-  $('#gpRows').innerHTML='已经练完 <b>'+S.charsDone+'</b> / '+levelChars(S.li).length+' 个字<br>'+
-    (S.wrongThis===0?'记得把每个字读一读，再继续。':'慢慢来，读准再往下练。');
+  $('#gpRows').innerHTML='<b>'+S.charsDone+'</b> / '+levelChars(S.li).length;
   $('#gpIcon').textContent='✓';
-  $('#gpTitle').textContent='这一组完成了';
+  $('#gpTitle').textContent='真棒！';
   $('#gpanel').classList.add('on');
   Snd.group();
   dbg();
@@ -629,13 +636,8 @@ function finish(){
   $('#ovGrade').className = 'gbadge big g-' + g;
   $('#ovGrade').textContent = g;
   const okPass = passed(g);
-  $('#ovTitle').textContent = g==='S' ? '全部答对，练得很好' 
-                            : okPass ? (S.li<0?'挑战完成！':LEVELS[S.li].name+' 过关！')
-                            : '差一点点，再来一次？';
-  $('#ovRows').innerHTML =
-    '得分 <b>'+S.score+'</b><br>' +
-    '打对 '+S.right+' 个字　打错 '+S.wrong+' 次　正确率 <b>'+Math.round(acc*100)+'%</b><br>' +
-    '平均 <b>'+avg.toFixed(2)+'</b> 秒/字　最高连击 <b>'+S.bestCombo+'</b>';
+  $('#ovTitle').textContent = okPass ? '过关啦！' : '再试一次';
+  $('#ovRows').innerHTML = '★'.repeat(starsFromGrade(g))+'<br><b>'+S.right+'</b> 个字';
   $('#ovNext').style.display = (S.li>=0 && S.li<LEVELS.length-1) ? '' : 'none';
   $('#over').classList.add('on');
   if (okPass){ Snd.win(); for(let i=0;i<starsFromGrade(g);i++) Snd.star(i); }
@@ -697,10 +699,10 @@ $('#tPause').addEventListener('click',()=>setPaused(true));
 $('#resumeBtn').addEventListener('click',()=>setPaused(false));
 $('#tRead').addEventListener('click',readCurrent);
 $('#tSound').addEventListener('click', ()=>{ Snd.on=!Snd.on;
-  $('#tSound').textContent=Snd.on?'声音开':'声音关';$('#tSound').setAttribute('aria-pressed',String(!Snd.on)); if (Snd.on) Snd.right(0); });
+  $('#tSound').classList.toggle('on',!Snd.on);$('#tSound').setAttribute('aria-pressed',String(!Snd.on)); if (Snd.on) Snd.right(0); });
 $('#tPy').addEventListener('click', ()=>{ S.showPy=!S.showPy;
   $('#tPy').classList.toggle('on', !S.showPy);
-  $('#tPy').textContent=S.showPy?'拼音提示':'显示拼音';$('#tPy').setAttribute('aria-pressed',String(!S.showPy));
+  $('#tPy').setAttribute('aria-label',S.showPy?'隐藏拼音':'显示拼音');$('#tPy').setAttribute('aria-pressed',String(!S.showPy));
   $('#py').style.visibility = S.showPy?'visible':'hidden'; });
 $('#tKb').addEventListener('click',focusInput);
 $('#ovAgain').addEventListener('click', ()=>startLevel(S.li));
@@ -734,6 +736,7 @@ window.__game = {
 };
 
 syncViewport();renderMenu();
+if(COVER){startLevel(5);S.groups=groupsOf([...LEVELS[5].chars]);S.gi=0;startGroup();$('#type').value='tian';$('#foot').textContent='✦';}
 </script>
 </body>
 </html>

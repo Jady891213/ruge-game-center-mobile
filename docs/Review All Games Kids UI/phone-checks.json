@@ -1,0 +1,151 @@
+[
+  {
+    "name": "水管实际触摸旋转",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "水管撤销",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "水管图标提示",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "水管暂停",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "水管继续",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "pipe-flow 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "重力触摸移动和暂停",
+    "pass": true,
+    "detail": {
+      "before": [
+        140,
+        150
+      ],
+      "after": [
+        204.25714014471427,
+        184.27062140514215
+      ]
+    }
+  },
+  {
+    "name": "重力继续",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "gravity-maze 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "汉字实际点击合成林",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "汉字下一关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "hanzi-puzzle 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "拼音真机输入框在键盘上方",
+    "pass": true,
+    "detail": {
+      "bottom": 495.0852355957031,
+      "top": 425.0852355957031,
+      "height": 872,
+      "visual": 557.0908813476562,
+      "font": "30.96px",
+      "ch": "着"
+    }
+  },
+  {
+    "name": "拼音提交文本正确计分",
+    "pass": true,
+    "detail": {
+      "before": 0,
+      "after": 1,
+      "inputMethod": "CDP committed text"
+    }
+  },
+  {
+    "name": "拼音暂停及明确继续",
+    "pass": true
+  },
+  {
+    "name": "flappy-bird 启动触摸暂停",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "flappy-bird 明确继续",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "flappy-bird 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dino-runner 启动触摸暂停",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dino-runner 明确继续",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dino-runner 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "frog-pond 启动触摸暂停",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "frog-pond 明确继续",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "frog-pond 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "code-breaker 系统侧滑返回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "所有游戏原有存档精确恢复",
+    "pass": true,
+    "keys": 12
+  }
+]

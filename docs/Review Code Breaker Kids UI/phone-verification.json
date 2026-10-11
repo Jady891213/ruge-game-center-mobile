@@ -1,0 +1,72 @@
+{
+  "feedback": {
+    "rows": [
+      {
+        "digits": "3\n1",
+        "feedback": [
+          {
+            "class": "result-badge good",
+            "count": "0",
+            "label": "0 个数字和位置都对"
+          },
+          {
+            "class": "result-badge almost",
+            "count": "0",
+            "label": "0 个数字对，换个位置"
+          }
+        ]
+      },
+      {
+        "digits": "4\n2",
+        "feedback": [
+          {
+            "class": "result-badge good",
+            "count": "0",
+            "label": "0 个数字和位置都对"
+          },
+          {
+            "class": "result-badge almost",
+            "count": "2",
+            "label": "2 个数字对，换个位置"
+          }
+        ]
+      }
+    ],
+    "text": "第1关\n1\n✦\n·\n·\n✦\n3\n1\n0\n0\n1\n4\n2\n0\n2\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0\n打开",
+    "noticeHidden": true
+  },
+  "sideSwipeReturnsToCollection": true,
+  "layout": {
+    "width": 392,
+    "height": 872,
+    "slotFont": "43.86px",
+    "keyFont": "30.1px",
+    "recordFont": "27.52px",
+    "badgeIcon": 24,
+    "keyRect": {
+      "x": 14,
+      "y": 510.727294921875,
+      "width": 115.57386779785156,
+      "height": 61,
+      "top": 510.727294921875,
+      "right": 129.57386779785156,
+      "bottom": 571.727294921875,
+      "left": 14
+    },
+    "submitBottom": 854.727294921875,
+    "overflow": false
+  },
+  "originalSaveRestored": true,
+  "otherGameSavesUnchanged": {
+    "dinoDashHi": true,
+    "flappyDashBest": true,
+    "rugeAwake": true,
+    "gardenFlowV2": true,
+    "rugeStat": true,
+    "rugeTheme": true,
+    "rollingGardenV2": true,
+    "frogPondHi": true,
+    "rollingGardenInputV2": true,
+    "hzPuzzleProgress1": true
+  }
+}

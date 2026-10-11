@@ -3,121 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#FBF3E4">
+<meta name="theme-color" content="#fff6e8">
 <link rel="stylesheet" href="../shared/ui.css"><title>汉字拼一拼</title>
 <style>
-  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-  html,body{height:100%;overflow:hidden}
-  body{
-    font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
-    background:radial-gradient(120% 80% at 50% 0%,#FFFBF0 0%,#FBF1DE 55%,#F4E4C8 100%);
-    color:#2B2118;-webkit-user-select:none;user-select:none;
-    display:flex;flex-direction:column;
-    padding:calc(env(safe-area-inset-top,0px) + 10px) 0 calc(env(safe-area-inset-bottom,0px) + 8px);
-  }
-  header{display:flex;align-items:center;gap:10px;padding:0 16px;flex:none}
-  .lv{font-size:14px;font-weight:700;color:#8A7355;letter-spacing:.5px;white-space:nowrap}
-  .lv b{color:#C8462F;font-size:19px}
-  .dots{display:flex;gap:4px;flex:1;flex-wrap:wrap}
-  .dots i{width:6px;height:6px;border-radius:50%;background:#E0CFB0;transition:background .3s}
-  .dots i.on{background:#7FB069}
-  .dots i.now{background:#C8462F;transform:scale(1.4)}
-  .bank{display:flex;align-items:center;gap:6px;flex:none;
-    background:#fff;border:1.5px solid #EADCC2;border-radius:20px;padding:4px 11px 4px 8px;
-    font-size:12px;color:#8A7355;font-weight:700;box-shadow:0 2px 8px rgba(140,110,70,.07)}
-  .bank .ch{font-size:19px;color:#2B2118;font-weight:400;line-height:1}
-  .reset{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid #EADCC2;
-    background:#fff;color:#A8906C;font-size:17px;line-height:1;cursor:pointer;padding:0;
-    display:flex;align-items:center;justify-content:center}
-  .reset:active{background:#F6EEDF}
-
-  #stage{flex:1;position:relative;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;padding:4px 16px 0}
-  #hint{font-size:14.5px;color:#9C8564;text-align:center;line-height:1.7;
-    max-width:320px;transition:opacity .3s;min-height:48px;
-    display:flex;align-items:center;justify-content:center}
-  #hint em{font-style:normal;color:#C8462F;font-weight:700}
-  #parts{position:relative;width:100%;max-width:360px;flex:1;
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
-    gap:14px;align-content:center;min-height:220px}
-
-  /* 卡片是真 <button>：好点、可聚焦、能被无障碍与自动化看到 */
-  .part{
-    width:104px;height:104px;border-radius:24px;padding:0;
-    font-family:inherit;font-size:62px;line-height:1;color:#2B2118;
-    background:linear-gradient(180deg,#FFFFFF,#FDF7EC);
-    border:2.5px solid #E8D8BB;
-    box-shadow:0 6px 16px rgba(150,115,70,.13),0 1px 0 #fff inset;
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;touch-action:none;position:relative;
-    transition:box-shadow .16s,border-color .16s,transform .16s;
-  }
-  .part::after{content:'';position:absolute;inset:6px;border-radius:18px;
-    border:1.5px dashed #F0E2C8;pointer-events:none}
-  .part:focus-visible{outline:3px solid #7FB069;outline-offset:3px}
-  .part.sel{border-color:#7FB069;transform:translateY(-8px) scale(1.06);
-    box-shadow:0 0 0 5px rgba(127,176,105,.25),0 14px 26px rgba(150,115,70,.24)}
-  .part.drag{cursor:grabbing;z-index:99;transition:none;
-    box-shadow:0 18px 34px rgba(150,115,70,.3);border-color:#D9BE8E}
-  .part.near{border-color:#7FB069;box-shadow:0 0 0 5px rgba(127,176,105,.22),0 10px 24px rgba(150,115,70,.2)}
-  .part.bounce{animation:bounce .44s cubic-bezier(.34,1.56,.64,1)}
-  @keyframes bounce{0%{transform:scale(1)}35%{transform:scale(.9)}70%{transform:scale(1.05)}100%{transform:scale(1)}}
-
-  .pile{display:flex;gap:2px;align-items:center;justify-content:center;
-    padding:7px 13px;border-radius:28px;background:rgba(127,176,105,.10);
-    border:2.5px dashed #A8CB94;animation:pop .3s cubic-bezier(.34,1.56,.64,1);
-    cursor:pointer;transition:border-color .16s,background .16s}
-  .pile.hot{border-color:#7FB069;background:rgba(127,176,105,.22)}
-  @keyframes pop{0%{transform:scale(.9)}100%{transform:scale(1)}}
-  .pile .part{width:92px;height:92px;font-size:54px;border-radius:20px;
-    box-shadow:0 4px 12px rgba(150,115,70,.12);cursor:default}
-
-  #reveal{position:absolute;inset:0;display:none;flex-direction:column;
-    align-items:center;justify-content:center;text-align:center;
-    background:radial-gradient(60% 45% at 50% 42%,rgba(255,250,235,.97),rgba(251,241,222,.99));
-    z-index:200;padding:0 26px}
-  #reveal.show{display:flex}
-  @keyframes fadein{from{opacity:0}to{opacity:1}}
-  /* 关键：**只用 transform 做动画，绝不用 opacity/filter 起步**。
-     动画被节流/冻结时，内容仍然是可见的 —— 只是不动而已。
-     （踩过：原来 0% 是 opacity:0，后台 WebView 动画不跑 → 字整个看不见） */
-  #bigchar{font-size:150px;line-height:1.05;text-shadow:0 10px 30px rgba(200,70,47,.18);
-    animation:grow .6s cubic-bezier(.34,1.4,.5,1)}
-  /* 幅度收窄到"冻结也读得清"：原来 0% 是 scale(.2)，动画一冻字就小得看不见 */
-  @keyframes grow{0%{transform:scale(.78) rotate(-5deg)}
-                 60%{transform:scale(1.06) rotate(1.5deg)}
-                 100%{transform:scale(1) rotate(0)}}
-  @keyframes rise{0%{transform:translateY(9px) scale(.97)}100%{transform:none}}
-  #py{font-size:23px;color:#C8462F;letter-spacing:3px;font-weight:600;margin-top:2px}
-  #why{font-size:16.5px;color:#6E5A3E;margin-top:16px;line-height:1.85;
-    max-width:300px;background:#fff;border-radius:16px;padding:13px 20px;
-    border:1.5px solid #F0E2C8;box-shadow:0 4px 14px rgba(150,115,70,.09);
-    animation:rise .5s cubic-bezier(.34,1.4,.5,1)}
-  #next{margin-top:26px;border:none;border-radius:30px;padding:16px 52px;
-    font-size:19px;font-weight:800;letter-spacing:2px;color:#fff;font-family:inherit;
-    background:linear-gradient(180deg,#E0603F,#C8462F);
-    box-shadow:0 8px 20px rgba(200,70,47,.32);cursor:pointer;
-    animation:rise .5s .12s cubic-bezier(.34,1.4,.5,1)}
-  #next:active{transform:translateY(2px);box-shadow:0 4px 12px rgba(200,70,47,.3)}
-  body.noanim *{animation:none !important;transition:none !important}
-  canvas#fx{position:fixed;inset:0;pointer-events:none;z-index:300}
-  #dbg{display:none;position:fixed;left:0;right:0;bottom:0;z-index:400;
-    background:#2B2118;color:#9FE8B0;font:11px/1.5 ui-monospace,monospace;
-    padding:5px 8px;white-space:pre-wrap;word-break:break-all}
-  body.dbg #dbg{display:block}
-  footer{flex:none;text-align:center;font-size:11.5px;color:#B8A385;
-    padding:6px 20px 2px;line-height:1.6}
-
-body{background:#FBF7EF;color:#243A35;font-family:"Noto Serif CJK SC","Songti SC",serif;padding-top:calc(env(safe-area-inset-top,0px) + 24px)}
-header{gap:9px;padding:0 18px}.lv{font:700 12px system-ui;letter-spacing:0;color:#758780}.lv b{color:#268FAB}.bank{font-family:system-ui;background:#EAF0E5;border:0;box-shadow:none;font-size:11px}.dots{display:none}.reset{width:44px;height:44px;color:#268FAB}.home{font:600 12px system-ui;padding:8px 12px;min-height:44px;background:#fffdf7;border:1px solid #DCE5DB;border-radius:24px;color:#243A35}#parts{max-width:400px;min-height:210px}.part{width:110px;height:128px;border-radius:14px;border:1.5px solid #D5CBB4;background:#fffdf7;box-shadow:0 4px 0 #E8DECA;font-weight:400}.part::after{border-radius:9px;border-color:#E4DCCB}.part.sel{border-color:#268FAB;box-shadow:0 0 0 4px #268fab20,0 8px 0 #E8DECA}#stage{padding-top:18px}#hint{font-family:system-ui;font-size:13px;line-height:1.6;color:#758780;min-height:42px}#hint em{color:#268FAB}#reveal{background:#FBF7EF}#bigchar{font-weight:500;color:#243A35;text-shadow:none}#why{font-family:system-ui;font-size:14px;line-height:1.7;border-color:#DCE5DB;box-shadow:none;background:#fffdf7}#py{color:#268FAB}#next{background:#268FAB;box-shadow:0 4px 0 #196f87;letter-spacing:1px;font-family:system-ui;padding:14px 42px}footer{font-family:system-ui;color:#8A978D;padding-bottom:22px}#collection{font:12px system-ui;color:#758780;text-align:center;margin:0 15px 16px}@media(orientation:landscape){#hint{min-height:28px}#parts{min-height:120px}.part{height:94px;width:88px;font-size:54px}#bigchar{font-size:100px}#why{margin-top:6px}#next{margin-top:12px}header{flex:none}#stage{padding-top:4px}footer{padding-bottom:8px}}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}html,body{height:100%;overflow:hidden}body{background:#fff6e8;color:#35544b;font-family:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;user-select:none;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 14px) 14px calc(env(safe-area-inset-bottom,0px) + 16px)}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(3px)}button:focus-visible{outline:4px solid #ffcf67;outline-offset:3px}header{display:flex;align-items:center;gap:10px;flex:none;position:relative;z-index:210;max-width:490px;width:100%;margin:0 auto}.lv{font-size:22px;font-weight:850;margin-right:auto;white-space:nowrap}.lv b{font-size:27px}.home,.reset{display:grid;place-items:center;flex:none;width:50px;height:50px;background:#fffdf4;border:2px solid #e8dfca;border-radius:18px;box-shadow:0 4px 0 #dfd3b9;font-size:27px}.home svg,.reset svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.dots{display:none}.bank{display:flex;align-items:center;gap:6px;background:#ffdc85;border:2px solid #e8bf6b;border-radius:18px;padding:8px 10px;font-size:19px;font-weight:850;min-height:50px;box-shadow:0 4px 0 #dcb25e}.bank .ch{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;font-size:25px;font-weight:600}
+#stage{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px 0;min-height:0}#stage::before{content:'✦';font-size:38px;color:#e9bd61;margin-bottom:16px;pointer-events:none}#parts{position:relative;max-width:420px;width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px;align-content:center;min-height:240px}.part{width:131px;height:141px;border-radius:29px;padding:0;font-family:"Noto Sans CJK SC","Source Han Sans SC","PingFang SC","Microsoft YaHei",sans-serif;font-size:76px;font-weight:600;line-height:1;background:#d1eed9;border:3px solid #9ac5aa;box-shadow:0 6px 0 #8db99f;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:none;position:relative;transition:box-shadow .16s,border-color .16s,transform .16s}.part:nth-child(2n){background:#ffe1a6;border-color:#e5c07c;box-shadow:0 6px 0 #d5b06d}.part:nth-child(3n){background:#f9d5ca;border-color:#e1b6a6;box-shadow:0 6px 0 #d5a591}.part.sel{border-color:#428c66;transform:translateY(-7px);box-shadow:0 0 0 5px #fff4aa,0 9px 0 #80b195}.part.drag{cursor:grabbing;z-index:99;transition:none;box-shadow:0 12px 0 #35544b20}.part.near,.pile.near{border-color:#428c66;box-shadow:0 0 0 5px #ffdc85}.part.bounce{animation:bounce .44s ease}@keyframes bounce{35%{transform:scale(.9)}70%{transform:scale(1.05)}}.pile{display:flex;gap:6px;align-items:center;justify-content:center;padding:12px;border-radius:29px;background:#e5f3d7;border:3px dashed #7fb58d;cursor:pointer;max-width:100%}.pile.hot{border-color:#428c66;background:#bce8d1}.pile .part{width:84px;height:104px;font-size:62px;border-radius:20px;cursor:default}
+#hint,#why,#collection,footer{display:none}#reveal{position:absolute;inset:76px 0 0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#fff6e8;z-index:200;padding:12px 20px}#reveal.show{display:flex}#reveal::before{content:'★ ★ ★';color:#e1b04b;font-size:36px;letter-spacing:8px;margin-bottom:23px}#bigchar{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;font-weight:600;font-size:170px;line-height:1.12;animation:grow .6s ease}@keyframes grow{0%{transform:scale(.85) rotate(-3deg)}60%{transform:scale(1.05)}}#py{font-size:34px;color:#559d7b;font-weight:800;letter-spacing:2px;margin-top:10px}#next{margin-top:35px;min-height:65px;min-width:220px;border:3px solid #76b68f;border-radius:25px;padding:12px 25px;font-size:27px;font-weight:850;color:#35544b;background:#bce8d1;box-shadow:0 6px 0 #68a780}body.noanim *{animation:none!important;transition:none!important}canvas#fx{position:fixed;inset:0;pointer-events:none;z-index:300}#dbg{display:none}body.dbg #dbg{display:block;position:fixed;left:0;right:0;bottom:0;z-index:400;background:#35544b;color:#d1eed9;font:11px/1.5 ui-monospace,monospace;padding:5px 8px}
+@media(max-width:350px){body{padding-left:10px;padding-right:10px}header{gap:7px}.home,.reset{width:44px;height:46px}.lv{font-size:19px}.bank{padding:6px;gap:4px;font-size:17px}.part{width:119px;height:130px;font-size:70px}.pile .part{width:73px;height:94px;font-size:55px}.pile{gap:4px;padding:8px}}
+@media(max-height:590px){#stage::before{margin-bottom:10px;font-size:29px}#parts{min-height:200px;gap:15px}.part{height:116px;font-size:67px}#bigchar{font-size:135px}#reveal::before{margin-bottom:10px}#next{margin-top:20px}#py{font-size:29px}}
+@media(orientation:landscape){#parts{max-width:650px;min-height:120px;gap:12px}.part{width:106px;height:108px;font-size:65px}#stage::before{display:none}#bigchar{font-size:95px}#reveal{flex-direction:row;gap:22px}#reveal::before{display:none}#next{min-width:170px;margin:0}#py{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body.cover-mode{width:600px;height:360px;padding:20px 30px;overflow:hidden}.cover-mode header{max-width:none}.cover-mode #stage{padding:0;min-height:0}.cover-mode #stage::before{display:block;font-size:32px;margin:0 0 12px}.cover-mode #parts{max-width:520px;min-height:0;gap:24px}.cover-mode .part{width:150px;height:160px;font-size:90px;border-radius:30px}.cover-mode .home,.cover-mode .reset{display:none}.cover-mode .lv{font-size:25px}.cover-mode .bank{display:none}.cover-mode .lv::before{content:'汉字拼一拼 · ';}.cover-mode #reveal{display:none!important}
 </style>
 </head>
 <body>
-<header><button class="home" id="home">← 游戏中心</button>
+<header><button class="home" id="home" aria-label="返回游戏中心"><svg viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></svg></button>
   <div class="lv">第 <b id="lvnum">1</b> 关</div>
   <div class="dots" id="dots"></div>
   <div class="bank"><span class="ch" id="bankch">·</span><span id="banknum">0</span></div>
-  <button class="reset" id="reset" title="重来这一关" aria-label="重来这一关">↺</button>
+  <button class="reset" id="reset" title="重来这一关" aria-label="重来这一关"><svg viewBox="0 0 24 24"><path d="M5 9a8 8 0 1 1 0 7M5 3v6h6"/></svg></button>
 </header>
 
 <div id="stage">
@@ -138,6 +43,8 @@ header{gap:9px;padding:0 18px}.lv{font:700 12px system-ui;letter-spacing:0;color
 
 <script>
 'use strict';
+const COVER = /[?&]cover=1/.test(location.search);
+if(COVER)document.body.classList.add('cover-mode');
 /* ════════════════════════════════════════════════════
    关卡数据
    p = 答案部件（顺序无关）   c = 合成的字
@@ -286,7 +193,7 @@ let idx = (() => {
   return Number.isFinite(n) ? Math.max(0, Math.min(LEVELS.length - 1, n - 1)) : 0;
 })(), bank = [], G = null, sel = null;
 try { const saved=JSON.parse(localStorage.getItem('hzPuzzleProgress1')||'{}'); if(!location.hash)idx=Math.max(0,Math.min(LEVELS.length-1,saved.idx||0));bank=Array.isArray(saved.bank)?saved.bank.filter(c=>LEVELS.some(l=>l.c===c)):[];} catch(e){}
-function saveProgress(){try{localStorage.setItem('hzPuzzleProgress1',JSON.stringify({idx,bank}));let stat=JSON.parse(localStorage.getItem('rugeStat')||'{}');stat['hanzi-puzzle']={best:bank.length,last:Date.now()};localStorage.setItem('rugeStat',JSON.stringify(stat));}catch(e){}}
+function saveProgress(){if(COVER)return;try{localStorage.setItem('hzPuzzleProgress1',JSON.stringify({idx,bank}));let stat=JSON.parse(localStorage.getItem('rugeStat')||'{}');stat['hanzi-puzzle']={best:bank.length,last:Date.now()};localStorage.setItem('rugeStat',JSON.stringify(stat));}catch(e){}}
 let campaignComplete=false;
 
 function render(){
@@ -478,7 +385,7 @@ function sizeCanvas(){
 }
 sizeCanvas(); addEventListener('resize', sizeCanvas);
 function burst(x, y){
-  const cols = ['#E8B33A','#F2C94C','#C8462F','#7FB069','#FFF0B8'];
+  const cols = ['#ffcf67','#bce8d1','#f9c8ba','#559d7b','#fff4aa'];
   for(let i=0;i<56;i++){
     const a = Math.random()*Math.PI*2, sp = 2.4+Math.random()*7.4;
     bits.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-2.2,
@@ -508,8 +415,8 @@ $('#next').addEventListener('click', () => {
   if(campaignComplete){campaignComplete=false;idx=0;render();return;}
   if(idx < LEVELS.length - 1){ idx++; render(); }
   else{
-    $('#bigchar').textContent = '🎉';
-    $('#py').textContent = '';
+    $('#bigchar').textContent = '★';
+    $('#py').textContent = bank.length+' / 12';
     $('#why').innerHTML = `你一共拼出了 <b>${bank.length}</b> 个字<br>
       <span style="font-size:27px;letter-spacing:5px">${bank.join(' ')}</span>`;
     $('#next').textContent = '再来一遍';
@@ -527,6 +434,7 @@ window.__game = {
   state: () => ({ li: idx, free: [...G.free], pile: [...G.pile], done: G.done }),
 };
 
+if(COVER){idx=1;bank=[];}
 render();
 </script>
 

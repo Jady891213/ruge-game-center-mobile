@@ -3,67 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,maximum-scale=1">
-<meta name="theme-color" content="#bfe6ff">
+<meta name="theme-color" content="#fff6e8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <title>扑翼小鸟 · Flappy Dash</title>
 <link rel="stylesheet" href="../shared/ui.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;background:#bfe6ff;
- font-family:system-ui,-apple-system,"PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
- -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
- touch-action:none;overscroll-behavior:none;
- transition:background .7s ease}
-body.night{background:#0b1424}
-#stage{position:fixed;inset:0;overflow:hidden}
-canvas{display:block;width:100%;height:100%}
-#hud{position:absolute;inset:0;pointer-events:none;z-index:10}
-#mute{pointer-events:auto;position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);left:14px;
- width:44px;height:44px;border-radius:13px;border:0;font-size:19px;line-height:1;
- background:rgba(0,0,0,.07);color:#2e3a4a;cursor:pointer;transition:background .7s,color .7s}
-#mute:active{transform:scale(.94)}
-body.night #mute{background:rgba(255,255,255,.13);color:#e8eef8}
-#scores{position:absolute;top:calc(env(safe-area-inset-top,0px) + 8px);left:0;right:0;text-align:center;
- font-variant-numeric:tabular-nums;color:#31435c;transition:color .7s}
-body.night #scores{color:#eef4ff}
-#score{font-size:46px;font-weight:800;letter-spacing:1px;line-height:1;
- text-shadow:0 2px 0 rgba(255,255,255,.55), 0 4px 12px rgba(0,0,0,.10)}
-body.night #score{text-shadow:0 2px 0 rgba(0,0,0,.45), 0 4px 14px rgba(0,0,0,.5)}
-#hi{font-size:12px;font-weight:800;letter-spacing:1.5px;opacity:.55;margin-top:4px}
-.screen{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:26px;
- background:rgba(191,230,255,.90);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
- z-index:5;transition:background .7s}
-body.night .screen{background:rgba(11,20,36,.90)}
-.screen.hide{display:none}
-.card{width:100%;max-width:350px;text-align:center;color:#23384f;transition:color .7s}
-body.night .card{color:#e8eef8}
-.card h1{font-size:29px;letter-spacing:3px;margin-bottom:6px}
-.card .tag{font-size:12px;letter-spacing:2px;opacity:.6;margin-bottom:20px}
-.card ul{list-style:none;text-align:left;display:block;width:max-content;max-width:100%;margin:0 auto 22px;
- font-size:14px;line-height:2.05}
-.card li .k{display:inline-block;width:1.7em}
-.card button{border:0;border-radius:15px;padding:15px 36px;font-size:17px;font-weight:700;
- color:#fff;background:#f0a72e;box-shadow:0 8px 22px rgba(240,167,46,.38);cursor:pointer;
- font-family:inherit;transition:transform .08s}
-.card button:active{transform:translateY(1px) scale(.985)}
-.card .big{font-size:58px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1;margin:6px 0 4px}
-.card .sub{font-size:13.5px;opacity:.68;margin-bottom:20px}
-.card .newhi{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;color:#fff;
- background:#ef6b5a;padding:4px 12px;border-radius:999px;margin-bottom:12px}
-#hint{position:absolute;left:0;right:0;bottom:26%;text-align:center;font-size:14px;font-weight:700;
- color:#2e4459;opacity:0;transition:opacity .55s,color .7s;pointer-events:none}
-body.night #hint{color:#e8eef8}
-#hint.show{opacity:.62}
-
-/* 游戏中心 5.0：绘本界面与明确的暂停出口。 */
-html,body{background:#FBF7EF;color:#243A35}button{font-family:inherit;touch-action:manipulation}
-#hud{z-index:20}#scores{top:calc(env(safe-area-inset-top,0px) + 16px);left:auto;right:18px;text-align:right;color:#243A35}#score{font-size:28px;letter-spacing:0;text-shadow:none}#hi{font-size:10px;letter-spacing:.5px;opacity:.65}
-#controls{position:absolute;left:12px;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;gap:6px;pointer-events:auto}#controls button{position:static!important;width:44px;height:44px;padding:12px;border-radius:13px;background:rgba(251,247,239,.94)!important;border:1px solid #d8dece;color:#243A35!important;font-size:12px;box-shadow:0 3px 0 rgba(36,58,53,.08)}#controls svg{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}#controls button:active{transform:translateY(2px)}
-.screen{z-index:25;background:rgba(251,247,239,.2);backdrop-filter:none;-webkit-backdrop-filter:none;padding:76px 20px 28px}.card{color:#243A35!important;background:rgba(251,247,239,.97);border:1px solid #d5d8c9;border-radius:28px;box-shadow:0 14px 0 -7px rgba(36,58,53,.10),0 22px 60px rgba(36,58,53,.12);padding:25px 23px;max-width:370px;max-height:calc(100dvh - 112px);overflow:auto}.card h1{font-size:27px;letter-spacing:0;margin:0 0 8px}.card .tag{font-size:10px;letter-spacing:2px;color:#527264;opacity:1;margin-bottom:10px}.hero{width:210px;height:100px;display:block;margin:0 auto 15px}.hero canvas{display:block;width:100%;height:100%;border-radius:14px}.intro{font-size:14px;line-height:1.65;max-width:285px;margin:0 auto 17px;color:#5d7169}.goal-note{background:#edf0e2;border-radius:12px;padding:10px;font-size:12px;margin-bottom:18px;color:#476354}.card button{background:#268FAB;color:#fff;padding:13px 20px;font-size:15px;border:1px solid #1b6f83;border-radius:14px;box-shadow:0 4px 0 #176c81;width:100%;font-weight:750}.card button.secondary{background:#FBF7EF;color:#476354;border:1px solid #d3d8c9;box-shadow:none}.card .actions{display:flex;gap:9px;margin-top:11px}.card .actions button{font-size:13px;padding:11px 10px}.card .big{font-size:56px;color:#243A35}.card .sub{font-size:13px;color:#5d7169;opacity:1;line-height:1.7}.card .newhi{background:#D97051;letter-spacing:0}.card .result-label{color:#527264;font-size:11px;letter-spacing:1.5px;margin:8px 0}.screen#pauseScreen{z-index:35;background:rgba(36,58,53,.35)}#hint{bottom:20%;color:#243A35;background:rgba(251,247,239,.86);border-radius:999px;width:max-content;max-width:90%;left:50%;right:auto;transform:translateX(-50%);padding:8px 13px;font-size:12px}#hint.show{opacity:1}#mission{position:absolute;left:14px;right:14px;top:calc(env(safe-area-inset-top,0px) + 67px);font-size:11px;color:#36574b;background:rgba(251,247,239,.86);border:1px solid rgba(80,111,90,.16);border-radius:12px;padding:8px 11px;display:flex;justify-content:space-between;gap:8px}#mission b{font-weight:750}#cue{position:absolute;left:0;right:0;bottom:27%;font-size:12px;text-align:center;font-weight:700;color:#456153}
-body.night #scores{color:#FBF7EF}body.night .screen{background:rgba(28,45,52,.2)}body.night #hint{color:#243A35}
-@media(max-height:480px){.screen{padding:67px 18px 10px}.card{padding:16px 24px;max-height:calc(100dvh - 80px);max-width:450px}.hero{width:150px;height:70px;margin-bottom:5px}.card h1{font-size:22px}.intro{font-size:12px;margin-bottom:10px}.goal-note{margin-bottom:10px;padding:7px}.card .tag{margin-bottom:4px}.card .big{font-size:40px}#mission{left:150px;right:90px;top:18px}#scores{top:15px}#cue{bottom:29%}}
-
+html,body{height:100%;overflow:hidden;background:#fff6e8;color:#35544b;font-family:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;font-weight:800;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:none;overscroll-behavior:none}
+button{font:inherit;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(3px);box-shadow:none!important}button:focus-visible{outline:4px solid #ffdc85;outline-offset:3px}
+#stage{position:fixed;inset:0;overflow:hidden}canvas{display:block;width:100%;height:100%}
+#hud{position:absolute;inset:0;pointer-events:none;z-index:40}
+#controls{position:absolute;left:12px;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;gap:7px;pointer-events:auto}
+#controls button{width:48px;height:48px;padding:11px;border-radius:18px;background:#fffdf5;border:2px solid #e7dfcc;color:#35544b;box-shadow:0 3px 0 #e8ddc7}
+#controls svg{width:24px;height:24px;display:block;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+#controls button:disabled{opacity:.4}
+#scores{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:17px;text-align:right;font-variant-numeric:tabular-nums;color:#35544b}
+#score{font-size:43px;font-weight:850;line-height:1.1;text-shadow:0 2px #fff6e8}#hi{display:none}
+#mission{position:absolute;left:14px;top:calc(env(safe-area-inset-top,0px) + 79px);display:flex;align-items:center;gap:8px;background:#fff9e6e8;border:2px solid #e6d9b9;border-radius:18px;padding:7px 12px;color:#6d7855;font-size:20px;font-weight:850;font-variant-numeric:tabular-nums}
+#objective{display:grid;place-items:center}#objective svg{width:25px;height:25px;fill:none;stroke:#739f76;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+#cue,#hint,.card .tag,.card .intro,.card .goal-note,.card .sub,.card .result-label{display:none}
+.screen{position:absolute;inset:0;z-index:25;display:flex;align-items:center;justify-content:center;padding:76px 20px 25px;background:#fff6e838}.screen.hide{display:none}
+.card{width:100%;max-width:370px;max-height:calc(100dvh - 108px);overflow:auto;text-align:center;background:#fff9ed;color:#35544b;border:3px solid #e7dbc0;border-radius:34px;box-shadow:0 7px 0 #e1d5ba99;padding:25px 20px 28px}
+.card h1{font-size:29px;font-weight:850;line-height:1.25;margin:0 0 18px;letter-spacing:.2px}.hero{width:100%;height:155px;display:block;margin:0 auto 23px}.hero canvas{border-radius:23px;border:2px solid #eadfc9;display:block;width:100%;height:100%;object-fit:cover}
+.card button{width:100%;min-height:64px;border:3px solid #80bc9b;border-radius:23px;padding:12px 10px;font-size:27px;font-weight:850;background:#bce8d1;color:#355a45;box-shadow:0 5px 0 #71ae8c}
+.card button.secondary{background:#ffdc85;border-color:#e5bb61;box-shadow:0 5px 0 #d3a951;color:#6a552b}
+.card .actions{display:flex;gap:11px;margin-top:18px}.card .actions button{font-size:22px;min-height:58px;padding:10px 4px}
+.card .big{font-size:76px;line-height:1.15;font-weight:850;font-variant-numeric:tabular-nums;margin:15px 0 30px;color:#4a8b67}
+.card .newhi{display:inline-block;background:#ffdc85;color:#805e22;padding:9px 18px;border:2px solid #edca78;border-radius:17px;font-size:21px;margin-bottom:10px}
+#pauseScreen{z-index:35;background:#fff6e8c4;backdrop-filter:blur(4px)}#pauseScreen .card h1{font-size:30px;margin:8px 0 28px}
+.result-mascot{display:block;width:70px;height:70px;margin:0 auto;color:#a7c68b}.result-mascot svg{width:100%;height:100%;fill:#ffdc85;stroke:#d2ac61;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}body.night .screen{background:#55746b28}
+@media(max-width:350px){#controls{left:10px;gap:6px}#controls button{width:43px;height:44px;padding:9px;border-radius:15px}#scores{right:12px}#score{font-size:37px}.card{padding:23px 17px 26px}.card h1{font-size:26px}.card .actions button{font-size:20px}.screen{padding-left:16px;padding-right:16px}}
+@media(max-height:640px){.hero{height:127px;margin-bottom:20px}.card h1{margin-bottom:16px}.card button{min-height:59px;font-size:25px}.card .actions{margin-top:15px}.card .actions button{min-height:53px}.card .big{font-size:67px;margin:12px 0 23px}.result-mascot{width:57px;height:57px}.screen{padding-top:69px;padding-bottom:20px}.card{max-height:calc(100dvh - 93px);padding-top:21px}}
+@media(max-height:480px){.screen{padding:65px 18px 12px}.card{max-height:calc(100dvh - 82px);max-width:440px;padding:17px 22px 23px}.hero{height:80px;margin-bottom:14px}.card h1{font-size:23px;margin-bottom:13px}.card button{min-height:52px;font-size:23px}.card .actions{margin-top:12px}.card .big{font-size:54px}.result-mascot{width:40px;height:40px}#mission{left:160px;top:calc(env(safe-area-inset-top,0px) + 16px);font-size:16px;padding:5px 9px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body class="action-game">
@@ -73,27 +47,27 @@ body.night #scores{color:#FBF7EF}body.night .screen{background:rgba(28,45,52,.2)
     <div id="controls"><button id="homeBtn" aria-label="返回游戏中心"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M6 9v12h12V9M10 21v-7h4v7"/></svg></button><button id="pauseBtn" aria-label="暂停游戏"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button><button id="mute" aria-label="声音开关" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 8q4 4 0 8"/></svg></button></div>
     <div id="scores"><div id="score">0</div><div id="hi">BEST 0</div></div>
     <div id="mission"><span id="objective"></span><b id="progress"></b></div><div id="cue"></div>
-    <div id="hint">轻点保持高度 · 先看管口中心</div>
+    <div id="hint" hidden></div>
   </div>
 
   <div id="startScreen" class="screen">
     <div class="card">
       <h1>扑翼小鸟</h1>
-      <div class="tag">天空邮差</div><div class="hero" aria-hidden="true"></div>
-      <p class="intro">点一下拍翅膀，穿过管口。蓝宝石是加分路线，先稳稳飞过 8 根。</p><div class="goal-note">第一站 · 飞过 8 根水管</div>
-      <button id="startBtn">开始挑战</button><div class="actions"><button id="practiceBtn" class="secondary">练习 · 3 次救援</button></div>
+      <div class="hero" aria-hidden="true"></div>
+
+      <button id="startBtn">开始</button><div class="actions"><button id="practiceBtn" class="secondary">练习</button></div>
     </div>
   </div>
 
   <div id="overScreen" class="screen hide">
     <div class="card">
       <div id="newhi" class="newhi" style="display:none">新纪录！</div>
-      <div class="result-label">本次旅程</div><div class="big" id="finalScore">0</div>
-      <div class="sub" id="finalSub"></div>
-      <button id="againBtn">再来一局</button><div class="actions"><button id="overHomeBtn" class="secondary">游戏中心</button></div>
+      <div class="result-mascot" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="m36 5 9 19 21 3-15 16 4 21-19-10-19 10 4-21L6 27l21-3z"/><path d="M25 35v3m22-3v3m-17 7q6 5 12 0" stroke="#805c36"/></svg></div><div class="result-label" hidden></div><div class="big" id="finalScore">0</div>
+      <div class="sub" id="finalSub" hidden></div>
+      <button id="againBtn">再玩</button><div class="actions"><button id="overHomeBtn" class="secondary">返回</button></div>
     </div>
   </div>
-  <div id="pauseScreen" class="screen hide"><div class="card"><div class="tag">休息一下</div><h1>旅程已暂停</h1><p class="intro">准备好后，从刚才的位置继续。</p><button id="resumeBtn">继续游戏</button><div class="actions"><button id="restartBtn" class="secondary">重新开始</button><button id="pauseHomeBtn" class="secondary">游戏中心</button></div></div></div>
+  <div id="pauseScreen" class="screen hide"><div class="card"><h1>休息一下</h1><button id="resumeBtn">继续</button><div class="actions"><button id="restartBtn" class="secondary">重玩</button><button id="pauseHomeBtn" class="secondary">返回</button></div></div></div>
 </div>
 
 <script>
@@ -122,20 +96,20 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 
 /* ============================ 配色 ============================ */
 var DAY = {
-  skyTop:'#a6cbd2', skyMid:'#dce9df', skyBot:'#fbf7ef', sun:'#e7b75a',
-  far:'#c9d5bb', mid:'#9fbda5', cloud:'#fffaf1',
-  dirt:'#e2ceb0', grass:'#8ba878', grassDark:'#5b7960', dirtDash:'#c2ad8e',
-  pipe:'#7c9b82', pipeHi:'#b9cbb1', pipeDark:'#58745f', pipeEdge:'#30483b',
-  birdBody:'#e7b75a', birdBelly:'#f9e6bc', birdWing:'#bf8d3f', beak:'#d97051',
-  eye:'#fffaf1', pupil:'#243a35', scarf:'#d97051', gem:'#268fab', gemHi:'#caedf0'
+  skyTop:'#d6f0e3', skyMid:'#f0f4da', skyBot:'#fff6e8', sun:'#ffdc85',
+  far:'#e0eccb', mid:'#bce0c3', cloud:'#fffdf2',
+  dirt:'#f3dfb9', grass:'#a6d3ac', grassDark:'#7cb395', dirtDash:'#dec99d',
+  pipe:'#bce8d1', pipeHi:'#e2f5dc', pipeDark:'#98cdb0', pipeEdge:'#559873',
+  birdBody:'#ffdc85', birdBelly:'#fff4c5', birdWing:'#f0bc6a', beak:'#f1ad86',
+  eye:'#fffdf5', pupil:'#35544b', scarf:'#f9c8ba', gem:'#7bbbab', gemHi:'#f0fff2'
 };
 var NIGHT = {
-  skyTop:'#080f1e', skyMid:'#101c33', skyBot:'#1b2a45', sun:'#e9eef8',
-  far:'#152036', mid:'#1a2740', cloud:'#2b3a5c',
-  dirt:'#232c46', grass:'#2f6b4c', grassDark:'#245540', dirtDash:'#39456b',
-  pipe:'#3f8a5c', pipeHi:'#66b184', pipeDark:'#28603c', pipeEdge:'#1a4229',
-  birdBody:'#ffd76e', birdBelly:'#fff3c9', birdWing:'#e8bc4a', beak:'#ff9f52',
-  eye:'#ffffff', pupil:'#12181f', scarf:'#ff8f7d', gem:'#7fe3ff', gemHi:'#eafcff'
+  skyTop:'#708f98', skyMid:'#a2bbb5', skyBot:'#d0d9c5', sun:'#fff2c6',
+  far:'#8eac9e', mid:'#87ad98', cloud:'#d5e5dc',
+  dirt:'#f3dfb9', grass:'#a6d3ac', grassDark:'#7cb395', dirtDash:'#dec99d',
+  pipe:'#bce8d1', pipeHi:'#e2f5dc', pipeDark:'#98cdb0', pipeEdge:'#559873',
+  birdBody:'#ffdc85', birdBelly:'#fff4c5', birdWing:'#f0bc6a', beak:'#f1ad86',
+  eye:'#fffdf5', pupil:'#35544b', scarf:'#f9c8ba', gem:'#7bbbab', gemHi:'#f0fff2'
 };
 function hex2rgb(h) {
   h = h.replace('#', '');
@@ -316,8 +290,8 @@ function startGame(isPractice) {
 
 function showOver() {
   elFinal.textContent = String(score);
-  elFinalSub.textContent = (practice ? '练习旅程 · ' : '') + '飞过 ' + passed + ' 根 · 宝石 ' + gemsGot + ' 颗';
-  document.querySelector('#overScreen .result-label').textContent = passed >= 8 ? '第一站达成 · 继续挑战更远的天空' : '下次试着飞过 8 根';
+  elFinalSub.textContent = '';
+  document.querySelector('#overScreen .result-label').textContent = '';
   elNewHi.style.display = newRecord ? 'inline-block' : 'none';
   elOver.classList.remove('hide');
 }
@@ -327,7 +301,7 @@ function die() {
   if (practice && rescues > 0) {
     rescues--; invincible = 1.35; player.y = L.readyY; player.vy = L.FLAP * 0.55;
     pipes = pipes.filter(function(p){return p.x > L.birdX + L.birdW + 60;});
-    addPop(L.birdX + L.birdW / 2, player.y - 42, '救援 · 剩余 ' + rescues);
+    addPop(L.birdX + L.birdW / 2, player.y - 42, '♥ ' + rescues);
     syncScore(); return;
   }
   state = 'dead';
@@ -398,7 +372,7 @@ function goHome() {
   try { if (window.RugeNav && window.RugeNav.home) { window.RugeNav.home(); return; } } catch(e) {}
   location.href = '../index.html';
 }
-document.getElementById('homeBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run') setPaused(true);else goHome();});
+document.getElementById('homeBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run')setPaused(true);goHome();});
 document.getElementById('pauseBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run') setPaused(!paused);});
 document.getElementById('resumeBtn').addEventListener('click',function(){setPaused(false);});
 document.getElementById('restartBtn').addEventListener('click',function(){startGame();});
@@ -428,8 +402,8 @@ var lastShown = -1;
 function syncScore() {
   if (score !== lastShown) { lastShown = score; elScore.textContent = String(score); }
   elHi.textContent = practice ? '练习 · 不计纪录' : '最高 ' + Math.max(best, score);
-  document.getElementById('objective').textContent = '飞过 ' + goal + ' 根水管';
-  document.getElementById('progress').textContent = passed + ' / ' + goal + (practice ? ' · 救援 ' + rescues : '');
+  document.getElementById('objective').innerHTML='<svg viewBox="0 0 24 24" aria-label="水管目标"><path d="M7 3h10v5H7zM9 8v13h6V8"/></svg>';
+  document.getElementById('progress').textContent = passed + ' / ' + goal + (practice ? ' · ♥ ' + rescues : '');
 }
 
 /* ============================ 水管 ============================ */
@@ -568,7 +542,7 @@ function update(dt) {
     if (!p.scored && p.x + L.pipeW < L.birdX + L.birdW * 0.5) {
       p.scored = true;
       score++; passed++;
-      if (passed >= goal) {addPop(L.birdX + L.birdW / 2, player.y - 40, '目的地达成');goal += 8;}
+      if (passed >= goal) {addPop(L.birdX + L.birdW / 2, player.y - 40, '★');goal += 8;}
       blip(880, 1180, 0.07, 'triangle', 0.045);
       if (score % 10 === 0) { flash = Math.max(flash, 0.14); blip(700, 1060, 0.1, 'square', 0.05); }
       if (passed >= nextNight) {
@@ -618,6 +592,10 @@ function drawSky() {
   ctx.fillStyle = palette.sun;
   ctx.beginPath(); ctx.arc(sx, sy, sr, 0, 6.2832); ctx.fill();
   ctx.globalAlpha = 1;
+  ctx.fillStyle = '#997c43';
+  ctx.beginPath();ctx.arc(sx-sr*.25,sy-sr*.08,sr*.065,0,Math.PI*2);ctx.arc(sx+sr*.25,sy-sr*.08,sr*.065,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#997c43';ctx.lineWidth=Math.max(1.5,sr*.055);ctx.lineCap='round';
+  ctx.beginPath();ctx.arc(sx,sy+sr*.02,sr*.24,.25,Math.PI-.25);ctx.stroke();
 }
 
 function drawHills() {
@@ -655,7 +633,7 @@ function drawVillage() {
   var step=172*L.U, off=(worldX*.22)%step;
   for(var x=-off-step;x<W+step;x+=step){
     var y=L.groundY-58*L.U;
-    ctx.fillStyle=nightMix>.5?'#354b50':'#b6bca2';
+    ctx.fillStyle=nightMix>.5?'#a7b9a7':'#cfdfba';
     ctx.fillRect(x+30*L.U,y,34*L.U,58*L.U);
     ctx.beginPath();ctx.moveTo(x+24*L.U,y);ctx.lineTo(x+47*L.U,y-24*L.U);ctx.lineTo(x+70*L.U,y);ctx.fill();
     ctx.fillStyle=nightMix>.5?'#e7b75a':'#fbf7ef';
@@ -739,17 +717,13 @@ function pipeColumn(x, y, w, h, lw) {
 }
 
 function pipeCap(x, y, w, h, lw) {
-  ctx.fillStyle = palette.pipe;
-  ctx.fillRect(x, y, w, h);
-  ctx.fillStyle = palette.pipeHi;
-  ctx.fillRect(x + w * 0.09, y, w * 0.15, h);
-  ctx.fillStyle = palette.pipeDark;
-  ctx.fillRect(x + w * 0.82, y, w * 0.18, h);
-  ctx.strokeStyle = palette.pipeEdge;
-  ctx.lineWidth = lw;
-  ctx.strokeRect(x + lw * 0.5, y + lw * 0.5, w - lw, h - lw);
-  ctx.fillStyle=palette.pipeEdge;
-  [0.14,0.86].forEach(function(t){ctx.beginPath();ctx.arc(x+w*t,y+h*.5,1.6*L.U,0,Math.PI*2);ctx.fill();});
+  var r=Math.min(7*L.U,h*.25);
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+  ctx.fillStyle=palette.pipe;ctx.fill();ctx.strokeStyle=palette.pipeEdge;ctx.lineWidth=lw;ctx.stroke();
+  ctx.fillStyle=palette.pipeHi;ctx.fillRect(x+w*.15,y+lw*2,w*.12,h-lw*4);
+  ctx.strokeStyle=palette.pipeEdge;ctx.lineWidth=1.7*L.U;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(x+w*.43,y+h*.42);ctx.lineTo(x+w*.43,y+h*.5);ctx.moveTo(x+w*.62,y+h*.42);ctx.lineTo(x+w*.62,y+h*.5);ctx.stroke();
+  ctx.beginPath();ctx.arc(x+w*.525,y+h*.5,w*.065,.3,Math.PI-.3);ctx.stroke();
 }
 
 function drawBird() {
@@ -772,7 +746,7 @@ function drawBird() {
   ctx.fillStyle = palette.birdBody;
   ctx.beginPath();
   ctx.ellipse(bw * 0.50, bh * 0.52, bw * 0.40, bh * 0.40, 0, 0, 6.2832);
-  ctx.fill(); ctx.strokeStyle = '#4d4937'; ctx.lineWidth = 2 * L.U; ctx.stroke();
+  ctx.fill(); ctx.strokeStyle = '#bd9958'; ctx.lineWidth = 2.5 * L.U; ctx.stroke();
 
   // 肚子
   ctx.fillStyle = palette.birdBelly;
@@ -816,13 +790,15 @@ function drawBird() {
   ctx.moveTo(bw * 0.86, bh * 0.44);
   ctx.lineTo(bw * 1.16, bh * 0.56);
   ctx.lineTo(bw * 0.86, bh * 0.66);
-  ctx.closePath(); ctx.fill(); ctx.strokeStyle = '#4d4937'; ctx.lineWidth = 1.4 * L.U; ctx.stroke();
+  ctx.closePath(); ctx.fill(); ctx.strokeStyle = '#c28d66'; ctx.lineWidth = 1.8 * L.U; ctx.stroke();
 
-  // 眼
-  ctx.fillStyle = palette.eye;
-  ctx.beginPath(); ctx.arc(bw * 0.68, bh * 0.38, bh * 0.135, 0, 6.2832); ctx.fill();
-  ctx.fillStyle = palette.pupil;
-  ctx.beginPath(); ctx.arc(bw * 0.71, bh * 0.38, bh * 0.070, 0, 6.2832); ctx.fill();
+  // 大眼睛、粉脸颊和软软的头羽。
+  ctx.fillStyle=palette.birdBody;ctx.beginPath();ctx.ellipse(bw*.41,bh*.12,bw*.07,bh*.14,-.4,0,Math.PI*2);ctx.ellipse(bw*.53,bh*.10,bw*.065,bh*.12,.3,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=palette.eye;ctx.beginPath();ctx.ellipse(bw*.70,bh*.37,bw*.13,bh*.18,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=palette.pupil;ctx.beginPath();ctx.ellipse(bw*.73,bh*.37,bw*.065,bh*.105,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#fffdf5';ctx.beginPath();ctx.arc(bw*.745,bh*.33,bh*.035,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#f9b9a4';ctx.beginPath();ctx.ellipse(bw*.74,bh*.61,bw*.075,bh*.045,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#b88455';ctx.lineWidth=1.5*L.U;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(bw*.9,bh*.57);ctx.lineTo(bw*1.06,bh*.57);ctx.stroke();
 
   ctx.restore();
 }
@@ -898,7 +874,7 @@ function showPreview() {
     target.style.cssText='position:fixed;left:0;top:0;width:'+pw+'px;height:'+ph+'px;display:block';
     document.title='action-cover-ready';return true;
   }
-  drawPreview(target,210,126,Math.min(3,window.devicePixelRatio||1));document.querySelector('.hero').appendChild(target);return false;
+  drawPreview(target,320,180,Math.min(3,window.devicePixelRatio||1));document.querySelector('.hero').appendChild(target);return false;
 }
 
 /* ============================ 主循环 ============================ */

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff6e8">
+<title>小小密码箱</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="shell">
+  <section id="home" class="home-view" aria-label="密码箱关卡">
+    <header class="home-nav">
+      <button id="center" class="nav-button" aria-label="回游戏中心"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+      <h1>小小密码箱</h1><span class="nav-spacer"></span>
+    </header>
+    <div class="home-mascot" aria-hidden="true"><img src="mascot.svg" alt=""></div>
+    <button id="continue" class="continue-card" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg><strong>继续</strong><span id="continueLabel" hidden></span></button>
+    <nav id="tiers" class="tier-tabs" aria-label="密码位数"></nav>
+    <div class="level-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9Z"/></svg><span id="progressCount">0 / 18</span></div>
+    <div id="levels" class="level-grid"></div>
+    <button id="free" class="free-card"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="7"/><circle cx="11" cy="11" r="2"/><circle cx="21" cy="11" r="2"/><circle cx="16" cy="16" r="2"/><circle cx="11" cy="21" r="2"/><circle cx="21" cy="21" r="2"/></svg><strong>自由玩</strong><svg class="next-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+  </section>
+  <section id="play" class="play-view" hidden aria-label="猜密码">
+    <header class="play-nav">
+      <button id="back" class="nav-button" aria-label="回关卡"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+      <h1 id="levelNumber"></h1>
+      <div class="attempt-counter" aria-label="尝试次数"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg><strong id="attempts">0</strong></div>
+    </header>
+    <div id="pauseBar" class="pause-bar" hidden><button id="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>继续</button></div>
+    <div id="board" class="board"><span class="board-spark spark-left" aria-hidden="true">✦</span><div id="slots" class="slots" role="group" aria-label="输入密码"></div><span class="board-spark spark-right" aria-hidden="true">✦</span></div>
+    <div id="history" class="history" role="log" aria-label="猜测和反馈记录" aria-live="polite"></div>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+    <div id="keypad" class="keypad" role="group" aria-label="数字键盘"></div>
+    <div class="entry-actions"><button id="clear" class="key clear-button" aria-label="清空数字"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5m4-5v5"/></svg></button><button id="submit" class="submit-button">打开</button></div>
+  </section>
+</main>
+<div class="legacy" hidden>
+  <button id="rules"></button><button id="playRules"></button><button id="tutorial"></button>
+  <span id="chapterTitle"></span><span id="chapterNote"></span><span id="gameTag"></span><span id="levelTitle"></span><span id="attemptCaption"></span><span id="digitCount"></span><span id="entryHelp"></span><span id="poolLabel"></span><button id="hint"></button>
+</div>
+<div id="modal" class="modal" hidden>
+  <section id="dialog" class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" tabindex="-1">
+    <button id="dialogClose" class="dialog-close" aria-label="关闭"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg></button>
+    <span id="dialogEyebrow" hidden></span><h2 id="dialogTitle"></h2>
+    <div id="dialogBody" class="dialog-body"></div><div id="dialogActions" class="dialog-actions"></div>
+  </section>
+</div>
+<script src="core.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

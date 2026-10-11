@@ -178,8 +178,10 @@ export function loadGame(game, { storage = {}, instrument = source => source } =
     console: { log() {}, error() {} },
   });
 
-  [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].forEach((match, index) => {
-    const source = instrument(match[1], index);
+  [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)].forEach((match, index) => {
+    const external = /\bsrc="([^"]+)"/.exec(match[1]);
+    const raw = external ? readFileSync(new URL(`../../app/assets/${game}/${external[1]}`, import.meta.url), 'utf8') : match[2];
+    const source = instrument(raw, index);
     new vm.Script(source, { filename: `${game}/index.html:script-${index}` }).runInContext(context);
   });
 

@@ -3,65 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no,maximum-scale=1">
-<meta name="theme-color" content="#fdf3d8">
+<meta name="theme-color" content="#fff6e8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <title>小青蛙跳池塘 · Frog Pond</title>
 <link rel="stylesheet" href="../shared/ui.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;background:#fdf3d8;
- font-family:system-ui,-apple-system,"PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
- -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
- touch-action:none;overscroll-behavior:none;
- transition:background .7s ease}
-body.night{background:#101a2e}
-#stage{position:fixed;inset:0;overflow:hidden}
-canvas{display:block;width:100%;height:100%}
-#hud{position:absolute;inset:0;pointer-events:none;z-index:10}
-#mute{pointer-events:auto;position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);left:14px;
- width:44px;height:44px;border-radius:13px;border:0;font-size:19px;line-height:1;
- background:rgba(0,0,0,.07);color:#4a3b22;cursor:pointer;transition:background .7s,color .7s}
-#mute:active{transform:scale(.94)}
-body.night #mute{background:rgba(255,255,255,.13);color:#e8eef8}
-#scores{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:16px;text-align:right;
- font-variant-numeric:tabular-nums;color:#4a3b22;transition:color .7s}
-body.night #scores{color:#e8eef8}
-#score{font-size:32px;font-weight:800;letter-spacing:.5px;line-height:1.05;text-shadow:0 1px 0 rgba(255,255,255,.35)}
-body.night #score{text-shadow:0 1px 0 rgba(0,0,0,.4)}
-#hi{font-size:13px;font-weight:700;opacity:.55;margin-top:3px}
-.screen{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:26px;
- background:rgba(253,243,216,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
- z-index:5;transition:background .7s}
-body.night .screen{background:rgba(16,26,46,.88)}
-.screen.hide{display:none}
-.card{width:100%;max-width:360px;text-align:center;color:#3f3220;transition:color .7s}
-body.night .card{color:#e8eef8}
-.card h1{font-size:28px;letter-spacing:2px;margin-bottom:6px}
-.card .tag{font-size:12px;letter-spacing:1.5px;opacity:.6;margin-bottom:20px}
-.card ul{list-style:none;text-align:left;display:block;width:max-content;max-width:100%;margin:0 auto 22px;font-size:14px;line-height:2.05}
-.card li .k{display:inline-block;width:1.7em}
-.card button{border:0;border-radius:15px;padding:15px 36px;font-size:17px;font-weight:700;
- color:#fff;background:#4fae63;box-shadow:0 8px 22px rgba(79,174,99,.34);cursor:pointer;
- font-family:inherit;transition:transform .08s}
-.card button:active{transform:translateY(1px) scale(.985)}
-.card .big{font-size:56px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1;margin:6px 0 4px}
-.card .sub{font-size:13.5px;opacity:.68;margin-bottom:20px}
-.card .newhi{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;color:#fff;
- background:#f2a33c;padding:4px 12px;border-radius:999px;margin-bottom:12px}
-#hint{position:absolute;left:0;right:0;bottom:24%;text-align:center;font-size:14px;font-weight:700;
- color:#4a3b22;opacity:0;transition:opacity .55s,color .7s;pointer-events:none}
-body.night #hint{color:#e8eef8}
-#hint.show{opacity:.6}
-
-/* 游戏中心 5.0：绘本界面与明确的暂停出口。 */
-html,body{background:#FBF7EF;color:#243A35}button{font-family:inherit;touch-action:manipulation}
-#hud{z-index:20}#scores{top:calc(env(safe-area-inset-top,0px) + 16px);left:auto;right:18px;text-align:right;color:#243A35}#score{font-size:28px;letter-spacing:0;text-shadow:none}#hi{font-size:10px;letter-spacing:.5px;opacity:.65}
-#controls{position:absolute;left:12px;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;gap:6px;pointer-events:auto}#controls button{position:static!important;width:44px;height:44px;padding:12px;border-radius:13px;background:rgba(251,247,239,.94)!important;border:1px solid #d8dece;color:#243A35!important;font-size:12px;box-shadow:0 3px 0 rgba(36,58,53,.08)}#controls svg{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}#controls button:active{transform:translateY(2px)}
-.screen{z-index:25;background:rgba(251,247,239,.2);backdrop-filter:none;-webkit-backdrop-filter:none;padding:76px 20px 28px}.card{color:#243A35!important;background:rgba(251,247,239,.97);border:1px solid #d5d8c9;border-radius:28px;box-shadow:0 14px 0 -7px rgba(36,58,53,.10),0 22px 60px rgba(36,58,53,.12);padding:25px 23px;max-width:370px;max-height:calc(100dvh - 112px);overflow:auto}.card h1{font-size:27px;letter-spacing:0;margin:0 0 8px}.card .tag{font-size:10px;letter-spacing:2px;color:#527264;opacity:1;margin-bottom:10px}.hero{width:210px;height:100px;display:block;margin:0 auto 15px}.hero canvas{display:block;width:100%;height:100%;border-radius:14px}.intro{font-size:14px;line-height:1.65;max-width:285px;margin:0 auto 17px;color:#5d7169}.goal-note{background:#edf0e2;border-radius:12px;padding:10px;font-size:12px;margin-bottom:18px;color:#476354}.card button{background:#268FAB;color:#fff;padding:13px 20px;font-size:15px;border:1px solid #1b6f83;border-radius:14px;box-shadow:0 4px 0 #176c81;width:100%;font-weight:750}.card button.secondary{background:#FBF7EF;color:#476354;border:1px solid #d3d8c9;box-shadow:none}.card .actions{display:flex;gap:9px;margin-top:11px}.card .actions button{font-size:13px;padding:11px 10px}.card .big{font-size:56px;color:#243A35}.card .sub{font-size:13px;color:#5d7169;opacity:1;line-height:1.7}.card .newhi{background:#D97051;letter-spacing:0}.card .result-label{color:#527264;font-size:11px;letter-spacing:1.5px;margin:8px 0}.screen#pauseScreen{z-index:35;background:rgba(36,58,53,.35)}#hint{bottom:20%;color:#243A35;background:rgba(251,247,239,.86);border-radius:999px;width:max-content;max-width:90%;left:50%;right:auto;transform:translateX(-50%);padding:8px 13px;font-size:12px}#hint.show{opacity:1}#mission{position:absolute;left:14px;right:14px;top:calc(env(safe-area-inset-top,0px) + 67px);font-size:11px;color:#36574b;background:rgba(251,247,239,.86);border:1px solid rgba(80,111,90,.16);border-radius:12px;padding:8px 11px;display:flex;justify-content:space-between;gap:8px}#mission b{font-weight:750}#cue{position:absolute;left:0;right:0;bottom:27%;font-size:12px;text-align:center;font-weight:700;color:#456153}
-body.night #scores{color:#FBF7EF}body.night .screen{background:rgba(28,45,52,.2)}body.night #hint{color:#243A35}
-@media(max-height:480px){.screen{padding:67px 18px 10px}.card{padding:16px 24px;max-height:calc(100dvh - 80px);max-width:450px}.hero{width:150px;height:70px;margin-bottom:5px}.card h1{font-size:22px}.intro{font-size:12px;margin-bottom:10px}.goal-note{margin-bottom:10px;padding:7px}.card .tag{margin-bottom:4px}.card .big{font-size:40px}#mission{left:150px;right:90px;top:18px}#scores{top:15px}#cue{bottom:29%}}
-
+html,body{height:100%;overflow:hidden;background:#fff6e8;color:#35544b;font-family:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;font-weight:800;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:none;overscroll-behavior:none}
+button{font:inherit;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(3px);box-shadow:none!important}button:focus-visible{outline:4px solid #ffdc85;outline-offset:3px}
+#stage{position:fixed;inset:0;overflow:hidden}canvas{display:block;width:100%;height:100%}
+#hud{position:absolute;inset:0;pointer-events:none;z-index:40}
+#controls{position:absolute;left:12px;top:calc(env(safe-area-inset-top,0px) + 12px);display:flex;gap:7px;pointer-events:auto}
+#controls button{width:48px;height:48px;padding:11px;border-radius:18px;background:#fffdf5;border:2px solid #e7dfcc;color:#35544b;box-shadow:0 3px 0 #e8ddc7}
+#controls svg{width:24px;height:24px;display:block;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+#controls button:disabled{opacity:.4}
+#scores{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:17px;text-align:right;font-variant-numeric:tabular-nums;color:#35544b}
+#score{font-size:43px;font-weight:850;line-height:1.1;text-shadow:0 2px #fff6e8}#hi{display:none}
+#mission{position:absolute;left:14px;top:calc(env(safe-area-inset-top,0px) + 79px);display:flex;align-items:center;gap:8px;background:#fff9e6e8;border:2px solid #e6d9b9;border-radius:18px;padding:7px 12px;color:#6d7855;font-size:20px;font-weight:850;font-variant-numeric:tabular-nums}
+#objective{display:grid;place-items:center}#objective svg{width:25px;height:25px;fill:none;stroke:#739f76;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+#cue,#hint,.card .tag,.card .intro,.card .goal-note,.card .sub,.card .result-label{display:none}
+.screen{position:absolute;inset:0;z-index:25;display:flex;align-items:center;justify-content:center;padding:76px 20px 25px;background:#fff6e838}.screen.hide{display:none}
+.card{width:100%;max-width:370px;max-height:calc(100dvh - 108px);overflow:auto;text-align:center;background:#fff9ed;color:#35544b;border:3px solid #e7dbc0;border-radius:34px;box-shadow:0 7px 0 #e1d5ba99;padding:25px 20px 28px}
+.card h1{font-size:29px;font-weight:850;line-height:1.25;margin:0 0 18px;letter-spacing:.2px}.hero{width:100%;height:155px;display:block;margin:0 auto 23px}.hero canvas{border-radius:23px;border:2px solid #eadfc9;display:block;width:100%;height:100%;object-fit:cover}
+.card button{width:100%;min-height:64px;border:3px solid #80bc9b;border-radius:23px;padding:12px 10px;font-size:27px;font-weight:850;background:#bce8d1;color:#355a45;box-shadow:0 5px 0 #71ae8c}
+.card button.secondary{background:#ffdc85;border-color:#e5bb61;box-shadow:0 5px 0 #d3a951;color:#6a552b}
+.card .actions{display:flex;gap:11px;margin-top:18px}.card .actions button{font-size:22px;min-height:58px;padding:10px 4px}
+.card .big{font-size:76px;line-height:1.15;font-weight:850;font-variant-numeric:tabular-nums;margin:15px 0 30px;color:#4a8b67}
+.card .newhi{display:inline-block;background:#ffdc85;color:#805e22;padding:9px 18px;border:2px solid #edca78;border-radius:17px;font-size:21px;margin-bottom:10px}
+#pauseScreen{z-index:35;background:#fff6e8c4;backdrop-filter:blur(4px)}#pauseScreen .card h1{font-size:30px;margin:8px 0 28px}
+.result-mascot{display:block;width:70px;height:70px;margin:0 auto;color:#a7c68b}.result-mascot svg{width:100%;height:100%;fill:#ffdc85;stroke:#d2ac61;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}body.night .screen{background:#55746b28}
+@media(max-width:350px){#controls{left:10px;gap:6px}#controls button{width:43px;height:44px;padding:9px;border-radius:15px}#scores{right:12px}#score{font-size:37px}.card{padding:23px 17px 26px}.card h1{font-size:26px}.card .actions button{font-size:20px}.screen{padding-left:16px;padding-right:16px}}
+@media(max-height:640px){.hero{height:127px;margin-bottom:20px}.card h1{margin-bottom:16px}.card button{min-height:59px;font-size:25px}.card .actions{margin-top:15px}.card .actions button{min-height:53px}.card .big{font-size:67px;margin:12px 0 23px}.result-mascot{width:57px;height:57px}.screen{padding-top:69px;padding-bottom:20px}.card{max-height:calc(100dvh - 93px);padding-top:21px}}
+@media(max-height:480px){.screen{padding:65px 18px 12px}.card{max-height:calc(100dvh - 82px);max-width:440px;padding:17px 22px 23px}.hero{height:80px;margin-bottom:14px}.card h1{font-size:23px;margin-bottom:13px}.card button{min-height:52px;font-size:23px}.card .actions{margin-top:12px}.card .big{font-size:54px}.result-mascot{width:40px;height:40px}#mission{left:160px;top:calc(env(safe-area-inset-top,0px) + 16px);font-size:16px;padding:5px 9px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body class="action-game">
@@ -71,27 +47,27 @@ body.night #scores{color:#FBF7EF}body.night .screen{background:rgba(28,45,52,.2)
     <div id="controls"><button id="homeBtn" aria-label="返回游戏中心"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M6 9v12h12V9M10 21v-7h4v7"/></svg></button><button id="pauseBtn" aria-label="暂停游戏"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button><button id="mute" aria-label="声音开关" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 8q4 4 0 8"/></svg></button></div>
     <div id="scores"><div id="score">0</div><div id="hi">HI 0</div></div>
     <div id="mission"><span id="objective"></span><b id="progress"></b></div><div id="cue"></div>
-    <div id="hint">点一下跳 · 空中再点双跳 · 落在金圈上</div>
+    <div id="hint" hidden></div>
   </div>
 
   <div id="startScreen" class="screen">
     <div class="card">
       <h1>小青蛙跳池塘</h1>
-      <div class="tag">池塘节拍</div><div class="hero" aria-hidden="true"></div>
-      <p class="intro">点一下跃起，空中再点可双跳。落在金圈荷叶上，连续落点有奖励。</p><div class="goal-note">第一站 · 命中 3 片荷叶</div>
-      <button id="startBtn">跃进池塘</button>
+      <div class="hero" aria-hidden="true"></div>
+
+      <button id="startBtn">开始</button>
     </div>
   </div>
 
   <div id="overScreen" class="screen hide">
     <div class="card">
       <div id="newhi" class="newhi" style="display:none">新纪录！</div>
-      <div class="result-label">本次旅程</div><div class="big" id="finalScore">0</div>
-      <div class="sub" id="finalSub"></div>
-      <button id="againBtn">再来一局</button><div class="actions"><button id="overHomeBtn" class="secondary">游戏中心</button></div>
+      <div class="result-mascot" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="m36 5 9 19 21 3-15 16 4 21-19-10-19 10 4-21L6 27l21-3z"/><path d="M25 35v3m22-3v3m-17 7q6 5 12 0" stroke="#805c36"/></svg></div><div class="result-label" hidden></div><div class="big" id="finalScore">0</div>
+      <div class="sub" id="finalSub" hidden></div>
+      <button id="againBtn">再玩</button><div class="actions"><button id="overHomeBtn" class="secondary">返回</button></div>
     </div>
   </div>
-  <div id="pauseScreen" class="screen hide"><div class="card"><div class="tag">休息一下</div><h1>旅程已暂停</h1><p class="intro">准备好后，从刚才的位置继续。</p><button id="resumeBtn">继续游戏</button><div class="actions"><button id="restartBtn" class="secondary">重新开始</button><button id="pauseHomeBtn" class="secondary">游戏中心</button></div></div></div>
+  <div id="pauseScreen" class="screen hide"><div class="card"><h1>休息一下</h1><button id="resumeBtn">继续</button><div class="actions"><button id="restartBtn" class="secondary">重玩</button><button id="pauseHomeBtn" class="secondary">返回</button></div></div></div>
 </div>
 
 <script>
@@ -119,34 +95,34 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 
 /* ============================ 配色（昼/夜插值） ============================ */
 var DAY = {
-  skyTop:'#a9cfd0', skyMid:'#d6e5d7', skyBot:'#f7f3df', sun:'#e7b75a',
-  far:'#c2d0b0', mid:'#92b38e',
-  ground:'#70b5c2', groundDeep:'#3f899e', gline:'#d6ece3', dash:'#a6d3d5',
-  lily:'#85a577', lilyDark:'#476e51',
-  body:'#83ae79', bodyDark:'#466f4c', belly:'#e8e9bb',
-  eye:'#ffffff', pupil:'#16261c',
-  cactus:'#d97051', cactusDark:'#a3513e',
-  bird:'#268fab', birdWing:'#c2dfe1',
-  gem:'#e7b75a', gemHi:'#f6e9bd',
-  ripple:'#2f8fb0', submerge:'rgba(92,194,222,0.52)', submergeHi:'rgba(190,238,250,0.78)',
-  rock:'#9b8f7a', rockHi:'#cfc3a8',
-  gemBonus:'#d97051', gemBonusHi:'#f4d4c3',
-  scarf:'#f2704f', cloud:'#ffffff'
+  skyTop:'#d2eee1', skyMid:'#eef3d4', skyBot:'#fff6e8', sun:'#ffdc85',
+  far:'#d8e8bb', mid:'#b3d4aa',
+  ground:'#b3dfd7', groundDeep:'#8dc6bb', gline:'#edfae1', dash:'#d3ece1',
+  lily:'#bce8a9', lilyDark:'#71a176',
+  body:'#bce8d1', bodyDark:'#77ad89', belly:'#fff3bc',
+  eye:'#fffdf5', pupil:'#35544b',
+  cactus:'#f9c8ba', cactusDark:'#b78372',
+  bird:'#84beaf', birdWing:'#e4f3de',
+  gem:'#ffdc85', gemHi:'#fff5c2',
+  ripple:'#86bdb2', submerge:'rgba(179,223,215,0.55)', submergeHi:'rgba(237,250,225,0.78)',
+  rock:'#b9b9ab', rockHi:'#e1dfcb',
+  gemBonus:'#f9c8ba', gemBonusHi:'#fff1da',
+  scarf:'#f9c8ba', cloud:'#fffdf5'
 };
 var NIGHT = {
-  skyTop:'#081626', skyMid:'#102a3e', skyBot:'#1b3a4a', sun:'#e9f4ff',
-  far:'#17301f', mid:'#1d3a26',
-  ground:'#1d5670', groundDeep:'#0d3348', gline:'#4fa8c4', dash:'#3d8aa4',
-  lily:'#2f6b3a', lilyDark:'#1c4426',
-  body:'#7fe08a', bodyDark:'#2f7a42', belly:'#dcf7b8',
-  eye:'#ffffff', pupil:'#0b1a12',
-  cactus:'#c9702a', cactusDark:'#8e4a12',
-  bird:'#2f86a8', birdWing:'#5fb8d4',
-  gem:'#7fe3ff', gemHi:'#eafcff',
-  ripple:'#8fd8ec', submerge:'rgba(70,160,190,0.55)', submergeHi:'rgba(150,220,240,0.70)',
-  rock:'#4c4b52', rockHi:'#84838e',
-  gemBonus:'#b98cff', gemBonusHi:'#f0e4ff',
-  scarf:'#ff8f6b', cloud:'#2b3f5e'
+  skyTop:'#708f98', skyMid:'#a2bbb5', skyBot:'#d0d9c5', sun:'#fff2c6',
+  far:'#8eac9e', mid:'#87ad98',
+  ground:'#b3dfd7', groundDeep:'#8dc6bb', gline:'#edfae1', dash:'#d3ece1',
+  lily:'#bce8a9', lilyDark:'#71a176',
+  body:'#bce8d1', bodyDark:'#77ad89', belly:'#fff3bc',
+  eye:'#fffdf5', pupil:'#35544b',
+  cactus:'#f9c8ba', cactusDark:'#b78372',
+  bird:'#84beaf', birdWing:'#e4f3de',
+  gem:'#ffdc85', gemHi:'#fff5c2',
+  ripple:'#86bdb2', submerge:'rgba(70,160,190,0.55)', submergeHi:'rgba(150,220,240,0.70)',
+  rock:'#b9b9ab', rockHi:'#e1dfcb',
+  gemBonus:'#f9c8ba', gemBonusHi:'#fff1da',
+  scarf:'#f9c8ba', cloud:'#d5e5dc'
 };
 function hex2rgb(h) {
   h = h.replace('#', '');
@@ -353,8 +329,8 @@ function startGame() {
 
 function showOver() {
   elFinal.textContent = String(Math.floor(scoreF));
-  elFinalSub.textContent = '荷叶 ' + padHits + ' 片 · 最佳连击 ' + bestCombo + ' · 星晶 ' + gemsGot + ' 颗<br>' + deathCause;
-  document.querySelector('#overScreen .result-label').textContent = padHits >= 3 ? '荷叶小能手 · 继续找落点' : '下次试着命中 3 片荷叶';
+  elFinalSub.textContent = '';
+  document.querySelector('#overScreen .result-label').textContent = '';
   elNewHi.style.display = newRecord ? 'inline-block' : 'none';
   elOver.classList.remove('hide');
 }
@@ -452,7 +428,7 @@ function goHome() {
   try { if (window.RugeNav && window.RugeNav.home) { window.RugeNav.home(); return; } } catch(e) {}
   location.href = '../index.html';
 }
-document.getElementById('homeBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run') setPaused(true);else goHome();});
+document.getElementById('homeBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run')setPaused(true);goHome();});
 document.getElementById('pauseBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run') setPaused(!paused);});
 document.getElementById('resumeBtn').addEventListener('click',function(){setPaused(false);});
 document.getElementById('restartBtn').addEventListener('click',function(){startGame();});
@@ -485,8 +461,8 @@ function syncScore() {
   var s = Math.floor(scoreF);
   if (s !== lastShown) { lastShown = s; elScore.textContent = String(s); }
   elHi.textContent='最高 '+Math.max(hi,s);
-  document.getElementById('objective').textContent='落在金圈荷叶 · '+goal+' 片';
-  document.getElementById('progress').textContent=padHits+' / '+goal+' · 连击 '+padCombo;
+  document.getElementById('objective').innerHTML='<svg viewBox="0 0 24 24" aria-label="金圈荷叶目标"><path d="M12 4c8 0 12 13 0 16C0 17 4 4 12 4zM12 20V9"/><circle cx="12" cy="12" r="5" stroke="#cda248"/></svg>';
+  document.getElementById('progress').textContent=padHits+' / '+goal;
   document.getElementById('pauseBtn').disabled=state!=='run';
 }
 
@@ -695,7 +671,6 @@ function update(dt) {
   }
 
   var nearest=obstacles.find(function(o){return o.x+o.w>L.playerX;});
-  document.getElementById('cue').textContent=nearest&&nearest.x<W*.75?(nearest.kind==='tall'?'高石头 · 空中再点一次':nearest.kind==='bird'&&nearest.base>L.playerH?'高蜻蜓 · 留在水面':'跃过小鱼或低蜻蜓') : '金圈荷叶 · 对准落点';
   // 碰撞
   var pb = playerBox();
   for (i = 0; i < obstacles.length; i++) {
@@ -727,7 +702,7 @@ function landOnPad() {
   if(!pad){padCombo=0;return;}
   pad.hit=true;padHits++;padCombo=Math.min(5,padCombo+1);bestCombo=Math.max(bestCombo,padCombo);
   var bonus=15*padCombo;scoreF+=bonus;
-  addPop(cx,L.groundY-L.playerH*1.6,'荷叶 ×'+padCombo+'  +'+bonus);
+  addPop(cx,L.groundY-L.playerH*1.6,'+'+bonus);
   blip(680+padCombo*90,1080+padCombo*90,.10,'triangle',.045);
   if(padHits>=goal)goal+=3;
 }
@@ -735,7 +710,7 @@ function drawTargetPads() {
   for(var i=0;i<pads.length;i++){
     var p=pads[i],cy=L.groundY+4*L.S;
     ctx.save();ctx.shadowColor='rgba(20,65,67,.2)';ctx.shadowBlur=7*L.S;ctx.shadowOffsetY=5*L.S;drawLily(p.x,cy,p.r);ctx.restore();
-    ctx.strokeStyle=p.hit?'#d6ece3':'#e7b75a';ctx.lineWidth=2.5*L.S;ctx.beginPath();ctx.ellipse(p.x,cy,p.r*.68,p.r*.19,0,0,Math.PI*2);ctx.stroke();
+    ctx.strokeStyle=p.hit?'#eef8da':'#cfa247';ctx.lineWidth=2.5*L.S;ctx.beginPath();ctx.ellipse(p.x,cy,p.r*.68,p.r*.19,0,0,Math.PI*2);ctx.stroke();
     if(!p.hit){ctx.fillStyle='#f9edc4';ctx.beginPath();ctx.arc(p.x,cy,3*L.S,0,Math.PI*2);ctx.fill();}
   }
 }
@@ -779,6 +754,10 @@ function drawSky() {
   ctx.fillStyle = palette.sun;
   ctx.beginPath(); ctx.arc(sx, sy, sr, 0, 6.2832); ctx.fill();
   ctx.globalAlpha = 1;
+  ctx.fillStyle = '#997c43';
+  ctx.beginPath();ctx.arc(sx-sr*.25,sy-sr*.08,sr*.065,0,Math.PI*2);ctx.arc(sx+sr*.25,sy-sr*.08,sr*.065,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#997c43';ctx.lineWidth=Math.max(1.5,sr*.055);ctx.lineCap='round';
+  ctx.beginPath();ctx.arc(sx,sy+sr*.02,sr*.24,.25,Math.PI-.25);ctx.stroke();
 }
 
 function drawHills() {
@@ -789,9 +768,7 @@ function drawHills() {
     ctx.fillStyle = h.layer === 0 ? palette.far : palette.mid;
     ctx.beginPath();
     ctx.moveTo(x - h.w / 2, L.groundY + 1);
-    ctx.lineTo(x - h.w * 0.20, L.groundY - h.h);
-    ctx.lineTo(x + h.w * 0.14, L.groundY - h.h * 0.84);
-    ctx.lineTo(x + h.w / 2, L.groundY + 1);
+    ctx.bezierCurveTo(x-h.w*.36,L.groundY-h.h*1.2,x+h.w*.24,L.groundY-h.h*1.1,x+h.w/2,L.groundY+1);
     ctx.closePath();
     ctx.fill();
   }
@@ -1043,7 +1020,7 @@ function drawPlayer() {                      // 小青蛙
   ctx.fillStyle = body;
   ctx.beginPath();
   ctx.ellipse(pw * 0.50, ph * 0.52, pw * 0.47, ph * 0.41, 0, 0, 6.2832);
-  ctx.fill();ctx.strokeStyle='#355340';ctx.lineWidth=2*L.S;ctx.stroke();
+  ctx.fill();ctx.strokeStyle='#78ad8b';ctx.lineWidth=2.5*L.S;ctx.stroke();
 
   // 肚皮
   ctx.fillStyle = belly;
@@ -1067,6 +1044,8 @@ function drawPlayer() {                      // 小青蛙
     ctx.beginPath(); ctx.arc(pw * 0.70, ph * 0.17, pw * 0.072, 0, 6.2832); ctx.fill();
   }
 
+  if(player.blink<=0){ctx.fillStyle='#fffdf5';ctx.beginPath();ctx.arc(pw*.388,ph*.135,pw*.03,0,Math.PI*2);ctx.arc(pw*.718,ph*.135,pw*.03,0,Math.PI*2);ctx.fill();}
+  ctx.fillStyle='#f9bba7';ctx.beginPath();ctx.ellipse(pw*.22,ph*.4,pw*.09,ph*.045,0,0,Math.PI*2);ctx.ellipse(pw*.81,ph*.4,pw*.09,ph*.045,0,0,Math.PI*2);ctx.fill();
   // 嘴
   ctx.strokeStyle = dark;
   ctx.lineWidth = Math.max(1.4, pw * 0.042);
@@ -1085,9 +1064,9 @@ function drawPlayer() {                      // 小青蛙
     ctx.rect(pw * 0.03 + l1, ph * 0.56, pw * 0.34, ph * 0.50);
     ctx.rect(pw * 0.50 + l2, ph * 0.56, pw * 0.36, ph * 0.50);
     ctx.clip();
-    ctx.fillStyle = palette.submerge || 'rgba(92,194,222,0.52)';
+    ctx.fillStyle = palette.submerge || 'rgba(179,223,215,0.55)';
     ctx.fillRect(-pw, wl, pw * 4, ph * 0.6);
-    ctx.fillStyle = palette.submergeHi || 'rgba(190,238,250,0.78)';
+    ctx.fillStyle = palette.submergeHi || 'rgba(237,250,225,0.78)';
     ctx.fillRect(-pw, wl, pw * 4, Math.max(1.5, ph * 0.045));
     ctx.restore();
   }
@@ -1177,7 +1156,7 @@ function showPreview() {
     target.style.cssText='position:fixed;left:0;top:0;width:'+pw+'px;height:'+ph+'px;display:block';
     document.title='action-cover-ready';return true;
   }
-  drawPreview(target,210,126,Math.min(3,window.devicePixelRatio||1));document.querySelector('.hero').appendChild(target);return false;
+  drawPreview(target,320,180,Math.min(3,window.devicePixelRatio||1));document.querySelector('.hero').appendChild(target);return false;
 }
 
 /* ============================ 主循环 ============================ */
