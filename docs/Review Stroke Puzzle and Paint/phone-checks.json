@@ -1,0 +1,229 @@
+[
+  {
+    "name": "开发版读取 APK 内页面",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "新汉字从三开始，顶部两个空答案格",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "真实点按选中整笔画",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "再次点同一笔可以反选",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "一收进顶部答案区",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "不同横画的一不重复计数",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "二完成第一关并解锁下一关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "提示只高亮笔画，不自动提交",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 日 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 日",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 一 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 一",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 二 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 二",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "重载保留同关多个已得答案",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 三 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 三",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 口 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 口",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 立 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 立",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 心 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 心",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意的 音 笔画实际命中",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意里找到 音",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意八个答案均能收齐",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "汉字回前台暂停且保留收集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "汉字 侧滑回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "纯黄不冒充绿色",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "黄蓝真实混成绿并上色",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "红黄可调橙",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "红蓝可调紫",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "比例不同不能直接通过新目标",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "加一滴黄色后比例目标通过",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "加白形成粉色兔子",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "多订单第一目标未提前完成整关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "下一订单仍属于同一关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "调色草稿和当前订单可恢复",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "最后订单才记本关星数",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "自由调色有八滴容量限制",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "调色撤回一滴",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "倒掉后可重新配色",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "调色回前台暂停且保留草稿",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "调色 侧滑回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "全部原有游戏存档精确恢复，测试新键移除",
+    "pass": true,
+    "detail": {
+      "keys": 12
+    }
+  }
+]

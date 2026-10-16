@@ -1,0 +1,454 @@
+
+> ruge-game-center@4.11.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: flappy-bird: preview reuses live drawings and restores the active run
+ok 1 - flappy-bird: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 10.463708
+  ...
+# Subtest: flappy-bird: real page renders and DOM IDs are unique
+ok 2 - flappy-bird: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 3.3025
+  ...
+# Subtest: flappy-bird: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 3 - flappy-bird: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 3.848458
+  ...
+# Subtest: dino-runner: preview reuses live drawings and restores the active run
+ok 4 - dino-runner: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 4.161708
+  ...
+# Subtest: dino-runner: real page renders and DOM IDs are unique
+ok 5 - dino-runner: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 1.982625
+  ...
+# Subtest: dino-runner: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 6 - dino-runner: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 2.099125
+  ...
+# Subtest: frog-pond: preview reuses live drawings and restores the active run
+ok 7 - frog-pond: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 4.54825
+  ...
+# Subtest: frog-pond: real page renders and DOM IDs are unique
+ok 8 - frog-pond: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 1.951375
+  ...
+# Subtest: frog-pond: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 9 - frog-pond: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 1.72025
+  ...
+# Subtest: flappy-bird: pipe cap collision matches its outer edge, three practice rescues do not write a ranked record
+ok 10 - flappy-bird: pipe cap collision matches its outer edge, three practice rescues do not write a ranked record
+  ---
+  duration_ms: 3.902083
+  ...
+# Subtest: dino-runner: generated obstacles fit jump height and high flyers leave a ground route
+ok 11 - dino-runner: generated obstacles fit jump height and high flyers leave a ground route
+  ---
+  duration_ms: 7.088833
+  ...
+# Subtest: frog-pond: generated obstacles fit jump height and high flyers leave a ground route
+ok 12 - frog-pond: generated obstacles fit jump height and high flyers leave a ground route
+  ---
+  duration_ms: 4.214792
+  ...
+# Subtest: frog-pond: landing on target pads builds a capped combo and missing resets it
+ok 13 - frog-pond: landing on target pads builds a capped combo and missing resets it
+  ---
+  duration_ms: 1.197417
+  ...
+# Subtest: frog-pond: releasing a tap keeps its full arc, double jump works and a third jump is ignored
+ok 14 - frog-pond: releasing a tap keeps its full arc, double jump works and a third jump is ignored
+  ---
+  duration_ms: 1.17225
+  ...
+# Subtest: codebreaker: works as a classic browser script and as a globalThis script
+ok 15 - codebreaker: works as a classic browser script and as a globalThis script
+  ---
+  duration_ms: 1.517875
+  ...
+# Subtest: codebreaker: exact positions, misplaced digits and absent digits are disjoint
+ok 16 - codebreaker: exact positions, misplaced digits and absent digits are disjoint
+  ---
+  duration_ms: 0.544208
+  ...
+# Subtest: codebreaker: all legal two-digit pairs preserve totals and score symmetry
+ok 17 - codebreaker: all legal two-digit pairs preserve totals and score symmetry
+  ---
+  duration_ms: 50.454084
+  ...
+# Subtest: codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+ok 18 - codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+  ---
+  duration_ms: 1.002625
+  ...
+# Subtest: codebreaker: candidates include every legal permutation exactly once
+ok 19 - codebreaker: candidates include every legal permutation exactly once
+  ---
+  duration_ms: 11.426125
+  ...
+# Subtest: codebreaker: all eighteen fixed levels are progressive, legal and solvable
+ok 20 - codebreaker: all eighteen fixed levels are progressive, legal and solvable
+  ---
+  duration_ms: 11.849333
+  ...
+# Subtest: codebreaker: candidate filtering keeps the real answer and matches the complete history
+ok 21 - codebreaker: candidate filtering keeps the real answer and matches the complete history
+  ---
+  duration_ms: 1.555166
+  ...
+# Subtest: codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+ok 22 - codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+  ---
+  duration_ms: 0.229625
+  ...
+# Subtest: codebreaker: random challenge samples all legal candidates without endpoint bias
+ok 23 - codebreaker: random challenge samples all legal candidates without endpoint bias
+  ---
+  duration_ms: 776.525125
+  ...
+# Subtest: codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+ok 24 - codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+  ---
+  duration_ms: 0.546917
+  ...
+# Subtest: codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+ok 25 - codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+  ---
+  duration_ms: 3.103208
+  ...
+# Subtest: codebreaker UI: incomplete and duplicate inputs do not consume attempts
+ok 26 - codebreaker UI: incomplete and duplicate inputs do not consume attempts
+  ---
+  duration_ms: 8.0465
+  ...
+# Subtest: codebreaker UI: backspace stays available and removes one slot without changing submitted history
+ok 27 - codebreaker UI: backspace stays available and removes one slot without changing submitted history
+  ---
+  duration_ms: 4.572208
+  ...
+# Subtest: codebreaker UI: old campaign saves retain player guesses including a former starter guess
+ok 28 - codebreaker UI: old campaign saves retain player guesses including a former starter guess
+  ---
+  duration_ms: 1.244875
+  ...
+# Subtest: codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars
+ok 29 - codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars
+  ---
+  duration_ms: 6.509917
+  ...
+# Subtest: codebreaker UI: restart keeps the current free password and challenge settings
+ok 30 - codebreaker UI: restart keeps the current free password and challenge settings
+  ---
+  duration_ms: 2.30625
+  ...
+# Subtest: codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+ok 31 - codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+  ---
+  duration_ms: 11.891084
+  ...
+# Subtest: codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+ok 32 - codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+  ---
+  duration_ms: 12.253084
+  ...
+# Subtest: codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks
+ok 33 - codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks
+  ---
+  duration_ms: 18.018291
+  ...
+# Subtest: codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+ok 34 - codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+  ---
+  duration_ms: 11.347792
+  ...
+# Subtest: codebreaker UI: one and two stars follow actual attempts beyond the published target
+ok 35 - codebreaker UI: one and two stars follow actual attempts beyond the published target
+  ---
+  duration_ms: 14.8095
+  ...
+# Subtest: codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+ok 36 - codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+  ---
+  duration_ms: 29.158958
+  ...
+# Subtest: codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+ok 37 - codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+  ---
+  duration_ms: 37.910459
+  ...
+# Subtest: codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+ok 38 - codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+  ---
+  duration_ms: 4.533
+  ...
+# Subtest: codebreaker UI: saved active guesses and draft restore through the actual continue button
+ok 39 - codebreaker UI: saved active guesses and draft restore through the actual continue button
+  ---
+  duration_ms: 2.511583
+  ...
+# Subtest: codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+ok 40 - codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+  ---
+  duration_ms: 6.367709
+  ...
+# Subtest: codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+ok 41 - codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+  ---
+  duration_ms: 6.034875
+  ...
+# Subtest: 六十关真实离线字形完整，目标只用原字整笔且原字本身也是答案
+ok 42 - 六十关真实离线字形完整，目标只用原字整笔且原字本身也是答案
+  ---
+  duration_ms: 10.10975
+  ...
+# Subtest: 每关所有横画单横/两横/三横替代组合均识别，不漏一二三
+ok 43 - 每关所有横画单横/两横/三横替代组合均识别，不漏一二三
+  ---
+  duration_ms: 0.213
+  ...
+# Subtest: 意的九个明确答案与部件整笔组合可收，心点不可冒充旦底横
+ok 44 - 意的九个明确答案与部件整笔组合可收，心点不可冒充旦底横
+  ---
+  duration_ms: 0.345292
+  ...
+# Subtest: 木和米的同一撇捺只认人，不把八也当成另一答案
+ok 45 - 木和米的同一撇捺只认人，不把八也当成另一答案
+  ---
+  duration_ms: 0.061958
+  ...
+# Subtest: 选择可反选；空选、坏索引、重复笔、错误组合不消耗答案
+ok 46 - 选择可反选；空选、坏索引、重复笔、错误组合不消耗答案
+  ---
+  duration_ms: 0.287958
+  ...
+# Subtest: 同答案不同笔画只收一次，提交成功或重复后清选择，整局每字只计一次
+ok 47 - 同答案不同笔画只收一次，提交成功或重复后清选择，整局每字只计一次
+  ---
+  duration_ms: 0.159167
+  ...
+# Subtest: 六十关可以真实逐关全部通关，完成才解锁，最后一关不越界
+ok 48 - 六十关可以真实逐关全部通关，完成才解锁，最后一关不越界
+  ---
+  duration_ms: 2.279667
+  ...
+# Subtest: 重来只清当前关，保留其他收集和已解锁关，提示只显示组合不代提交
+ok 49 - 重来只清当前关，保留其他收集和已解锁关，提示只显示组合不代提交
+  ---
+  duration_ms: 1.080375
+  ...
+# Subtest: 新键保存/恢复收集、草稿与关卡，旧汉字存档和别的游戏不动
+ok 50 - 新键保存/恢复收集、草稿与关卡，旧汉字存档和别的游戏不动
+  ---
+  duration_ms: 1.615916
+  ...
+# Subtest: 非法/破损存档安全回空白，答案和草稿严格筛选
+ok 51 - 非法/破损存档安全回空白，答案和草稿严格筛选
+  ---
+  duration_ms: 0.786042
+  ...
+# Subtest: 封面模式忽略存档且所有操作禁止写入
+ok 52 - 封面模式忽略存档且所有操作禁止写入
+  ---
+  duration_ms: 0.76275
+  ...
+# Subtest: 触摸容错按最近中线命中，交叉处不会一概选顶层笔画
+ok 53 - 触摸容错按最近中线命中，交叉处不会一概选顶层笔画
+  ---
+  duration_ms: 34.427
+  ...
+# Subtest: 旧版已收集答案和已解锁关卡保留，新增原字须玩家完整选笔提交
+ok 54 - 旧版已收集答案和已解锁关卡保留，新增原字须玩家完整选笔提交
+  ---
+  duration_ms: 0.282375
+  ...
+# Subtest: 多字关有真实跨字答案，单字来自各自字板且无重复计分
+ok 55 - 多字关有真实跨字答案，单字来自各自字板且无重复计分
+  ---
+  duration_ms: 0.306
+  ...
+# Subtest: 已完成旧十关的存档自动解锁第十一关，原收集与其他存档不变
+ok 56 - 已完成旧十关的存档自动解锁第十一关，原收集与其他存档不变
+  ---
+  duration_ms: 0.111959
+  ...
+# Subtest: 多字题可跨字板选整横组成二和三，重复答案不拆成多个目标
+ok 57 - 多字题可跨字板选整横组成二和三，重复答案不拆成多个目标
+  ---
+  duration_ms: 0.141333
+  ...
+# Subtest: 颜料黄蓝得绿、红黄得橙、红蓝得紫，区别于 RGB 均值
+ok 58 - 颜料黄蓝得绿、红黄得橙、红蓝得紫，区别于 RGB 均值
+  ---
+  duration_ms: 0.543417
+  ...
+# Subtest: 顺序无关，等比例放大不改变颜料颜色，白颜料变浅
+ok 59 - 顺序无关，等比例放大不改变颜料颜色，白颜料变浅
+  ---
+  duration_ms: 0.344416
+  ...
+# Subtest: 不同配比可辨识而不是所有绿/橙相同
+ok 60 - 不同配比可辨识而不是所有绿/橙相同
+  ---
+  duration_ms: 0.0785
+  ...
+# Subtest: 十关所有订单真实配方均可达，完成最后一个才结束
+ok 61 - 十关所有订单真实配方均可达，完成最后一个才结束
+  ---
+  duration_ms: 0.344459
+  ...
+# Subtest: 不匹配不接受，错误只影响星数，可逐滴撤销和清空
+ok 62 - 不匹配不接受，错误只影响星数，可逐滴撤销和清空
+  ---
+  duration_ms: 0.135333
+  ...
+# Subtest: 容量限制、自由画室、重开本关
+ok 63 - 容量限制、自由画室、重开本关
+  ---
+  duration_ms: 0.631875
+  ...
+# Subtest: 存档恢复真实草稿/多订单/星数，忽略损坏数据和伪造通关
+ok 64 - 存档恢复真实草稿/多订单/星数，忽略损坏数据和伪造通关
+  ---
+  duration_ms: 0.297584
+  ...
+# Subtest: 完成订单恢复时重新计算颜色，不信任存档 RGB
+ok 65 - 完成订单恢复时重新计算颜色，不信任存档 RGB
+  ---
+  duration_ms: 0.08625
+  ...
+# Subtest: 真实页面加入/撤回/重置确认/暂停继续/上色与下一关
+ok 66 - 真实页面加入/撤回/重置确认/暂停继续/上色与下一关
+  ---
+  duration_ms: 5.750334
+  ...
+# Subtest: 封面模式不读取或写入存档，页面真实绘制绿青蛙
+ok 67 - 封面模式不读取或写入存档，页面真实绘制绿青蛙
+  ---
+  duration_ms: 1.188667
+  ...
+# Subtest: pipe: ten deterministic boards start unsolved and are solved through legal rotations
+ok 68 - pipe: ten deterministic boards start unsolved and are solved through legal rotations
+  ---
+  duration_ms: 18.397709
+  ...
+# Subtest: pipe: undo restores rotation and move count, locked/won boundaries reject writes
+ok 69 - pipe: undo restores rotation and move count, locked/won boundaries reject writes
+  ---
+  duration_ms: 5.557375
+  ...
+# Subtest: pipe: three hints consume no rotations, cannot record an unassisted best and reset on retry
+ok 70 - pipe: three hints consume no rotations, cannot record an unassisted best and reset on retry
+  ---
+  duration_ms: 30.707458
+  ...
+# Subtest: pipe: completing the tenth board starts a second campaign whose Next still advances
+ok 71 - pipe: completing the tenth board starts a second campaign whose Next still advances
+  ---
+  duration_ms: 339.031375
+  ...
+# Subtest: gravity: ten authored boards have reachable fruit, powerups and exits at the real ball radius
+ok 72 - gravity: ten authored boards have reachable fruit, powerups and exits at the real ball radius
+  ---
+  duration_ms: 144.880334
+  ...
+# Subtest: gravity: a shield escapes one hole safely and invulnerability delays a second fall
+ok 73 - gravity: a shield escapes one hole safely and invulnerability delays a second fall
+  ---
+  duration_ms: 1.4525
+  ...
+# Subtest: gravity: respawn preserves collected fruit and lives; the exit requires every fruit
+ok 74 - gravity: respawn preserves collected fruit and lives; the exit requires every fruit
+  ---
+  duration_ms: 1.110416
+  ...
+# Subtest: gravity: tilt calibration, dead zone, screen coordinates and stale input use the native bridge
+ok 75 - gravity: tilt calibration, dead zone, screen coordinates and stale input use the native bridge
+  ---
+  duration_ms: 2.226458
+  ...
+# Subtest: gravity: stale sensors cannot start/resume, and touch remains available
+ok 76 - gravity: stale sensors cannot start/resume, and touch remains available
+  ---
+  duration_ms: 11.681042
+  ...
+# Subtest: gravity: background/orientation preserve a paused run and touch cancellation clears input
+ok 77 - gravity: background/orientation preserve a paused run and touch cancellation clears input
+  ---
+  duration_ms: 1.9395
+  ...
+# Subtest: gravity: the tenth-board Next wraps once and advances normally in the second campaign
+ok 78 - gravity: the tenth-board Next wraps once and advances normally in the second campaign
+  ---
+  duration_ms: 7.155416
+  ...
+# Subtest: pipe: manual and background pauses preserve the route until explicit Continue
+ok 79 - pipe: manual and background pauses preserve the route until explicit Continue
+  ---
+  duration_ms: 7.406
+  ...
+# Subtest: gravity: the paused panel can switch an unavailable tilt sensor to touch and continue
+ok 80 - gravity: the paused panel can switch an unavailable tilt sensor to touch and continue
+  ---
+  duration_ms: 1.590958
+  ...
+# Subtest: typing: sixty unique practice characters have pinyin and complete offline stroke data
+ok 81 - typing: sixty unique practice characters have pinyin and complete offline stroke data
+  ---
+  duration_ms: 9.042417
+  ...
+# Subtest: typing: existing hzTypingSave2 progress is loaded without resetting it
+ok 82 - typing: existing hzTypingSave2 progress is loaded without resetting it
+  ---
+  duration_ms: 3.742583
+  ...
+# Subtest: typing: one question can score only once while its stroke animation is playing
+ok 83 - typing: one question can score only once while its stroke animation is playing
+  ---
+  duration_ms: 10.543333
+  ...
+# Subtest: typing: leaving or restarting during animation cancels the previous question advance
+ok 84 - typing: leaving or restarting during animation cancels the previous question advance
+  ---
+  duration_ms: 6.000375
+  ...
+# Subtest: typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+ok 85 - typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+  ---
+  duration_ms: 3.96975
+  ...
+# Subtest: typing: animation resumes its remaining hold and visibility needs explicit Continue
+ok 86 - typing: animation resumes its remaining hold and visibility needs explicit Continue
+  ---
+  duration_ms: 3.212708
+  ...
+# Subtest: typing: full sixty-question sequence includes every character and saves its result once
+ok 87 - typing: full sixty-question sequence includes every character and saves its result once
+  ---
+  duration_ms: 64.028083
+  ...
+# Subtest: typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置
+ok 88 - typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置
+  ---
+  duration_ms: 2.29075
+  ...
+1..88
+# tests 88
+# suites 0
+# pass 88
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 898.015166

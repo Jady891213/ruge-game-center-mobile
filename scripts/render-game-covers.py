@@ -7,8 +7,8 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-GAMES = ('code-breaker', 'pipe-flow', 'gravity-maze', 'hanzi-puzzle',
-         'hanzi-typing', 'flappy-bird', 'dino-runner', 'frog-pond')
+GAMES = ('bear-snack-shop', 'forest-juice', 'code-breaker', 'pipe-flow', 'gravity-maze', 'hanzi-puzzle',
+         'hanzi-typing', 'paint-mixing', 'flappy-bird', 'dino-runner', 'frog-pond')
 sys.dont_write_bytecode = True
 spec = importlib.util.spec_from_file_location('cover_browser', ROOT/'scripts/render-action-covers.py')
 browser = importlib.util.module_from_spec(spec)

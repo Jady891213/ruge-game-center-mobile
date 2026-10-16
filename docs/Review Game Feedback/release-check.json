@@ -1,0 +1,19 @@
+{
+  "package": "com.dsh.gamecenter",
+  "versionName": "4.15",
+  "versionCode": 38,
+  "development": false,
+  "apkSha256": "567fc147e13e80debbdc831504a7a9cf5d498d7e5c66aaa7599e4f9854e42c45",
+  "installedApkMatches": true,
+  "install": "Performing Streamed Install\nSuccess",
+  "saveKeysRestoredExactlyBeforeInstall": 16,
+  "homeCardsInDev": 10,
+  "releaseDebuggable": false,
+  "releaseCdpSocketPresent": false,
+  "appProcessRunning": true,
+  "crashFound": false,
+  "permissions": [
+    "android.permission.VIBRATE"
+  ],
+  "adbForwardsAfter": ""
+}

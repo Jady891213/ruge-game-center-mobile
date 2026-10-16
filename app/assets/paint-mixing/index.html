@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#fff6e8"><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"><title>小小调色师</title></head><body>
+<main id="app">
+<header><button id="home" class="icon" aria-label="返回游戏中心"></button><h1>小小调色师</h1><button id="map" class="icon" aria-label="关卡"></button></header>
+<section id="menu"><div class="mascot" aria-hidden="true"></div><div id="levels"></div><button id="free" class="wide secondary">自由画室</button></section>
+<section id="play" hidden>
+<div class="levelbar"><strong id="levelName"></strong><span id="orders" aria-label="订单进度"></span><button id="restart" class="small" aria-label="重新开始本关"></button></div>
+<div id="stage"><div class="target"><span>照着调</span><div id="targetSwatch"></div><b id="targetName"></b></div><div id="art"></div><div id="artStars"></div><div id="message" role="status" aria-live="polite"></div></div>
+<div class="mixarea"><button id="undo" class="icon" aria-label="撤回一滴"></button><div class="bowl"><div id="paintFill"></div><div id="dropList" aria-label="已加入颜料"></div></div><button id="empty" class="icon" aria-label="倒掉颜料"></button></div>
+<div id="palette" aria-label="颜料"></div>
+<button id="paint" class="wide primary">上色</button>
+<button id="next" class="wide primary" hidden>下一个</button>
+</section>
+</main><div id="pause" class="overlay" hidden><div class="dialog"><div class="pauseArt" aria-hidden="true">Ⅱ</div><h2>歇一歇</h2><button id="resume" class="wide primary">继续</button><button id="pauseHome" class="wide secondary">回首页</button></div></div>
+<div id="confirm" class="overlay" hidden><div class="dialog"><h2>重新开始？</h2><button id="confirmRestart" class="wide primary">重新开始</button><button id="cancelRestart" class="wide secondary">继续玩</button></div></div>
+<script src="../shared/feedback.js"></script><script src="core.js"></script><script src="game.js"></script></body></html>

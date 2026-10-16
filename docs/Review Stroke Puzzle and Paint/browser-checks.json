@@ -1,0 +1,30 @@
+{
+  "viewports": [
+    {
+      "width": 392,
+      "height": 872
+    },
+    {
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "hanzi": {
+    "levels": 10,
+    "acceptedAnswersByActualStrokeAndSubmitClicks": 50,
+    "horizontalOverflow": false
+  },
+  "paint": {
+    "levels": 10,
+    "acceptedOrdersByActualPaletteAndPaintClicks": 14,
+    "allLevelsCompleted": true,
+    "horizontalOverflow": false
+  },
+  "pageErrors": [],
+  "method": "Playwright 对真实页面执行笔画坐标点击、颜料按钮、提交及下一关；不以测试副本替代规则。",
+  "menu": {
+    "loadedCoverImages": 9,
+    "allCoverImagesLoaded": true,
+    "horizontalOverflow": false
+  }
+}

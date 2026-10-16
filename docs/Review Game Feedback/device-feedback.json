@@ -1,0 +1,548 @@
+{
+  "version": "4.15/38-dev",
+  "device": "MIX 4 Android 14",
+  "storageKeys": 16,
+  "storageRestoredExactly": true,
+  "results": [
+    {
+      "game": "hanzi-puzzle",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 0,
+        "last": "",
+        "hapticMode": "none",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 9,
+        "sounds": 9,
+        "haptics": 9,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "success",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "success",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "win",
+          "accepted": true
+        }
+      ],
+      "extra": {
+        "found": [
+          "一",
+          "二",
+          "三"
+        ]
+      }
+    },
+    {
+      "game": "code-breaker",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 9,
+        "sounds": 9,
+        "haptics": 9,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 12,
+        "sounds": 12,
+        "haptics": 12,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "win",
+          "accepted": true
+        }
+      ],
+      "extra": null
+    },
+    {
+      "game": "paint-mixing",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 12,
+        "sounds": 12,
+        "haptics": 12,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 16,
+        "sounds": 16,
+        "haptics": 16,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "drop",
+          "accepted": true
+        },
+        {
+          "name": "error",
+          "accepted": true
+        },
+        {
+          "name": "drop",
+          "accepted": true
+        },
+        {
+          "name": "win",
+          "accepted": true
+        }
+      ],
+      "extra": null
+    },
+    {
+      "game": "forest-juice",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 16,
+        "sounds": 16,
+        "haptics": 16,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 24,
+        "sounds": 24,
+        "haptics": 24,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "pour",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "pour",
+          "accepted": true
+        },
+        {
+          "name": "success",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "pour",
+          "accepted": true
+        },
+        {
+          "name": "win",
+          "accepted": true
+        }
+      ],
+      "extra": {
+        "moves": 3
+      }
+    },
+    {
+      "game": "pipe-flow",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 24,
+        "sounds": 24,
+        "haptics": 24,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 28,
+        "sounds": 28,
+        "haptics": 28,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "select",
+          "accepted": true
+        },
+        {
+          "name": "win",
+          "accepted": true
+        }
+      ],
+      "extra": null
+    },
+    {
+      "game": "hanzi-typing",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 28,
+        "sounds": 28,
+        "haptics": 28,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 29,
+        "sounds": 29,
+        "haptics": 29,
+        "last": "success",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "success",
+          "accepted": true
+        }
+      ],
+      "extra": {
+        "input": "CDP Input.insertText"
+      }
+    },
+    {
+      "game": "gravity-maze",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 29,
+        "sounds": 29,
+        "haptics": 29,
+        "last": "success",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 35,
+        "sounds": 35,
+        "haptics": 35,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "tap",
+          "accepted": true
+        },
+        {
+          "name": "collect",
+          "accepted": true
+        },
+        {
+          "name": "collect",
+          "accepted": true
+        },
+        {
+          "name": "collect",
+          "accepted": true
+        },
+        {
+          "name": "collect",
+          "accepted": true
+        },
+        {
+          "name": "win",
+          "accepted": true
+        }
+      ],
+      "extra": {
+        "method": "real start touch, diagnostic ball placement, actual game frames"
+      }
+    },
+    {
+      "game": "flappy-bird",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 35,
+        "sounds": 35,
+        "haptics": 35,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 37,
+        "sounds": 37,
+        "haptics": 37,
+        "last": "error",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "jump",
+          "accepted": true
+        },
+        {
+          "name": "error",
+          "accepted": true
+        }
+      ],
+      "extra": null
+    },
+    {
+      "game": "dino-runner",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 37,
+        "sounds": 37,
+        "haptics": 37,
+        "last": "error",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 40,
+        "sounds": 40,
+        "haptics": 40,
+        "last": "error",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "jump",
+          "accepted": true
+        },
+        {
+          "name": "land",
+          "accepted": true
+        },
+        {
+          "name": "error",
+          "accepted": true
+        }
+      ],
+      "extra": null
+    },
+    {
+      "game": "frog-pond",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 40,
+        "sounds": 40,
+        "haptics": 40,
+        "last": "error",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 43,
+        "sounds": 43,
+        "haptics": 43,
+        "last": "error",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "events": [
+        {
+          "name": "jump",
+          "accepted": true
+        },
+        {
+          "name": "collect",
+          "accepted": true
+        },
+        {
+          "name": "error",
+          "accepted": true
+        }
+      ],
+      "extra": null
+    },
+    {
+      "check": "independent settings",
+      "soundOff": {
+        "active": true,
+        "sound": false,
+        "vibration": true,
+        "vibrator": true,
+        "events": 44,
+        "sounds": 43,
+        "haptics": 44,
+        "last": "success",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "vibrationOff": {
+        "active": true,
+        "sound": true,
+        "vibration": false,
+        "vibrator": true,
+        "events": 46,
+        "sounds": 45,
+        "haptics": 45,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      }
+    },
+    {
+      "check": "background silent and explicit resume",
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 47,
+        "sounds": 46,
+        "haptics": 46,
+        "last": "select",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "background": {
+        "active": false,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 47,
+        "sounds": 46,
+        "haptics": 46,
+        "last": "select",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "resumedPaused": true
+    }
+  ],
+  "failures": []
+}

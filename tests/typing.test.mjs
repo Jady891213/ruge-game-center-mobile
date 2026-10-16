@@ -138,3 +138,18 @@ test('typing: full sixty-question sequence includes every character and saves it
   assert.ok(h.saved.get('hzTypingSave2'));
   assert.ok(JSON.parse(h.saved.get('rugeStat'))['hanzi-typing'].best > 0);
 });
+
+test('typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置', t => {
+  const {h,game}=typing(t);let mode='portrait';const requested=[];
+  h.window.RugeScreen={get:()=>mode,set:value=>{requested.push(value);mode=value;}};
+  h.emitWindow('ruge:orientation');assert.equal(h.node('#mRotate').disabled,false);
+  assert.equal(h.node('#tRotate').getAttribute('aria-label'),'切换横屏');
+  game.start(0);h.input('z');const before=game.state();
+  h.node('#tRotate').dispatch('click');assert.deepEqual(requested,['landscape']);
+  h.emitWindow('ruge:orientation');assert.equal(h.node('#mRotate').getAttribute('aria-label'),'切换竖屏');
+  assert.deepEqual(game.state(),before);assert.equal(h.node('#type').value,'z');
+  mode='portrait';h.window.innerWidth=390;h.window.innerHeight=260;h.emitWindow('resize');
+  assert.equal(h.node('#tRotate').getAttribute('aria-label'),'切换横屏');
+  h.node('#mRotate').dispatch('click');assert.equal(requested.at(-1),'landscape');
+  h.emitWindow('ruge:orientation');h.node('#tRotate').dispatch('click');assert.equal(requested.at(-1),'portrait');
+});

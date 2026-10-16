@@ -1,0 +1,10 @@
+{
+  "version": [
+    "versionCode=30 minSdk=21 targetSdk=34",
+    "versionName=4.7"
+  ],
+  "sha256": "4da73d4ea6e41d96f39260770f1aa537780dfb9c779463712c2a2f09a38695ce",
+  "installedEqualsLocal": true,
+  "debugSocket": false,
+  "foreground": "mCurrentFocus=Window{d24b74 u0 com.dsh.gamecenter/com.dsh.gamecenter.MainActivity}"
+}

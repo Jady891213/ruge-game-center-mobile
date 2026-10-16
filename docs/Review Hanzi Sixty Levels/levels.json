@@ -1,0 +1,826 @@
+[
+  {
+    "level": 1,
+    "source": "三",
+    "answers": [
+      "一",
+      "二",
+      "三"
+    ],
+    "answerCount": 3,
+    "parts": 1
+  },
+  {
+    "level": 2,
+    "source": "王",
+    "answers": [
+      "一",
+      "二",
+      "三",
+      "十",
+      "工",
+      "土",
+      "干",
+      "王"
+    ],
+    "answerCount": 8,
+    "parts": 1
+  },
+  {
+    "level": 3,
+    "source": "木",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 4,
+    "source": "田",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "田"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 5,
+    "source": "白",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "白"
+    ],
+    "answerCount": 5,
+    "parts": 1
+  },
+  {
+    "level": 6,
+    "source": "本",
+    "answers": [
+      "一",
+      "二",
+      "十",
+      "人",
+      "木",
+      "本"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 7,
+    "source": "目",
+    "answers": [
+      "一",
+      "二",
+      "三",
+      "口",
+      "日",
+      "目"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 8,
+    "source": "米",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木",
+      "米"
+    ],
+    "answerCount": 5,
+    "parts": 1
+  },
+  {
+    "level": 9,
+    "source": "早",
+    "answers": [
+      "一",
+      "二",
+      "三",
+      "十",
+      "口",
+      "日",
+      "干",
+      "早"
+    ],
+    "answerCount": 8,
+    "parts": 1
+  },
+  {
+    "level": 10,
+    "source": "意",
+    "answers": [
+      "一",
+      "二",
+      "三",
+      "口",
+      "日",
+      "立",
+      "心",
+      "音",
+      "意"
+    ],
+    "answerCount": 9,
+    "parts": 1
+  },
+  {
+    "level": 11,
+    "source": "日",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 12,
+    "source": "月",
+    "answers": [
+      "一",
+      "二",
+      "月"
+    ],
+    "answerCount": 3,
+    "parts": 1
+  },
+  {
+    "level": 13,
+    "source": "口",
+    "answers": [
+      "一",
+      "口"
+    ],
+    "answerCount": 2,
+    "parts": 1
+  },
+  {
+    "level": 14,
+    "source": "大",
+    "answers": [
+      "一",
+      "人",
+      "大"
+    ],
+    "answerCount": 3,
+    "parts": 1
+  },
+  {
+    "level": 15,
+    "source": "天",
+    "answers": [
+      "一",
+      "二",
+      "人",
+      "大",
+      "天"
+    ],
+    "answerCount": 5,
+    "parts": 1
+  },
+  {
+    "level": 16,
+    "source": "夫",
+    "answers": [
+      "一",
+      "二",
+      "人",
+      "大",
+      "夫"
+    ],
+    "answerCount": 5,
+    "parts": 1
+  },
+  {
+    "level": 17,
+    "source": "太",
+    "answers": [
+      "一",
+      "人",
+      "大",
+      "太"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 18,
+    "source": "云",
+    "answers": [
+      "一",
+      "二",
+      "云"
+    ],
+    "answerCount": 3,
+    "parts": 1
+  },
+  {
+    "level": 19,
+    "source": "去",
+    "answers": [
+      "一",
+      "二",
+      "十",
+      "土",
+      "去"
+    ],
+    "answerCount": 5,
+    "parts": 1
+  },
+  {
+    "level": 20,
+    "source": "土",
+    "answers": [
+      "一",
+      "二",
+      "十",
+      "土"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 21,
+    "source": "士",
+    "answers": [
+      "一",
+      "二",
+      "十",
+      "士"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 22,
+    "source": "工",
+    "answers": [
+      "一",
+      "二",
+      "工"
+    ],
+    "answerCount": 3,
+    "parts": 1
+  },
+  {
+    "level": 23,
+    "source": "干",
+    "answers": [
+      "一",
+      "二",
+      "十",
+      "干"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 24,
+    "source": "千",
+    "answers": [
+      "一",
+      "十",
+      "千"
+    ],
+    "answerCount": 3,
+    "parts": 1
+  },
+  {
+    "level": 25,
+    "source": "中",
+    "answers": [
+      "一",
+      "口",
+      "十",
+      "中"
+    ],
+    "answerCount": 4,
+    "parts": 1
+  },
+  {
+    "level": 26,
+    "source": "申",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "申"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 27,
+    "source": "甲",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "甲"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 28,
+    "source": "由",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "由"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 29,
+    "source": "旦",
+    "answers": [
+      "一",
+      "二",
+      "三",
+      "口",
+      "日",
+      "旦"
+    ],
+    "answerCount": 6,
+    "parts": 1
+  },
+  {
+    "level": 30,
+    "source": "里",
+    "answers": [
+      "一",
+      "二",
+      "三",
+      "口",
+      "日",
+      "十",
+      "土",
+      "里"
+    ],
+    "answerCount": 8,
+    "parts": 1
+  },
+  {
+    "level": 31,
+    "source": "日月",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "月",
+      "明",
+      "三"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 32,
+    "source": "木木",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木",
+      "林",
+      "从",
+      "二"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 33,
+    "source": "人人",
+    "answers": [
+      "人",
+      "从"
+    ],
+    "answerCount": 2,
+    "parts": 2
+  },
+  {
+    "level": 34,
+    "source": "口口",
+    "answers": [
+      "一",
+      "口",
+      "吕",
+      "二"
+    ],
+    "answerCount": 4,
+    "parts": 2
+  },
+  {
+    "level": 35,
+    "source": "日日",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "昌",
+      "三"
+    ],
+    "answerCount": 6,
+    "parts": 2
+  },
+  {
+    "level": 36,
+    "source": "月月",
+    "answers": [
+      "一",
+      "二",
+      "月",
+      "朋",
+      "三"
+    ],
+    "answerCount": 5,
+    "parts": 2
+  },
+  {
+    "level": 37,
+    "source": "木木木",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木",
+      "林",
+      "森",
+      "从",
+      "众",
+      "二",
+      "三"
+    ],
+    "answerCount": 10,
+    "parts": 3
+  },
+  {
+    "level": 38,
+    "source": "口口口",
+    "answers": [
+      "一",
+      "口",
+      "吕",
+      "品",
+      "二",
+      "三"
+    ],
+    "answerCount": 6,
+    "parts": 3
+  },
+  {
+    "level": 39,
+    "source": "日日日",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "昌",
+      "晶",
+      "三"
+    ],
+    "answerCount": 7,
+    "parts": 3
+  },
+  {
+    "level": 40,
+    "source": "人人人",
+    "answers": [
+      "人",
+      "从",
+      "众"
+    ],
+    "answerCount": 3,
+    "parts": 3
+  },
+  {
+    "level": 41,
+    "source": "白水",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "白",
+      "水",
+      "泉"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 42,
+    "source": "日生",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "三",
+      "十",
+      "土",
+      "牛",
+      "生",
+      "星"
+    ],
+    "answerCount": 10,
+    "parts": 2
+  },
+  {
+    "level": 43,
+    "source": "女马",
+    "answers": [
+      "一",
+      "女",
+      "马",
+      "妈",
+      "二"
+    ],
+    "answerCount": 5,
+    "parts": 2
+  },
+  {
+    "level": 44,
+    "source": "女子",
+    "answers": [
+      "一",
+      "女",
+      "了",
+      "子",
+      "好",
+      "二"
+    ],
+    "answerCount": 6,
+    "parts": 2
+  },
+  {
+    "level": 45,
+    "source": "女也",
+    "answers": [
+      "一",
+      "女",
+      "也",
+      "她"
+    ],
+    "answerCount": 4,
+    "parts": 2
+  },
+  {
+    "level": 46,
+    "source": "口马",
+    "answers": [
+      "一",
+      "口",
+      "马",
+      "吗",
+      "二"
+    ],
+    "answerCount": 5,
+    "parts": 2
+  },
+  {
+    "level": 47,
+    "source": "门口",
+    "answers": [
+      "门",
+      "一",
+      "口",
+      "问"
+    ],
+    "answerCount": 4,
+    "parts": 2
+  },
+  {
+    "level": 48,
+    "source": "门日",
+    "answers": [
+      "门",
+      "一",
+      "二",
+      "口",
+      "日",
+      "间",
+      "问"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 49,
+    "source": "门木",
+    "answers": [
+      "门",
+      "一",
+      "十",
+      "人",
+      "木",
+      "闲"
+    ],
+    "answerCount": 6,
+    "parts": 2
+  },
+  {
+    "level": 50,
+    "source": "木子",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木",
+      "了",
+      "子",
+      "李",
+      "二"
+    ],
+    "answerCount": 8,
+    "parts": 2
+  },
+  {
+    "level": 51,
+    "source": "木口",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木",
+      "口",
+      "杏",
+      "二"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 52,
+    "source": "田心",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "田",
+      "心",
+      "思"
+    ],
+    "answerCount": 8,
+    "parts": 2
+  },
+  {
+    "level": 53,
+    "source": "日十",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "早",
+      "三"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 54,
+    "source": "立日",
+    "answers": [
+      "一",
+      "二",
+      "立",
+      "口",
+      "日",
+      "音",
+      "三"
+    ],
+    "answerCount": 7,
+    "parts": 2
+  },
+  {
+    "level": 55,
+    "source": "木目",
+    "answers": [
+      "一",
+      "十",
+      "人",
+      "木",
+      "二",
+      "三",
+      "口",
+      "日",
+      "目",
+      "相"
+    ],
+    "answerCount": 10,
+    "parts": 2
+  },
+  {
+    "level": 56,
+    "source": "田力",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "十",
+      "田",
+      "力",
+      "男"
+    ],
+    "answerCount": 8,
+    "parts": 2
+  },
+  {
+    "level": 57,
+    "source": "口天",
+    "answers": [
+      "一",
+      "口",
+      "二",
+      "人",
+      "大",
+      "天",
+      "吴",
+      "三"
+    ],
+    "answerCount": 8,
+    "parts": 2
+  },
+  {
+    "level": 58,
+    "source": "小大",
+    "answers": [
+      "小",
+      "一",
+      "人",
+      "大",
+      "尖"
+    ],
+    "answerCount": 5,
+    "parts": 2
+  },
+  {
+    "level": 59,
+    "source": "小土",
+    "answers": [
+      "小",
+      "一",
+      "二",
+      "十",
+      "土",
+      "尘"
+    ],
+    "answerCount": 6,
+    "parts": 2
+  },
+  {
+    "level": 60,
+    "source": "日青",
+    "answers": [
+      "一",
+      "二",
+      "口",
+      "日",
+      "三",
+      "十",
+      "土",
+      "月",
+      "青",
+      "晴",
+      "明"
+    ],
+    "answerCount": 11,
+    "parts": 2
+  }
+]

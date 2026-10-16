@@ -1,0 +1,73 @@
+### Browser `rugefeedback` opened with pid 4306.
+### Ran Playwright code
+```js
+await page.goto('http://127.0.0.1:61896/index.html');
+```
+### Page
+- Page URL: http://127.0.0.1:61896/index.html
+- Page Title: 乳鸽游戏中心
+### Snapshot
+- [Snapshot](.playwright-cli/page-2026-10-16T17-54-02-001Z.yml)
+
+### Page
+- Page URL: http://127.0.0.1:61896/index.html
+- Page Title: 乳鸽游戏中心
+### Snapshot
+```yaml
+- main [ref=e2]:
+  - heading "乳鸽游戏中心" [level=1] [ref=e4]
+  - generic [ref=e12]:
+    - button "音效开启" [pressed] [ref=e13] [cursor=pointer]:
+      - generic [ref=e16]: 音效 开
+    - button "震动开启" [pressed] [ref=e17] [cursor=pointer]:
+      - generic [ref=e21]: 震动 开
+  - navigation "游戏分类" [ref=e22]:
+    - button "全部" [pressed] [ref=e23] [cursor=pointer]
+    - button "认字" [ref=e24] [cursor=pointer]
+    - button "益智" [ref=e25] [cursor=pointer]
+    - button "挑战" [ref=e26] [cursor=pointer]
+  - generic [ref=e27]:
+    - link [ref=e28] [cursor=pointer]:
+      - /url: forest-juice/index.html
+      - heading "森林果汁屋" [level=2] [ref=e30]
+    - link [ref=e33] [cursor=pointer]:
+      - /url: code-breaker/index.html
+      - heading "小小密码箱" [level=2] [ref=e35]
+    - link [ref=e38] [cursor=pointer]:
+      - /url: pipe-flow/index.html
+      - heading "接水管" [level=2] [ref=e40]
+    - link [ref=e43] [cursor=pointer]:
+      - /url: gravity-maze/index.html
+      - heading "重力钢珠" [level=2] [ref=e45]
+    - link [ref=e48] [cursor=pointer]:
+      - /url: hanzi-puzzle/index.html
+      - heading "字里找字" [level=2] [ref=e50]
+    - link [ref=e53] [cursor=pointer]:
+      - /url: paint-mixing/index.html
+      - heading "小小调色师" [level=2] [ref=e55]
+    - link [ref=e58] [cursor=pointer]:
+      - /url: hanzi-typing/index.html
+      - heading "看字打拼音" [level=2] [ref=e60]
+    - link [ref=e63] [cursor=pointer]:
+      - /url: flappy-bird/index.html
+      - heading "扑翼小鸟" [level=2] [ref=e65]
+    - link [ref=e68] [cursor=pointer]:
+      - /url: dino-runner/index.html
+      - heading "小恐龙冲刺" [level=2] [ref=e70]
+    - link [ref=e73] [cursor=pointer]:
+      - /url: frog-pond/index.html
+      - heading "小青蛙跳池塘" [level=2] [ref=e75]
+  - button "屏幕常亮开启" [pressed] [ref=e79] [cursor=pointer]:
+    - generic [ref=e83]: 常亮 开
+```
+
+### Ran Playwright code
+```js
+await (async (page) => { const rows=[]; for(const [width,height] of [[320,568],[392,872]]) { await page.setViewportSize({width,height}); await page.waitForTimeout(150); const row=await page.evaluate(()=>({w:innerWidth,h:innerHeight,scrollWidth:document.documentElement.scrollWidth,controls:[...document.querySelectorAll('#soundToggle,#vibrationToggle')].map(e=>{const r=e.getBoundingClientRect();return {text:e.innerText,x:r.x,y:r.y,w:r.width,h:r.height}})})); if(row.scrollWidth>width||row.controls.some(r=>r.x<0||r.x+r.w>width||r.h<44)) throw Error(JSON.stringify(row)); rows.push(row); await page.screenshot({path:"/Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-\u6e38\u620f\u4e2d\u5fc3/Game-Center/docs/Review Game Feedback"+'/home-'+width+'.png'}); } console.log(JSON.stringify(rows)); })(page);
+```
+
+### Result
+Total messages: 0 (Errors: 0, Warnings: 0)
+
+
+Browser 'rugefeedback' closed

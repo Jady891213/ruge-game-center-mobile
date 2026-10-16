@@ -1,0 +1,208 @@
+{
+  "levels": 60,
+  "answers": 344,
+  "maxAnswers": 11,
+  "acceptedByActualClicks": 344,
+  "clickedStrokes": 1096,
+  "layouts": [
+    {
+      "width": 392,
+      "height": 872,
+      "source": "日月",
+      "answers": 7,
+      "overflow": false,
+      "submitBottom": 595.5,
+      "parts": [
+        {
+          "width": 166.5,
+          "height": 166.5
+        },
+        {
+          "width": 166.5,
+          "height": 166.5
+        }
+      ]
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "source": "木木木",
+      "answers": 10,
+      "overflow": false,
+      "submitBottom": 771,
+      "parts": [
+        {
+          "width": 166.5,
+          "height": 166.5
+        },
+        {
+          "width": 166.5,
+          "height": 166.5
+        },
+        {
+          "width": 166.5,
+          "height": 166.5
+        }
+      ]
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "source": "日青",
+      "answers": 11,
+      "overflow": false,
+      "submitBottom": 671.5,
+      "parts": [
+        {
+          "width": 166.5,
+          "height": 166.5
+        },
+        {
+          "width": 166.5,
+          "height": 166.5
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "日月",
+      "answers": 7,
+      "overflow": false,
+      "submitBottom": 444,
+      "parts": [
+        {
+          "width": 109,
+          "height": 109
+        },
+        {
+          "width": 109,
+          "height": 109
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "木木木",
+      "answers": 10,
+      "overflow": false,
+      "submitBottom": 557.5,
+      "parts": [
+        {
+          "width": 109,
+          "height": 109
+        },
+        {
+          "width": 109,
+          "height": 109
+        },
+        {
+          "width": 107.5,
+          "height": 107.5
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "日青",
+      "answers": 11,
+      "overflow": false,
+      "submitBottom": 444,
+      "parts": [
+        {
+          "width": 109,
+          "height": 109
+        },
+        {
+          "width": 109,
+          "height": 109
+        }
+      ]
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "日月",
+      "answers": 7,
+      "overflow": false,
+      "submitBottom": 307,
+      "parts": [
+        {
+          "width": 119,
+          "height": 119
+        },
+        {
+          "width": 119,
+          "height": 119
+        }
+      ]
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "木木木",
+      "answers": 10,
+      "overflow": false,
+      "submitBottom": 323.5,
+      "parts": [
+        {
+          "width": 119,
+          "height": 119
+        },
+        {
+          "width": 119,
+          "height": 119
+        },
+        {
+          "width": 117.5,
+          "height": 117.5
+        }
+      ]
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "日青",
+      "answers": 11,
+      "overflow": false,
+      "submitBottom": 307,
+      "parts": [
+        {
+          "width": 119,
+          "height": 119
+        },
+        {
+          "width": 119,
+          "height": 119
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "levels": 60,
+    "last": {
+      "x": 207,
+      "y": 410.09375,
+      "width": 70,
+      "height": 86,
+      "top": 410.09375,
+      "right": 277,
+      "bottom": 496.09375,
+      "left": 207
+    },
+    "close": {
+      "x": 236,
+      "y": 72.09375,
+      "width": 46,
+      "height": 44,
+      "top": 72.09375,
+      "right": 282,
+      "bottom": 116.09375,
+      "left": 236
+    },
+    "height": 568
+  },
+  "pageErrors": []
+}

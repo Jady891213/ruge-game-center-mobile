@@ -5,6 +5,7 @@
   const clearButton = $('clear');
   const copy = value => JSON.parse(JSON.stringify(value));
   const cover = location.search.includes('cover=1');
+  const fx = name => { if (!cover && !paused) window.RugeFX?.emit(name); };
   const DIGITS = '0123456789';
   const tiers = ['2位', '3位', '4位'];
   let store = { version: 1, levels: {}, free: {}, active: null }, run = null;
@@ -18,12 +19,8 @@
     try { localStorage.setItem(KEY, JSON.stringify(store)); }
     catch (_) { storageWarning = true; }
   }
-  function seeds(active = run) {
-    if (!active || active.kind !== 'level') return [];
-    return C.LEVELS[active.levelId].clues.map(guess => ({ guess, ...C.score(active.secret, guess), seed: true }));
-  }
   function rows(active = run) {
-    return [...seeds(active), ...active.guesses.map((guess, index) => ({ guess, ...C.score(active.secret, guess), index: index + 1 }))];
+    return active.guesses.map((guess, index) => ({ guess, ...C.score(active.secret, guess), index: index + 1 }));
   }
   function restore() {
     try {
@@ -52,8 +49,6 @@
       }
       if (!Array.isArray(active.guesses) || active.guesses.length > 5000 || new Set(active.guesses).size !== active.guesses.length) return;
       if (active.guesses.some(g => !C.valid(g, expected.length, expected.pool))) return;
-      const starter = active.kind === 'level' ? C.LEVELS[active.levelId].clues : [];
-      if (active.guesses.some(g => starter.includes(g))) return;
       const success = active.guesses.indexOf(expected.secret);
       if (success >= 0 && success !== active.guesses.length - 1) return;
       if (expected.limit && active.guesses.length > expected.limit) return;
@@ -88,7 +83,7 @@
       almost: '<path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/>',
       lock: '<rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
       clear: '<path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5m4-5v5"/>',
-      erase: '<path d="m9 5-7 7 7 7h12V5Z M12 9l5 6m0-6-5 6"/>',
+      erase: '<path d="m9 5-7 7 7 7h12V5Z M17 12H8m4-4-4 4 4 4"/>',
       star: '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/>'
     };
     const node = element('span', className);
@@ -169,6 +164,7 @@
   function continueRun() { if (!run || run.ended) return; paused = false; view = 'play'; closeDialog(); renderPlay(); renderView(); }
   function renderPlay() {
     if (!run) return;
+    $('restart').disabled = paused;
     $('gameTag').textContent = run.kind === 'level' ? tiers[run.length - 2] : '自由' + (run.challenge ? '挑战' : '练习');
     $('levelNumber').textContent = run.kind === 'level' ? '第' + (run.levelId + 1) + '关' : run.length + '位';
     $('levelTitle').textContent = run.kind === 'level' ? C.LEVELS[run.levelId].title : run.challenge ? '挑战这只密码箱' : '慢慢发现密码';
@@ -190,8 +186,7 @@
     if (!entries.length) $('history').appendChild(element('p', 'history-empty', '•••'));
     entries.forEach(row => {
       const line = element('div', 'history-row' + (row.bulls === run.length ? ' won' : ''));
-      const label = element('span', 'row-label' + (row.seed ? ' seed' : ''), row.seed ? '' : String(row.index));
-      if (row.seed) { label.appendChild(icon('star', 'seed-icon')); label.setAttribute('aria-label', '起始线索'); }
+      const label = element('span', 'row-label', String(row.index));
       line.appendChild(label);
       const guess = element('div', 'guess-digits');
       Array.from(row.guess).forEach(digit => guess.appendChild(element('span', '', digit)));
@@ -214,7 +209,7 @@
     digitKey('0');
     const eraseButton = button($('keypad'), '', 'key delete-key', erase);
     eraseButton.appendChild(icon('erase', 'key-icon'));
-    eraseButton.setAttribute('aria-label', '删除一位'); eraseButton.disabled = paused || run.ended;
+    eraseButton.setAttribute('aria-label', '退格，删除一位'); eraseButton.title = '退格'; eraseButton.disabled = paused || run.ended;
     $('submit').disabled = paused || (!run.ended && run.draft.some(d => !d));
     $('submit').textContent = run.ended ? '再看看' : '打开';
     $('hint').disabled = paused || run.ended;
@@ -224,31 +219,44 @@
   function playable() { return run && view === 'play' && !paused && !run.ended && !modalType; }
   function selectSlot(index) {
     if (!playable() || !Number.isInteger(index) || index < 0 || index >= run.length) return false;
-    run.cursor = index; renderPlay(); save(); return true;
+    run.cursor = index; renderPlay(); fx('select'); save(); return true;
   }
   function pressDigit(digit) {
     if (!playable() || typeof digit !== 'string' || !/^[0-9]$/.test(digit) || !run.pool.includes(digit)) return false;
-    if (run.draft.some((d, i) => i !== run.cursor && d === digit)) { setNotice('重复啦', 'error'); return false; }
+    if (run.draft.some((d, i) => i !== run.cursor && d === digit)) { setNotice('重复啦', 'error'); fx('error'); return false; }
     run.draft[run.cursor] = digit;
     const next = run.draft.findIndex((d, i) => i > run.cursor && !d);
     const empty = run.draft.indexOf('');
     if (next >= 0) run.cursor = next; else if (empty >= 0) run.cursor = empty;
-    notice = ''; noticeType = ''; renderPlay(); save(); return true;
+    notice = ''; noticeType = ''; renderPlay(); fx('select'); save(); return true;
   }
   function erase() {
     if (!playable()) return false;
+    const changed = run.draft.some(Boolean) || run.cursor > 0;
     if (!run.draft[run.cursor] && run.cursor > 0) run.cursor--;
-    run.draft[run.cursor] = ''; notice = ''; noticeType = ''; renderPlay(); save(); return true;
+    run.draft[run.cursor] = ''; notice = ''; noticeType = ''; renderPlay(); if (changed) fx('undo'); save(); return true;
   }
   function clear() {
     if (!playable()) return false;
-    run.draft.fill(''); run.cursor = 0; notice = ''; noticeType = ''; renderPlay(); save(); return true;
+    const changed = run.draft.some(Boolean) || run.cursor > 0;
+    run.draft.fill(''); run.cursor = 0; notice = ''; noticeType = ''; renderPlay(); if (changed) fx('undo'); save(); return true;
+  }
+  function restart() {
+    if (!run || view !== 'play' || paused || modalType) return false;
+    const reset = () => {
+      run = { ...run, guesses: [], draft: Array(run.length).fill(''), cursor: 0, hints: 0, won: false, ended: false };
+      notice = ''; noticeType = ''; paused = false;
+      closeDialog(); renderPlay(); save(); return true;
+    };
+    if (!run.guesses.length && !run.draft.some(Boolean) && !run.hints && !run.ended) return reset();
+    openDialog('restart', run.kind === 'level' ? '重来这关？' : '重新开始？');
+    dialogButton('继续玩', closeDialog); dialogButton('重新开始', reset, true); return true;
   }
   function submit() {
     if (!playable()) return false;
     const guess = run.draft.join('');
-    if (!C.valid(guess, run.length, run.pool)) { setNotice('还没填满', 'error'); return false; }
-    if (rows().some(row => row.guess === guess)) { setNotice('猜过啦', 'error'); return false; }
+    if (!C.valid(guess, run.length, run.pool)) { setNotice('还没填满', 'error'); fx('error'); return false; }
+    if (rows().some(row => row.guess === guess)) { setNotice('猜过啦', 'error'); fx('error'); return false; }
     run.guesses.push(guess);
     const result = C.score(run.secret, guess);
     run.won = result.bulls === run.length;
@@ -257,6 +265,9 @@
     if (run.won) recordWin();
     if (!run.ended) { run.draft.fill(''); run.cursor = 0; }
     renderPlay(); save();
+    fx(run.won ? 'win' : 'tap');
+    const latest = $('history').children[$('history').children.length - 1];
+    if (!cover && latest) latest.classList.add('feedback-reveal');
     if (run.ended) showResult();
     return { ...result, won: run.won, ended: run.ended };
   }
@@ -278,7 +289,7 @@
   function hint() {
     if (!playable()) return false;
     const advice = C.hint(run.length, run.pool, rows());
-    run.hints++; notice = ''; noticeType = 'hint'; renderPlay(); save(); return advice;
+    fx('hint'); run.hints++; notice = ''; noticeType = 'hint'; renderPlay(); save(); return advice;
   }
   function openDialog(type, title, eyebrow = '', text = '') {
     closeDialog(); modalType = type; returnFocus = document.activeElement;
@@ -344,6 +355,7 @@
   function resume() { if (!run || run.ended) return false; paused = false; renderPlay(); return true; }
   $('center').addEventListener('click', () => { save(); try { if (window.RugeNav) { window.RugeNav.home(); return; } } catch (_) {} location.href = '../index.html'; });
   $('back').addEventListener('click', showHome);
+  $('restart').addEventListener('click', restart);
   $('rules').addEventListener('click', showRules); $('playRules').addEventListener('click', showRules);
   $('tutorial').addEventListener('click', () => { tutorialStep = 0; showTutorial(); });
   $('free').addEventListener('click', openFreePicker); $('continue').addEventListener('click', continueRun);

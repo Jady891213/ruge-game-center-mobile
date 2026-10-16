@@ -1,0 +1,36 @@
+{
+  "generator": "内置 image_gen / GPT 图片生成",
+  "purpose": "小熊点心店与森林果汁屋离线美术资源",
+  "style": "原创扁平学龄前动画，大色块、圆轮廓、简单表情；不使用参考动画角色",
+  "assets": [
+    {
+      "file": "app/assets/shared/bear-snack-scene.png",
+      "prompt": "Wide landscape 3:2 game header illustration of a cute ORIGINAL round caramel teddy bear wearing mint apron, behind a simple cream bakery counter under a coral scalloped awning. Three clear simple snack silhouettes on shelf, cream wall, one small plant, cozy uncluttered composition. The friendly bear is the focal point. ART DIRECTION: entirely FLAT 2D preschool television cartoon, very simple big solid pastel color shapes, bold smooth dark colored outlines, tiny dot eyes, simple happy curved mouth, rounded friendly original characters, warm cream/mint/coral/yellow palette. Age 5-6 cognitive readability. ABSOLUTELY NO gradients, 3D rendering, realistic glass, lighting effects, drop shadows, brush texture, fur texture, glossy highlights, complex details. Original characters and composition, do not copy any existing cartoon character. No text, numbers, watermark or logo.",
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a0e0a2-d7ac-7942-8b94-b39b0803c875/exec-825b2146-5243-4d74-85bf-74afd0b00246.png"
+    },
+    {
+      "file": "app/assets/shared/forest-juice-scene.png",
+      "prompt": "Wide landscape 3:2 game header illustration of an ORIGINAL cute forest juice kiosk under a mint canopy. A round caramel bear in mint apron and little white bunny customer at a wooden counter, leafy trees, a few bright juice bottles, one strawberry plant. Clear uncomplicated flat composition, large friendly characters. ART DIRECTION: entirely FLAT 2D preschool television cartoon, very simple big solid pastel color shapes, bold smooth dark colored outlines, tiny dot eyes, simple happy curved mouth, rounded friendly original characters, warm cream/mint/coral/yellow palette. Age 5-6 cognitive readability. ABSOLUTELY NO gradients, 3D rendering, realistic glass, lighting effects, drop shadows, brush texture, fur texture, glossy highlights, complex details. Original characters and composition, do not copy any existing cartoon character. No text, numbers, watermark or logo.",
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a0e0a2-d7ac-7942-8b94-b39b0803c875/exec-0b4f50f9-4cdf-4c78-b14b-4a8b39ba7fc7.png"
+    },
+    {
+      "file": "app/assets/shared/snack-atlas.png",
+      "prompt": "Production transparent sprite atlas with exactly THREE COLUMNS TWO ROWS of equal square cells, entire image 3:2 ratio. Center each isolated snack with 18% padding, no overlaps. TOP LEFT round chocolate chip cookie, TOP CENTER pink frosted cupcake in mint wrapper, TOP RIGHT pink ring donut. BOTTOM LEFT golden crescent croissant, BOTTOM CENTER caramel custard pudding on a small cream saucer, BOTTOM RIGHT triangular strawberry shortcake slice with one strawberry. Each snack simple, recognizable, large same visual size, front view or minimally tilted flat illustration. Genuine transparent alpha between items, no cell outlines. ART DIRECTION: entirely FLAT 2D preschool television cartoon, very simple big solid pastel color shapes, bold smooth dark colored outlines, tiny dot eyes, simple happy curved mouth, rounded friendly original characters, warm cream/mint/coral/yellow palette. Age 5-6 cognitive readability. ABSOLUTELY NO gradients, 3D rendering, realistic glass, lighting effects, drop shadows, brush texture, fur texture, glossy highlights, complex details. Original characters and composition, do not copy any existing cartoon character. No text, numbers, watermark or logo.",
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a0e0a2-d7ac-7942-8b94-b39b0803c875/exec-203d78cd-a152-4aa0-8b3e-463283f4a73e.png",
+      "refinement": {
+        "prompt": "Edit this production 3x2 transparent food sprite atlas. Keep the same six foods in exactly the same order and the same cute flat cartoon visual identity. Fix the layout for actual game use: every item must be fully inside its exact equal 512x512 square cell with at least 64 pixels of completely empty transparent padding on all four sides. Reduce each food slightly to achieve this. Absolutely no part of one item may cross into a neighboring cell, no stray fragments at cell edges. Top row cookie, pink cupcake, pink donut. Bottom row croissant, pudding on plate, strawberry shortcake. Keep 1536x1024 overall 3:2, genuine transparent alpha everywhere outside objects. Make colors flatter and solid, remove gradient shading, texture, glow and shadows. Preserve bold rounded outlines and happy simple faces. No text, grid lines, letters, labels or new objects.",
+        "source": "/Users/wuzhiruge/.codex/generated_images/01a0e0a2-d7ac-7942-8b94-b39b0803c875/exec-d341e95b-8872-49b9-9f33-4c7a3c334f24.png"
+      }
+    },
+    {
+      "file": "app/assets/shared/customer-atlas.png",
+      "prompt": "Production transparent character atlas, exactly THREE COLUMNS ONE ROW of equal square cells, entire image 3:1 ratio. LEFT round caramel teddy bear wearing mint apron and cream chef hat; CENTER white bunny with long ears and coral scarf; RIGHT orange kitten with sage neckerchief. All ORIGINAL happy preschool cartoon characters, front facing waist-up portraits of equal size, 15% empty padding so ears/head/arms all stay inside cell. Genuine alpha transparency around characters, no cell outlines. ART DIRECTION: entirely FLAT 2D preschool television cartoon, very simple big solid pastel color shapes, bold smooth dark colored outlines, tiny dot eyes, simple happy curved mouth, rounded friendly original characters, warm cream/mint/coral/yellow palette. Age 5-6 cognitive readability. ABSOLUTELY NO gradients, 3D rendering, realistic glass, lighting effects, drop shadows, brush texture, fur texture, glossy highlights, complex details. Original characters and composition, do not copy any existing cartoon character. No text, numbers, watermark or logo.",
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a0e0a2-d7ac-7942-8b94-b39b0803c875/exec-cecd7a81-3e60-4fab-9993-ee8592a4047d.png"
+    },
+    {
+      "file": "app/assets/shared/forest-juice-banner.png",
+      "prompt": "Recompose this same original flat preschool cartoon forest juice shop illustration as a VERY WIDE, SHORT 3:1 landscape game header banner. Keep the same bear shopkeeper in mint apron, bunny customer in coral dress, pastel forest and a few juice bottles. Both bear and bunny must have their complete heads and ears fully visible in the central horizontal strip, with generous top and bottom margins. Put bear on left third, bunny on right third, short counter across bottom, simple forest shapes in background. Large readable friendly faces, clean solid flat colors with bold rounded outlines, no realistic lighting, no gradient shading, no texture, no 3D. Composition specifically for a mobile horizontal banner: no tall characters or tall tree canopy that require vertical cropping. No words, numbers, logos, UI or watermark. Entire image wide 3:1.",
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a0e0a2-d7ac-7942-8b94-b39b0803c875/exec-9099ca7e-c012-499e-a570-ffa1a09f3626.png"
+    }
+  ]
+}

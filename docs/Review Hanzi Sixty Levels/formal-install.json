@@ -1,0 +1,12 @@
+{
+  "version": [
+    "versionCode=34 minSdk=21 targetSdk=34",
+    "versionName=4.11"
+  ],
+  "apkSha256": "f89f5dca9fa0e4d6d2098de648ab0f3bbce191d276560cc8380488fe32fbc7b5",
+  "installedApkMatchesBuiltApk": true,
+  "ownWebViewDebugSocketPresent": false,
+  "currentProcessCrash": false,
+  "foregroundAtVerification": "mCurrentFocus=Window{61d94fd u0 com.dsh.gamecenter/com.dsh.gamecenter.MainActivity}",
+  "originalLocalStorageRestoredBeforeInstall": 14
+}

@@ -1,14 +1,14 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、重力迷宫、汉字拼字、拼音练习、扑翼小鸟、恐龙跑酷和青蛙跳跃八个游戏，无需联网。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、重力迷宫、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.6 / versionCode 29**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.15 / versionCode 38**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
 | 目录 | 用途 |
 |---|---|
-| `app/assets/` | 当前菜单、八个游戏和离线素材源码 |
+| `app/assets/` | 当前菜单、十个游戏和离线素材源码 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -21,18 +21,37 @@
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
 
+## 音效与震动（4.15）
+
+十款在架游戏共用离线音效与原生触觉反馈。选中/跳跃为短反馈，收集/找到新答案为奖励反馈，通关与错误各有区别；连续动作限频，切后台和离开页面立即停止。字里找字新增答案弹出与星光，重复答案不重复庆祝。
+
+合集标题下的“音效”和“震动”可独立开关，记住选择；游戏内原有静音按钮与合集音效设置同步。Android 仅新增普通 `VIBRATE` 权限，不需要运行时授权。音效由项目脚本原创合成，不依赖网络或下载素材。实现与真机证据见 [全游戏反馈验收](docs/Review%20Game%20Feedback/feedback-review.md)。
+
 ## 小小密码箱
 
 新增的猜数字游戏位于 `app/assets/code-breaker/`。密码是数字序列，数字不能重复，0 可以放在第一位或其他位置；记录只显示两类图标与数量：绿色勾表示数字和位置都对，黄色换位箭头表示数字对、位置错。
 
-- 18 个固定关卡：两位、三位、四位各 6 关，依次解锁；先缩小可选数字范围、提供起始线索，再逐步放开。
+- 18 个固定关卡：两位、三位、四位各 6 关，依次解锁；先缩小可选数字范围，再逐步放开。每关从空白记录开始，不预填猜测。
 - 儿童界面使用大数字、三列大键盘和图标反馈，取消常驻说明、教学入口与错误数量。练习不限尝试次数，有三星目标。
 - 自由模式每局随机：可选不限次数，或两位 6 次、三位 8 次、四位 10 次的步数挑战。
-- 自动保存当前输入、猜测和进度；入口封面由真实游戏页面生成。
+- 自动保存当前输入、猜测和进度；顶部可重置当前关卡（确认后清空本局），退格键采用与数字键相同的亮色；入口封面由真实游戏页面生成。
 
 4.6 允许零放在任意位置，输入、随机密码与存档恢复均已同步；见 [零开头修复验收](docs/Review%20Code%20Breaker%20Zero/zero-prefix-fix.md)。
 
 首版规则见 [小小密码箱验收](docs/Review%20Code%20Breaker/code-breaker-review.md)，当前儿童界面与 MIX 4 实测见 [儿童界面调整](docs/Review%20Code%20Breaker%20Kids%20UI/kids-ui-review.md)。
+
+4.7 的空白开局、亮色退格和本关重置见 [验收记录](docs/Review%20Code%20Breaker%20Empty%20Start/empty-start-review.md)。
+
+## 找字与调色（4.8）
+
+- **字里找字**重做为点选原字笔画、收集多个答案的玩法。共 60 关，原有前 10 关（三、王、木、田、白、本、目、米、早、意）保留；4.11 新增 20 个单字、26 个双字、4 个三字题。整笔保留原位置，成功字收进顶部答案格，带拼音；同答案不重复计数。原字本身也算答案；多字题可选不同字板的完整笔画部件组合成新字，如日月→明、木木木→森。共 344 个关内答案，每关 2～11 个，不同关的同字分别计数。支持反选、清空、笔画提示、重来和存档。新键 `rugeHanziStrokesV1` 独立记录收集，旧版拼部件存档保留。
+- **小小调色师**新增 10 关和自由画室。逐滴混合红、黄、蓝、白颜料，为原创小动物/物件上色；逐步学习不同比例、加白和多订单。支持撤销、倒掉、重开和存档（`rugePaintMixingV1`）。使用 RYB 颜料近似，黄蓝能调绿；不是 RGB 光线平均，也不用于精确预测真实颜料。
+
+4.11 关卡扩展与真机验证见 [60 关验收](docs/Review%20Hanzi%20Sixty%20Levels/hanzi-sixty-levels.md)。
+
+4.9 改名与原字答案规则见 [字里找字验收](docs/Review%20Hanzi%20Original%20Answer/hanzi-original-answer.md)。
+
+玩法、边界与真机验收见 [找字与调色验收](docs/Review%20Stroke%20Puzzle%20and%20Paint/two-games-review.md)。
 
 ## 儿童版游戏界面（4.5）
 
@@ -46,6 +65,14 @@ python3 scripts/render-game-covers.py --games pipe-flow gravity-maze
 ```
 
 生成器调用本机 Chrome，每款游戏的 `?cover=1` 模式不写存档，结果保存在 `app/assets/shared/`。构建前生成，更新封面后重新打包。详细界面与真机验收见 [全游戏儿童界面](docs/Review%20All%20Games%20Kids%20UI/all-games-kids-review.md)。
+
+## 字里找字嵌字画布（4.12）
+
+多字题改为单张大画布的完整合体字，取消各字小卡片和边界：森/晶/品紧凑组合，问/间/闲嵌在门内，李/思/泉采用上下结构。直接点完整字中的笔画，60关、344个答案和已有进度保持。见 [嵌字画布验收](docs/Review%20Hanzi%20Embedded%20Canvas/embedded-canvas.md)。
+
+## 看字打拼音转屏（4.10）
+
+选关页底部和练习页右上角新增手机旋转图标，点击切横屏，再点切回竖屏；使用原生方向桥，保留当前题目和输入草稿。横屏采用左侧大字、右侧输入区，适合连接实体键盘；字板随可用高度放大。退出回游戏中心恢复竖屏。验收见 [转屏记录](docs/Review%20Typing%20Rotation/typing-rotation.md)。
 
 ## Mac 构建与测试
 
@@ -61,7 +88,7 @@ python3 scripts/build.py
 
 公开仓库不包含签名密钥；首次克隆需要自备签名材料并通过参数指定。覆盖更新已有应用必须使用原签名，由 Mac 发布端保管。已有 SDK 时可跳过安装步骤。本机已验证 JDK 18.0.2.1；JDK、SDK 和签名路径都可以通过构建参数或环境变量覆盖，详见 [构建说明](docs/build.md)。脚本只构建与校验，不会安装到手机。
 
-产物为 `out/game-center-v4.6-dev.apk` 和 `out/game-center-v4.6.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
+产物为 `out/game-center-v4.15-dev.apk` 和 `out/game-center-v4.15.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
 
 普通切后台会保留游戏状态并发送暂停/恢复事件；开发页面只有资源变化时才于回前台刷新。明确刷新开发页会重置页面状态。正式版关闭调试和外部开发页面能力。
 
@@ -75,7 +102,7 @@ export GAME_CENTER_ADB="$(pwd)/../../03-Android工具/platform-tools/adb"
 "$GAME_CENTER_ADB" connect '<手机IP:连接端口>'
 "$GAME_CENTER_ADB" devices -l
 export GAME_CENTER_SERIAL='<devices 列表中的目标设备标识>'
-"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.6-dev.apk
+"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.15-dev.apk
 "$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" shell am start -n com.dsh.gamecenter/.MainActivity
 ```
 
@@ -104,3 +131,15 @@ Mac 和手机克隆同一个游戏仓库，Mac 在 `main` 负责主体整合、�
 签名密钥与密码文件保存在仓库外，由构建端保管，不提交 Git、不写入日志或 skill。GitHub 同步通过明确的 Git 提交、推送和拉取完成，没有后台自动同步任务。手机克隆公开仓库无需登录，推送需要手机自己的 GitHub 写权限；不复制 Mac 的登录令牌。提交说明使用中文。手机接手说明见 [DeepCode 交接](docs/deepcode-handoff.md)。
 
 临时查询、备份和中间验证产物放到项目根目录，名称带 `TMP to delete`；不用后清理。构建的 `TMP to delete-build` 由脚本自动清理。验收截图和文档属于交付材料，保留在 `docs/`。后续开发约定见 [AGENTS.md](AGENTS.md)。
+
+## 小熊点心店与森林果汁屋（4.13）
+
+- **小熊点心店**：12关，从看图点单、单类数量到两类组合和顺序摆盘；不计时，支持撤回、重来和草稿保存。
+- **森林果汁屋**：12关，点源瓶再点目标瓶，只倒顶部连续同色；目标为空瓶或顶部同色且有容量。空瓶作为暂存空间，逐步从两色到四色；支持整次撤回与重来。
+- 两款使用内置 GPT 图片生成的原创儿童卡通素材，资源离线打包在 `app/assets/shared/`，提示词与来源见 [美术提示词](docs/Review%20Bear%20Snacks%20and%20Forest%20Juice/art-prompts.json)。界面以大图、大按钮和短动作词为主。
+
+4.13 的规则、GPT 美术与浏览器/真机验收见 [两款新游戏验收](docs/Review%20Bear%20Snacks%20and%20Forest%20Juice/two-games-review.md)。
+
+## 暂停小熊点心店（4.14）
+
+用户试玩反馈玩法过于简单，现从合集列表与最近游戏入口撤下；原型源码和素材保留待重新设计，不新增关卡。森林果汁屋及其他游戏保留，当前合集10款。后续儿童游戏需有逐步推理、选择或规划的空间，不能将5～6岁界面适配等同于简单照图重复。

@@ -1,0 +1,12 @@
+{
+  "version": "4.14",
+  "versionCode": 37,
+  "versionVerified": true,
+  "hashMatches": true,
+  "sha256": "e89e070570aa515b3e9318db2fa9496d31d9d712168e42f7c10d3b297cca1eb4",
+  "debuggable": false,
+  "homepageScreenshot": "phone-home.png",
+  "visualReview": "已人工查看截图：点心店入口撤下，森林果汁屋首位，最近入口无点心店",
+  "vmReview": "真实首页脚本生成10个卡片；旧记录以点心店最新时最近入口回退到果汁屋，原记录不变",
+  "scope": "仅撤下入口，原型源码和素材保留；未修改旧游戏存档"
+}

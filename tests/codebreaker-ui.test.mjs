@@ -25,7 +25,7 @@ function dialogAction(h, text) {
   button.dispatch('click');
 }
 
-test('codebreaker UI: incomplete, duplicate and repeated-clue inputs do not consume attempts', t => {
+test('codebreaker UI: incomplete and duplicate inputs do not consume attempts', t => {
   const { h, g } = game(t);
   assert.equal(g.startFree(2, false), true);
   assert.equal(h.node('#keypad').children.find(node => node.dataset.digit === '0').disabled, false);
@@ -49,9 +49,82 @@ test('codebreaker UI: incomplete, duplicate and repeated-clue inputs do not cons
   assert.equal(g.pressDigit(3), false);
   assert.equal(g.pressDigit('１２'), false);
   assert.equal(g.startLevel(0), true);
-  submit(h, g.LEVELS[0].clues[0]);
-  assert.equal(g.state().run.guesses.length, 0);
+  submit(h, '31');
+  assert.deepEqual(plain(g.state().run.guesses), ['31']);
+  submit(h, '31');
+  assert.equal(g.state().run.guesses.length, 1);
   assert.equal(g.state().notice, '猜过啦');
+});
+
+test('codebreaker UI: backspace stays available and removes one slot without changing submitted history', t => {
+  const { h, g } = game(t);
+  g.startFree(4, false);
+  const backspace = () => h.node('#keypad').children.find(node => node.className.includes('delete-key'));
+  assert.equal(backspace().disabled, false);
+  backspace().dispatch('click');
+  assert.equal(g.state().run.cursor, 0);
+  assert.deepEqual(plain(g.state().run.draft), ['', '', '', '']);
+  fill(h, '0123');
+  backspace().dispatch('click');
+  assert.deepEqual(plain(g.state().run.draft), ['0', '1', '2', '']);
+  backspace().dispatch('click');
+  assert.equal(g.state().run.cursor, 2);
+  assert.deepEqual(plain(g.state().run.draft), ['0', '1', '', '']);
+  assert.deepEqual(plain(g.state().run.guesses), []);
+  h.emitWindow('ruge:pause');
+  assert.equal(backspace().disabled, true);
+  h.click('#resume');
+  assert.equal(backspace().disabled, false);
+});
+
+test('codebreaker UI: old campaign saves retain player guesses including a former starter guess', t => {
+  const active = { kind: 'level', levelId: 0, guesses: ['31'], draft: ['4', ''], cursor: 1 };
+  const { h, g } = game(t, { rugeCodebreakerV1: JSON.stringify({ version: 1, active }) });
+  assert.deepEqual(plain(g.state().run.guesses), ['31']);
+  assert.deepEqual(plain(g.state().run.draft), ['4', '']);
+  h.click('#continue');
+  assert.equal(h.node('#history').children.length, 1);
+  assert.equal(h.node('#history').children[0].children[0].textContent, '1');
+});
+
+test('codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars', t => {
+  const { h, g } = game(t);
+  g.startLevel(0); submit(h, '24');
+  dialogAction(h, '下一关 →');
+  submit(h, '12'); digit(h, '3');
+  const before = plain(g.state().run), progress = plain(g.state().progress);
+  h.click('#restart');
+  assert.equal(g.state().modal, 'restart');
+  dialogAction(h, '继续玩');
+  assert.deepEqual(plain(g.state().run), before);
+  h.click('#restart'); dialogAction(h, '重新开始');
+  const after = g.state();
+  assert.equal(after.run.levelId, before.levelId);
+  assert.equal(after.run.secret, before.secret);
+  assert.deepEqual(plain(after.run.guesses), []);
+  assert.deepEqual(plain(after.run.draft), ['', '']);
+  assert.equal(after.run.cursor, 0);
+  assert.equal(after.run.hints, 0);
+  assert.equal(after.modal, '');
+  assert.deepEqual(plain(after.progress), progress);
+  const restored = game(t, Object.fromEntries(h.saved));
+  assert.deepEqual(plain(restored.g.state().run), plain(after.run));
+  assert.deepEqual(plain(restored.g.state().progress), progress);
+});
+
+test('codebreaker UI: restart keeps the current free password and challenge settings', t => {
+  const { h, g } = game(t);
+  g.startFree(4, true);
+  const before = plain(g.state().run);
+  digit(h, '0'); h.click('#restart'); dialogAction(h, '重新开始');
+  const after = g.state().run;
+  assert.equal(after.secret, before.secret);
+  assert.equal(after.length, 4);
+  assert.equal(after.challenge, true);
+  assert.equal(after.limit, 10);
+  assert.deepEqual(plain(after.draft), ['', '', '', '']);
+  assert.deepEqual(plain(after.guesses), []);
+  h.emitWindow('ruge:pause'); assert.equal(h.node('#restart').disabled, true);
 });
 
 test('codebreaker UI: zero-first guesses keep their length, feedback and history after reload', t => {
@@ -105,13 +178,16 @@ test('codebreaker UI: all eighteen levels unlock in sequence through real keypad
   for (const level of g.LEVELS) {
     assert.equal(g.state().run.levelId, level.id);
     assert.equal(g.state().view, 'play');
-    assert.equal(h.node('#history').children.length, level.clues.length || 1);
+    assert.deepEqual(plain(g.state().run.guesses), []);
+    assert.equal(level.clues.length, 0);
+    assert.equal(h.node('#history').children.length, 1);
+    assert.equal(h.node('#history').children[0].className, 'history-empty');
     submit(h, level.secret);
     const state = g.state();
     assert.equal(state.run.won, true);
     assert.equal(state.run.ended, true);
     assert.equal(state.modal, 'result');
-    assert.equal(state.run.guesses.length, 1, 'starter clues must not consume attempts');
+    assert.equal(state.run.guesses.length, 1, 'the first submitted guess counts as attempt one');
     assert.deepEqual(plain(state.progress[level.id]), { best: 1, stars: 3 });
     assert.equal(Object.keys(state.progress).length, level.id + 1);
     assert.equal(g.submit(), false);

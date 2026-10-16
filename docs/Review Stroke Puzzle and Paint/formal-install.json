@@ -1,0 +1,14 @@
+{
+  "package": "com.dsh.gamecenter",
+  "version": [
+    "versionCode=31 minSdk=21 targetSdk=34",
+    "versionName=4.8"
+  ],
+  "installedApkMatchesBuiltApk": true,
+  "apkSha256": "d1be90b37eaca67f09a4188d978a0490a2df0d1499c012a5530cffb9622f313b",
+  "foreground": "mCurrentFocus=Window{bf03e52 u0 com.dsh.gamecenter/com.dsh.gamecenter.MainActivity}",
+  "ownWebViewDebugSocketPresent": false,
+  "currentProcessCrash": false,
+  "installation": "覆盖更新，无卸载或清数据",
+  "originalStorageKeysRestoredBeforeInstall": 12
+}

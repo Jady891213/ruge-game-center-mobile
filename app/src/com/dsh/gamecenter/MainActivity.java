@@ -42,6 +42,7 @@ import java.util.Locale;
  *  正式版里这段代码会被编译器整段消除，不残留读取外部目录的能力。 */
 public class MainActivity extends Activity {
     private WebView web;
+    private GameFeedback feedback;
     private volatile TextToSpeech tts;
     private volatile boolean foreground = false;
     private volatile boolean destroyed = false;
@@ -72,6 +73,7 @@ public class MainActivity extends Activity {
         super.onCreate(state);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         keepAwake = getPreferences(MODE_PRIVATE).getBoolean("keep-awake", true);
+        feedback = new GameFeedback(this, getPreferences(MODE_PRIVATE));
         if (keepAwake) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (BuildConfig.DEV) {
             File external = getExternalFilesDir(null);
@@ -111,6 +113,7 @@ public class MainActivity extends Activity {
         web.addJavascriptInterface(new TiltBridge(), "RugeTilt");
         web.addJavascriptInterface(new ScreenBridge(), "RugeScreen");
         web.addJavascriptInterface(new NavBridge(), "RugeNav");
+        web.addJavascriptInterface(feedback, "RugeFeedback");
 
         setContentView(web);
         // 必须在 setContentView 之后：getInsetsController() 依赖 DecorView，
@@ -538,6 +541,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         foreground = false;
+        if (feedback != null) feedback.foreground(false);
         dispatchLifecycle("pause");
         if (web != null) web.onPause();
         stopTilt();
@@ -551,6 +555,7 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         foreground = true;
+        if (feedback != null) feedback.foreground(true);
         updateDisplayRotation();
         startTilt();
         applyKeepAwake();
@@ -574,6 +579,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         destroyed = true;
+        if (feedback != null) feedback.release();
         foreground = false;
         stopTilt();
         ttsReady = false;
@@ -589,6 +595,7 @@ public class MainActivity extends Activity {
             web.removeJavascriptInterface("RugeTilt");
             web.removeJavascriptInterface("RugeScreen");
             web.removeJavascriptInterface("RugeNav");
+            web.removeJavascriptInterface("RugeFeedback");
             if (web.getParent() instanceof ViewGroup) ((ViewGroup) web.getParent()).removeView(web);
             web.destroy();
             web = null;

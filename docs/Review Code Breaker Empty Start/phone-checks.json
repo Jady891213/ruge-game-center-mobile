@@ -1,0 +1,60 @@
+[
+  {
+    "name": "18 关新开局均无预填记录",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "退格与数字键亮度颜色一致且可用",
+    "pass": true,
+    "detail": {
+      "bg": "rgb(255, 253, 244)",
+      "nBg": "rgb(255, 253, 244)",
+      "color": "rgb(53, 84, 75)",
+      "nColor": "rgb(53, 84, 75)",
+      "disabled": false
+    }
+  },
+  {
+    "name": "旧起始线索31可作为第一次实际猜测",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "顶部重置出现确认",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "取消重置保留本局",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "确认重置回到同一关空白记录",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "重置结果可保存恢复",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "实际退格从空格退回并只擦除一位",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "连续退格再擦除一位",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "全部原有游戏存档精确恢复",
+    "pass": true,
+    "detail": {
+      "keys": 12
+    }
+  }
+]

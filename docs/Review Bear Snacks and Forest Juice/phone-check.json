@@ -1,0 +1,128 @@
+[
+  {
+    "check": "合集显示11款游戏",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店入口与第1关",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店错误订单可修正",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店选关继续保留摆盘",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店实触完成第1单",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店解锁下一关",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店顺序订单1",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店顺序订单2",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店顺序订单3",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店第12关结束回选关",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店重置",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店后台恢复暂停并保留草稿",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "点心店左侧滑返回合集",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁异色不能倒入",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁空瓶暂存",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁一次撤回恢复液体",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁重置",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁实触通关第1关",
+    "pass": true,
+    "data": {
+      "moves": 3
+    }
+  },
+  {
+    "check": "果汁实触通关第12关",
+    "pass": true,
+    "data": {
+      "moves": 14
+    }
+  },
+  {
+    "check": "果汁后台回来需点继续",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁后台保留液体和撤回历史",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁离开后恢复草稿",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "果汁右侧滑返回合集",
+    "pass": true,
+    "data": null
+  },
+  {
+    "check": "精确还原全部原有存档",
+    "pass": true,
+    "data": {
+      "keys": 14
+    }
+  }
+]

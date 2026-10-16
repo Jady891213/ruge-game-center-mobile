@@ -1,0 +1,12 @@
+- STREAM_MUSIC:
+   Muted: false
+   Muted Internally: false
+   Min: 0
+   Max: 150
+   streamVolume:64
+   Current: 1 (earpiece): 150, 2 (speaker): 64, 4 (headset): 40, 8 (headphone): 0, 10 (bt_sco): 150, 20 (bt_sco_hs): 150, 40 (bt_sco_carkit): 0, 80 (bt_a2dp): 91, 100 (bt_a2dp_hp): 0, 200 (bt_a2dp_spk): 0, 400 (hdmi): 0, 800 (analog_dock): 0, 1000 (digital_dock): 0, 2000 (usb_accessory): 0, 4000 (usb_device): 0, 8000 (remote_submix): 140, 10000 (telephony_tx): 0, 20000 (line): 0, 80000 (spdif): 0, 100000 (fm_transmitter): 0, 200000 (aux_line): 0, 400000 (speaker_safe): 0, 800000 (ip): 0, 1000000 (bus): 0, 2000000 (proxy): 150, 4000000 (usb_headset): 49, 8000000 (hearing_aid_out): 0, 20000000 (ble_headset): 100, 40000000 (default): 100
+   Devices: speaker(2)
+   Volume Group: music
+
+Haptic enabled: 1
+Haptic intensity: 2

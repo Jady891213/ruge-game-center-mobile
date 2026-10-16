@@ -1,0 +1,6 @@
+### Result
+[{"width":320,"height":568,"count":9,"submitBottom":559,"overflow":false},{"width":392,"height":872,"count":9,"submitBottom":771,"overflow":false}]
+### Ran Playwright code
+```js
+await (async page => {const results=[];await page.evaluate(()=>{const g=__game.engine;for(let i=0;i<9;i++){g.loadLevel(i);for(const t of __game.LEVELS[i].targets){g.setSelection(t.sets[0]);g.submit();}}__game.loadLevel(9);});for(const [width,height] of [[320,568],[392,872]]){await page.setViewportSize({width,height});const r=await page.evaluate(()=>({width:innerWidth,height:innerHeight,count:document.querySelectorAll("#answers .answer").length,submitBottom:document.querySelector("#submit").getBoundingClientRect().bottom,overflow:document.documentElement.scrollWidth>innerWidth}));if(r.count!==9||r.overflow||r.submitBottom>height)throw Error(JSON.stringify(r));results.push(r);}return results;})(page);
+```

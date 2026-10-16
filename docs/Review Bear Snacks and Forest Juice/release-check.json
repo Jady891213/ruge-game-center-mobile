@@ -1,0 +1,12 @@
+{
+  "version": "4.13",
+  "versionCode": 36,
+  "versionVerified": true,
+  "debuggable": false,
+  "localSha256": "52b542dca447866eb400355273e1a06b57fcb85fe8539d13cf5c492709f14933",
+  "installedSha256": "52b542dca447866eb400355273e1a06b57fcb85fe8539d13cf5c492709f14933",
+  "hashMatches": true,
+  "cdpSocketPresent": false,
+  "foreground": true,
+  "forwards": ""
+}

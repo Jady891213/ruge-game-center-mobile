@@ -1,0 +1,29 @@
+[
+  {
+    "url": "file:///android_asset/bear-snack-shop/index.html",
+    "width": 392,
+    "height": 872,
+    "imgs": [],
+    "bottles": 0,
+    "snacks": 2
+  },
+  {
+    "url": "file:///android_asset/forest-juice/index.html",
+    "width": 392,
+    "height": 872,
+    "imgs": [
+      {
+        "src": "../shared/forest-juice-banner.png",
+        "complete": true,
+        "w": 2172,
+        "h": 724
+      }
+    ],
+    "bottles": 4,
+    "snacks": 0
+  },
+  {
+    "storageRestored": true,
+    "keys": 14
+  }
+]

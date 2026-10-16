@@ -1,0 +1,86 @@
+[
+  {
+    "name": "60关离线内容全部加载",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "旧十关通关存档保留并解锁11关",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "第十关下一关进入11关日字",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "第11关真实笔画全部答案可收",
+    "pass": true,
+    "detail": {
+      "source": "日",
+      "answers": 4
+    }
+  },
+  {
+    "name": "不同字板同一答案不重复计数",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "第31关真实笔画全部答案可收",
+    "pass": true,
+    "detail": {
+      "source": "日月",
+      "answers": 7
+    }
+  },
+  {
+    "name": "第37关真实笔画全部答案可收",
+    "pass": true,
+    "detail": {
+      "source": "木木木",
+      "answers": 10
+    }
+  },
+  {
+    "name": "第60关真实笔画全部答案可收",
+    "pass": true,
+    "detail": {
+      "source": "日青",
+      "answers": 11
+    }
+  },
+  {
+    "name": "三字题可跨三个字板选横组成三",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "三字题收集与跨字索引草稿重载恢复",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "60关选关定位后段且关闭按钮可见",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "多字题后台恢复暂停并保留答案",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "Android侧滑从多字题回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "全部测试前存档精确恢复",
+    "pass": true,
+    "detail": {
+      "keys": 14
+    }
+  }
+]

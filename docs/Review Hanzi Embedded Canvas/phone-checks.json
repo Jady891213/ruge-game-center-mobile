@@ -1,0 +1,99 @@
+[
+  {
+    "name": "旧三字草稿和已收集答案在嵌字画布原样恢复",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "森是单个大字画布且原全局索引高亮正确",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "旧跨字草稿仍可提交三",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "明整字形无分卡",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "明所有答案可通过真实笔画点击收齐",
+    "pass": true,
+    "detail": {
+      "answers": 7
+    }
+  },
+  {
+    "name": "森整字形无分卡",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "森所有答案可通过真实笔画点击收齐",
+    "pass": true,
+    "detail": {
+      "answers": 10
+    }
+  },
+  {
+    "name": "妈整字形无分卡",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "妈所有答案可通过真实笔画点击收齐",
+    "pass": true,
+    "detail": {
+      "answers": 5
+    }
+  },
+  {
+    "name": "问整字形无分卡",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "问所有答案可通过真实笔画点击收齐",
+    "pass": true,
+    "detail": {
+      "answers": 4
+    }
+  },
+  {
+    "name": "晴整字形无分卡",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "晴所有答案可通过真实笔画点击收齐",
+    "pass": true,
+    "detail": {
+      "answers": 11
+    }
+  },
+  {
+    "name": "门内嵌套的口可以独立点选提交",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "嵌字关后台恢复暂停且保留选择",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "Android侧滑回合集",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "全部测试前存档精确恢复",
+    "pass": true,
+    "detail": {
+      "keys": 14
+    }
+  }
+]

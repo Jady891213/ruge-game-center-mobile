@@ -1,0 +1,93 @@
+[
+  {
+    "name": "合集入口改名为字里找字",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "页面和选关标题使用新名",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "旧版50个答案保留，9个已解锁关不回锁",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "三全部笔画实际点选",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "原字三收进答案区且本关完成",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "王全部笔画实际点选",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "原字王收进答案区且本关完成",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意全部笔画实际点选",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "原字意收进答案区且本关完成",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "意九个答案格完整显示",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "新增原字收集可保存恢复",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "320x568九答案布局不溢出",
+    "pass": false,
+    "detail": {
+      "w": 392,
+      "h": 872,
+      "answers": {
+        "x": 27.81818199157715,
+        "y": 159.8181915283203,
+        "width": 336.3636474609375,
+        "height": 144,
+        "top": 159.8181915283203,
+        "right": 364.18182945251465,
+        "bottom": 303.8181915283203,
+        "left": 27.81818199157715
+      },
+      "next": {
+        "x": 164.3181915283203,
+        "y": 746.6364135742188,
+        "width": 213.68182373046875,
+        "height": 61,
+        "top": 746.6364135742188,
+        "right": 378.00001525878906,
+        "bottom": 807.6364135742188,
+        "left": 164.3181915283203
+      },
+      "scrollWidth": 392
+    }
+  },
+  {
+    "name": "测试前所有游戏存档精确恢复",
+    "pass": true,
+    "detail": {
+      "keys": 14
+    }
+  }
+]

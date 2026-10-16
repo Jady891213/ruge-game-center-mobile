@@ -1,0 +1,89 @@
+[
+  {
+    "name": "选关页图标实际点按切横屏",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "选关页图标切回竖屏",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "输入框获得焦点并保留拼音草稿",
+    "pass": true,
+    "detail": [
+      "mInputShown=true",
+      "mIsInputViewShown=true mStatusIcon=0"
+    ]
+  },
+  {
+    "name": "练习页实际点按横屏且题目草稿分数不变",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "横屏输入和切屏图标可见",
+    "pass": true,
+    "detail": {
+      "w": 872,
+      "h": 392,
+      "stage": {
+        "x": 128,
+        "y": 94.1022720336914,
+        "width": 228.72727966308594,
+        "height": 228.72727966308594,
+        "top": 94.1022720336914,
+        "right": 356.72727966308594,
+        "bottom": 322.82955169677734,
+        "left": 128
+      },
+      "charFont": "177.035px",
+      "input": {
+        "x": 446.3636474609375,
+        "y": 156.8636474609375,
+        "width": 368,
+        "height": 60,
+        "top": 156.8636474609375,
+        "right": 814.3636474609375,
+        "bottom": 216.8636474609375,
+        "left": 446.3636474609375
+      },
+      "rotate": {
+        "x": 699.0909423828125,
+        "y": 10,
+        "width": 53.6363639831543,
+        "height": 50,
+        "top": 10,
+        "right": 752.7273063659668,
+        "bottom": 60,
+        "left": 699.0909423828125
+      },
+      "scrollWidth": 872
+    }
+  },
+  {
+    "name": "横屏题字放大适合实体键盘",
+    "pass": true,
+    "detail": {
+      "stageWidth": 228.72727966308594,
+      "fontSize": "177.035px"
+    }
+  },
+  {
+    "name": "练习页可切回竖屏且草稿不变",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "全部原存档精确恢复",
+    "pass": true,
+    "detail": {
+      "keys": 14
+    }
+  },
+  {
+    "name": "横屏选关页返回合集恢复竖屏",
+    "pass": true
+  }
+]

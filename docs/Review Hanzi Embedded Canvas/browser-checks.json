@@ -1,0 +1,612 @@
+{
+  "levels": 60,
+  "answers": 344,
+  "maxAnswers": 11,
+  "acceptedByActualClicks": 344,
+  "clickedStrokes": 1096,
+  "glyphs": [
+    {
+      "level": 1,
+      "source": "三",
+      "glyph": "三",
+      "compound": false
+    },
+    {
+      "level": 2,
+      "source": "王",
+      "glyph": "王",
+      "compound": false
+    },
+    {
+      "level": 3,
+      "source": "木",
+      "glyph": "木",
+      "compound": false
+    },
+    {
+      "level": 4,
+      "source": "田",
+      "glyph": "田",
+      "compound": false
+    },
+    {
+      "level": 5,
+      "source": "白",
+      "glyph": "白",
+      "compound": false
+    },
+    {
+      "level": 6,
+      "source": "本",
+      "glyph": "本",
+      "compound": false
+    },
+    {
+      "level": 7,
+      "source": "目",
+      "glyph": "目",
+      "compound": false
+    },
+    {
+      "level": 8,
+      "source": "米",
+      "glyph": "米",
+      "compound": false
+    },
+    {
+      "level": 9,
+      "source": "早",
+      "glyph": "早",
+      "compound": false
+    },
+    {
+      "level": 10,
+      "source": "意",
+      "glyph": "意",
+      "compound": false
+    },
+    {
+      "level": 11,
+      "source": "日",
+      "glyph": "日",
+      "compound": false
+    },
+    {
+      "level": 12,
+      "source": "月",
+      "glyph": "月",
+      "compound": false
+    },
+    {
+      "level": 13,
+      "source": "口",
+      "glyph": "口",
+      "compound": false
+    },
+    {
+      "level": 14,
+      "source": "大",
+      "glyph": "大",
+      "compound": false
+    },
+    {
+      "level": 15,
+      "source": "天",
+      "glyph": "天",
+      "compound": false
+    },
+    {
+      "level": 16,
+      "source": "夫",
+      "glyph": "夫",
+      "compound": false
+    },
+    {
+      "level": 17,
+      "source": "太",
+      "glyph": "太",
+      "compound": false
+    },
+    {
+      "level": 18,
+      "source": "云",
+      "glyph": "云",
+      "compound": false
+    },
+    {
+      "level": 19,
+      "source": "去",
+      "glyph": "去",
+      "compound": false
+    },
+    {
+      "level": 20,
+      "source": "土",
+      "glyph": "土",
+      "compound": false
+    },
+    {
+      "level": 21,
+      "source": "士",
+      "glyph": "士",
+      "compound": false
+    },
+    {
+      "level": 22,
+      "source": "工",
+      "glyph": "工",
+      "compound": false
+    },
+    {
+      "level": 23,
+      "source": "干",
+      "glyph": "干",
+      "compound": false
+    },
+    {
+      "level": 24,
+      "source": "千",
+      "glyph": "千",
+      "compound": false
+    },
+    {
+      "level": 25,
+      "source": "中",
+      "glyph": "中",
+      "compound": false
+    },
+    {
+      "level": 26,
+      "source": "申",
+      "glyph": "申",
+      "compound": false
+    },
+    {
+      "level": 27,
+      "source": "甲",
+      "glyph": "甲",
+      "compound": false
+    },
+    {
+      "level": 28,
+      "source": "由",
+      "glyph": "由",
+      "compound": false
+    },
+    {
+      "level": 29,
+      "source": "旦",
+      "glyph": "旦",
+      "compound": false
+    },
+    {
+      "level": 30,
+      "source": "里",
+      "glyph": "里",
+      "compound": false
+    },
+    {
+      "level": 31,
+      "source": "日月",
+      "glyph": "明",
+      "compound": true
+    },
+    {
+      "level": 32,
+      "source": "木木",
+      "glyph": "林",
+      "compound": true
+    },
+    {
+      "level": 33,
+      "source": "人人",
+      "glyph": "从",
+      "compound": true
+    },
+    {
+      "level": 34,
+      "source": "口口",
+      "glyph": "吕",
+      "compound": true
+    },
+    {
+      "level": 35,
+      "source": "日日",
+      "glyph": "昌",
+      "compound": true
+    },
+    {
+      "level": 36,
+      "source": "月月",
+      "glyph": "朋",
+      "compound": true
+    },
+    {
+      "level": 37,
+      "source": "木木木",
+      "glyph": "森",
+      "compound": true
+    },
+    {
+      "level": 38,
+      "source": "口口口",
+      "glyph": "品",
+      "compound": true
+    },
+    {
+      "level": 39,
+      "source": "日日日",
+      "glyph": "晶",
+      "compound": true
+    },
+    {
+      "level": 40,
+      "source": "人人人",
+      "glyph": "众",
+      "compound": true
+    },
+    {
+      "level": 41,
+      "source": "白水",
+      "glyph": "泉",
+      "compound": true
+    },
+    {
+      "level": 42,
+      "source": "日生",
+      "glyph": "星",
+      "compound": true
+    },
+    {
+      "level": 43,
+      "source": "女马",
+      "glyph": "妈",
+      "compound": true
+    },
+    {
+      "level": 44,
+      "source": "女子",
+      "glyph": "好",
+      "compound": true
+    },
+    {
+      "level": 45,
+      "source": "女也",
+      "glyph": "她",
+      "compound": true
+    },
+    {
+      "level": 46,
+      "source": "口马",
+      "glyph": "吗",
+      "compound": true
+    },
+    {
+      "level": 47,
+      "source": "门口",
+      "glyph": "问",
+      "compound": true
+    },
+    {
+      "level": 48,
+      "source": "门日",
+      "glyph": "间",
+      "compound": true
+    },
+    {
+      "level": 49,
+      "source": "门木",
+      "glyph": "闲",
+      "compound": true
+    },
+    {
+      "level": 50,
+      "source": "木子",
+      "glyph": "李",
+      "compound": true
+    },
+    {
+      "level": 51,
+      "source": "木口",
+      "glyph": "杏",
+      "compound": true
+    },
+    {
+      "level": 52,
+      "source": "田心",
+      "glyph": "思",
+      "compound": true
+    },
+    {
+      "level": 53,
+      "source": "日十",
+      "glyph": "早",
+      "compound": true
+    },
+    {
+      "level": 54,
+      "source": "立日",
+      "glyph": "音",
+      "compound": true
+    },
+    {
+      "level": 55,
+      "source": "木目",
+      "glyph": "相",
+      "compound": true
+    },
+    {
+      "level": 56,
+      "source": "田力",
+      "glyph": "男",
+      "compound": true
+    },
+    {
+      "level": 57,
+      "source": "口天",
+      "glyph": "吴",
+      "compound": true
+    },
+    {
+      "level": 58,
+      "source": "小大",
+      "glyph": "尖",
+      "compound": true
+    },
+    {
+      "level": 59,
+      "source": "小土",
+      "glyph": "尘",
+      "compound": true
+    },
+    {
+      "level": 60,
+      "source": "日青",
+      "glyph": "晴",
+      "compound": true
+    }
+  ],
+  "layouts": [
+    {
+      "width": 392,
+      "height": 872,
+      "source": "日月",
+      "glyph": "明",
+      "answers": 7,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 771,
+      "board": {
+        "x": 17,
+        "y": 329,
+        "width": 358,
+        "height": 358,
+        "top": 329,
+        "right": 375,
+        "bottom": 687,
+        "left": 17
+      }
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "source": "木木木",
+      "glyph": "森",
+      "answers": 10,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 771,
+      "board": {
+        "x": 17,
+        "y": 329,
+        "width": 358,
+        "height": 358,
+        "top": 329,
+        "right": 375,
+        "bottom": 687,
+        "left": 17
+      }
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "source": "门口",
+      "glyph": "问",
+      "answers": 4,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 695,
+      "board": {
+        "x": 17,
+        "y": 253,
+        "width": 358,
+        "height": 358,
+        "top": 253,
+        "right": 375,
+        "bottom": 611,
+        "left": 17
+      }
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "source": "日青",
+      "glyph": "晴",
+      "answers": 11,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 847,
+      "board": {
+        "x": 17,
+        "y": 405,
+        "width": 358,
+        "height": 358,
+        "top": 405,
+        "right": 375,
+        "bottom": 763,
+        "left": 17
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "日月",
+      "glyph": "明",
+      "answers": 7,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 559,
+      "board": {
+        "x": 43,
+        "y": 258,
+        "width": 234,
+        "height": 234,
+        "top": 258,
+        "right": 277,
+        "bottom": 492,
+        "left": 43
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "木木木",
+      "glyph": "森",
+      "answers": 10,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 559,
+      "board": {
+        "x": 43,
+        "y": 258,
+        "width": 234,
+        "height": 234,
+        "top": 258,
+        "right": 277,
+        "bottom": 492,
+        "left": 43
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "门口",
+      "glyph": "问",
+      "answers": 4,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 500,
+      "board": {
+        "x": 43,
+        "y": 199,
+        "width": 234,
+        "height": 234,
+        "top": 199,
+        "right": 277,
+        "bottom": 433,
+        "left": 43
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "source": "日青",
+      "glyph": "晴",
+      "answers": 11,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 559,
+      "board": {
+        "x": 43,
+        "y": 258,
+        "width": 234,
+        "height": 234,
+        "top": 258,
+        "right": 277,
+        "bottom": 492,
+        "left": 43
+      }
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "日月",
+      "glyph": "明",
+      "answers": 7,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 325,
+      "board": {
+        "x": 489,
+        "y": 68,
+        "width": 254,
+        "height": 254,
+        "top": 68,
+        "right": 743,
+        "bottom": 322,
+        "left": 489
+      }
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "木木木",
+      "glyph": "森",
+      "answers": 10,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 325,
+      "board": {
+        "x": 489,
+        "y": 68,
+        "width": 254,
+        "height": 254,
+        "top": 68,
+        "right": 743,
+        "bottom": 322,
+        "left": 489
+      }
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "门口",
+      "glyph": "问",
+      "answers": 4,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 325,
+      "board": {
+        "x": 489,
+        "y": 68,
+        "width": 254,
+        "height": 254,
+        "top": 68,
+        "right": 743,
+        "bottom": 322,
+        "left": 489
+      }
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "source": "日青",
+      "glyph": "晴",
+      "answers": 11,
+      "boards": 1,
+      "overflow": false,
+      "submitBottom": 325,
+      "board": {
+        "x": 489,
+        "y": 68,
+        "width": 254,
+        "height": 254,
+        "top": 68,
+        "right": 743,
+        "bottom": 322,
+        "left": 489
+      }
+    }
+  ],
+  "pageErrors": []
+}

@@ -26,7 +26,8 @@
     <header class="play-nav">
       <button id="back" class="nav-button" aria-label="回关卡"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
       <h1 id="levelNumber"></h1>
-      <div class="attempt-counter" aria-label="尝试次数"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg><strong id="attempts">0</strong></div>
+      <div class="attempt-counter" aria-label="尝试次数"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5ZM9 9h6M9 14h4"/></svg><strong id="attempts">0</strong></div>
+      <button id="restart" class="nav-button" aria-label="重新开始本关" title="重来"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg></button>
     </header>
     <div id="pauseBar" class="pause-bar" hidden><button id="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>继续</button></div>
     <div id="board" class="board"><span class="board-spark spark-left" aria-hidden="true">✦</span><div id="slots" class="slots" role="group" aria-label="输入密码"></div><span class="board-spark spark-right" aria-hidden="true">✦</span></div>
@@ -47,6 +48,7 @@
     <div id="dialogBody" class="dialog-body"></div><div id="dialogActions" class="dialog-actions"></div>
   </section>
 </div>
+<script src="../shared/feedback.js"></script>
 <script src="core.js"></script>
 <script src="game.js"></script>
 </body>

@@ -70,6 +70,7 @@ body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}bod
   <div id="pauseScreen" class="screen hide"><div class="card"><h1>休息一下</h1><button id="resumeBtn">继续</button><div class="actions"><button id="restartBtn" class="secondary">重玩</button><button id="pauseHomeBtn" class="secondary">返回</button></div></div></div>
 </div>
 
+<script src="../shared/feedback.js"></script>
 <script>
 (function () {
 'use strict';
@@ -131,32 +132,13 @@ function applyPalette() {
 }
 
 /* ============================ 音效 ============================ */
-var AC = null, muted = false;
-try{muted=localStorage.getItem('rugeMuted')==='true';}catch(e){}
+var muted = window.RugeFX ? !window.RugeFX.enabled('sound') : false;
+var recordFeedbackPending = false;
 elMute.setAttribute('aria-pressed',String(muted));
 if(muted)elMute.innerHTML='<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 9l5 6M22 9l-5 6"/></svg>';
-function audioCtx() {
-  if (AC === null) {
-    try { AC = new (window.AudioContext || window.webkitAudioContext)(); }
-    catch (e) { AC = false; }
-  }
-  if (AC && AC.state === 'suspended') { AC.resume().catch(function () {}); }
-  return AC || null;
-}
-function blip(f1, f2, dur, type, vol) {
-  if (muted) return;
-  var ac = audioCtx();
-  if (!ac) return;
-  var t = ac.currentTime;
-  var o = ac.createOscillator(), g = ac.createGain();
-  o.type = type || 'square';
-  o.frequency.setValueAtTime(f1, t);
-  if (f2) o.frequency.exponentialRampToValueAtTime(Math.max(20, f2), t + dur);
-  g.gain.setValueAtTime(0.0001, t);
-  g.gain.exponentialRampToValueAtTime(vol || 0.05, t + 0.008);
-  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-  o.connect(g); g.connect(ac.destination);
-  o.start(t); o.stop(t + dur + 0.03);
+function feedback(name) {
+  if (paused || document.hidden || /[?&]cover=1(?:&|$)/.test(location.search)) return;
+  if (window.RugeFX) window.RugeFX.emit(name);
 }
 
 /* ============================ 布局 ============================ */
@@ -275,6 +257,7 @@ function reset() {
 function startGame(isPractice) {
   if (typeof isPractice === 'boolean') practice = isPractice;
   reset();
+  recordFeedbackPending = false;
   paused = false; lastT = 0;
   elPause.classList.add('hide');
   state = 'run';
@@ -284,7 +267,6 @@ function startGame(isPractice) {
   elOver.classList.add('hide');
   elHint.classList.add('show');
   setTimeout(function () { elHint.classList.remove('show'); }, 2400);
-  audioCtx();
   console.log('[flappy] start');
 }
 
@@ -294,11 +276,14 @@ function showOver() {
   document.querySelector('#overScreen .result-label').textContent = '';
   elNewHi.style.display = newRecord ? 'inline-block' : 'none';
   elOver.classList.remove('hide');
+  if (recordFeedbackPending) feedback('win');
+  recordFeedbackPending = false;
 }
 
 function die() {
-  if (state === 'dead' || invincible > 0) return;
+  if (state !== 'run' || paused || invincible > 0) return;
   if (practice && rescues > 0) {
+    feedback('error');
     rescues--; invincible = 1.35; player.y = L.readyY; player.vy = L.FLAP * 0.55;
     pipes = pipes.filter(function(p){return p.x > L.birdX + L.birdW + 60;});
     addPop(L.birdX + L.birdW / 2, player.y - 42, '♥ ' + rescues);
@@ -309,7 +294,8 @@ function die() {
   player.vy = L.FLAP * 0.55;
   if (!practice && score > best) { best = score; newRecord = true; try { localStorage.setItem('flappyDashBest', String(best)); } catch (e) {} }
   reportStat(score, !practice);
-  blip(240, 55, 0.38, 'sawtooth', 0.09);
+  recordFeedbackPending = newRecord;
+  feedback('error');
   addPuff(L.birdX + L.birdW * 0.5, player.y, 14, 1);
   setTimeout(function () { if (state === 'dead') showOver(); }, 700);
 }
@@ -319,7 +305,7 @@ function flap() {
   if (state !== 'run' || paused) return;
   player.vy = L.FLAP;
   player.flapT = 0.15;
-  blip(380, 640, 0.06, 'square', 0.035);
+  feedback('jump');
   addPuff(L.birdX + L.birdW * 0.20, player.y + L.birdH * 0.18, 4);
 }
 
@@ -327,7 +313,6 @@ elStage.addEventListener('pointerdown', function (e) {
   if (e.target && e.target.closest && e.target.closest('button')) return;
   e.preventDefault();
   if (paused) return;
-  audioCtx();
   if (state === 'ready') return;
   flap();
 }, { passive: false });
@@ -336,7 +321,6 @@ window.addEventListener('keydown', function (e) {
   if (e.repeat) return;
   if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {
     e.preventDefault();
-    audioCtx();
     if (state === 'ready') return;
     else flap();
   }
@@ -351,11 +335,11 @@ elMute.addEventListener('click', function (e) {
   muted = !muted;
   elMute.setAttribute('aria-pressed', String(muted));
   elMute.innerHTML = muted ? '<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 9l5 6M22 9l-5 6"/></svg>' : '<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 8q4 4 0 8"/></svg>';
-  try{localStorage.setItem('rugeMuted',String(muted));}catch(e){}
-  if (!muted) blip(700, 1050, 0.08, 'sine', 0.05);
+  if (window.RugeFX) window.RugeFX.setSound(!muted);
 });
 
 document.addEventListener('visibilitychange', function () {
+  if (document.hidden) recordFeedbackPending = false;
   if (document.hidden && state === 'run') setPaused(true);
   lastT = 0;
 });
@@ -365,8 +349,6 @@ function setPaused(value) {
   if (state !== 'run' && !paused) return;
   paused = !!value; lastT = 0;
   elPause.classList.toggle('hide', !paused);
-  if (paused && AC && AC.state === 'running') AC.suspend().catch(function(){});
-  if (!paused && !muted) audioCtx();
 }
 function goHome() {
   try { if (window.RugeNav && window.RugeNav.home) { window.RugeNav.home(); return; } } catch(e) {}
@@ -378,10 +360,11 @@ document.getElementById('resumeBtn').addEventListener('click',function(){setPaus
 document.getElementById('restartBtn').addEventListener('click',function(){startGame();});
 document.getElementById('pauseHomeBtn').addEventListener('click',goHome);
 document.getElementById('overHomeBtn').addEventListener('click',goHome);
-window.addEventListener('ruge:pause',function(){if(state==='run')setPaused(true);lastT=0;});
+window.addEventListener('ruge:pause',function(){recordFeedbackPending=false;if(state==='run')setPaused(true);lastT=0;});
 window.addEventListener('ruge:resume',function(){lastT=0;});
 window.addEventListener('keydown',function(e){if(e.code==='Escape'&&state==='run'){e.preventDefault();setPaused(!paused);}});
 function reportStat(value, record) {
+  if (/[?&]cover=1(?:&|$)/.test(location.search)) return;
   try { var all=JSON.parse(localStorage.getItem('rugeStat')||'{}');var s=all[GAME_ID]||{};s.last=Date.now();if(record)s.best=Math.max(Number(s.best)||0,value);all[GAME_ID]=s;localStorage.setItem('rugeStat',JSON.stringify(all)); } catch(e){}
 }
 
@@ -542,14 +525,13 @@ function update(dt) {
     if (!p.scored && p.x + L.pipeW < L.birdX + L.birdW * 0.5) {
       p.scored = true;
       score++; passed++;
-      if (passed >= goal) {addPop(L.birdX + L.birdW / 2, player.y - 40, '★');goal += 8;}
-      blip(880, 1180, 0.07, 'triangle', 0.045);
-      if (score % 10 === 0) { flash = Math.max(flash, 0.14); blip(700, 1060, 0.1, 'square', 0.05); }
+      if (passed >= goal) {addPop(L.birdX + L.birdW / 2, player.y - 40, '★');goal += 8;feedback('success');}
+      else feedback('collect');
+      if (score % 10 === 0) flash = Math.max(flash, 0.14);
       if (passed >= nextNight) {
         nextNight += 18;
         nightTarget = nightTarget ? 0 : 1;
         document.body.classList.toggle('night', nightTarget === 1);
-        blip(nightTarget ? 420 : 760, nightTarget ? 300 : 1000, 0.22, 'sine', 0.05);
       }
       syncScore();
     }
@@ -561,7 +543,7 @@ function update(dt) {
         p.gemGot = true;
         gemsGot++;
         score += 3;
-        blip(1150, 1650, 0.09, 'triangle', 0.05);
+        feedback('collect');
         addPop(gx, gy, '+3');
         syncScore();
       }

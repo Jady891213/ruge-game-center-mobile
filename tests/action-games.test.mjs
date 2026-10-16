@@ -17,7 +17,7 @@ function loadAction(t, game) {
        ${frog ? ',setPads:value=>{pads=value}' : ''}`;
   const harness = loadGame(game, {
     instrument(source, index) {
-      if (index !== 0) return source;
+      if (!source.includes('var GAME_ID')) return source;
       assert.match(source, /\}\)\(\);\s*$/, 'expected the real game closure');
       return source.replace(/\}\)\(\);\s*$/, `window.__engine={render,${members}};})();`);
     },
