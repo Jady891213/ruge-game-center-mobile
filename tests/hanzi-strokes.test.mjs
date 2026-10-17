@@ -6,6 +6,7 @@ const ctx=vm.createContext({window:{}});
 vm.runInContext(fs.readFileSync(new URL('../app/assets/hanzi-puzzle/strokes.js',import.meta.url),'utf8'),ctx);
 vm.runInContext(fs.readFileSync(new URL('../app/assets/hanzi-puzzle/levels-extra.js',import.meta.url),'utf8'),ctx);
 vm.runInContext(fs.readFileSync(new URL('../app/assets/hanzi-puzzle/core.js',import.meta.url),'utf8'),ctx);
+for(const name of ['composites','answer-catalog'])vm.runInContext(fs.readFileSync(new URL(`../app/assets/hanzi-puzzle/${name}.js`,import.meta.url),'utf8'),ctx);
 const H=ctx.window.HanziStrokes,D=ctx.window.HanziStrokeData;
 const plain=x=>JSON.parse(JSON.stringify(x));
 function memory(initial={}){const values=new Map(Object.entries(initial));let writes=0;return {getItem:k=>values.get(k)??null,setItem(k,v){writes++;values.set(k,v);},values,get writes(){return writes;}};}

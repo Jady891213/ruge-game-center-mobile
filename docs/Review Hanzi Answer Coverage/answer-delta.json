@@ -1,0 +1,404 @@
+{
+  "previousVersion": "4.16",
+  "previousAnswers": 344,
+  "currentAnswers": 358,
+  "newAnswers": 14,
+  "newSelections": 28,
+  "changedLevels": [
+    {
+      "level": 4,
+      "source": "田",
+      "glyph": "田",
+      "newAnswers": [
+        "土"
+      ],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "source": "本",
+      "glyph": "本",
+      "newAnswers": [],
+      "newSelections": [
+        {
+          "char": "十",
+          "set": [
+            1,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "source": "早",
+      "glyph": "早",
+      "newAnswers": [
+        "旦"
+      ],
+      "newSelections": [
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 16,
+      "source": "夫",
+      "glyph": "夫",
+      "newAnswers": [],
+      "newSelections": [
+        {
+          "char": "大",
+          "set": [
+            0,
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "level": 19,
+      "source": "去",
+      "glyph": "去",
+      "newAnswers": [
+        "云"
+      ],
+      "newSelections": [
+        {
+          "char": "云",
+          "set": [
+            0,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 28,
+      "source": "由",
+      "glyph": "由",
+      "newAnswers": [
+        "土"
+      ],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "source": "里",
+      "glyph": "里",
+      "newAnswers": [
+        "甲",
+        "旦"
+      ],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "char": "土",
+          "set": [
+            3,
+            4,
+            6
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            6
+          ]
+        },
+        {
+          "char": "甲",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "source": "日日",
+      "glyph": "昌",
+      "newAnswers": [
+        "旦"
+      ],
+      "newSelections": [
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            6
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "level": 39,
+      "source": "日日日",
+      "glyph": "晶",
+      "newAnswers": [
+        "旦"
+      ],
+      "newSelections": [
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            6
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            7
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            10
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "level": 42,
+      "source": "日生",
+      "glyph": "星",
+      "newAnswers": [
+        "早",
+        "旦"
+      ],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            5,
+            7,
+            8
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            6
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            8
+          ]
+        },
+        {
+          "char": "早",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7
+          ]
+        },
+        {
+          "char": "早",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            6,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "level": 52,
+      "source": "田心",
+      "glyph": "思",
+      "newAnswers": [
+        "土"
+      ],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 53,
+      "source": "日十",
+      "glyph": "早",
+      "newAnswers": [
+        "干",
+        "旦"
+      ],
+      "newSelections": [
+        {
+          "char": "干",
+          "set": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "char": "旦",
+          "set": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 56,
+      "source": "田力",
+      "glyph": "男",
+      "newAnswers": [
+        "土"
+      ],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "source": "日青",
+      "glyph": "晴",
+      "newAnswers": [],
+      "newSelections": [
+        {
+          "char": "土",
+          "set": [
+            4,
+            6,
+            7
+          ]
+        }
+      ]
+    }
+  ]
+}

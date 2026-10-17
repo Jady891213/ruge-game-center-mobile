@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、重力迷宫、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.16 / versionCode 39**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.17 / versionCode 40**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,14 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 字里找字答案库补漏（4.17）
+
+答案采用离线“完整笔画选集 → 汉字”规则表，经人工审校；字形数据提供笔画，不会自动提供所有可拆出的汉字，也没有实时联网查字典。4.17复核60关，新增14个关内答案与28种合法选法，合计358个关内答案、673种合法选法，单关最多12字。
+
+“田”的中横/中竖/底横可找出“土”，“思”“男”里同一部件同步支持；补充去→云、里→甲/旦、早→旦、星→早/旦等。相同字形及部件通过 answer-catalog.js 统一复用，避免独立早字关和日十组合关答案不同。已有合法选法和存档保持，新增答案由玩家收集，原解锁不回退。
+
+查看 [完整答案清单](docs/Review%20Hanzi%20Answer%20Coverage/answer-inventory.md) 与 [验收记录](docs/Review%20Hanzi%20Answer%20Coverage/answer-coverage-review.md)。维护时运行 `node scripts/audit-hanzi-answers.mjs`，枚举选集检查查表一致、无歧义和数量上限；该校验不代表已经穷尽所有汉字。
 
 ## 字里找字选笔与重复提交（4.16）
 
@@ -50,7 +58,7 @@
 
 ## 找字与调色（4.8）
 
-- **字里找字**重做为点选原字笔画、收集多个答案的玩法。共 60 关，原有前 10 关（三、王、木、田、白、本、目、米、早、意）保留；4.11 新增 20 个单字、26 个双字、4 个三字题。整笔保留原位置，成功字收进顶部答案格，带拼音；同答案不重复计数。原字本身也算答案；多字题可选不同字板的完整笔画部件组合成新字，如日月→明、木木木→森。共 344 个关内答案，每关 2～11 个，不同关的同字分别计数。支持反选、清空、笔画提示、重来和存档。新键 `rugeHanziStrokesV1` 独立记录收集，旧版拼部件存档保留。
+- **字里找字**重做为点选原字笔画、收集多个答案的玩法。共 60 关，原有前 10 关（三、王、木、田、白、本、目、米、早、意）保留；4.11 新增 20 个单字、26 个双字、4 个三字题。整笔保留原位置，成功字收进顶部答案格，带拼音；同答案不重复计数。原字本身也算答案；多字题可选不同字板的完整笔画部件组合成新字，如日月→明、木木木→森。4.17 共 358 个关内答案，每关 2～12 个，不同关的同字分别计数。支持反选、清空、笔画提示、重来和存档。新键 `rugeHanziStrokesV1` 独立记录收集，旧版拼部件存档保留。
 - **小小调色师**新增 10 关和自由画室。逐滴混合红、黄、蓝、白颜料，为原创小动物/物件上色；逐步学习不同比例、加白和多订单。支持撤销、倒掉、重开和存档（`rugePaintMixingV1`）。使用 RYB 颜料近似，黄蓝能调绿；不是 RGB 光线平均，也不用于精确预测真实颜料。
 
 4.11 关卡扩展与真机验证见 [60 关验收](docs/Review%20Hanzi%20Sixty%20Levels/hanzi-sixty-levels.md)。
@@ -94,7 +102,7 @@ python3 scripts/build.py
 
 公开仓库不包含签名密钥；首次克隆需要自备签名材料并通过参数指定。覆盖更新已有应用必须使用原签名，由 Mac 发布端保管。已有 SDK 时可跳过安装步骤。本机已验证 JDK 18.0.2.1；JDK、SDK 和签名路径都可以通过构建参数或环境变量覆盖，详见 [构建说明](docs/build.md)。脚本只构建与校验，不会安装到手机。
 
-产物为 `out/game-center-v4.16-dev.apk` 和 `out/game-center-v4.16.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
+产物为 `out/game-center-v4.17-dev.apk` 和 `out/game-center-v4.17.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
 
 普通切后台会保留游戏状态并发送暂停/恢复事件；开发页面只有资源变化时才于回前台刷新。明确刷新开发页会重置页面状态。正式版关闭调试和外部开发页面能力。
 
@@ -108,7 +116,7 @@ export GAME_CENTER_ADB="$(pwd)/../../03-Android工具/platform-tools/adb"
 "$GAME_CENTER_ADB" connect '<手机IP:连接端口>'
 "$GAME_CENTER_ADB" devices -l
 export GAME_CENTER_SERIAL='<devices 列表中的目标设备标识>'
-"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.16-dev.apk
+"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.17-dev.apk
 "$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" shell am start -n com.dsh.gamecenter/.MainActivity
 ```
 

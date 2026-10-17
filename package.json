@@ -1,6 +1,6 @@
 {
   "name": "ruge-game-center",
-  "version": "4.16.0",
+  "version": "4.17.0",
   "private": true,
   "description": "乳鸽游戏中心：离线网页小游戏与 Android WebView 外壳",
   "type": "module",

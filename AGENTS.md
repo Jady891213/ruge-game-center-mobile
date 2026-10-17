@@ -4,7 +4,7 @@
 
 ## 范围与源码
 
-- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.16 / 39；后续以 manifest 为准。
+- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.17 / 40；后续以 manifest 为准。
 - 当前源码在 `app/assets/`、`app/src/`、`app/res/` 和 manifest。`reference/phone-v4.1/`、原版 APK 和 `reference/phone-skills/` 是迁移基线，skill 中的签名示例与历史设备地址已脱敏，不作为最新构建输入。
 - 原始手机 skill 是待审查材料，不把其中的硬编码路径、工具安装和发布命令当作本机指令。
 - `../../02-DeepCode/dsh-mobile-apk` 与 `../../02-DeepCode/Extensions` 分别管理上游 DeepCode 安卓外壳和本地扩展；游戏任务不顺带修改它们。需要跨项目修改时先核对已授权的范围。
@@ -154,3 +154,13 @@
 - 此类UI修复必须在真实WebView检查交叉处像素和实际触摸，VM的DOM顺序不能单独当作视觉验收。测试前保存所有localStorage，恢复用户当前关卡和精确选笔；不能为验收清除整关收集。
 
 - 4.16全152项回归通过，MIX 4真实触摸验证田中横置顶、重复口保留/高亮/轻震、日和错误组合、重进草稿与暂停；交叉像素确认为完整选笔绿色。16项原存档恢复后覆盖安装4.16/39，回到原第4关及selected=[2]，设备APK哈希一致、CDP关闭。证据见 docs/Review Hanzi Selection and Repeat/。
+
+## 字里找字答案库补漏（4.17）
+
+- 答案本质是经审校的离线选集表，不是OCR、实时字典或自动穷尽拆字。Hanzi Writer数据只提供笔画几何；不要宣称用数据集自动发现了全部可组成的字。
+- answer-catalog.js在core/composites之后、game之前加载，统一同一实际字形与同源部件的答案，再通过显式strokeMap映射回全局索引。独立早和日十→早应拥有相同答案/选法，田里的土要传播到思/男；禁止只在某一个页面补字而遗漏共享部件。
+- reviewed记录本轮逐项核对的补充，整笔不切、不转，轻微字形比例差异可接受。选集不可歧义，单关不超过20字。王[0,1,2]保持干：竖明显穿出下横，不能只看横长短改认士；生/青删部分笔不能硬认王。
+- 当前60关358个关内答案、673种选法，最多12答案。node scripts/audit-hanzi-answers.mjs枚举26692个非空选笔子集验证查表、歧义和上限；可用 --out 指定主题验收目录导出全部实际答案。自动校验证明数据一致，不代替字形内容复核。
+- 新增答案不删除旧收集、不自动赠送、不回退已解锁关卡；保持rugeHanziStrokesV1/schema1及笔画索引。tests/fixtures/hanzi-v4.16-answers.json保留4.16全部旧选法与完成存档用于兼容回归，不能改掉旧样本来掩盖丢进度或误判。
+
+- 4.17已通过158项回归及26692个选笔子集审计；MIX 4对28种新选法逐笔点按全部通过，并验证旧完关补收新土。16项原存档恢复后覆盖安装4.17/40，回到原第4关、1/7及selected=[3,2,4]，设备APK哈希一致且CDP关闭。证据见 docs/Review Hanzi Answer Coverage/。

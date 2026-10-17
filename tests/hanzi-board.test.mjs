@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const ctx=vm.createContext({window:{}});
-for(const name of ['strokes','levels-extra','core','composites','board-geometry'])vm.runInContext(fs.readFileSync(new URL(`../app/assets/hanzi-puzzle/${name}.js`,import.meta.url),'utf8'),ctx);
+for(const name of ['strokes','levels-extra','core','composites','answer-catalog','board-geometry'])vm.runInContext(fs.readFileSync(new URL(`../app/assets/hanzi-puzzle/${name}.js`,import.meta.url),'utf8'),ctx);
 const {HanziStrokes:H,HanziStrokeData:D,HanziCompositeData:C,HanziBoard:B}=ctx.window;
 const plain=x=>JSON.parse(JSON.stringify(x));
 const board=li=>B.forLevel(li,H,D,C);
@@ -58,10 +58,10 @@ test('整字画布每一笔均有实际可达的中线点，交叉处不会只�
  const cross=[[[0,0],[100,0]],[[50,-100],[50,100]]];
  assert.equal(B.pick(cross,55,40,20),1);assert.equal(B.pick(cross,90,6,20),0);assert.equal(B.pick(cross,250,250,20),-1);
 });
-test('几何替换不改变 60 关 344 答案、旧草稿全局索引与存档 schema',()=>{
+test('几何替换不改变 60 关答案、旧草稿全局索引与存档 schema',()=>{
  const before=JSON.stringify(H.LEVELS),raw={schema:1,current:36,reached:59,found:H.LEVELS.map(()=>[]),selected:[0,4,8]};
  const saved=plain(H.sanitize(raw));for(let li=0;li<H.LEVELS.length;li++)board(li);
- assert.equal(JSON.stringify(H.LEVELS),before);assert.equal(H.LEVELS.length,60);assert.equal(H.LEVELS.reduce((n,l)=>n+l.targets.length,0),344);assert.deepEqual(plain(H.sanitize(raw)),saved);assert.deepEqual(saved.selected,[0,4,8]);assert.equal(saved.schema,1);assert.equal(H.KEY,'rugeHanziStrokesV1');
+ assert.equal(JSON.stringify(H.LEVELS),before);assert.equal(H.LEVELS.length,60);assert.equal(H.LEVELS.reduce((n,l)=>n+l.targets.length,0),358);assert.deepEqual(plain(H.sanitize(raw)),saved);assert.deepEqual(saved.selected,[0,4,8]);assert.equal(saved.schema,1);assert.equal(H.KEY,'rugeHanziStrokesV1');
  for(let li=0;li<H.LEVELS.length;li++)for(const t of H.LEVELS[li].targets)for(const selected of t.sets)assert.equal(H.match(li,selected)?.char,t.char);
 });
 test('新 29 个字形离线收录固定提交来源与 SHA-256，早复用已有许可数据',()=>{

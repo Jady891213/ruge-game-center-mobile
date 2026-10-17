@@ -1,0 +1,15 @@
+PASS 4 田 1 selections
+PASS 6 本 1 selections
+PASS 9 早 1 selections
+PASS 16 夫 1 selections
+PASS 19 去 1 selections
+PASS 28 由 1 selections
+PASS 30 里 5 selections
+PASS 35 昌 2 selections
+PASS 39 晶 4 selections
+PASS 42 星 6 selections
+PASS 52 思 1 selections
+PASS 53 早 2 selections
+PASS 56 男 1 selections
+PASS 60 晴 1 selections
+RESTORED 16 keys

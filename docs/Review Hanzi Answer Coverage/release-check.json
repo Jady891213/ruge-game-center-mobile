@@ -1,0 +1,25 @@
+{
+  "version": "4.17",
+  "versionCode": 40,
+  "package": "com.dsh.gamecenter",
+  "install": "Performing Streamed Install\nSuccess",
+  "development": false,
+  "apkSha256": "c7825b8468c405c96f759fb1030e1de7dc81211b55f0db27336ff74d6bc8f4d8",
+  "deviceApkMatches": true,
+  "debuggable": false,
+  "cdpSocket": false,
+  "storageKeysRestoredBeforeInstall": 16,
+  "allStorageMatchedBeforeInstall": true,
+  "originalLevel": 4,
+  "originalCollectedCount": 1,
+  "originalSelected": [
+    3,
+    2,
+    4
+  ],
+  "formalUiCount": "1 / 7",
+  "formalReturnedToOriginalGame": true,
+  "crashFound": false,
+  "forwardsAfter": "",
+  "note": "Normal entry updates collection recent-play metadata; game collection and draft are preserved."
+}

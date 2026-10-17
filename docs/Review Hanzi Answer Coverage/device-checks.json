@@ -1,0 +1,448 @@
+{
+  "version": "4.17-dev/40",
+  "device": "MIX 4 Android 14",
+  "checks": [
+    {
+      "level": 4,
+      "glyph": "田",
+      "char": "土",
+      "selection": [
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 6,
+      "glyph": "本",
+      "char": "十",
+      "selection": [
+        1,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 9,
+      "glyph": "早",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 16,
+      "glyph": "夫",
+      "char": "大",
+      "selection": [
+        0,
+        2,
+        3
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 19,
+      "glyph": "去",
+      "char": "云",
+      "selection": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 28,
+      "glyph": "由",
+      "char": "土",
+      "selection": [
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 30,
+      "glyph": "里",
+      "char": "土",
+      "selection": [
+        2,
+        4,
+        6
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 30,
+      "glyph": "里",
+      "char": "土",
+      "selection": [
+        3,
+        4,
+        6
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 30,
+      "glyph": "里",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 30,
+      "glyph": "里",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 30,
+      "glyph": "里",
+      "char": "甲",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 35,
+      "glyph": "昌",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 35,
+      "glyph": "昌",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 39,
+      "glyph": "晶",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 39,
+      "glyph": "晶",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 39,
+      "glyph": "晶",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        10
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 39,
+      "glyph": "晶",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        11
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 42,
+      "glyph": "星",
+      "char": "土",
+      "selection": [
+        5,
+        7,
+        8
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 42,
+      "glyph": "星",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 42,
+      "glyph": "星",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 42,
+      "glyph": "星",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        8
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 42,
+      "glyph": "星",
+      "char": "早",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 42,
+      "glyph": "星",
+      "char": "早",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7
+      ],
+      "repeat": true,
+      "feedback": "error",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 52,
+      "glyph": "思",
+      "char": "土",
+      "selection": [
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 53,
+      "glyph": "早",
+      "char": "干",
+      "selection": [
+        3,
+        4,
+        5
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 53,
+      "glyph": "早",
+      "char": "旦",
+      "selection": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 56,
+      "glyph": "男",
+      "char": "土",
+      "selection": [
+        2,
+        3,
+        4
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "level": 60,
+      "glyph": "晴",
+      "char": "土",
+      "selection": [
+        4,
+        6,
+        7
+      ],
+      "repeat": false,
+      "feedback": "success",
+      "nativeSoundDelta": 1,
+      "nativeHapticDelta": 1
+    },
+    {
+      "check": "old completed 4th stage retains six answers and all unlocked levels; collecting soil completes seven",
+      "beforeCount": 6,
+      "afterCount": 7,
+      "unlocked": 59
+    }
+  ],
+  "error": null,
+  "restoredExactly": true,
+  "storageKeys": 16,
+  "originalCurrent": 3,
+  "originalFoundCount": 1,
+  "originalSelected": [
+    3,
+    2,
+    4
+  ]
+}

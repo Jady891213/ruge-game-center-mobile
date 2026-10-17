@@ -1,0 +1,6530 @@
+{
+  "catalogVersion": 1,
+  "levelCount": 60,
+  "answerCount": 358,
+  "legalSelectionCount": 673,
+  "checkedSubsets": 26692,
+  "maxAnswers": 12,
+  "levels": [
+    {
+      "level": 1,
+      "source": "三",
+      "glyph": "三",
+      "strokeCount": 3,
+      "answerCount": 3,
+      "legalSelectionCount": 7,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "source": "王",
+      "glyph": "王",
+      "strokeCount": 4,
+      "answerCount": 8,
+      "legalSelectionCount": 12,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "工",
+          "pinyin": "gōng",
+          "sets": [
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "干",
+          "pinyin": "gān",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "王",
+          "pinyin": "wáng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "source": "木",
+      "glyph": "木",
+      "strokeCount": 4,
+      "answerCount": 4,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "source": "田",
+      "glyph": "田",
+      "strokeCount": 5,
+      "answerCount": 7,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "田",
+          "pinyin": "tián",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "source": "白",
+      "glyph": "白",
+      "strokeCount": 5,
+      "answerCount": 5,
+      "legalSelectionCount": 6,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "白",
+          "pinyin": "bái",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "source": "本",
+      "glyph": "本",
+      "strokeCount": 5,
+      "answerCount": 6,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "本",
+          "pinyin": "běn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "source": "目",
+      "glyph": "目",
+      "strokeCount": 5,
+      "answerCount": 6,
+      "legalSelectionCount": 11,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              4
+            ],
+            [
+              0,
+              1,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "目",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "source": "米",
+      "glyph": "米",
+      "strokeCount": 6,
+      "answerCount": 5,
+      "legalSelectionCount": 5,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "米",
+          "pinyin": "mǐ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "source": "早",
+      "glyph": "早",
+      "strokeCount": 6,
+      "answerCount": 9,
+      "legalSelectionCount": 13,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "干",
+          "pinyin": "gān",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "早",
+          "pinyin": "zǎo",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "source": "意",
+      "glyph": "意",
+      "strokeCount": 13,
+      "answerCount": 9,
+      "legalSelectionCount": 20,
+      "checkedSubsets": 8191,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              1
+            ],
+            [
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              1,
+              4,
+              7
+            ],
+            [
+              1,
+              4,
+              8
+            ],
+            [
+              1,
+              7,
+              8
+            ],
+            [
+              4,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              5,
+              6,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "立",
+          "pinyin": "lì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "心",
+          "pinyin": "xīn",
+          "sets": [
+            [
+              9,
+              10,
+              11,
+              12
+            ]
+          ]
+        },
+        {
+          "char": "音",
+          "pinyin": "yīn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "意",
+          "pinyin": "yì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "source": "日",
+      "glyph": "日",
+      "strokeCount": 4,
+      "answerCount": 4,
+      "legalSelectionCount": 5,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "source": "月",
+      "glyph": "月",
+      "strokeCount": 4,
+      "answerCount": 3,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "月",
+          "pinyin": "yuè",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 13,
+      "source": "口",
+      "glyph": "口",
+      "strokeCount": 3,
+      "answerCount": 2,
+      "legalSelectionCount": 2,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 14,
+      "source": "大",
+      "glyph": "大",
+      "strokeCount": 3,
+      "answerCount": 3,
+      "legalSelectionCount": 3,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "大",
+          "pinyin": "dà",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "source": "天",
+      "glyph": "天",
+      "strokeCount": 4,
+      "answerCount": 5,
+      "legalSelectionCount": 6,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "大",
+          "pinyin": "dà",
+          "sets": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "天",
+          "pinyin": "tiān",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 16,
+      "source": "夫",
+      "glyph": "夫",
+      "strokeCount": 4,
+      "answerCount": 5,
+      "legalSelectionCount": 7,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "大",
+          "pinyin": "dà",
+          "sets": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "夫",
+          "pinyin": "fū",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 17,
+      "source": "太",
+      "glyph": "太",
+      "strokeCount": 4,
+      "answerCount": 4,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "大",
+          "pinyin": "dà",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "太",
+          "pinyin": "tài",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 18,
+      "source": "云",
+      "glyph": "云",
+      "strokeCount": 4,
+      "answerCount": 3,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "云",
+          "pinyin": "yún",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 19,
+      "source": "去",
+      "glyph": "去",
+      "strokeCount": 5,
+      "answerCount": 6,
+      "legalSelectionCount": 7,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "去",
+          "pinyin": "qù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "云",
+          "pinyin": "yún",
+          "sets": [
+            [
+              0,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "source": "土",
+      "glyph": "土",
+      "strokeCount": 3,
+      "answerCount": 4,
+      "legalSelectionCount": 5,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 21,
+      "source": "士",
+      "glyph": "士",
+      "strokeCount": 3,
+      "answerCount": 4,
+      "legalSelectionCount": 5,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "士",
+          "pinyin": "shì",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 22,
+      "source": "工",
+      "glyph": "工",
+      "strokeCount": 3,
+      "answerCount": 3,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "工",
+          "pinyin": "gōng",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 23,
+      "source": "干",
+      "glyph": "干",
+      "strokeCount": 3,
+      "answerCount": 4,
+      "legalSelectionCount": 5,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "干",
+          "pinyin": "gān",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 24,
+      "source": "千",
+      "glyph": "千",
+      "strokeCount": 3,
+      "answerCount": 3,
+      "legalSelectionCount": 3,
+      "checkedSubsets": 7,
+      "strokeMap": [
+        0,
+        1,
+        2
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "千",
+          "pinyin": "qiān",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 25,
+      "source": "中",
+      "glyph": "中",
+      "strokeCount": 4,
+      "answerCount": 4,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "中",
+          "pinyin": "zhōng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 26,
+      "source": "申",
+      "glyph": "申",
+      "strokeCount": 5,
+      "answerCount": 6,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "申",
+          "pinyin": "shēn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 27,
+      "source": "甲",
+      "glyph": "甲",
+      "strokeCount": 5,
+      "answerCount": 6,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "甲",
+          "pinyin": "jiǎ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 28,
+      "source": "由",
+      "glyph": "由",
+      "strokeCount": 5,
+      "answerCount": 7,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "由",
+          "pinyin": "yóu",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 29,
+      "source": "旦",
+      "glyph": "旦",
+      "strokeCount": 5,
+      "answerCount": 6,
+      "legalSelectionCount": 10,
+      "checkedSubsets": 31,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 30,
+      "source": "里",
+      "glyph": "里",
+      "strokeCount": 7,
+      "answerCount": 10,
+      "legalSelectionCount": 26,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              5,
+              6
+            ],
+            [
+              3,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              2,
+              4,
+              6
+            ],
+            [
+              3,
+              4,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "里",
+          "pinyin": "lǐ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "甲",
+          "pinyin": "jiǎ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 31,
+      "source": "日月",
+      "glyph": "明",
+      "strokeCount": 8,
+      "answerCount": 7,
+      "legalSelectionCount": 18,
+      "checkedSubsets": 255,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "月",
+          "pinyin": "yuè",
+          "sets": [
+            [
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "明",
+          "pinyin": "míng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              3,
+              6,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 32,
+      "source": "木木",
+      "glyph": "林",
+      "strokeCount": 8,
+      "answerCount": 7,
+      "legalSelectionCount": 11,
+      "checkedSubsets": 255,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "林",
+          "pinyin": "lín",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "从",
+          "pinyin": "cóng",
+          "sets": [
+            [
+              2,
+              3,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 33,
+      "source": "人人",
+      "glyph": "从",
+      "strokeCount": 4,
+      "answerCount": 2,
+      "legalSelectionCount": 3,
+      "checkedSubsets": 15,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "targets": [
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "从",
+          "pinyin": "cóng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 34,
+      "source": "口口",
+      "glyph": "吕",
+      "strokeCount": 6,
+      "answerCount": 4,
+      "legalSelectionCount": 6,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "吕",
+          "pinyin": "lǚ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 35,
+      "source": "日日",
+      "glyph": "昌",
+      "strokeCount": 8,
+      "answerCount": 7,
+      "legalSelectionCount": 21,
+      "checkedSubsets": 255,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              4,
+              5,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "昌",
+          "pinyin": "chāng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              3,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              6
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 36,
+      "source": "月月",
+      "glyph": "朋",
+      "strokeCount": 8,
+      "answerCount": 5,
+      "legalSelectionCount": 17,
+      "checkedSubsets": 255,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "月",
+          "pinyin": "yuè",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "朋",
+          "pinyin": "péng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              3,
+              6,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 37,
+      "source": "木木木",
+      "glyph": "森",
+      "strokeCount": 12,
+      "answerCount": 10,
+      "legalSelectionCount": 24,
+      "checkedSubsets": 4095,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              4
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "林",
+          "pinyin": "lín",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              8,
+              9,
+              10,
+              11
+            ],
+            [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "森",
+          "pinyin": "sēn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "从",
+          "pinyin": "cóng",
+          "sets": [
+            [
+              2,
+              3,
+              6,
+              7
+            ],
+            [
+              2,
+              3,
+              10,
+              11
+            ],
+            [
+              6,
+              7,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "众",
+          "pinyin": "zhòng",
+          "sets": [
+            [
+              2,
+              3,
+              6,
+              7,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              0,
+              4,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 38,
+      "source": "口口口",
+      "glyph": "品",
+      "strokeCount": 9,
+      "answerCount": 6,
+      "legalSelectionCount": 14,
+      "checkedSubsets": 511,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              5
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "吕",
+          "pinyin": "lǚ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              6,
+              7,
+              8
+            ],
+            [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "品",
+          "pinyin": "pǐn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              5,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              5,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 39,
+      "source": "日日日",
+      "glyph": "晶",
+      "strokeCount": 12,
+      "answerCount": 8,
+      "legalSelectionCount": 55,
+      "checkedSubsets": 4095,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              7,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              4,
+              5,
+              7
+            ],
+            [
+              8,
+              9,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "昌",
+          "pinyin": "chāng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              8,
+              9,
+              10,
+              11
+            ],
+            [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "晶",
+          "pinyin": "jīng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              3,
+              10
+            ],
+            [
+              2,
+              3,
+              11
+            ],
+            [
+              2,
+              6,
+              7
+            ],
+            [
+              2,
+              6,
+              10
+            ],
+            [
+              2,
+              6,
+              11
+            ],
+            [
+              2,
+              7,
+              10
+            ],
+            [
+              2,
+              7,
+              11
+            ],
+            [
+              2,
+              10,
+              11
+            ],
+            [
+              3,
+              6,
+              7
+            ],
+            [
+              3,
+              6,
+              10
+            ],
+            [
+              3,
+              6,
+              11
+            ],
+            [
+              3,
+              7,
+              10
+            ],
+            [
+              3,
+              7,
+              11
+            ],
+            [
+              3,
+              10,
+              11
+            ],
+            [
+              6,
+              7,
+              10
+            ],
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              6,
+              10,
+              11
+            ],
+            [
+              7,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              6
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              10
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 40,
+      "source": "人人人",
+      "glyph": "众",
+      "strokeCount": 6,
+      "answerCount": 3,
+      "legalSelectionCount": 7,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "从",
+          "pinyin": "cóng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              4,
+              5
+            ],
+            [
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "众",
+          "pinyin": "zhòng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 41,
+      "source": "白水",
+      "glyph": "泉",
+      "strokeCount": 9,
+      "answerCount": 7,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 511,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "白",
+          "pinyin": "bái",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "水",
+          "pinyin": "shuǐ",
+          "sets": [
+            [
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "泉",
+          "pinyin": "quán",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 42,
+      "source": "日生",
+      "glyph": "星",
+      "strokeCount": 9,
+      "answerCount": 12,
+      "legalSelectionCount": 39,
+      "checkedSubsets": 511,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              5,
+              6,
+              8
+            ],
+            [
+              2,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              3,
+              8
+            ],
+            [
+              2,
+              5,
+              6
+            ],
+            [
+              2,
+              5,
+              8
+            ],
+            [
+              2,
+              6,
+              8
+            ],
+            [
+              3,
+              5,
+              6
+            ],
+            [
+              3,
+              5,
+              8
+            ],
+            [
+              3,
+              6,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              5,
+              7
+            ],
+            [
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              6,
+              7,
+              8
+            ],
+            [
+              5,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "牛",
+          "pinyin": "niú",
+          "sets": [
+            [
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "生",
+          "pinyin": "shēng",
+          "sets": [
+            [
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "星",
+          "pinyin": "xīng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "早",
+          "pinyin": "zǎo",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              5,
+              7
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              6
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 43,
+      "source": "女马",
+      "glyph": "妈",
+      "strokeCount": 6,
+      "answerCount": 5,
+      "legalSelectionCount": 6,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "char": "女",
+          "pinyin": "nǚ",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "马",
+          "pinyin": "mǎ",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "妈",
+          "pinyin": "mā",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 44,
+      "source": "女子",
+      "glyph": "好",
+      "strokeCount": 6,
+      "answerCount": 6,
+      "legalSelectionCount": 7,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "char": "女",
+          "pinyin": "nǚ",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "了",
+          "pinyin": "liǎo",
+          "sets": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "子",
+          "pinyin": "zǐ",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "好",
+          "pinyin": "hǎo",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 45,
+      "source": "女也",
+      "glyph": "她",
+      "strokeCount": 6,
+      "answerCount": 4,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "char": "女",
+          "pinyin": "nǚ",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "也",
+          "pinyin": "yě",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "她",
+          "pinyin": "tā",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 46,
+      "source": "口马",
+      "glyph": "吗",
+      "strokeCount": 6,
+      "answerCount": 5,
+      "legalSelectionCount": 6,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "马",
+          "pinyin": "mǎ",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "吗",
+          "pinyin": "ma",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 47,
+      "source": "门口",
+      "glyph": "问",
+      "strokeCount": 6,
+      "answerCount": 4,
+      "legalSelectionCount": 4,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "门",
+          "pinyin": "mén",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "问",
+          "pinyin": "wèn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 48,
+      "source": "门日",
+      "glyph": "间",
+      "strokeCount": 7,
+      "answerCount": 7,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "门",
+          "pinyin": "mén",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              5
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              3,
+              4,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "间",
+          "pinyin": "jiān",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "问",
+          "pinyin": "wèn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 49,
+      "source": "门木",
+      "glyph": "闲",
+      "strokeCount": 7,
+      "answerCount": 6,
+      "legalSelectionCount": 6,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "门",
+          "pinyin": "mén",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "闲",
+          "pinyin": "xián",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "source": "木子",
+      "glyph": "李",
+      "strokeCount": 7,
+      "answerCount": 8,
+      "legalSelectionCount": 9,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "了",
+          "pinyin": "liǎo",
+          "sets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "子",
+          "pinyin": "zǐ",
+          "sets": [
+            [
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "李",
+          "pinyin": "lǐ",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 51,
+      "source": "木口",
+      "glyph": "杏",
+      "strokeCount": 7,
+      "answerCount": 7,
+      "legalSelectionCount": 8,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "杏",
+          "pinyin": "xìng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              0,
+              6
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 52,
+      "source": "田心",
+      "glyph": "思",
+      "strokeCount": 9,
+      "answerCount": 9,
+      "legalSelectionCount": 10,
+      "checkedSubsets": 511,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "田",
+          "pinyin": "tián",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "心",
+          "pinyin": "xīn",
+          "sets": [
+            [
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "思",
+          "pinyin": "sī",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 53,
+      "source": "日十",
+      "glyph": "早",
+      "strokeCount": 6,
+      "answerCount": 9,
+      "legalSelectionCount": 13,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "早",
+          "pinyin": "zǎo",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "干",
+          "pinyin": "gān",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "旦",
+          "pinyin": "dàn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 54,
+      "source": "立日",
+      "glyph": "音",
+      "strokeCount": 9,
+      "answerCount": 7,
+      "legalSelectionCount": 18,
+      "checkedSubsets": 511,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              1
+            ],
+            [
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              1,
+              4
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "立",
+          "pinyin": "lì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              5,
+              6,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "音",
+          "pinyin": "yīn",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              1,
+              4,
+              7
+            ],
+            [
+              1,
+              4,
+              8
+            ],
+            [
+              1,
+              7,
+              8
+            ],
+            [
+              4,
+              7,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 55,
+      "source": "木目",
+      "glyph": "相",
+      "strokeCount": 9,
+      "answerCount": 10,
+      "legalSelectionCount": 22,
+      "checkedSubsets": 511,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              0
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "木",
+          "pinyin": "mù",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              6,
+              7,
+              8
+            ],
+            [
+              0,
+              6,
+              7
+            ],
+            [
+              0,
+              6,
+              8
+            ],
+            [
+              0,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              4,
+              5,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              4,
+              5,
+              6,
+              8
+            ],
+            [
+              4,
+              5,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "目",
+          "pinyin": "mù",
+          "sets": [
+            [
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        {
+          "char": "相",
+          "pinyin": "xiāng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 56,
+      "source": "田力",
+      "glyph": "男",
+      "strokeCount": 7,
+      "answerCount": 9,
+      "legalSelectionCount": 10,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "田",
+          "pinyin": "tián",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "力",
+          "pinyin": "lì",
+          "sets": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "男",
+          "pinyin": "nán",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 57,
+      "source": "口天",
+      "glyph": "吴",
+      "strokeCount": 7,
+      "answerCount": 8,
+      "legalSelectionCount": 12,
+      "checkedSubsets": 127,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "大",
+          "pinyin": "dà",
+          "sets": [
+            [
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "天",
+          "pinyin": "tiān",
+          "sets": [
+            [
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "吴",
+          "pinyin": "wú",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              2,
+              3,
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 58,
+      "source": "小大",
+      "glyph": "尖",
+      "strokeCount": 6,
+      "answerCount": 5,
+      "legalSelectionCount": 5,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "小",
+          "pinyin": "xiǎo",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "char": "人",
+          "pinyin": "rén",
+          "sets": [
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "大",
+          "pinyin": "dà",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "尖",
+          "pinyin": "jiān",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 59,
+      "source": "小土",
+      "glyph": "尘",
+      "strokeCount": 6,
+      "answerCount": 6,
+      "legalSelectionCount": 7,
+      "checkedSubsets": 63,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "targets": [
+        {
+          "char": "小",
+          "pinyin": "xiǎo",
+          "sets": [
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              3
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              3,
+              4,
+              5
+            ]
+          ]
+        },
+        {
+          "char": "尘",
+          "pinyin": "chén",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "level": 60,
+      "source": "日青",
+      "glyph": "晴",
+      "strokeCount": 12,
+      "answerCount": 11,
+      "legalSelectionCount": 73,
+      "checkedSubsets": 4095,
+      "strokeMap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "targets": [
+        {
+          "char": "一",
+          "pinyin": "yī",
+          "sets": [
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ],
+            [
+              5
+            ],
+            [
+              7
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ]
+        },
+        {
+          "char": "二",
+          "pinyin": "èr",
+          "sets": [
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              3,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "口",
+          "pinyin": "kǒu",
+          "sets": [
+            [
+              0,
+              1,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "日",
+          "pinyin": "rì",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "char": "三",
+          "pinyin": "sān",
+          "sets": [
+            [
+              4,
+              5,
+              7
+            ],
+            [
+              4,
+              5,
+              10
+            ],
+            [
+              4,
+              5,
+              11
+            ],
+            [
+              4,
+              7,
+              10
+            ],
+            [
+              4,
+              7,
+              11
+            ],
+            [
+              4,
+              10,
+              11
+            ],
+            [
+              5,
+              7,
+              10
+            ],
+            [
+              5,
+              7,
+              11
+            ],
+            [
+              5,
+              10,
+              11
+            ],
+            [
+              7,
+              10,
+              11
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              7
+            ],
+            [
+              2,
+              3,
+              10
+            ],
+            [
+              2,
+              3,
+              11
+            ],
+            [
+              2,
+              4,
+              5
+            ],
+            [
+              2,
+              4,
+              7
+            ],
+            [
+              2,
+              4,
+              10
+            ],
+            [
+              2,
+              4,
+              11
+            ],
+            [
+              2,
+              5,
+              7
+            ],
+            [
+              2,
+              5,
+              10
+            ],
+            [
+              2,
+              5,
+              11
+            ],
+            [
+              2,
+              7,
+              10
+            ],
+            [
+              2,
+              7,
+              11
+            ],
+            [
+              2,
+              10,
+              11
+            ],
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              3,
+              4,
+              7
+            ],
+            [
+              3,
+              4,
+              10
+            ],
+            [
+              3,
+              4,
+              11
+            ],
+            [
+              3,
+              5,
+              7
+            ],
+            [
+              3,
+              5,
+              10
+            ],
+            [
+              3,
+              5,
+              11
+            ],
+            [
+              3,
+              7,
+              10
+            ],
+            [
+              3,
+              7,
+              11
+            ],
+            [
+              3,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "十",
+          "pinyin": "shí",
+          "sets": [
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        {
+          "char": "土",
+          "pinyin": "tǔ",
+          "sets": [
+            [
+              5,
+              6,
+              7
+            ],
+            [
+              4,
+              6,
+              7
+            ]
+          ]
+        },
+        {
+          "char": "月",
+          "pinyin": "yuè",
+          "sets": [
+            [
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "青",
+          "pinyin": "qīng",
+          "sets": [
+            [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "晴",
+          "pinyin": "qíng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        },
+        {
+          "char": "明",
+          "pinyin": "míng",
+          "sets": [
+            [
+              0,
+              1,
+              2,
+              3,
+              8,
+              9,
+              10,
+              11
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
