@@ -1,0 +1,123 @@
+### Result
+{
+  "viewport": [
+    320,
+    568
+  ],
+  "overflow": [
+    320,
+    568
+  ],
+  "capture": {
+    "x": 122,
+    "y": 392.46875,
+    "width": 76,
+    "height": 57,
+    "top": 392.46875,
+    "right": 198,
+    "bottom": 449.46875,
+    "left": 122
+  },
+  "palette": {
+    "x": 12,
+    "y": 459.46875,
+    "width": 296,
+    "height": 94,
+    "top": 459.46875,
+    "right": 308,
+    "bottom": 553.46875,
+    "left": 12
+  },
+  "swatches": [
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.34375,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.34375,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ],
+    [
+      44.328125,
+      44
+    ]
+  ]
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({viewport:[innerWidth,innerHeight],overflow:[document.documentElement.scrollWidth,document.documentElement.scrollHeight],capture:document.getElementById("capture").getBoundingClientRect().toJSON(),palette:document.getElementById("palette").getBoundingClientRect().toJSON(),swatches:[...document.querySelectorAll(".swatch")].map(e=>[e.getBoundingClientRect().width,e.getBoundingClientRect().height])})');
+```
+
+### Result
+{
+  "viewport": [
+    320,
+    568
+  ],
+  "continue": {
+    "x": 12,
+    "y": 510,
+    "width": 296,
+    "height": 44,
+    "top": 510,
+    "right": 308,
+    "bottom": 554,
+    "left": 12
+  },
+  "levels": {
+    "x": 12,
+    "y": 191.796875,
+    "width": 296,
+    "height": 313.203125,
+    "top": 191.796875,
+    "right": 308,
+    "bottom": 505,
+    "left": 12
+  },
+  "overflow": [
+    320,
+    568
+  ]
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({viewport:[innerWidth,innerHeight],continue:document.getElementById("continue").getBoundingClientRect().toJSON(),levels:document.getElementById("levels").getBoundingClientRect().toJSON(),overflow:[document.documentElement.scrollWidth,document.documentElement.scrollHeight]})');
+```
+
+Browser camera unavailable here; color-card interaction only.

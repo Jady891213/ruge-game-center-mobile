@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadGame } from './helpers/html-vm.mjs';
 
-const GAMES = ['flappy-bird', 'dino-runner', 'frog-pond'];
+const GAMES = ['flappy-bird', 'frog-pond'];
 
 /** Expose private functions only inside the VM; all game rules still come from HTML. */
 function loadAction(t, game) {
@@ -117,7 +117,7 @@ test('flappy-bird: pipe cap collision matches its outer edge, three practice res
   assert.ok(h.node('#overScreen').classList.contains('hide') === false);
 });
 
-for (const game of ['dino-runner', 'frog-pond']) {
+for (const game of ['frog-pond']) {
   test(`${game}: generated obstacles fit jump height and high flyers leave a ground route`, t => {
     const { harness: h, engine: e } = loadAction(t, game);
     h.click('#startBtn');

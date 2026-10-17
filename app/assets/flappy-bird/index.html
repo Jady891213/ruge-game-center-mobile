@@ -39,6 +39,7 @@ body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}bod
 @media(max-height:480px){.screen{padding:65px 18px 12px}.card{max-height:calc(100dvh - 82px);max-width:440px;padding:17px 22px 23px}.hero{height:80px;margin-bottom:14px}.card h1{font-size:23px;margin-bottom:13px}.card button{min-height:52px;font-size:23px}.card .actions{margin-top:12px}.card .big{font-size:54px}.result-mascot{width:40px;height:40px}#mission{left:160px;top:calc(env(safe-area-inset-top,0px) + 16px);font-size:16px;padding:5px 9px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
+<link rel="stylesheet" href="../shared/garden-ui.css">
 </head>
 <body class="action-game">
 <div id="stage">
@@ -71,6 +72,7 @@ body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}bod
 </div>
 
 <script src="../shared/feedback.js"></script>
+<script src="../shared/garden-art.js"></script>
 <script>
 (function () {
 'use strict';
@@ -100,7 +102,7 @@ var DAY = {
   skyTop:'#d6f0e3', skyMid:'#f0f4da', skyBot:'#fff6e8', sun:'#ffdc85',
   far:'#e0eccb', mid:'#bce0c3', cloud:'#fffdf2',
   dirt:'#f3dfb9', grass:'#a6d3ac', grassDark:'#7cb395', dirtDash:'#dec99d',
-  pipe:'#bce8d1', pipeHi:'#e2f5dc', pipeDark:'#98cdb0', pipeEdge:'#559873',
+  pipe:'#74ce66', pipeHi:'#b4f28b', pipeDark:'#42b16e', pipeEdge:'#206d65',
   birdBody:'#ffdc85', birdBelly:'#fff4c5', birdWing:'#f0bc6a', beak:'#f1ad86',
   eye:'#fffdf5', pupil:'#35544b', scarf:'#f9c8ba', gem:'#7bbbab', gemHi:'#f0fff2'
 };
@@ -108,7 +110,7 @@ var NIGHT = {
   skyTop:'#708f98', skyMid:'#a2bbb5', skyBot:'#d0d9c5', sun:'#fff2c6',
   far:'#8eac9e', mid:'#87ad98', cloud:'#d5e5dc',
   dirt:'#f3dfb9', grass:'#a6d3ac', grassDark:'#7cb395', dirtDash:'#dec99d',
-  pipe:'#bce8d1', pipeHi:'#e2f5dc', pipeDark:'#98cdb0', pipeEdge:'#559873',
+  pipe:'#74ce66', pipeHi:'#b4f28b', pipeDark:'#42b16e', pipeEdge:'#206d65',
   birdBody:'#ffdc85', birdBelly:'#fff4c5', birdWing:'#f0bc6a', beak:'#f1ad86',
   eye:'#fffdf5', pupil:'#35544b', scarf:'#f9c8ba', gem:'#7bbbab', gemHi:'#f0fff2'
 };
@@ -562,6 +564,7 @@ function update(dt) {
 
 /* ============================ 绘制 ============================ */
 function drawSky() {
+  if(window.RugeGardenArt && window.RugeGardenArt.background(ctx,"meadow",W,H,worldX,L.groundY,L.U)) return;
   var g = ctx.createLinearGradient(0, 0, 0, L.groundY);
   g.addColorStop(0, palette.skyTop);
   g.addColorStop(0.58, palette.skyMid);
@@ -581,6 +584,7 @@ function drawSky() {
 }
 
 function drawHills() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("meadow")) return;
   for (var i = 0; i < hills.length; i++) {
     var h = hills[i];
     var x = wrapX(h.x, h.p);
@@ -596,6 +600,7 @@ function drawHills() {
 }
 
 function drawClouds() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("meadow")) return;
   ctx.fillStyle = palette.cloud;
   ctx.globalAlpha = 0.9;
   for (var i = 0; i < clouds.length; i++) {
@@ -612,6 +617,7 @@ function drawClouds() {
 }
 
 function drawVillage() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("meadow")) return;
   var step=172*L.U, off=(worldX*.22)%step;
   for(var x=-off-step;x<W+step;x+=step){
     var y=L.groundY-58*L.U;
@@ -623,6 +629,7 @@ function drawVillage() {
   }
 }
 function drawGround() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("meadow")) return;
   var gy = L.groundY;
   ctx.fillStyle = palette.dirt;
   ctx.fillRect(0, gy, W, H - gy);
@@ -703,85 +710,17 @@ function pipeCap(x, y, w, h, lw) {
   ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
   ctx.fillStyle=palette.pipe;ctx.fill();ctx.strokeStyle=palette.pipeEdge;ctx.lineWidth=lw;ctx.stroke();
   ctx.fillStyle=palette.pipeHi;ctx.fillRect(x+w*.15,y+lw*2,w*.12,h-lw*4);
-  ctx.strokeStyle=palette.pipeEdge;ctx.lineWidth=1.7*L.U;ctx.lineCap='round';
-  ctx.beginPath();ctx.moveTo(x+w*.43,y+h*.42);ctx.lineTo(x+w*.43,y+h*.5);ctx.moveTo(x+w*.62,y+h*.42);ctx.lineTo(x+w*.62,y+h*.5);ctx.stroke();
-  ctx.beginPath();ctx.arc(x+w*.525,y+h*.5,w*.065,.3,Math.PI-.3);ctx.stroke();
+
 }
 
 function drawBird() {
-  var bw = L.birdW, bh = L.birdH;
-  ctx.save();
-  ctx.globalAlpha = invincible > 0 && Math.floor(invincible * 9) % 2 ? 0.5 : 1;
-  ctx.translate(L.birdX + bw * 0.5, player.y);
-  ctx.rotate(player.rot);
-  ctx.translate(-bw * 0.5, -bh * 0.5);
-
-  // 尾羽
-  ctx.fillStyle = palette.birdWing;
-  ctx.beginPath();
-  ctx.moveTo(bw * 0.20, bh * 0.44);
-  ctx.lineTo(-bw * 0.10, bh * 0.34);
-  ctx.lineTo(bw * 0.22, bh * 0.66);
-  ctx.closePath(); ctx.fill();
-
-  // 身体
-  ctx.fillStyle = palette.birdBody;
-  ctx.beginPath();
-  ctx.ellipse(bw * 0.50, bh * 0.52, bw * 0.40, bh * 0.40, 0, 0, 6.2832);
-  ctx.fill(); ctx.strokeStyle = '#bd9958'; ctx.lineWidth = 2.5 * L.U; ctx.stroke();
-
-  // 肚子
-  ctx.fillStyle = palette.birdBelly;
-  ctx.globalAlpha = 0.9;
-  ctx.beginPath();
-  ctx.ellipse(bw * 0.50, bh * 0.64, bw * 0.28, bh * 0.24, 0, 0, 6.2832);
-  ctx.fill();
-  ctx.globalAlpha = 1;
-
-  // 围巾
-  ctx.fillStyle = palette.scarf;
-  var fl = Math.sin(clock * 9) * bh * 0.05;
-  ctx.beginPath();
-  ctx.moveTo(bw * 0.42, bh * 0.40);
-  ctx.lineTo(bw * 0.04, bh * 0.36 + fl);
-  ctx.lineTo(bw * 0.02, bh * 0.50 + fl);
-  ctx.lineTo(bw * 0.44, bh * 0.54);
-  ctx.closePath(); ctx.fill();
-
-  // 翅膀
-  var up = player.flapT > 0;
-  var wp = up ? -1 : Math.sin(clock * 7) * 0.45;
-  ctx.save();
-  ctx.translate(bw * 0.40, bh * 0.48);
-  ctx.rotate(wp * 0.85);
-  ctx.fillStyle = palette.birdWing;
-  ctx.beginPath();
-  ctx.ellipse(0, 0, bw * 0.30, bh * 0.19, 0, 0, 6.2832);
-  ctx.fill();
-  ctx.fillStyle = palette.birdBody;
-  ctx.globalAlpha = 0.55;
-  ctx.beginPath();
-  ctx.ellipse(bw * 0.04, bh * 0.02, bw * 0.18, bh * 0.10, 0, 0, 6.2832);
-  ctx.fill();
-  ctx.globalAlpha = 1;
-  ctx.restore();
-
-  // 喙
-  ctx.fillStyle = palette.beak;
-  ctx.beginPath();
-  ctx.moveTo(bw * 0.86, bh * 0.44);
-  ctx.lineTo(bw * 1.16, bh * 0.56);
-  ctx.lineTo(bw * 0.86, bh * 0.66);
-  ctx.closePath(); ctx.fill(); ctx.strokeStyle = '#c28d66'; ctx.lineWidth = 1.8 * L.U; ctx.stroke();
-
-  // 大眼睛、粉脸颊和软软的头羽。
-  ctx.fillStyle=palette.birdBody;ctx.beginPath();ctx.ellipse(bw*.41,bh*.12,bw*.07,bh*.14,-.4,0,Math.PI*2);ctx.ellipse(bw*.53,bh*.10,bw*.065,bh*.12,.3,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle=palette.eye;ctx.beginPath();ctx.ellipse(bw*.70,bh*.37,bw*.13,bh*.18,0,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle=palette.pupil;ctx.beginPath();ctx.ellipse(bw*.73,bh*.37,bw*.065,bh*.105,0,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle='#fffdf5';ctx.beginPath();ctx.arc(bw*.745,bh*.33,bh*.035,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle='#f9b9a4';ctx.beginPath();ctx.ellipse(bw*.74,bh*.61,bw*.075,bh*.045,0,0,Math.PI*2);ctx.fill();
-  ctx.strokeStyle='#b88455';ctx.lineWidth=1.5*L.U;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(bw*.9,bh*.57);ctx.lineTo(bw*1.06,bh*.57);ctx.stroke();
-
+  var bw=L.birdW,bh=L.birdH;
+  ctx.save();ctx.globalAlpha=invincible>0&&Math.floor(invincible*9)%2?.5:1;
+  ctx.translate(L.birdX+bw*.5,player.y);ctx.rotate(player.rot);
+  var art=window.RugeGardenArt;
+  if(!art||!art.sprite(ctx,player.flapT>0?'birdUp':'birdDown',-bw*.55,-bh*.55,bw*1.18,bh*1.12)){
+    ctx.fillStyle='#ffd254';ctx.beginPath();ctx.ellipse(0,0,bw*.45,bh*.44,0,0,Math.PI*2);ctx.fill();
+  }
   ctx.restore();
 }
 
@@ -856,7 +795,7 @@ function showPreview() {
     target.style.cssText='position:fixed;left:0;top:0;width:'+pw+'px;height:'+ph+'px;display:block';
     document.title='action-cover-ready';return true;
   }
-  drawPreview(target,320,180,Math.min(3,window.devicePixelRatio||1));document.querySelector('.hero').appendChild(target);return false;
+  drawPreview(target,320,180,Math.min(3,window.devicePixelRatio||1));var hero=document.querySelector('.hero');hero.innerHTML='';hero.appendChild(target);return false;
 }
 
 /* ============================ 主循环 ============================ */
@@ -879,6 +818,7 @@ state = 'ready';
 reportStat(best, true);
 elHi.textContent = 'BEST ' + best;
 if(!showPreview())requestAnimationFrame(frame);
+if(window.RugeGardenArt)window.RugeGardenArt.whenReady(function(){showPreview();if(!/[?&]cover=1(?:&|$)/.test(location.search))render();});
 console.log('[flappy] ready, ' + W + 'x' + H + ' DPR=' + DPR + ' groundY=' + Math.round(L.groundY) + ' gap=' + Math.round(L.gap));
 
 })();

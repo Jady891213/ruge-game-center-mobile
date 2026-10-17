@@ -34,3 +34,8 @@ test('共享反馈：网页降级也区分成功震动，旧静音偏好迁移�
 test('共享反馈：异步解锁声音期间离开页面，不会延迟补播',async()=>{
  const g=load({audio:true});g.fx.emit('success');g.emit('ruge:pause');g.releaseAudio();await Promise.resolve();await Promise.resolve();assert.equal(g.nodes.length,0);g.emit('ruge:resume');g.tick(1000);g.fx.emit('success');assert.equal(g.nodes.length,3);g.emit('pagehide');assert.ok(g.nodes.every(n=>n.stopped));
 });
+test('探测震动沿用共享开关，后台/封面静默，拒绝非数值且限制单次时长',()=>{
+ const g=load();assert.equal(g.fx.pulse(120,20),true);assert.equal(g.buzz.at(-1),20);assert.equal(g.fx.pulse(NaN,20),false);assert.equal(g.fx.pulse(300,999),true);assert.equal(g.buzz.at(-1),35);
+ g.fx.setSound(false);assert.equal(g.fx.pulse(80,12),true);g.fx.setVibration(false);assert.equal(g.fx.pulse(150,12),false);g.fx.setVibration(true);g.emit('ruge:pause');assert.equal(g.fx.pulse(150,12),false);g.emit('ruge:resume');assert.equal(g.fx.pulse(150,12),true);
+ const c=load({cover:true});assert.equal(c.fx.pulse(255,20),false);assert.deepEqual(c.buzz,[]);
+});

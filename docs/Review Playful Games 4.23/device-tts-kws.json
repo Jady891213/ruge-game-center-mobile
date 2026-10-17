@@ -1,0 +1,69 @@
+{
+  "source": "phone TTS through phone speaker to real microphone; not child speech",
+  "results": [
+    {
+      "word": "向右",
+      "expected": "right",
+      "beforeSerial": 0,
+      "afterSerial": 1,
+      "recognized": "right",
+      "peakRms": 0.1888
+    },
+    {
+      "word": "向左",
+      "expected": "left",
+      "beforeSerial": 1,
+      "afterSerial": 2,
+      "recognized": "left",
+      "peakRms": 0.1559
+    },
+    {
+      "word": "向上",
+      "expected": "up",
+      "beforeSerial": 2,
+      "afterSerial": 3,
+      "recognized": "up",
+      "peakRms": 0.1665
+    },
+    {
+      "word": "向下",
+      "expected": "down",
+      "beforeSerial": 3,
+      "afterSerial": 4,
+      "recognized": "down",
+      "peakRms": 0.1223
+    },
+    {
+      "word": "停下",
+      "expected": "stop",
+      "beforeSerial": 4,
+      "afterSerial": 4,
+      "recognized": null,
+      "peakRms": 0.1313
+    },
+    {
+      "word": "跳一下",
+      "expected": "jump",
+      "beforeSerial": 4,
+      "afterSerial": 5,
+      "recognized": "jump",
+      "peakRms": 0.2009
+    },
+    {
+      "word": "拿起来",
+      "expected": "take",
+      "beforeSerial": 5,
+      "afterSerial": 6,
+      "recognized": "take",
+      "peakRms": 0.1252
+    },
+    {
+      "word": "放下",
+      "expected": "put",
+      "beforeSerial": 6,
+      "afterSerial": 7,
+      "recognized": "put",
+      "peakRms": 0.106
+    }
+  ]
+}

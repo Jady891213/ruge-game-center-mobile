@@ -43,6 +43,8 @@ import java.util.Locale;
 public class MainActivity extends Activity {
     private WebView web;
     private GameFeedback feedback;
+    private GameAudio audio;
+    private GameCamera camera;
     private volatile TextToSpeech tts;
     private volatile boolean foreground = false;
     private volatile boolean destroyed = false;
@@ -151,6 +153,8 @@ public class MainActivity extends Activity {
         initTts();
 
         web = new WebView(this);
+        audio = new GameAudio(this);
+        camera = new GameCamera(this, web);
         if (BuildConfig.DEV) WebView.setWebContentsDebuggingEnabled(true);
         WebSettings s = web.getSettings();
         s.setJavaScriptEnabled(true);
@@ -177,6 +181,8 @@ public class MainActivity extends Activity {
         web.addJavascriptInterface(new ScreenBridge(), "RugeScreen");
         web.addJavascriptInterface(new NavBridge(), "RugeNav");
         web.addJavascriptInterface(feedback, "RugeFeedback");
+        web.addJavascriptInterface(audio, "RugeAudioNative");
+        web.addJavascriptInterface(camera, "RugeCamera");
 
         setContentView(web);
         // 必须在 setContentView 之后：getInsetsController() 依赖 DecorView，
@@ -498,6 +504,14 @@ public class MainActivity extends Activity {
 
     private class LocalPageClient extends WebViewClient {
         @Override
+        public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+            // Leaving a game always closes its capture, even if pagehide never executes.
+            if (audio != null) audio.stop();
+            if (camera != null) camera.stop();
+            if (feedback != null) feedback.stop();
+            stopSpeech();
+        }
+        @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) { return !isAllowedLocalUrl(url); }
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -621,6 +635,8 @@ public class MainActivity extends Activity {
     protected void onPause() {
         foreground = false;
         if (feedback != null) feedback.foreground(false);
+        if (audio != null) audio.foreground(false);
+        if (camera != null) camera.onPause();
         dispatchLifecycle("pause");
         if (web != null) web.onPause();
         stopTilt();
@@ -635,6 +651,8 @@ public class MainActivity extends Activity {
         super.onResume();
         foreground = true;
         if (feedback != null) feedback.foreground(true);
+        if (audio != null) audio.foreground(true);
+        if (camera != null) camera.onResume();
         updateDisplayRotation();
         startTilt();
         applyKeepAwake();
@@ -659,6 +677,8 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         destroyed = true;
         if (feedback != null) feedback.release();
+        if (audio != null) audio.close();
+        if (camera != null) camera.onDestroy();
         foreground = false;
         stopTilt();
         ttsReady = false;
@@ -675,10 +695,19 @@ public class MainActivity extends Activity {
             web.removeJavascriptInterface("RugeScreen");
             web.removeJavascriptInterface("RugeNav");
             web.removeJavascriptInterface("RugeFeedback");
+            web.removeJavascriptInterface("RugeAudioNative");
+            web.removeJavascriptInterface("RugeCamera");
             if (web.getParent() instanceof ViewGroup) ((ViewGroup) web.getParent()).removeView(web);
             web.destroy();
             web = null;
         }
         super.onDestroy();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grants) {
+        super.onRequestPermissionsResult(requestCode, permissions, grants);
+        if (audio != null) audio.permissionResult(requestCode, grants);
+        if (camera != null) camera.onRequestPermissionsResult(requestCode, permissions, grants);
     }
 }

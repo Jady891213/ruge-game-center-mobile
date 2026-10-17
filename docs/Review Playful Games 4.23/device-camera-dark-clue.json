@@ -1,0 +1,1 @@
+{"source": "actual rear camera pointing at dark tabletop", "status": "running", "frameSeq": 6, "ageMs": 40, "sampleCount": 49, "jpegPresent": true, "stable": true, "collected": true, "state": {"level": 13, "mode": "camera", "collected": [{"rgb": [4, 4, 4]}], "finished": false}, "stopped": true}

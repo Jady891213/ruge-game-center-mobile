@@ -1,0 +1,18 @@
+/* A quiet, large-control overlay for the shared illustrated action playground. */
+#controls{gap:8px}
+#controls button{background:#fffdf1f5;border:2px solid #397e83;border-radius:50%;box-shadow:0 3px 0 #205e6c24;color:#245b65;width:47px;height:47px}
+#scores{background:#fffdf1ef;border:2px solid #397e83;border-radius:20px;padding:4px 13px;min-width:62px;text-align:center;color:#245b65}
+#score{font-size:36px;text-shadow:none;line-height:1.1}
+#mission{border:2px solid #397e83;background:#fffdf1ef;color:#245b65;border-radius:16px;font-size:21px;padding:6px 11px}
+.screen{background:#cdf5ff24}
+.card{background:#fffdf3;border:3px solid #3c7d7e;box-shadow:0 7px 0 #255d6926;border-radius:32px;padding:24px 18px}
+.card h1{color:#245b65;font-size:28px}
+.hero{height:190px;margin-bottom:22px}
+.hero canvas{border:0;border-radius:22px}
+.card button{background:#a8df62;border-color:#528c42;box-shadow:0 5px 0 #3b7032;color:#2b5936}
+.card button.secondary{background:#ffe28b;border-color:#cc9d42;box-shadow:0 5px 0 #ba8d36}
+#pauseScreen{background:#d6f0e3ba}
+body.night #scores{color:#245b65}
+@media(max-width:350px){#controls{gap:6px}#controls button{width:43px;height:44px}#scores{right:11px;padding:5px 10px}#score{font-size:32px}.card h1{font-size:25px}}
+@media(max-height:640px){.hero{height:150px;margin-bottom:18px}.card{padding-top:19px;padding-bottom:23px}}
+@media(max-height:480px){.hero{height:90px}.card{padding:16px 18px 21px}.card h1{font-size:23px}}

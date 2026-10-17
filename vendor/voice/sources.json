@@ -1,0 +1,267 @@
+{
+  "runtime": "sherpa-onnx v1.13.8",
+  "aar": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-1.13.8.aar",
+  "aarSha256": "633c24321e06b1fe79feafa03ea16cbc0f8a286641e2da3559bac91bdb13bd96",
+  "kotlin": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.2.21/kotlin-stdlib-2.2.21.jar",
+  "model": "https://github.com/k2-fsa/sherpa-onnx/releases/download/kws-models/sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01-mobile.tar.bz2",
+  "modelArchiveSha256": "b812a043aef628a6915f89cb9a94e55f8e87e89ff904b516f822d7e0a3e6de2b",
+  "files": [
+    {
+      "path": "vendor/voice/classes.jar",
+      "bytes": 238706,
+      "sha256": "8af5aa647494ec9cb6596959d6d20864377cf4a9dedf1c1b178d936bfb7cea95"
+    },
+    {
+      "path": "vendor/voice/jni/arm64-v8a/libonnxruntime.so",
+      "bytes": 22249560,
+      "sha256": "33847ad43bffe204699fd4a27f7f3603452a8cdaf2f9a44983a0bc31ffcf2da1"
+    },
+    {
+      "path": "vendor/voice/jni/arm64-v8a/libsherpa-onnx-jni.so",
+      "bytes": 948432,
+      "sha256": "dcd61b19807580f7a95d63c35021832ccafbdf8e46f6d6c8bc564139b9ac8939"
+    },
+    {
+      "path": "vendor/voice/kotlin-stdlib-2.2.21.jar",
+      "bytes": 1761445,
+      "sha256": "6558a3d233da56a20934b32159f9db5f86ed5816ef098f78a2c223dc6abb79dd"
+    }
+  ],
+  "models": [
+    {
+      "path": "app/assets/voice-model/MODEL-LICENSE.md",
+      "bytes": 725,
+      "sha256": "dec68f5a2e25f1cf48a42660a180714b2a20fb604493e6ed78453bf543a89ef2"
+    },
+    {
+      "path": "app/assets/voice-model/decoder-epoch-12-avg-2-chunk-16-left-64.onnx",
+      "bytes": 675349,
+      "sha256": "fb581d6734511676e246e0dff2fea01b31b0913176cb3ca64576dbab0a177774"
+    },
+    {
+      "path": "app/assets/voice-model/encoder-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+      "bytes": 3990821,
+      "sha256": "4ded45b30961270f2a9a64bede4569b324c36d4f3a772c1b35bb70a244150675"
+    },
+    {
+      "path": "app/assets/voice-model/joiner-epoch-12-avg-2-chunk-16-left-64.int8.onnx",
+      "bytes": 65242,
+      "sha256": "f79760052b87239e325f0567c752ad3130b30d92effb847d4307743c20c59a24"
+    },
+    {
+      "path": "app/assets/voice-model/keywords.txt",
+      "bytes": 496,
+      "sha256": "fe8da1f42e3a02b091ac98118d1c67d7fd8187f49c4c9818600bed74d7e1697c"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-eigen-MPL2.txt",
+      "bytes": 16727,
+      "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-kaldi-decoder.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-kaldi-native-fbank.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-kaldifst.txt",
+      "bytes": 11728,
+      "sha256": "a682d6efd1ee5dee08a8e405c233c2c198ea70ae0718129daa83ab58cfe31c5d"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-kissfft.txt",
+      "bytes": 246,
+      "sha256": "a2840585f8411be8e6826a31ef15ae65c950bd74a2437a73b013398a934ad0c6"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-kotlin.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-nlohmann-json.txt",
+      "bytes": 1076,
+      "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-onnxruntime.txt",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-openfst.txt",
+      "bytes": 559,
+      "sha256": "4300529197035fd3452350718a0b8cee984e9412c9932d7f35fcde849fc97a4b"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-sherpa-onnx.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/LICENSE-simple-sentencepiece.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/NOTICE-Android-NDK-toolchain.txt",
+      "bytes": 130424,
+      "sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/NOTICE-eigen.txt",
+      "bytes": 264,
+      "sha256": "db640ff2bd90c6abd6a4d3fbb351e0ee4d555417cf840492054d1cbb2ea85644"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/NOTICE-kotlin.txt",
+      "bytes": 482,
+      "sha256": "0b09a83d3ef7795c7dec65e815866597c066c53898f2852a76599b8f5552941a"
+    },
+    {
+      "path": "app/assets/voice-model/licenses/ThirdPartyNotices-onnxruntime.txt",
+      "bytes": 325054,
+      "sha256": "0e07b95f3a8d6230037707c5c4a2b554d12c4cb67369669ac255635528ffcee2"
+    },
+    {
+      "path": "app/assets/voice-model/tokens.txt",
+      "bytes": 1627,
+      "sha256": "72316508d9119696145abc6f1f8cdc46287535c34e5ce7e595f845cb1499cf2e"
+    }
+  ],
+  "onnxruntime": "1.28.2 (version string in official libonnxruntime.so)",
+  "licenseSources": {
+    "sherpa": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/v1.13.8/LICENSE",
+    "kotlin": "https://raw.githubusercontent.com/JetBrains/kotlin/v2.2.21/license/LICENSE.txt",
+    "kotlinNotice": "https://raw.githubusercontent.com/JetBrains/kotlin/v2.2.21/license/NOTICE.txt",
+    "onnxruntime": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/LICENSE",
+    "onnxruntimeThirdPartyNotices": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/ThirdPartyNotices.txt"
+  },
+  "transitiveSources": {
+    "sherpaBuild": "https://github.com/k2-fsa/sherpa-onnx/tree/v1.13.8"
+  },
+  "nativeBuild": {
+    "sourceUrl": "https://codeload.github.com/k2-fsa/sherpa-onnx/tar.gz/refs/tags/v1.13.8",
+    "sourceSha256": "b0374cc56dbc186d442ae73d5de743bb092470b640c4c50ce7b029044c0c4fa8",
+    "ndkRevision": "27.3.13750724",
+    "ndkUrl": "https://dl.google.com/android/repository/android-ndk-r27d-darwin.dmg",
+    "ndkSha1": "80f11292080fab4e869799f1d23caa88dcf3c709",
+    "flags": {
+      "BUILD_SHARED_LIBS": "ON",
+      "CMAKE_BUILD_TYPE": "MinSizeRel",
+      "SHERPA_ONNX_ENABLE_JNI": "ON",
+      "SHERPA_ONNX_ENABLE_TTS": "OFF",
+      "SHERPA_ONNX_ENABLE_SPEAKER_DIARIZATION": "OFF",
+      "SHERPA_ONNX_ENABLE_C_API": "OFF",
+      "SHERPA_ONNX_ENABLE_PORTAUDIO": "OFF",
+      "SHERPA_ONNX_ENABLE_WEBSOCKET": "OFF",
+      "SHERPA_ONNX_ENABLE_BINARY": "OFF",
+      "SHERPA_ONNX_BUILD_C_API_EXAMPLES": "OFF",
+      "SHERPA_ONNX_ENABLE_PYTHON": "OFF",
+      "SHERPA_ONNX_ENABLE_TESTS": "OFF",
+      "SHERPA_ONNX_ENABLE_CHECK": "OFF",
+      "SHERPA_ONNX_ENABLE_GPU": "OFF",
+      "SHERPA_ONNX_ENABLE_RKNN": "OFF",
+      "SHERPA_ONNX_ENABLE_QNN": "OFF",
+      "SHERPA_ONNX_ENABLE_AXERA": "OFF",
+      "SHERPA_ONNX_ENABLE_AXCL": "OFF",
+      "SHERPA_ONNX_ENABLE_ASCEND_NPU": "OFF",
+      "SHERPA_ONNX_ENABLE_DIRECTML": "OFF",
+      "ANDROID_ABI": "arm64-v8a",
+      "ANDROID_PLATFORM": "android-21",
+      "ANDROID_STL": "c++_static",
+      "CMAKE_SHARED_LINKER_FLAGS": "-Wl,--gc-sections -Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384"
+    },
+    "dependencies": [
+      {
+        "name": "kaldi-native-fbank-1.22.3.tar.gz",
+        "url": "https://codeload.github.com/csukuangfj/kaldi-native-fbank/tar.gz/refs/tags/v1.22.3",
+        "sha256": "9176cc66fc7ce1edf85cf355b06e320c57db6297df74277f575183468893cf61"
+      },
+      {
+        "name": "kaldi-decoder-0.3.0.tar.gz",
+        "url": "https://codeload.github.com/k2-fsa/kaldi-decoder/tar.gz/refs/tags/v0.3.0",
+        "sha256": "b9f34cfb4fd3b1344100eead79ef4d37aa15962274b9e3056de345021f76a1b0"
+      },
+      {
+        "name": "simple-sentencepiece-0.7.tar.gz",
+        "url": "https://codeload.github.com/pkufool/simple-sentencepiece/tar.gz/refs/tags/v0.7",
+        "sha256": "1748a822060a35baa9f6609f84efc8eb54dc0e74b9ece3d82367b7119fdc75af"
+      },
+      {
+        "name": "json-3.12.0.tar.gz",
+        "url": "https://codeload.github.com/nlohmann/json/tar.gz/refs/tags/v3.12.0",
+        "sha256": "4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187"
+      },
+      {
+        "name": "kaldifst-1.8.0.tar.gz",
+        "url": "https://codeload.github.com/k2-fsa/kaldifst/tar.gz/refs/tags/v1.8.0",
+        "sha256": "3f247b7e5a2409071202f5e2bc6200060f66728c0a3443c03923ad2723e040b3"
+      },
+      {
+        "name": "kissfft-febd4caeed32e33ad8b2e0bb5ea77542c40f18ec.zip",
+        "url": "https://codeload.github.com/mborgerding/kissfft/zip/febd4caeed32e33ad8b2e0bb5ea77542c40f18ec",
+        "sha256": "497103e664168ebe39580b757adbe616f6cf85a16572af581ca7bc42d0ab13fd"
+      },
+      {
+        "name": "eigen-3.4.0.tar.gz",
+        "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
+        "sha256": "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72"
+      },
+      {
+        "name": "openfst-1.8.5-2026-07-09.tar.gz",
+        "url": "https://codeload.github.com/csukuangfj/openfst/tar.gz/refs/tags/v1.8.5-2026-07-09",
+        "sha256": "2ff712a32952fcb01d351121a6bc8ccf4fdc6b2aa06ce8df2b3095dedd518c0e"
+      }
+    ],
+    "patchSha256": "88e32b0a3b3e48849fb0869825a07b6cc2fac1d610cc2c56a1bcde3ee58845c7",
+    "jniSha256": "dcd61b19807580f7a95d63c35021832ccafbdf8e46f6d6c8bc564139b9ac8939",
+    "jniBytes": 948432,
+    "dynamicSection": "Dynamic section at offset 0xe6410 contains 31 entries:\n  Tag                Type           Name/Value\n  0x0000000000000001 (NEEDED)       Shared library: [libandroid.so]\n  0x0000000000000001 (NEEDED)       Shared library: [liblog.so]\n  0x0000000000000001 (NEEDED)       Shared library: [libonnxruntime.so]\n  0x0000000000000001 (NEEDED)       Shared library: [libm.so]\n  0x0000000000000001 (NEEDED)       Shared library: [libdl.so]\n  0x0000000000000001 (NEEDED)       Shared library: [libc.so]\n  0x000000000000000e (SONAME)       Library soname: [libsherpa-onnx-jni.so]\n  0x000000000000001e (FLAGS)        BIND_NOW \n  0x000000006ffffffb (FLAGS_1)      NOW \n  0x0000000000000007 (RELA)         0x1f38\n  0x0000000000000008 (RELASZ)       66360 (bytes)\n  0x0000000000000009 (RELAENT)      24 (bytes)\n  0x000000006ffffff9 (RELACOUNT)    2763\n  0x0000000000000017 (JMPREL)       0x12270\n  0x0000000000000002 (PLTRELSZ)     2568 (bytes)\n  0x0000000000000003 (PLTGOT)       0xeaaf0\n  0x0000000000000014 (PLTREL)       RELA\n  0x0000000000000006 (SYMTAB)       0x2f8\n  0x000000000000000b (SYMENT)       24 (bytes)\n  0x0000000000000005 (STRTAB)       0x15a4\n  0x000000000000000a (STRSZ)        2451 (bytes)\n  0x000000006ffffef5 (GNU_HASH)     0x10c8\n  0x0000000000000004 (HASH)         0x1184\n  0x0000000000000019 (INIT_ARRAY)   0xea3f8\n  0x000000000000001b (INIT_ARRAYSZ) 24 (bytes)\n  0x000000000000001a (FINI_ARRAY)   0xea3e8\n  0x000000000000001c (FINI_ARRAYSZ) 16 (bytes)\n  0x000000006ffffff0 (VERSYM)       0xf40\n  0x000000006ffffffe (VERNEED)      0x1048\n  0x000000006fffffff (VERNEEDNUM)   4\n  0x0000000000000000 (NULL)         0x0\n",
+    "jniExports": [
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_createStream",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_decode",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_delete",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_getResult",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_isReady",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_newFromAsset",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_newFromFile",
+      "Java_com_k2fsa_sherpa_onnx_KeywordSpotter_reset",
+      "Java_com_k2fsa_sherpa_onnx_OnlineStream_acceptWaveform",
+      "Java_com_k2fsa_sherpa_onnx_OnlineStream_delete",
+      "Java_com_k2fsa_sherpa_onnx_OnlineStream_getOption",
+      "Java_com_k2fsa_sherpa_onnx_OnlineStream_hasOption",
+      "Java_com_k2fsa_sherpa_onnx_OnlineStream_inputFinished",
+      "Java_com_k2fsa_sherpa_onnx_OnlineStream_setOption",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_00024Companion_getGitDate2",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_00024Companion_getGitSha12",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_00024Companion_getOnnxruntimeVersionStr2",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_00024Companion_getVersionStr2",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_getGitDate2",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_getGitSha12",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_getOnnxruntimeVersionStr2",
+      "Java_com_k2fsa_sherpa_onnx_VersionInfo_getVersionStr2"
+    ],
+    "headers": {
+      "onnxruntime_session_options_config_keys.h": "f3a80fcec7fa9e38de3191fc48714231892bc9c5dc8a06adecebf946a1937a29",
+      "onnxruntime_error_code.h": "5ce3b054e798eced8d14f5b86e98692fd33470463f96194ce0700a2d53dd8721",
+      "onnxruntime_run_options_config_keys.h": "973037c14b0f1af0854ae25cd676776f79dbcfd2a6791f6ee17a5374c2a62550",
+      "onnxruntime_float16.h": "88b242845d25981633a0bbd1c148e273cf8bfb016ea3f57c4af41a06530f72b0",
+      "onnxruntime_cxx_inline.h": "97f960b1bc4a372918893ef4c77102dee725ccfce0d76607f4570b03e7e28325",
+      "onnxruntime_cxx_api.h": "c6bf005e4063b7db911d0a6b030452bcb9d4fc5e87530a39d94c4a5fcd311b61",
+      "onnxruntime_ep_c_api.h": "db86df0f846b8d3bdbf429a5c76c5805293196575ca3c475878612591cd18e51",
+      "onnxruntime_c_api.h": "b69a133143c0da61782b2b02cc8a620d21ac139231fd211719776d10385135c1"
+    },
+    "ndkSha256": "0a0b76d927dcb202da6067ffefb2875bc3963ba9de22b89f9b1bdb299dfdf395",
+    "tools": {
+      "cmake": "3.31.6",
+      "ninja": "1.11.1.4"
+    }
+  },
+  "nativeProvenance": "Only libonnxruntime.so is extracted from the official AAR; keyword-only JNI is rebuilt from pinned v1.13.8 sources, see native-build.json and native-kws.patch."
+}

@@ -1,14 +1,14 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、数字碰碰、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十二个游戏，无需联网。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十七款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，全部离线运行。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.22 / versionCode 45**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.23 / versionCode 46**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
 | 目录 | 用途 |
 |---|---|
-| `app/assets/` | 当前菜单、十二个游戏和离线素材源码 |
+| `app/assets/` | 当前菜单、十七款在架游戏和离线素材源码；另保留已暂停的小熊点心店原型 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -21,11 +21,34 @@
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
 
+## 六款新伙伴与动作美术（4.23）
+
+| 游戏 | 内容 |
+| --- | --- |
+| 动物天平桥 | 18关；看图称重、推断重量、限制只数，再分配有限动物平衡两座桥 |
+| 帽子小捣蛋 | 18关；追踪、后公布目标、双目标、顺序记忆；帽子沿不同弧线换位 |
+| 怪兽变声冒险 | 18关；普通“啊”或哼声校准自己的音域，高音跳、低音蹲；也能点大按钮 |
+| 口令小冒险 | 18关；用固定中文口令移动、跳、拿、放，找钥匙开门、送苹果和星星 |
+| 口袋探宝 | 探宝18关、开锁18关；震动强弱和信号引导，保险箱需转到正确位置并停稳；同机轮流计时双人挑战 |
+| 颜色小侦探 | 18关；用后置取景找颜色、记顺序、比较明暗；本地分析颜色，颜色卡练习成绩单独保存 |
+
+新增共126关。角色和场景使用内置GPT图片生成工具创作；扑翼小鸟、小青蛙跳池塘同步重做实际角色、鱼、蜻蜓和场景，入口封面从实际游戏页面生成。小恐龙冲刺已删除当前实现和专属素材，旧分数与历史迁移快照保留。
+
+声音共用 `shared/audio-input.js` 与原生 `GameAudio`。口令使用内置 sherpa-onnx 中文关键词模型，只支持界面列出的短口令，不是自由句子理解；音高检测无需大模型。摄像头使用 `GameCamera` 的实时低分辨率取景和颜色采样，不识别任意物体、不保存录音或照片、不上传内容。只有进入对应玩法并点开始才请求麦克风/摄像头，拒绝时保留明确的手指练习入口，后台与退出停止采集。
+
+当前APK的原生语音库仅包含 `arm64-v8a`，适用于MIX 4等64位ARM安卓设备。库、模型的固定版本、原始下载地址、SHA与许可在 `vendor/voice/sources.json`、`app/assets/voice-model/` 和 [第三方许可](THIRD_PARTY_NOTICES.md)，构建不再下载依赖。真人儿童发音准确率、实际持握震感仍以试玩为准。
+
+验收与限制见 [4.23交付记录](docs/Review%20Playful%20Games%204.23/review.md)。
+
+## 小恐龙冲刺下架
+
+小恐龙冲刺与现有跳跃游戏玩法重复，已从全部、反应与最近入口移除，并删除当前实现、专属封面及封面生成项。历史最高分和使用记录保留，`reference/phone-v4.1/` 迁移快照及历史验收材料仍可用于回溯。
+
 ## 首页侧栏与双列游戏（4.22）
 
 首页标题固定，音效、震动和常亮收为标题右侧三个图标，关闭时有斜线与无障碍状态标签。左侧窄栏为“全部、最近、认字、益智、重力、反应”，右侧始终双列缩略图；只有游戏区滚动，标题和分类不跟随滚走。游戏名完整显示，不增加描述文字。
 
-“最近”按既有rugeCenter使用时间排序，仅展示仍在合集的游戏；下架点心店的历史记录保留，但不恢复入口。钢珠迷宫、数字碰碰、翻转星星盒归入重力；其他玩法/存档不变。首页源码拆为app/assets/index.html与home/，继续共用shared反馈和原生常亮。
+“最近”按既有rugeCenter使用时间排序，仅展示仍在合集的游戏；下架点心店和小恐龙冲刺的历史记录保留，但不恢复入口。钢珠迷宫、数字碰碰、翻转星星盒归入重力；其他玩法/存档不变。首页源码拆为app/assets/index.html与home/，继续共用shared反馈和原生常亮。
 
 [本次验收](docs/Review%20Home%20Sidebar/review.md)
 
@@ -147,7 +170,7 @@ python3 scripts/build.py
 
 公开仓库不包含签名密钥；首次克隆需要自备签名材料并通过参数指定。覆盖更新已有应用必须使用原签名，由 Mac 发布端保管。已有 SDK 时可跳过安装步骤。本机已验证 JDK 18.0.2.1；JDK、SDK 和签名路径都可以通过构建参数或环境变量覆盖，详见 [构建说明](docs/build.md)。脚本只构建与校验，不会安装到手机。
 
-产物为 `out/game-center-v4.17-dev.apk` 和 `out/game-center-v4.17.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
+产物为 `out/game-center-v4.23-dev.apk` 和 `out/game-center-v4.23.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
 
 普通切后台会保留游戏状态并发送暂停/恢复事件；开发页面只有资源变化时才于回前台刷新。明确刷新开发页会重置页面状态。正式版关闭调试和外部开发页面能力。
 
@@ -161,7 +184,7 @@ export GAME_CENTER_ADB="$(pwd)/../../03-Android工具/platform-tools/adb"
 "$GAME_CENTER_ADB" connect '<手机IP:连接端口>'
 "$GAME_CENTER_ADB" devices -l
 export GAME_CENTER_SERIAL='<devices 列表中的目标设备标识>'
-"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.17-dev.apk
+"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.23-dev.apk
 "$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" shell am start -n com.dsh.gamecenter/.MainActivity
 ```
 

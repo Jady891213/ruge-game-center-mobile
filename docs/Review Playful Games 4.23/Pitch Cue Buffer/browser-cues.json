@@ -1,0 +1,166 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "level": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "pass": true,
+      "inputs": [
+        {
+          "id": 0,
+          "action": "jump",
+          "distance": 149.97050000339834,
+          "received": "✓ 跳",
+          "pending": {
+            "action": "jump",
+            "obstacle": 0
+          }
+        }
+      ],
+      "state": {
+        "level": 1,
+        "x": 890.5779999965864,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 8.532399999964403,
+        "checkpoint": 546.2251666632693,
+        "won": true,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [
+          0
+        ],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      }
+    },
+    {
+      "level": 4,
+      "viewport": [
+        320,
+        568
+      ],
+      "pass": true,
+      "inputs": [
+        {
+          "id": 0,
+          "action": "duck",
+          "distance": 148.64050000113224,
+          "received": "✓ 蹲",
+          "pending": {
+            "action": "duck",
+            "obstacle": 0
+          }
+        }
+      ],
+      "state": {
+        "level": 4,
+        "x": 890.3373333321919,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 8.529866666654886,
+        "checkpoint": 578.433333332203,
+        "won": true,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [
+          0
+        ],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      }
+    },
+    {
+      "level": 18,
+      "viewport": [
+        320,
+        568
+      ],
+      "pass": true,
+      "inputs": [
+        {
+          "id": 0,
+          "action": "jump",
+          "distance": 148.2505000025035,
+          "received": "✓ 跳",
+          "pending": {
+            "action": "jump",
+            "obstacle": 0
+          }
+        },
+        {
+          "id": 1,
+          "action": "duck",
+          "distance": 148.51100000250403,
+          "received": "✓ 蹲",
+          "pending": {
+            "action": "duck",
+            "obstacle": 1
+          }
+        },
+        {
+          "id": 2,
+          "action": "jump",
+          "distance": 148.76100000250733,
+          "received": "✓ 跳",
+          "pending": {
+            "action": "jump",
+            "obstacle": 2
+          }
+        },
+        {
+          "id": 3,
+          "action": "jump",
+          "distance": 149.0320000025049,
+          "received": "✓ 跳",
+          "pending": {
+            "action": "jump",
+            "obstacle": 3
+          }
+        },
+        {
+          "id": 4,
+          "action": "duck",
+          "distance": 149.30300000249258,
+          "received": "✓ 蹲",
+          "pending": {
+            "action": "duck",
+            "obstacle": 4
+          }
+        }
+      ],
+      "state": {
+        "level": 18,
+        "x": 2130.429499997528,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 19.52789999997592,
+        "checkpoint": 1818.068499997519,
+        "won": true,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      }
+    }
+  ]
+}

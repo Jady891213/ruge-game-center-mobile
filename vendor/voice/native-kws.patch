@@ -1,0 +1,141 @@
+--- a/sherpa-onnx/jni/CMakeLists.txt
++++ b/sherpa-onnx/jni/CMakeLists.txt
+@@ -11,27 +11,12 @@
+ endif()
+ 
+ set(sources
+-  audio-tagging.cc
+   common.cc
+   jni.cc
+   keyword-spotter.cc
+-  offline-diacritization.cc
+-  offline-punctuation.cc
+-  offline-recognizer.cc
+-  offline-speech-denoiser.cc
+-  offline-stream.cc
+-  online-speech-denoiser.cc
+-  online-punctuation.cc
+-  online-recognizer.cc
+   online-stream.cc
+-  speaker-embedding-extractor.cc
+-  speaker-embedding-manager.cc
+-  speech-denoiser.cc
+-  spoken-language-identification.cc
++  game-online-model-config.cc
+   version.cc
+-  voice-activity-detector.cc
+-  wave-reader.cc
+-  wave-writer.cc
+ )
+ 
+ if(SHERPA_ONNX_ENABLE_TTS)
+@@ -53,7 +38,7 @@
+ 
+ if(ANDROID OR (UNIX AND NOT APPLE))
+   set_target_properties(sherpa-onnx-jni PROPERTIES
+-    LINK_FLAGS "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/sherpa-onnx-symbols.lds"
++    LINK_FLAGS "-Wl,--version-script=\"${CMAKE_CURRENT_SOURCE_DIR}/sherpa-onnx-symbols.lds\""
+   )
+ elseif(APPLE)
+   set_target_properties(sherpa-onnx-jni PROPERTIES
+--- /dev/null
++++ b/sherpa-onnx/jni/game-online-model-config.cc
+@@ -0,0 +1,98 @@
++// Copyright (c) 2024 Xiaomi Corporation. Apache-2.0.
++// Exact upstream configuration reader retained for the keyword-only JNI.
++#include "sherpa-onnx/csrc/online-model-config.h"
++#include "sherpa-onnx/jni/common.h"
++namespace sherpa_onnx {
++OnlineModelConfig GetOnlineModelConfig(JNIEnv *env, jclass model_config_cls,
++                                       jobject model_config, bool *ok) {
++  OnlineModelConfig ans;
++
++  auto fid =
++      env->GetFieldID(model_config_cls, "transducer",
++                      "Lcom/k2fsa/sherpa/onnx/OnlineTransducerModelConfig;");
++  jobject transducer_config = env->GetObjectField(model_config, fid);
++  jclass transducer_config_cls = env->GetObjectClass(transducer_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.transducer.encoder, encoder,
++                              transducer_config_cls, transducer_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.transducer.decoder, decoder,
++                              transducer_config_cls, transducer_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.transducer.joiner, joiner,
++                              transducer_config_cls, transducer_config);
++
++  fid = env->GetFieldID(transducer_config_cls, "qnnConfig",
++                        "Lcom/k2fsa/sherpa/onnx/QnnConfig;");
++  jobject qnn_config = env->GetObjectField(transducer_config, fid);
++  jclass qnn_config_cls = env->GetObjectClass(qnn_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.transducer.qnn_config.backend_lib, backendLib,
++                              qnn_config_cls, qnn_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.transducer.qnn_config.context_binary,
++                              contextBinary, qnn_config_cls, qnn_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.transducer.qnn_config.system_lib, systemLib,
++                              qnn_config_cls, qnn_config);
++
++  fid = env->GetFieldID(model_config_cls, "paraformer",
++                        "Lcom/k2fsa/sherpa/onnx/OnlineParaformerModelConfig;");
++  jobject paraformer_config = env->GetObjectField(model_config, fid);
++  jclass paraformer_config_cls = env->GetObjectClass(paraformer_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.paraformer.encoder, encoder,
++                              paraformer_config_cls, paraformer_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.paraformer.decoder, decoder,
++                              paraformer_config_cls, paraformer_config);
++
++  fid =
++      env->GetFieldID(model_config_cls, "zipformer2Ctc",
++                      "Lcom/k2fsa/sherpa/onnx/OnlineZipformer2CtcModelConfig;");
++  jobject zipformer2_ctc_config = env->GetObjectField(model_config, fid);
++  jclass zipformer2_ctc_config_cls = env->GetObjectClass(zipformer2_ctc_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.zipformer2_ctc.model, model,
++                              zipformer2_ctc_config_cls, zipformer2_ctc_config);
++
++  fid = env->GetFieldID(model_config_cls, "neMoCtc",
++                        "Lcom/k2fsa/sherpa/onnx/OnlineNeMoCtcModelConfig;");
++  jobject nemo_ctc_config = env->GetObjectField(model_config, fid);
++  jclass nemo_ctc_config_cls = env->GetObjectClass(nemo_ctc_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.nemo_ctc.model, model, nemo_ctc_config_cls,
++                              nemo_ctc_config);
++
++  fid = env->GetFieldID(model_config_cls, "toneCtc",
++                        "Lcom/k2fsa/sherpa/onnx/OnlineToneCtcModelConfig;");
++  jobject t_one_ctc_config = env->GetObjectField(model_config, fid);
++  jclass t_one_ctc_config_cls = env->GetObjectClass(t_one_ctc_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.t_one_ctc.model, model, t_one_ctc_config_cls,
++                              t_one_ctc_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.tokens, tokens, model_config_cls,
++                              model_config);
++
++  SHERPA_ONNX_JNI_READ_INT(ans.num_threads, numThreads, model_config_cls,
++                           model_config);
++
++  SHERPA_ONNX_JNI_READ_BOOL(ans.debug, debug, model_config_cls, model_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.provider_config.provider, provider,
++                              model_config_cls, model_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.model_type, modelType, model_config_cls,
++                              model_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.modeling_unit, modelingUnit, model_config_cls,
++                              model_config);
++
++  SHERPA_ONNX_JNI_READ_STRING(ans.bpe_vocab, bpeVocab, model_config_cls,
++                              model_config);
++
++  *ok = true;
++  return ans;
++}
++}

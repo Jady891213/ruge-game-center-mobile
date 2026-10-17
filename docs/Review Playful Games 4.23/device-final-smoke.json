@@ -1,0 +1,266 @@
+{
+  "source": "MIX 4 Android14 final minimal KWS JNI DEV; actions via real WebView UI handlers; angles via touch test input, no claim of physically held rotation; phone TTS through speaker to microphone is synthetic, not child speech accuracy",
+  "home": {
+    "cards": 17,
+    "dino": false,
+    "foreground": true
+  },
+  "minimalJNI": {
+    "status": "listening",
+    "mode": "command",
+    "error": "",
+    "pitch": 0,
+    "rms": 0,
+    "confidence": 0,
+    "ageMs": 999999,
+    "command": "",
+    "commandAgeMs": 999999,
+    "commandSerial": 0,
+    "frames": 0
+  },
+  "ttsKws": [
+    {
+      "word": "向右",
+      "expected": "right",
+      "recognized": null,
+      "serial": 0,
+      "peakRms": 0.2566676735877991
+    },
+    {
+      "word": "向左",
+      "expected": "left",
+      "recognized": "left",
+      "serial": 1,
+      "peakRms": 0.20022635161876678
+    },
+    {
+      "word": "向上",
+      "expected": "up",
+      "recognized": "up",
+      "serial": 2,
+      "peakRms": 0.18059267103672028
+    },
+    {
+      "word": "向下",
+      "expected": "down",
+      "recognized": "down",
+      "serial": 3,
+      "peakRms": 0.18483275175094604
+    },
+    {
+      "word": "停一下",
+      "expected": "stop",
+      "recognized": null,
+      "serial": 3,
+      "peakRms": 0.15889900922775269
+    },
+    {
+      "word": "跳一下",
+      "expected": "jump",
+      "recognized": null,
+      "serial": 3,
+      "peakRms": 0.2148648053407669
+    },
+    {
+      "word": "拿起来",
+      "expected": "take",
+      "recognized": "take",
+      "serial": 4,
+      "peakRms": 0.20554813742637634
+    },
+    {
+      "word": "放下",
+      "expected": "put",
+      "recognized": "put",
+      "serial": 5,
+      "peakRms": 0.17237311601638794
+    }
+  ],
+  "voiceAfterCommands": {
+    "heard": "再试试",
+    "state": {
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "facing": "down",
+      "jump": false,
+      "carrying": false,
+      "item": [
+        3,
+        2
+      ],
+      "won": false,
+      "paused": false,
+      "moves": 2
+    },
+    "native": {
+      "status": "listening",
+      "mode": "command",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.002778465859591961,
+      "confidence": 0,
+      "ageMs": 38,
+      "command": "put",
+      "commandAgeMs": 2160,
+      "commandSerial": 5,
+      "frames": 426
+    }
+  },
+  "micBackground": {
+    "status": "idle",
+    "mode": "",
+    "error": "",
+    "pitch": 0,
+    "rms": 0,
+    "confidence": 0,
+    "ageMs": 814,
+    "command": "put",
+    "commandAgeMs": 3135,
+    "commandSerial": 5,
+    "frames": 429
+  },
+  "micResume": {
+    "paused": true,
+    "audio": {
+      "status": "idle",
+      "mode": "",
+      "error": "",
+      "pitch": 0,
+      "rms": 0,
+      "confidence": 0,
+      "ageMs": 2002,
+      "command": "put",
+      "commandAgeMs": 4323,
+      "commandSerial": 5,
+      "frames": 429
+    }
+  },
+  "animal": [
+    {
+      "level": 1,
+      "finished": true,
+      "win": true
+    },
+    {
+      "level": 18,
+      "finished": true,
+      "win": true
+    }
+  ],
+  "hats": {
+    "phase": "won",
+    "win": true
+  },
+  "pitch": {
+    "state": {
+      "level": 1,
+      "x": 890.6444999999882,
+      "y": 330,
+      "vy": 0,
+      "duck": 0,
+      "time": 8.533100000000017,
+      "checkpoint": 546,
+      "won": true,
+      "paused": false,
+      "falls": 0,
+      "recovery": 0,
+      "collected": [
+        0
+      ],
+      "pending": null,
+      "activeDuck": -1,
+      "activeJump": -1
+    },
+    "win": true
+  },
+  "safe": [
+    {
+      "level": 1,
+      "state": {
+        "mode": "safe",
+        "level": 0,
+        "index": 1,
+        "hold": 0,
+        "angle": -32,
+        "elapsed": 0.6736000000000006,
+        "finished": true
+      },
+      "win": true
+    },
+    {
+      "level": 18,
+      "state": {
+        "mode": "safe",
+        "level": 17,
+        "index": 3,
+        "hold": 0,
+        "angle": 24,
+        "elapsed": 2.675100000000004,
+        "finished": true
+      },
+      "win": true
+    }
+  ],
+  "hapticStatus": {
+    "active": true,
+    "sound": true,
+    "vibration": true,
+    "vibrator": true,
+    "amplitudeControl": true,
+    "events": 22,
+    "sounds": 22,
+    "haptics": 48,
+    "last": "win",
+    "hapticMode": "predefined",
+    "loaded": 13
+  },
+  "camera": {
+    "running": true,
+    "status": "running",
+    "seq": 5,
+    "ageMs": 13,
+    "samples": 49,
+    "ready": true,
+    "collected": true,
+    "jpegPresent": true
+  },
+  "cameraBackground": {
+    "available": true,
+    "permission": true,
+    "running": false,
+    "status": "stopped",
+    "facing": "back",
+    "roi": 0.24,
+    "seq": 6,
+    "ageMs": -1,
+    "pixels": []
+  },
+  "systemBack": {
+    "url": "file:///android_asset/index.html",
+    "audio": {
+      "status": "idle",
+      "mode": "",
+      "error": "",
+      "pitch": 0,
+      "rms": 0,
+      "confidence": 0,
+      "ageMs": 30436,
+      "command": "put",
+      "commandAgeMs": 32757,
+      "commandSerial": 5,
+      "frames": 429
+    },
+    "camera": {
+      "available": true,
+      "permission": true,
+      "running": false,
+      "status": "stopped",
+      "facing": "back",
+      "roi": 0.24,
+      "seq": 6,
+      "ageMs": -1,
+      "pixels": []
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "source": "Final minimal JNI, phone TTS via speaker/microphone, additional repeats; not child voice accuracy",
+  "results": [
+    {
+      "word": "向右",
+      "expected": "right",
+      "recognized": "right",
+      "peakRms": 0.18794728815555573,
+      "serial": 6
+    },
+    {
+      "word": "跳一下",
+      "expected": "jump",
+      "recognized": "jump",
+      "peakRms": 0.21848246455192566,
+      "serial": 7
+    },
+    {
+      "word": "停下",
+      "expected": "stop",
+      "recognized": null,
+      "peakRms": 0.17857681214809418,
+      "serial": 7
+    },
+    {
+      "word": "停止",
+      "expected": "stop",
+      "recognized": "stop",
+      "peakRms": 0.136663019657135,
+      "serial": 8
+    },
+    {
+      "word": "停下来",
+      "expected": "stop",
+      "recognized": null,
+      "peakRms": 0.23391693830490112,
+      "serial": 8
+    },
+    {
+      "word": "停一下",
+      "expected": "stop",
+      "recognized": null,
+      "peakRms": 0.15330564975738525,
+      "serial": 8
+    },
+    {
+      "word": "跳一下",
+      "expected": "jump",
+      "recognized": null,
+      "peakRms": 0.2069784551858902,
+      "serial": 8
+    },
+    {
+      "word": "向右",
+      "expected": "right",
+      "recognized": "right",
+      "peakRms": 0.27563223242759705,
+      "serial": 9
+    }
+  ]
+}

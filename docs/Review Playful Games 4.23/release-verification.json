@@ -1,0 +1,49 @@
+{
+  "package": "com.dsh.gamecenter",
+  "versionName": "4.23",
+  "versionCode": 46,
+  "tests": {
+    "total": 289,
+    "passed": 289
+  },
+  "games": 17,
+  "newLevels": 126,
+  "originalStorage": {
+    "keys": 19,
+    "allValuesExactBeforeFormalUpgrade": true,
+    "testKeysRemoved": true,
+    "sixSecondDelayedReadback": true
+  },
+  "nativePreferencesRestored": {
+    "sound": true,
+    "vibration": true,
+    "awake": true
+  },
+  "captureStoppedBeforeUpgrade": true,
+  "sourceDevFormalAssetsExact": 130,
+  "sharedNativeLibraries": [
+    "lib/arm64-v8a/libonnxruntime.so",
+    "lib/arm64-v8a/libsherpa-onnx-jni.so"
+  ],
+  "dinoAbsentFromAPK": true,
+  "developmentWebViewAPIAbsent": true,
+  "apkSha256": "4bd8f74e1dab06c42e169fe9501fb171a584ef8b43fe1772f2da7dc983dfdae3",
+  "apkBytes": 54378287,
+  "installedVersionLines": [
+    "versionCode=46 minSdk=21 targetSdk=34",
+    "versionName=4.23"
+  ],
+  "installedApkSha256": "4bd8f74e1dab06c42e169fe9501fb171a584ef8b43fe1772f2da7dc983dfdae3",
+  "formalNotDebuggable": true,
+  "formalCdpSocketAbsent": true,
+  "ownCdpForwardsAbsent": true,
+  "runtimeQaDevSha256": "f45f25ed1284fdbf906f9bdfab2d43ceee1cac474363897b8b206cda4d997d6f",
+  "postRuntimeQaVisualFix": {
+    "files": [
+      "pocket-radar/style.css",
+      "shared/pocket-radar.png"
+    ],
+    "detail": "cover-only max-height override and regenerated full-frame thumbnail; actual play unaffected; screenshot export inspected"
+  },
+  "finalDevSha256": "112a9385eeba86c01b9b829fc834d2312f677f686f590905d6ab3468c18bda18"
+}

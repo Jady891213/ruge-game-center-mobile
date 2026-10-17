@@ -1,0 +1,4 @@
+# Preserve exact upstream license bytes and unified patch context.
+app/assets/voice-model/licenses/** -whitespace
+vendor/voice/LICENSE* -whitespace
+vendor/voice/native-kws.patch -whitespace

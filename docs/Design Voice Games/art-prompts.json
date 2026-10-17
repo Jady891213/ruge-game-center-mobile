@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "useCase": "illustration-story",
+  "assets": [
+    {
+      "path": "app/assets/shared/voice-art/monster-atlas.png",
+      "sha256": "ef7eae146606e6b5173d1823cf3b808627cc20da680323f5b11d682eace3b474",
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a14b0e-f27c-7ee2-8922-decd9791f055/exec-f1411283-34a6-438c-bedc-2951207c7491.png",
+      "generationPrompt": "Original flat cartoon 2×2 sprite sheet for children aged 5–6. Same original mint-green round monster, two rounded ears, tiny feet, dark oval eyes, apricot belly, friendly dark teal outlines, bright simple flat colors. Top left walking, top right jumping, lower left crouching, lower right holding a golden key. Each pose centered in its equal square cell, generous margins, entirely visible, no grid, no text, no logos, no existing cartoon character.",
+      "editPrompt": "Precise background extraction. Remove only warm cream background to true alpha transparency. Preserve all four monster drawings, layout positions, outlines, colors, expressions, poses and size. Transparent margins, no added objects, text or shadows.",
+      "review": "Four poses inspected; true transparent output preserved; consumed in actual game scenes and menus."
+    }
+  ]
+}

@@ -1,0 +1,572 @@
+{
+  "pass": true,
+  "metrics": [
+    {
+      "game": "animal-balance",
+      "level": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "board",
+        "x": 9,
+        "y": 157,
+        "width": 302,
+        "height": 275,
+        "right": 311,
+        "bottom": 432,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 6,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "board",
+        "x": 9,
+        "y": 196,
+        "width": 302,
+        "height": 236,
+        "right": 311,
+        "bottom": 432,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 13,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "board",
+        "x": 9,
+        "y": 234,
+        "width": 302,
+        "height": 198,
+        "right": 311,
+        "bottom": 432,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 18,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "board",
+        "x": 9,
+        "y": 234,
+        "width": 302,
+        "height": 198,
+        "right": 311,
+        "bottom": 432,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 1,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 9,
+        "y": 193,
+        "width": 302,
+        "height": 280,
+        "right": 311,
+        "bottom": 473,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 9,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 9,
+        "y": 193,
+        "width": 302,
+        "height": 280,
+        "right": 311,
+        "bottom": 473,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 16,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 9,
+        "y": 193,
+        "width": 302,
+        "height": 280,
+        "right": 311,
+        "bottom": 473,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 18,
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 9,
+        "y": 193,
+        "width": 302,
+        "height": 280,
+        "right": 311,
+        "bottom": 473,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 9,
+        "y": 53,
+        "width": 302,
+        "height": 507,
+        "right": 311,
+        "bottom": 560,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 1,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "board",
+        "x": 12,
+        "y": 195,
+        "width": 368,
+        "height": 503,
+        "right": 380,
+        "bottom": 698,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 6,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "board",
+        "x": 12,
+        "y": 293,
+        "width": 368,
+        "height": 405,
+        "right": 380,
+        "bottom": 698,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 13,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "board",
+        "x": 12,
+        "y": 341,
+        "width": 368,
+        "height": 357,
+        "right": 380,
+        "bottom": 698,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "animal-balance",
+      "level": 18,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "board",
+        "x": 12,
+        "y": 390,
+        "width": 368,
+        "height": 308,
+        "right": 380,
+        "bottom": 698,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 1,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 12,
+        "y": 238,
+        "width": 368,
+        "height": 519,
+        "right": 380,
+        "bottom": 757,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 9,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 12,
+        "y": 238,
+        "width": 368,
+        "height": 519,
+        "right": 380,
+        "bottom": 757,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 16,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 12,
+        "y": 238,
+        "width": 368,
+        "height": 519,
+        "right": 380,
+        "bottom": 757,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    },
+    {
+      "game": "hat-trick",
+      "level": 18,
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "id": "hatStage",
+        "x": 12,
+        "y": 238,
+        "width": 368,
+        "height": 519,
+        "right": 380,
+        "bottom": 757,
+        "visible": true
+      },
+      "footer": {
+        "id": "play",
+        "x": 12,
+        "y": 68,
+        "width": 368,
+        "height": 794,
+        "right": 380,
+        "bottom": 862,
+        "visible": true
+      },
+      "outside": []
+    }
+  ],
+  "hatTargetRects": [
+    {
+      "x": 14,
+      "y": 225,
+      "width": 90.65625,
+      "height": 108
+    },
+    {
+      "x": 114.65625,
+      "y": 225,
+      "width": 90.65625,
+      "height": 108
+    },
+    {
+      "x": 215.328125,
+      "y": 225,
+      "width": 90.65625,
+      "height": 108
+    },
+    {
+      "x": 14,
+      "y": 333,
+      "width": 90.65625,
+      "height": 108
+    },
+    {
+      "x": 114.65625,
+      "y": 333,
+      "width": 90.65625,
+      "height": 108
+    },
+    {
+      "x": 215.328125,
+      "y": 333,
+      "width": 90.65625,
+      "height": 108
+    }
+  ],
+  "browserErrors": []
+}

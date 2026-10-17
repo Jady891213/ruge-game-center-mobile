@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { loadGame } from './helpers/html-vm.mjs';
 
-const games = ['flappy-bird', 'dino-runner', 'frog-pond'];
+const games = ['flappy-bird', 'frog-pond'];
 
 // Observe the semantic boundary; shared feedback has its own device/audio tests.
 // All input, physics, collection and completion logic below is the real page.
@@ -112,29 +112,6 @@ test('flappy-bird: each pipe scores once and an eight-pipe goal replaces the sma
   assert.deepEqual(events, ['collect', 'success']);
 });
 
-test('dino-runner: ignored airborne taps are silent, landing and buffered jumps follow actual motion', t => {
-  const { h, e, events } = loadAction(t, 'dino-runner');
-  h.click('#startBtn');
-  e.pressJump(); e.pressJump(); e.pressJump();
-  assert.deepEqual(events, ['jump']);
-  const { player } = e.snapshot();
-  player.yOff = 0.001; player.vy = -100;
-  e.update(.001);
-  assert.deepEqual(events, ['jump', 'land', 'jump'], 'only the accepted landing-buffer jump sounds');
-  player.yOff = 0.001; player.vy = -100;
-  e.update(.001); e.update(.001);
-  assert.deepEqual(events, ['jump', 'land', 'jump', 'land']);
-});
-
-test('dino-runner: distance band and milestone each reward once, not on every frame', t => {
-  const { h, e, events } = loadAction(t, 'dino-runner');
-  h.click('#startBtn');
-  e.scenario({ scoreF: 101 }); e.update(0); e.update(0);
-  assert.deepEqual(events, ['collect']);
-  e.scenario({ worldX: 2000 }); e.update(0); e.update(0);
-  assert.deepEqual(events, ['collect', 'success']);
-});
-
 test('frog-pond: two jumps sound, a third is silent, target-pad goals reward once', t => {
   const { h, e, events } = loadAction(t, 'frog-pond');
   h.click('#startBtn');
@@ -150,7 +127,7 @@ test('frog-pond: two jumps sound, a third is silent, target-pad goals reward onc
   assert.equal(events.length, 5);
 });
 
-for (const game of ['dino-runner', 'frog-pond']) {
+for (const game of ['frog-pond']) {
   test(`${game}: a collected gem rewards once across successive physics frames`, t => {
     const { h, e, events } = loadAction(t, game);
     h.click('#startBtn');

@@ -2,6 +2,12 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const games = [
+    {id:'animal-balance',cat:'puzzle',name:'动物天平桥'},
+    {id:'hat-trick',cat:'puzzle',name:'帽子小捣蛋'},
+    {id:'pitch-adventure',cat:'react',name:'怪兽变声冒险'},
+    {id:'voice-quest',cat:'react',name:'口令小冒险'},
+    {id:'pocket-radar',cat:'tilt',name:'口袋探宝'},
+    {id:'camera-color',cat:'puzzle',name:'颜色小侦探'},
     {id:'forest-juice',cat:'puzzle',name:'森林果汁屋'},
     {id:'code-breaker',cat:'puzzle',name:'小小密码箱'},
     {id:'pipe-flow',cat:'puzzle',name:'接水管'},
@@ -12,7 +18,6 @@
     {id:'paint-mixing',cat:'puzzle',name:'小小调色师'},
     {id:'hanzi-typing',cat:'learn',name:'看字打拼音'},
     {id:'flappy-bird',cat:'react',name:'扑翼小鸟'},
-    {id:'dino-runner',cat:'react',name:'小恐龙冲刺'},
     {id:'frog-pond',cat:'react',name:'小青蛙跳池塘'},
   ];
   const labels = {all:'全部',recent:'最近',learn:'认字',puzzle:'益智',tilt:'重力',react:'反应'};

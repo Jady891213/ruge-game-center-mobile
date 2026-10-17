@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>颜色小侦探</title><link rel="stylesheet" href="../shared/ui.css"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><button id="home" class="icon" aria-label="回游戏中心"></button><strong>颜色小侦探</strong><button id="map" class="icon" aria-label="选择关卡"></button></header>
+<main>
+ <section id="menu"><div class="hero"><img src="detective.png" alt="拿相机的水獭小侦探"><div><h1>找找颜色</h1><div class="modePicker"><button id="cameraMode" class="primary">相机</button><button id="practiceMode">颜色卡</button></div><p id="modeLabel">不拍照 · 不上传</p></div></div><div id="levels" class="levels" aria-label="18关"></div><button id="continue" class="wide" hidden>继续</button></section>
+ <section id="play" hidden>
+  <div class="playTop"><span id="levelName"></span><span id="inputBadge"></span><button id="restart" class="icon" aria-label="重玩本关"></button><button id="pauseButton" class="icon" aria-label="暂停"></button></div>
+  <div id="clues" class="clues" aria-label="本关线索"></div>
+  <div class="targetLine"><strong id="target"></strong><button id="peek" hidden>看一眼</button></div>
+  <div id="viewfinder" class="viewfinder"><img id="preview" alt="实时取景" hidden><div id="practiceScene" hidden></div><div id="cameraBlank"><img src="detective.png" alt=""><button id="enableCamera" class="primary">打开相机</button></div><div id="sampleBox" class="sampleBox"><span></span></div><div id="viewState" class="viewState"></div><div id="flash" class="flash"></div></div>
+  <div class="bottom"><div id="sampleColor" class="sampleColor" aria-label="取样颜色"></div><button id="capture" class="capture primary" aria-label="收集中心颜色" disabled></button><span id="stepCount"></span></div>
+  <div id="palette" class="palette" hidden></div>
+  <div id="cameraHelp" class="cameraHelp" hidden><span id="cameraMessage"></span><button id="retryCamera">重试</button><button id="switchPractice">颜色卡</button></div>
+ </section>
+</main>
+<div id="pause" class="overlay" hidden><div class="panel"><img src="detective.png" alt=""><h2>休息一下</h2><button id="resume" class="primary wide">继续</button><button id="pauseHome" class="wide">回游戏中心</button></div></div>
+<div id="win" class="overlay" hidden><div class="panel"><img src="detective.png" alt=""><h2>线索集齐！</h2><div id="winStars" class="stars"></div><button id="next" class="primary wide">下一关</button><button id="winMap" class="wide">选关</button></div></div>
+<script src="../shared/feedback.js"></script><script src="core.js"></script><script src="game.js"></script>
+</body></html>

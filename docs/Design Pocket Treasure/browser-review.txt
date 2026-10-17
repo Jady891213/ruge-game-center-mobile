@@ -1,0 +1,191 @@
+### Result
+{
+  "viewport": [
+    320,
+    568
+  ],
+  "overflow": [
+    320,
+    568
+  ],
+  "board": {
+    "x": 14,
+    "y": 148,
+    "width": 292,
+    "height": 216,
+    "top": 148,
+    "right": 306,
+    "bottom": 364,
+    "left": 14
+  },
+  "controls": {
+    "x": 10,
+    "y": 460,
+    "width": 300,
+    "height": 96,
+    "top": 460,
+    "right": 310,
+    "bottom": 556,
+    "left": 10
+  },
+  "buttons": [
+    {
+      "id": "home",
+      "bottom": 58,
+      "width": 46,
+      "height": 48
+    },
+    {
+      "id": "mapButton",
+      "bottom": 58,
+      "width": 46,
+      "height": 48
+    },
+    {
+      "id": "reset",
+      "bottom": 107,
+      "width": 42,
+      "height": 42
+    },
+    {
+      "id": "pauseButton",
+      "bottom": 107,
+      "width": 42,
+      "height": 42
+    },
+    {
+      "id": "inputMode",
+      "bottom": 451,
+      "width": 58,
+      "height": 44
+    },
+    {
+      "id": "dig",
+      "bottom": 455,
+      "width": 93,
+      "height": 52
+    },
+    {
+      "id": "up",
+      "bottom": 502,
+      "width": 55.328125,
+      "height": 42
+    },
+    {
+      "id": "left",
+      "bottom": 549,
+      "width": 55.328125,
+      "height": 42
+    },
+    {
+      "id": "right",
+      "bottom": 549,
+      "width": 55.328125,
+      "height": 42
+    },
+    {
+      "id": "down",
+      "bottom": 549,
+      "width": 55.328125,
+      "height": 42
+    }
+  ]
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({viewport:[innerWidth,innerHeight],overflow:[document.documentElement.scrollWidth,document.documentElement.scrollHeight],board:document.getElementById("board").getBoundingClientRect().toJSON(),controls:document.getElementById("touchControls").getBoundingClientRect().toJSON(),buttons:[...document.querySelectorAll("button")].filter(e=>e.getClientRects().length).map(e=>({id:e.id,bottom:e.getBoundingClientRect().bottom,width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))})');
+```
+
+### Result
+{"finished":true,"winVisible":true}
+### Ran Playwright code
+```js
+await (async page => {const box=await page.locator('#board').boundingBox();const target=await page.evaluate(()=>PocketRadar.RADAR_LEVELS[0].targets[0]);await page.mouse.move(box.x+box.width*target.x,box.y+box.height*target.y);await page.mouse.down();await page.waitForFunction(()=>{const s=__game.state(),t=PocketRadar.RADAR_LEVELS[s.level].targets[s.index];return Math.hypot(s.x-t.x,s.y-t.y)<.06},null,{timeout:7000});await page.mouse.up();await page.locator('#dig').click();return await page.evaluate(()=>({finished:__game.state().finished,winVisible:!document.getElementById('win').hidden}));})(page);
+```
+### Page
+- Page URL: http://127.0.0.1:63120/pocket-radar/index.html
+- Page Title: 口袋探宝
+- Console: 2 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli/console-2026-10-17T18-28-34-135Z.log#L2
+
+### Result
+[{"level":0,"finished":true,"elapsed":2.632600000000001},{"level":1,"finished":true,"elapsed":0.6827000000000005},{"level":2,"finished":true,"elapsed":0.6992000000000004},{"level":3,"finished":true,"elapsed":0.6992999999999989},{"level":4,"finished":true,"elapsed":0.6826000000000019},{"level":5,"finished":true,"elapsed":0.6992999999999989}]
+### Ran Playwright code
+```js
+await (async page => {const results=[];for(let i=0;i<6;i++){const state=await page.evaluate(()=>__game.state());if(state.level!==i||state.mode!=='safe')throw Error('Wrong level '+i);const codes=await page.evaluate(i=>PocketRadar.SAFE_LEVELS[i].code,i);for(let pin=0;pin<codes.length;pin++){const box=await page.locator('#board').boundingBox(),a=codes[pin]*Math.PI/180,r=Math.min(box.width*.28,box.height*.27);await page.mouse.move(box.x+box.width/2+Math.sin(a)*r,box.y+box.height*.53-Math.cos(a)*r);await page.mouse.down();await page.mouse.up();await page.waitForFunction(pin=>__game.state().index>pin,pin,{timeout:4000});}results.push(await page.evaluate(()=>({level:__game.state().level,finished:__game.state().finished,elapsed:__game.state().elapsed})));if(i<17)await page.locator('#next').click();}return results;})(page);
+```
+
+### Result
+[{"level":6,"finished":true,"elapsed":3.299199999999999},{"level":7,"finished":true,"elapsed":1.7992000000000006},{"level":8,"finished":true,"elapsed":1.7658999999999982},{"level":9,"finished":true,"elapsed":1.7993000000000048},{"level":10,"finished":true,"elapsed":1.7827000000000017},{"level":11,"finished":true,"elapsed":1.7826}]
+### Ran Playwright code
+```js
+await (async page => {const results=[];for(let i=6;i<12;i++){const state=await page.evaluate(()=>__game.state());if(state.level!==i||state.mode!=='safe')throw Error('Wrong level '+i);const codes=await page.evaluate(i=>PocketRadar.SAFE_LEVELS[i].code,i);for(let pin=0;pin<codes.length;pin++){const box=await page.locator('#board').boundingBox(),a=codes[pin]*Math.PI/180,r=Math.min(box.width*.28,box.height*.27);await page.mouse.move(box.x+box.width/2+Math.sin(a)*r,box.y+box.height*.53-Math.cos(a)*r);await page.mouse.down();await page.mouse.up();await page.waitForFunction(pin=>__game.state().index>pin,pin,{timeout:4000});}results.push(await page.evaluate(()=>({level:__game.state().level,finished:__game.state().finished,elapsed:__game.state().elapsed})));if(i<17)await page.locator('#next').click();}return results;})(page);
+```
+
+### Result
+[{"level":12,"finished":true,"elapsed":4.232499999999997},{"level":13,"finished":true,"elapsed":2.6824999999999983},{"level":14,"finished":true,"elapsed":2.6493},{"level":15,"finished":true,"elapsed":2.682499999999998},{"level":16,"finished":true,"elapsed":2.6657999999999933},{"level":17,"finished":true,"elapsed":2.6824999999999974}]
+### Ran Playwright code
+```js
+await (async page => {const results=[];for(let i=12;i<18;i++){const state=await page.evaluate(()=>__game.state());if(state.level!==i||state.mode!=='safe')throw Error('Wrong level '+i);const codes=await page.evaluate(i=>PocketRadar.SAFE_LEVELS[i].code,i);for(let pin=0;pin<codes.length;pin++){const box=await page.locator('#board').boundingBox(),a=codes[pin]*Math.PI/180,r=Math.min(box.width*.28,box.height*.27);await page.mouse.move(box.x+box.width/2+Math.sin(a)*r,box.y+box.height*.53-Math.cos(a)*r);await page.mouse.down();await page.mouse.up();await page.waitForFunction(pin=>__game.state().index>pin,pin,{timeout:4000});}results.push(await page.evaluate(()=>({level:__game.state().level,finished:__game.state().finished,elapsed:__game.state().elapsed})));if(i<17)await page.locator('#next').click();}return results;})(page);
+```
+
+### Result
+{"result":"① 0.7 秒\n② 0.7 秒","singleSaveUnchanged":true,"paused":false}
+### Ran Playwright code
+```js
+await (async page => {const before=await page.evaluate(()=>JSON.parse(localStorage.getItem('rugePocketRadarV1')));for(let player=1;player<=2;player++){await page.evaluate(()=>dispatchEvent(new Event('ruge:pause')));await page.locator('#resume').click();await page.locator('#ready').click();const box=await page.locator('#board').boundingBox(),a=-32*Math.PI/180,r=Math.min(box.width*.28,box.height*.27);await page.mouse.move(box.x+box.width/2+Math.sin(a)*r,box.y+box.height*.53-Math.cos(a)*r);await page.mouse.down();await page.mouse.up();await page.waitForFunction(()=>__game.state().finished,null,{timeout:4000});if(player===1)await page.locator('#next').click();}const after=await page.evaluate(()=>JSON.parse(localStorage.getItem('rugePocketRadarV1')));return {result:await page.locator('#result').textContent(),singleSaveUnchanged:JSON.stringify(before)===JSON.stringify(after),paused:await page.evaluate(()=>__game.isPaused())};})(page);
+```
+
+Browser mouse/touch fallback tested; device sensors/haptics not tested here.
+
+Final icons + 44px arrow buttons; sensor unavailable fallback checked without a sensor shim.
+### Result
+{
+  "viewport": [
+    392,
+    872
+  ],
+  "overflow": [
+    392,
+    872
+  ],
+  "board": {
+    "x": 18,
+    "y": 163,
+    "width": 356,
+    "height": 432,
+    "top": 163,
+    "right": 374,
+    "bottom": 595,
+    "left": 18
+  },
+  "controls": {
+    "x": 14,
+    "y": 696,
+    "width": 364,
+    "height": 112,
+    "top": 696,
+    "right": 378,
+    "bottom": 808,
+    "left": 14
+  }
+}
+### Ran Playwright code
+```js
+await page.evaluate('() => ({viewport:[innerWidth,innerHeight],overflow:[document.documentElement.scrollWidth,document.documentElement.scrollHeight],board:document.getElementById("board").getBoundingClientRect().toJSON(),controls:document.getElementById("touchControls").getBoundingClientRect().toJSON()})');
+```
+
+Representative radar stage13: normal start API, real mouse movement via waypoints around walls, three actual dig clicks.
+### Result
+{"level":12,"finished":true,"found":3,"elapsed":6.332400000000019}
+### Ran Playwright code
+```js
+await (async page=>{const waypoints=[[[.22,.88],[.22,.23]],[[.22,.62],[.5,.62]],[[.23,.65]]];for(const path of waypoints){for(const [x,y]of path){const box=await page.locator('#board').boundingBox();await page.mouse.move(box.x+box.width*x,box.y+box.height*y);await page.mouse.down();await page.waitForFunction(([x,y])=>{const s=__game.state();return Math.hypot(s.x-x,s.y-y)<.025},[x,y],{timeout:7000});await page.mouse.up();}await page.locator('#dig').click();}return await page.evaluate(()=>({level:__game.state().level,finished:__game.state().finished,found:__game.state().index,elapsed:__game.state().elapsed}));})(page);
+```
+### Page
+- Page URL: http://127.0.0.1:65534/pocket-radar/index.html
+- Page Title: 口袋探宝
+- Console: 2 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli/console-2026-10-17T18-31-55-453Z.log#L2

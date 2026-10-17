@@ -30,6 +30,7 @@ public final class GameFeedback {
     private volatile boolean active, released, sound, vibration;
     private volatile int generation;
     private long lastAt = -10000;
+    private long lastPulseAt = -10000;
     private int lastPriority;
     private volatile int eventCount, soundCount, vibrationCount;
     private volatile String lastName = "";
@@ -66,6 +67,22 @@ public final class GameFeedback {
     @JavascriptInterface public boolean soundEnabled(){return sound;}
     @JavascriptInterface public boolean vibrationEnabled(){return vibration;}
     @JavascriptInterface public boolean hasVibrator(){try{return vibrator!=null&&vibrator.hasVibrator();}catch(RuntimeException e){return false;}}
+    @JavascriptInterface public boolean amplitudeControl(){try{return Build.VERSION.SDK_INT>=26&&hasVibrator()&&vibrator.hasAmplitudeControl();}catch(RuntimeException e){return false;}}
+    /** Bounded directional signals; shared preferences, lifecycle and queue cancellation still apply. */
+    @JavascriptInterface public void pulse(final int strength, final int milliseconds) {
+        if(!active||released||!vibration||strength<1||strength>255)return;
+        final int token=generation;
+        handler.post(new Runnable(){public void run(){
+            if(!active||released||!vibration||token!=generation||!hasVibrator())return;
+            long now=SystemClock.elapsedRealtime();if(now-lastPulseAt<90)return;lastPulseAt=now;
+            int duration=Math.max(8,Math.min(35,milliseconds));
+            try{
+                if(Build.VERSION.SDK_INT>=26){vibrator.vibrate(VibrationEffect.createOneShot(duration,amplitudeControl()?strength:VibrationEffect.DEFAULT_AMPLITUDE));hapticMode=amplitudeControl()?"amplitude-pulse":"duration-pulse";}
+                else {vibrator.vibrate(duration);hapticMode="legacy-pulse";}
+                vibrationCount++;lastName="signal";
+            }catch(RuntimeException ignored){}
+        }});
+    }
     @JavascriptInterface public void setSound(boolean value){sound=value;prefs.edit().putBoolean("feedback-sound",value).apply();if(!value)handler.post(new Runnable(){public void run(){stopSounds();}});}
     @JavascriptInterface public void setVibration(boolean value){vibration=value;prefs.edit().putBoolean("feedback-vibration",value).apply();if(!value)cancelVibration();}
     @JavascriptInterface public void emit(final String name) {
@@ -111,7 +128,7 @@ public final class GameFeedback {
     @JavascriptInterface public void cancelVibration(){handler.post(new Runnable(){public void run(){try{if(vibrator!=null)vibrator.cancel();}catch(RuntimeException ignored){}}});}
     @JavascriptInterface public String status(){
         if(!BuildConfig.DEV)return "{}";
-        return "{\"active\":"+active+",\"sound\":"+sound+",\"vibration\":"+vibration+",\"vibrator\":"+hasVibrator()+",\"events\":"+eventCount+",\"sounds\":"+soundCount+",\"haptics\":"+vibrationCount+",\"last\":\""+lastName+"\",\"hapticMode\":\""+hapticMode+"\",\"loaded\":"+loaded.size()+"}";
+        return "{\"active\":"+active+",\"sound\":"+sound+",\"vibration\":"+vibration+",\"vibrator\":"+hasVibrator()+",\"amplitudeControl\":"+amplitudeControl()+",\"events\":"+eventCount+",\"sounds\":"+soundCount+",\"haptics\":"+vibrationCount+",\"last\":\""+lastName+"\",\"hapticMode\":\""+hapticMode+"\",\"loaded\":"+loaded.size()+"}";
     }
     void release(){active=false;released=true;stopNow();handler.removeCallbacksAndMessages(null);if(pool!=null){pool.release();pool=null;}loaded.clear();}
 }

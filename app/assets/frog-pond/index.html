@@ -39,6 +39,7 @@ body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}bod
 @media(max-height:480px){.screen{padding:65px 18px 12px}.card{max-height:calc(100dvh - 82px);max-width:440px;padding:17px 22px 23px}.hero{height:80px;margin-bottom:14px}.card h1{font-size:23px;margin-bottom:13px}.card button{min-height:52px;font-size:23px}.card .actions{margin-top:12px}.card .big{font-size:54px}.result-mascot{width:40px;height:40px}#mission{left:160px;top:calc(env(safe-area-inset-top,0px) + 16px);font-size:16px;padding:5px 9px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
+<link rel="stylesheet" href="../shared/garden-ui.css">
 </head>
 <body class="action-game">
 <div id="stage">
@@ -71,6 +72,7 @@ body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}bod
 </div>
 
 <script src="../shared/feedback.js"></script>
+<script src="../shared/garden-art.js"></script>
 <script>
 (function () {
 'use strict';
@@ -99,7 +101,7 @@ var DAY = {
   skyTop:'#d2eee1', skyMid:'#eef3d4', skyBot:'#fff6e8', sun:'#ffdc85',
   far:'#d8e8bb', mid:'#b3d4aa',
   ground:'#b3dfd7', groundDeep:'#8dc6bb', gline:'#edfae1', dash:'#d3ece1',
-  lily:'#bce8a9', lilyDark:'#71a176',
+  lily:'#a6d939', lilyDark:'#397d5c',
   body:'#bce8d1', bodyDark:'#77ad89', belly:'#fff3bc',
   eye:'#fffdf5', pupil:'#35544b',
   cactus:'#f9c8ba', cactusDark:'#b78372',
@@ -114,7 +116,7 @@ var NIGHT = {
   skyTop:'#708f98', skyMid:'#a2bbb5', skyBot:'#d0d9c5', sun:'#fff2c6',
   far:'#8eac9e', mid:'#87ad98',
   ground:'#b3dfd7', groundDeep:'#8dc6bb', gline:'#edfae1', dash:'#d3ece1',
-  lily:'#bce8a9', lilyDark:'#71a176',
+  lily:'#a6d939', lilyDark:'#397d5c',
   body:'#bce8d1', bodyDark:'#77ad89', belly:'#fff3bc',
   eye:'#fffdf5', pupil:'#35544b',
   cactus:'#f9c8ba', cactusDark:'#b78372',
@@ -459,12 +461,12 @@ function spawnObstacle() {
   // 单跳最高能到 2.90·pH（脚底），所以 h > 2.9·pH 的障碍**必须二段跳**。
   // 二段跳最高 5.14·pH —— 高障碍取 3.05·pH，留出近 2·pH 的余量，不难。
   if (r < 0.42) {
-    o = { kind: 'cactus', n: 1, w: pH * 0.42, h: pH * 0.82, base: 0 };
+    o = { kind: 'cactus', n: 1, w: pH * 0.90, h: pH * 0.82, base: 0 };
   } else if (r < 0.62) {
-    o = { kind: 'cactus', n: 1, w: pH * 0.56, h: pH * 1.22, base: 0 };
+    o = { kind: 'cactus', n: 1, w: pH * 1.30, h: pH * 1.22, base: 0 };
   } else if (r < 0.76) {
     var n = Math.random() < 0.20 ? 3 : 2;          // 三连更少见（原来 45%）
-    o = { kind: 'cactus', n: n, w: pH * 0.44 * n, h: pH * 0.82, base: 0 };
+    o = { kind: 'cactus', n: n, w: pH * 0.95 * n, h: pH * 0.82, base: 0 };
   } else if (r < 0.86) {
     o = { kind: 'bird', w: pH * 0.80, h: pH * 0.56, base: pH * 0.38, mul: 1.0, flap: rand(0, 6) };
   } else if (r < 0.94) {
@@ -696,6 +698,7 @@ function drawTargetPads() {
   }
 }
 function drawReeds() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("pond")) return;
   var step=150*L.S,off=(worldX*.24)%step;
   for(var x=-off-step;x<W+step;x+=step){
     ctx.strokeStyle=nightMix>.5?'#345b4e':'#7a9b6f';ctx.lineWidth=2.5*L.S;ctx.lineCap='round';
@@ -723,6 +726,7 @@ function rr(x, y, w, h, r) {
 }
 
 function drawSky() {
+  if(window.RugeGardenArt && window.RugeGardenArt.background(ctx,"pond",W,H,worldX,L.groundY,L.S)) return;
   var g = ctx.createLinearGradient(0, 0, 0, L.groundY);
   g.addColorStop(0, palette.skyTop);
   g.addColorStop(0.55, palette.skyMid);
@@ -742,6 +746,7 @@ function drawSky() {
 }
 
 function drawHills() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("pond")) return;
   for (var i = 0; i < hills.length; i++) {
     var h = hills[i];
     var x = wrapX(h.x, h.p);
@@ -756,6 +761,7 @@ function drawHills() {
 }
 
 function drawClouds() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("pond")) return;
   ctx.fillStyle = palette.cloud;
   ctx.globalAlpha = 0.88;
   for (var i = 0; i < clouds.length; i++) {
@@ -785,6 +791,7 @@ function drawLily(cx, cy, r) {
 }
 
 function drawGround() {
+  if(window.RugeGardenArt && window.RugeGardenArt.available("pond")) return;
   var g = ctx.createLinearGradient(0, L.groundY, 0, H);
   g.addColorStop(0, palette.gline);
   g.addColorStop(0.18, palette.ground);
@@ -819,77 +826,21 @@ function drawGround() {
   }
 }
 
-function drawCactus(o) {                     // 其实画的是「跃出水面的鱼」
-  var n = o.n || 1;
-  var cw = o.w / n;
-  for (var i = 0; i < n; i++) {
-    var cx = o.x + i * cw + cw * 0.5;
-    var w = cw * 0.96, h = o.h;
-    var cy = L.groundY - h * 0.52;
-    // 水花
-    ctx.fillStyle = palette.gline;
-    ctx.globalAlpha = 0.75;
-    ctx.beginPath();
-    ctx.ellipse(cx, L.groundY + h * 0.04, w * 0.62, h * 0.10, 0, 0, 6.2832);
-    ctx.fill();
-    ctx.globalAlpha = 1;
-    // 尾鳍
-    ctx.fillStyle = palette.cactusDark;
-    ctx.beginPath();
-    ctx.moveTo(cx - w * 0.34, cy + h * 0.04);
-    ctx.lineTo(cx - w * 0.60, cy - h * 0.34);
-    ctx.lineTo(cx - w * 0.60, cy + h * 0.40);
-    ctx.closePath(); ctx.fill();
-    // 身体
-    ctx.fillStyle = palette.cactus;
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, w * 0.40, h * 0.40, 0, 0, 6.2832);
-    ctx.fill();ctx.strokeStyle=palette.cactusDark;ctx.lineWidth=1.5*L.S;ctx.stroke();
-    // 背鳍
-    ctx.fillStyle = palette.cactusDark;
-    ctx.beginPath();
-    ctx.moveTo(cx - w * 0.10, cy - h * 0.34);
-    ctx.lineTo(cx + w * 0.06, cy - h * 0.66);
-    ctx.lineTo(cx + w * 0.22, cy - h * 0.30);
-    ctx.closePath(); ctx.fill();
-    // 眼
-    ctx.fillStyle = '#fff';
-    ctx.beginPath(); ctx.arc(cx + w * 0.20, cy - h * 0.10, w * 0.11, 0, 6.2832); ctx.fill();
-    ctx.fillStyle = palette.pupil;
-    ctx.beginPath(); ctx.arc(cx + w * 0.23, cy - h * 0.10, w * 0.055, 0, 6.2832); ctx.fill();
+function drawCactus(o) {
+  var n=o.n||1,cw=o.w/n;
+  for(var i=0;i<n;i++){
+    var x=o.x+i*cw,y=L.groundY-o.h;
+    ctx.fillStyle='#e9fbff';ctx.beginPath();ctx.ellipse(x+cw*.5,L.groundY+2*L.S,cw*.55,3*L.S,0,0,Math.PI*2);ctx.fill();
+    if(!window.RugeGardenArt||!window.RugeGardenArt.sprite(ctx,'fish',x,y,cw,o.h)){
+      ctx.fillStyle='#ffb54d';ctx.beginPath();ctx.ellipse(x+cw*.5,y+o.h*.5,cw*.42,o.h*.42,0,0,Math.PI*2);ctx.fill();
+    }
   }
 }
 
-function drawBird(o) {                       // 其实画的是「蜻蜓」
-  var x = o.x + o.w * 0.5;
-  var y = L.groundY - o.base - o.h * 0.5;
-  var w = o.w, h = o.h;
-  var flap = Math.sin(o.flap * 3.4) * 0.5 + 0.5;
-  // 两对翅膀
-  ctx.fillStyle = palette.birdWing || palette.bird;
-  ctx.globalAlpha = 0.62;
-  for (var sgn = -1; sgn <= 1; sgn += 2) {
-    for (var k = 0; k < 2; k++) {
-      ctx.save();
-      ctx.translate(x - w * 0.04 + k * w * 0.10, y - h * 0.06);
-      ctx.rotate(sgn * (0.30 + flap * 0.30));
-      ctx.beginPath();
-      ctx.ellipse(sgn * w * 0.30, 0, w * 0.34, h * 0.13, 0, 0, 6.2832);
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-  ctx.globalAlpha = 1;
-  // 身体
-  ctx.fillStyle = palette.bird;
-  rr(x - w * 0.30, y - h * 0.11, w * 0.62, h * 0.22, h * 0.11);
-  // 头
-  ctx.beginPath(); ctx.arc(x + w * 0.34, y, h * 0.17, 0, 6.2832); ctx.fill();
-  // 眼
-  ctx.fillStyle = '#fff';
-  ctx.beginPath(); ctx.arc(x + w * 0.38, y - h * 0.03, h * 0.075, 0, 6.2832); ctx.fill();
-  ctx.fillStyle = palette.pupil;
-  ctx.beginPath(); ctx.arc(x + w * 0.40, y - h * 0.03, h * 0.038, 0, 6.2832); ctx.fill();
+function drawBird(o) {
+  var y=L.groundY-o.base-o.h;
+  if(window.RugeGardenArt&&window.RugeGardenArt.sprite(ctx,'dragonfly',o.x,y,o.w,o.h))return;
+  ctx.fillStyle='#4ca5bc';ctx.beginPath();ctx.ellipse(o.x+o.w*.5,y+o.h*.5,o.w*.4,o.h*.15,0,0,Math.PI*2);ctx.fill();
 }
 
 function drawTall(o) {                        // 高高的大石头 —— 单跳过不去，要二段跳
@@ -961,98 +912,19 @@ function drawGem(g) {
   ctx.globalAlpha = 1;
 }
 
-function drawPlayer() {                      // 小青蛙
-  var pw = L.playerW, ph = L.playerH;
-  var px = L.playerX;
-  // 在水里（落地状态）就上下浮动 + 微微下沉，看起来是泡着而不是站在路上
-  var inWater = (state === 'run' || state === 'ready') && player.onGround;
-  var bob = inWater ? Math.sin(player.bobPhase) * ph * 0.055 : 0;
-  var sink = inWater ? ph * 0.11 : 0;
-  var py = L.groundY - ph - player.yOff + bob + sink;
-
-  ctx.save();
-  if (state === 'dead') {
-    ctx.translate(px + pw / 2, py + ph / 2);
-    ctx.rotate(Math.min(1.55, deadT * 2.6));
-    ctx.translate(-pw / 2, -ph / 2);
-  } else {
-    ctx.translate(px, py);
-    // 二段跳：空中翻个跟头（青蛙蹬空气）
-    if (!player.onGround && player.jumps >= 2) {
-      var st = clamp(player.spinT, 0, 1);
-      ctx.translate(pw / 2, ph / 2);
-      ctx.rotate((1 - st) * 6.2832);
-      ctx.translate(-pw / 2, -ph / 2);
-    }
+function drawPlayer() {
+  var pw=L.playerW,ph=L.playerH,px=L.playerX;
+  var inWater=(state==='run'||state==='ready')&&player.onGround;
+  var py=L.groundY-ph-player.yOff+(inWater?Math.sin(player.bobPhase)*ph*.035:0);
+  ctx.save();ctx.translate(px+pw/2,py+ph/2);
+  if(state==='dead')ctx.rotate(Math.min(1.55,deadT*2.6));
+  else if(!player.onGround&&player.jumps>=2)ctx.rotate((1-clamp(player.spinT,0,1))*Math.PI*2);
+  var art=window.RugeGardenArt;
+  if(!art||!art.sprite(ctx,player.onGround?'frog':'frogJump',-pw/2,-ph/2,pw,ph)){
+    ctx.fillStyle='#9add59';ctx.beginPath();ctx.ellipse(0,0,pw*.45,ph*.42,0,0,Math.PI*2);ctx.fill();
   }
-
-  var body = palette.body, dark = palette.bodyDark, belly = palette.belly;
-  var running = (state === 'run' || state === 'ready') && player.onGround;
-  var legPh = running ? Math.sin(player.runPhase) : 0;
-
-  // 后腿（蹬地/收腿）
-  ctx.fillStyle = dark;
-  var l1 = running ? legPh * pw * 0.14 : (player.onGround ? 0 : -pw * 0.11);
-  var l2 = running ? -legPh * pw * 0.14 : (player.onGround ? 0 : pw * 0.11);
-  rr(pw * 0.05 + l1, ph * 0.60, pw * 0.30, ph * 0.40, pw * 0.13);
-  rr(pw * 0.52 + l2, ph * 0.60, pw * 0.32, ph * 0.40, pw * 0.13);
-
-  // 身体（圆滚滚）
-  ctx.fillStyle = body;
-  ctx.beginPath();
-  ctx.ellipse(pw * 0.50, ph * 0.52, pw * 0.47, ph * 0.41, 0, 0, 6.2832);
-  ctx.fill();ctx.strokeStyle='#78ad8b';ctx.lineWidth=2.5*L.S;ctx.stroke();
-
-  // 肚皮
-  ctx.fillStyle = belly;
-  ctx.beginPath();
-  ctx.ellipse(pw * 0.53, ph * 0.63, pw * 0.31, ph * 0.25, 0, 0, 6.2832);
-  ctx.fill();
-
-  // 招牌凸眼睛
-  ctx.fillStyle = body;
-  ctx.beginPath(); ctx.arc(pw * 0.34, ph * 0.19, pw * 0.21, 0, 6.2832); ctx.fill();
-  ctx.beginPath(); ctx.arc(pw * 0.67, ph * 0.19, pw * 0.21, 0, 6.2832); ctx.fill();
-  ctx.fillStyle = palette.eye;
-  ctx.beginPath(); ctx.arc(pw * 0.35, ph * 0.17, pw * 0.145, 0, 6.2832); ctx.fill();
-  ctx.beginPath(); ctx.arc(pw * 0.68, ph * 0.17, pw * 0.145, 0, 6.2832); ctx.fill();
-  if (player.blink > 0 && state !== 'dead') {
-    ctx.fillStyle = body;
-    ctx.fillRect(pw * 0.16, ph * 0.06, pw * 0.70, ph * 0.20);
-  } else {
-    ctx.fillStyle = palette.pupil;
-    ctx.beginPath(); ctx.arc(pw * 0.37, ph * 0.17, pw * 0.072, 0, 6.2832); ctx.fill();
-    ctx.beginPath(); ctx.arc(pw * 0.70, ph * 0.17, pw * 0.072, 0, 6.2832); ctx.fill();
-  }
-
-  if(player.blink<=0){ctx.fillStyle='#fffdf5';ctx.beginPath();ctx.arc(pw*.388,ph*.135,pw*.03,0,Math.PI*2);ctx.arc(pw*.718,ph*.135,pw*.03,0,Math.PI*2);ctx.fill();}
-  ctx.fillStyle='#f9bba7';ctx.beginPath();ctx.ellipse(pw*.22,ph*.4,pw*.09,ph*.045,0,0,Math.PI*2);ctx.ellipse(pw*.81,ph*.4,pw*.09,ph*.045,0,0,Math.PI*2);ctx.fill();
-  // 嘴
-  ctx.strokeStyle = dark;
-  ctx.lineWidth = Math.max(1.4, pw * 0.042);
-  ctx.beginPath();
-  ctx.arc(pw * 0.52, ph * 0.40, pw * 0.21, 0.30, Math.PI - 0.30);
-  ctx.stroke();
-
-  // 泡在水里：把水面以下那截染成水色，再加一道水线高光
-  if (inWater) {
-    var wl = ph - sink;                       // 水面在本地坐标里的位置
-    ctx.save();
-    // 关键：裁剪区要**贴着青蛙自己的形状**（身体椭圆 + 两条后腿），
-    // 直接填一个大矩形会露在青蛙两边，变成一块方块。
-    ctx.beginPath();
-    ctx.ellipse(pw * 0.50, ph * 0.52, pw * 0.47, ph * 0.41, 0, 0, 6.2832);
-    ctx.rect(pw * 0.03 + l1, ph * 0.56, pw * 0.34, ph * 0.50);
-    ctx.rect(pw * 0.50 + l2, ph * 0.56, pw * 0.36, ph * 0.50);
-    ctx.clip();
-    ctx.fillStyle = palette.submerge || 'rgba(179,223,215,0.55)';
-    ctx.fillRect(-pw, wl, pw * 4, ph * 0.6);
-    ctx.fillStyle = palette.submergeHi || 'rgba(237,250,225,0.78)';
-    ctx.fillRect(-pw, wl, pw * 4, Math.max(1.5, ph * 0.045));
-    ctx.restore();
-  }
-
   ctx.restore();
+  if(inWater){ctx.strokeStyle='#c3f7ff';ctx.lineWidth=2*L.S;ctx.beginPath();ctx.ellipse(px+pw*.5,L.groundY+2*L.S,pw*.6,4*L.S,0,0,Math.PI*2);ctx.stroke();}
 }
 
 function drawParts() {
@@ -1122,7 +994,7 @@ function drawPreview(target,width,height,pixelRatio) {
     clouds=[{x:width*.30+200,y:height*.19,s:.82,p:.2},{x:width*.58+200,y:height*.11,s:.58,p:.2}];
     hills=[{x:width*.20+200,p:.08,w:width*.7,h:height*.13,layer:0},{x:width*.62+200,p:.16,w:width*.8,h:height*.095,layer:1}];
     drawSky();drawHills();drawClouds();drawReeds();drawGround();drawTargetPads();
-    drawCactus({x:width*.74,w:ph*.55,h:ph*.88,n:1});drawBird({x:width*.68,w:ph*.80,h:ph*.56,base:ph*1.25,mul:1,flap:.7});drawPlayer();
+    drawCactus({x:width*.74,w:ph*1.02,h:ph*.88,n:1});drawBird({x:width*.68,w:ph*.80,h:ph*.56,base:ph*1.25,mul:1,flap:.7});drawPlayer();
   } finally { ctx=old.ctx;W=old.W;H=old.H;L=old.L;player=old.player;state=old.state;worldX=old.worldX;palette=old.palette;clouds=old.clouds;hills=old.hills;nightMix=old.nightMix;pads=old.pads; }
   return target;
 }
@@ -1137,7 +1009,7 @@ function showPreview() {
     target.style.cssText='position:fixed;left:0;top:0;width:'+pw+'px;height:'+ph+'px;display:block';
     document.title='action-cover-ready';return true;
   }
-  drawPreview(target,320,180,Math.min(3,window.devicePixelRatio||1));document.querySelector('.hero').appendChild(target);return false;
+  drawPreview(target,320,180,Math.min(3,window.devicePixelRatio||1));var hero=document.querySelector('.hero');hero.innerHTML='';hero.appendChild(target);return false;
 }
 
 /* ============================ 主循环 ============================ */
@@ -1160,6 +1032,7 @@ state = 'ready';
 reportStat(hi, true);
 elHi.textContent = 'HI ' + hi;
 if(!showPreview())requestAnimationFrame(frame);
+if(window.RugeGardenArt)window.RugeGardenArt.whenReady(function(){showPreview();if(!/[?&]cover=1(?:&|$)/.test(location.search))render();});
 
 })();
 </script>

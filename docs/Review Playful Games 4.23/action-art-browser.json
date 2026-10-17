@@ -1,0 +1,62 @@
+[
+  {
+    "game": "flappy-bird",
+    "width": 320,
+    "height": 568,
+    "assetsReady": true,
+    "startBounds": {
+      "x": 37,
+      "y": 346.625,
+      "width": 246,
+      "height": 66
+    },
+    "pauseResume": true,
+    "homeCards": 17,
+    "errors": []
+  },
+  {
+    "game": "frog-pond",
+    "width": 320,
+    "height": 568,
+    "assetsReady": true,
+    "startBounds": {
+      "x": 37,
+      "y": 381.125,
+      "width": 246,
+      "height": 66
+    },
+    "pauseResume": true,
+    "homeCards": 17,
+    "errors": []
+  },
+  {
+    "game": "flappy-bird",
+    "width": 392,
+    "height": 872,
+    "assetsReady": true,
+    "startBounds": {
+      "x": 41,
+      "y": 522,
+      "width": 310,
+      "height": 68
+    },
+    "pauseResume": true,
+    "homeCards": 17,
+    "errors": []
+  },
+  {
+    "game": "frog-pond",
+    "width": 392,
+    "height": 872,
+    "assetsReady": true,
+    "startBounds": {
+      "x": 41,
+      "y": 560,
+      "width": 310,
+      "height": 68
+    },
+    "pauseResume": true,
+    "homeCards": 17,
+    "errors": []
+  }
+]

@@ -15,7 +15,7 @@ import struct
 import tempfile
 
 PROJECT = Path(__file__).resolve().parents[1]
-GAMES = ("flappy-bird", "dino-runner", "frog-pond")
+GAMES = ("flappy-bird", "frog-pond")
 
 
 def main():

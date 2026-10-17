@@ -1,0 +1,2037 @@
+{
+  "scope": "maintenance solutions generated from the real packaged game cores; not shown to players",
+  "animal": [
+    {
+      "level": 1,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟"
+        ]
+      ]
+    },
+    {
+      "level": 2,
+      "panAnimals": [
+        [
+          "小鸟",
+          "兔子"
+        ]
+      ]
+    },
+    {
+      "level": 3,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟",
+          "兔子"
+        ]
+      ]
+    },
+    {
+      "level": 4,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 5,
+      "panAnimals": [
+        [
+          "小鸟",
+          "兔子",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 6,
+      "panAnimals": [
+        [
+          "兔子",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 7,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 8,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟",
+          "兔子"
+        ]
+      ]
+    },
+    {
+      "level": 9,
+      "panAnimals": [
+        [
+          "小鸟",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 10,
+      "panAnimals": [
+        [
+          "兔子",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 11,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟",
+          "小猫"
+        ]
+      ]
+    },
+    {
+      "level": 12,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小猫"
+        ]
+      ]
+    },
+    {
+      "level": 13,
+      "panAnimals": [
+        [
+          "狐狸"
+        ],
+        [
+          "兔子",
+          "兔子"
+        ]
+      ]
+    },
+    {
+      "level": 14,
+      "panAnimals": [
+        [
+          "小鸟",
+          "兔子",
+          "兔子"
+        ],
+        [
+          "狐狸",
+          "狐狸"
+        ]
+      ]
+    },
+    {
+      "level": 15,
+      "panAnimals": [
+        [
+          "小鸟",
+          "企鹅"
+        ],
+        [
+          "兔子",
+          "兔子"
+        ]
+      ]
+    },
+    {
+      "level": 16,
+      "panAnimals": [
+        [
+          "小鸟",
+          "兔子"
+        ],
+        [
+          "小鸟",
+          "小鸟",
+          "兔子"
+        ]
+      ]
+    },
+    {
+      "level": 17,
+      "panAnimals": [
+        [
+          "兔子",
+          "小猫"
+        ],
+        [
+          "小鸟",
+          "兔子",
+          "小猫"
+        ]
+      ]
+    },
+    {
+      "level": 18,
+      "panAnimals": [
+        [
+          "小鸟",
+          "小鸟",
+          "小鸟"
+        ],
+        [
+          "小鸟",
+          "狐狸"
+        ]
+      ]
+    }
+  ],
+  "hats": [
+    {
+      "level": 1,
+      "hatPositionsFromOne": [
+        1
+      ]
+    },
+    {
+      "level": 2,
+      "hatPositionsFromOne": [
+        1
+      ]
+    },
+    {
+      "level": 3,
+      "hatPositionsFromOne": [
+        1
+      ]
+    },
+    {
+      "level": 4,
+      "hatPositionsFromOne": [
+        3
+      ]
+    },
+    {
+      "level": 5,
+      "hatPositionsFromOne": [
+        4
+      ]
+    },
+    {
+      "level": 6,
+      "hatPositionsFromOne": [
+        2
+      ]
+    },
+    {
+      "level": 7,
+      "hatPositionsFromOne": [
+        2,
+        4
+      ]
+    },
+    {
+      "level": 8,
+      "hatPositionsFromOne": [
+        4,
+        3
+      ]
+    },
+    {
+      "level": 9,
+      "hatPositionsFromOne": [
+        3,
+        5
+      ]
+    },
+    {
+      "level": 10,
+      "hatPositionsFromOne": [
+        2,
+        3
+      ]
+    },
+    {
+      "level": 11,
+      "hatPositionsFromOne": [
+        4
+      ]
+    },
+    {
+      "level": 12,
+      "hatPositionsFromOne": [
+        2,
+        5
+      ]
+    },
+    {
+      "level": 13,
+      "hatPositionsFromOne": [
+        5,
+        3
+      ]
+    },
+    {
+      "level": 14,
+      "hatPositionsFromOne": [
+        4
+      ]
+    },
+    {
+      "level": 15,
+      "hatPositionsFromOne": [
+        5,
+        4
+      ]
+    },
+    {
+      "level": 16,
+      "hatPositionsFromOne": [
+        2,
+        6,
+        1
+      ]
+    },
+    {
+      "level": 17,
+      "hatPositionsFromOne": [
+        5,
+        4
+      ]
+    },
+    {
+      "level": 18,
+      "hatPositionsFromOne": [
+        6,
+        4,
+        2
+      ]
+    }
+  ],
+  "pitch": [
+    {
+      "level": 1,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 2,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "gap",
+          "x": 810,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 3,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "rock",
+          "x": 810,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 4,
+      "actions": [
+        {
+          "type": "branch",
+          "x": 450,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 5,
+      "actions": [
+        {
+          "type": "branch",
+          "x": 450,
+          "action": "duck"
+        },
+        {
+          "type": "branch",
+          "x": 810,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 6,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 810,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 7,
+      "actions": [
+        {
+          "type": "rock",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "gap",
+          "x": 780,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 8,
+      "actions": [
+        {
+          "type": "branch",
+          "x": 450,
+          "action": "duck"
+        },
+        {
+          "type": "gap",
+          "x": 780,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1110,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 9,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "rock",
+          "x": 780,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1110,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 10,
+      "actions": [
+        {
+          "type": "branch",
+          "x": 450,
+          "action": "duck"
+        },
+        {
+          "type": "gap",
+          "x": 780,
+          "action": "jump"
+        },
+        {
+          "type": "rock",
+          "x": 1110,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 11,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 780,
+          "action": "duck"
+        },
+        {
+          "type": "gap",
+          "x": 1110,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 12,
+      "actions": [
+        {
+          "type": "rock",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 780,
+          "action": "duck"
+        },
+        {
+          "type": "rock",
+          "x": 1110,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 13,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 760,
+          "action": "duck"
+        },
+        {
+          "type": "rock",
+          "x": 1070,
+          "action": "jump"
+        },
+        {
+          "type": "gap",
+          "x": 1380,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 14,
+      "actions": [
+        {
+          "type": "branch",
+          "x": 450,
+          "action": "duck"
+        },
+        {
+          "type": "rock",
+          "x": 760,
+          "action": "jump"
+        },
+        {
+          "type": "gap",
+          "x": 1070,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1380,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 15,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "gap",
+          "x": 760,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1070,
+          "action": "duck"
+        },
+        {
+          "type": "rock",
+          "x": 1380,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 16,
+      "actions": [
+        {
+          "type": "branch",
+          "x": 450,
+          "action": "duck"
+        },
+        {
+          "type": "gap",
+          "x": 760,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1070,
+          "action": "duck"
+        },
+        {
+          "type": "gap",
+          "x": 1380,
+          "action": "jump"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 17,
+      "actions": [
+        {
+          "type": "rock",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 760,
+          "action": "duck"
+        },
+        {
+          "type": "gap",
+          "x": 1070,
+          "action": "jump"
+        },
+        {
+          "type": "rock",
+          "x": 1380,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1690,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    },
+    {
+      "level": 18,
+      "actions": [
+        {
+          "type": "gap",
+          "x": 450,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 760,
+          "action": "duck"
+        },
+        {
+          "type": "rock",
+          "x": 1070,
+          "action": "jump"
+        },
+        {
+          "type": "gap",
+          "x": 1380,
+          "action": "jump"
+        },
+        {
+          "type": "branch",
+          "x": 1690,
+          "action": "duck"
+        }
+      ],
+      "input": "submit when the real HUD cue appears; engine queues to a safe position"
+    }
+  ],
+  "voice": [
+    {
+      "level": 1,
+      "commands": [
+        "right",
+        "right",
+        "take",
+        "right",
+        "put"
+      ]
+    },
+    {
+      "level": 2,
+      "commands": [
+        "right",
+        "up",
+        "right",
+        "take",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 3,
+      "commands": [
+        "right",
+        "jump",
+        "take",
+        "right",
+        "put"
+      ]
+    },
+    {
+      "level": 4,
+      "commands": [
+        "right",
+        "right",
+        "take",
+        "up",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 5,
+      "commands": [
+        "right",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "down",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 6,
+      "commands": [
+        "right",
+        "jump",
+        "right",
+        "take",
+        "right",
+        "put"
+      ]
+    },
+    {
+      "level": 7,
+      "commands": [
+        "up",
+        "up",
+        "take",
+        "down",
+        "down",
+        "right",
+        "right",
+        "jump",
+        "up",
+        "put"
+      ]
+    },
+    {
+      "level": 8,
+      "commands": [
+        "up",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "right",
+        "down",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 9,
+      "commands": [
+        "down",
+        "right",
+        "jump",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 10,
+      "commands": [
+        "right",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 11,
+      "commands": [
+        "up",
+        "up",
+        "take",
+        "right",
+        "down",
+        "down",
+        "right",
+        "right",
+        "up",
+        "up",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 12,
+      "commands": [
+        "right",
+        "up",
+        "right",
+        "take",
+        "right",
+        "down",
+        "down",
+        "right",
+        "right",
+        "up",
+        "put"
+      ]
+    },
+    {
+      "level": 13,
+      "commands": [
+        "up",
+        "up",
+        "take",
+        "down",
+        "down",
+        "right",
+        "jump",
+        "right",
+        "right",
+        "up",
+        "put"
+      ]
+    },
+    {
+      "level": 14,
+      "commands": [
+        "down",
+        "right",
+        "jump",
+        "right",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 15,
+      "commands": [
+        "up",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "right",
+        "right",
+        "right",
+        "down",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 16,
+      "commands": [
+        "down",
+        "right",
+        "right",
+        "jump",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 17,
+      "commands": [
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "right",
+        "right",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    },
+    {
+      "level": 18,
+      "commands": [
+        "down",
+        "right",
+        "jump",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "right",
+        "down",
+        "put"
+      ]
+    }
+  ],
+  "radar": [
+    {
+      "level": 1,
+      "targets": [
+        {
+          "x": 0.22,
+          "y": 0.23,
+          "kind": "chest"
+        }
+      ],
+      "walls": []
+    },
+    {
+      "level": 2,
+      "targets": [
+        {
+          "x": 0.18,
+          "y": 0.45,
+          "kind": "chest"
+        }
+      ],
+      "walls": []
+    },
+    {
+      "level": 3,
+      "targets": [
+        {
+          "x": 0.32,
+          "y": 0.73,
+          "kind": "chest"
+        }
+      ],
+      "walls": []
+    },
+    {
+      "level": 4,
+      "targets": [
+        {
+          "x": 0.78,
+          "y": 0.67,
+          "kind": "chest"
+        }
+      ],
+      "walls": []
+    },
+    {
+      "level": 5,
+      "targets": [
+        {
+          "x": 0.35,
+          "y": 0.28,
+          "kind": "key"
+        },
+        {
+          "x": 0.78,
+          "y": 0.67,
+          "kind": "chest"
+        }
+      ],
+      "walls": []
+    },
+    {
+      "level": 6,
+      "targets": [
+        {
+          "x": 0.78,
+          "y": 0.28,
+          "kind": "key"
+        },
+        {
+          "x": 0.35,
+          "y": 0.28,
+          "kind": "chest"
+        }
+      ],
+      "walls": []
+    },
+    {
+      "level": 7,
+      "targets": [
+        {
+          "x": 0.82,
+          "y": 0.45,
+          "kind": "key"
+        },
+        {
+          "x": 0.78,
+          "y": 0.28,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.43,
+          "y": 0.36,
+          "w": 0.14,
+          "h": 0.15
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "targets": [
+        {
+          "x": 0.68,
+          "y": 0.22,
+          "kind": "key"
+        },
+        {
+          "x": 0.82,
+          "y": 0.45,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.43,
+          "y": 0.36,
+          "w": 0.14,
+          "h": 0.15
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "targets": [
+        {
+          "x": 0.5,
+          "y": 0.17,
+          "kind": "key"
+        },
+        {
+          "x": 0.68,
+          "y": 0.22,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.43,
+          "y": 0.36,
+          "w": 0.14,
+          "h": 0.15
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "targets": [
+        {
+          "x": 0.68,
+          "y": 0.73,
+          "kind": "key"
+        },
+        {
+          "x": 0.5,
+          "y": 0.17,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.43,
+          "y": 0.36,
+          "w": 0.14,
+          "h": 0.15
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "targets": [
+        {
+          "x": 0.23,
+          "y": 0.65,
+          "kind": "key"
+        },
+        {
+          "x": 0.68,
+          "y": 0.73,
+          "kind": "star"
+        },
+        {
+          "x": 0.5,
+          "y": 0.17,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.43,
+          "y": 0.36,
+          "w": 0.14,
+          "h": 0.15
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "targets": [
+        {
+          "x": 0.5,
+          "y": 0.62,
+          "kind": "key"
+        },
+        {
+          "x": 0.23,
+          "y": 0.65,
+          "kind": "star"
+        },
+        {
+          "x": 0.68,
+          "y": 0.73,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.43,
+          "y": 0.36,
+          "w": 0.14,
+          "h": 0.15
+        }
+      ]
+    },
+    {
+      "level": 13,
+      "targets": [
+        {
+          "x": 0.22,
+          "y": 0.23,
+          "kind": "key"
+        },
+        {
+          "x": 0.5,
+          "y": 0.62,
+          "kind": "star"
+        },
+        {
+          "x": 0.23,
+          "y": 0.65,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.38,
+          "y": 0.36,
+          "w": 0.2,
+          "h": 0.12
+        },
+        {
+          "x": 0.48,
+          "y": 0.68,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ]
+    },
+    {
+      "level": 14,
+      "targets": [
+        {
+          "x": 0.18,
+          "y": 0.45,
+          "kind": "key"
+        },
+        {
+          "x": 0.22,
+          "y": 0.23,
+          "kind": "star"
+        },
+        {
+          "x": 0.5,
+          "y": 0.62,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.38,
+          "y": 0.36,
+          "w": 0.2,
+          "h": 0.12
+        },
+        {
+          "x": 0.48,
+          "y": 0.68,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "targets": [
+        {
+          "x": 0.32,
+          "y": 0.73,
+          "kind": "key"
+        },
+        {
+          "x": 0.18,
+          "y": 0.45,
+          "kind": "star"
+        },
+        {
+          "x": 0.22,
+          "y": 0.23,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.38,
+          "y": 0.36,
+          "w": 0.2,
+          "h": 0.12
+        },
+        {
+          "x": 0.48,
+          "y": 0.68,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ]
+    },
+    {
+      "level": 16,
+      "targets": [
+        {
+          "x": 0.78,
+          "y": 0.67,
+          "kind": "key"
+        },
+        {
+          "x": 0.32,
+          "y": 0.73,
+          "kind": "star"
+        },
+        {
+          "x": 0.18,
+          "y": 0.45,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.38,
+          "y": 0.36,
+          "w": 0.2,
+          "h": 0.12
+        },
+        {
+          "x": 0.48,
+          "y": 0.68,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ]
+    },
+    {
+      "level": 17,
+      "targets": [
+        {
+          "x": 0.35,
+          "y": 0.28,
+          "kind": "key"
+        },
+        {
+          "x": 0.78,
+          "y": 0.67,
+          "kind": "star"
+        },
+        {
+          "x": 0.32,
+          "y": 0.73,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.38,
+          "y": 0.36,
+          "w": 0.2,
+          "h": 0.12
+        },
+        {
+          "x": 0.48,
+          "y": 0.68,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ]
+    },
+    {
+      "level": 18,
+      "targets": [
+        {
+          "x": 0.78,
+          "y": 0.28,
+          "kind": "key"
+        },
+        {
+          "x": 0.35,
+          "y": 0.28,
+          "kind": "star"
+        },
+        {
+          "x": 0.78,
+          "y": 0.67,
+          "kind": "chest"
+        }
+      ],
+      "walls": [
+        {
+          "x": 0.38,
+          "y": 0.36,
+          "w": 0.2,
+          "h": 0.12
+        },
+        {
+          "x": 0.48,
+          "y": 0.68,
+          "w": 0.09,
+          "h": 0.08
+        }
+      ]
+    }
+  ],
+  "safe": [
+    {
+      "level": 1,
+      "angles": [
+        -32
+      ],
+      "toleranceDegrees": 10,
+      "stableSeconds": 0.65
+    },
+    {
+      "level": 2,
+      "angles": [
+        36
+      ],
+      "toleranceDegrees": 10,
+      "stableSeconds": 0.65
+    },
+    {
+      "level": 3,
+      "angles": [
+        -52
+      ],
+      "toleranceDegrees": 10,
+      "stableSeconds": 0.65
+    },
+    {
+      "level": 4,
+      "angles": [
+        54
+      ],
+      "toleranceDegrees": 10,
+      "stableSeconds": 0.65
+    },
+    {
+      "level": 5,
+      "angles": [
+        -18
+      ],
+      "toleranceDegrees": 10,
+      "stableSeconds": 0.65
+    },
+    {
+      "level": 6,
+      "angles": [
+        22
+      ],
+      "toleranceDegrees": 10,
+      "stableSeconds": 0.65
+    },
+    {
+      "level": 7,
+      "angles": [
+        -40,
+        32
+      ],
+      "toleranceDegrees": 8,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 8,
+      "angles": [
+        44,
+        -30
+      ],
+      "toleranceDegrees": 8,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 9,
+      "angles": [
+        -58,
+        20
+      ],
+      "toleranceDegrees": 8,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 10,
+      "angles": [
+        28,
+        -54
+      ],
+      "toleranceDegrees": 8,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 11,
+      "angles": [
+        -22,
+        52
+      ],
+      "toleranceDegrees": 8,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 12,
+      "angles": [
+        54,
+        -38
+      ],
+      "toleranceDegrees": 8,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 13,
+      "angles": [
+        -45,
+        30,
+        -15
+      ],
+      "toleranceDegrees": 7,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 14,
+      "angles": [
+        50,
+        -25,
+        40
+      ],
+      "toleranceDegrees": 7,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 15,
+      "angles": [
+        -55,
+        18,
+        -35
+      ],
+      "toleranceDegrees": 7,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 16,
+      "angles": [
+        25,
+        -52,
+        48
+      ],
+      "toleranceDegrees": 7,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 17,
+      "angles": [
+        -30,
+        55,
+        -50
+      ],
+      "toleranceDegrees": 7,
+      "stableSeconds": 0.85
+    },
+    {
+      "level": 18,
+      "angles": [
+        58,
+        -42,
+        24
+      ],
+      "toleranceDegrees": 7,
+      "stableSeconds": 0.85
+    }
+  ],
+  "camera": [
+    {
+      "level": 1,
+      "title": "红色线索",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "red"
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ]
+      ]
+    },
+    {
+      "level": 2,
+      "title": "蓝色线索",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "blue"
+        }
+      ],
+      "witnessRgb": [
+        [
+          56,
+          134,
+          221
+        ]
+      ]
+    },
+    {
+      "level": 3,
+      "title": "黄色线索",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "yellow"
+        }
+      ],
+      "witnessRgb": [
+        [
+          245,
+          202,
+          48
+        ]
+      ]
+    },
+    {
+      "level": 4,
+      "title": "绿色线索",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "green"
+        }
+      ],
+      "witnessRgb": [
+        [
+          65,
+          177,
+          86
+        ]
+      ]
+    },
+    {
+      "level": 5,
+      "title": "暖暖的",
+      "steps": [
+        {
+          "kind": "warm"
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ]
+      ]
+    },
+    {
+      "level": 6,
+      "title": "凉凉的",
+      "steps": [
+        {
+          "kind": "cool"
+        }
+      ],
+      "witnessRgb": [
+        [
+          65,
+          177,
+          86
+        ]
+      ]
+    },
+    {
+      "level": 7,
+      "title": "红黄接力",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "red"
+        },
+        {
+          "kind": "color",
+          "color": "yellow"
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          245,
+          202,
+          48
+        ]
+      ]
+    },
+    {
+      "level": 8,
+      "title": "蓝绿接力",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "blue"
+        },
+        {
+          "kind": "color",
+          "color": "green"
+        }
+      ],
+      "witnessRgb": [
+        [
+          56,
+          134,
+          221
+        ],
+        [
+          65,
+          177,
+          86
+        ]
+      ]
+    },
+    {
+      "level": 9,
+      "title": "红蓝红",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "red"
+        },
+        {
+          "kind": "color",
+          "color": "blue"
+        },
+        {
+          "kind": "color",
+          "color": "red"
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          56,
+          134,
+          221
+        ],
+        [
+          226,
+          62,
+          70
+        ]
+      ]
+    },
+    {
+      "level": 10,
+      "title": "两种暖色",
+      "steps": [
+        {
+          "kind": "warm"
+        },
+        {
+          "kind": "warm",
+          "unique": true
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          245,
+          202,
+          48
+        ]
+      ]
+    },
+    {
+      "level": 11,
+      "title": "两种凉色",
+      "steps": [
+        {
+          "kind": "cool"
+        },
+        {
+          "kind": "cool",
+          "unique": true
+        }
+      ],
+      "witnessRgb": [
+        [
+          65,
+          177,
+          86
+        ],
+        [
+          56,
+          134,
+          221
+        ]
+      ]
+    },
+    {
+      "level": 12,
+      "title": "三色收藏",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "yellow"
+        },
+        {
+          "kind": "different"
+        },
+        {
+          "kind": "different"
+        }
+      ],
+      "witnessRgb": [
+        [
+          245,
+          202,
+          48
+        ],
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          65,
+          177,
+          86
+        ]
+      ]
+    },
+    {
+      "level": 13,
+      "title": "亮亮暗暗",
+      "steps": [
+        {
+          "kind": "light"
+        },
+        {
+          "kind": "dark"
+        }
+      ],
+      "witnessRgb": [
+        [
+          245,
+          244,
+          228
+        ],
+        [
+          24,
+          28,
+          34
+        ]
+      ]
+    },
+    {
+      "level": 14,
+      "title": "越找越亮",
+      "steps": [
+        {
+          "kind": "dark"
+        },
+        {
+          "kind": "lighter"
+        },
+        {
+          "kind": "lighter"
+        }
+      ],
+      "witnessRgb": [
+        [
+          24,
+          28,
+          34
+        ],
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          245,
+          244,
+          228
+        ]
+      ]
+    },
+    {
+      "level": 15,
+      "title": "越找越暗",
+      "steps": [
+        {
+          "kind": "light"
+        },
+        {
+          "kind": "darker"
+        },
+        {
+          "kind": "darker"
+        }
+      ],
+      "witnessRgb": [
+        [
+          245,
+          244,
+          228
+        ],
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          96,
+          100,
+          99
+        ]
+      ]
+    },
+    {
+      "level": 16,
+      "title": "记住三色",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "red"
+        },
+        {
+          "kind": "color",
+          "color": "yellow"
+        },
+        {
+          "kind": "color",
+          "color": "blue"
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          245,
+          202,
+          48
+        ],
+        [
+          56,
+          134,
+          221
+        ]
+      ]
+    },
+    {
+      "level": 17,
+      "title": "记住四色",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "green"
+        },
+        {
+          "kind": "color",
+          "color": "blue"
+        },
+        {
+          "kind": "color",
+          "color": "yellow"
+        },
+        {
+          "kind": "color",
+          "color": "red"
+        }
+      ],
+      "witnessRgb": [
+        [
+          65,
+          177,
+          86
+        ],
+        [
+          56,
+          134,
+          221
+        ],
+        [
+          245,
+          202,
+          48
+        ],
+        [
+          226,
+          62,
+          70
+        ]
+      ]
+    },
+    {
+      "level": 18,
+      "title": "侦探徽章",
+      "steps": [
+        {
+          "kind": "color",
+          "color": "red"
+        },
+        {
+          "kind": "cool"
+        },
+        {
+          "kind": "lighter"
+        },
+        {
+          "kind": "color",
+          "color": "yellow"
+        }
+      ],
+      "witnessRgb": [
+        [
+          226,
+          62,
+          70
+        ],
+        [
+          65,
+          177,
+          86
+        ],
+        [
+          245,
+          244,
+          228
+        ],
+        [
+          245,
+          202,
+          48
+        ]
+      ]
+    }
+  ],
+  "total": 126
+}

@@ -22,6 +22,11 @@ function webSound(name){
     if(context.state==='suspended'){const p=context.resume();if(p?.then)p.then(play).catch(()=>{});else play();}else play();
   }catch(_){}
 }
+function pulse(strength,milliseconds=12){
+  if(cover||paused||!vibration||document.hidden||!Number.isFinite(strength))return false;
+  const amount=Math.max(1,Math.min(255,Math.round(strength))),duration=Math.max(8,Math.min(35,Math.round(milliseconds)||12));
+  try{if(typeof bridge?.pulse==='function'){bridge.pulse(amount,duration);return true;}if(typeof navigator!=='undefined'&&navigator.vibrate){navigator.vibrate(duration);return true;}}catch(_){}return false;
+}
 function emit(name){
   if(cover||paused||!notes[name]||document.hidden)return false;
   const now=typeof performance!=='undefined'?performance.now():Date.now(),p=priority[name];
@@ -32,7 +37,7 @@ function emit(name){
   webSound(name);if(vibration){try{if(typeof navigator!=='undefined')navigator.vibrate?.(name==='win'?[30,45,40,55,50]:name==='success'?[24,35,28]:name==='error'?[35,40,25]:name==='collect'?15:9);}catch(_){}}
   return true;
 }
-root.RugeFX={emit,enabled,setSound,setVibration,setSoundEnabled:setSound,isSoundEnabled:()=>sound,stop};
+root.RugeFX={emit,pulse,enabled,setSound,setVibration,setSoundEnabled:setSound,isSoundEnabled:()=>sound,stop};
 root.addEventListener('ruge:pause',()=>{paused=true;stop();});
 root.addEventListener('ruge:resume',()=>{paused=false;});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){paused=true;stop();}else paused=false;});

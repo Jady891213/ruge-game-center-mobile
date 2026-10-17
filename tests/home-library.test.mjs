@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {existsSync} from 'node:fs';
 import {loadGame} from './helpers/html-vm.mjs';
 function home(t,storage={},nativeAwake=false){
   const h=loadGame('.',{storage,instrument(source,index){
@@ -10,33 +11,39 @@ function home(t,storage={},nativeAwake=false){
 const ids=h=>h.node('#cards').children.map(a=>a.dataset.id);
 const select=(h,category)=>h.node(`[data-cat="${category}"]`).dispatch('click');
 
-test('首页分组：十二款保留完整入口，重力三款单列分类，切换仅筛选不写游戏存档',t=>{
+test('首页分组：十七款保留完整入口，反应四款，切换仅筛选不写游戏存档',t=>{
   const h=home(t,{userSave:'unchanged'});
-  assert.equal(ids(h).length,12);assert.equal(ids(h)[0],'forest-juice');assert.ok(!ids(h).includes('bear-snack-shop'));
-  for(const [category,expected] of [['learn',['hanzi-puzzle','hanzi-typing']],['tilt',['gravity-maze','number-merge','tilt-star-box']],['react',['flappy-bird','dino-runner','frog-pond']],['puzzle',['forest-juice','code-breaker','pipe-flow','paint-mixing']]]){
+  assert.equal(ids(h).length,17);assert.equal(ids(h)[0],'animal-balance');assert.ok(!ids(h).includes('bear-snack-shop'));assert.ok(!ids(h).includes('dino-runner'));
+  for(const [category,expected] of [['learn',['hanzi-puzzle','hanzi-typing']],['tilt',['pocket-radar','gravity-maze','number-merge','tilt-star-box']],['react',['pitch-adventure','voice-quest','flappy-bird','frog-pond']],['puzzle',['animal-balance','hat-trick','camera-color','forest-juice','code-breaker','pipe-flow','paint-mixing']]]){
     h.node('#gameScroll').scrollTop=200;select(h,category);assert.deepEqual(ids(h),expected);assert.equal(h.node('#gameScroll').scrollTop,0);
     assert.equal(h.node(`[data-cat="${category}"]`).getAttribute('aria-pressed'),'true');
     assert.equal(h.document.querySelectorAll('[data-cat]').filter(b=>b.getAttribute('aria-pressed')==='true').length,1);
-    for(const link of h.node('#cards').children){assert.equal(link.href,link.dataset.id+'/index.html');assert.ok(link.children[1].children[0].textContent.length>0);}
+    for(const link of h.node('#cards').children){assert.equal(link.href,link.dataset.id+'/index.html');assert.ok(link.children[1].children[0].textContent.length>0);assert.ok(existsSync(new URL('../app/assets/'+link.href,import.meta.url)));assert.ok(existsSync(new URL('../app/assets/shared/'+link.dataset.id+'.png',import.meta.url)));}
   }
-  select(h,'all');assert.equal(ids(h).length,12);assert.deepEqual(Object.fromEntries(h.saved),{userSave:'unchanged'});
+  select(h,'all');assert.equal(ids(h).length,17);assert.deepEqual(Object.fromEntries(h.saved),{userSave:'unchanged'});
 });
 
 test('首页最近：按真实使用时间排序，隐藏下架记录，打开一项只更新该游戏并保留历史字段',t=>{
-  const records={'gravity-maze':{last:100,plays:4,extra:'keep'},'code-breaker':{last:300,plays:2},'bear-snack-shop':{last:999,plays:1},'pipe-flow':{last:-1}};
-  const original=JSON.stringify(records),h=home(t,{rugeCenter:original,other:'exact'});select(h,'recent');
+  const records={'gravity-maze':{last:100,plays:4,extra:'keep'},'code-breaker':{last:300,plays:2},'bear-snack-shop':{last:999,plays:1},'dino-runner':{last:1000,plays:7},'pipe-flow':{last:-1}};
+  const original=JSON.stringify(records),dinoStats=JSON.stringify({'dino-runner':{last:1000,score:321}}),h=home(t,{rugeCenter:original,dinoDashHi:'321',rugeStat:dinoStats,other:'exact'});select(h,'recent');
   assert.deepEqual(ids(h),['code-breaker','gravity-maze']);assert.equal(h.saved.get('rugeCenter'),original);
   h.node('#cards').children[1].dispatch('click');const saved=JSON.parse(h.saved.get('rugeCenter'));
   assert.equal(saved['gravity-maze'].plays,5);assert.equal(saved['gravity-maze'].extra,'keep');assert.ok(saved['gravity-maze'].last>300);
-  assert.deepEqual(saved['code-breaker'],records['code-breaker']);assert.deepEqual(saved['bear-snack-shop'],records['bear-snack-shop']);assert.equal(h.saved.get('other'),'exact');
+  assert.deepEqual(saved['code-breaker'],records['code-breaker']);assert.deepEqual(saved['bear-snack-shop'],records['bear-snack-shop']);assert.deepEqual(saved['dino-runner'],records['dino-runner']);assert.equal(h.saved.get('dinoDashHi'),'321');assert.equal(h.saved.get('rugeStat'),dinoStats);assert.equal(h.saved.get('other'),'exact');
   select(h,'recent');assert.deepEqual(ids(h),['gravity-maze','code-breaker']);
 });
 
 test('首页最近：空/坏记录显示简短空态，浏览分类不覆盖原记录，回全部继续正常使用',t=>{
   for(const raw of ['{}','null','[]','broken','"text"']){
     const h=home(t,{rugeCenter:raw,gameSave:'keep'});select(h,'recent');assert.equal(ids(h).length,0);assert.equal(h.node('#empty').hidden,false);assert.equal(h.node('#cards').hidden,true);
-    assert.equal(h.saved.get('rugeCenter'),raw);select(h,'all');assert.equal(ids(h).length,12);assert.equal(h.node('#empty').hidden,true);assert.equal(h.saved.get('gameSave'),'keep');
+    assert.equal(h.saved.get('rugeCenter'),raw);select(h,'all');assert.equal(ids(h).length,17);assert.equal(h.node('#empty').hidden,true);assert.equal(h.saved.get('gameSave'),'keep');
   }
+});
+
+test('下架恐龙：当前可打包 assets 移除实现与封面，历史原版快照保留',()=>{
+  assert.equal(existsSync(new URL('../app/assets/dino-runner/',import.meta.url)),false);
+  assert.equal(existsSync(new URL('../app/assets/shared/dino-runner.png',import.meta.url)),false);
+  assert.equal(existsSync(new URL('../reference/phone-v4.1/assets/dino-runner/index.html',import.meta.url)),true);
 });
 
 test('首页设置：图标保持音效/震动独立持久化，关闭有斜线和可读标签，常亮沿用原生偏好',t=>{

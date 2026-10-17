@@ -11,6 +11,7 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
+from voice_dependencies import java_dependencies, native_entries
 
 ROOT = Path(__file__).resolve().parents[1]
 ANDROID = "{http://schemas.android.com/apk/res/android}"
@@ -76,13 +77,14 @@ def choose_toolchain(args):
     return env
 
 
-def assemble(base, dex_directory, target):
+def assemble(base, dex_directory, target, libraries=None):
     """Normalize ZIP order/time and store resources.arsc/DEX for official zipalign."""
     with zipfile.ZipFile(base) as source, zipfile.ZipFile(target, "w") as output:
         entries = {entry.filename: (source.read(entry), entry.compress_type)
                    for entry in source.infolist() if not entry.is_dir()}
         entries.update({file.name: (file.read_bytes(), zipfile.ZIP_STORED)
                         for file in sorted(dex_directory.glob("*.dex"))})
+        entries.update(libraries or {})
         if "classes.dex" not in entries:
             raise RuntimeError("D8 did not emit classes.dex")
         for name in sorted(entries):
@@ -130,18 +132,21 @@ def build(args, env, temporary):
     classes.mkdir()
     dex.mkdir()
     tools = args.build_tools
+    voice_jars = java_dependencies(ROOT)
+    voice_libraries = native_entries(ROOT)
     run("1/7 Compile Android resources", [tools / "aapt2", "compile", "--dir", app / "res", "-o", temporary / "compiled.zip"], env)
     run("2/7 Link manifest/resources/assets", [tools / "aapt2", "link", "-o", temporary / "base.apk", "-I", args.android_jar,
          "--manifest", manifest_file, "-R", temporary / "compiled.zip", "--auto-add-overlay", "-A", app / "assets", "-0", "arsc"], env)
     java_sources = [file for file in sorted((app / "src").rglob("*.java")) if file.name != "BuildConfig.java"]
     compile_log = run("3/7 Compile Java", [args.java_home / "bin/javac", "-source", "8", "-target", "8", "-encoding", "UTF-8",
-         "-bootclasspath", args.android_jar, "-d", classes, *java_sources, generated], env)
+         "-bootclasspath", args.android_jar, "-classpath", os.pathsep.join(map(str, voice_jars)),
+         "-d", classes, *java_sources, generated], env)
     if compile_log:
         print(compile_log)
     run("4/7 Convert Java bytecode to DEX", [tools / "d8", "--debug" if args.dev else "--release", "--min-api", minimum,
-         "--lib", args.android_jar, "--output", dex, *sorted(classes.rglob("*.class"))], env)
+         "--lib", args.android_jar, "--output", dex, *sorted(classes.rglob("*.class")), *voice_jars], env)
     print("5/7 Assemble and align APK", flush=True)
-    assemble(temporary / "base.apk", dex, temporary / "unsigned.apk")
+    assemble(temporary / "base.apk", dex, temporary / "unsigned.apk", voice_libraries)
     run("zipalign", [tools / "zipalign", "-P", "16", "-f", "4", temporary / "unsigned.apk", temporary / "aligned.apk"], env)
     signed = temporary / "signed.apk"
     signing = [tools / "apksigner", "sign", "--ks", args.keystore,

@@ -19,7 +19,7 @@ import time
 
 
 PROJECT = Path(__file__).resolve().parent.parent
-GAMES = ("flappy-bird", "dino-runner", "frog-pond")
+GAMES = ("flappy-bird", "frog-pond")
 
 
 def find_chrome(explicit):

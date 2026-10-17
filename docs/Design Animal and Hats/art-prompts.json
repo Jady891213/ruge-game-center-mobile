@@ -1,0 +1,30 @@
+{
+  "generator": "Built-in image_gen.imagegen",
+  "useCase": "illustration-story / precise-object-edit",
+  "generatedAt": "2026-10-18",
+  "asset": "app/assets/animal-balance/art/animal-atlas.png",
+  "sharedBy": [
+    "animal-balance",
+    "hat-trick"
+  ],
+  "grid": {
+    "columns": 3,
+    "rows": 2,
+    "order": [
+      "小鸟",
+      "兔子",
+      "狐狸",
+      "小猫",
+      "企鹅",
+      "小熊"
+    ]
+  },
+  "width": 1254,
+  "height": 1254,
+  "format": "PNG RGBA",
+  "sha256": "f1220dca1cde6a9e1becc5fa1ba731affaf8a32c16749e302f57caefba4a0582",
+  "initialPrompt": "Use case: illustration-story. Asset type: transparent sprite atlas for two original offline preschool puzzle games, animal balance bridge and find-the-animal under hats. Create one flat, bright, original cartoon animal sprite sheet on a truly transparent background. EXACT layout: 3 columns by 2 rows, equal square cells, generous transparent gutters, all six animals entirely within their own cell, no overlap. Top row left to right: tiny round yellow bird, mint green rabbit with two upright ears, peach orange fox with big triangular ears and fluffy tail. Bottom row left to right: sky blue cat with small pointy ears, lavender round penguin, warm brown bear. Every animal is a full body front-facing seated friendly character with two simple dark eyes, small smile, short limbs, bold rounded outline, large clear silhouette readable at 48px. Same relative scale in all cells, each centered. Children's flat TV cartoon art for ages 5–6, cheerful cream/mint/coral/sky palette, solid color shapes, no texture, no realistic fur, no shading gradient, no 3D, no accessories, no text, no letters, no watermark, no hats in this sheet. Do not resemble any existing named cartoon character. Output square 1536x1536 with alpha transparency.",
+  "refinementPrompt": "Use case: precise-object-edit. Edit the provided transparent animal sprite atlas. Preserve the exact 3 columns x 2 rows layout, character identities and order: yellow bird, mint rabbit, orange fox / blue cat, purple penguin, brown bear. Redraw all six as extremely clean flat preschool game icons readable at 44 pixels. All bodies must have 100% opaque SOLID flat color fill with NO transparent holes, NO speckles, NO tiny checkerboard artifacts, NO texture, NO glow, NO gradients, NO internal alpha/translucency, NO white noise. Use strong continuous dark brown rounded outlines, simple two eyes and smile, very few clear shapes, larger heads and short limbs. Transparency must exist ONLY outside animal silhouettes. Fully opaque cream patches are allowed inside animals. Keep each sprite isolated and centered in its own equal cell with generous transparent margins, consistent scale, no cross-cell overlap. True transparent outer background. Absolutely no text or watermark. Match a polished flat 2D preschool TV cartoon aesthetic rather than 3D shading. Keep the overall square atlas composition.",
+  "sourceOutput": "exec-937c5212-57af-4cfe-a61e-5f8e00db8f96.png",
+  "notes": "第一版细节缩到23px时轮廓零碎，最终经内置工具清理重绘，并把小屏线索图标放大到32px、托盘动物放大到44px。两款共用同一张图集，CSS 分格；不加载在线图片。"
+}

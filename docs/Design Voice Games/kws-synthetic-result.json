@@ -1,0 +1,86 @@
+{
+  "fixture": "Mac Tingting synthetic Mandarin, each command separated by 1 second. This is not child speech or Android microphone validation.",
+  "expected": [
+    "right",
+    "left",
+    "up",
+    "down",
+    "stop",
+    "jump",
+    "take",
+    "put"
+  ],
+  "commands": {
+    "actual": [
+      {
+        "command": "right",
+        "audioSeconds": 1.088
+      },
+      {
+        "command": "left",
+        "audioSeconds": 3.008
+      },
+      {
+        "command": "up",
+        "audioSeconds": 4.928
+      },
+      {
+        "command": "down",
+        "audioSeconds": 6.848
+      },
+      {
+        "command": "stop",
+        "audioSeconds": 8.768
+      },
+      {
+        "command": "jump",
+        "audioSeconds": 10.688
+      },
+      {
+        "command": "take",
+        "audioSeconds": 12.608
+      },
+      {
+        "command": "put",
+        "audioSeconds": 14.528
+      }
+    ],
+    "audioSeconds": 15.47,
+    "processingSeconds": 0.139
+  },
+  "negativeSpeech": {
+    "actual": [],
+    "audioSeconds": 19.52,
+    "processingSeconds": 0.157
+  },
+  "silenceAndTone": {
+    "actual": [],
+    "audioSeconds": 12.0,
+    "processingSeconds": 0.097
+  },
+  "stopAliases": {
+    "phrases": [
+      "停下",
+      "停一下",
+      "停止",
+      "停下来"
+    ],
+    "actual": {
+      "stop": [
+        "stop"
+      ],
+      "stop-a": [
+        "stop"
+      ],
+      "stop-b": [
+        "stop"
+      ],
+      "negative": [],
+      "stop-d": [
+        "stop"
+      ]
+    },
+    "tokenizer": "official sherpa-onnx v1.13.8 scripts/text2token.py --tokens-type ppinyin; added tonal-sandhi yí alias for 停一下",
+    "rejectedAlias": "停住 did not trigger in the synthetic check and was not included."
+  }
+}

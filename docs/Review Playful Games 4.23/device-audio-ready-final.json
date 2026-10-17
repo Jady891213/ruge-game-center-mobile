@@ -1,0 +1,182 @@
+{
+  "source": "Final Java audio readiness fix + KWS-only native. Real phone TTS speaker-to-microphone diagnostic, not child voice benchmark. Single-utterance misses retained.",
+  "ready": {
+    "seen": [
+      {
+        "status": "warming",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0,
+        "confidence": 0,
+        "ageMs": 999999,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 0,
+        "frames": 0
+      },
+      {
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.004322032909840345,
+        "confidence": 0,
+        "ageMs": 22,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 0,
+        "frames": 4
+      }
+    ],
+    "s": {
+      "status": "listening",
+      "mode": "command",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.004322032909840345,
+      "confidence": 0,
+      "ageMs": 22,
+      "command": "",
+      "commandAgeMs": 999999,
+      "commandSerial": 0,
+      "frames": 4
+    },
+    "foreground": true
+  },
+  "results": [
+    {
+      "word": "向右",
+      "expected": "right",
+      "recognized": "right",
+      "serial": 1,
+      "peakRms": 0.26086926460266113,
+      "before": [
+        1,
+        2
+      ],
+      "after": [
+        2,
+        2
+      ]
+    },
+    {
+      "word": "向左",
+      "expected": "left",
+      "recognized": "left",
+      "serial": 2,
+      "peakRms": 0.20199307799339294,
+      "before": [
+        2,
+        2
+      ],
+      "after": [
+        1,
+        2
+      ]
+    },
+    {
+      "word": "向上",
+      "expected": "up",
+      "recognized": "up",
+      "serial": 3,
+      "peakRms": 0.13768677413463593,
+      "before": [
+        1,
+        2
+      ],
+      "after": [
+        1,
+        1
+      ]
+    },
+    {
+      "word": "向下",
+      "expected": "down",
+      "recognized": "down",
+      "serial": 4,
+      "peakRms": 0.17819875478744507,
+      "before": [
+        1,
+        1
+      ],
+      "after": [
+        1,
+        2
+      ]
+    },
+    {
+      "word": "停止",
+      "expected": "stop",
+      "recognized": null,
+      "serial": 4,
+      "peakRms": 0.1383809596300125,
+      "before": [
+        1,
+        2
+      ],
+      "after": [
+        1,
+        2
+      ]
+    },
+    {
+      "word": "跳一下",
+      "expected": "jump",
+      "recognized": "jump",
+      "serial": 5,
+      "peakRms": 0.18521159887313843,
+      "before": [
+        1,
+        2
+      ],
+      "after": [
+        1,
+        2
+      ]
+    },
+    {
+      "word": "拿起来",
+      "expected": "take",
+      "recognized": "take",
+      "serial": 6,
+      "peakRms": 0.18737050890922546,
+      "before": [
+        1,
+        2
+      ],
+      "after": [
+        1,
+        2
+      ]
+    },
+    {
+      "word": "放下",
+      "expected": "put",
+      "recognized": "put",
+      "serial": 7,
+      "peakRms": 0.19812722504138947,
+      "before": [
+        1,
+        2
+      ],
+      "after": [
+        1,
+        2
+      ]
+    }
+  ],
+  "background": {
+    "status": "idle",
+    "mode": "",
+    "error": "",
+    "pitch": 0,
+    "rms": 0,
+    "confidence": 0,
+    "ageMs": 951,
+    "command": "put",
+    "commandAgeMs": 3772,
+    "commandSerial": 7,
+    "frames": 537
+  }
+}
