@@ -1,0 +1,501 @@
+{
+  "version": "4.20-dev",
+  "originalSaveKeys": 17,
+  "checks": {
+    "original13BarBodyTap": true,
+    "original13PivotTap": true,
+    "nativeFlatStart": true,
+    "pause": true,
+    "nativeResume": true,
+    "actualBackgroundRequiresContinue": true,
+    "afterAll24NativeModeAndDraftRestored": true
+  },
+  "levels": [
+    {
+      "level": 1,
+      "won": true,
+      "stars": 2,
+      "falls": 0,
+      "seconds": 5.43,
+      "rotations": []
+    },
+    {
+      "level": 2,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 7.68,
+      "rotations": []
+    },
+    {
+      "level": 3,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 9.84,
+      "rotations": []
+    },
+    {
+      "level": 4,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 9.76,
+      "rotations": []
+    },
+    {
+      "level": 5,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 7.75,
+      "rotations": []
+    },
+    {
+      "level": 6,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 12.41,
+      "rotations": []
+    },
+    {
+      "level": 7,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 9.73,
+      "rotations": []
+    },
+    {
+      "level": 8,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 11.97,
+      "rotations": []
+    },
+    {
+      "level": 9,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 11.96,
+      "rotations": []
+    },
+    {
+      "level": 10,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 14.71,
+      "rotations": []
+    },
+    {
+      "level": 11,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 14.09,
+      "rotations": []
+    },
+    {
+      "level": 12,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 16.63,
+      "rotations": []
+    },
+    {
+      "level": 13,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 8.89,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 48,
+          "y": 171.7495781498071,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 14,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 13.07,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 116.81835163687887,
+          "y": 304,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 10.19,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 48,
+          "y": 172.31183674019843,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 175.99908949556385,
+          "y": 42.352271674629336,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 16,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 15.76,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 48,
+          "y": 171.58357417042703,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 303.9992608421998,
+          "y": 181.0393811848688,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 17,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 13.03,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 118.04194502222259,
+          "y": 176,
+          "paused": false
+        },
+        {
+          "rotor": 0,
+          "x": 236.2064042731934,
+          "y": 176,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 18,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 25.43,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 116.00412802478611,
+          "y": 239.96382557439244,
+          "paused": false
+        },
+        {
+          "rotor": 0,
+          "x": 236.5626206230679,
+          "y": 239.99999999902883,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 111.94585535712316,
+          "y": 107.11995473086257,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 236.06437400766342,
+          "y": 111.99999987509507,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 19,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 11.11,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 117.48545590592894,
+          "y": 304,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 20,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 15.4,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 48,
+          "y": 172.10927483913332,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 244.01611634083824,
+          "y": 176.00000433707578,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 21,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 15.73,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 117.29156302930416,
+          "y": 175.9454907948301,
+          "paused": false
+        },
+        {
+          "rotor": 0,
+          "x": 235.02149471874466,
+          "y": 175.99999999716238,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 22,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 20.41,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 176.00084138330106,
+          "y": 170.4582092559529,
+          "paused": false
+        },
+        {
+          "rotor": 0,
+          "x": 245.62813285678396,
+          "y": 111.99999782506227,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 23,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 22.8,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 111.99999940429352,
+          "y": 171.89603589787617,
+          "paused": false
+        },
+        {
+          "rotor": 0,
+          "x": 234.266194440372,
+          "y": 175.99999983195278,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 169.73745160803927,
+          "y": 175.99999999197058,
+          "paused": false
+        }
+      ]
+    },
+    {
+      "level": 24,
+      "won": true,
+      "stars": 3,
+      "falls": 0,
+      "seconds": 32.64,
+      "rotations": [
+        {
+          "rotor": 0,
+          "x": 175.9481132538608,
+          "y": 298.84541191711804,
+          "paused": false
+        },
+        {
+          "rotor": 0,
+          "x": 243.79130963435895,
+          "y": 240.00000000017167,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 234.42637424337477,
+          "y": 111.94043543959289,
+          "paused": false
+        },
+        {
+          "rotor": 1,
+          "x": 243.70548185777832,
+          "y": 111.99999999999993,
+          "paused": false
+        }
+      ]
+    }
+  ],
+  "userDraftBefore": {
+    "schema": 1,
+    "level": 12,
+    "x": 126,
+    "y": 98,
+    "vx": 0,
+    "vy": 0,
+    "spin": 0,
+    "stars": [
+      true,
+      false,
+      false
+    ],
+    "key": false,
+    "rotors": [
+      0
+    ],
+    "checkpoint": {
+      "x": 48,
+      "y": 240
+    },
+    "falls": 0,
+    "time": 437.2333333331,
+    "recover": 0,
+    "bumpCooldown": 0,
+    "accumulator": 0,
+    "won": false,
+    "li": 12,
+    "result": "ready",
+    "paused": true,
+    "planning": false,
+    "waitingFlat": false,
+    "foreground": true,
+    "mode": "tilt",
+    "progress": {
+      "schema": 1,
+      "reached": 11,
+      "mechanismReached": 12,
+      "completed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "current": 12,
+      "draft": {
+        "schema": 1,
+        "level": 12,
+        "x": 126,
+        "y": 98,
+        "vx": 0,
+        "vy": 0,
+        "spin": 0,
+        "stars": [
+          true,
+          false,
+          false
+        ],
+        "key": false,
+        "rotors": [
+          0
+        ],
+        "checkpoint": {
+          "x": 48,
+          "y": 240
+        },
+        "falls": 0,
+        "time": 437.2333333331,
+        "recover": 0,
+        "bumpCooldown": 0,
+        "accumulator": 0,
+        "won": false
+      },
+      "legacyMigrated": true
+    }
+  },
+  "nativeFlat": {
+    "sample": {
+      "x": 0.005113239,
+      "y": 0.049796935,
+      "z": 0.9984042,
+      "age": 32,
+      "available": true,
+      "source": "gravity",
+      "rotation": 0
+    },
+    "posture": {
+      "available": true,
+      "fresh": true,
+      "flat": true,
+      "stable": true,
+      "tiltDegrees": 2.8703366451166064,
+      "x": 0.005114986510065627,
+      "y": 0.049813953693072996,
+      "z": 0.998745416475323,
+      "elapsed": 0.5
+    },
+    "controlsHidden": true,
+    "mode": "tilt",
+    "calibrationButtons": 0
+  },
+  "nativeFlatAfterStart": {
+    "available": true,
+    "fresh": true,
+    "flat": true,
+    "stable": true,
+    "tiltDegrees": 2.865107118636116,
+    "x": 0.005331694825799859,
+    "y": 0.04969954487945286,
+    "z": 0.9987499828631088,
+    "elapsed": 0.5
+  },
+  "restored": {
+    "exact": true,
+    "keys": 17,
+    "sha256": "9ca8c46619d08d63c7960e497b0137964775703914cba529637a96da953d5ca6"
+  },
+  "screenshots": "ADB screencap physical display; CDP Canvas captures discarded"
+}

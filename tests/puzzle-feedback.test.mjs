@@ -88,7 +88,7 @@ test('重力：收集/掉洞/过关有反馈，静止、贴墙、暂停和恢复
   const {level,ball}=g.world();
   for(const star of level.stars){ball.x=star.x;ball.y=star.y;ball.vx=ball.vy=0;h.frame(30);assert.deepEqual(take(events),['collect']);}
   for(let i=0;i<20;i++)h.frame();assert.deepEqual(take(events),[]);
-  g.pause();h.frame();h.emitWindow('ruge:resume');assert.deepEqual(take(events),[]);g.resume();
+  g.pause();h.frame();h.emitWindow('ruge:resume');assert.deepEqual(take(events),[]);g.resume();assert.deepEqual(take(events),['tap'],'explicit continue has one tap, background resume is silent');
   ball.x=level.goal.x;ball.y=level.goal.y;ball.vx=ball.vy=0;h.frame(30);assert.deepEqual(take(events),['win']);
   assert.equal(g.state().result,'win');assert.equal(g.state().paused,true);
   assert.equal(snapshots.filter(event=>event.name==='win').length,1);

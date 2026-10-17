@@ -1,0 +1,5233 @@
+{
+  "schema": 1,
+  "description": "真实 core.js 求解动作，经 120Hz 同一物理逐步回放；每步最大位移校验，无传送/无掉坑。行列从1开始。",
+  "levels": [
+    {
+      "level": 1,
+      "columns": 3,
+      "rows": 4,
+      "start": {
+        "row": 4,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 3
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 7,
+          "direction": "右",
+          "fromCell": 6,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 1,
+          "direction": "上",
+          "fromCell": 4,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 540,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 2,
+      "columns": 3,
+      "rows": 4,
+      "start": {
+        "row": 4,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 3
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 6,
+          "direction": "左",
+          "fromCell": 7,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 1,
+          "direction": "上",
+          "fromCell": 4,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 779,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 3,
+      "columns": 3,
+      "rows": 4,
+      "start": {
+        "row": 4,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 3
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 7,
+          "direction": "左",
+          "fromCell": 8,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 3,
+          "direction": "左",
+          "fromCell": 4,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 0,
+          "direction": "上",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 1,
+          "direction": "右",
+          "fromCell": 0,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1009,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 4,
+      "columns": 3,
+      "rows": 4,
+      "start": {
+        "row": 4,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 1
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": true
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 7,
+          "direction": "下",
+          "fromCell": 4,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 8,
+          "direction": "右",
+          "fromCell": 7,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 5,
+          "direction": "上",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 5,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 1,
+          "direction": "左",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 0,
+          "direction": "左",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 1
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1006,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 5,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 10,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 770,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 6,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 13,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 9,
+          "direction": "上",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 8,
+          "direction": "左",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": true
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 5,
+          "direction": "右",
+          "fromCell": 4,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 6,
+          "direction": "右",
+          "fromCell": 5,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 10,
+          "direction": "下",
+          "fromCell": 6,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1242,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 7,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 13,
+          "direction": "右",
+          "fromCell": 12,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 14,
+          "direction": "右",
+          "fromCell": 13,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 10,
+          "direction": "上",
+          "fromCell": 14,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 9,
+          "direction": "左",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 5,
+          "direction": "上",
+          "fromCell": 9,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 6,
+          "direction": "右",
+          "fromCell": 5,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 7,
+          "direction": "右",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1009,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 8,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 18,
+          "direction": "右",
+          "fromCell": 17,
+          "to": {
+            "row": 5,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 14,
+          "direction": "上",
+          "fromCell": 18,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 13,
+          "direction": "左",
+          "fromCell": 14,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": true
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 9,
+          "direction": "上",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 10,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 5,
+          "direction": "左",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 1,
+          "direction": "上",
+          "fromCell": 5,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1245,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 9,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 20,
+          "direction": "上",
+          "fromCell": 25,
+          "to": {
+            "row": 5,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 21,
+          "direction": "右",
+          "fromCell": 20,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 16,
+          "direction": "上",
+          "fromCell": 21,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 11,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 12,
+          "direction": "右",
+          "fromCell": 11,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 17,
+          "direction": "下",
+          "fromCell": 12,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 18,
+          "direction": "右",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 13,
+          "direction": "上",
+          "fromCell": 18,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 13,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 8,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1242,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 10,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 26,
+          "direction": "右",
+          "fromCell": 25,
+          "to": {
+            "row": 6,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 21,
+          "direction": "上",
+          "fromCell": 26,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 20,
+          "direction": "左",
+          "fromCell": 21,
+          "to": {
+            "row": 5,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 15,
+          "direction": "上",
+          "fromCell": 20,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 10,
+          "direction": "上",
+          "fromCell": 15,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": true
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 7,
+          "direction": "右",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 12,
+          "direction": "下",
+          "fromCell": 7,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 13,
+          "direction": "右",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 13,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 5
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 9,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1484,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 11,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 20,
+          "direction": "上",
+          "fromCell": 25,
+          "to": {
+            "row": 5,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 15,
+          "direction": "上",
+          "fromCell": 20,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 16,
+          "direction": "右",
+          "fromCell": 15,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 11,
+          "direction": "左",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 1,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 8,
+          "direction": "下",
+          "fromCell": 3,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 5
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 9,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1475,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 12,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 26,
+          "direction": "右",
+          "fromCell": 25,
+          "to": {
+            "row": 6,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 27,
+          "direction": "右",
+          "fromCell": 26,
+          "to": {
+            "row": 6,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 22,
+          "direction": "上",
+          "fromCell": 27,
+          "to": {
+            "row": 5,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 21,
+          "direction": "左",
+          "fromCell": 22,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 16,
+          "direction": "上",
+          "fromCell": 21,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": true
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 18,
+          "direction": "右",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 13,
+          "direction": "上",
+          "fromCell": 18,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 12,
+          "direction": "左",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 6,
+          "direction": "左",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 1,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 15,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1711,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 13,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 80,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 8,
+          "at": {
+            "row": 3,
+            "column": 1
+          }
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 10,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 770,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 14,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 80,
+            "y": 208
+          },
+          "initial": 1,
+          "initialText": "向右"
+        }
+      ],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 17,
+          "at": {
+            "row": 5,
+            "column": 2
+          }
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 13,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 9,
+          "direction": "上",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 8,
+          "direction": "左",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 5,
+          "direction": "右",
+          "fromCell": 4,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 6,
+          "direction": "右",
+          "fromCell": 5,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 10,
+          "direction": "下",
+          "fromCell": 6,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1242,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 15,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 80,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        },
+        {
+          "number": 2,
+          "pivot": {
+            "x": 208,
+            "y": 16
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 8,
+          "at": {
+            "row": 3,
+            "column": 1
+          }
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 10,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 6,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 2,
+          "at": {
+            "row": 1,
+            "column": 3
+          }
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 770,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 16,
+      "columns": 5,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 5,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 80,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        },
+        {
+          "number": 2,
+          "pivot": {
+            "x": 272,
+            "y": 208
+          },
+          "initial": 1,
+          "initialText": "向右"
+        }
+      ],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 15,
+          "direction": "上",
+          "fromCell": 20,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 10,
+          "direction": "上",
+          "fromCell": 15,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 10,
+          "at": {
+            "row": 3,
+            "column": 1
+          }
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 12,
+          "direction": "右",
+          "fromCell": 11,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 9,
+          "direction": "下",
+          "fromCell": 4,
+          "to": {
+            "row": 2,
+            "column": 5
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 14,
+          "direction": "下",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 14,
+          "at": {
+            "row": 3,
+            "column": 5
+          }
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 19,
+          "direction": "下",
+          "fromCell": 14,
+          "to": {
+            "row": 4,
+            "column": 5
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "move",
+          "cell": 24,
+          "direction": "下",
+          "fromCell": 19,
+          "to": {
+            "row": 5,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1350,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 17,
+      "columns": 5,
+      "rows": 5,
+      "start": {
+        "row": 3,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 144,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": true,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 11,
+          "at": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 12,
+          "direction": "右",
+          "fromCell": 11,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 13,
+          "direction": "右",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 14,
+          "direction": "右",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 13,
+          "direction": "左",
+          "fromCell": 14,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 13,
+          "at": {
+            "row": 3,
+            "column": 4
+          }
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 12,
+          "direction": "左",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1122,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 18,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 144,
+            "y": 208
+          },
+          "initial": 0,
+          "initialText": "向下"
+        },
+        {
+          "number": 2,
+          "pivot": {
+            "x": 144,
+            "y": 80
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": true,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 20,
+          "direction": "上",
+          "fromCell": 25,
+          "to": {
+            "row": 5,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 15,
+          "direction": "上",
+          "fromCell": 20,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 16,
+          "direction": "右",
+          "fromCell": 15,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 16,
+          "at": {
+            "row": 4,
+            "column": 2
+          }
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 18,
+          "direction": "右",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 19,
+          "direction": "右",
+          "fromCell": 18,
+          "to": {
+            "row": 4,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 18,
+          "direction": "左",
+          "fromCell": 19,
+          "to": {
+            "row": 4,
+            "column": 4
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 18,
+          "at": {
+            "row": 4,
+            "column": 4
+          }
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 17,
+          "direction": "左",
+          "fromCell": 18,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 11,
+          "direction": "左",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 6,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 6,
+          "at": {
+            "row": 2,
+            "column": 2
+          }
+        },
+        {
+          "step": 15,
+          "type": "move",
+          "cell": 7,
+          "direction": "右",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 16,
+          "type": "move",
+          "cell": 8,
+          "direction": "右",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 17,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 18,
+          "type": "move",
+          "cell": 8,
+          "direction": "左",
+          "fromCell": 9,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 19,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 8,
+          "at": {
+            "row": 2,
+            "column": 4
+          }
+        },
+        {
+          "step": 20,
+          "type": "move",
+          "cell": 7,
+          "direction": "左",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 21,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 22,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 23,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 2180,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 19,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 4
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 80,
+            "y": 208
+          },
+          "initial": 1,
+          "initialText": "向右"
+        }
+      ],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 17,
+          "at": {
+            "row": 5,
+            "column": 2
+          }
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 13,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 9,
+          "direction": "上",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 8,
+          "direction": "左",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 4,
+          "direction": "上",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 0,
+          "direction": "上",
+          "fromCell": 4,
+          "to": {
+            "row": 1,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 1,
+          "direction": "右",
+          "fromCell": 0,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1003,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 20,
+      "columns": 4,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 1
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 80,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        },
+        {
+          "number": 2,
+          "pivot": {
+            "x": 208,
+            "y": 80
+          },
+          "initial": 1,
+          "initialText": "向右"
+        }
+      ],
+      "requiresChangingOrientation": false,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 8,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 8,
+          "at": {
+            "row": 3,
+            "column": 1
+          }
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 9,
+          "direction": "右",
+          "fromCell": 8,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 10,
+          "direction": "右",
+          "fromCell": 9,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 11,
+          "at": {
+            "row": 3,
+            "column": 4
+          }
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 11,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 3,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 2,
+          "direction": "左",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 6,
+          "direction": "下",
+          "fromCell": 2,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 5,
+          "direction": "左",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 1,
+          "direction": "上",
+          "fromCell": 5,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "move",
+          "cell": 0,
+          "direction": "左",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 1
+          },
+          "physicalSteps": 71,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1357,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 21,
+      "columns": 5,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 144,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": true,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 15,
+          "direction": "上",
+          "fromCell": 20,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 10,
+          "direction": "上",
+          "fromCell": 15,
+          "to": {
+            "row": 3,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 11,
+          "direction": "右",
+          "fromCell": 10,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 11,
+          "at": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 12,
+          "direction": "右",
+          "fromCell": 11,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 13,
+          "direction": "右",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 14,
+          "direction": "右",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 13,
+          "direction": "左",
+          "fromCell": 14,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 13,
+          "at": {
+            "row": 3,
+            "column": 4
+          }
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 12,
+          "direction": "左",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1355,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 22,
+      "columns": 5,
+      "rows": 5,
+      "start": {
+        "row": 5,
+        "column": 5
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 144,
+            "y": 80
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": true,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 23,
+          "direction": "左",
+          "fromCell": 24,
+          "to": {
+            "row": 5,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 22,
+          "direction": "左",
+          "fromCell": 23,
+          "to": {
+            "row": 5,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 17,
+          "direction": "上",
+          "fromCell": 22,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 12,
+          "at": {
+            "row": 3,
+            "column": 3
+          }
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 6,
+          "direction": "左",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 5,
+          "direction": "左",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 0,
+          "direction": "上",
+          "fromCell": 5,
+          "to": {
+            "row": 1,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 5,
+          "direction": "下",
+          "fromCell": 0,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 6,
+          "direction": "右",
+          "fromCell": 5,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 7,
+          "direction": "右",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 8,
+          "direction": "右",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 8,
+          "at": {
+            "row": 2,
+            "column": 4
+          }
+        },
+        {
+          "step": 15,
+          "type": "move",
+          "cell": 7,
+          "direction": "左",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 119,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 16,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 17,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 18,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1826,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 23,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 1
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 144,
+            "y": 144
+          },
+          "initial": 0,
+          "initialText": "向下"
+        },
+        {
+          "number": 2,
+          "pivot": {
+            "x": 144,
+            "y": 80
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": true,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 26,
+          "direction": "右",
+          "fromCell": 25,
+          "to": {
+            "row": 6,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 21,
+          "direction": "上",
+          "fromCell": 26,
+          "to": {
+            "row": 5,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 16,
+          "direction": "上",
+          "fromCell": 21,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "move",
+          "cell": 11,
+          "direction": "上",
+          "fromCell": 16,
+          "to": {
+            "row": 3,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 5,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 11,
+          "at": {
+            "row": 3,
+            "column": 2
+          }
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 12,
+          "direction": "右",
+          "fromCell": 11,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 13,
+          "direction": "右",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 14,
+          "direction": "右",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 13,
+          "direction": "左",
+          "fromCell": 14,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 13,
+          "at": {
+            "row": 3,
+            "column": 4
+          }
+        },
+        {
+          "step": 11,
+          "type": "move",
+          "cell": 12,
+          "direction": "左",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 12,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 12,
+          "at": {
+            "row": 3,
+            "column": 3
+          }
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 7,
+          "direction": "上",
+          "fromCell": 12,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "move",
+          "cell": 6,
+          "direction": "左",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 15,
+          "type": "move",
+          "cell": 5,
+          "direction": "左",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 16,
+          "type": "move",
+          "cell": 0,
+          "direction": "上",
+          "fromCell": 5,
+          "to": {
+            "row": 1,
+            "column": 1
+          },
+          "physicalSteps": 118,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 17,
+          "type": "move",
+          "cell": 1,
+          "direction": "右",
+          "fromCell": 0,
+          "to": {
+            "row": 1,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 18,
+          "type": "move",
+          "cell": 2,
+          "direction": "右",
+          "fromCell": 1,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 19,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 20,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 1937,
+        "teleports": 0
+      }
+    },
+    {
+      "level": 24,
+      "columns": 5,
+      "rows": 6,
+      "start": {
+        "row": 6,
+        "column": 5
+      },
+      "goal": {
+        "row": 1,
+        "column": 5
+      },
+      "rotors": [
+        {
+          "number": 1,
+          "pivot": {
+            "x": 144,
+            "y": 208
+          },
+          "initial": 0,
+          "initialText": "向下"
+        },
+        {
+          "number": 2,
+          "pivot": {
+            "x": 144,
+            "y": 80
+          },
+          "initial": 0,
+          "initialText": "向下"
+        }
+      ],
+      "requiresChangingOrientation": true,
+      "actions": [
+        {
+          "step": 1,
+          "type": "move",
+          "cell": 28,
+          "direction": "左",
+          "fromCell": 29,
+          "to": {
+            "row": 6,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 2,
+          "type": "move",
+          "cell": 27,
+          "direction": "左",
+          "fromCell": 28,
+          "to": {
+            "row": 6,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            1
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 3,
+          "type": "move",
+          "cell": 22,
+          "direction": "上",
+          "fromCell": 27,
+          "to": {
+            "row": 5,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 4,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 22,
+          "at": {
+            "row": 5,
+            "column": 3
+          }
+        },
+        {
+          "step": 5,
+          "type": "move",
+          "cell": 17,
+          "direction": "上",
+          "fromCell": 22,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 6,
+          "type": "move",
+          "cell": 16,
+          "direction": "左",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 7,
+          "type": "move",
+          "cell": 15,
+          "direction": "左",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            2
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 8,
+          "type": "move",
+          "cell": 16,
+          "direction": "右",
+          "fromCell": 15,
+          "to": {
+            "row": 4,
+            "column": 2
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 9,
+          "type": "move",
+          "cell": 17,
+          "direction": "右",
+          "fromCell": 16,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 10,
+          "type": "move",
+          "cell": 18,
+          "direction": "右",
+          "fromCell": 17,
+          "to": {
+            "row": 4,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 11,
+          "type": "rotate",
+          "index": 0,
+          "rotor": 1,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 18,
+          "at": {
+            "row": 4,
+            "column": 4
+          }
+        },
+        {
+          "step": 12,
+          "type": "move",
+          "cell": 17,
+          "direction": "左",
+          "fromCell": 18,
+          "to": {
+            "row": 4,
+            "column": 3
+          },
+          "physicalSteps": 119,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 13,
+          "type": "move",
+          "cell": 12,
+          "direction": "上",
+          "fromCell": 17,
+          "to": {
+            "row": 3,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 14,
+          "type": "move",
+          "cell": 13,
+          "direction": "右",
+          "fromCell": 12,
+          "to": {
+            "row": 3,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 15,
+          "type": "move",
+          "cell": 14,
+          "direction": "右",
+          "fromCell": 13,
+          "to": {
+            "row": 3,
+            "column": 5
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 16,
+          "type": "move",
+          "cell": 9,
+          "direction": "上",
+          "fromCell": 14,
+          "to": {
+            "row": 2,
+            "column": 5
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 17,
+          "type": "move",
+          "cell": 8,
+          "direction": "左",
+          "fromCell": 9,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 18,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 1,
+          "orientationText": "向右",
+          "fromCell": 8,
+          "at": {
+            "row": 2,
+            "column": 4
+          }
+        },
+        {
+          "step": 19,
+          "type": "move",
+          "cell": 7,
+          "direction": "左",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 117,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 20,
+          "type": "move",
+          "cell": 6,
+          "direction": "左",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 21,
+          "type": "move",
+          "cell": 5,
+          "direction": "左",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 1
+          },
+          "physicalSteps": 115,
+          "collectStars": [
+            3
+          ],
+          "collectKey": false
+        },
+        {
+          "step": 22,
+          "type": "move",
+          "cell": 6,
+          "direction": "右",
+          "fromCell": 5,
+          "to": {
+            "row": 2,
+            "column": 2
+          },
+          "physicalSteps": 121,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 23,
+          "type": "move",
+          "cell": 7,
+          "direction": "右",
+          "fromCell": 6,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 24,
+          "type": "move",
+          "cell": 8,
+          "direction": "右",
+          "fromCell": 7,
+          "to": {
+            "row": 2,
+            "column": 4
+          },
+          "physicalSteps": 115,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 25,
+          "type": "rotate",
+          "index": 1,
+          "rotor": 2,
+          "orientation": 0,
+          "orientationText": "向下",
+          "fromCell": 8,
+          "at": {
+            "row": 2,
+            "column": 4
+          }
+        },
+        {
+          "step": 26,
+          "type": "move",
+          "cell": 7,
+          "direction": "左",
+          "fromCell": 8,
+          "to": {
+            "row": 2,
+            "column": 3
+          },
+          "physicalSteps": 119,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 27,
+          "type": "move",
+          "cell": 2,
+          "direction": "上",
+          "fromCell": 7,
+          "to": {
+            "row": 1,
+            "column": 3
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 28,
+          "type": "move",
+          "cell": 3,
+          "direction": "右",
+          "fromCell": 2,
+          "to": {
+            "row": 1,
+            "column": 4
+          },
+          "physicalSteps": 118,
+          "collectStars": [],
+          "collectKey": false
+        },
+        {
+          "step": 29,
+          "type": "move",
+          "cell": 4,
+          "direction": "右",
+          "fromCell": 3,
+          "to": {
+            "row": 1,
+            "column": 5
+          },
+          "physicalSteps": 68,
+          "collectStars": [],
+          "collectKey": false
+        }
+      ],
+      "verified": {
+        "won": true,
+        "stars": [
+          true,
+          true,
+          true
+        ],
+        "falls": 0,
+        "physicsHz": 120,
+        "physicsSteps": 2879,
+        "teleports": 0
+      }
+    }
+  ]
+}

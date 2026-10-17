@@ -20,14 +20,18 @@ function steer(state, point) {
     const tx=C.clamp(dx*4,-105,105),ty=C.clamp(dy*4,-105,105);
     const x=C.clamp(((tx-state.vx)*8+C.DRAG*state.vx)/C.ACCELERATION,-.24,.24);
     const y=C.clamp(((ty-state.vy)*8+C.DRAG*state.vy)/C.ACCELERATION,-.24,.24);
+    const before={x:state.x,y:state.y};
     C.step(state,x,y);
+    assert.equal(C.positionClear(C.LEVELS[state.level],state,state.x,state.y),true,'every 120Hz substep is outside walls and bumpers');
+    assert.ok(Math.hypot(state.x-before.x,state.y-before.y)<=C.MAX_SPEED*C.STEP+.001,'solution cannot jump/respawn/teleport across the maze');
     if(state.won)return;
   }
   assert.fail(`could not roll to ${point.x},${point.y} from ${state.x},${state.y}`);
 }
 
-test('钢珠迷宫：18张固定关均可解，原12关几何保持，钥匙在门前，前三关没有坑',()=>{
-  assert.equal(C.LEVELS.length,18);
+test('钢珠迷宫：24张固定关均可解，原18关几何保持，钥匙在门前，前三关没有坑',()=>{
+  assert.equal(C.LEVELS.length,24);
+  assert.equal(createHash('sha256').update(JSON.stringify(C.LEVELS.slice(0,18))).digest('hex'),'f3dce96e53d8b7d43a90dace583fa69e965d947972255594398d81705ed89b2a','4.19原18关全部几何/收集/机关初态不得改变');
   const keys=['cols','rows','w','h','theme','route','edges','walls','start','goal','stars','key','gate','holes','bumpers'];
   const baseline=JSON.stringify(C.LEVELS.slice(0,12).map(l=>Object.fromEntries(keys.map(k=>[k,l[k]]))));
   assert.equal(createHash('sha256').update(baseline).digest('hex'),'c5e0cb8045eea7740e3a2fe33a4bcce630640d44971e5134c1e67f5f223f9599','4.18原12关布局与收集位置不得改变');
@@ -41,7 +45,7 @@ test('钢珠迷宫：18张固定关均可解，原12关几何保持，钥匙在�
   }
 });
 
-test('钢珠迷宫：用真实物理逐个房格滚过12条关卡路径，不靠传送获得星星/钥匙和通关',()=>{
+test('钢珠迷宫：用真实物理逐个房格滚过经典12条关卡路径，不靠传送获得星星/钥匙和通关',()=>{
   for(const level of C.LEVELS) {
     const state=C.create(level.id);
     if(level.rotors.length) continue;
@@ -157,14 +161,14 @@ test('钢珠迷宫：后台和旋转保持暂停，只有明确继续才继续�
   h.emitWindow('ruge:orientation');assert.equal(g.state().paused,true);
 });
 
-test('钢珠迷宫：倾斜过期不允许开始或继续，游戏中失联会暂停且可切触摸',async t=>{
+test('钢珠迷宫：过期输入不能开局，新样本稳定后开始，运行失联暂停且可方向盘继续',async t=>{
   const {h,g}=game(t,{native:true});const tilt=h.window.__tilt;tilt.age=1501;
   h.click('#start');assert.equal(g.state().paused,true);assert.equal(g.state().result,'ready');
-  tilt.age=0;h.click('#start');assert.equal(g.state().paused,false);
+  tilt.age=0;for(let n=0;n<20;n++)h.frame(30);assert.equal(g.state().paused,false);
   tilt.age=1501;for(let n=0;n<20;n++)h.frame(30);
   assert.equal(g.state().paused,true);assert.equal(h.node('#pausePanel').hidden,false);
-  h.click('#resume');assert.equal(g.state().paused,true);
-  h.click('#pauseTouch');await Promise.resolve();assert.equal(g.state().mode,'touch');assert.equal(g.state().paused,false);
+  h.click('#resume');assert.equal(g.state().paused,true);assert.equal(h.node('#flatGuide').hidden,false);
+  h.click('#flatTouch');await Promise.resolve();assert.equal(g.state().mode,'touch');assert.equal(g.state().paused,false);
 });
 
 test('钢珠迷宫：方向盘忽略第二根手指，取消后清空输入',t=>{
@@ -188,8 +192,8 @@ test('钢珠迷宫：最后一关结束可再玩一轮，第二轮下一关仍�
     g.loadLevel(index);g.start();const {ball,level}=g.world();ball.stars.fill(true);ball.key=!!level.key;ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
     assert.equal(g.state().result,'win');assert.equal(g.state().paused,true);
   }
-  finish(17);h.click('#next');assert.equal(g.state().li,0);finish(0);h.click('#next');assert.equal(g.state().li,1);
-  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).mechanismReached,17);
+  finish(23);h.click('#next');assert.equal(g.state().li,0);finish(0);h.click('#next');assert.equal(g.state().li,1);
+  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).mechanismReached,23);
   assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).reached,1);
 });
 
@@ -200,7 +204,7 @@ test('钢珠迷宫：封面无输入、无物理、无写盘、无奖励',t=>{
 });
 
 
-test('钢珠机关：六关按真实求解器与120Hz物理完成，后两关必须中途改变挡板朝向',()=>{
+test('钢珠机关：十二关按真实求解器与120Hz物理完成，六关必须中途改变挡板朝向',()=>{
   for(const level of C.LEVELS.slice(12)) {
     const solution=C.solveLevel(level);assert.ok(solution);const state=C.create(level.id),turns=[];
     for(const action of solution) {
@@ -209,9 +213,9 @@ test('钢珠机关：六关按真实求解器与120Hz物理完成，后两关必
       assert.equal(C.positionClear(level,state,state.x,state.y),true);
     }
     assert.equal(state.won,true);assert.ok(state.stars.every(Boolean));assert.equal(state.falls,0);assert.ok(turns.length>=1);
-    if(level.id>=16) {
+    if([16,17,20,21,22,23].includes(level.id)) {
       for(let bits=0;bits<(1<<level.rotors.length);bits++)assert.equal(C.solveLevel(level,level.rotors.map((_,i)=>bits>>i&1)),null,'任何固定朝向都不能一招通关');
-      for(let i=0;i<level.rotors.length;i++)assert.ok(turns.filter(n=>n===i).length>=2,'每个换路闸在解法中使用两态');
+      for(let i=0;i<level.rotors.length;i++)assert.ok(turns.includes(i),'每个换路闸在解法中使用两态（初态也计入）');
     }
   }
 });
@@ -236,6 +240,37 @@ test('钢珠机关：完整扫掠区有球时拒转，最终矩形不碰球也�
   assert.equal(C.rotationClear(s,r),true);assert.equal(C.rotate(s,0),true,'旧收星点在扫掠区但球已离开可以转');
   assert.equal(C.positionClear(l,s,s.checkpoint.x,s.checkpoint.y),true);assert.equal(s.vx,0);assert.equal(s.vy,0);
   s.recover=.1;assert.equal(C.rotate(s,0),false);s.recover=0;s.won=true;assert.equal(C.rotate(s,0),false);
+});
+
+test('钢珠机关：第13关上方/左侧实际安全球位可转，右下扫掠及端帽/近轴/快速来球拒转',()=>{
+  const l=C.LEVELS[12],r=l.rotors[0];
+  for(const [x,y] of [[90,114],[116,100],[48,176]]) {
+    const s=C.create(12);s.x=x;s.y=y;s.vx=70;s.vy=-20;
+    assert.equal(C.positionClear(l,s,x,y),true,`safe fixture ${x},${y}`);
+    assert.equal(C.rotationClear(s,r),true);assert.equal(C.rotate(s,0),true);
+    assert.equal(C.positionClear(l,s,x,y),true);assert.equal(s.x,x);assert.equal(s.y,y);
+    for(let n=0;n<120;n++){C.step(s,0,0);assert.equal(C.positionClear(l,s,s.x,s.y),true);}
+  }
+  for(const [dx,dy,vx,vy] of [[32,32,0,0],[64,0,0,0],[0,64,0,0],[-10,-10,0,0],[77,10,0,0],[10,77,0,0],[30,-22,0,220]]) {
+    const s=C.create(12);s.x=r.x+dx;s.y=r.y+dy;s.vx=vx;s.vy=vy;
+    const before=plain(s);assert.equal(C.rotationClear(s,r),false,`unsafe ${dx},${dy}`);
+    assert.equal(C.rotate(s,0),false);assert.deepEqual(s,before);
+  }
+});
+
+test('钢珠机关：所有获准旋转点逐角扫描真实厚挡板，不扫穿球或留下夹球',()=>{
+  const r=C.LEVELS[12].rotors[0];let allowed=0,blocked=0;
+  // Each possible angle uses the actual rotated rectangular bar, including square caps.
+  for(let dx=-105;dx<=105;dx+=3)for(let dy=-105;dy<=105;dy+=3) {
+    const safe=C.rotationClear({x:r.x+dx,y:r.y+dy,vx:0,vy:0},r);
+    if(!safe){blocked++;continue;}allowed++;
+    for(let n=0;n<=180;n++) {
+      const a=n*Math.PI/360,c=Math.cos(a),s=Math.sin(a);
+      const localX=dx*c+dy*s,localY=-dx*s+dy*c;
+      assert.equal(C.circleHit(localX,localY,C.RADIUS,{x:-C.WALL/2,y:-C.WALL/2,w:r.length+C.WALL,h:C.WALL}),false,`unsafe accepted ${dx},${dy} angle ${n/2}`);
+    }
+  }
+  assert.ok(allowed>2000&&blocked>500);
 });
 
 test('钢珠机关：任意合法初始朝向的持续大倾角仍不穿挡板',()=>{
@@ -269,37 +304,31 @@ test('钢珠机关：新章节首关直接可玩，经典进度不变；机关�
   h.click('#next');assert.equal(g.state().li,13);
 });
 
-test('钢珠机关：只在明确规划时允许点挡板，规划冻结物理，继续才运行，后台/终局禁转',t=>{
-  const {h,g,events}=game(t);g.loadLevel(12);assert.equal(g.rotateRotor(0),false);
-  assert.equal(g.enterPlan(),true);assert.equal(g.state().planning,true);const before=g.state();
-  assert.equal(h.node('#rotorButtons').children.length,1);h.node('#rotorButtons').children[0].dispatch('click');
-  assert.deepEqual(plain(g.state().rotors),[1]);assert.ok(events.includes('select'));
+test('钢珠机关：准备页直接点轴不跑物理，运行中直接点后保持运行，后台/终局禁转',t=>{
+  const {h,g,events}=game(t);g.loadLevel(12);const before=g.state();
+  h.node('#rotorButtons').children[0].dispatch('click');assert.deepEqual(plain(g.state().rotors),[1]);assert.ok(events.includes('select'));
   for(let n=0;n<100;n++)h.frame(30);assert.equal(g.state().time,before.time);assert.equal(g.state().x,before.x);
-  h.click('#finishPlan');assert.equal(g.state().planning,false);assert.equal(g.state().paused,false);
-  g.pause();assert.equal(g.enterPlan(),true);h.emitWindow('ruge:pause');h.emitWindow('ruge:resume');
-  assert.equal(g.state().planning,false);assert.equal(g.state().paused,true);assert.equal(g.rotateRotor(0),false);
-  h.click('#resume');assert.equal(g.state().paused,false);
-  const {ball,level}=g.world();ball.stars.fill(true);ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
-  assert.equal(g.state().result,'win');assert.equal(g.enterPlan(),false);assert.equal(g.rotateRotor(0),false);
+  h.click('#start');assert.equal(g.state().paused,false);h.node('#rotorButtons').children[0].dispatch('click');assert.deepEqual(plain(g.state().rotors),[0]);assert.equal(g.state().paused,false);
+  h.emitWindow('ruge:pause');h.emitWindow('ruge:resume');assert.equal(g.state().paused,true);assert.equal(g.rotateRotor(0),false);
+  h.click('#resume');assert.equal(g.state().paused,false);const {ball,level}=g.world();ball.stars.fill(true);ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
+  assert.equal(g.state().result,'win');assert.equal(g.rotateRotor(0),false);
 });
 
-test('钢珠机关：已靠近时保留球和挡板，仅短反馈；关闭选关后规划入口可恢复',t=>{
-  const {h,g,events}=game(t);g.loadLevel(16);g.enterPlan();const {ball,level}=g.world(),r=level.rotors[0];
-  ball.x=r.x+48;ball.y=r.y+48;const before=plain(ball);
-  assert.equal(g.rotateRotor(0),false);assert.deepEqual(plain(ball),before);assert.equal(events.at(-1),'error');
-  assert.equal(h.node('#toast').textContent,'先把球移开');
-  g.showLevels();assert.equal(g.state().planning,false);assert.equal(g.enterPlan(),false);
-  h.click('#closeLevels');assert.equal(g.enterPlan(),true);
-  g.loadLevel(12);g.showLevels();assert.equal(h.node('#mechanism').disabled,true);
-  h.node('#mechanismGrid').children[0].dispatch('click');assert.equal(h.node('#levels').hidden,true);assert.equal(h.node('#mechanism').disabled,false);
+test('钢珠机关：用户第13关上方球位可直接点开，真正扫掠区拒转，选回当前关仍能点',t=>{
+  const {h,g,events}=game(t);g.loadLevel(12);const {ball,level}=g.world();ball.x=126;ball.y=98;ball.stars[0]=true;
+  h.node('#rotorButtons').children[0].dispatch('click');assert.deepEqual(plain(ball.rotors),[1]);assert.equal(ball.x,126);assert.equal(ball.y,98);
+  const r=level.rotors[0];ball.x=r.x+48;ball.y=r.y+48;const before=plain(ball);
+  assert.equal(g.rotateRotor(0),false);assert.deepEqual(plain(ball),before);assert.equal(events.at(-1),'error');assert.equal(h.node('#toast').textContent,'球先让一让');
+  g.loadLevel(12);g.showLevels();assert.equal(g.rotateRotor(0),false);h.node('#mechanismGrid').children[0].dispatch('click');
+  assert.equal(h.node('#levels').hidden,true);assert.equal(h.node('#rotorButtons').children[0].hidden,false);assert.equal(g.rotateRotor(0),true);
 });
 
-test('钢珠机关：重置先确认，仅重置当前球/星星/朝向，不清完成/其他游戏；封面无机关操作',t=>{
-  const {h,g}=game(t,{storage:{other:'exact'}});g.loadLevel(12);g.enterPlan();g.rotateRotor(0);
+test('钢珠机关：确认重置只重置本关球/星星/朝向，保留完成/其他游戏；封面无操作',t=>{
+  const {h,g}=game(t,{storage:{other:'exact'}});g.loadLevel(12);g.rotateRotor(0);
   const {ball}=g.world();ball.stars[0]=true;g.save();const saved=JSON.parse(h.saved.get('rugeMarbleMazeV1'));
   h.click('#reset');assert.equal(h.node('#resetPanel').hidden,false);assert.equal(g.state().stars[0],true);
   h.click('#resetNo');assert.equal(g.state().stars[0],true);h.click('#reset');h.click('#resetYes');
   assert.equal(g.state().li,12);assert.equal(g.state().stars.some(Boolean),false);assert.deepEqual(plain(g.state().rotors),[0]);
   assert.deepEqual(plain(g.state().progress.completed),saved.completed);assert.equal(h.saved.get('other'),'exact');
-  const cover=game(t,{cover:true});assert.equal(cover.g.enterPlan(),false);assert.equal(cover.g.rotateRotor(0),false);cover.h.click('#reset');assert.deepEqual(Object.fromEntries(cover.h.saved),{});
+  const cover=game(t,{cover:true});assert.equal(cover.g.rotateRotor(0),false);cover.h.click('#reset');assert.deepEqual(Object.fromEntries(cover.h.saved),{});
 });

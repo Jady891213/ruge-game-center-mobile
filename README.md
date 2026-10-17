@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、数字碰碰、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十二个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.19 / versionCode 42**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.20 / versionCode 43**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,14 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 钢珠迷宫放平即玩（4.20）
+
+钢珠迷宫现有24关，保留原18关布局与存档。修正第13关机关安全判定：只检查挡板真正扫过的区域，球在安全侧即可直接点橙色挡板或转轴旋转，不再进入额外调整模式。新增19～24关，每关均有完整解法，并以真实物理回放验证收齐星星、到达终点。
+
+默认使用手机屏幕朝上、物理水平作为固定零点。开始或继续时检测放平稳定半秒，过斜时显示原创插画提示；正常倾斜滚球时不强制保持水平。取消、切后台、切屏幕方向不会偷偷开局。移除常规校准及输入模式图标，仅传感器确实不可用时提供方向盘入口。其他重力游戏保留原有输入方式，共享适配接口向后兼容。
+
+[24关完整答案](docs/Review%20Marble%20Flat%20Start/level-solutions.md) · [本次验收](docs/Review%20Marble%20Flat%20Start/review.md)
 
 ## 旋转机关与数字碰碰（4.19）
 

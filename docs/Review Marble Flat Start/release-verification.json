@@ -1,0 +1,23 @@
+{
+  "versionName": "4.20",
+  "versionCode": 43,
+  "package": "com.dsh.gamecenter",
+  "deviceApkSha256": "1c997a3766f298e9571381022dc1c5ba6737a2b694ca15ccdc2c2c913e963221",
+  "localApkSha256": "1c997a3766f298e9571381022dc1c5ba6737a2b694ca15ccdc2c2c913e963221",
+  "apkHashesMatch": true,
+  "developmentApkSha256": "58dae78528106c229176a22cec01c05caae00ca90844a7ec9c6743dae0ad6467",
+  "assetsEqualDevAndRelease": true,
+  "allAssetsEqualSource": true,
+  "assetCount": 69,
+  "webViewDebuggingClosed": true,
+  "adbForwardsRemaining": false,
+  "originalStorageKeysRestoredBeforeReleaseInstall": 17,
+  "storageExactDelayedReadback": true,
+  "coveringInstallWithoutUninstallOrClearData": true,
+  "launchVerified": true,
+  "screenshot": "device-release-home.png",
+  "formalLevel13OpenedViaActualAdbTap": true,
+  "originalDraftVisuallyPreservedAfterReleaseInstall": true,
+  "formalGameScreenshot": "device-release-current13.png",
+  "leftAt": "第13关准备继续，原球位/1颗星/向下挡板保留"
+}

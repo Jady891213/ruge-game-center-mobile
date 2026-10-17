@@ -31,3 +31,7 @@
 ## 数字碰碰与旋转挡板：GPT 生成原型与插画
 
 `app/assets/shared/number-merge-banner.png` 为内置GPT图片生成的原创积木横幅。数字、星形目标和碰撞几何由代码呈现，不读取生成图中的文字。钢珠继续复用gravity-art.png，旋转挡板按真实转轴/碰撞几何绘制；新原型及完整提示词见 `docs/Design Gravity Mechanisms/art-prompts.json`。没有提取2048或其他参考游戏的程序/美术。
+
+## 钢珠迷宫：手机放平引导插画
+
+`app/assets/shared/phone-flat-guide.png` 由内置GPT图片生成工具为本项目生成，是原创扁平儿童插画；未提取第三方设备教程或动画素材。提示词、输出来源与生成日期见 `docs/Review Marble Flat Start/art-prompts.json`。姿态检测提示与实际游戏状态由代码控制。

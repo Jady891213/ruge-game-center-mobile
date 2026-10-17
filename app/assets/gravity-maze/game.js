@@ -2,7 +2,7 @@
   'use strict';
   const C = window.MarbleMaze, $ = s => document.querySelector(s);
   const COVER = /(?:\?|&)cover=1(?:&|$)/.test(location.search);
-  const KEY = 'rugeMarbleMazeV1', INPUT_KEY = 'rugeMarbleInputV1';
+  const KEY = 'rugeMarbleMazeV1';
   const clone = value => JSON.parse(JSON.stringify(value));
   function read(key) { if (COVER) return null; try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } }
   function progressFrom(raw, legacy) {
@@ -23,13 +23,13 @@
   let progress = progressFrom(read(KEY), read('rollingGardenV2'));
   let state = progress.draft && progress.draft.level === progress.current ? progress.draft : C.create(progress.current);
   let result = state.won ? 'win' : 'ready', paused = true, last = 0, saveClock = 0, staleTime = 0, toastTimer = 0, pointerId = null, joystick = { x: 0, y: 0 }, effects = [];
-  let foreground = true, planning = false, rotorButtons = [];
-  let initialMode = 'tilt';
-  if (!COVER) try { initialMode = localStorage.getItem(INPUT_KEY) || localStorage.getItem('rollingGardenInputV2') || 'tilt'; } catch (_) {}
-  const input = window.RugeMotion.create();
-  input.setMode(initialMode === 'touch' ? 'touch' : 'tilt');
-  // A browser without a sensor starts in touch mode; native stale sensors stay explicit.
-  if (initialMode !== 'touch' && !window.RugeTilt && !input.status().available) input.setMode('touch');
+  let foreground = true, rotorButtons = [], pendingStart = null, canvasTap = null;
+  // The marble tray always uses the physical horizontal plane, never a saved pose.
+  const input = window.RugeMotion.create({ reference: 'flat' });
+  if (!COVER) {
+    input.setMode('tilt');
+    if (!window.RugeTilt && !input.status().available) input.setMode('touch');
+  }
   const cv = $('#cv'), ctx = cv.getContext('2d');
   let width = 1, height = 1, scale = 1, ox = 0, oy = 0, dpr = 1, atlas = null;
   if (typeof Image !== 'undefined') {
@@ -48,26 +48,25 @@
     toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 1800);
   }
   function release() {
-    pointerId = null; joystick = { x: 0, y: 0 }; input.release();
+    canvasTap = null; pointerId = null; joystick = { x: 0, y: 0 }; input.release();
     $('#joyDot').style.transform = 'translate(-50%,-50%)';
   }
   function syncMode() {
     const touch = input.mode() === 'touch';
-    for (const id of ['touchMode', 'readyTouch']) $('#' + id).classList.toggle('active', touch);
-    for (const id of ['tiltMode', 'readyTilt']) $('#' + id).classList.toggle('active', !touch);
-    $('#touchPad').hidden = !touch; $('#tiltGuide').hidden = touch; $('#calibrate').disabled = touch;
-    $('#controlHint').textContent = '轻轻倾斜'; $('#controlHint').classList.remove('error');
-    $('#readyHint').hidden = true;
+    $('#controls').hidden = !touch; $('#touchPad').hidden = !touch;
+    document.body.classList.toggle('touch-input', touch);
+    layout();
   }
   async function setMode(mode) {
     release(); input.setMode(mode); state.vx = state.vy = 0; staleTime = 0;
-    if (mode === 'tilt' && window.DeviceMotionEvent?.requestPermission && !window.RugeTilt) {
-      try { await window.DeviceMotionEvent.requestPermission(); } catch (_) {}
-    }
-    if (!COVER) try { localStorage.setItem(INPUT_KEY, mode); } catch (_) {}
     syncMode(); render();
   }
-  function canPlan() { return !COVER && foreground && !document.hidden && !state.won && !state.recover && level().rotors.length > 0 && $('#levels').hidden && $('#resetPanel').hidden && (result === 'ready' || result === 'run'); }
+  function canRotate() {
+    return !COVER && foreground && !document.hidden && !state.won && !state.recover &&
+      level().rotors.length > 0 && $('#levels').hidden && $('#resetPanel').hidden &&
+      $('#pausePanel').hidden && $('#flatGuide').hidden &&
+      (result === 'ready' || result === 'run' && !paused);
+  }
   function syncRotors() {
     const holder = $('#rotorButtons'); holder.innerHTML = ''; rotorButtons = [];
     level().rotors.forEach((rotor, index) => {
@@ -79,33 +78,17 @@
   }
   function updateRotors() {
     rotorButtons.forEach((button, i) => {
-      const rotor = level().rotors[i]; if (!rotor) { button.hidden = true; return; } button.style.left = `${ox + rotor.x * scale}px`; button.style.top = `${oy + rotor.y * scale}px`;
-      button.hidden = !planning; button.disabled = !planning || !canPlan();
+      const rotor = level().rotors[i]; if (!rotor) { button.hidden = true; return; }
+      button.style.left = `${ox + rotor.x * scale}px`; button.style.top = `${oy + rotor.y * scale}px`;
+      button.hidden = !canRotate(); button.disabled = !canRotate();
       button.classList.toggle('blocked', !C.rotationClear(state, rotor));
       button.setAttribute('aria-pressed', String(state.rotors[i] === 1));
     });
-    $('#mechanism').hidden = !level().rotors.length; $('#pausePlan').hidden = !level().rotors.length;
-    $('#mechanism').disabled = !planning && !canPlan();
-    $('#mechanism').setAttribute('aria-pressed', String(planning));
-    $('#controls').classList.toggle('planning', planning); $('#planActions').hidden = !planning;
-    $('#finishPlan').textContent = result === 'ready' ? '开始' : '继续';
-  }
-  function enterPlan() {
-    if (!canPlan()) return false;
-    planning = true; paused = true; release(); state.vx = state.vy = 0; state.accumulator = 0;
-    hidePanels(); updateRotors(); render(); return true;
-  }
-  function leavePlan(run = false) {
-    if (!planning) return false;
-    planning = false; updateRotors();
-    if (result === 'ready') $('#ready').hidden = false;
-    else if (result === 'run') { $('#pauseTitle').textContent = '休息一下'; $('#pausePanel').hidden = false; }
-    render(); if (run) return result === 'ready' ? start() : resume(); return true;
   }
   function rotateRotor(index) {
-    if (!planning || !canPlan()) return false;
+    if (!canRotate()) return false;
     if (!C.rotate(state, index)) {
-      window.RugeFX?.emit('error'); toast('先把球移开');
+      window.RugeFX?.emit('error'); toast('球先让一让');
       const button = rotorButtons[index]; if (button) { button.classList.remove('shake'); void button.offsetWidth; button.classList.add('shake'); }
       return false;
     }
@@ -113,7 +96,7 @@
   }
   function askReset() {
     if (COVER || !foreground || document.hidden) return;
-    if (planning) leavePlan(); pauseGame(); release(); $('#resetPanel').hidden = false; updateRotors();
+    cancelWaiting(); pauseGame(); release(); $('#resetPanel').hidden = false; updateRotors();
   }
   function cancelReset() { $('#resetPanel').hidden = true; updateRotors(); }
   function resetLevel() {
@@ -127,9 +110,9 @@
     $('#keyBadge').classList.toggle('collected', state.key);
     $('#keyBadge').style.opacity = state.key ? '1' : '.38';
   }
-  function hidePanels() { for (const id of ['ready', 'pausePanel', 'win', 'levels', 'resetPanel']) $('#' + id).hidden = true; }
+  function hidePanels() { for (const id of ['ready', 'pausePanel', 'win', 'levels', 'resetPanel', 'flatGuide']) $('#' + id).hidden = true; }
   function loadLevel(index, keep = false) {
-    release(); planning = false; state = keep ? state : C.create(index); result = state.won ? 'win' : 'ready'; paused = true; effects = []; staleTime = 0;
+    release(); input.resetPosture?.(); pendingStart = null; state = keep ? state : C.create(index); result = state.won ? 'win' : 'ready'; paused = true; effects = []; staleTime = 0;
     hidePanels(); $('#readyTitle').textContent = `第 ${state.level + 1} 关`;
     $('#start').textContent = keep && (state.time > 0 || state.stars.some(Boolean)) ? '继续' : '开始';
     if (state.won) showWin(false); else $('#ready').hidden = false;
@@ -137,27 +120,46 @@
     document.body.style.background = theme.sky; $('#stage').style.background = theme.sky;
     syncHud(); syncMode(); layout(); syncRotors(); render();
   }
-  function sensorReady() {
-    if (input.mode() === 'touch') return true;
-    if (input.calibrate()) { state.vx = state.vy = 0; return true; }
-    $('#readyHint').hidden = false; $('#controlHint').textContent = '请选触摸'; $('#controlHint').classList.add('error');
-    toast('请选触摸'); return false;
+  function posture(dt = 0) {
+    return input.flatReady(dt);
   }
-  function start() {
-    if (COVER || !foreground || document.hidden || planning || !$('#resetPanel').hidden || state.won || result !== 'ready' || !sensorReady()) return false;
-    hidePanels(); result = 'run'; paused = false; state.accumulator = 0; last = performance.now();
+  function updateFlatGuide(value) {
+    $('#flatTouch').hidden = !!value.available;
+    $('#flatProgress').classList.toggle('is-flat', !!value.flat);
+    $('#flatProgress').classList.toggle('is-stable', !!value.stable);
+  }
+  function beginRun() {
+    if (!foreground || document.hidden || !pendingStart || state.won) return false;
+    pendingStart = null; hidePanels(); result = 'run'; paused = false; release();
+    state.vx = state.vy = 0; state.accumulator = 0; staleTime = 0; last = performance.now();
     updateRotors(); fx('tap'); save(); return true;
   }
+  function requestStart(kind) {
+    if (COVER || !foreground || document.hidden || !$('#resetPanel').hidden || !$('#levels').hidden || state.won) return false;
+    if (kind === 'start' ? result !== 'ready' : result !== 'run' || !paused) return false;
+    canvasTap = null; pendingStart = kind;
+    if (input.mode() === 'touch') return beginRun();
+    const value = posture();
+    if (value.available && value.fresh && value.flat && value.stable) return beginRun();
+    hidePanels(); $('#flatGuide').hidden = false; updateFlatGuide(value); updateRotors(); return false;
+  }
+  function start() { return requestStart('start'); }
+  function cancelWaiting() {
+    if (!pendingStart) return;
+    pendingStart = null; $('#flatGuide').hidden = true;
+    if (result === 'ready') $('#ready').hidden = false;
+    else if (result === 'run') { $('#pauseTitle').textContent = '休息一下'; $('#pausePanel').hidden = false; }
+    updateRotors();
+  }
   function pauseGame(reason = 'manual') {
+    cancelWaiting();
     if (COVER || result !== 'run' || paused) return;
-    paused = true; release(); state.vx = state.vy = 0; state.accumulator = 0;
-    $('#pauseTitle').textContent = reason === 'sensor' ? '请选触摸' : '休息一下';
-    $('#pausePanel').hidden = false; save(); render();
+    paused = true; release(); input.resetPosture?.(); state.vx = state.vy = 0; state.accumulator = 0;
+    $('#pauseTitle').textContent = '休息一下';
+    const value = input.posture(); $('#pauseTouch').hidden = !!value.available;
+    $('#pausePanel').hidden = false; updateRotors(); save(); render();
   }
-  function resume() {
-    if (COVER || !foreground || document.hidden || planning || !$('#resetPanel').hidden || result !== 'run' || !paused || !sensorReady()) return false;
-    hidePanels(); paused = false; release(); state.accumulator = 0; last = performance.now(); staleTime = 0; return true;
-  }
+  function resume() { return requestStart('resume'); }
   function showWin(celebrate = true) {
     if (celebrate) fx('win');
     paused = true; result = 'win'; release();
@@ -170,7 +172,7 @@
   }
   function showLevels() {
     if (COVER) return;
-    if (planning) leavePlan(); pauseGame(); const grid = $('#levelGrid'), mechanisms = $('#mechanismGrid'); grid.innerHTML = ''; mechanisms.innerHTML = '';
+    cancelWaiting(); pauseGame(); release(); const grid = $('#levelGrid'), mechanisms = $('#mechanismGrid'); grid.innerHTML = ''; mechanisms.innerHTML = '';
     C.LEVELS.forEach((item, i) => {
       const b = document.createElement('button'); b.textContent = i + 1; b.dataset.level = i; b.disabled = i < 12 ? i > progress.reached : i > progress.mechanismReached;
       b.setAttribute('aria-label', `第 ${i + 1} 关${b.disabled ? '，尚未解锁' : ''}`);
@@ -271,7 +273,15 @@
   }
   function frame(now) {
     requestAnimationFrame(frame); const dt = Math.min(.05, Math.max(0, (now - last) / 1000 || 0)); last = now;
-    if (paused || COVER) return;
+    if (COVER) return;
+    if (foreground && !document.hidden && input.mode() === 'tilt' && paused) {
+      const value = posture(dt);
+      if (pendingStart) {
+        updateFlatGuide(value);
+        if (value.available && value.fresh && value.flat && value.stable) beginRun();
+      }
+    }
+    if (paused) return;
     const motion = input.read(dt);
     if (input.mode() === 'tilt' && (!motion.available || !motion.fresh)) {
       staleTime += dt; if (staleTime > .4) { pauseGame('sensor'); return; }
@@ -281,8 +291,38 @@
     applyEvents(C.advance(state, x, y, dt));
     effects.forEach(item => { item.life -= dt * 1.8; }); effects = effects.filter(item => item.life > 0);
     saveClock += dt; if (saveClock > 1.5) { saveClock = 0; save(); }
-    render();
+    updateRotors(); render();
   }
+  // The entire orange bar is a target, not only its circular rotation icon.
+  // Listen on the Canvas itself: sibling DOM buttons cannot double-submit a tap.
+  cv.addEventListener('pointerdown', event => {
+    if (!canRotate() || canvasTap || event.isPrimary === false || event.button != null && event.button !== 0) return;
+    event.preventDefault();
+    canvasTap = { id: event.pointerId, x: event.clientX, y: event.clientY, time: performance.now(), moved: false };
+    try { cv.setPointerCapture(event.pointerId); } catch (_) {}
+  }, { passive: false });
+  cv.addEventListener('pointermove', event => {
+    if (canvasTap?.id !== event.pointerId) return;
+    if (Math.hypot(event.clientX - canvasTap.x, event.clientY - canvasTap.y) >= 12) canvasTap.moved = true;
+  });
+  cv.addEventListener('pointerup', event => {
+    const tap = canvasTap;
+    if (!tap || tap.id !== event.pointerId) return;
+    canvasTap = null;
+    if (tap.moved || Math.hypot(event.clientX - tap.x, event.clientY - tap.y) >= 12 || performance.now() - tap.time >= 700 || !canRotate()) return;
+    const rect = cv.getBoundingClientRect(), x = (event.clientX - rect.left - ox) / scale, y = (event.clientY - rect.top - oy) / scale;
+    let closest = -1, distance = Infinity;
+    level().rotors.forEach((rotor, index) => {
+      const bar = C.rotorWall(rotor, state.rotors[index]);
+      const dx = Math.max(bar.x - x, 0, x - bar.x - bar.w), dy = Math.max(bar.y - y, 0, y - bar.y - bar.h);
+      const d = Math.hypot(dx, dy);
+      if (d < distance) { closest = index; distance = d; }
+    });
+    if (closest >= 0 && distance * scale <= 22) { event.preventDefault(); rotateRotor(closest); }
+  }, { passive: false });
+  for (const name of ['pointercancel', 'lostpointercapture']) cv.addEventListener(name, event => {
+    if (canvasTap?.id === event.pointerId) canvasTap = null;
+  });
   const pad = $('#touchPad');
   function movePad(event) {
     const rect = pad.getBoundingClientRect();
@@ -297,31 +337,25 @@
   }, { passive: false });
   pad.addEventListener('pointermove', event => { if (event.pointerId !== pointerId) return; event.preventDefault(); movePad(event); }, { passive: false });
   for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) pad.addEventListener(name, event => { if (event.pointerId === pointerId) release(); });
-  for (const id of ['tiltMode', 'readyTilt']) $('#' + id).addEventListener('click', () => setMode('tilt'));
-  for (const id of ['touchMode', 'readyTouch']) $('#' + id).addEventListener('click', () => setMode('touch'));
-  $('#calibrate').addEventListener('click', () => {
-    if (input.mode() !== 'tilt') return;
-    if (input.calibrate()) { state.vx = state.vy = 0; toast('校准好了'); } else toast('请选触摸');
-  });
-  $('#start').addEventListener('click', start); $('#pause').addEventListener('click', () => { if (planning) leavePlan(); else pauseGame(); }); $('#resume').addEventListener('click', resume);
+  $('#start').addEventListener('click', start); $('#pause').addEventListener('click', () => pauseGame()); $('#resume').addEventListener('click', resume);
   $('#pauseTouch').addEventListener('click', async () => { await setMode('touch'); resume(); });
+  $('#flatTouch').addEventListener('click', async () => { const action = pendingStart; await setMode('touch'); if (action && foreground && !document.hidden) beginRun(); });
+  $('#cancelFlat').addEventListener('click', cancelWaiting);
   $('#retry').addEventListener('click', askReset); $('#winRetry').addEventListener('click', () => { if (!COVER) { loadLevel(state.level); save(); } });
   $('#reset').addEventListener('click', askReset); $('#resetYes').addEventListener('click', resetLevel); $('#resetNo').addEventListener('click', cancelReset);
-  $('#mechanism').addEventListener('click', () => planning ? leavePlan() : enterPlan()); $('#finishPlan').addEventListener('click', () => leavePlan(true));
-  $('#pausePlan').addEventListener('click', enterPlan);
   $('#next').addEventListener('click', () => { if (!state.won) return; loadLevel(state.level === C.LEVELS.length - 1 ? 0 : state.level + 1); save(); });
   $('#levelBtn').addEventListener('click', showLevels); $('#pauseLevels').addEventListener('click', showLevels); $('#closeLevels').addEventListener('click', () => { $('#levels').hidden = true; updateRotors(); });
   $('#home').addEventListener('click', () => { save(); release(); input.destroy(); if (window.RugeNav?.home) window.RugeNav.home(); else location.href = '../index.html'; });
-  addEventListener('ruge:pause', () => { foreground = false; if (planning) leavePlan(); pauseGame('background'); release(); updateRotors(); });
+  addEventListener('ruge:pause', () => { foreground = false; cancelWaiting(); pauseGame('background'); release(); updateRotors(); });
   addEventListener('ruge:resume', () => { foreground = true; last = performance.now(); updateRotors(); });
-  addEventListener('ruge:orientation', () => { if (planning) leavePlan(); pauseGame('orientation'); release(); layout(); render(); });
+  addEventListener('ruge:orientation', () => { cancelWaiting(); pauseGame('orientation'); release(); layout(); render(); });
   addEventListener('resize', () => { layout(); render(); }); addEventListener('blur', release);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) { foreground = false; if (planning) leavePlan(); pauseGame('background'); release(); } else foreground = true; updateRotors(); last = performance.now(); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { foreground = false; cancelWaiting(); pauseGame('background'); release(); } else foreground = true; updateRotors(); last = performance.now(); });
   addEventListener('pagehide', () => { save(); input.destroy(); });
   window.__game = {
-    ...C, input, loadLevel, start, pause: pauseGame, resume, setMode, showLevels, save, enterPlan, leavePlan, rotateRotor, askReset, resetLevel,
-    state: () => ({ ...clone(state), li: state.level, result, paused, planning, foreground, mode: input.mode(), progress: clone(progress) }),
-    world: () => ({ level: level(), ball: state }), render, progressFrom,
+    ...C, input, loadLevel, start, pause: pauseGame, resume, setMode, showLevels, save, rotateRotor, askReset, resetLevel,
+    state: () => ({ ...clone(state), li: state.level, result, paused, planning: false, waitingFlat: !!pendingStart, foreground, mode: input.mode(), progress: clone(progress) }),
+    world: () => ({ level: level(), ball: state }), render, progressFrom, posture, cancelWaiting,
   };
   if (COVER) {
     document.body.classList.add('cover'); state = C.create(12);

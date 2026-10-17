@@ -91,10 +91,16 @@
     { spec: [5, 5, [20,15,10,11,12,7,2,3,4,9,14,19,24], [1,5,10]], hinges: [[11,0],[19,1]] },
     { spec: [5, 5, [10,11,12,13,14,13,12,7,2,3,4], [1,4,8]], hinges: [[12,0]] },
     { spec: [5, 6, [25,20,15,16,17,18,19,18,17,12,11,6,7,8,9,8,7,2,3,4], [2,6,14]], hinges: [[17,0],[7,0]] },
+    { spec: [4, 5, [16,17,13,9,8,4,0,1,2,3], [1,4,8]], hinges: [[13,1]] },
+    { spec: [4, 5, [16,12,8,9,10,11,7,3,2,6,5,1,0], [2,5,10]], hinges: [[9,0],[7,1]] },
+    { spec: [5, 5, [20,15,10,11,12,13,14,13,12,7,2,3,4], [1,6,11]], hinges: [[12,0]] },
+    { spec: [5, 5, [24,23,22,17,12,7,6,5,0,5,6,7,2,3,4], [2,8,13]], hinges: [[7,0]] },
+    { spec: [5, 6, [25,26,21,16,11,12,13,14,13,12,7,6,5,0,1,2,3,4], [1,7,13]], hinges: [[12,0],[7,0]] },
+    { spec: [5, 6, [29,28,27,22,17,16,15,16,17,12,13,14,9,8,7,6,5,6,7,2,3,4], [2,6,16]], hinges: [[17,0],[7,0]] },
   ];
   MECHANISMS.forEach((item, offset) => {
     const level = makeLevel(item.spec, LEVELS.length);
-    level.theme = Math.floor(offset / 2); level.mechanism = true;
+    level.theme = Math.floor(offset / 2) % THEMES.length; level.mechanism = true;
     level.rotors = item.hinges.map(([cell, initial], id) => ({
       id, cell, x: PAD + cell % level.cols * CELL, y: PAD + Math.floor(cell / level.cols) * CELL,
       length: CELL, initial,
@@ -113,9 +119,17 @@
     return [...level.walls, ...(level.gate && !state.key ? [level.gate] : []), ...level.rotors.map((rotor, i) => rotorWall(rotor, orientations(level, state)[i]))];
   }
   function rotationClear(state, rotor) {
-    // Conservatively reserve the full swept disc, not just the final rectangle.
-    // This also covers the square end cap and the ball's own radius.
-    return Math.hypot(state.x - rotor.x, state.y - rotor.y) > rotor.length + WALL + RADIUS + 3;
+    // The hinge sweeps only the positive-x/positive-y quarter-disc between its
+    // two visible bars. A full disc wrongly rejects safe balls above/left of it.
+    // Project onto that closed sector, then Minkowski-expand by the ball and
+    // square bar caps. sqrt(2)*halfWall bounds every rotated rectangle corner.
+    const dx = state.x - rotor.x, dy = state.y - rotor.y;
+    let qx = Math.max(0, dx), qy = Math.max(0, dy);
+    const radius = Math.hypot(qx, qy);
+    if (radius > rotor.length) { qx *= rotor.length / radius; qy *= rotor.length / radius; }
+    const speed = Math.min(MAX_SPEED, Math.hypot(Number(state.vx) || 0, Number(state.vy) || 0));
+    const clearance = RADIUS + Math.SQRT2 * WALL / 2 + 2 + speed * STEP;
+    return Math.hypot(dx - qx, dy - qy) > clearance;
   }
   function rotate(state, index) {
     const level = LEVELS[state.level], rotor = level?.rotors[index];

@@ -6,7 +6,9 @@
   const finite = Number.isFinite;
   function create(options = {}) {
     let mode = 'tilt', zero = [0, 0], filtered = [0, 0], touch = [0, 0];
-    let paused = false, dead = false, calibrated = false, web = null, lastStatus = '';
+    const fixedFlat = options.reference === 'flat';
+    let paused = false, dead = false, calibrated = fixedFlat, web = null, lastStatus = '';
+    let flatSeconds = 0, flatAnchor = null;
     const native = w.RugeTilt;
     function raw() {
       if (dead || paused || w.document?.hidden) return null;
@@ -21,13 +23,31 @@
           if (s.legacy) s.x = -s.x;
           const n = Math.hypot(s.x, s.y, s.z);
           if (n < .35 || n > 1.8) return null;
-          return {x: s.x / n, y: s.y / n, z: s.z / n, source: s.source || 'native'};
+          return {x: s.x / n, y: s.y / n, z: s.z / n, age: s.age, source: s.source || 'native'};
         }
       } catch (_) { return null; }
       if (web && performance.now() - web.time <= 1500) return web;
       return null;
     }
     const angles = s => [Math.atan2(s.x, Math.hypot(s.y, s.z)), Math.atan2(s.y, s.z)];
+    function resetFlat() { flatSeconds = 0; flatAnchor = null; }
+    function posture(s = raw()) {
+      const age = s?.source === 'browser' ? performance.now() - s.time : (s?.age ?? 0);
+      const fresh = !!s && age <= 300;
+      const tiltDegrees = s ? Math.acos(clamp(s.z)) * 180 / Math.PI : null;
+      const flat = fresh && s.z > 0 && tiltDegrees <= 8;
+      return {available: !!s, fresh, flat, stable: flat && flatSeconds >= .5 - 1e-9,
+        tiltDegrees, x: s?.x ?? 0, y: s?.y ?? 0, z: s?.z ?? 0, elapsed: flatSeconds};
+    }
+    function flatReady(dt = 1 / 60) {
+      const s = raw(), p = posture(s);
+      if (!p.flat) { resetFlat(); return posture(s); }
+      if (!flatAnchor || Math.acos(clamp(s.x * flatAnchor.x + s.y * flatAnchor.y + s.z * flatAnchor.z)) > 2 * Math.PI / 180) {
+        flatAnchor = s; flatSeconds = 0;
+      }
+      flatSeconds = Math.min(.5, flatSeconds + clamp(finite(dt) ? dt : 0, 0, .1));
+      return posture(s);
+    }
     function status(s = raw()) {
       return {mode, available: mode === 'touch' || !!s, fresh: !!s, calibrated, source: s?.source || 'unavailable', paused, destroyed: dead};
     }
@@ -45,7 +65,7 @@
       a.forEach((v, i) => { const target = Math.abs(v) < .012 ? 0 : Math.sin(v); filtered[i] += (target - filtered[i]) * gain; });
       return {x: filtered[0], y: filtered[1], available: true, fresh: true, angleX: a[0], angleY: a[1]};
     }
-    function calibrate() { const s = raw(); if (!s) return false; zero = angles(s); filtered = [0, 0]; touch = [0, 0]; calibrated = true; inform(s); return true; }
+    function calibrate() { const s = raw(); if (!s) return false; zero = fixedFlat ? [0, 0] : angles(s); filtered = [0, 0]; touch = [0, 0]; calibrated = true; inform(s); return true; }
     function release() { touch = [0, 0]; filtered = [0, 0]; }
     function setMode(value) { if (value !== 'tilt' && value !== 'touch') return false; mode = value; release(); inform(raw()); return true; }
     function setTouch(x, y) { if (!finite(x) || !finite(y) || dead || paused) return; const n = Math.max(1, Math.hypot(x, y)); touch = [x / n, y / n]; }
@@ -57,15 +77,15 @@
       const mapped = rotation === 90 ? [-y, x] : rotation === 180 ? [-x, -y] : rotation === 270 ? [y, -x] : [x, y];
       web = {x: mapped[0], y: mapped[1], z, time: performance.now(), source: 'browser'};
     }
-    function pause() { paused = true; release(); web = null; inform(null); }
-    function resume() { paused = false; release(); web = null; inform(raw()); }
-    function rotate() { calibrated = false; zero = [0, 0]; release(); web = null; }
+    function pause() { paused = true; release(); resetFlat(); web = null; inform(null); }
+    function resume() { paused = false; release(); resetFlat(); web = null; inform(raw()); }
+    function rotate() { calibrated = fixedFlat; zero = [0, 0]; release(); resetFlat(); web = null; }
     function visibility() { if (w.document?.hidden) pause(); else resume(); }
     const events = [['deviceorientation', orientation], ['ruge:pause', pause], ['ruge:resume', resume], ['ruge:orientation', rotate], ['pagehide', pause]];
     events.forEach(([name, fn]) => w.addEventListener(name, fn));
     w.document?.addEventListener('visibilitychange', visibility);
     function destroy() { dead = true; release(); web = null; events.forEach(([name, fn]) => w.removeEventListener(name, fn)); w.document?.removeEventListener('visibilitychange', visibility); }
-    return {read, calibrate, setMode, setTouch, release, mode: () => mode, status, destroy};
+    return {read, calibrate, setMode, setTouch, release, posture, flatReady, resetPosture: resetFlat, mode: () => mode, status, destroy};
   }
   function createDirectionGate({enter=.18,exit=.08,stable=.11}={}){
    let held=null,candidate=null,elapsed=0,neutralWait=false;

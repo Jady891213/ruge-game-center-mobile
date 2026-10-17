@@ -1,0 +1,2159 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "mode": "ready",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "ready",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 0,
+        "draft": null,
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      320,
+      568
+    ],
+    "scroll": [
+      320,
+      568
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 7.5,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 231,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 273,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 54,
+        "w": 109.84375,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "rotor-button",
+        "x": 73,
+        "y": 272.5,
+        "w": 46,
+        "h": 46,
+        "hit": true
+      },
+      {
+        "id": "start",
+        "x": 134,
+        "y": 494,
+        "w": 156,
+        "h": 46,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "mode": "run",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.20833333333333331,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0.008266666666666702,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": false,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      320,
+      568
+    ],
+    "scroll": [
+      320,
+      568
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 7.5,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 231,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 273,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 54,
+        "w": 109.84375,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "rotor-button",
+        "x": 73,
+        "y": 272.5,
+        "w": 46,
+        "h": 46,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "mode": "flat-guide",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.20833333333333331,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": true,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.20833333333333331,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      320,
+      568
+    ],
+    "scroll": [
+      320,
+      568
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 7.5,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 231,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 273,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 54,
+        "w": 109.84375,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "cancelFlat",
+        "x": 248,
+        "y": 189.78125,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "mode": "levels",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.20833333333333331,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.20833333333333331,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      320,
+      568
+    ],
+    "scroll": [
+      320,
+      568
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 7.5,
+        "w": 39,
+        "h": 39,
+        "hit": false
+      },
+      {
+        "id": "reset",
+        "x": 231,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": false
+      },
+      {
+        "id": "pause",
+        "x": 273,
+        "y": 8,
+        "w": 37,
+        "h": 38,
+        "hit": false
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 54,
+        "w": 109.84375,
+        "h": 38,
+        "hit": false
+      },
+      {
+        "id": "resume",
+        "x": 43,
+        "y": 301.5,
+        "w": 234,
+        "h": 46,
+        "hit": false
+      },
+      {
+        "id": "retry",
+        "x": 43,
+        "y": 357.5,
+        "w": 112,
+        "h": 46,
+        "hit": false
+      },
+      {
+        "id": "pauseLevels",
+        "x": 165,
+        "y": 357.5,
+        "w": 112,
+        "h": 46,
+        "hit": false
+      },
+      {
+        "id": "closeLevels",
+        "x": 248,
+        "y": 35.046875,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 37,
+        "y": 142.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 101.5,
+        "y": 142.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 166,
+        "y": 142.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 230.5,
+        "y": 142.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 37,
+        "y": 213.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 101.5,
+        "y": 213.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 166,
+        "y": 213.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 230.5,
+        "y": 213.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 37,
+        "y": 284.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 101.5,
+        "y": 284.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 166,
+        "y": 284.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 230.5,
+        "y": 284.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "current ",
+        "x": 37,
+        "y": 407.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 101.5,
+        "y": 407.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 166,
+        "y": 407.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 230.5,
+        "y": 407.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 37,
+        "y": 478.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 101.5,
+        "y": 478.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 166,
+        "y": 478.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 230.5,
+        "y": 478.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 37,
+        "y": 549.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 101.5,
+        "y": 549.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 166,
+        "y": 549.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 230.5,
+        "y": 549.046875,
+        "w": 52.5,
+        "h": 59,
+        "hit": false
+      }
+    ]
+  },
+  {
+    "width": 392,
+    "height": 872,
+    "mode": "ready",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "ready",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.20833333333333331,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      392,
+      872
+    ],
+    "scroll": [
+      392,
+      872
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 293,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 341,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 66,
+        "w": 118.15625,
+        "h": 43,
+        "hit": true
+      },
+      {
+        "id": "rotor-button",
+        "x": 90,
+        "y": 420.5,
+        "w": 52,
+        "h": 52,
+        "hit": true
+      },
+      {
+        "id": "start",
+        "x": 195,
+        "y": 780,
+        "w": 156,
+        "h": 52,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 392,
+    "height": 872,
+    "mode": "run",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.14166666666666666,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 3.333332141241055e-05,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": false,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      392,
+      872
+    ],
+    "scroll": [
+      392,
+      872
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 293,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 341,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 66,
+        "w": 118.15625,
+        "h": 43,
+        "hit": true
+      },
+      {
+        "id": "rotor-button",
+        "x": 90,
+        "y": 420.5,
+        "w": 52,
+        "h": 52,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 392,
+    "height": 872,
+    "mode": "flat-guide",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.14166666666666666,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": true,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.14166666666666666,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      392,
+      872
+    ],
+    "scroll": [
+      392,
+      872
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 293,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 341,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 66,
+        "w": 118.15625,
+        "h": 43,
+        "hit": true
+      },
+      {
+        "id": "cancelFlat",
+        "x": 308,
+        "y": 334.78125,
+        "w": 35,
+        "h": 35,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 392,
+    "height": 872,
+    "mode": "levels",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.14166666666666666,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.14166666666666666,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      392,
+      872
+    ],
+    "scroll": [
+      392,
+      872
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "hit": false
+      },
+      {
+        "id": "reset",
+        "x": 293,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": false
+      },
+      {
+        "id": "pause",
+        "x": 341,
+        "y": 11,
+        "w": 41,
+        "h": 42,
+        "hit": false
+      },
+      {
+        "id": "levelBtn",
+        "x": 10,
+        "y": 66,
+        "w": 118.15625,
+        "h": 43,
+        "hit": false
+      },
+      {
+        "id": "resume",
+        "x": 65,
+        "y": 456.5,
+        "w": 262,
+        "h": 52,
+        "hit": false
+      },
+      {
+        "id": "retry",
+        "x": 65,
+        "y": 522.5,
+        "w": 126,
+        "h": 52,
+        "hit": false
+      },
+      {
+        "id": "pauseLevels",
+        "x": 201,
+        "y": 522.5,
+        "w": 126,
+        "h": 52,
+        "hit": false
+      },
+      {
+        "id": "closeLevels",
+        "x": 309,
+        "y": 106.5,
+        "w": 44,
+        "h": 44,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 43,
+        "y": 222.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 122.5,
+        "y": 222.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 202,
+        "y": 222.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 281.5,
+        "y": 222.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 43,
+        "y": 304.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 122.5,
+        "y": 304.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 202,
+        "y": 304.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 281.5,
+        "y": 304.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 43,
+        "y": 386.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 122.5,
+        "y": 386.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 202,
+        "y": 386.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 281.5,
+        "y": 386.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "current ",
+        "x": 43,
+        "y": 520.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 122.5,
+        "y": 520.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 202,
+        "y": 520.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 281.5,
+        "y": 520.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 43,
+        "y": 602.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 122.5,
+        "y": 602.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 202,
+        "y": 602.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 281.5,
+        "y": 602.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 43,
+        "y": 684.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 122.5,
+        "y": 684.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 202,
+        "y": 684.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 281.5,
+        "y": 684.5,
+        "w": 67.5,
+        "h": 70,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 872,
+    "height": 392,
+    "mode": "ready",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "ready",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.14166666666666666,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      872,
+      392
+    ],
+    "scroll": [
+      872,
+      392
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 8,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 783,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 825,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 22.65625,
+        "y": 55,
+        "w": 69.6875,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "rotor-button",
+        "x": 405.125,
+        "y": 168.3125,
+        "w": 46,
+        "h": 46,
+        "hit": true
+      },
+      {
+        "id": "start",
+        "x": 488.5,
+        "y": 324,
+        "w": 156,
+        "h": 46,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 872,
+    "height": 392,
+    "mode": "run",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.13333333333333333,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0.007366666678587588,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": false,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      872,
+      392
+    ],
+    "scroll": [
+      872,
+      392
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 8,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 783,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 825,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 22.65625,
+        "y": 55,
+        "w": 69.6875,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "rotor-button",
+        "x": 405.125,
+        "y": 168.3125,
+        "w": 46,
+        "h": 46,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 872,
+    "height": 392,
+    "mode": "flat-guide",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.13333333333333333,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": true,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.13333333333333333,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      872,
+      392
+    ],
+    "scroll": [
+      872,
+      392
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 8,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "reset",
+        "x": 783,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "pause",
+        "x": 825,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "levelBtn",
+        "x": 22.65625,
+        "y": 55,
+        "w": 69.6875,
+        "h": 38,
+        "hit": true
+      },
+      {
+        "id": "cancelFlat",
+        "x": 589.5,
+        "y": 112.5,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      }
+    ]
+  },
+  {
+    "width": 872,
+    "height": 392,
+    "mode": "levels",
+    "state": {
+      "schema": 1,
+      "level": 12,
+      "x": 48,
+      "y": 304,
+      "vx": 0,
+      "vy": 0,
+      "spin": 0,
+      "stars": [
+        false,
+        false,
+        false
+      ],
+      "key": false,
+      "rotors": [
+        0
+      ],
+      "checkpoint": {
+        "x": 48,
+        "y": 304
+      },
+      "falls": 0,
+      "time": 0.13333333333333333,
+      "recover": 0,
+      "bumpCooldown": 0,
+      "accumulator": 0,
+      "won": false,
+      "li": 12,
+      "result": "run",
+      "paused": true,
+      "planning": false,
+      "waitingFlat": false,
+      "foreground": true,
+      "mode": "tilt",
+      "progress": {
+        "schema": 1,
+        "reached": 0,
+        "mechanismReached": 12,
+        "completed": [],
+        "current": 12,
+        "draft": {
+          "schema": 1,
+          "level": 12,
+          "x": 48,
+          "y": 304,
+          "vx": 0,
+          "vy": 0,
+          "spin": 0,
+          "stars": [
+            false,
+            false,
+            false
+          ],
+          "key": false,
+          "rotors": [
+            0
+          ],
+          "checkpoint": {
+            "x": 48,
+            "y": 304
+          },
+          "falls": 0,
+          "time": 0.13333333333333333,
+          "recover": 0,
+          "bumpCooldown": 0,
+          "accumulator": 0,
+          "won": false
+        },
+        "legacyMigrated": false
+      }
+    },
+    "viewport": [
+      872,
+      392
+    ],
+    "scroll": [
+      872,
+      392
+    ],
+    "buttons": [
+      {
+        "id": "home",
+        "x": 10,
+        "y": 8,
+        "w": 39,
+        "h": 39,
+        "hit": false
+      },
+      {
+        "id": "reset",
+        "x": 783,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": false
+      },
+      {
+        "id": "pause",
+        "x": 825,
+        "y": 8.5,
+        "w": 37,
+        "h": 38,
+        "hit": false
+      },
+      {
+        "id": "levelBtn",
+        "x": 22.65625,
+        "y": 55,
+        "w": 69.6875,
+        "h": 38,
+        "hit": false
+      },
+      {
+        "id": "resume",
+        "x": 366.5,
+        "y": 194.5,
+        "w": 240,
+        "h": 46,
+        "hit": false
+      },
+      {
+        "id": "retry",
+        "x": 366.5,
+        "y": 248.5,
+        "w": 115,
+        "h": 46,
+        "hit": false
+      },
+      {
+        "id": "pauseLevels",
+        "x": 491.5,
+        "y": 248.5,
+        "w": 115,
+        "h": 46,
+        "hit": false
+      },
+      {
+        "id": "closeLevels",
+        "x": 562,
+        "y": 26.765625,
+        "w": 39,
+        "h": 39,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 275,
+        "y": 131.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 358.5,
+        "y": 131.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 442,
+        "y": 131.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 525.5,
+        "y": 131.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 275,
+        "y": 202.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 358.5,
+        "y": 202.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 442,
+        "y": 202.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 525.5,
+        "y": 202.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 275,
+        "y": 273.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 358.5,
+        "y": 273.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 442,
+        "y": 273.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "",
+        "x": 525.5,
+        "y": 273.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": true
+      },
+      {
+        "id": "current ",
+        "x": 275,
+        "y": 396.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 358.5,
+        "y": 396.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 442,
+        "y": 396.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 525.5,
+        "y": 396.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 275,
+        "y": 467.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 358.5,
+        "y": 467.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 442,
+        "y": 467.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 525.5,
+        "y": 467.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 275,
+        "y": 538.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 358.5,
+        "y": 538.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 442,
+        "y": 538.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      },
+      {
+        "id": "",
+        "x": 525.5,
+        "y": 538.765625,
+        "w": 71.5,
+        "h": 59,
+        "hit": false
+      }
+    ]
+  }
+]
