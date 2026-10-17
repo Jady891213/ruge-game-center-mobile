@@ -27,7 +27,7 @@
       if (web && performance.now() - web.time <= 1500) return web;
       return null;
     }
-    const angles = s => [Math.atan2(s.x, Math.hypot(s.y, s.z)), Math.atan2(s.y, Math.hypot(s.x, s.z))];
+    const angles = s => [Math.atan2(s.x, Math.hypot(s.y, s.z)), Math.atan2(s.y, s.z)];
     function status(s = raw()) {
       return {mode, available: mode === 'touch' || !!s, fresh: !!s, calibrated, source: s?.source || 'unavailable', paused, destroyed: dead};
     }
@@ -40,7 +40,7 @@
       if (dead || paused || w.document?.hidden) return {x: 0, y: 0, available: false, fresh: false, angleX: 0, angleY: 0};
       if (mode === 'touch') return {x: touch[0], y: touch[1], available: true, fresh: true, angleX: Math.asin(touch[0]), angleY: Math.asin(touch[1])};
       if (!s) { filtered = [0, 0]; return {x: 0, y: 0, available: false, fresh: false, angleX: 0, angleY: 0}; }
-      const a = angles(s).map((v, i) => clamp(v - zero[i], -Math.PI / 2, Math.PI / 2));
+      const a = angles(s).map((v, i) => clamp(Math.atan2(Math.sin(v - zero[i]), Math.cos(v - zero[i])), -Math.PI / 2, Math.PI / 2));
       const gain = 1 - Math.exp(-clamp(finite(dt) ? dt : 0, 0, .1) / .035);
       a.forEach((v, i) => { const target = Math.abs(v) < .012 ? 0 : Math.sin(v); filtered[i] += (target - filtered[i]) * gain; });
       return {x: filtered[0], y: filtered[1], available: true, fresh: true, angleX: a[0], angleY: a[1]};
@@ -67,5 +67,22 @@
     function destroy() { dead = true; release(); web = null; events.forEach(([name, fn]) => w.removeEventListener(name, fn)); w.document?.removeEventListener('visibilitychange', visibility); }
     return {read, calibrate, setMode, setTouch, release, mode: () => mode, status, destroy};
   }
-  w.RugeMotion = Object.freeze({create});
-})(window);
+  function createDirectionGate({enter=.18,exit=.08,stable=.11}={}){
+   let held=null,candidate=null,elapsed=0,neutralWait=false;
+   function reset(requireNeutral=false){held=null;candidate=null;elapsed=0;neutralWait=requireNeutral;}
+   function read(x,y,dt){
+    if(!Number.isFinite(x)||!Number.isFinite(y)||!Number.isFinite(dt)||dt<0){candidate=null;elapsed=0;return null;}
+    const amplitude=Math.max(Math.abs(x),Math.abs(y));
+    if(amplitude<=exit){reset();return null;}
+    if(neutralWait)return null;
+    if(amplitude<enter){candidate=null;elapsed=0;return null;}
+    const direction=Math.abs(x)>Math.abs(y)?x>0?'right':'left':y>0?'down':'up';
+    if(direction===held){candidate=null;elapsed=0;return null;}
+    if(candidate!==direction){candidate=direction;elapsed=0;}
+    elapsed+=Math.min(dt,.05);if(elapsed+1e-9<stable)return null;
+    held=direction;candidate=null;elapsed=0;return direction;
+   }
+   return {read,reset,status:()=>({held,candidate,elapsed,neutralWait})};
+  }
+  w.RugeMotion = Object.freeze({create, createDirectionGate});
+})(typeof window !== 'undefined' ? window : globalThis);

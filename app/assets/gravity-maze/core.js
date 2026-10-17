@@ -78,11 +78,61 @@
       theme: Math.floor(index / 4), route: route.slice(), edges: [...edges], walls,
       start: center(route[0]), goal: { ...center(route.at(-1)), r: 20 },
       stars: starSteps.map(n => ({ ...center(route[n]), r: 13 })),
-      key: keyStep >= 0 ? center(route[keyStep]) : null, gate, holes: holeList, bumpers: bumperList,
+      key: keyStep >= 0 ? center(route[keyStep]) : null, gate, holes: holeList, bumpers: bumperList, rotors: [],
     };
   }
   const LEVELS = SPECS.map(makeLevel);
-  function allWalls(level, state) { return level.gate && !state.key ? [...level.walls, level.gate] : level.walls; }
+  // Each hinge joins the left and upper edge of one room. The bar can close
+  // either edge; later layouts require both states, with a safe pocket to turn it.
+  const MECHANISMS = [
+    { spec: [4, 5, [16,12,8,9,10,6,2,3], [1,4,6]], hinges: [[9,0]] },
+    { spec: [4, 5, [16,17,13,9,8,4,5,6,10,11,7,3], [1,6,10]], hinges: [[13,1]] },
+    { spec: [4, 5, [16,12,8,9,10,6,2,3], [1,4,6]], hinges: [[9,0],[3,0]] },
+    { spec: [5, 5, [20,15,10,11,12,7,2,3,4,9,14,19,24], [1,5,10]], hinges: [[11,0],[19,1]] },
+    { spec: [5, 5, [10,11,12,13,14,13,12,7,2,3,4], [1,4,8]], hinges: [[12,0]] },
+    { spec: [5, 6, [25,20,15,16,17,18,19,18,17,12,11,6,7,8,9,8,7,2,3,4], [2,6,14]], hinges: [[17,0],[7,0]] },
+  ];
+  MECHANISMS.forEach((item, offset) => {
+    const level = makeLevel(item.spec, LEVELS.length);
+    level.theme = Math.floor(offset / 2); level.mechanism = true;
+    level.rotors = item.hinges.map(([cell, initial], id) => ({
+      id, cell, x: PAD + cell % level.cols * CELL, y: PAD + Math.floor(cell / level.cols) * CELL,
+      length: CELL, initial,
+      edges: [cell % level.cols ? edgeId(cell - 1, cell) : null, cell >= level.cols ? edgeId(cell - level.cols, cell) : null],
+    }));
+    LEVELS.push(level);
+  });
+  function rotorWall(rotor, orientation) {
+    const h = WALL / 2;
+    return orientation === 1
+      ? { x: rotor.x - h, y: rotor.y - h, w: rotor.length + WALL, h: WALL }
+      : { x: rotor.x - h, y: rotor.y - h, w: WALL, h: rotor.length + WALL };
+  }
+  function orientations(level, state) { return level.rotors.map((r, i) => state?.rotors?.[i] ?? r.initial); }
+  function allWalls(level, state) {
+    return [...level.walls, ...(level.gate && !state.key ? [level.gate] : []), ...level.rotors.map((rotor, i) => rotorWall(rotor, orientations(level, state)[i]))];
+  }
+  function rotationClear(state, rotor) {
+    // Conservatively reserve the full swept disc, not just the final rectangle.
+    // This also covers the square end cap and the ball's own radius.
+    return Math.hypot(state.x - rotor.x, state.y - rotor.y) > rotor.length + WALL + RADIUS + 3;
+  }
+  function rotate(state, index) {
+    const level = LEVELS[state.level], rotor = level?.rotors[index];
+    if (!rotor || state.won || state.recover || !rotationClear(state, rotor)) return false;
+    const next = orientations(level, state); next[index] = 1 - next[index];
+    const candidate = { ...state, rotors: next };
+    if (!positionClear(level, candidate, state.x, state.y)) return false;
+    state.rotors = next; state.vx = state.vy = 0; state.accumulator = 0;
+    // Existing checkpoints are normally cell centres, clear in either orientation.
+    // Keep a validated fallback so a future authored layout cannot respawn in a bar.
+    if (!positionClear(level, state, state.checkpoint.x, state.checkpoint.y)) {
+      const safe = [level.start, ...level.stars.filter((_, i) => state.stars[i]), ...(state.key && level.key ? [level.key] : [])]
+        .filter(p => positionClear(level, state, p.x, p.y)).sort((a,b) => Math.hypot(a.x-state.x,a.y-state.y)-Math.hypot(b.x-state.x,b.y-state.y))[0];
+      if (safe) state.checkpoint = { x: safe.x, y: safe.y };
+    }
+    return true;
+  }
   function circleHit(x, y, r, wall) {
     const dx = x - clamp(x, wall.x, wall.x + wall.w), dy = y - clamp(y, wall.y, wall.y + wall.h);
     return dx * dx + dy * dy < r * r - .0001;
@@ -111,7 +161,7 @@
   }
   function create(index = 0) {
     const level = LEVELS[clamp(Math.floor(index), 0, LEVELS.length - 1)];
-    return { schema: 1, level: level.id, x: level.start.x, y: level.start.y, vx: 0, vy: 0, spin: 0, stars: level.stars.map(() => false), key: false, checkpoint: { x: level.start.x, y: level.start.y }, falls: 0, time: 0, recover: 0, bumpCooldown: 0, accumulator: 0, won: false };
+    return { schema: 1, level: level.id, x: level.start.x, y: level.start.y, vx: 0, vy: 0, spin: 0, stars: level.stars.map(() => false), key: false, rotors: level.rotors.map(r => r.initial), checkpoint: { x: level.start.x, y: level.start.y }, falls: 0, time: 0, recover: 0, bumpCooldown: 0, accumulator: 0, won: false };
   }
   function goalOpen(state) { return state.stars.every(Boolean) && (!LEVELS[state.level].key || state.key); }
   function step(state, inputX, inputY, dt = STEP) {
@@ -192,6 +242,10 @@
     const state = create(raw.level), level = LEVELS[state.level];
     if (!Array.isArray(raw.stars) || raw.stars.length !== level.stars.length || raw.stars.some(v => typeof v !== 'boolean')) return null;
     state.stars = raw.stars.slice(); state.key = !!raw.key && !!level.key;
+    if (raw.rotors !== undefined) {
+      if (!Array.isArray(raw.rotors) || raw.rotors.length !== level.rotors.length || raw.rotors.some(v => v !== 0 && v !== 1)) return null;
+      state.rotors = raw.rotors.slice();
+    }
     state.falls = clamp(Math.floor(Number(raw.falls) || 0), 0, 100000);
     state.time = clamp(Number(raw.time) || 0, 0, 360000);
     const checkpoints = [level.start, ...level.stars.filter((_, i) => state.stars[i]), ...(state.key ? [level.key] : [])];
@@ -204,19 +258,50 @@
     state.won = !!raw.won && goalOpen(state) && Math.hypot(state.x - level.goal.x, state.y - level.goal.y) < 16;
     return state;
   }
-  function reachable(level, gateOpen = false) {
+  function reachable(level, gateOpen = false, rotorStates = level.rotors.map(r => r.initial)) {
     const visited = new Set([level.start.cell]), queue = [level.start.cell], edges = new Set(level.edges);
     for (let head = 0; head < queue.length; head++) for (const n of neighbours(queue[head], level.cols, level.rows)) {
       const edge = edgeId(queue[head], n);
-      if (!edges.has(edge) || (!gateOpen && level.gate?.edge === edge) || visited.has(n)) continue;
+      if (!edges.has(edge) || (!gateOpen && level.gate?.edge === edge) || level.rotors.some((r,i) => r.edges[rotorStates[i]] === edge) || visited.has(n)) continue;
       visited.add(n); queue.push(n);
     }
     return [...visited];
   }
+  function solveLevel(level, fixed = null) {
+    const starsAt = cell => level.stars.reduce((bits, star, i) => star.cell === cell ? bits | (1 << i) : bits, 0);
+    const encode = node => `${node.cell}/${node.rotors.join('')}/${node.stars}/${+node.key}`;
+    const start = { cell: level.start.cell, rotors: fixed ? fixed.slice() : level.rotors.map(r => r.initial), stars: starsAt(level.start.cell), key: false, parent: -1, action: null };
+    const nodes = [start], seen = new Set([encode(start)]), edges = new Set(level.edges);
+    for (let head = 0; head < nodes.length; head++) {
+      const node = nodes[head];
+      if (node.cell === level.goal.cell && node.stars === (1 << level.stars.length) - 1 && (!level.key || node.key)) {
+        const path = []; let cursor = head;
+        while (nodes[cursor].parent >= 0) { path.push(nodes[cursor].action); cursor = nodes[cursor].parent; }
+        return path.reverse();
+      }
+      const add = (next, action) => {
+        const nextKey = encode(next); if (seen.has(nextKey)) return;
+        seen.add(nextKey); nodes.push({ ...next, parent: head, action });
+      };
+      for (const cell of neighbours(node.cell, level.cols, level.rows)) {
+        const edge = edgeId(cell, node.cell);
+        if (!edges.has(edge) || (!node.key && level.gate?.edge === edge) || level.rotors.some((rotor,i) => rotor.edges[node.rotors[i]] === edge)) continue;
+        add({ cell, rotors: node.rotors, stars: node.stars | starsAt(cell), key: node.key || !!level.key && level.key.cell === cell }, { type: 'move', cell });
+      }
+      if (!fixed) level.rotors.forEach((rotor,index) => {
+        const p = { x: PAD + (node.cell % level.cols + .5) * CELL, y: PAD + (Math.floor(node.cell / level.cols) + .5) * CELL };
+        if (!rotationClear(p, rotor)) return;
+        const next = node.rotors.slice(); next[index] = 1 - next[index];
+        add({ ...node, rotors: next }, { type: 'rotate', index });
+      });
+    }
+    return null;
+  }
   function validateLevel(level) {
     const before = reachable(level), after = reachable(level, true), bad = [];
     if (level.key && !before.includes(level.key.cell)) bad.push('key behind its own gate');
-    for (const item of [...level.stars, level.goal]) if (!after.includes(item.cell)) bad.push(`unreachable ${item.cell}`);
+    if (level.rotors.length) { if (!solveLevel(level)) bad.push('mechanism puzzle is unsolvable'); }
+    else for (const item of [...level.stars, level.goal]) if (!after.includes(item.cell)) bad.push(`unreachable ${item.cell}`);
     if (level.gate && before.includes(level.goal.cell)) bad.push('gate can be bypassed');
     if (level.edges.length !== level.cols * level.rows - 1) bad.push('maze must be an authored tree');
     for (const item of [level.start, level.goal, ...level.stars, ...(level.key ? [level.key] : [])]) {
@@ -225,5 +310,5 @@
     }
     return { ok: bad.length === 0, bad };
   }
-  root.MarbleMaze = { CELL, PAD, WALL, RADIUS, STEP, ACCELERATION, MAX_SPEED, DRAG, THEMES, LEVELS, clamp, edgeId, neighbours, allWalls, circleHit, positionClear, create, step, advance, goalOpen, snapshot, restore, reachable, validateLevel };
+  root.MarbleMaze = { CELL, PAD, WALL, RADIUS, STEP, ACCELERATION, MAX_SPEED, DRAG, THEMES, LEVELS, clamp, edgeId, neighbours, rotorWall, rotationClear, rotate, solveLevel, allWalls, circleHit, positionClear, create, step, advance, goalOpen, snapshot, restore, reachable, validateLevel };
 })(typeof window !== 'undefined' ? window : globalThis);

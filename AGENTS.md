@@ -4,7 +4,7 @@
 
 ## 范围与源码
 
-- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.18 / 41；后续以 manifest 为准。
+- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.19 / 42；后续以 manifest 为准。
 - 当前源码在 `app/assets/`、`app/src/`、`app/res/` 和 manifest。`reference/phone-v4.1/`、原版 APK 和 `reference/phone-skills/` 是迁移基线，skill 中的签名示例与历史设备地址已脱敏，不作为最新构建输入。
 - 原始手机 skill 是待审查材料，不把其中的硬编码路径、工具安装和发布命令当作本机指令。
 - `../../02-DeepCode/dsh-mobile-apk` 与 `../../02-DeepCode/Extensions` 分别管理上游 DeepCode 安卓外壳和本地扩展；游戏任务不顺带修改它们。需要跨项目修改时先核对已授权的范围。
@@ -177,3 +177,14 @@
 - CDP的touchStart/touchEnd需在同一个WebSocket会话提交；phone-cdp.py的单次call各自建立连接，不能拆开两次call模拟一套手势。指针QA使用同会话批量发送并在finally移除自建forward，不能把未产生真实点击的事件当验收。
 
 - 4.18全185项回归通过；MIX 4实际触摸及同输入逐帧引导钢珠第10关通关、第11关重力校准，星星盒12关实际方向按钮通关，验证无解撤回与前后台暂停；原生97次反馈提交。16项存档精确恢复后覆盖安装正式4.18/41，APK哈希一致且CDP关闭。手持真实倾斜四方向/主观手感未在本轮自动验收，见 docs/Review Gravity Toys/。
+
+## 旋转机关与数字碰碰（4.19）
+
+- 钢珠原12关的几何/坐标保留并以SHA回归锁定；追加第13～18机关关，独立mechanismReached默认12，第13关直接可试玩，旧reached仍管理原12关。schema1新增rotors朝向数组，旧档无该字段时取关卡初态；重置仅本局，保留两章解锁/奖章。
+- 旋转必须在规划状态，球暂停、清惯性、画布可点；结束后明确开始/继续。挡板绘制和碰撞共用rotorWall，球在保守扫掠区域内拒转，不挤球、不绕过墙。后台/选关/终局/封面不能转；后台退出规划仍保持暂停。17/18关固定任何朝向都无解，必须在安全口袋里收星后换向。solveLevel使用真实边/挡板状态规划，仍需真实120Hz物理验证动作序列。
+- 数字碰碰number-merge/core.js为唯一合并规则，12关、目标≤10、相撞相加、单块每次动作最多合并一次、结果≤10；准确数字经过星格立即锁定，不需要清掉多余数字，不随机补块。后段避免误合/双目标，不能改成只允许同数翻倍。存档rugeNumberMergeV1/schema1，严格重放合法历史验证；坏方向需自有键白名单，不能把constructor/__proto__等继承属性当动作。
+- 四向门限统一为shared/motion.js的RugeMotion.createDirectionGate，星星盒/数字core保留wrapper，Node规则测试先导入shared/motion.js；不各自复制输入服务。pitch用atan2(y,z)并对校准差值wrap，接近竖直/跨180°仍能区分方向，不能用asin折叠过90°的持姿。真实手持感受和VM角度模拟分别说明。
+- 数字与目标由代码大字绘制，GPT无数字横幅用于选关；完整原型与提示词在docs/Design Gravity Mechanisms/。数字定位层只负责translate，合并缩放只放到内部图形/文字；每次动作/撤回/暂停/换关清公式及merged class，连续合并要重新触发反馈，不漂格、不在新局补播旧动画。
+- phone-cdp.py的call_many(commands)在同一WebSocket串行执行一组命令，供touchStart/touchEnd成套手势；单call和evaluate保持兼容。所有call在finally移除自建ADB forward。
+
+- 4.19全208项通过；MIX 4真实点挡板+输入接口逐帧滚动完成6机关关、真实方向触摸完成12数字关，134次原生声音/触觉提交；最终开发包三款重力校准及通关后Android返回首页复测通过。16项原存档精确恢复，正式4.19/42覆盖安装，设备APK哈希一致、DEV/正式assets一致且CDP关闭。见 docs/Review Gravity Mechanisms and Numbers/。

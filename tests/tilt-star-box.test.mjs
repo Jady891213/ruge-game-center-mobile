@@ -1,3 +1,4 @@
+import '../app/assets/shared/motion.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import '../app/assets/tilt-star-box/core.js';
@@ -111,3 +112,5 @@ test('走到无解局只短亮撤回入口，不自动重置或泄露下一步�
   }finally{g.dispose();}
  }
 });
+
+test('翻转星星盒拒绝继承属性作为方向，坏历史不恢复',()=>{for(const direction of ['constructor','toString','__proto__','valueOf']){const s=C.createState(0),before=copy(s);assert.equal(C.move(s,direction),null);assert.deepEqual(s,before);const corrupt={schema:1,stars:Array(12).fill(0),session:{...s,history:[direction],moves:1}};assert.equal(C.restore(corrupt).session,null);}});

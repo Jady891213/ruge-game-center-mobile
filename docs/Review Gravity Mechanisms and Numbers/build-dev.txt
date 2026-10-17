@@ -1,0 +1,34 @@
+1/7 Compile Android resources
+2/7 Link manifest/resources/assets
+3/7 Compile Java
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+4/7 Convert Java bytecode to DEX
+5/7 Assemble and align APK
+zipalign
+6/7 Sign with existing certificate
+7/7 Verify APK signature
+Verify ZIP alignment
+Verify package and version
+Record toolchain version
+Record Java version
+package: name='com.dsh.gamecenter' versionCode='42' versionName='4.19-dev' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+Verifies
+Verified using v1 scheme (JAR signing): true
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=DSH Flappy Bird, OU=DSH, O=DSH, L=Shanghai, ST=Shanghai, C=CN
+Signer #1 certificate SHA-256 digest: dba920f0ddca69cd81aaf0055a4408373ed6d33fd6712fbc500f766a46c18537
+Signer #1 certificate SHA-1 digest: 06adf1d56ca4de70031cd3025ef9b4f009cafecb
+Signer #1 certificate MD5 digest: 23ce24f9ebfda5d3dbff51545f12817c
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: 240580e2bec5afc87ff7122094805e425ea1c52576371324246fa13ac0a629d8
+Signer #1 public key SHA-1 digest: 8b1c22b8b0f637ce660146d7a626a066e074d74a
+Signer #1 public key MD5 digest: 78f57f8e65f2962d2d3ae835fc75648e
+APK: /Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-游戏中心/Game-Center/out/game-center-v4.19-dev.apk
+SHA-256: d6c0f5a08853ec38ba3e1c0f9909f8c73ff5588bf48a5cc886ad8d38e068b995

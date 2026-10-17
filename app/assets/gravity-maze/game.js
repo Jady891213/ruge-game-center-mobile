@@ -7,19 +7,23 @@
   function read(key) { if (COVER) return null; try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } }
   function progressFrom(raw, legacy) {
     if (raw?.schema === 1) {
-      const reached = C.clamp(Math.floor(Number(raw.reached) || 0), 0, C.LEVELS.length - 1);
+      const reached = C.clamp(Math.floor(Number(raw.reached) || 0), 0, 11);
+      const mechanismReached = C.clamp(Math.floor(Number(raw.mechanismReached) || 12), 12, C.LEVELS.length - 1);
       const completed = Array.isArray(raw.completed) ? [...new Set(raw.completed.filter(i => Number.isInteger(i) && i >= 0 && i < C.LEVELS.length))] : [];
       const draft = C.restore(raw.draft);
-      return { schema: 1, reached, completed, current: C.clamp(Math.floor(Number(raw.current) || 0), 0, reached), draft: draft && draft.level <= reached ? draft : null, legacyMigrated: !!raw.legacyMigrated };
+      const allowed = i => i >= 0 && (i < 12 ? i <= reached : i <= mechanismReached && i < C.LEVELS.length);
+      const current = Number.isInteger(raw.current) && allowed(raw.current) ? raw.current : 0;
+      return { schema: 1, reached, mechanismReached, completed, current, draft: draft && allowed(draft.level) ? draft : null, legacyMigrated: !!raw.legacyMigrated };
     }
-    const current = C.clamp(Math.floor(Number(legacy?.highest) || 0), 0, C.LEVELS.length - 1);
+    const current = C.clamp(Math.floor(Number(legacy?.highest) || 0), 0, 9);
     const completed = Object.keys(legacy?.stars || {}).map(Number).filter(i => Number.isInteger(i) && i >= 0 && i < 10 && Number(legacy.stars[i]) > 0);
     const reached = Math.max(current, Math.min(C.LEVELS.length - 1, Math.max(-1, ...completed) + 1));
-    return { schema: 1, reached, completed, current, draft: null, legacyMigrated: !!legacy };
+    return { schema: 1, reached: Math.min(11, reached), mechanismReached: 12, completed, current, draft: null, legacyMigrated: !!legacy };
   }
   let progress = progressFrom(read(KEY), read('rollingGardenV2'));
   let state = progress.draft && progress.draft.level === progress.current ? progress.draft : C.create(progress.current);
   let result = state.won ? 'win' : 'ready', paused = true, last = 0, saveClock = 0, staleTime = 0, toastTimer = 0, pointerId = null, joystick = { x: 0, y: 0 }, effects = [];
+  let foreground = true, planning = false, rotorButtons = [];
   let initialMode = 'tilt';
   if (!COVER) try { initialMode = localStorage.getItem(INPUT_KEY) || localStorage.getItem('rollingGardenInputV2') || 'tilt'; } catch (_) {}
   const input = window.RugeMotion.create();
@@ -63,6 +67,59 @@
     if (!COVER) try { localStorage.setItem(INPUT_KEY, mode); } catch (_) {}
     syncMode(); render();
   }
+  function canPlan() { return !COVER && foreground && !document.hidden && !state.won && !state.recover && level().rotors.length > 0 && $('#levels').hidden && $('#resetPanel').hidden && (result === 'ready' || result === 'run'); }
+  function syncRotors() {
+    const holder = $('#rotorButtons'); holder.innerHTML = ''; rotorButtons = [];
+    level().rotors.forEach((rotor, index) => {
+      const button = document.createElement('button'); button.className = 'rotor-button';
+      button.dataset.rotor = index; button.setAttribute('aria-label', `旋转第${index + 1}个挡板`);
+      button.innerHTML = '<svg viewBox="0 0 40 40"><path d="M10 18a11 11 0 1 1 4 11M10 10v8h8"/><circle cx="21" cy="20" r="4"/></svg>';
+      button.addEventListener('click', () => rotateRotor(index)); holder.appendChild(button); rotorButtons.push(button);
+    }); updateRotors();
+  }
+  function updateRotors() {
+    rotorButtons.forEach((button, i) => {
+      const rotor = level().rotors[i]; if (!rotor) { button.hidden = true; return; } button.style.left = `${ox + rotor.x * scale}px`; button.style.top = `${oy + rotor.y * scale}px`;
+      button.hidden = !planning; button.disabled = !planning || !canPlan();
+      button.classList.toggle('blocked', !C.rotationClear(state, rotor));
+      button.setAttribute('aria-pressed', String(state.rotors[i] === 1));
+    });
+    $('#mechanism').hidden = !level().rotors.length; $('#pausePlan').hidden = !level().rotors.length;
+    $('#mechanism').disabled = !planning && !canPlan();
+    $('#mechanism').setAttribute('aria-pressed', String(planning));
+    $('#controls').classList.toggle('planning', planning); $('#planActions').hidden = !planning;
+    $('#finishPlan').textContent = result === 'ready' ? '开始' : '继续';
+  }
+  function enterPlan() {
+    if (!canPlan()) return false;
+    planning = true; paused = true; release(); state.vx = state.vy = 0; state.accumulator = 0;
+    hidePanels(); updateRotors(); render(); return true;
+  }
+  function leavePlan(run = false) {
+    if (!planning) return false;
+    planning = false; updateRotors();
+    if (result === 'ready') $('#ready').hidden = false;
+    else if (result === 'run') { $('#pauseTitle').textContent = '休息一下'; $('#pausePanel').hidden = false; }
+    render(); if (run) return result === 'ready' ? start() : resume(); return true;
+  }
+  function rotateRotor(index) {
+    if (!planning || !canPlan()) return false;
+    if (!C.rotate(state, index)) {
+      window.RugeFX?.emit('error'); toast('先把球移开');
+      const button = rotorButtons[index]; if (button) { button.classList.remove('shake'); void button.offsetWidth; button.classList.add('shake'); }
+      return false;
+    }
+    window.RugeFX?.emit('select'); save(); updateRotors(); render(); return true;
+  }
+  function askReset() {
+    if (COVER || !foreground || document.hidden) return;
+    if (planning) leavePlan(); pauseGame(); release(); $('#resetPanel').hidden = false; updateRotors();
+  }
+  function cancelReset() { $('#resetPanel').hidden = true; updateRotors(); }
+  function resetLevel() {
+    if (COVER || !foreground || $('#resetPanel').hidden) return;
+    loadLevel(state.level); save();
+  }
   function syncHud() {
     $('#lvnum').textContent = `${state.level + 1} / ${C.LEVELS.length}`;
     $('#fruit').textContent = `${state.stars.filter(Boolean).length} / ${state.stars.length}`;
@@ -70,15 +127,15 @@
     $('#keyBadge').classList.toggle('collected', state.key);
     $('#keyBadge').style.opacity = state.key ? '1' : '.38';
   }
-  function hidePanels() { for (const id of ['ready', 'pausePanel', 'win', 'levels']) $('#' + id).hidden = true; }
+  function hidePanels() { for (const id of ['ready', 'pausePanel', 'win', 'levels', 'resetPanel']) $('#' + id).hidden = true; }
   function loadLevel(index, keep = false) {
-    release(); state = keep ? state : C.create(index); result = state.won ? 'win' : 'ready'; paused = true; effects = []; staleTime = 0;
+    release(); planning = false; state = keep ? state : C.create(index); result = state.won ? 'win' : 'ready'; paused = true; effects = []; staleTime = 0;
     hidePanels(); $('#readyTitle').textContent = `第 ${state.level + 1} 关`;
     $('#start').textContent = keep && (state.time > 0 || state.stars.some(Boolean)) ? '继续' : '开始';
     if (state.won) showWin(false); else $('#ready').hidden = false;
     const theme = C.THEMES[level().theme];
     document.body.style.background = theme.sky; $('#stage').style.background = theme.sky;
-    syncHud(); syncMode(); layout(); render();
+    syncHud(); syncMode(); layout(); syncRotors(); render();
   }
   function sensorReady() {
     if (input.mode() === 'touch') return true;
@@ -87,9 +144,9 @@
     toast('请选触摸'); return false;
   }
   function start() {
-    if (COVER || state.won || result !== 'ready' || !sensorReady()) return false;
+    if (COVER || !foreground || document.hidden || planning || !$('#resetPanel').hidden || state.won || result !== 'ready' || !sensorReady()) return false;
     hidePanels(); result = 'run'; paused = false; state.accumulator = 0; last = performance.now();
-    fx('tap'); save(); return true;
+    updateRotors(); fx('tap'); save(); return true;
   }
   function pauseGame(reason = 'manual') {
     if (COVER || result !== 'run' || paused) return;
@@ -98,31 +155,32 @@
     $('#pausePanel').hidden = false; save(); render();
   }
   function resume() {
-    if (COVER || result !== 'run' || !paused || !sensorReady()) return false;
+    if (COVER || !foreground || document.hidden || planning || !$('#resetPanel').hidden || result !== 'run' || !paused || !sensorReady()) return false;
     hidePanels(); paused = false; release(); state.accumulator = 0; last = performance.now(); staleTime = 0; return true;
   }
   function showWin(celebrate = true) {
     if (celebrate) fx('win');
     paused = true; result = 'win'; release();
     if (!progress.completed.includes(state.level)) progress.completed.push(state.level);
-    progress.reached = Math.max(progress.reached, Math.min(C.LEVELS.length - 1, state.level + 1));
+    if (state.level < 12) progress.reached = Math.max(progress.reached, Math.min(11, state.level + 1));
+    else progress.mechanismReached = Math.max(progress.mechanismReached, Math.min(C.LEVELS.length - 1, state.level + 1));
     $('#stars').textContent = '★'.repeat(level().stars.length);
     $('#next').textContent = state.level === C.LEVELS.length - 1 ? '再玩一轮' : '下一关';
-    $('#win').hidden = false; if (celebrate) save();
+    $('#win').hidden = false; updateRotors(); if (celebrate) save();
   }
   function showLevels() {
     if (COVER) return;
-    pauseGame(); const grid = $('#levelGrid'); grid.innerHTML = '';
+    if (planning) leavePlan(); pauseGame(); const grid = $('#levelGrid'), mechanisms = $('#mechanismGrid'); grid.innerHTML = ''; mechanisms.innerHTML = '';
     C.LEVELS.forEach((item, i) => {
-      const b = document.createElement('button'); b.textContent = i + 1; b.disabled = i > progress.reached;
+      const b = document.createElement('button'); b.textContent = i + 1; b.dataset.level = i; b.disabled = i < 12 ? i > progress.reached : i > progress.mechanismReached;
       b.setAttribute('aria-label', `第 ${i + 1} 关${b.disabled ? '，尚未解锁' : ''}`);
       b.className = `${i === state.level ? 'current ' : ''}${progress.completed.includes(i) ? 'done' : ''}`;
       b.addEventListener('click', () => {
-        if (i > progress.reached) return;
-        if (i === state.level) { $('#levels').hidden = true; return; }
+        if (i < 12 ? i > progress.reached : i > progress.mechanismReached) return;
+        if (i === state.level) { $('#levels').hidden = true; updateRotors(); return; }
         loadLevel(i); save();
-      }); grid.appendChild(b);
-    }); $('#levels').hidden = false;
+      }); (i < 12 ? grid : mechanisms).appendChild(b);
+    }); $('#levels').hidden = false; updateRotors();
   }
   function roundRect(x, y, w, h, r) {
     ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
@@ -150,7 +208,7 @@
   function layout() {
     const rect = $('#stage').getBoundingClientRect(); width = Math.max(1, rect.width); height = Math.max(1, rect.height); dpr = Math.min(3, devicePixelRatio || 1);
     cv.width = Math.round(width * dpr); cv.height = Math.round(height * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    scale = Math.min((width - 12) / level().w, (height - 10) / level().h); ox = (width - level().w * scale) / 2; oy = (height - level().h * scale) / 2;
+    scale = Math.min((width - 12) / level().w, (height - 10) / level().h); ox = (width - level().w * scale) / 2; oy = (height - level().h * scale) / 2; updateRotors();
   }
   function render() {
     const lv = level(), theme = C.THEMES[lv.theme];
@@ -175,6 +233,12 @@
       ctx.save(); ctx.translate(g.x + g.w / 2, g.y + g.h / 2); circle(0, 0, 10, '#fff1bb', '#d8a244', 2);
       roundRect(-5, -1, 10, 9, 2); ctx.fillStyle = '#ce9440'; ctx.fill(); ctx.strokeStyle = '#ce9440'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(0, -1, 3.5, Math.PI, 0); ctx.stroke(); ctx.restore();
     }
+    lv.rotors.forEach((rotor, i) => {
+      const wall = C.rotorWall(rotor, state.rotors[i]);
+      roundRect(wall.x, wall.y + 2, wall.w, wall.h, 4); ctx.fillStyle = '#cc8d39'; ctx.fill();
+      roundRect(wall.x, wall.y, wall.w, wall.h, 4); ctx.fillStyle = state.rotors[i] ? '#ffc95f' : '#f2aa66'; ctx.fill();
+      circle(rotor.x, rotor.y, 7, '#fff3c5', '#c58e3e', 2); circle(rotor.x, rotor.y, 2.4, '#cc9346');
+    });
     for (const bumper of lv.bumpers) { circle(bumper.x, bumper.y + 2, bumper.r + 2, '#c07792'); circle(bumper.x, bumper.y, bumper.r, '#f4a8bb', '#df86a2', 2); circle(bumper.x - 3, bumper.y - 4, 4, '#ffd9df'); }
     const open = C.goalOpen(state), g = lv.goal;
     if (open) { ctx.globalAlpha = .11; circle(g.x, g.y, g.r + 7 + Math.sin(state.time * 3) * 2, theme.border); ctx.globalAlpha = 1; }
@@ -239,25 +303,28 @@
     if (input.mode() !== 'tilt') return;
     if (input.calibrate()) { state.vx = state.vy = 0; toast('校准好了'); } else toast('请选触摸');
   });
-  $('#start').addEventListener('click', start); $('#pause').addEventListener('click', () => pauseGame()); $('#resume').addEventListener('click', resume);
+  $('#start').addEventListener('click', start); $('#pause').addEventListener('click', () => { if (planning) leavePlan(); else pauseGame(); }); $('#resume').addEventListener('click', resume);
   $('#pauseTouch').addEventListener('click', async () => { await setMode('touch'); resume(); });
-  for (const id of ['retry', 'winRetry']) $('#' + id).addEventListener('click', () => { loadLevel(state.level); save(); });
+  $('#retry').addEventListener('click', askReset); $('#winRetry').addEventListener('click', () => { if (!COVER) { loadLevel(state.level); save(); } });
+  $('#reset').addEventListener('click', askReset); $('#resetYes').addEventListener('click', resetLevel); $('#resetNo').addEventListener('click', cancelReset);
+  $('#mechanism').addEventListener('click', () => planning ? leavePlan() : enterPlan()); $('#finishPlan').addEventListener('click', () => leavePlan(true));
+  $('#pausePlan').addEventListener('click', enterPlan);
   $('#next').addEventListener('click', () => { if (!state.won) return; loadLevel(state.level === C.LEVELS.length - 1 ? 0 : state.level + 1); save(); });
-  $('#levelBtn').addEventListener('click', showLevels); $('#pauseLevels').addEventListener('click', showLevels); $('#closeLevels').addEventListener('click', () => { $('#levels').hidden = true; });
+  $('#levelBtn').addEventListener('click', showLevels); $('#pauseLevels').addEventListener('click', showLevels); $('#closeLevels').addEventListener('click', () => { $('#levels').hidden = true; updateRotors(); });
   $('#home').addEventListener('click', () => { save(); release(); input.destroy(); if (window.RugeNav?.home) window.RugeNav.home(); else location.href = '../index.html'; });
-  addEventListener('ruge:pause', () => { pauseGame('background'); release(); });
-  addEventListener('ruge:resume', () => { last = performance.now(); });
-  addEventListener('ruge:orientation', () => { pauseGame('orientation'); release(); layout(); render(); });
+  addEventListener('ruge:pause', () => { foreground = false; if (planning) leavePlan(); pauseGame('background'); release(); updateRotors(); });
+  addEventListener('ruge:resume', () => { foreground = true; last = performance.now(); updateRotors(); });
+  addEventListener('ruge:orientation', () => { if (planning) leavePlan(); pauseGame('orientation'); release(); layout(); render(); });
   addEventListener('resize', () => { layout(); render(); }); addEventListener('blur', release);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame('background'); last = performance.now(); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { foreground = false; if (planning) leavePlan(); pauseGame('background'); release(); } else foreground = true; updateRotors(); last = performance.now(); });
   addEventListener('pagehide', () => { save(); input.destroy(); });
   window.__game = {
-    ...C, input, loadLevel, start, pause: pauseGame, resume, setMode, showLevels, save,
-    state: () => ({ ...clone(state), li: state.level, result, paused, mode: input.mode(), progress: clone(progress) }),
+    ...C, input, loadLevel, start, pause: pauseGame, resume, setMode, showLevels, save, enterPlan, leavePlan, rotateRotor, askReset, resetLevel,
+    state: () => ({ ...clone(state), li: state.level, result, paused, planning, foreground, mode: input.mode(), progress: clone(progress) }),
     world: () => ({ level: level(), ball: state }), render, progressFrom,
   };
   if (COVER) {
-    document.body.classList.add('cover'); state = C.create(5); state.x = 112; state.y = 241; state.stars[0] = true; state.key = true;
+    document.body.classList.add('cover'); state = C.create(12);
     result = 'run'; paused = true; hidePanels(); syncHud(); layout(); render();
   } else { loadLevel(state.level, true); requestAnimationFrame(frame); }
 })();

@@ -1,0 +1,8 @@
+{
+  "initialDevApkSha256": "ec0918530a34983cf6e439b71f10479c8c0062060da0544be49b1e5f94ef1268",
+  "initialMotionSha256": "f40d56718d9683628fd56c0763339cf7f518809abe17d68cb8e338b9b07e0329",
+  "finalDevApkSha256": "d6c0f5a08853ec38ba3e1c0f9909f8c73ff5588bf48a5cc886ad8d38e068b995",
+  "finalMotionSha256": "fe29bdf241b2c4de772a8e52e1b4805460eb6af2913c0a5f540f94534b4595a8",
+  "finalSensorSmoke": "final-input-smoke.json",
+  "finalTests": 208
+}

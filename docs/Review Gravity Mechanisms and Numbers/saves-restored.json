@@ -1,0 +1,23 @@
+{
+  "count": 16,
+  "keysExact": true,
+  "valuesExact": true,
+  "perKeySha256": {
+    "flappyDashBest": "6c658ee83fb7e812482494f3e416a876f63f418a0b8a1f5e76d47ee4177035cb",
+    "rugeAwake": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+    "rugeTheme": "dc6f17bbec824fff8f86587966b2047db6ab736785840151f13d1dab124e2a54",
+    "frogPondHi": "1f09802c4beac758321ae8a9f94d752b0976c7d54baa6e511bba8a7374107bef",
+    "rugeForestJuiceV1": "75343af9a026e2e6abd30fd65665dd52e3c8cbf1866afb229074b40694672392",
+    "rollingGardenInputV2": "2b63bd1a162bbc8d18cef589e3aa5b4f4857781b8e0598b168a8bf367fa0de40",
+    "rugeCodebreakerV1": "034903c105a46ea878c1876cb962be0c318d07ef587fda5605f7d81e3e37956c",
+    "hzPuzzleProgress1": "90c358b11d26c9975d835b074d90adb0429774507bf478e9b75b23447e6c4128",
+    "dinoDashHi": "755917ecbc61091ffa6b605d7f82bdaa4e4cbdc309124807b0fb63228d0696df",
+    "gardenFlowV2": "f32730807e78d577b6bcab5afa1c7a4f1fec9102cd87524e662b3642cf8b9fd5",
+    "rugeStat": "75d83e6a7a6bca17de880e80612abe1afdf7293f030ed00107d4e3ba157b9c74",
+    "rollingGardenV2": "eb0e3991b8c8f66878d98febd11ad81076d92b7bf8a8808cdaf78f911bdda5bf",
+    "rugeHanziStrokesV1": "05105810c97e37e41aadd7c1c97cbf30afea148b5b017a978da8ae13f9741ae8",
+    "rugeBearSnackShopV1": "b085947475ee0d13c6077c3614cfc821981bbb8ed82723c0f791fa2ce3b396e5",
+    "rugePaintMixingV1": "e0527d1019c9b6ea3d819c7b60ebed2527a37b32a242acfefcd69ba81ef61650",
+    "rugeCenter": "ad86ea5ff21bb4b6fc0b1b4eb2bf3ed9b78a01b7ecfdd9af3b8b6e13fbc4c5ee"
+  }
+}

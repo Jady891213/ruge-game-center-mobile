@@ -1,14 +1,14 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十一个游戏，无需联网。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、数字碰碰、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十二个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.18 / versionCode 41**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.19 / versionCode 42**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
 | 目录 | 用途 |
 |---|---|
-| `app/assets/` | 当前菜单、十一个游戏和离线素材源码 |
+| `app/assets/` | 当前菜单、十二个游戏和离线素材源码 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -20,6 +20,16 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 旋转机关与数字碰碰（4.19）
+
+钢珠迷宫保留原12关，新增第13～18机关关，第一次进入就能选第13关。点击大挡板图标进入调整状态，球暂时停住；点转轴旋转90度，再继续滚球。后两关需要先转向收星，再换向去终点；球在扫掠区域时禁止转动，不把球挤进墙。支持本关重置和机关朝向保存，旧关卡/存档兼容。
+
+数字碰碰新增12个固定关卡：倾斜四向让数字积木滑动，相撞即相加（每块每步最多合并一次，结果最大10）。恰好等于星格数字就停住锁定，完成全部星格即可通关，多余积木可留下。前段学习小数相加，后段需要选方向、避开错合，并完成两个小目标；没有随机补数字、倒计时或无限翻倍。支持撤回、重置、选关、自动校准与后台明确继续。
+
+三款重力游戏共用倾斜适配，两个格子游戏共用四向门限，音效震动共用；数字使用代码大字，选关插画由GPT生成。原型和提示词见 [机关与数字设计](docs/Design%20Gravity%20Mechanisms/art-prompts.json)。
+
+[本次真机验收](docs/Review%20Gravity%20Mechanisms%20and%20Numbers/review.md)
 
 ## 重力玩具（4.18）
 

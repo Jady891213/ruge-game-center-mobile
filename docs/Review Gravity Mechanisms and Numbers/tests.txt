@@ -1,0 +1,1054 @@
+
+> ruge-game-center@4.19.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: flappy-bird: cover, preview, pause and automatic resume have no gameplay feedback
+ok 1 - flappy-bird: cover, preview, pause and automatic resume have no gameplay feedback
+  ---
+  duration_ms: 6.775625
+  ...
+# Subtest: flappy-bird: mute uses shared sound preference while retaining haptic events
+ok 2 - flappy-bird: mute uses shared sound preference while retaining haptic events
+  ---
+  duration_ms: 2.749917
+  ...
+# Subtest: flappy-bird: collision reports once and a record rewards once at results
+ok 3 - flappy-bird: collision reports once and a record rewards once at results
+  ---
+  duration_ms: 3.601125
+  ...
+# Subtest: flappy-bird: generated cover has no feedback or saved game
+ok 4 - flappy-bird: generated cover has no feedback or saved game
+  ---
+  duration_ms: 1.411083
+  ...
+# Subtest: flappy-bird: leaving during result delay cancels the stale record reward
+ok 5 - flappy-bird: leaving during result delay cancels the stale record reward
+  ---
+  duration_ms: 3.36075
+  ...
+# Subtest: dino-runner: cover, preview, pause and automatic resume have no gameplay feedback
+ok 6 - dino-runner: cover, preview, pause and automatic resume have no gameplay feedback
+  ---
+  duration_ms: 6.278417
+  ...
+# Subtest: dino-runner: mute uses shared sound preference while retaining haptic events
+ok 7 - dino-runner: mute uses shared sound preference while retaining haptic events
+  ---
+  duration_ms: 1.19475
+  ...
+# Subtest: dino-runner: collision reports once and a record rewards once at results
+ok 8 - dino-runner: collision reports once and a record rewards once at results
+  ---
+  duration_ms: 2.050625
+  ...
+# Subtest: dino-runner: generated cover has no feedback or saved game
+ok 9 - dino-runner: generated cover has no feedback or saved game
+  ---
+  duration_ms: 1.077375
+  ...
+# Subtest: dino-runner: leaving during result delay cancels the stale record reward
+ok 10 - dino-runner: leaving during result delay cancels the stale record reward
+  ---
+  duration_ms: 1.171333
+  ...
+# Subtest: frog-pond: cover, preview, pause and automatic resume have no gameplay feedback
+ok 11 - frog-pond: cover, preview, pause and automatic resume have no gameplay feedback
+  ---
+  duration_ms: 5.70125
+  ...
+# Subtest: frog-pond: mute uses shared sound preference while retaining haptic events
+ok 12 - frog-pond: mute uses shared sound preference while retaining haptic events
+  ---
+  duration_ms: 1.055459
+  ...
+# Subtest: frog-pond: collision reports once and a record rewards once at results
+ok 13 - frog-pond: collision reports once and a record rewards once at results
+  ---
+  duration_ms: 4.31875
+  ...
+# Subtest: frog-pond: generated cover has no feedback or saved game
+ok 14 - frog-pond: generated cover has no feedback or saved game
+  ---
+  duration_ms: 1.472041
+  ...
+# Subtest: frog-pond: leaving during result delay cancels the stale record reward
+ok 15 - frog-pond: leaving during result delay cancels the stale record reward
+  ---
+  duration_ms: 3.369542
+  ...
+# Subtest: flappy-bird: each pipe scores once and an eight-pipe goal replaces the small reward
+ok 16 - flappy-bird: each pipe scores once and an eight-pipe goal replaces the small reward
+  ---
+  duration_ms: 1.217375
+  ...
+# Subtest: dino-runner: ignored airborne taps are silent, landing and buffered jumps follow actual motion
+ok 17 - dino-runner: ignored airborne taps are silent, landing and buffered jumps follow actual motion
+  ---
+  duration_ms: 3.412959
+  ...
+# Subtest: dino-runner: distance band and milestone each reward once, not on every frame
+ok 18 - dino-runner: distance band and milestone each reward once, not on every frame
+  ---
+  duration_ms: 1.01225
+  ...
+# Subtest: frog-pond: two jumps sound, a third is silent, target-pad goals reward once
+ok 19 - frog-pond: two jumps sound, a third is silent, target-pad goals reward once
+  ---
+  duration_ms: 1.03225
+  ...
+# Subtest: dino-runner: a collected gem rewards once across successive physics frames
+ok 20 - dino-runner: a collected gem rewards once across successive physics frames
+  ---
+  duration_ms: 0.863709
+  ...
+# Subtest: frog-pond: a collected gem rewards once across successive physics frames
+ok 21 - frog-pond: a collected gem rewards once across successive physics frames
+  ---
+  duration_ms: 0.973333
+  ...
+# Subtest: flappy-bird: preview reuses live drawings and restores the active run
+ok 22 - flappy-bird: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 8.205125
+  ...
+# Subtest: flappy-bird: real page renders and DOM IDs are unique
+ok 23 - flappy-bird: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 2.971583
+  ...
+# Subtest: flappy-bird: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 24 - flappy-bird: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 2.29525
+  ...
+# Subtest: dino-runner: preview reuses live drawings and restores the active run
+ok 25 - dino-runner: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 4.943833
+  ...
+# Subtest: dino-runner: real page renders and DOM IDs are unique
+ok 26 - dino-runner: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 2.926333
+  ...
+# Subtest: dino-runner: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 27 - dino-runner: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 2.982417
+  ...
+# Subtest: frog-pond: preview reuses live drawings and restores the active run
+ok 28 - frog-pond: preview reuses live drawings and restores the active run
+  ---
+  duration_ms: 8.402583
+  ...
+# Subtest: frog-pond: real page renders and DOM IDs are unique
+ok 29 - frog-pond: real page renders and DOM IDs are unique
+  ---
+  duration_ms: 3.295583
+  ...
+# Subtest: frog-pond: pause blocks physics/input, foreground and rotation preserve a paused run
+ok 30 - frog-pond: pause blocks physics/input, foreground and rotation preserve a paused run
+  ---
+  duration_ms: 1.736708
+  ...
+# Subtest: flappy-bird: pipe cap collision matches its outer edge, three practice rescues do not write a ranked record
+ok 31 - flappy-bird: pipe cap collision matches its outer edge, three practice rescues do not write a ranked record
+  ---
+  duration_ms: 6.401
+  ...
+# Subtest: dino-runner: generated obstacles fit jump height and high flyers leave a ground route
+ok 32 - dino-runner: generated obstacles fit jump height and high flyers leave a ground route
+  ---
+  duration_ms: 8.59425
+  ...
+# Subtest: frog-pond: generated obstacles fit jump height and high flyers leave a ground route
+ok 33 - frog-pond: generated obstacles fit jump height and high flyers leave a ground route
+  ---
+  duration_ms: 6.892625
+  ...
+# Subtest: frog-pond: landing on target pads builds a capped combo and missing resets it
+ok 34 - frog-pond: landing on target pads builds a capped combo and missing resets it
+  ---
+  duration_ms: 2.875458
+  ...
+# Subtest: frog-pond: releasing a tap keeps its full arc, double jump works and a third jump is ignored
+ok 35 - frog-pond: releasing a tap keeps its full arc, double jump works and a third jump is ignored
+  ---
+  duration_ms: 2.993208
+  ...
+# Subtest: 小熊点心店十二关所有订单均可由真实规则完成，最后一单才完成本关
+ok 36 - 小熊点心店十二关所有订单均可由真实规则完成，最后一单才完成本关
+  ---
+  duration_ms: 1.83075
+  ...
+# Subtest: 前八关只比数量组合，不要求摆放顺序；后四关按图示顺序
+ok 37 - 前八关只比数量组合，不要求摆放顺序；后四关按图示顺序
+  ---
+  duration_ms: 0.085084
+  ...
+# Subtest: 数量上限、不接受不存在的点心、空盘与错误提交、可撤回重做
+ok 38 - 数量上限、不接受不存在的点心、空盘与错误提交、可撤回重做
+  ---
+  duration_ms: 0.066
+  ...
+# Subtest: 存档恢复草稿、顺序和已送订单，不接受伪造通关或损坏订单
+ok 39 - 存档恢复草稿、顺序和已送订单，不接受伪造通关或损坏订单
+  ---
+  duration_ms: 0.182459
+  ...
+# Subtest: 真实页面加入/撤回/重置确认/暂停继续/多订单/下一关和存档恢复
+ok 40 - 真实页面加入/撤回/重置确认/暂停继续/多订单/下一关和存档恢复
+  ---
+  duration_ms: 9.407125
+  ...
+# Subtest: 封面模式不读取、不写入玩家存档，页面使用生成美术素材
+ok 41 - 封面模式不读取、不写入玩家存档，页面使用生成美术素材
+  ---
+  duration_ms: 2.379
+  ...
+# Subtest: 真实页面十二关二十三份订单完整交付并逐关解锁，完成后回选关
+ok 42 - 真实页面十二关二十三份订单完整交付并逐关解锁，完成后回选关
+  ---
+  duration_ms: 9.230959
+  ...
+# Subtest: 选关后继续保留当前盘子和本关已送订单，同关入口也继续草稿
+ok 43 - 选关后继续保留当前盘子和本关已送订单，同关入口也继续草稿
+  ---
+  duration_ms: 3.462583
+  ...
+# Subtest: codebreaker: works as a classic browser script and as a globalThis script
+ok 44 - codebreaker: works as a classic browser script and as a globalThis script
+  ---
+  duration_ms: 1.763625
+  ...
+# Subtest: codebreaker: exact positions, misplaced digits and absent digits are disjoint
+ok 45 - codebreaker: exact positions, misplaced digits and absent digits are disjoint
+  ---
+  duration_ms: 0.482458
+  ...
+# Subtest: codebreaker: all legal two-digit pairs preserve totals and score symmetry
+ok 46 - codebreaker: all legal two-digit pairs preserve totals and score symmetry
+  ---
+  duration_ms: 75.479334
+  ...
+# Subtest: codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+ok 47 - codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+  ---
+  duration_ms: 0.419084
+  ...
+# Subtest: codebreaker: candidates include every legal permutation exactly once
+ok 48 - codebreaker: candidates include every legal permutation exactly once
+  ---
+  duration_ms: 16.667833
+  ...
+# Subtest: codebreaker: all eighteen fixed levels are progressive, legal and solvable
+ok 49 - codebreaker: all eighteen fixed levels are progressive, legal and solvable
+  ---
+  duration_ms: 14.277625
+  ...
+# Subtest: codebreaker: candidate filtering keeps the real answer and matches the complete history
+ok 50 - codebreaker: candidate filtering keeps the real answer and matches the complete history
+  ---
+  duration_ms: 2.274208
+  ...
+# Subtest: codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+ok 51 - codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+  ---
+  duration_ms: 0.495917
+  ...
+# Subtest: codebreaker: random challenge samples all legal candidates without endpoint bias
+ok 52 - codebreaker: random challenge samples all legal candidates without endpoint bias
+  ---
+  duration_ms: 937.903917
+  ...
+# Subtest: codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+ok 53 - codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+  ---
+  duration_ms: 0.557416
+  ...
+# Subtest: codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+ok 54 - codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+  ---
+  duration_ms: 3.216958
+  ...
+# Subtest: codebreaker UI: incomplete and duplicate inputs do not consume attempts
+ok 55 - codebreaker UI: incomplete and duplicate inputs do not consume attempts
+  ---
+  duration_ms: 7.688042
+  ...
+# Subtest: codebreaker UI: backspace stays available and removes one slot without changing submitted history
+ok 56 - codebreaker UI: backspace stays available and removes one slot without changing submitted history
+  ---
+  duration_ms: 7.174917
+  ...
+# Subtest: codebreaker UI: old campaign saves retain player guesses including a former starter guess
+ok 57 - codebreaker UI: old campaign saves retain player guesses including a former starter guess
+  ---
+  duration_ms: 3.738834
+  ...
+# Subtest: codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars
+ok 58 - codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars
+  ---
+  duration_ms: 9.024375
+  ...
+# Subtest: codebreaker UI: restart keeps the current free password and challenge settings
+ok 59 - codebreaker UI: restart keeps the current free password and challenge settings
+  ---
+  duration_ms: 4.135333
+  ...
+# Subtest: codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+ok 60 - codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+  ---
+  duration_ms: 19.354875
+  ...
+# Subtest: codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+ok 61 - codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+  ---
+  duration_ms: 17.094417
+  ...
+# Subtest: codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks
+ok 62 - codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks
+  ---
+  duration_ms: 30.302292
+  ...
+# Subtest: codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+ok 63 - codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+  ---
+  duration_ms: 6.25075
+  ...
+# Subtest: codebreaker UI: one and two stars follow actual attempts beyond the published target
+ok 64 - codebreaker UI: one and two stars follow actual attempts beyond the published target
+  ---
+  duration_ms: 30.460917
+  ...
+# Subtest: codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+ok 65 - codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+  ---
+  duration_ms: 106.391542
+  ...
+# Subtest: codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+ok 66 - codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+  ---
+  duration_ms: 90.206083
+  ...
+# Subtest: codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+ok 67 - codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+  ---
+  duration_ms: 2.100208
+  ...
+# Subtest: codebreaker UI: saved active guesses and draft restore through the actual continue button
+ok 68 - codebreaker UI: saved active guesses and draft restore through the actual continue button
+  ---
+  duration_ms: 22.313333
+  ...
+# Subtest: codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+ok 69 - codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+  ---
+  duration_ms: 21.066167
+  ...
+# Subtest: codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+ok 70 - codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+  ---
+  duration_ms: 4.7465
+  ...
+# Subtest: 森林果汁屋十二关真实BFS可解，容量/颜色逐步增加，关卡不共享数组
+ok 71 - 森林果汁屋十二关真实BFS可解，容量/颜色逐步增加，关卡不共享数组
+  ---
+  duration_ms: 56.123667
+  ...
+# Subtest: 只倒顶部连续同色且尽量倒满：空瓶/同色合法，异色/满瓶/自身非法
+ok 72 - 只倒顶部连续同色且尽量倒满：空瓶/同色合法，异色/满瓶/自身非法
+  ---
+  duration_ms: 0.195458
+  ...
+# Subtest: 每次倒入与一次撤回守恒，连续同色整体撤回，完成状态正确回退
+ok 73 - 每次倒入与一次撤回守恒，连续同色整体撤回，完成状态正确回退
+  ---
+  duration_ms: 6.652334
+  ...
+# Subtest: 存档通过真实历史重放校验，恢复草稿/完成局/星数
+ok 74 - 存档通过真实历史重放校验，恢复草稿/完成局/星数
+  ---
+  duration_ms: 1.466
+  ...
+# Subtest: 拒绝液体增减/伪造移动或胜利/越界关卡/超长历史和坏JSON结构
+ok 75 - 拒绝液体增减/伪造移动或胜利/越界关卡/超长历史和坏JSON结构
+  ---
+  duration_ms: 0.345083
+  ...
+# Subtest: 真实页面选瓶/合法目的地/动画互斥/撤回与重置确认
+ok 76 - 真实页面选瓶/合法目的地/动画互斥/撤回与重置确认
+  ---
+  duration_ms: 4.578583
+  ...
+# Subtest: 真实页面十二关连续通关，自动解锁/下一关/完成回选关
+ok 77 - 真实页面十二关连续通关，自动解锁/下一关/完成回选关
+  ---
+  duration_ms: 73.91
+  ...
+# Subtest: 暂停取消动画，继续保留本局；完成动画中切后台也能正确显示胜利
+ok 78 - 暂停取消动画，继续保留本局；完成动画中切后台也能正确显示胜利
+  ---
+  duration_ms: 30.306458
+  ...
+# Subtest: 封面模式不读写玩家存档；独立坏档安全退回选关
+ok 79 - 封面模式不读写玩家存档；独立坏档安全退回选关
+  ---
+  duration_ms: 7.773666
+  ...
+# Subtest: 田/思/男同一田部件都可收土；由、去、里、早及上下结构漏字补齐
+ok 80 - 田/思/男同一田部件都可收土；由、去、里、早及上下结构漏字补齐
+  ---
+  duration_ms: 1.431833
+  ...
+# Subtest: 同字合理替代选法也可收，不裁切笔画或把完整干强认士
+ok 81 - 同字合理替代选法也可收，不裁切笔画或把完整干强认士
+  ---
+  duration_ms: 0.208
+  ...
+# Subtest: 4.16全部旧合法选法和已收集进度保留，新增答案不赠送也不锁回旧关
+ok 82 - 4.16全部旧合法选法和已收集进度保留，新增答案不赠送也不锁回旧关
+  ---
+  duration_ms: 10.934041
+  ...
+# Subtest: 同一早字无论独立关还是日十关，全部答案与标准笔序选法一致
+ok 83 - 同一早字无论独立关还是日十关，全部答案与标准笔序选法一致
+  ---
+  duration_ms: 0.363792
+  ...
+# Subtest: 逐关枚举全部笔画子集校验查表一致、无歧义且每关不超过20答案
+ok 84 - 逐关枚举全部笔画子集校验查表一致、无歧义且每关不超过20答案
+  ---
+  duration_ms: 432.4115
+  ...
+# Subtest: 复合字笔序换序时，新答案由标准笔序反向映射回关卡索引
+ok 85 - 复合字笔序换序时，新答案由标准笔序反向映射回关卡索引
+  ---
+  duration_ms: 7.173625
+  ...
+# Subtest: 30 个多字关采用完整合体字轮廓，原 30 个单字关保持原始几何
+ok 86 - 30 个多字关采用完整合体字轮廓，原 30 个单字关保持原始几何
+  ---
+  duration_ms: 2.642208
+  ...
+# Subtest: 真实合体字笔序映射保持部件全局索引，并支持明确的非恒等映射
+ok 87 - 真实合体字笔序映射保持部件全局索引，并支持明确的非恒等映射
+  ---
+  duration_ms: 2.80925
+  ...
+# Subtest: 森的三个木上下嵌合为一字，品/晶/众沿用上中下品字形结构
+ok 88 - 森的三个木上下嵌合为一字，品/晶/众沿用上中下品字形结构
+  ---
+  duration_ms: 0.23925
+  ...
+# Subtest: 问/间/闲的内字确实嵌在门的包围区域，没有独立并排字板
+ok 89 - 问/间/闲的内字确实嵌在门的包围区域，没有独立并排字板
+  ---
+  duration_ms: 0.106167
+  ...
+# Subtest: 整字画布每一笔均有实际可达的中线点，交叉处不会只选顶层
+ok 90 - 整字画布每一笔均有实际可达的中线点，交叉处不会只选顶层
+  ---
+  duration_ms: 9.342709
+  ...
+# Subtest: 几何替换不改变 60 关答案、旧草稿全局索引与存档 schema
+ok 91 - 几何替换不改变 60 关答案、旧草稿全局索引与存档 schema
+  ---
+  duration_ms: 7.187625
+  ...
+# Subtest: 新 29 个字形离线收录固定提交来源与 SHA-256，早复用已有许可数据
+ok 92 - 新 29 个字形离线收录固定提交来源与 SHA-256，早复用已有许可数据
+  ---
+  duration_ms: 0.761334
+  ...
+# Subtest: 六十关真实离线字形完整，目标只用原字整笔且原字本身也是答案
+ok 93 - 六十关真实离线字形完整，目标只用原字整笔且原字本身也是答案
+  ---
+  duration_ms: 17.529917
+  ...
+# Subtest: 每关所有横画单横/两横/三横替代组合均识别，不漏一二三
+ok 94 - 每关所有横画单横/两横/三横替代组合均识别，不漏一二三
+  ---
+  duration_ms: 0.59675
+  ...
+# Subtest: 意的九个明确答案与部件整笔组合可收，心点不可冒充旦底横
+ok 95 - 意的九个明确答案与部件整笔组合可收，心点不可冒充旦底横
+  ---
+  duration_ms: 0.6655
+  ...
+# Subtest: 木和米的同一撇捺只认人，不把八也当成另一答案
+ok 96 - 木和米的同一撇捺只认人，不把八也当成另一答案
+  ---
+  duration_ms: 0.123167
+  ...
+# Subtest: 选择可反选；空选、坏索引、重复笔、错误组合不消耗答案
+ok 97 - 选择可反选；空选、坏索引、重复笔、错误组合不消耗答案
+  ---
+  duration_ms: 0.63325
+  ...
+# Subtest: 同答案不同笔画只收一次，成功清选择而重复保留当前草稿，整局每字只计一次
+ok 98 - 同答案不同笔画只收一次，成功清选择而重复保留当前草稿，整局每字只计一次
+  ---
+  duration_ms: 0.391291
+  ...
+# Subtest: 六十关可以真实逐关全部通关，完成才解锁，最后一关不越界
+ok 99 - 六十关可以真实逐关全部通关，完成才解锁，最后一关不越界
+  ---
+  duration_ms: 5.006958
+  ...
+# Subtest: 重来只清当前关，保留其他收集和已解锁关，提示只显示组合不代提交
+ok 100 - 重来只清当前关，保留其他收集和已解锁关，提示只显示组合不代提交
+  ---
+  duration_ms: 1.160417
+  ...
+# Subtest: 新键保存/恢复收集、草稿与关卡，旧汉字存档和别的游戏不动
+ok 101 - 新键保存/恢复收集、草稿与关卡，旧汉字存档和别的游戏不动
+  ---
+  duration_ms: 1.539333
+  ...
+# Subtest: 非法/破损存档安全回空白，答案和草稿严格筛选
+ok 102 - 非法/破损存档安全回空白，答案和草稿严格筛选
+  ---
+  duration_ms: 0.579042
+  ...
+# Subtest: 封面模式忽略存档且所有操作禁止写入
+ok 103 - 封面模式忽略存档且所有操作禁止写入
+  ---
+  duration_ms: 0.664958
+  ...
+# Subtest: 触摸容错按最近中线命中，交叉处不会一概选顶层笔画
+ok 104 - 触摸容错按最近中线命中，交叉处不会一概选顶层笔画
+  ---
+  duration_ms: 38.723417
+  ...
+# Subtest: 旧版已收集答案和已解锁关卡保留，新增原字须玩家完整选笔提交
+ok 105 - 旧版已收集答案和已解锁关卡保留，新增原字须玩家完整选笔提交
+  ---
+  duration_ms: 0.278041
+  ...
+# Subtest: 多字关有真实跨字答案，单字来自各自字板且无重复计分
+ok 106 - 多字关有真实跨字答案，单字来自各自字板且无重复计分
+  ---
+  duration_ms: 0.309792
+  ...
+# Subtest: 已完成旧十关的存档自动解锁第十一关，原收集与其他存档不变
+ok 107 - 已完成旧十关的存档自动解锁第十一关，原收集与其他存档不变
+  ---
+  duration_ms: 0.117542
+  ...
+# Subtest: 多字题可跨字板选整横组成二和三，重复答案不拆成多个目标
+ok 108 - 多字题可跨字板选整横组成二和三，重复答案不拆成多个目标
+  ---
+  duration_ms: 0.144542
+  ...
+# Subtest: 田的口重复提交保留原选笔和存档，反复提交不改变收集/解锁，重启后草稿仍在
+ok 109 - 田的口重复提交保留原选笔和存档，反复提交不改变收集/解锁，重启后草稿仍在
+  ---
+  duration_ms: 0.356958
+  ...
+# Subtest: 字里找字：选择/反选、每个新答案和最后通关仅反馈一次，重复答案不庆祝
+ok 110 - 字里找字：选择/反选、每个新答案和最后通关仅反馈一次，重复答案不庆祝
+  ---
+  duration_ms: 20.031833
+  ...
+# Subtest: 字里找字：提示与错误柔和反馈，暂停、恢复渲染和封面不触发
+ok 111 - 字里找字：提示与错误柔和反馈，暂停、恢复渲染和封面不触发
+  ---
+  duration_ms: 56.3765
+  ...
+# Subtest: 小小调色师：颜料、撤回、错误和完成有反馈，重复上色不误报失败
+ok 112 - 小小调色师：颜料、撤回、错误和完成有反馈，重复上色不误报失败
+  ---
+  duration_ms: 10.164833
+  ...
+# Subtest: 看字打拼音：正确只反馈一次、暂停无反馈、共享静音按钮不影响 TTS 入口
+ok 113 - 看字打拼音：正确只反馈一次、暂停无反馈、共享静音按钮不影响 TTS 入口
+  ---
+  duration_ms: 15.740583
+  ...
+# Subtest: 字里找字：重复答案保留选笔/提交入口，顶部只高亮对应字并短暂抖动，不新增答案
+ok 114 - 字里找字：重复答案保留选笔/提交入口，顶部只高亮对应字并短暂抖动，不新增答案
+  ---
+  duration_ms: 36.5295
+  ...
+# Subtest: 字里找字：绘制置顶仅改变显示顺序，田中横与口保留原笔画索引/可反选
+ok 115 - 字里找字：绘制置顶仅改变显示顺序，田中横与口保留原笔画索引/可反选
+  ---
+  duration_ms: 18.314458
+  ...
+# Subtest: 钢珠迷宫：18张固定关均可解，原12关几何保持，钥匙在门前，前三关没有坑
+ok 116 - 钢珠迷宫：18张固定关均可解，原12关几何保持，钥匙在门前，前三关没有坑
+  ---
+  duration_ms: 8.649417
+  ...
+# Subtest: 钢珠迷宫：用真实物理逐个房格滚过12条关卡路径，不靠传送获得星星/钥匙和通关
+ok 117 - 钢珠迷宫：用真实物理逐个房格滚过12条关卡路径，不靠传送获得星星/钥匙和通关
+  ---
+  duration_ms: 85.772208
+  ...
+# Subtest: 钢珠迷宫：10度倾角有明显加速度，回平后仍有惯性，反向倾斜可以制动
+ok 118 - 钢珠迷宫：10度倾角有明显加速度，回平后仍有惯性，反向倾斜可以制动
+  ---
+  duration_ms: 0.186917
+  ...
+# Subtest: 钢珠迷宫：120Hz固定步长在不同帧率下相同且速度有上限
+ok 119 - 钢珠迷宫：120Hz固定步长在不同帧率下相同且速度有上限
+  ---
+  duration_ms: 4.206292
+  ...
+# Subtest: 钢珠迷宫：连续大倾角不会穿墙，绘制和碰撞使用同一矩形
+ok 120 - 钢珠迷宫：连续大倾角不会穿墙，绘制和碰撞使用同一矩形
+  ---
+  duration_ms: 194.307667
+  ...
+# Subtest: 钢珠迷宫：弹性障碍旁的合法来球在联合碰撞后不会被推入墙内
+ok 121 - 钢珠迷宫：弹性障碍旁的合法来球在联合碰撞后不会被推入墙内
+  ---
+  duration_ms: 10.1545
+  ...
+# Subtest: 钢珠迷宫：收齐星星才能结束，钥匙只解锁对应门
+ok 122 - 钢珠迷宫：收齐星星才能结束，钥匙只解锁对应门
+  ---
+  duration_ms: 0.242709
+  ...
+# Subtest: 钢珠迷宫：掉坑回最近收集点，保留星星，不扣命、不限重试
+ok 123 - 钢珠迷宫：掉坑回最近收集点，保留星星，不扣命、不限重试
+  ---
+  duration_ms: 0.818583
+  ...
+# Subtest: 钢珠迷宫：存档恢复保留草稿与收集，清零惯性并拒绝墙内或坏坐标
+ok 124 - 钢珠迷宫：存档恢复保留草稿与收集，清零惯性并拒绝墙内或坏坐标
+  ---
+  duration_ms: 0.697125
+  ...
+# Subtest: 钢珠迷宫：旧版解锁/奖章迁移到新键，旧键和其他游戏原样保留
+ok 125 - 钢珠迷宫：旧版解锁/奖章迁移到新键，旧键和其他游戏原样保留
+  ---
+  duration_ms: 7.813125
+  ...
+# Subtest: 钢珠迷宫：旧十关全通保留当前关，并立即解锁新增的第十一关
+ok 126 - 钢珠迷宫：旧十关全通保留当前关，并立即解锁新增的第十一关
+  ---
+  duration_ms: 5.221625
+  ...
+# Subtest: 钢珠迷宫：后台和旋转保持暂停，只有明确继续才继续物理
+ok 127 - 钢珠迷宫：后台和旋转保持暂停，只有明确继续才继续物理
+  ---
+  duration_ms: 4.922833
+  ...
+# Subtest: 钢珠迷宫：倾斜过期不允许开始或继续，游戏中失联会暂停且可切触摸
+ok 128 - 钢珠迷宫：倾斜过期不允许开始或继续，游戏中失联会暂停且可切触摸
+  ---
+  duration_ms: 7.091334
+  ...
+# Subtest: 钢珠迷宫：方向盘忽略第二根手指，取消后清空输入
+ok 129 - 钢珠迷宫：方向盘忽略第二根手指，取消后清空输入
+  ---
+  duration_ms: 3.892167
+  ...
+# Subtest: 钢珠迷宫：保存退出后恢复草稿，不重新送星或播放奖励
+ok 130 - 钢珠迷宫：保存退出后恢复草稿，不重新送星或播放奖励
+  ---
+  duration_ms: 5.685334
+  ...
+# Subtest: 钢珠迷宫：最后一关结束可再玩一轮，第二轮下一关仍正常
+ok 131 - 钢珠迷宫：最后一关结束可再玩一轮，第二轮下一关仍正常
+  ---
+  duration_ms: 3.519791
+  ...
+# Subtest: 钢珠迷宫：封面无输入、无物理、无写盘、无奖励
+ok 132 - 钢珠迷宫：封面无输入、无物理、无写盘、无奖励
+  ---
+  duration_ms: 1.992166
+  ...
+# Subtest: 钢珠机关：六关按真实求解器与120Hz物理完成，后两关必须中途改变挡板朝向
+ok 133 - 钢珠机关：六关按真实求解器与120Hz物理完成，后两关必须中途改变挡板朝向
+  ---
+  duration_ms: 45.469833
+  ...
+# Subtest: 钢珠机关：闭合挡板真实挡球，转开后同一路径可通过，矩形与渲染共用
+ok 134 - 钢珠机关：闭合挡板真实挡球，转开后同一路径可通过，矩形与渲染共用
+  ---
+  duration_ms: 1.466417
+  ...
+# Subtest: 钢珠机关：完整扫掠区有球时拒转，最终矩形不碰球也不能扫穿；远处检查点不锁死操作
+ok 135 - 钢珠机关：完整扫掠区有球时拒转，最终矩形不碰球也不能扫穿；远处检查点不锁死操作
+  ---
+  duration_ms: 0.101375
+  ...
+# Subtest: 钢珠机关：任意合法初始朝向的持续大倾角仍不穿挡板
+ok 136 - 钢珠机关：任意合法初始朝向的持续大倾角仍不穿挡板
+  ---
+  duration_ms: 46.202209
+  ...
+# Subtest: 钢珠机关：schema1缺朝向时用初始值，保存后精确恢复，拒绝错误朝向数组
+ok 137 - 钢珠机关：schema1缺朝向时用初始值，保存后精确恢复，拒绝错误朝向数组
+  ---
+  duration_ms: 0.218666
+  ...
+# Subtest: 钢珠机关：新章节首关直接可玩，经典进度不变；机关关按自身进度解锁
+ok 138 - 钢珠机关：新章节首关直接可玩，经典进度不变；机关关按自身进度解锁
+  ---
+  duration_ms: 3.272125
+  ...
+# Subtest: 钢珠机关：只在明确规划时允许点挡板，规划冻结物理，继续才运行，后台/终局禁转
+ok 139 - 钢珠机关：只在明确规划时允许点挡板，规划冻结物理，继续才运行，后台/终局禁转
+  ---
+  duration_ms: 2.259417
+  ...
+# Subtest: 钢珠机关：已靠近时保留球和挡板，仅短反馈；关闭选关后规划入口可恢复
+ok 140 - 钢珠机关：已靠近时保留球和挡板，仅短反馈；关闭选关后规划入口可恢复
+  ---
+  duration_ms: 1.733042
+  ...
+# Subtest: 钢珠机关：重置先确认，仅重置当前球/星星/朝向，不清完成/其他游戏；封面无机关操作
+ok 141 - 钢珠机关：重置先确认，仅重置当前球/星星/朝向，不清完成/其他游戏；封面无机关操作
+  ---
+  duration_ms: 4.310042
+  ...
+# Subtest: shared motion keeps real 10 degree sine and calibrated holding angle
+ok 142 - shared motion keeps real 10 degree sine and calibrated holding angle
+  ---
+  duration_ms: 4.481459
+  ...
+# Subtest: shared motion rejects stale, malformed, missing data and clears held input
+ok 143 - shared motion rejects stale, malformed, missing data and clears held input
+  ---
+  duration_ms: 0.460084
+  ...
+# Subtest: shared touch is a unit circle and pause/resume cannot retain direction
+ok 144 - shared touch is a unit circle and pause/resume cannot retain direction
+  ---
+  duration_ms: 0.897625
+  ...
+# Subtest: shared motion sampling is independent of rendering frequency
+ok 145 - shared motion sampling is independent of rendering frequency
+  ---
+  duration_ms: 3.605958
+  ...
+# Subtest: shared four-direction gate triggers once, rearms at neutral, and clears paused candidate
+ok 146 - shared four-direction gate triggers once, rearms at neutral, and clears paused candidate
+  ---
+  duration_ms: 1.629416
+  ...
+# Subtest: shared tilt pitch keeps both directions when held near vertical and wraps across 180 degrees
+ok 147 - shared tilt pitch keeps both directions when held near vertical and wraps across 180 degrees
+  ---
+  duration_ms: 1.23775
+  ...
+# Subtest: native tilt: actual Java sample stays atomic; gravity, low-pass, rotations, age and reset agree
+ok 148 - native tilt: actual Java sample stays atomic; gravity, low-pass, rotations, age and reset agree
+  ---
+  duration_ms: 651.579708
+  ...
+# Subtest: 数字碰碰12固定关真实BFS可解，答案不超过10，后10关必须换向且中段有干扰数字
+ok 149 - 数字碰碰12固定关真实BFS可解，答案不超过10，后10关必须换向且中段有干扰数字
+  ---
+  duration_ms: 13.504667
+  ...
+# Subtest: 任意两个数相加而非2048翻倍，每个数字单步最多合一次，10以上不合并
+ok 150 - 任意两个数相加而非2048翻倍，每个数字单步最多合一次，10以上不合并
+  ---
+  duration_ms: 0.159959
+  ...
+# Subtest: 只有指定星格上的正确数才锁定，路过会停住，锁定块不移动不再合并
+ok 151 - 只有指定星格上的正确数才锁定，路过会停住，锁定块不移动不再合并
+  ---
+  duration_ms: 0.085625
+  ...
+# Subtest: 撤回整步还原所有合并与目标，完成/无效动作不重复写历史
+ok 152 - 撤回整步还原所有合并与目标，完成/无效动作不重复写历史
+  ---
+  duration_ms: 17.832
+  ...
+# Subtest: 存档严格重放历史保留进度，拒绝伪造数字/完成/原型方向/洞数组
+ok 153 - 存档严格重放历史保留进度，拒绝伪造数字/完成/原型方向/洞数组
+  ---
+  duration_ms: 1.763167
+  ...
+# Subtest: 真实页面12关连续完成、动画阻止重入、独立存档与关卡解锁
+ok 154 - 真实页面12关连续完成、动画阻止重入、独立存档与关卡解锁
+  ---
+  duration_ms: 73.753583
+  ...
+# Subtest: 真实页面合并无解可撤回，重置确认不丢草稿，后台落定不重放奖励
+ok 155 - 真实页面合并无解可撤回，重置确认不丢草稿，后台落定不重放奖励
+  ---
+  duration_ms: 18.21975
+  ...
+# Subtest: 封面不读写存档且静默，坏JSON返回选关，暂停保留点方向入口
+ok 156 - 封面不读写存档且静默，坏JSON返回选关，暂停保留点方向入口
+  ---
+  duration_ms: 10.955458
+  ...
+# Subtest: 倾斜门限和共享输入只触发一次，过期/恢复要求回中，不能后台自动补动作
+ok 157 - 倾斜门限和共享输入只触发一次，过期/恢复要求回中，不能后台自动补动作
+  ---
+  duration_ms: 14.956708
+  ...
+# Subtest: 手持初始倾角自动归零，迟到首样本只校准，之后变化才是出手
+ok 158 - 手持初始倾角自动归零，迟到首样本只校准，之后变化才是出手
+  ---
+  duration_ms: 29.420042
+  ...
+# Subtest: 连续两次合并都重新播放算式反馈，暂停/撤回/换关清除旧算式
+ok 159 - 连续两次合并都重新播放算式反馈，暂停/撤回/换关清除旧算式
+  ---
+  duration_ms: 22.930709
+  ...
+# Subtest: 颜料黄蓝得绿、红黄得橙、红蓝得紫，区别于 RGB 均值
+ok 160 - 颜料黄蓝得绿、红黄得橙、红蓝得紫，区别于 RGB 均值
+  ---
+  duration_ms: 0.574166
+  ...
+# Subtest: 顺序无关，等比例放大不改变颜料颜色，白颜料变浅
+ok 161 - 顺序无关，等比例放大不改变颜料颜色，白颜料变浅
+  ---
+  duration_ms: 0.784541
+  ...
+# Subtest: 不同配比可辨识而不是所有绿/橙相同
+ok 162 - 不同配比可辨识而不是所有绿/橙相同
+  ---
+  duration_ms: 0.130417
+  ...
+# Subtest: 十关所有订单真实配方均可达，完成最后一个才结束
+ok 163 - 十关所有订单真实配方均可达，完成最后一个才结束
+  ---
+  duration_ms: 0.843167
+  ...
+# Subtest: 不匹配不接受，错误只影响星数，可逐滴撤销和清空
+ok 164 - 不匹配不接受，错误只影响星数，可逐滴撤销和清空
+  ---
+  duration_ms: 0.392333
+  ...
+# Subtest: 容量限制、自由画室、重开本关
+ok 165 - 容量限制、自由画室、重开本关
+  ---
+  duration_ms: 0.163708
+  ...
+# Subtest: 存档恢复真实草稿/多订单/星数，忽略损坏数据和伪造通关
+ok 166 - 存档恢复真实草稿/多订单/星数，忽略损坏数据和伪造通关
+  ---
+  duration_ms: 0.540541
+  ...
+# Subtest: 完成订单恢复时重新计算颜色，不信任存档 RGB
+ok 167 - 完成订单恢复时重新计算颜色，不信任存档 RGB
+  ---
+  duration_ms: 2.782917
+  ...
+# Subtest: 真实页面加入/撤回/重置确认/暂停继续/上色与下一关
+ok 168 - 真实页面加入/撤回/重置确认/暂停继续/上色与下一关
+  ---
+  duration_ms: 10.016208
+  ...
+# Subtest: 封面模式不读取或写入存档，页面真实绘制绿青蛙
+ok 169 - 封面模式不读取或写入存档，页面真实绘制绿青蛙
+  ---
+  duration_ms: 1.413791
+  ...
+# Subtest: 密码箱：输入/撤销/提交揭晓/获胜有反馈，恢复和暂停静默，不泄露单字答案
+ok 170 - 密码箱：输入/撤销/提交揭晓/获胜有反馈，恢复和暂停静默，不泄露单字答案
+  ---
+  duration_ms: 17.591208
+  ...
+# Subtest: 水管：旋转/撤销/提示和通关只按实际操作发出，水流绘制和暂停不重复
+ok 171 - 水管：旋转/撤销/提示和通关只按实际操作发出，水流绘制和暂停不重复
+  ---
+  duration_ms: 37.229
+  ...
+# Subtest: 果汁：倒入和单瓶完成分层反馈，500ms锁和后台不会补发完成声
+ok 172 - 果汁：倒入和单瓶完成分层反馈，500ms锁和后台不会补发完成声
+  ---
+  duration_ms: 15.202375
+  ...
+# Subtest: 果汁：全关只庆祝一次，非法倒入不改存档且有轻反馈
+ok 173 - 果汁：全关只庆祝一次，非法倒入不改存档且有轻反馈
+  ---
+  duration_ms: 13.671667
+  ...
+# Subtest: 重力：收集/掉洞/过关有反馈，静止、贴墙、暂停和恢复静默
+ok 174 - 重力：收集/掉洞/过关有反馈，静止、贴墙、暂停和恢复静默
+  ---
+  duration_ms: 12.459083
+  ...
+# Subtest: 四款益智封面从不发出声效或震动事件
+ok 175 - 四款益智封面从不发出声效或震动事件
+  ---
+  duration_ms: 14.978583
+  ...
+# Subtest: pipe: ten deterministic boards start unsolved and are solved through legal rotations
+ok 176 - pipe: ten deterministic boards start unsolved and are solved through legal rotations
+  ---
+  duration_ms: 11.4715
+  ...
+# Subtest: pipe: undo restores rotation and move count, locked/won boundaries reject writes
+ok 177 - pipe: undo restores rotation and move count, locked/won boundaries reject writes
+  ---
+  duration_ms: 4.068417
+  ...
+# Subtest: pipe: three hints consume no rotations, cannot record an unassisted best and reset on retry
+ok 178 - pipe: three hints consume no rotations, cannot record an unassisted best and reset on retry
+  ---
+  duration_ms: 22.930125
+  ...
+# Subtest: pipe: completing the tenth board starts a second campaign whose Next still advances
+ok 179 - pipe: completing the tenth board starts a second campaign whose Next still advances
+  ---
+  duration_ms: 458.829583
+  ...
+# Subtest: pipe: manual and background pauses preserve the route until explicit Continue
+ok 180 - pipe: manual and background pauses preserve the route until explicit Continue
+  ---
+  duration_ms: 5.941625
+  ...
+# Subtest: 共享反馈：节流连续点按，成功/通关可以覆盖轻触，重复通关静默
+ok 181 - 共享反馈：节流连续点按，成功/通关可以覆盖轻触，重复通关静默
+  ---
+  duration_ms: 2.819042
+  ...
+# Subtest: 共享反馈：声音与震动独立，设置统一持久化且发变更事件
+ok 182 - 共享反馈：声音与震动独立，设置统一持久化且发变更事件
+  ---
+  duration_ms: 1.207625
+  ...
+# Subtest: 共享反馈：快速纠正错误时成功优先，不被失败节流吞掉
+ok 183 - 共享反馈：快速纠正错误时成功优先，不被失败节流吞掉
+  ---
+  duration_ms: 0.411709
+  ...
+# Subtest: 共享反馈：后台停止全部输出，恢复不补播旧事件，封面不读写设置或输出
+ok 184 - 共享反馈：后台停止全部输出，恢复不补播旧事件，封面不读写设置或输出
+  ---
+  duration_ms: 0.586958
+  ...
+# Subtest: 共享反馈：网页降级也区分成功震动，旧静音偏好迁移时不改游戏记录
+ok 185 - 共享反馈：网页降级也区分成功震动，旧静音偏好迁移时不改游戏记录
+  ---
+  duration_ms: 0.289292
+  ...
+# Subtest: 共享反馈：异步解锁声音期间离开页面，不会延迟补播
+ok 186 - 共享反馈：异步解锁声音期间离开页面，不会延迟补播
+  ---
+  duration_ms: 0.382042
+  ...
+# Subtest: 翻转星星盒12关真实BFS可解，短解1到8步，四向滑动而非重复换皮
+ok 187 - 翻转星星盒12关真实BFS可解，短解1到8步，四向滑动而非重复换皮
+  ---
+  duration_ms: 2.99175
+  ...
+# Subtest: 同方向全部星星滑动，后星跟随前星但不能重叠；墙与同色巢及时截停
+ok 188 - 同方向全部星星滑动，后星跟随前星但不能重叠；墙与同色巢及时截停
+  ---
+  duration_ms: 0.132458
+  ...
+# Subtest: 滑动可整体撤回，完成不能重复走或奖励，撤销完成恢复活动局
+ok 189 - 滑动可整体撤回，完成不能重复走或奖励，撤销完成恢复活动局
+  ---
+  duration_ms: 0.472709
+  ...
+# Subtest: 存档严格重放历史，保留合法进度；坏档和伪造终局不能进入游戏
+ok 190 - 存档严格重放历史，保留合法进度；坏档和伪造终局不能进入游戏
+  ---
+  duration_ms: 0.662042
+  ...
+# Subtest: 倾斜门限稳定110ms，保持方向只触发一次；回中/换向可以再触发
+ok 191 - 倾斜门限稳定110ms，保持方向只触发一次；回中/换向可以再触发
+  ---
+  duration_ms: 0.269959
+  ...
+# Subtest: 倾斜方向抖动取消候选，不把短噪声和回前台读数累计为动作
+ok 192 - 倾斜方向抖动取消候选，不把短噪声和回前台读数累计为动作
+  ---
+  duration_ms: 0.079041
+  ...
+# Subtest: 真实页面十二关连续通关、动作动画互斥、选关和独立存档
+ok 193 - 真实页面十二关连续通关、动作动画互斥、选关和独立存档
+  ---
+  duration_ms: 33.070167
+  ...
+# Subtest: 真实页面撤销/重置确认保留草稿，暂停取消动画且恢复不补发奖励
+ok 194 - 真实页面撤销/重置确认保留草稿，暂停取消动画且恢复不补发奖励
+  ---
+  duration_ms: 8.793583
+  ...
+# Subtest: 封面静默不写游戏档，坏JSON安全回选关；触摸模式入口始终可用
+ok 195 - 封面静默不写游戏档，坏JSON安全回选关；触摸模式入口始终可用
+  ---
+  duration_ms: 7.329167
+  ...
+# Subtest: 真实页面倾斜输入经共享桥读数只走一次，过期和暂停恢复都要求先回中
+ok 196 - 真实页面倾斜输入经共享桥读数只走一次，过期和暂停恢复都要求先回中
+  ---
+  duration_ms: 6.138667
+  ...
+# Subtest: 手持非零角度进入、切回倾斜和继续时自动归零，无须把手机平放
+ok 197 - 手持非零角度进入、切回倾斜和继续时自动归零，无须把手机平放
+  ---
+  duration_ms: 4.844208
+  ...
+# Subtest: 传感器首次样本迟到时只校准一次，不将初始手持角度当作移动
+ok 198 - 传感器首次样本迟到时只校准一次，不将初始手持角度当作移动
+  ---
+  duration_ms: 2.388458
+  ...
+# Subtest: 走到无解局只短亮撤回入口，不自动重置或泄露下一步，撤销后提示解除
+ok 199 - 走到无解局只短亮撤回入口，不自动重置或泄露下一步，撤销后提示解除
+  ---
+  duration_ms: 3.154083
+  ...
+# Subtest: 翻转星星盒拒绝继承属性作为方向，坏历史不恢复
+ok 200 - 翻转星星盒拒绝继承属性作为方向，坏历史不恢复
+  ---
+  duration_ms: 0.183
+  ...
+# Subtest: typing: sixty unique practice characters have pinyin and complete offline stroke data
+ok 201 - typing: sixty unique practice characters have pinyin and complete offline stroke data
+  ---
+  duration_ms: 6.018833
+  ...
+# Subtest: typing: existing hzTypingSave2 progress is loaded without resetting it
+ok 202 - typing: existing hzTypingSave2 progress is loaded without resetting it
+  ---
+  duration_ms: 2.647167
+  ...
+# Subtest: typing: one question can score only once while its stroke animation is playing
+ok 203 - typing: one question can score only once while its stroke animation is playing
+  ---
+  duration_ms: 5.052417
+  ...
+# Subtest: typing: leaving or restarting during animation cancels the previous question advance
+ok 204 - typing: leaving or restarting during animation cancels the previous question advance
+  ---
+  duration_ms: 3.757333
+  ...
+# Subtest: typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+ok 205 - typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+  ---
+  duration_ms: 2.924292
+  ...
+# Subtest: typing: animation resumes its remaining hold and visibility needs explicit Continue
+ok 206 - typing: animation resumes its remaining hold and visibility needs explicit Continue
+  ---
+  duration_ms: 2.21175
+  ...
+# Subtest: typing: full sixty-question sequence includes every character and saves its result once
+ok 207 - typing: full sixty-question sequence includes every character and saves its result once
+  ---
+  duration_ms: 81.079084
+  ...
+# Subtest: typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置
+ok 208 - typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置
+  ---
+  duration_ms: 2.3725
+  ...
+1..208
+# tests 208
+# suites 0
+# pass 208
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1108.591083

@@ -1,0 +1,46 @@
+{
+  "games": [
+    {
+      "game": "gravity-maze",
+      "motion": {
+        "mode": "tilt",
+        "available": true,
+        "fresh": true,
+        "calibrated": true,
+        "source": "gravity",
+        "paused": false,
+        "destroyed": false
+      }
+    },
+    {
+      "game": "number-merge",
+      "motion": {
+        "mode": "tilt",
+        "available": true,
+        "fresh": true,
+        "calibrated": true,
+        "source": "gravity",
+        "paused": false,
+        "destroyed": false
+      }
+    },
+    {
+      "game": "tilt-star-box",
+      "motion": {
+        "mode": "tilt",
+        "available": true,
+        "fresh": true,
+        "calibrated": true,
+        "source": "gravity",
+        "paused": false,
+        "destroyed": false
+      }
+    }
+  ],
+  "systemBackAfterWin": true,
+  "home": {
+    "url": "/android_asset/index.html",
+    "count": 12,
+    "broken": 0
+  }
+}

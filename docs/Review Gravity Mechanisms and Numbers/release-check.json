@@ -1,0 +1,10 @@
+{
+  "version": "4.19",
+  "versionCode": 42,
+  "apkSha256": "58180afb2d020bbae839d47ccc66e518741c9a6ef5d63e402cd09295901db573",
+  "deviceApkSha256": "58180afb2d020bbae839d47ccc66e518741c9a6ef5d63e402cd09295901db573",
+  "cdpDisabled": true,
+  "devAndReleaseAssetsIdentical": true,
+  "sourceAssetsMatchApk": true,
+  "forwardList": ""
+}

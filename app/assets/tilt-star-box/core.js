@@ -35,7 +35,7 @@ function validPositions(positions,level){return Array.isArray(positions)&&positi
 // Front-to-back processing permits stars in the same lane to follow each other.
 // A star entering its own nest stops and blocks other stars for later steps.
 function slide(level,positions,direction){
- const d=DIRECTIONS[direction];if(!d||!validPositions(positions,level))return null;
+ if(!Object.prototype.hasOwnProperty.call(DIRECTIONS,direction))return null;const d=DIRECTIONS[direction];if(!validPositions(positions,level))return null;
  const next=copy(positions),paths=positions.map(p=>[p]);
  const order=next.map((p,i)=>i).sort((a,b)=>((next[b]%level.w)*d[0]+Math.floor(next[b]/level.w)*d[1])-((next[a]%level.w)*d[0]+Math.floor(next[a]/level.w)*d[1]));
  let moved=false;
@@ -85,23 +85,8 @@ function restore(raw){
 }
 // Schmitt trigger + stable direction timer. A held tilt emits once; changing
 // direction is allowed, but the same direction must first return through neutral.
-function createDirectionGate({enter=.18,exit=.08,stable=.11}={}){
- let held=null,candidate=null,elapsed=0,neutralWait=false;
- function reset(requireNeutral=false){held=null;candidate=null;elapsed=0;neutralWait=requireNeutral;}
- function read(x,y,dt){
-  if(!Number.isFinite(x)||!Number.isFinite(y)||!Number.isFinite(dt)||dt<0){candidate=null;elapsed=0;return null;}
-  const amplitude=Math.max(Math.abs(x),Math.abs(y));
-  if(amplitude<=exit){reset();return null;}
-  if(neutralWait)return null;
-  if(amplitude<enter){candidate=null;elapsed=0;return null;}
-  const direction=Math.abs(x)>Math.abs(y)?x>0?'right':'left':y>0?'down':'up';
-  if(direction===held){candidate=null;elapsed=0;return null;}
-  if(candidate!==direction){candidate=direction;elapsed=0;}
-  elapsed+=Math.min(dt,.05);if(elapsed+1e-9<stable)return null;
-  held=direction;candidate=null;elapsed=0;return direction;
- }
- return {read,reset,status:()=>({held,candidate,elapsed,neutralWait})};
-}
+function createDirectionGate(options){return root.RugeMotion.createDirectionGate(options);}
+
 const api={LEVELS,COLORS,DIRECTIONS,parse,slide,move,undo,createState,restore,solve,won,validPositions,createDirectionGate};
 root.TiltStarBox=api;if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

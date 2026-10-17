@@ -1,0 +1,401 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "moves": [
+        "right"
+      ],
+      "finished": true
+    },
+    {
+      "level": 2,
+      "moves": [
+        "left"
+      ],
+      "finished": true
+    },
+    {
+      "level": 3,
+      "moves": [
+        "right",
+        "down"
+      ],
+      "finished": true
+    },
+    {
+      "level": 4,
+      "moves": [
+        "right",
+        "up",
+        "left"
+      ],
+      "finished": true
+    },
+    {
+      "level": 5,
+      "moves": [
+        "up",
+        "down",
+        "left"
+      ],
+      "finished": true
+    },
+    {
+      "level": 6,
+      "moves": [
+        "right",
+        "down",
+        "right",
+        "left"
+      ],
+      "finished": true
+    },
+    {
+      "level": 7,
+      "moves": [
+        "right",
+        "down",
+        "right",
+        "left"
+      ],
+      "finished": true
+    },
+    {
+      "level": 8,
+      "moves": [
+        "left",
+        "down",
+        "right",
+        "down"
+      ],
+      "finished": true
+    },
+    {
+      "level": 9,
+      "moves": [
+        "left",
+        "up",
+        "left",
+        "down"
+      ],
+      "finished": true
+    },
+    {
+      "level": 10,
+      "moves": [
+        "down",
+        "right",
+        "up",
+        "left"
+      ],
+      "finished": true
+    },
+    {
+      "level": 11,
+      "moves": [
+        "left",
+        "down",
+        "left",
+        "up",
+        "right"
+      ],
+      "finished": true
+    },
+    {
+      "level": 12,
+      "moves": [
+        "up",
+        "right",
+        "down",
+        "up",
+        "left",
+        "down"
+      ],
+      "finished": true
+    }
+  ],
+  "noSolutionUndo": true,
+  "layout": [
+    {
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "scrollHeight": 568,
+      "controls": [
+        {
+          "id": "boardFrame",
+          "x": 21,
+          "y": 95,
+          "width": 278,
+          "height": 278,
+          "right": 299,
+          "bottom": 373
+        },
+        {
+          "id": "undo",
+          "x": 12,
+          "y": 477,
+          "width": 141.5,
+          "height": 43,
+          "right": 153.5,
+          "bottom": 520
+        },
+        {
+          "id": "pauseButton",
+          "x": 166.5,
+          "y": 477,
+          "width": 141.5,
+          "height": 43,
+          "right": 308,
+          "bottom": 520
+        },
+        {
+          "id": "up",
+          "x": 88,
+          "y": 427,
+          "width": 68,
+          "height": 43,
+          "right": 156,
+          "bottom": 470
+        },
+        {
+          "id": "down",
+          "x": 164,
+          "y": 427,
+          "width": 68,
+          "height": 43,
+          "right": 232,
+          "bottom": 470
+        },
+        {
+          "id": "left",
+          "x": 12,
+          "y": 427,
+          "width": 68,
+          "height": 43,
+          "right": 80,
+          "bottom": 470
+        },
+        {
+          "id": "right",
+          "x": 240,
+          "y": 427,
+          "width": 68,
+          "height": 43,
+          "right": 308,
+          "bottom": 470
+        },
+        {
+          "id": "tiltMode",
+          "x": 12,
+          "y": 382,
+          "width": 145.5,
+          "height": 38,
+          "right": 157.5,
+          "bottom": 420
+        },
+        {
+          "id": "touchMode",
+          "x": 162.5,
+          "y": 382,
+          "width": 145.5,
+          "height": 38,
+          "right": 308,
+          "bottom": 420
+        }
+      ],
+      "allVisible": true
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "scrollWidth": 392,
+      "scrollHeight": 872,
+      "controls": [
+        {
+          "id": "boardFrame",
+          "x": 18,
+          "y": 143,
+          "width": 356,
+          "height": 356,
+          "right": 374,
+          "bottom": 499
+        },
+        {
+          "id": "undo",
+          "x": 18,
+          "y": 728,
+          "width": 171.5,
+          "height": 50,
+          "right": 189.5,
+          "bottom": 778
+        },
+        {
+          "id": "pauseButton",
+          "x": 202.5,
+          "y": 728,
+          "width": 171.5,
+          "height": 50,
+          "right": 374,
+          "bottom": 778
+        },
+        {
+          "id": "up",
+          "x": 163.328125,
+          "y": 572,
+          "width": 65.328125,
+          "height": 44.65625,
+          "right": 228.65625,
+          "bottom": 616.65625
+        },
+        {
+          "id": "down",
+          "x": 163.328125,
+          "y": 671.328125,
+          "width": 65.328125,
+          "height": 44.671875,
+          "right": 228.65625,
+          "bottom": 716
+        },
+        {
+          "id": "left",
+          "x": 93,
+          "y": 621.65625,
+          "width": 65.328125,
+          "height": 44.671875,
+          "right": 158.328125,
+          "bottom": 666.328125
+        },
+        {
+          "id": "right",
+          "x": 233.65625,
+          "y": 621.65625,
+          "width": 65.34375,
+          "height": 44.671875,
+          "right": 299,
+          "bottom": 666.328125
+        },
+        {
+          "id": "tiltMode",
+          "x": 18,
+          "y": 518,
+          "width": 174,
+          "height": 46,
+          "right": 192,
+          "bottom": 564
+        },
+        {
+          "id": "touchMode",
+          "x": 200,
+          "y": 518,
+          "width": 174,
+          "height": 46,
+          "right": 374,
+          "bottom": 564
+        }
+      ],
+      "allVisible": true
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "scrollWidth": 872,
+      "scrollHeight": 392,
+      "controls": [
+        {
+          "id": "boardFrame",
+          "x": 160.5,
+          "y": 59,
+          "width": 316,
+          "height": 316,
+          "right": 476.5,
+          "bottom": 375
+        },
+        {
+          "id": "undo",
+          "x": 566,
+          "y": 327.75,
+          "width": 101,
+          "height": 47.25,
+          "right": 667,
+          "bottom": 375
+        },
+        {
+          "id": "pauseButton",
+          "x": 675,
+          "y": 327.75,
+          "width": 101,
+          "height": 47.25,
+          "right": 776,
+          "bottom": 375
+        },
+        {
+          "id": "up",
+          "x": 641,
+          "y": 168.5,
+          "width": 60,
+          "height": 44,
+          "right": 701,
+          "bottom": 212.5
+        },
+        {
+          "id": "down",
+          "x": 641,
+          "y": 266.5,
+          "width": 60,
+          "height": 44,
+          "right": 701,
+          "bottom": 310.5
+        },
+        {
+          "id": "left",
+          "x": 576,
+          "y": 217.5,
+          "width": 60,
+          "height": 44,
+          "right": 636,
+          "bottom": 261.5
+        },
+        {
+          "id": "right",
+          "x": 706,
+          "y": 217.5,
+          "width": 60,
+          "height": 44,
+          "right": 766,
+          "bottom": 261.5
+        },
+        {
+          "id": "tiltMode",
+          "x": 566,
+          "y": 117.375,
+          "width": 102.5,
+          "height": 42,
+          "right": 668.5,
+          "bottom": 159.375
+        },
+        {
+          "id": "touchMode",
+          "x": 673.5,
+          "y": 117.375,
+          "width": 102.5,
+          "height": 42,
+          "right": 776,
+          "bottom": 159.375
+        }
+      ],
+      "allVisible": true
+    }
+  ],
+  "animationCoordinates": [
+    {
+      "x": 3,
+      "y": 1,
+      "width": 84.5,
+      "height": 84.5,
+      "scale": "none",
+      "aligned": true
+    }
+  ],
+  "runtimeErrors": []
+}

@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import '../app/assets/gravity-maze/core.js';
 import {loadGame} from './helpers/html-vm.mjs';
 
@@ -25,9 +26,12 @@ function steer(state, point) {
   assert.fail(`could not roll to ${point.x},${point.y} from ${state.x},${state.y}`);
 }
 
-test('钢珠迷宫：12张固定迷宫均可达，钥匙在门前，前三关没有坑',()=>{
-  assert.equal(C.LEVELS.length,12);
-  assert.deepEqual(C.LEVELS.map(l=>l.theme),[0,0,0,0,1,1,1,1,2,2,2,2]);
+test('钢珠迷宫：18张固定关均可解，原12关几何保持，钥匙在门前，前三关没有坑',()=>{
+  assert.equal(C.LEVELS.length,18);
+  const keys=['cols','rows','w','h','theme','route','edges','walls','start','goal','stars','key','gate','holes','bumpers'];
+  const baseline=JSON.stringify(C.LEVELS.slice(0,12).map(l=>Object.fromEntries(keys.map(k=>[k,l[k]]))));
+  assert.equal(createHash('sha256').update(baseline).digest('hex'),'c5e0cb8045eea7740e3a2fe33a4bcce630640d44971e5134c1e67f5f223f9599','4.18原12关布局与收集位置不得改变');
+  assert.deepEqual(C.LEVELS.slice(0,12).map(l=>l.theme),[0,0,0,0,1,1,1,1,2,2,2,2]);
   for(const level of C.LEVELS) {
     assert.deepEqual(C.validateLevel(level),{ok:true,bad:[]},`level ${level.id+1}`);
     assert.ok(level.stars.length>=2&&level.stars.length<=3);
@@ -40,6 +44,7 @@ test('钢珠迷宫：12张固定迷宫均可达，钥匙在门前，前三关没
 test('钢珠迷宫：用真实物理逐个房格滚过12条关卡路径，不靠传送获得星星/钥匙和通关',()=>{
   for(const level of C.LEVELS) {
     const state=C.create(level.id);
+    if(level.rotors.length) continue;
     for(const cell of level.route.slice(1))steer(state,center(level,cell));
     assert.equal(state.won,true,`level ${level.id+1}`);
     assert.ok(state.stars.every(Boolean));assert.equal(state.falls,0);
@@ -183,12 +188,118 @@ test('钢珠迷宫：最后一关结束可再玩一轮，第二轮下一关仍�
     g.loadLevel(index);g.start();const {ball,level}=g.world();ball.stars.fill(true);ball.key=!!level.key;ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
     assert.equal(g.state().result,'win');assert.equal(g.state().paused,true);
   }
-  finish(11);h.click('#next');assert.equal(g.state().li,0);finish(0);h.click('#next');assert.equal(g.state().li,1);
-  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).reached,11);
+  finish(17);h.click('#next');assert.equal(g.state().li,0);finish(0);h.click('#next');assert.equal(g.state().li,1);
+  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).mechanismReached,17);
+  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).reached,1);
 });
 
 test('钢珠迷宫：封面无输入、无物理、无写盘、无奖励',t=>{
   const storage={rollingGardenV2:'{"highest":9}',other:'unchanged'}, {h,g,events}=game(t,{storage,cover:true});
   const before=plain(g.state());g.start();g.save();h.click('#next');for(let n=0;n<200;n++)h.frame(30);
   assert.deepEqual(plain(g.state()),before);assert.deepEqual(Object.fromEntries(h.saved),storage);assert.deepEqual(plain(events),[]);
+});
+
+
+test('钢珠机关：六关按真实求解器与120Hz物理完成，后两关必须中途改变挡板朝向',()=>{
+  for(const level of C.LEVELS.slice(12)) {
+    const solution=C.solveLevel(level);assert.ok(solution);const state=C.create(level.id),turns=[];
+    for(const action of solution) {
+      if(action.type==='rotate') { assert.equal(C.rotate(state,action.index),true,`level ${level.id+1}`);turns.push(action.index); }
+      else steer(state,center(level,action.cell));
+      assert.equal(C.positionClear(level,state,state.x,state.y),true);
+    }
+    assert.equal(state.won,true);assert.ok(state.stars.every(Boolean));assert.equal(state.falls,0);assert.ok(turns.length>=1);
+    if(level.id>=16) {
+      for(let bits=0;bits<(1<<level.rotors.length);bits++)assert.equal(C.solveLevel(level,level.rotors.map((_,i)=>bits>>i&1)),null,'任何固定朝向都不能一招通关');
+      for(let i=0;i<level.rotors.length;i++)assert.ok(turns.filter(n=>n===i).length>=2,'每个换路闸在解法中使用两态');
+    }
+  }
+});
+
+test('钢珠机关：闭合挡板真实挡球，转开后同一路径可通过，矩形与渲染共用',()=>{
+  const level=C.LEVELS[12],s=C.create(12),rotor=level.rotors[0],p=center(level,8);
+  steer(s,p);const before=plain(s);
+  for(let n=0;n<240;n++)C.step(s,.24,0);
+  assert.ok(s.x<rotor.x-C.RADIUS,'不能从闭合闸穿过');assert.equal(s.rotors[0],0);
+  s.x=level.start.x;s.y=level.start.y;s.vx=s.vy=0;assert.equal(C.rotate(s,0),true);
+  steer(s,p);steer(s,center(level,9));assert.ok(s.x>rotor.x+C.RADIUS);
+  assert.deepEqual(C.allWalls(level,s).at(-1),C.rotorWall(rotor,1));
+  assert.equal(C.restore(before).rotors[0],0);
+});
+
+test('钢珠机关：完整扫掠区有球时拒转，最终矩形不碰球也不能扫穿；远处检查点不锁死操作',()=>{
+  const s=C.create(16),l=C.LEVELS[16],r=l.rotors[0];
+  s.x=r.x+50;s.y=r.y+50;s.vx=17;s.vy=-3;
+  assert.equal(C.circleHit(s.x,s.y,C.RADIUS,C.rotorWall(r,1)),false,'最终位置虽不碰球');
+  const before=plain(s);assert.equal(C.rotate(s,0),false);assert.deepEqual(s,before,'拒绝时不动球/朝向/存档');
+  s.x=center(l,13).x;s.y=center(l,13).y;s.checkpoint=center(l,11);s.stars[0]=true;
+  assert.equal(C.rotationClear(s,r),true);assert.equal(C.rotate(s,0),true,'旧收星点在扫掠区但球已离开可以转');
+  assert.equal(C.positionClear(l,s,s.checkpoint.x,s.checkpoint.y),true);assert.equal(s.vx,0);assert.equal(s.vy,0);
+  s.recover=.1;assert.equal(C.rotate(s,0),false);s.recover=0;s.won=true;assert.equal(C.rotate(s,0),false);
+});
+
+test('钢珠机关：任意合法初始朝向的持续大倾角仍不穿挡板',()=>{
+  for(const l of C.LEVELS.slice(12))for(let bits=0;bits<(1<<l.rotors.length);bits++) {
+    const s=C.create(l.id);s.rotors=l.rotors.map((_,i)=>bits>>i&1);
+    for(const [x,y] of [[1,0],[0,-1],[-1,0],[0,1]])for(let n=0;n<180;n++) {
+      C.step(s,x,y);assert.equal(C.positionClear(l,s,s.x,s.y),true,`level ${l.id+1} orientation ${bits}`);
+    }
+  }
+});
+
+test('钢珠机关：schema1缺朝向时用初始值，保存后精确恢复，拒绝错误朝向数组',()=>{
+  const old=C.snapshot(C.create(4));delete old.rotors;const legacy=C.restore(old);
+  assert.ok(legacy);assert.deepEqual(legacy.rotors,[]);assert.equal(legacy.x,old.x);assert.deepEqual(legacy.stars,old.stars);
+  const s=C.create(12);assert.equal(C.rotate(s,0),true);s.stars[0]=true;const raw=C.snapshot(s),restored=C.restore(raw);
+  assert.deepEqual(restored.rotors,[1]);assert.deepEqual(restored.stars,raw.stars);assert.equal(restored.x,raw.x);
+  assert.equal(C.restore({...raw,rotors:[2]}),null);assert.equal(C.restore({...raw,rotors:[]}),null);
+  const missing={...raw};delete missing.rotors;assert.deepEqual(C.restore(missing).rotors,[0]);
+});
+
+test('钢珠机关：新章节首关直接可玩，经典进度不变；机关关按自身进度解锁',t=>{
+  const draft=C.snapshot(C.create(3));delete draft.rotors;
+  const raw={schema:1,reached:5,completed:[0,1,2],current:3,draft};
+  const {h,g}=game(t,{storage:{rugeMarbleMazeV1:JSON.stringify(raw)}});
+  assert.equal(g.state().li,3);assert.equal(g.state().progress.reached,5);assert.equal(g.state().progress.mechanismReached,12);
+  g.showLevels();assert.equal(h.node('#levelGrid').children[5].disabled,false);assert.equal(h.node('#levelGrid').children[6].disabled,true);
+  assert.equal(h.node('#mechanismGrid').children[0].disabled,false);assert.equal(h.node('#mechanismGrid').children[1].disabled,true);
+  h.node('#mechanismGrid').children[0].dispatch('click');assert.equal(g.state().li,12);assert.equal(g.state().progress.reached,5);
+  g.start();const {ball,level}=g.world();ball.stars.fill(true);ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
+  assert.equal(g.state().progress.mechanismReached,13);assert.equal(g.state().progress.reached,5);
+  h.click('#next');assert.equal(g.state().li,13);
+});
+
+test('钢珠机关：只在明确规划时允许点挡板，规划冻结物理，继续才运行，后台/终局禁转',t=>{
+  const {h,g,events}=game(t);g.loadLevel(12);assert.equal(g.rotateRotor(0),false);
+  assert.equal(g.enterPlan(),true);assert.equal(g.state().planning,true);const before=g.state();
+  assert.equal(h.node('#rotorButtons').children.length,1);h.node('#rotorButtons').children[0].dispatch('click');
+  assert.deepEqual(plain(g.state().rotors),[1]);assert.ok(events.includes('select'));
+  for(let n=0;n<100;n++)h.frame(30);assert.equal(g.state().time,before.time);assert.equal(g.state().x,before.x);
+  h.click('#finishPlan');assert.equal(g.state().planning,false);assert.equal(g.state().paused,false);
+  g.pause();assert.equal(g.enterPlan(),true);h.emitWindow('ruge:pause');h.emitWindow('ruge:resume');
+  assert.equal(g.state().planning,false);assert.equal(g.state().paused,true);assert.equal(g.rotateRotor(0),false);
+  h.click('#resume');assert.equal(g.state().paused,false);
+  const {ball,level}=g.world();ball.stars.fill(true);ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
+  assert.equal(g.state().result,'win');assert.equal(g.enterPlan(),false);assert.equal(g.rotateRotor(0),false);
+});
+
+test('钢珠机关：已靠近时保留球和挡板，仅短反馈；关闭选关后规划入口可恢复',t=>{
+  const {h,g,events}=game(t);g.loadLevel(16);g.enterPlan();const {ball,level}=g.world(),r=level.rotors[0];
+  ball.x=r.x+48;ball.y=r.y+48;const before=plain(ball);
+  assert.equal(g.rotateRotor(0),false);assert.deepEqual(plain(ball),before);assert.equal(events.at(-1),'error');
+  assert.equal(h.node('#toast').textContent,'先把球移开');
+  g.showLevels();assert.equal(g.state().planning,false);assert.equal(g.enterPlan(),false);
+  h.click('#closeLevels');assert.equal(g.enterPlan(),true);
+  g.loadLevel(12);g.showLevels();assert.equal(h.node('#mechanism').disabled,true);
+  h.node('#mechanismGrid').children[0].dispatch('click');assert.equal(h.node('#levels').hidden,true);assert.equal(h.node('#mechanism').disabled,false);
+});
+
+test('钢珠机关：重置先确认，仅重置当前球/星星/朝向，不清完成/其他游戏；封面无机关操作',t=>{
+  const {h,g}=game(t,{storage:{other:'exact'}});g.loadLevel(12);g.enterPlan();g.rotateRotor(0);
+  const {ball}=g.world();ball.stars[0]=true;g.save();const saved=JSON.parse(h.saved.get('rugeMarbleMazeV1'));
+  h.click('#reset');assert.equal(h.node('#resetPanel').hidden,false);assert.equal(g.state().stars[0],true);
+  h.click('#resetNo');assert.equal(g.state().stars[0],true);h.click('#reset');h.click('#resetYes');
+  assert.equal(g.state().li,12);assert.equal(g.state().stars.some(Boolean),false);assert.deepEqual(plain(g.state().rotors),[0]);
+  assert.deepEqual(plain(g.state().progress.completed),saved.completed);assert.equal(h.saved.get('other'),'exact');
+  const cover=game(t,{cover:true});assert.equal(cover.g.enterPlan(),false);assert.equal(cover.g.rotateRotor(0),false);cover.h.click('#reset');assert.deepEqual(Object.fromEntries(cover.h.saved),{});
 });

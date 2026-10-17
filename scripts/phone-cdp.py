@@ -17,25 +17,33 @@ def adb(*args):
     command = [ADB] + (['-s', SERIAL] if SERIAL else []) + list(args)
     return subprocess.check_output(command, text=True).strip()
 
-async def call(method, params):
+async def call_many(commands):
+    """Run a gesture's commands in one CDP session; touch state is session-owned."""
     pid = adb('shell', 'pidof', 'com.dsh.gamecenter').split()[0]
     port = adb('forward', 'tcp:0', 'localabstract:webview_devtools_remote_' + pid)
     try:
         pages = json.load(urllib.request.urlopen('http://127.0.0.1:' + port + '/json', timeout=5))
         target = next(p for p in pages if p.get('type') == 'page')
         async with websockets.connect(target['webSocketDebuggerUrl'], max_size=8_000_000) as ws:
-            await ws.send(json.dumps({'id': 1, 'method': method, 'params': params}))
-            while True:
-                result = json.loads(await ws.recv())
-                if result.get('id') == 1:
-                    if 'exceptionDetails' in result.get('result', {}):
-                        raise RuntimeError(json.dumps(result['result']['exceptionDetails']))
-                    if 'error' in result:
-                        raise RuntimeError(json.dumps(result['error']))
-                    return result.get('result', {})
+            results = []
+            for request_id, (method, params) in enumerate(commands, 1):
+                await ws.send(json.dumps({'id': request_id, 'method': method, 'params': params}))
+                while True:
+                    result = json.loads(await ws.recv())
+                    if result.get('id') == request_id:
+                        if 'exceptionDetails' in result.get('result', {}):
+                            raise RuntimeError(json.dumps(result['result']['exceptionDetails']))
+                        if 'error' in result:
+                            raise RuntimeError(json.dumps(result['error']))
+                        results.append(result.get('result', {}))
+                        break
+            return results
     finally:
         subprocess.run([ADB] + (['-s', SERIAL] if SERIAL else []) + ['forward', '--remove', 'tcp:' + port],
                        check=False, capture_output=True)
+
+async def call(method, params):
+    return (await call_many([(method, params)]))[0]
 
 async def evaluate(expression):
     result = await call('Runtime.evaluate', {

@@ -1,0 +1,408 @@
+[
+  {
+    "check": "native",
+    "value": {
+      "x": 0.0062686387,
+      "y": 0.050600532,
+      "z": 0.99835736,
+      "age": 38,
+      "available": true,
+      "source": "gravity",
+      "rotation": 0
+    }
+  },
+  {
+    "check": "legacy-session",
+    "value": {
+      "level": 9,
+      "progress": {
+        "schema": 1,
+        "reached": 10,
+        "mechanismReached": 12,
+        "completed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "current": 9,
+        "draft": null,
+        "legacyMigrated": true
+      }
+    }
+  },
+  {
+    "check": "chapter13-direct",
+    "value": {
+      "level": 12,
+      "mechanismReached": 12
+    }
+  },
+  {
+    "check": "maze-13",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "turns": 1,
+      "rotors": [
+        1
+      ],
+      "mechanismReached": 13
+    }
+  },
+  {
+    "check": "maze-14",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "turns": 1,
+      "rotors": [
+        0
+      ],
+      "mechanismReached": 14
+    }
+  },
+  {
+    "check": "maze-15",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "turns": 2,
+      "rotors": [
+        1,
+        1
+      ],
+      "mechanismReached": 15
+    }
+  },
+  {
+    "check": "maze-16",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "turns": 2,
+      "rotors": [
+        1,
+        0
+      ],
+      "mechanismReached": 16
+    }
+  },
+  {
+    "check": "maze-17",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "turns": 2,
+      "rotors": [
+        0
+      ],
+      "mechanismReached": 17
+    }
+  },
+  {
+    "check": "maze-18",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "turns": 4,
+      "rotors": [
+        0,
+        0
+      ],
+      "mechanismReached": 17
+    }
+  },
+  {
+    "check": "maze-background-plan",
+    "value": {
+      "planning": false,
+      "paused": true,
+      "rotors": [
+        1
+      ]
+    }
+  },
+  {
+    "check": "maze-reset",
+    "value": {
+      "rotors": [
+        0
+      ],
+      "result": "ready",
+      "mechanismReached": 17
+    }
+  },
+  {
+    "check": "maze-current-level-tools",
+    "value": true
+  },
+  {
+    "check": "number-dead-end-undo",
+    "value": {
+      "direction": "up",
+      "history": []
+    }
+  },
+  {
+    "check": "numbers12-touch",
+    "value": [
+      {
+        "level": 1,
+        "moves": 1,
+        "finished": true
+      },
+      {
+        "level": 2,
+        "moves": 1,
+        "finished": true
+      },
+      {
+        "level": 3,
+        "moves": 2,
+        "finished": true
+      },
+      {
+        "level": 4,
+        "moves": 3,
+        "finished": true
+      },
+      {
+        "level": 5,
+        "moves": 3,
+        "finished": true
+      },
+      {
+        "level": 6,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 7,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 8,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 9,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 10,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 11,
+        "moves": 5,
+        "finished": true
+      },
+      {
+        "level": 12,
+        "moves": 6,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "check": "number-equations",
+    "value": [
+      {
+        "level": 1,
+        "equation": "2 + 1 = 3"
+      },
+      {
+        "level": 2,
+        "equation": "1 + 3 = 4"
+      },
+      {
+        "level": 3,
+        "equation": "2 + 1 = 3"
+      },
+      {
+        "level": 4,
+        "equation": "1 + 1 = 2"
+      },
+      {
+        "level": 4,
+        "equation": "2 + 2 = 4"
+      },
+      {
+        "level": 5,
+        "equation": "2 + 1 = 3"
+      },
+      {
+        "level": 5,
+        "equation": "2 + 3 = 5"
+      },
+      {
+        "level": 6,
+        "equation": "3 + 1 = 4"
+      },
+      {
+        "level": 6,
+        "equation": "4 + 2 = 6"
+      },
+      {
+        "level": 7,
+        "equation": "2 + 1 = 3"
+      },
+      {
+        "level": 7,
+        "equation": "3 + 4 = 7"
+      },
+      {
+        "level": 8,
+        "equation": "1 + 2 = 3"
+      },
+      {
+        "level": 9,
+        "equation": "1 + 3 = 4"
+      },
+      {
+        "level": 10,
+        "equation": "1 + 1 = 2"
+      },
+      {
+        "level": 10,
+        "equation": "2 + 2 = 4"
+      },
+      {
+        "level": 11,
+        "equation": "1 + 2 = 3"
+      },
+      {
+        "level": 11,
+        "equation": "3 + 2 = 5"
+      },
+      {
+        "level": 12,
+        "equation": "4 + 1 = 5"
+      },
+      {
+        "level": 12,
+        "equation": "1 + 2 = 3"
+      }
+    ]
+  },
+  {
+    "check": "numbers-background",
+    "value": {
+      "paused": true,
+      "busy": false,
+      "state": {
+        "level": 10,
+        "cells": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          5
+        ],
+        "history": [
+          "down"
+        ],
+        "moves": 1,
+        "finished": false
+      }
+    }
+  },
+  {
+    "check": "numbers-native-calibration",
+    "value": {
+      "motion": {
+        "mode": "tilt",
+        "available": true,
+        "fresh": true,
+        "calibrated": true,
+        "source": "gravity",
+        "paused": false,
+        "destroyed": false
+      },
+      "history": [
+        "down"
+      ],
+      "gate": {
+        "held": null,
+        "candidate": null,
+        "elapsed": 0,
+        "neutralWait": false
+      }
+    }
+  },
+  {
+    "check": "shared-gate-star-regression",
+    "value": true
+  },
+  {
+    "check": "home12",
+    "value": {
+      "count": 0,
+      "broken": 0,
+      "feedback": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 134,
+        "sounds": 134,
+        "haptics": 134,
+        "last": "win",
+        "hapticMode": "predefined",
+        "loaded": 13
+      }
+    }
+  }
+]

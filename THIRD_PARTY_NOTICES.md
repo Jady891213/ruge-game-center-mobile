@@ -27,3 +27,7 @@
 ## 钢珠迷宫与翻转星星盒：GPT 生成美术
 
 `app/assets/shared/gravity-art.png` 与 `docs/Design Gravity Games/gravity-ui-prototype.png` 由内置 GPT 图片生成工具为本项目生成。两款游戏共用一张透明图集，包含钢珠、星星、钥匙、出口及两色星球/目标。墙体与碰撞几何由程序统一计算；未提取参考硬件游戏的代码、美术。完整提示词和输出来源见 `docs/Design Gravity Games/art-prompts.json`。
+
+## 数字碰碰与旋转挡板：GPT 生成原型与插画
+
+`app/assets/shared/number-merge-banner.png` 为内置GPT图片生成的原创积木横幅。数字、星形目标和碰撞几何由代码呈现，不读取生成图中的文字。钢珠继续复用gravity-art.png，旋转挡板按真实转轴/碰撞几何绘制；新原型及完整提示词见 `docs/Design Gravity Mechanisms/art-prompts.json`。没有提取2048或其他参考游戏的程序/美术。
