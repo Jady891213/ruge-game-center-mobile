@@ -1,0 +1,338 @@
+[
+  {
+    "width": 392,
+    "height": 872,
+    "documentWidth": 392,
+    "documentHeight": 872,
+    "stage": {
+      "x": 10,
+      "y": 119,
+      "width": 372,
+      "height": 639,
+      "top": 119,
+      "right": 382,
+      "bottom": 758,
+      "left": 10
+    },
+    "controls": {
+      "x": 10,
+      "y": 766,
+      "width": 372,
+      "height": 96,
+      "top": 766,
+      "right": 382,
+      "bottom": 862,
+      "left": 10
+    },
+    "visibleButtons": [
+      {
+        "id": "home",
+        "text": "",
+        "rect": {
+          "x": 10,
+          "y": 10,
+          "width": 44,
+          "height": 44,
+          "top": 10,
+          "right": 54,
+          "bottom": 54,
+          "left": 10
+        }
+      },
+      {
+        "id": "pause",
+        "text": "",
+        "rect": {
+          "x": 338,
+          "y": 10,
+          "width": 44,
+          "height": 44,
+          "top": 10,
+          "right": 382,
+          "bottom": 54,
+          "left": 338
+        }
+      },
+      {
+        "id": "levelBtn",
+        "text": "1 / 12",
+        "rect": {
+          "x": 10,
+          "y": 66,
+          "width": 106.28125,
+          "height": 43,
+          "top": 66,
+          "right": 116.28125,
+          "bottom": 109,
+          "left": 10
+        }
+      },
+      {
+        "id": "tiltMode",
+        "text": "倾斜",
+        "rect": {
+          "x": 12,
+          "y": 780,
+          "width": 55,
+          "height": 68,
+          "top": 780,
+          "right": 67,
+          "bottom": 848,
+          "left": 12
+        }
+      },
+      {
+        "id": "touchMode",
+        "text": "触摸",
+        "rect": {
+          "x": 73,
+          "y": 780,
+          "width": 55,
+          "height": 68,
+          "top": 780,
+          "right": 128,
+          "bottom": 848,
+          "left": 73
+        }
+      },
+      {
+        "id": "calibrate",
+        "text": "校准",
+        "rect": {
+          "x": 325,
+          "y": 780,
+          "width": 55,
+          "height": 68,
+          "top": 780,
+          "right": 380,
+          "bottom": 848,
+          "left": 325
+        }
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "documentWidth": 320,
+    "documentHeight": 568,
+    "stage": {
+      "x": 10,
+      "y": 98,
+      "width": 300,
+      "height": 381,
+      "top": 98,
+      "right": 310,
+      "bottom": 479,
+      "left": 10
+    },
+    "controls": {
+      "x": 10,
+      "y": 484,
+      "width": 300,
+      "height": 78,
+      "top": 484,
+      "right": 310,
+      "bottom": 562,
+      "left": 10
+    },
+    "visibleButtons": [
+      {
+        "id": "home",
+        "text": "",
+        "rect": {
+          "x": 10,
+          "y": 7.5,
+          "width": 39,
+          "height": 39,
+          "top": 7.5,
+          "right": 49,
+          "bottom": 46.5,
+          "left": 10
+        }
+      },
+      {
+        "id": "pause",
+        "text": "",
+        "rect": {
+          "x": 271,
+          "y": 7.5,
+          "width": 39,
+          "height": 39,
+          "top": 7.5,
+          "right": 310,
+          "bottom": 46.5,
+          "left": 271
+        }
+      },
+      {
+        "id": "levelBtn",
+        "text": "1 / 12",
+        "rect": {
+          "x": 10,
+          "y": 54,
+          "width": 99.15625,
+          "height": 38,
+          "top": 54,
+          "right": 109.15625,
+          "bottom": 92,
+          "left": 10
+        }
+      },
+      {
+        "id": "tiltMode",
+        "text": "倾斜",
+        "rect": {
+          "x": 12,
+          "y": 492.5,
+          "width": 50,
+          "height": 61,
+          "top": 492.5,
+          "right": 62,
+          "bottom": 553.5,
+          "left": 12
+        }
+      },
+      {
+        "id": "touchMode",
+        "text": "触摸",
+        "rect": {
+          "x": 68,
+          "y": 492.5,
+          "width": 50,
+          "height": 61,
+          "top": 492.5,
+          "right": 118,
+          "bottom": 553.5,
+          "left": 68
+        }
+      },
+      {
+        "id": "calibrate",
+        "text": "校准",
+        "rect": {
+          "x": 253,
+          "y": 492.5,
+          "width": 55,
+          "height": 61,
+          "top": 492.5,
+          "right": 308,
+          "bottom": 553.5,
+          "left": 253
+        }
+      }
+    ]
+  },
+  {
+    "width": 872,
+    "height": 392,
+    "documentWidth": 872,
+    "documentHeight": 392,
+    "stage": {
+      "x": 106,
+      "y": 55,
+      "width": 646,
+      "height": 331,
+      "top": 55,
+      "right": 752,
+      "bottom": 386,
+      "left": 106
+    },
+    "controls": {
+      "x": 758,
+      "y": 55,
+      "width": 104,
+      "height": 331,
+      "top": 55,
+      "right": 862,
+      "bottom": 386,
+      "left": 758
+    },
+    "visibleButtons": [
+      {
+        "id": "home",
+        "text": "",
+        "rect": {
+          "x": 10,
+          "y": 8,
+          "width": 39,
+          "height": 39,
+          "top": 8,
+          "right": 49,
+          "bottom": 47,
+          "left": 10
+        }
+      },
+      {
+        "id": "pause",
+        "text": "",
+        "rect": {
+          "x": 823,
+          "y": 8,
+          "width": 39,
+          "height": 39,
+          "top": 8,
+          "right": 862,
+          "bottom": 47,
+          "left": 823
+        }
+      },
+      {
+        "id": "levelBtn",
+        "text": "1 / 12",
+        "rect": {
+          "x": 25.203125,
+          "y": 55,
+          "width": 59.59375,
+          "height": 38,
+          "top": 55,
+          "right": 84.796875,
+          "bottom": 93,
+          "left": 25.203125
+        }
+      },
+      {
+        "id": "tiltMode",
+        "text": "倾斜",
+        "rect": {
+          "x": 763.5,
+          "y": 55,
+          "width": 44,
+          "height": 61,
+          "top": 55,
+          "right": 807.5,
+          "bottom": 116,
+          "left": 763.5
+        }
+      },
+      {
+        "id": "touchMode",
+        "text": "触摸",
+        "rect": {
+          "x": 812.5,
+          "y": 55,
+          "width": 44,
+          "height": 61,
+          "top": 55,
+          "right": 856.5,
+          "bottom": 116,
+          "left": 812.5
+        }
+      },
+      {
+        "id": "calibrate",
+        "text": "校准",
+        "rect": {
+          "x": 782.5,
+          "y": 325,
+          "width": 55,
+          "height": 61,
+          "top": 325,
+          "right": 837.5,
+          "bottom": 386,
+          "left": 782.5
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "check": "real-native-gravity",
+    "value": {
+      "x": 0.006004521,
+      "y": 0.050187703,
+      "z": 0.9983798,
+      "age": 20,
+      "available": true,
+      "source": "gravity",
+      "rotation": 0
+    }
+  },
+  {
+    "check": "maze-ready",
+    "value": {
+      "title": "钢珠迷宫",
+      "state": {
+        "schema": 1,
+        "level": 9,
+        "x": 48,
+        "y": 368,
+        "vx": 0,
+        "vy": 0,
+        "spin": 0,
+        "stars": [
+          false,
+          false,
+          false
+        ],
+        "key": false,
+        "checkpoint": {
+          "x": 48,
+          "y": 368
+        },
+        "falls": 0,
+        "time": 0,
+        "recover": 0,
+        "bumpCooldown": 0,
+        "accumulator": 0,
+        "won": false,
+        "li": 9,
+        "result": "ready",
+        "paused": true,
+        "mode": "tilt",
+        "progress": {
+          "schema": 1,
+          "reached": 10,
+          "completed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "current": 9,
+          "draft": null,
+          "legacyMigrated": true
+        }
+      },
+      "motion": {
+        "mode": "tilt",
+        "available": true,
+        "fresh": true,
+        "calibrated": false,
+        "source": "gravity",
+        "paused": false,
+        "destroyed": false
+      },
+      "atlas": 1025
+    }
+  },
+  {
+    "check": "maze-real-touch-pad",
+    "value": {
+      "distance": 13.829177411592866,
+      "velocityAfterRelease": 0
+    }
+  },
+  {
+    "check": "maze-background-paused",
+    "value": {
+      "paused": true,
+      "result": "run"
+    }
+  },
+  {
+    "check": "maze-live-physics-win",
+    "value": {
+      "won": true,
+      "stars": [
+        true,
+        true,
+        true
+      ],
+      "falls": 0,
+      "reached": 10
+    }
+  },
+  {
+    "check": "maze-real-sensor-calibrated",
+    "value": {
+      "motion": {
+        "mode": "tilt",
+        "available": true,
+        "fresh": true,
+        "calibrated": true,
+        "source": "gravity",
+        "paused": false,
+        "destroyed": false
+      },
+      "reading": {
+        "x": 0,
+        "y": 0,
+        "available": true,
+        "fresh": true,
+        "angleX": -2.803967902789955e-05,
+        "angleY": 0.00010477471781143721
+      },
+      "paused": false
+    }
+  },
+  {
+    "check": "star-dead-end-undo",
+    "value": {
+      "history": [],
+      "positions": [
+        12,
+        11
+      ]
+    }
+  },
+  {
+    "check": "star-all12-real-touch",
+    "value": [
+      {
+        "level": 1,
+        "moves": 1,
+        "finished": true
+      },
+      {
+        "level": 2,
+        "moves": 2,
+        "finished": true
+      },
+      {
+        "level": 3,
+        "moves": 3,
+        "finished": true
+      },
+      {
+        "level": 4,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 5,
+        "moves": 5,
+        "finished": true
+      },
+      {
+        "level": 6,
+        "moves": 4,
+        "finished": true
+      },
+      {
+        "level": 7,
+        "moves": 5,
+        "finished": true
+      },
+      {
+        "level": 8,
+        "moves": 5,
+        "finished": true
+      },
+      {
+        "level": 9,
+        "moves": 5,
+        "finished": true
+      },
+      {
+        "level": 10,
+        "moves": 6,
+        "finished": true
+      },
+      {
+        "level": 11,
+        "moves": 7,
+        "finished": true
+      },
+      {
+        "level": 12,
+        "moves": 8,
+        "finished": true
+      }
+    ]
+  },
+  {
+    "check": "star-background-pause",
+    "value": {
+      "paused": true,
+      "busy": false,
+      "state": {
+        "level": 8,
+        "positions": [
+          20,
+          16
+        ],
+        "history": [
+          "down"
+        ],
+        "moves": 1,
+        "finished": false
+      }
+    }
+  },
+  {
+    "check": "star-real-tilt-no-spurious-action",
+    "value": {
+      "history": [
+        "down"
+      ],
+      "mode": "tilt",
+      "gate": {
+        "held": null,
+        "candidate": null,
+        "elapsed": 0,
+        "neutralWait": false
+      },
+      "notice": false
+    }
+  },
+  {
+    "check": "home11",
+    "value": {
+      "count": 11,
+      "broken": []
+    }
+  }
+]

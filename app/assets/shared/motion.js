@@ -1,0 +1,71 @@
+/* One calibrated gravity input for both continuous and discrete games.
+ * Outputs sin(inclination), screen right/down positive. No game physics here. */
+(function (w) {
+  'use strict';
+  const clamp = (v, lo = -1, hi = 1) => Math.max(lo, Math.min(hi, v));
+  const finite = Number.isFinite;
+  function create(options = {}) {
+    let mode = 'tilt', zero = [0, 0], filtered = [0, 0], touch = [0, 0];
+    let paused = false, dead = false, calibrated = false, web = null, lastStatus = '';
+    const native = w.RugeTilt;
+    function raw() {
+      if (dead || paused || w.document?.hidden) return null;
+      try {
+        if (native) {
+          let s;
+          if (typeof native.sample === 'function') s = JSON.parse(native.sample());
+          else s = {x: Number(native.gx()), y: Number(native.gy()), z: typeof native.gz === 'function' ? Number(native.gz()) : 1,
+            available: native.available(), age: typeof native.sampleAgeMs === 'function' ? Number(native.sampleAgeMs()) : 0,
+            source: 'native', legacy: typeof native.coordinateSystem !== 'function' || native.coordinateSystem() !== 'screen-down-v1'};
+          if (!s.available || !finite(s.age) || s.age < 0 || s.age > 1500 || ![s.x, s.y, s.z].every(finite)) return null;
+          if (s.legacy) s.x = -s.x;
+          const n = Math.hypot(s.x, s.y, s.z);
+          if (n < .35 || n > 1.8) return null;
+          return {x: s.x / n, y: s.y / n, z: s.z / n, source: s.source || 'native'};
+        }
+      } catch (_) { return null; }
+      if (web && performance.now() - web.time <= 1500) return web;
+      return null;
+    }
+    const angles = s => [Math.atan2(s.x, Math.hypot(s.y, s.z)), Math.atan2(s.y, Math.hypot(s.x, s.z))];
+    function status(s = raw()) {
+      return {mode, available: mode === 'touch' || !!s, fresh: !!s, calibrated, source: s?.source || 'unavailable', paused, destroyed: dead};
+    }
+    function inform(s) {
+      const value = status(s), key = JSON.stringify(value);
+      if (key !== lastStatus) { lastStatus = key; options.onChange?.(value); }
+    }
+    function read(dt = 1 / 60) {
+      const s = raw(); inform(s);
+      if (dead || paused || w.document?.hidden) return {x: 0, y: 0, available: false, fresh: false, angleX: 0, angleY: 0};
+      if (mode === 'touch') return {x: touch[0], y: touch[1], available: true, fresh: true, angleX: Math.asin(touch[0]), angleY: Math.asin(touch[1])};
+      if (!s) { filtered = [0, 0]; return {x: 0, y: 0, available: false, fresh: false, angleX: 0, angleY: 0}; }
+      const a = angles(s).map((v, i) => clamp(v - zero[i], -Math.PI / 2, Math.PI / 2));
+      const gain = 1 - Math.exp(-clamp(finite(dt) ? dt : 0, 0, .1) / .035);
+      a.forEach((v, i) => { const target = Math.abs(v) < .012 ? 0 : Math.sin(v); filtered[i] += (target - filtered[i]) * gain; });
+      return {x: filtered[0], y: filtered[1], available: true, fresh: true, angleX: a[0], angleY: a[1]};
+    }
+    function calibrate() { const s = raw(); if (!s) return false; zero = angles(s); filtered = [0, 0]; touch = [0, 0]; calibrated = true; inform(s); return true; }
+    function release() { touch = [0, 0]; filtered = [0, 0]; }
+    function setMode(value) { if (value !== 'tilt' && value !== 'touch') return false; mode = value; release(); inform(raw()); return true; }
+    function setTouch(x, y) { if (!finite(x) || !finite(y) || dead || paused) return; const n = Math.max(1, Math.hypot(x, y)); touch = [x / n, y / n]; }
+    function orientation(e) {
+      if (dead || !finite(e.beta) || !finite(e.gamma)) return;
+      const b = e.beta * Math.PI / 180, g = e.gamma * Math.PI / 180;
+      const x = Math.sin(g) * Math.cos(b), y = Math.sin(b), z = Math.cos(g) * Math.cos(b);
+      const rotation = ((w.screen?.orientation?.angle ?? w.orientation ?? 0) + 360) % 360;
+      const mapped = rotation === 90 ? [-y, x] : rotation === 180 ? [-x, -y] : rotation === 270 ? [y, -x] : [x, y];
+      web = {x: mapped[0], y: mapped[1], z, time: performance.now(), source: 'browser'};
+    }
+    function pause() { paused = true; release(); web = null; inform(null); }
+    function resume() { paused = false; release(); web = null; inform(raw()); }
+    function rotate() { calibrated = false; zero = [0, 0]; release(); web = null; }
+    function visibility() { if (w.document?.hidden) pause(); else resume(); }
+    const events = [['deviceorientation', orientation], ['ruge:pause', pause], ['ruge:resume', resume], ['ruge:orientation', rotate], ['pagehide', pause]];
+    events.forEach(([name, fn]) => w.addEventListener(name, fn));
+    w.document?.addEventListener('visibilitychange', visibility);
+    function destroy() { dead = true; release(); web = null; events.forEach(([name, fn]) => w.removeEventListener(name, fn)); w.document?.removeEventListener('visibilitychange', visibility); }
+    return {read, calibrate, setMode, setTouch, release, mode: () => mode, status, destroy};
+  }
+  w.RugeMotion = Object.freeze({create});
+})(window);

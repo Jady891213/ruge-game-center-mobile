@@ -6,7 +6,8 @@ const games=[
 {id:'forest-juice',cat:'puzzle',name:'森林果汁屋',desc:'倒一倒，把同色果汁放一起。',tag:'12 关 · 颜色整理'},
 {id:'code-breaker',cat:'puzzle',name:'小小密码箱',desc:'猜对数字，再给它们找对位置。',tag:'18 关 · 两位到四位'},
 {id:'pipe-flow',cat:'puzzle',name:'接水管',desc:'转一转，让水流到花园。',tag:'10 关 · 撤销与提示'},
-{id:'gravity-maze',cat:'puzzle',name:'重力钢珠',desc:'轻轻倾斜，走出木板迷宫。',tag:'10 关 · 倾斜或摇杆'},
+{id:'gravity-maze',cat:'puzzle',name:'钢珠迷宫',desc:'滚一滚，收集星星走出迷宫。',tag:'12 关 · 倾斜或摇杆'},
+{id:'tilt-star-box',cat:'puzzle',name:'翻转星星盒',desc:'倾斜玩具盒，送星星回家。',tag:'12 关 · 四向翻转'},
 {id:'hanzi-puzzle',cat:'learn',name:'字里找字',desc:'从字里找字，还能跨字组合。',tag:'60 关 · 多答案收集'},
 {id:'paint-mixing',cat:'puzzle',name:'小小调色师',desc:'一点颜料，调出喜欢的颜色。',tag:'10 关 · 颜料调色'},
 {id:'hanzi-typing',cat:'learn',name:'看字打拼音',desc:'看字、听音，打出拼音。',tag:'60 字 · 笔画演示'},
@@ -15,7 +16,7 @@ const games=[
 {id:'frog-pond',cat:'react',name:'小青蛙跳池塘',desc:'跳上金圈荷叶，接住连击。',tag:'二段跳 · 落点挑战'}];
 function read(k){try{return JSON.parse(localStorage.getItem(k)||'{}')}catch(e){return {}}}
 function bind(){document.querySelectorAll('[data-id]').forEach(a=>a.onclick=()=>{let s=read('rugeCenter');const k=a.dataset.id;s[k]={...(s[k]||{}),last:Date.now(),plays:((s[k]||{}).plays||0)+1};localStorage.setItem('rugeCenter',JSON.stringify(s))})}
-function render(cat){const list=games.filter(g=>cat==='all'||g.cat===cat);document.querySelector('#cards').innerHTML=list.map(g=>'<a class="card" href="'+g.id+'/index.html" data-id="'+g.id+'"><img class="cover" src="shared/'+g.id+'.png" alt=""><div class="meta"><h2>'+g.name+'</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></div></a>').join('');document.querySelector('#count').textContent=list.length+' 款游戏';document.querySelector('#heading').textContent=cat==='all'?'十个小世界':({learn:'一点一点，学会更多',puzzle:'慢慢想，总能找到路',react:'下一次，再进步一点'})[cat];bind()}
+function render(cat){const list=games.filter(g=>cat==='all'||g.cat===cat);document.querySelector('#cards').innerHTML=list.map(g=>'<a class="card" href="'+g.id+'/index.html" data-id="'+g.id+'"><img class="cover" src="shared/'+g.id+'.png" alt=""><div class="meta"><h2>'+g.name+'</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></div></a>').join('');document.querySelector('#count').textContent=list.length+' 款游戏';document.querySelector('#heading').textContent=cat==='all'?'十一个小世界':({learn:'一点一点，学会更多',puzzle:'慢慢想，总能找到路',react:'下一次，再进步一点'})[cat];bind()}
 document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-cat]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render(b.dataset.cat)});
 const recent=read('rugeCenter');const last=games.filter(g=>recent[g.id]?.last).sort((a,b)=>recent[b.id].last-recent[a.id].last)[0];if(last){const r=document.querySelector('#recent');r.style.display='block';r.innerHTML='<a href="'+last.id+'/index.html" data-id="'+last.id+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg><b>'+last.name+'</b><span class="arrow">→</span></a>'}
 let awake=true;try{awake=window.RugeScreen?RugeScreen.keepAwakeEnabled():localStorage.getItem('rugeAwake')!=='false'}catch(e){}const ab=document.querySelector('#awake');function showAwake(){ab.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span>常亮 '+(awake?'开':'关')+'</span>';ab.setAttribute('aria-label','屏幕常亮'+(awake?'开启':'关闭'));ab.setAttribute('aria-pressed',String(awake))}ab.onclick=()=>{awake=!awake;try{window.RugeScreen?.keepAwake(awake);localStorage.setItem('rugeAwake',String(awake))}catch(e){}showAwake()};showAwake();render('all');

@@ -1,0 +1,140 @@
+{
+  "game": "翻转星星盒",
+  "source": "app/assets/tilt-star-box",
+  "date": "2026-10-17",
+  "nodeTests": {
+    "command": "node --test tests/tilt-star-box.test.mjs",
+    "passed": 13,
+    "failed": 0
+  },
+  "browser": {
+    "tool": "Playwright CLI",
+    "levelFlow": "Actual packaged page; production __game.act directions, full real-time animation between actions",
+    "completedLevels": [
+      {
+        "level": 1,
+        "won": true,
+        "moves": 1
+      },
+      {
+        "level": 2,
+        "won": true,
+        "moves": 2
+      },
+      {
+        "level": 3,
+        "won": true,
+        "moves": 3
+      },
+      {
+        "level": 4,
+        "won": true,
+        "moves": 4
+      },
+      {
+        "level": 5,
+        "won": true,
+        "moves": 5
+      },
+      {
+        "level": 6,
+        "won": true,
+        "moves": 4
+      },
+      {
+        "level": 7,
+        "won": true,
+        "moves": 5
+      },
+      {
+        "level": 8,
+        "won": true,
+        "moves": 5
+      },
+      {
+        "level": 9,
+        "won": true,
+        "moves": 5
+      },
+      {
+        "level": 10,
+        "won": true,
+        "moves": 6
+      },
+      {
+        "level": 11,
+        "won": true,
+        "moves": 7
+      },
+      {
+        "level": 12,
+        "won": true,
+        "moves": 8
+      }
+    ],
+    "consoleErrors": 0
+  },
+  "layouts": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "document": [
+        320,
+        568
+      ],
+      "footerBottom": 549,
+      "screenshot": "tilt-star-box-320x568.png"
+    },
+    {
+      "viewport": [
+        392,
+        872
+      ],
+      "document": [
+        392,
+        872
+      ],
+      "footerBottom": 797,
+      "screenshot": "tilt-star-box-392x872.png"
+    },
+    {
+      "viewport": [
+        872,
+        392
+      ],
+      "document": [
+        872,
+        392
+      ],
+      "footerBottom": 375,
+      "headerBounds": [
+        16,
+        8,
+        840,
+        44
+      ],
+      "screenshot": "tilt-star-box-872x392.png"
+    }
+  ],
+  "inputChecks": [
+    "Stable tilt threshold 0.18 / neutral 0.08 / 110ms; held direction emits once",
+    "Fresh sample delayed at entry is calibrated once, not interpreted as a move",
+    "Entering, resuming and returning to tilt mode calibrate current nonzero handheld baseline",
+    "Unavailable/stale samples and background pause do not issue delayed actions",
+    "Animation locks input; undo replays the real history; malformed saves are rejected",
+    "Unsolvable states in levels 6 and 9 highlight undo without resetting progress"
+  ],
+  "limits": [
+    "Browser completed games using the production direction API; not a physical phone gesture test",
+    "Shared native sensor orientation and actual handheld feel must be verified by root on MIX 4",
+    "Browser audio was headless; no claim of subjective sound or vibration quality"
+  ],
+  "cleanup": {
+    "namedBrowserSession": "tilt-star-box-check",
+    "browserClosed": true,
+    "localHttpServerClosed": true,
+    "temporaryDirectoryRemoved": true
+  }
+}

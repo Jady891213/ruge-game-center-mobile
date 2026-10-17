@@ -7,7 +7,6 @@ import {loadGame} from './helpers/html-vm.mjs';
 function puzzle(t,name,{storage={},cover=false}={}) {
   const h=loadGame(name,{storage,instrument(source,index){
     if(index===0)return `window.__feedback=[];window.RugeFX={emit:name=>window.__feedback.push(name)};${cover?"location.search='?cover=1';":''}`;
-    if(name==='gravity-maze')source+='\nwindow.__world=()=>({lv,ball});';
     return source;
   }});
   t.after(()=>h.dispose());
@@ -86,22 +85,18 @@ test('重力：收集/掉洞/过关有反馈，静止、贴墙、暂停和恢复
   const {h,g,events}=puzzle(t,'gravity-maze');assert.deepEqual(take(events),[]);
   const snapshots=[];h.window.RugeFX.emit=name=>{events.push(name);snapshots.push({name,...g.state()});};
   h.click('#start');assert.deepEqual(take(events),['tap']);
-  const {lv,ball}=h.window.__world();
-  for(const fruit of lv.fruits){ball.x=fruit[0];ball.y=fruit[1];ball.vx=ball.vy=0;h.frame();assert.deepEqual(take(events),['collect']);}
+  const {level,ball}=g.world();
+  for(const star of level.stars){ball.x=star.x;ball.y=star.y;ball.vx=ball.vy=0;h.frame(30);assert.deepEqual(take(events),['collect']);}
   for(let i=0;i<20;i++)h.frame();assert.deepEqual(take(events),[]);
   g.pause();h.frame();h.emitWindow('ruge:resume');assert.deepEqual(take(events),[]);g.resume();
-  ball.x=lv.goal[0]+lv.goal[2]/2;ball.y=lv.goal[1]+lv.goal[3]/2;ball.vx=ball.vy=0;h.frame();assert.deepEqual(take(events),['win']);
+  ball.x=level.goal.x;ball.y=level.goal.y;ball.vx=ball.vy=0;h.frame(30);assert.deepEqual(take(events),['win']);
   assert.equal(g.state().result,'win');assert.equal(g.state().paused,true);
   assert.equal(snapshots.filter(event=>event.name==='win').length,1);
   assert.equal(snapshots.find(event=>event.name==='win').paused,false,'terminal feedback precedes the physics freeze');
   for(let i=0;i<20;i++)h.frame();assert.deepEqual(take(events),[]);
-  g.loadLevel(1);h.click('#start');take(events);const next=h.window.__world();next.ball.invuln=0;next.ball.x=next.lv.holes[0][0];next.ball.y=next.lv.holes[0][1];h.frame();assert.deepEqual(take(events),['error']);
-  assert.equal(g.state().result,'fall');assert.equal(g.state().paused,false);
-  assert.equal(snapshots.filter(event=>event.name==='error').length,1);
-  assert.equal(snapshots.find(event=>event.name==='error').result,'fall');
-  assert.equal(snapshots.find(event=>event.name==='error').paused,false,'fall feedback is emitted before any gameover pause');
-  h.frame();assert.deepEqual(take(events),[]);
-  for(let i=0;i<30;i++)h.frame();
+  g.loadLevel(4);h.click('#start');take(events);const next=g.world();next.ball.x=next.level.holes[0].x;next.ball.y=next.level.holes[0].y;h.frame(30);assert.deepEqual(take(events),['error']);
+  assert.ok(g.state().recover>0);assert.equal(g.state().paused,false);
+  for(let i=0;i<40;i++)h.frame();assert.deepEqual(take(events),[]);
   assert.equal(snapshots.filter(event=>event.name==='error').length,1,'respawn does not replay the fall event');
 });
 

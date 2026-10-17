@@ -145,6 +145,7 @@ export function loadGame(game, { storage = {}, instrument = source => source } =
   const window = {
     innerWidth: size.width, innerHeight: size.height, devicePixelRatio: 2,
     addEventListener: (type, listener) => addListener(windowEvents, type, listener),
+    removeEventListener: (type, listener) => removeListener(windowEvents, type, listener),
   };
   function removeListener(map, type, listener) {
     map.set(type, (map.get(type) || []).filter(item => item !== listener));
@@ -158,12 +159,14 @@ export function loadGame(game, { storage = {}, instrument = source => source } =
     addEventListener: (type, listener) => addListener(documentEvents, type, listener),
     removeEventListener: (type, listener) => removeListener(documentEvents, type, listener),
   };
+  window.document = document;
+  window.screen = { orientation: { angle: 0 } };
   const context = vm.createContext({
     window, document, location: { search: '', href: '', hash: '' },
     get innerWidth() { return window.innerWidth; },
     get innerHeight() { return window.innerHeight; },
     devicePixelRatio: window.devicePixelRatio,
-    screen: { orientation: { angle: 0 } },
+    screen: window.screen,
     localStorage: { getItem: key => saved.get(key) ?? null, setItem: (key, value) => saved.set(key, String(value)) },
     performance: { now: () => now },
     setTimeout(callback, delay = 0) {

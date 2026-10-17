@@ -60,13 +60,76 @@ public class MainActivity extends Activity {
     //   TYPE_ACCELEROMETER 不需要任何权限。
     private SensorManager sensors;
     private Sensor tiltSensor;
-    private volatile float ax = 0f, ay = 0f, az = 1f;
-    private volatile boolean tiltReady = false;
+    private final Object tiltLock = new Object();
+    private final TiltReading tiltReading = new TiltReading();
     private volatile boolean tiltRegistered = false;
-    private volatile long sampleElapsedMs = 0L;
     private volatile int displayRotation = Surface.ROTATION_0;
     private volatile String tiltWhy = "not-started";
     private SensorEventListener tiltListener;
+
+    /** Pure numeric sensor state; callers hold tiltLock, including bridge reads. */
+    static final class TiltReading {
+        private static final double ACCEL_TIME_CONSTANT_SECONDS = 0.18;
+        float x = 0f, y = 0f, z = 1f;
+        long timestampNanos = 0L;
+        boolean ready = false;
+        String source = "none";
+
+        void clear() {
+            x = y = 0f;
+            z = 1f;
+            timestampNanos = 0L;
+            ready = false;
+            source = "none";
+        }
+
+        boolean accept(float rx, float ry, float rz, long timestamp, boolean accelerometer) {
+            if (Float.isNaN(rx) || Float.isInfinite(rx) || Float.isNaN(ry) || Float.isInfinite(ry)
+                    || Float.isNaN(rz) || Float.isInfinite(rz) || timestamp <= 0L) {
+                clear();
+                return false;
+            }
+            // Reject delayed/out-of-order callbacks without replacing the newer sample.
+            if (ready && timestamp <= timestampNanos) return true;
+            float nx = rx / 9.81f, ny = ry / 9.81f, nz = rz / 9.81f;
+            if (accelerometer && ready) {
+                double dt = (timestamp - timestampNanos) / 1000000000.0;
+                // dt-based low-pass extracts gravity; short translational jolts are attenuated.
+                float blend = (float) (1.0 - Math.exp(-dt / ACCEL_TIME_CONSTANT_SECONDS));
+                x += (nx - x) * blend;
+                y += (ny - y) * blend;
+                z += (nz - z) * blend;
+            } else {
+                x = nx; y = ny; z = nz;
+            }
+            timestampNanos = timestamp;
+            ready = true;
+            source = accelerometer ? "accelerometer-lowpass" : "gravity";
+            return true;
+        }
+
+        float screenX(int rotation) {
+            switch (rotation) {
+                case 1: return y;
+                case 2: return x;
+                case 3: return -y;
+                default: return -x;
+            }
+        }
+
+        float screenY(int rotation) {
+            switch (rotation) {
+                case 1: return x;
+                case 2: return -y;
+                case 3: return -x;
+                default: return y;
+            }
+        }
+
+        long ageMs(long nowMs) {
+            return !ready ? -1L : Math.max(0L, nowMs - timestampNanos / 1000000L);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle state) {
@@ -224,45 +287,60 @@ public class MainActivity extends Activity {
     /** 页面轮询 window.RugeTilt.gx() / gy() 拿倾斜值（-1 ~ 1）。没有传感器时 available() 为 false。 */
     private class TiltBridge {
         @JavascriptInterface
-        public boolean available() { return foreground && tiltRegistered && tiltReady && sampleAgeMs() <= 1500L; }
+        public boolean available() {
+            synchronized (tiltLock) {
+                return tiltAvailableLocked(tiltReading.ageMs(SystemClock.elapsedRealtime()));
+            }
+        }
         /** 屏幕坐标：向屏幕右侧滚动为正；已映射当前旋转方向。 */
         @JavascriptInterface
         public float gx() {
-            switch (displayRotation) {
-                case Surface.ROTATION_90: return ay;
-                case Surface.ROTATION_180: return ax;
-                case Surface.ROTATION_270: return -ay;
-                default: return -ax;
-            }
+            synchronized (tiltLock) { return tiltReading.screenX(displayRotation); }
         }
         /** 屏幕坐标：向屏幕下方滚动为正。 */
         @JavascriptInterface
         public float gy() {
-            switch (displayRotation) {
-                case Surface.ROTATION_90: return ax;
-                case Surface.ROTATION_180: return -ay;
-                case Surface.ROTATION_270: return -ax;
-                default: return ay;
-            }
+            synchronized (tiltLock) { return tiltReading.screenY(displayRotation); }
         }
         /** 原始竖直分量（调试用） */
         @JavascriptInterface
-        public float gz() { return az; }
+        public float gz() { synchronized (tiltLock) { return tiltReading.z; } }
+        /** One atomic reading, screen-down-v1 coordinates in normalized g; age is milliseconds. */
+        @JavascriptInterface
+        public String sample() {
+            synchronized (tiltLock) {
+                int rotation = displayRotation;
+                long age = tiltReading.ageMs(SystemClock.elapsedRealtime());
+                return "{\"x\":" + tiltReading.screenX(rotation) + ",\"y\":" + tiltReading.screenY(rotation)
+                    + ",\"z\":" + tiltReading.z + ",\"age\":" + age
+                    + ",\"available\":" + tiltAvailableLocked(age)
+                    + ",\"source\":\"" + tiltReading.source + "\",\"rotation\":" + rotation * 90 + "}";
+            }
+        }
         @JavascriptInterface
         public String status() {
-            if (tiltRegistered && tiltReady && sampleAgeMs() > 1500L) return "stale-sample";
-            return tiltWhy;
+            synchronized (tiltLock) {
+                if (tiltRegistered && tiltReading.ready && tiltReading.ageMs(SystemClock.elapsedRealtime()) > 1500L) return "stale-sample";
+                return tiltWhy;
+            }
         }
         @JavascriptInterface
         public String coordinateSystem() { return "screen-down-v1"; }
         /** 单调时钟，不能和 JS Date.now() 直接相减；页面通常用 sampleAgeMs。 */
         @JavascriptInterface
-        public long sampleTimeMs() { return sampleElapsedMs; }
+        public long sampleTimeMs() { synchronized (tiltLock) { return tiltReading.timestampNanos / 1000000L; } }
         @JavascriptInterface
         public long sampleAgeMs() {
-            long stamp = sampleElapsedMs;
-            return stamp == 0L ? Long.MAX_VALUE : Math.max(0L, SystemClock.elapsedRealtime() - stamp);
+            synchronized (tiltLock) {
+                long age = tiltReading.ageMs(SystemClock.elapsedRealtime());
+                return age < 0L ? Long.MAX_VALUE : age;
+            }
         }
+    }
+
+    /** Must be called while holding tiltLock. */
+    private boolean tiltAvailableLocked(long age) {
+        return foreground && tiltRegistered && tiltReading.ready && age >= 0L && age <= 1500L;
     }
 
     private void initTilt() {
@@ -274,14 +352,12 @@ public class MainActivity extends Activity {
             if (tiltSensor == null) { tiltWhy = "no-tilt-sensor"; return; }
             tiltListener = new SensorEventListener() {
                 public void onSensorChanged(SensorEvent e) {
-                    if (!foreground || !tiltRegistered || e.values.length < 3) return;
-                    // 单位是 m/s²，除以 9.81 归一化到「几个 g」
-                    ax = e.values[0] / 9.81f;
-                    ay = e.values[1] / 9.81f;
-                    az = e.values[2] / 9.81f;
-                    sampleElapsedMs = e.timestamp / 1000000L;
-                    tiltReady = true;
-                    tiltWhy = tiltSensor.getType() == Sensor.TYPE_GRAVITY ? "ok-gravity" : "ok-accelerometer";
+                    synchronized (tiltLock) {
+                        if (!foreground || !tiltRegistered || e.values.length < 3) return;
+                        boolean accelerometer = tiltSensor.getType() == Sensor.TYPE_ACCELEROMETER;
+                        boolean valid = tiltReading.accept(e.values[0], e.values[1], e.values[2], e.timestamp, accelerometer);
+                        tiltWhy = valid ? (accelerometer ? "ok-accelerometer" : "ok-gravity") : "invalid-sample";
+                    }
                 }
                 public void onAccuracyChanged(Sensor s2, int acc2) { }
             };
@@ -292,29 +368,29 @@ public class MainActivity extends Activity {
     }
 
     private void startTilt() {
-        if (tiltRegistered || sensors == null || tiltSensor == null || tiltListener == null) return;
-        tiltReady = false;
-        sampleElapsedMs = 0L;
-        try {
-            tiltRegistered = sensors.registerListener(tiltListener, tiltSensor, SensorManager.SENSOR_DELAY_GAME);
-            tiltWhy = tiltRegistered ? "waiting-for-sample" : "register-failed";
-        } catch (RuntimeException e) {
-            tiltRegistered = false;
-            tiltWhy = "register-error:" + e.getClass().getSimpleName();
+        synchronized (tiltLock) {
+            if (tiltRegistered || sensors == null || tiltSensor == null || tiltListener == null) return;
+            tiltReading.clear();
+            try {
+                tiltRegistered = sensors.registerListener(tiltListener, tiltSensor, SensorManager.SENSOR_DELAY_GAME);
+                tiltWhy = tiltRegistered ? "waiting-for-sample" : "register-failed";
+            } catch (RuntimeException e) {
+                tiltRegistered = false;
+                tiltWhy = "register-error:" + e.getClass().getSimpleName();
+            }
         }
     }
 
     private void stopTilt() {
-        tiltRegistered = false;
-        tiltReady = false;
-        sampleElapsedMs = 0L;
-        ax = ay = 0f;
-        az = 1f;
+        synchronized (tiltLock) {
+            tiltRegistered = false;
+            tiltReading.clear();
+            if (tiltSensor != null) tiltWhy = "paused";
+        }
         if (sensors != null && tiltListener != null) {
             try { sensors.unregisterListener(tiltListener); }
             catch (RuntimeException e) { android.util.Log.w("RugeGC", "Sensor cleanup failed", e); }
         }
-        if (tiltSensor != null) tiltWhy = "paused";
     }
 
     private void initTts() {
@@ -458,7 +534,10 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void updateDisplayRotation() { displayRotation = getWindowManager().getDefaultDisplay().getRotation(); }
+    private void updateDisplayRotation() {
+        int rotation = getWindowManager().getDefaultDisplay().getRotation();
+        synchronized (tiltLock) { displayRotation = rotation; }
+    }
 
     @Override
     public void onConfigurationChanged(Configuration configuration) {

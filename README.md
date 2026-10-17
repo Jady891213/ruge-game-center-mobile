@@ -1,14 +1,14 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、重力迷宫、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十个游戏，无需联网。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十一个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.17 / versionCode 40**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.18 / versionCode 41**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
 | 目录 | 用途 |
 |---|---|
-| `app/assets/` | 当前菜单、十个游戏和离线素材源码 |
+| `app/assets/` | 当前菜单、十一个游戏和离线素材源码 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -20,6 +20,19 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 重力玩具（4.18）
+
+- **钢珠迷宫**重构为12个固定关卡：宽通道收星，逐步加入钥匙门和少量洞口；连续倾斜加速度、惯性、反向刹车和轻碰撞，掉洞回安全点并保留收集，没有生命/倒计时压力。
+- **翻转星星盒**新增12关：倾斜一个方向让所有星球一起滑到底，送进同色窝；两球可以互相挡住。可撤销、重置，也可用大方向按钮操作。
+- 两款共用 `shared/motion.js`、原生重力桥、音效震动和 GPT 生成的透明美术图集。关卡规则与物理分别独立，不引入额外游戏引擎。
+- 旧重力存档保留并迁移已到达的进度，新布局不恢复旧物理坐标。倾斜失效时能切触摸，切后台回来保持暂停，校准以当前握持角度为零。
+
+[真机验收](docs/Review%20Gravity%20Toys/gravity-toys-review.md) · [视觉原型与素材提示词](docs/Design%20Gravity%20Games/art-prompts.json) · [硬件参考及依赖审计](docs/Design%20Gravity%20Games/reference-research.md)
+
+### 共享依赖的边界
+
+整个应用只有一套 Android Java/WebView 外壳，游戏用本地 HTML/CSS/JavaScript、Canvas/SVG，无 npm 运行时依赖或远程 CDN。Node 是测试工具，Python/JDK/Android SDK 是构建工具。通用倾斜、反馈和原生服务从 shared/桥接共用；每款保留自己的玩法和布局。历史汉字几何仍有整理后的数据副本，基础CSS也未全部抽取，不能理解为所有源码和素材都已经唯一化。
 
 ## 字里找字答案库补漏（4.17）
 

@@ -23,3 +23,7 @@
 ## 游戏反馈音效：原创程序合成
 
 `app/res/raw/fx_*.wav` 共13个短音效由本项目 `scripts/generate-feedback-sounds.py` 独立合成，使用正弦泛音和音量包络；单声道24kHz、16位PCM。没有引用、采样或下载第三方音乐及音效。网页降级的音序由 `app/assets/shared/feedback.js` 实现。基础导航图标与反馈动画为代码绘制。
+
+## 钢珠迷宫与翻转星星盒：GPT 生成美术
+
+`app/assets/shared/gravity-art.png` 与 `docs/Design Gravity Games/gravity-ui-prototype.png` 由内置 GPT 图片生成工具为本项目生成。两款游戏共用一张透明图集，包含钢珠、星星、钥匙、出口及两色星球/目标。墙体与碰撞几何由程序统一计算；未提取参考硬件游戏的代码、美术。完整提示词和输出来源见 `docs/Design Gravity Games/art-prompts.json`。

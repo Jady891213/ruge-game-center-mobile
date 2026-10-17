@@ -1,0 +1,13 @@
+{
+  "version": "4.18",
+  "versionCode": 41,
+  "apkSha256": "68bc7c746081b6a8b571713369940ff87f0f18781643f4ab750d2f8718a90cb6",
+  "deviceApkSha256": "68bc7c746081b6a8b571713369940ff87f0f18781643f4ab750d2f8718a90cb6",
+  "cdpDisabled": true,
+  "foreground": "com.dsh.gamecenter/.MainActivity",
+  "devToFinalAssetChanges": [
+    "assets/shared/tilt-star-box.png",
+    "assets/tilt-star-box/style.css"
+  ],
+  "note": "Only cover CSS framing and rendered cover changed after gameplay QA; gameplay JS, core, motion, sprite assets identical."
+}
