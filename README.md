@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十七款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，全部离线运行。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.23 / versionCode 46**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.24 / versionCode 47**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,14 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 水果天平与声音冒险重做（4.24）
+
+- **水果天平**：替换动物，6种水果的游戏质量固定、显示体型递增；点放或拖入即落下回弹，秤杆根据真实质量差以惯性/阻尼摆动，秤盘保持水平。18关重审，后6关为共享库存双秤，旧星数/解锁保留，旧规则草稿安全迁移。
+- **怪兽变声冒险**：生成森林场景/道具和12帧角色动画，显示实时声量与高低音；修复首次加载的Canvas绘图异常。校准完成前场景停住，下一关默认声音，保留音域；可先在安全场景“试声音”。
+- **口令小冒险**：生成森林地图、树墙和道具，逐格行走、跨水、举物、开门/喂兔/归巢与庆祝动画。默认语音开局，下一关复用采集会话，辅助方向盘可收起；漏听不惩罚，不要求每关选择输入模式。
+
+原型、提示词与验收记录见 [4.24设计与验收](docs/Design%20Playful%20Polish%204.24/review.md)。声音继续使用一份共享原生采集/识别服务；录音不落盘，前台权限与暂停行为不变。真实设备合成声链路证明输入有效，儿童发音和现场噪声仍需试玩反馈。
 
 ## 六款新伙伴与动作美术（4.23）
 

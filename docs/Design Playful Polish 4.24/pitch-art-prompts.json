@@ -1,0 +1,118 @@
+{
+  "tool": "built-in image_gen",
+  "asset": "app/assets/pitch-adventure/art/forest-props.png",
+  "source": "/Users/wuzhiruge/.codex/generated_images/01a14b4c-453d-7c92-a2b4-eb3734ffcee2/exec-a4b30c37-cdcb-471e-808a-c87bdde3319a.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alpha": "RGBA true transparency preserved; no image pixel editing",
+  "rects": {
+    "rock": [
+      100,
+      185,
+      625,
+      260
+    ],
+    "branch": [
+      755,
+      80,
+      750,
+      365
+    ],
+    "star": [
+      186,
+      557,
+      390,
+      385
+    ],
+    "home": [
+      815,
+      480,
+      685,
+      490
+    ]
+  },
+  "sha256": "4eea2e410df5a829e78c2311bd7d417e85b3e23462691fc1173db50b28df815b",
+  "background": {
+    "asset": "app/assets/shared/playful-art/pitch-forest.png",
+    "source": "/Users/wuzhiruge/.codex/generated_images/01a14b4c-453d-7c92-a2b4-eb3734ffcee2/exec-d72e6189-0fb7-4b56-9d23-7d1857f9e4c6.png",
+    "promptFile": "pitch-forest-prompt.txt",
+    "sha256": "308f19b3a78c43fe1db47d86433082bbc8b254c72bade7a5da4a8379e1315002"
+  },
+  "promptFile": "pitch-props-prompt.txt",
+  "heroSourceRects": [
+    [
+      70,
+      52,
+      269,
+      301
+    ],
+    [
+      439,
+      97,
+      268,
+      261
+    ],
+    [
+      794,
+      61,
+      258,
+      300
+    ],
+    [
+      1152,
+      49,
+      263,
+      271
+    ],
+    [
+      70,
+      394,
+      280,
+      293
+    ],
+    [
+      427,
+      475,
+      274,
+      236
+    ],
+    [
+      799,
+      484,
+      258,
+      223
+    ],
+    [
+      1154,
+      492,
+      248,
+      214
+    ],
+    [
+      58,
+      752,
+      290,
+      284
+    ],
+    [
+      455,
+      770,
+      270,
+      267
+    ],
+    [
+      794,
+      756,
+      288,
+      283
+    ],
+    [
+      1170,
+      746,
+      244,
+      266
+    ]
+  ]
+}

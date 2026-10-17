@@ -1,0 +1,713 @@
+{
+  "results": [
+    {
+      "size": [
+        320,
+        568
+      ],
+      "label": "voice",
+      "window": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "x": 21,
+        "y": 139.71875,
+        "w": 278,
+        "h": 198.5625,
+        "bottom": 338.28125,
+        "right": 299
+      },
+      "world": {
+        "x": 12,
+        "y": 107,
+        "w": 296,
+        "h": 291,
+        "bottom": 398,
+        "right": 308
+      },
+      "voice": {
+        "x": 12,
+        "y": 407,
+        "w": 296,
+        "h": 49,
+        "bottom": 456,
+        "right": 308
+      },
+      "cards": {
+        "x": 12,
+        "y": 465,
+        "w": 296,
+        "h": 93,
+        "bottom": 558,
+        "right": 308
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 60.703125,
+        "y": 219.140625,
+        "w": 39.703125,
+        "h": 39.703125,
+        "bottom": 258.84375,
+        "right": 100.40625
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        320,
+        568
+      ],
+      "label": "helper",
+      "window": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "x": 21,
+        "y": 131.71875,
+        "w": 278,
+        "h": 198.5625,
+        "bottom": 330.28125,
+        "right": 299
+      },
+      "world": {
+        "x": 12,
+        "y": 107,
+        "w": 296,
+        "h": 242,
+        "bottom": 349,
+        "right": 308
+      },
+      "voice": {
+        "x": 12,
+        "y": 358,
+        "w": 296,
+        "h": 49,
+        "bottom": 407,
+        "right": 308
+      },
+      "cards": null,
+      "pad": {
+        "x": 12,
+        "y": 416,
+        "w": 296,
+        "h": 142,
+        "bottom": 558,
+        "right": 308
+      },
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 60.703125,
+        "y": 211.140625,
+        "w": 39.703125,
+        "h": 39.703125,
+        "bottom": 250.84375,
+        "right": 100.40625
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        320,
+        568
+      ],
+      "label": "walking",
+      "window": [
+        320,
+        568
+      ],
+      "scroll": [
+        320,
+        568
+      ],
+      "board": {
+        "x": 21,
+        "y": 139.71875,
+        "w": 278,
+        "h": 198.5625,
+        "bottom": 338.28125,
+        "right": 299
+      },
+      "world": {
+        "x": 12,
+        "y": 107,
+        "w": 296,
+        "h": 291,
+        "bottom": 398,
+        "right": 308
+      },
+      "voice": {
+        "x": 12,
+        "y": 407,
+        "w": 296,
+        "h": 49,
+        "bottom": 456,
+        "right": 308
+      },
+      "cards": {
+        "x": 12,
+        "y": 465,
+        "w": 296,
+        "h": 93,
+        "bottom": 558,
+        "right": 308
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 80.5625,
+        "y": 219.140625,
+        "w": 39.703125,
+        "h": 39.703125,
+        "bottom": 258.84375,
+        "right": 120.265625
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        392,
+        872
+      ],
+      "label": "voice",
+      "window": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "x": 23,
+        "y": 257.421875,
+        "w": 346,
+        "h": 247.140625,
+        "bottom": 504.5625,
+        "right": 369
+      },
+      "world": {
+        "x": 12,
+        "y": 147.5,
+        "w": 368,
+        "h": 500,
+        "bottom": 647.5,
+        "right": 380
+      },
+      "voice": {
+        "x": 12,
+        "y": 659.5,
+        "w": 368,
+        "h": 57,
+        "bottom": 716.5,
+        "right": 380
+      },
+      "cards": {
+        "x": 12,
+        "y": 728.5,
+        "w": 368,
+        "h": 115,
+        "bottom": 843.5,
+        "right": 380
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 72.421875,
+        "y": 356.265625,
+        "w": 49.421875,
+        "h": 49.421875,
+        "bottom": 405.6875,
+        "right": 121.84375
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        392,
+        872
+      ],
+      "label": "helper",
+      "window": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "x": 23,
+        "y": 242.921875,
+        "w": 346,
+        "h": 247.140625,
+        "bottom": 490.0625,
+        "right": 369
+      },
+      "world": {
+        "x": 12,
+        "y": 133,
+        "w": 368,
+        "h": 500,
+        "bottom": 633,
+        "right": 380
+      },
+      "voice": {
+        "x": 12,
+        "y": 645,
+        "w": 368,
+        "h": 57,
+        "bottom": 702,
+        "right": 380
+      },
+      "cards": null,
+      "pad": {
+        "x": 12,
+        "y": 714,
+        "w": 368,
+        "h": 144,
+        "bottom": 858,
+        "right": 380
+      },
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 72.421875,
+        "y": 341.765625,
+        "w": 49.421875,
+        "h": 49.421875,
+        "bottom": 391.1875,
+        "right": 121.84375
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        392,
+        872
+      ],
+      "label": "walking",
+      "window": [
+        392,
+        872
+      ],
+      "scroll": [
+        392,
+        872
+      ],
+      "board": {
+        "x": 23,
+        "y": 257.421875,
+        "w": 346,
+        "h": 247.140625,
+        "bottom": 504.5625,
+        "right": 369
+      },
+      "world": {
+        "x": 12,
+        "y": 147.5,
+        "w": 368,
+        "h": 500,
+        "bottom": 647.5,
+        "right": 380
+      },
+      "voice": {
+        "x": 12,
+        "y": 659.5,
+        "w": 368,
+        "h": 57,
+        "bottom": 716.5,
+        "right": 380
+      },
+      "cards": {
+        "x": 12,
+        "y": 728.5,
+        "w": 368,
+        "h": 115,
+        "bottom": 843.5,
+        "right": 380
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 101.25,
+        "y": 356.265625,
+        "w": 49.421875,
+        "h": 49.421875,
+        "bottom": 405.6875,
+        "right": 150.671875
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        872,
+        392
+      ],
+      "label": "voice",
+      "window": [
+        872,
+        392
+      ],
+      "scroll": [
+        872,
+        392
+      ],
+      "board": {
+        "x": 146.09375,
+        "y": 114,
+        "w": 324.796875,
+        "h": 232,
+        "bottom": 346,
+        "right": 470.890625
+      },
+      "world": {
+        "x": 12,
+        "y": 104,
+        "w": 593,
+        "h": 278,
+        "bottom": 382,
+        "right": 605
+      },
+      "voice": {
+        "x": 614,
+        "y": 104,
+        "w": 246,
+        "h": 57,
+        "bottom": 161,
+        "right": 860
+      },
+      "cards": {
+        "x": 614,
+        "y": 170,
+        "w": 246,
+        "h": 212,
+        "bottom": 382,
+        "right": 860
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 192.484375,
+        "y": 206.796875,
+        "w": 46.390625,
+        "h": 46.390625,
+        "bottom": 253.1875,
+        "right": 238.875
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        872,
+        392
+      ],
+      "label": "helper",
+      "window": [
+        872,
+        392
+      ],
+      "scroll": [
+        872,
+        392
+      ],
+      "board": {
+        "x": 146.09375,
+        "y": 114,
+        "w": 324.796875,
+        "h": 232,
+        "bottom": 346,
+        "right": 470.890625
+      },
+      "world": {
+        "x": 12,
+        "y": 104,
+        "w": 593,
+        "h": 278,
+        "bottom": 382,
+        "right": 605
+      },
+      "voice": {
+        "x": 614,
+        "y": 104,
+        "w": 246,
+        "h": 57,
+        "bottom": 161,
+        "right": 860
+      },
+      "cards": null,
+      "pad": {
+        "x": 614,
+        "y": 170,
+        "w": 246,
+        "h": 212,
+        "bottom": 382,
+        "right": 860
+      },
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 192.484375,
+        "y": 206.796875,
+        "w": 46.390625,
+        "h": 46.390625,
+        "bottom": 253.1875,
+        "right": 238.875
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        872,
+        392
+      ],
+      "label": "walking",
+      "window": [
+        872,
+        392
+      ],
+      "scroll": [
+        872,
+        392
+      ],
+      "board": {
+        "x": 146.09375,
+        "y": 114,
+        "w": 324.796875,
+        "h": 232,
+        "bottom": 346,
+        "right": 470.890625
+      },
+      "world": {
+        "x": 12,
+        "y": 104,
+        "w": 593,
+        "h": 278,
+        "bottom": 382,
+        "right": 605
+      },
+      "voice": {
+        "x": 614,
+        "y": 104,
+        "w": 246,
+        "h": 57,
+        "bottom": 161,
+        "right": 860
+      },
+      "cards": {
+        "x": 614,
+        "y": 170,
+        "w": 246,
+        "h": 212,
+        "bottom": 382,
+        "right": 860
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 215.65625,
+        "y": 206.796875,
+        "w": 46.390625,
+        "h": 46.390625,
+        "bottom": 253.1875,
+        "right": 262.046875
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        800,
+        320
+      ],
+      "label": "voice",
+      "window": [
+        800,
+        320
+      ],
+      "scroll": [
+        800,
+        320
+      ],
+      "board": {
+        "x": 160.5,
+        "y": 114,
+        "w": 224,
+        "h": 160,
+        "bottom": 274,
+        "right": 384.5
+      },
+      "world": {
+        "x": 12,
+        "y": 104,
+        "w": 521,
+        "h": 206,
+        "bottom": 310,
+        "right": 533
+      },
+      "voice": {
+        "x": 542,
+        "y": 104,
+        "w": 246,
+        "h": 57,
+        "bottom": 161,
+        "right": 788
+      },
+      "cards": {
+        "x": 542,
+        "y": 170,
+        "w": 246,
+        "h": 140,
+        "bottom": 310,
+        "right": 788
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 192.5,
+        "y": 178,
+        "w": 32,
+        "h": 32,
+        "bottom": 210,
+        "right": 224.5
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        800,
+        320
+      ],
+      "label": "helper",
+      "window": [
+        800,
+        320
+      ],
+      "scroll": [
+        800,
+        320
+      ],
+      "board": {
+        "x": 160.5,
+        "y": 114,
+        "w": 224,
+        "h": 160,
+        "bottom": 274,
+        "right": 384.5
+      },
+      "world": {
+        "x": 12,
+        "y": 104,
+        "w": 521,
+        "h": 206,
+        "bottom": 310,
+        "right": 533
+      },
+      "voice": {
+        "x": 542,
+        "y": 104,
+        "w": 246,
+        "h": 57,
+        "bottom": 161,
+        "right": 788
+      },
+      "cards": null,
+      "pad": {
+        "x": 542,
+        "y": 170,
+        "w": 246,
+        "h": 140,
+        "bottom": 310,
+        "right": 788
+      },
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 192.5,
+        "y": 178,
+        "w": 32,
+        "h": 32,
+        "bottom": 210,
+        "right": 224.5
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    },
+    {
+      "size": [
+        800,
+        320
+      ],
+      "label": "walking",
+      "window": [
+        800,
+        320
+      ],
+      "scroll": [
+        800,
+        320
+      ],
+      "board": {
+        "x": 160.5,
+        "y": 114,
+        "w": 224,
+        "h": 160,
+        "bottom": 274,
+        "right": 384.5
+      },
+      "world": {
+        "x": 12,
+        "y": 104,
+        "w": 521,
+        "h": 206,
+        "bottom": 310,
+        "right": 533
+      },
+      "voice": {
+        "x": 542,
+        "y": 104,
+        "w": 246,
+        "h": 57,
+        "bottom": 161,
+        "right": 788
+      },
+      "cards": {
+        "x": 542,
+        "y": 170,
+        "w": 246,
+        "h": 140,
+        "bottom": 310,
+        "right": 788
+      },
+      "pad": null,
+      "paused": false,
+      "ready": true,
+      "actor": {
+        "x": 208.5,
+        "y": 178,
+        "w": 32,
+        "h": 32,
+        "bottom": 210,
+        "right": 240.5
+      },
+      "art": "url(\"file:///Users/wuzhiruge/RugeProjects/ruge-project/DSH-Mobile/01-%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BF%83/Game-Center/app/assets/shared/playful-art/hero-frames.png\")"
+    }
+  ],
+  "errors": []
+}

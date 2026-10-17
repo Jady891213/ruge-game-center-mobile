@@ -1,0 +1,2290 @@
+{
+  "source": "MIX4 Android14 real speaker→native microphone→VoicePitch→shared pitch controller→game input. Synthetic tones, not child voice accuracy. Audio PCM not persisted.",
+  "initial": {
+    "audio": {
+      "status": "listening",
+      "mode": "pitch",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.002700068289414048,
+      "confidence": 0,
+      "ageMs": 46,
+      "command": "",
+      "commandAgeMs": 999999,
+      "commandSerial": 5,
+      "frames": 5
+    },
+    "visual": {
+      "animationFrame": 0,
+      "calibrated": false,
+      "starting": true,
+      "voiceLevel": 0.18000227629940843,
+      "voiceBand": "middle",
+      "practice": true,
+      "practiceNotes": {
+        "middle": false,
+        "high": false,
+        "low": false
+      },
+      "particleCount": 0
+    },
+    "state": {
+      "level": 0,
+      "x": 80,
+      "y": 330,
+      "vy": 0,
+      "duck": 0,
+      "time": 0,
+      "checkpoint": 80,
+      "won": false,
+      "paused": true,
+      "falls": 0,
+      "recovery": 0,
+      "collected": [],
+      "pending": null,
+      "activeDuck": -1,
+      "activeJump": -1
+    },
+    "paused": true,
+    "foreground": true
+  },
+  "phases": [
+    {
+      "emittedHz": 320,
+      "samples": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.001964123686775565,
+            "confidence": 0,
+            "ageMs": 50,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 13
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.1535235624954905,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 322.05621337890625,
+            "rms": 0.018276352435350418,
+            "confidence": 0.9500806331634521,
+            "ageMs": 35,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 15
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.46831210663851625,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.15478515625,
+            "rms": 0.0251249298453331,
+            "confidence": 0.9965782165527344,
+            "ageMs": 13,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 17
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5478270622119727,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0766296386719,
+            "rms": 0.025159142911434174,
+            "confidence": 0.9954455494880676,
+            "ageMs": 39,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 18
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5494631151744492,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.1090087890625,
+            "rms": 0.025027289986610413,
+            "confidence": 0.9971283674240112,
+            "ageMs": 29,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 20
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.549451073987548,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.09149169921875,
+            "rms": 0.02512083575129509,
+            "confidence": 0.9964105486869812,
+            "ageMs": 10,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 22
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5480569668613531,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.13128662109375,
+            "rms": 0.025091281160712242,
+            "confidence": 0.9967632293701172,
+            "ageMs": 29,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 23
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5490446512038352,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0515441894531,
+            "rms": 0.025089431554079056,
+            "confidence": 0.9973154067993164,
+            "ageMs": 20,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 25
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5489498084984982,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.1064453125,
+            "rms": 0.02518019638955593,
+            "confidence": 0.997197151184082,
+            "ageMs": 8,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 27
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5496929658224409,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0743103027344,
+            "rms": 0.02511863224208355,
+            "confidence": 0.9976568222045898,
+            "ageMs": 31,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 28
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": false,
+            "starting": true,
+            "voiceLevel": 0.5496929658224409,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": false,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0,
+            "checkpoint": 80,
+            "won": false,
+            "paused": true,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": true,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0345153808594,
+            "rms": 0.024997254833579063,
+            "confidence": 0.9956988096237183,
+            "ageMs": 12,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 30
+          },
+          "visual": {
+            "animationFrame": 3,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.548258237804253,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.0767999999821186,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0174255371094,
+            "rms": 0.025005105882883072,
+            "confidence": 0.982933759689331,
+            "ageMs": 60,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 31
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5477784867942487,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.1846999999821187,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.1264343261719,
+            "rms": 0.024937039241194725,
+            "confidence": 0.9965893626213074,
+            "ageMs": 16,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 33
+          },
+          "visual": {
+            "animationFrame": 1,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.547650693084343,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.284399999982119,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.1587829589844,
+            "rms": 0.025057492777705193,
+            "confidence": 0.9969195127487183,
+            "ageMs": 6,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 35
+          },
+          "visual": {
+            "animationFrame": 3,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5467516214977233,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.3924999999821192,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0133361816406,
+            "rms": 0.025019513443112373,
+            "confidence": 0.9970996379852295,
+            "ageMs": 52,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 36
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5479362748690293,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.4921999999821193,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0400085449219,
+            "rms": 0.025000086054205894,
+            "confidence": 0.9974890947341919,
+            "ageMs": 18,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 38
+          },
+          "visual": {
+            "animationFrame": 1,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5477235001809496,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.6001999999821195,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 319.99554443359375,
+            "rms": 0.02509896084666252,
+            "confidence": 0.9976179599761963,
+            "ageMs": 1,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 40
+          },
+          "visual": {
+            "animationFrame": 2,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5476710792307827,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.6998999999821199,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.1026306152344,
+            "rms": 0.0250916238874197,
+            "confidence": 0.997279167175293,
+            "ageMs": 43,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 41
+          },
+          "visual": {
+            "animationFrame": 3,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5487253289661744,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.8077999999821198,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.12664794921875,
+            "rms": 0.025086769834160805,
+            "confidence": 0.996842622756958,
+            "ageMs": 8,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 43
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5498534362212967,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 0.9075999999821202,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0387268066406,
+            "rms": 0.025118650868535042,
+            "confidence": 0.9971606135368347,
+            "ageMs": 52,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 44
+          },
+          "visual": {
+            "animationFrame": 1,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5490207741264628,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.0155999999821201,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.085205078125,
+            "rms": 0.02508767880499363,
+            "confidence": 0.9972428679466248,
+            "ageMs": 34,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 46
+          },
+          "visual": {
+            "animationFrame": 2,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5485302805874893,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.1152999999821194,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.156982421875,
+            "rms": 0.02514013834297657,
+            "confidence": 0.9963371753692627,
+            "ageMs": 81,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 47
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5492555508283178,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.2232999999821186,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0508117675781,
+            "rms": 0.025049878284335136,
+            "confidence": 0.9973863959312439,
+            "ageMs": 49,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 49
+          },
+          "visual": {
+            "animationFrame": 1,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5482686744763207,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.3311999999821187,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.0802917480469,
+            "rms": 0.025059368461370468,
+            "confidence": 0.9971912503242493,
+            "ageMs": 30,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 51
+          },
+          "visual": {
+            "animationFrame": 2,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5480470359622559,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.4308999999821181,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        }
+      ]
+    },
+    {
+      "emittedHz": 520,
+      "samples": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 320.07952880859375,
+            "rms": 0.025036130100488663,
+            "confidence": 0.9969776272773743,
+            "ageMs": 75,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 52
+          },
+          "visual": {
+            "animationFrame": 3,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.5481182000315844,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.538799999982118,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 519.238525390625,
+            "rms": 0.03991294279694557,
+            "confidence": 0.9260510802268982,
+            "ageMs": 32,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 54
+          },
+          "visual": {
+            "animationFrame": 0,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6038351786987829,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": false,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.6383999999821177,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.283935546875,
+            "rms": 0.040278542786836624,
+            "confidence": 0.9969359040260315,
+            "ageMs": 22,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 56
+          },
+          "visual": {
+            "animationFrame": 1,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6952283894102999,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0,
+            "time": 1.7462999999821172,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.2886962890625,
+            "rms": 0.04026268050074577,
+            "confidence": 0.9952945113182068,
+            "ageMs": 65,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 57
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6950914803167633,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 14
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 303.94343744444427,
+            "vy": -424.8049999999996,
+            "duck": 0,
+            "time": 1.8458999999821173,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.3403930664062,
+            "rms": 0.04037992283701897,
+            "confidence": 0.9923929572105408,
+            "ageMs": 26,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 59
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6961027754895305,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 14
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 266.671603111111,
+            "vy": -329.99499999999944,
+            "duck": 0,
+            "time": 1.9456999999821172,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.2601318359375,
+            "rms": 0.0401148647069931,
+            "confidence": 0.9978642463684082,
+            "ageMs": 9,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 61
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6946802693864587,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 14
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 236.99716777777766,
+            "vy": -227.3949999999995,
+            "duck": 0,
+            "time": 2.053699999982117,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.240966796875,
+            "rms": 0.04020672291517258,
+            "confidence": 0.9978896975517273,
+            "ageMs": 52,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 62
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6946082888809137,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 14
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 219.43984922222216,
+            "vy": -132.67999999999978,
+            "duck": 0,
+            "time": 2.153399999982117,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.2976684570312,
+            "rms": 0.040164507925510406,
+            "confidence": 0.9979101419448853,
+            "ageMs": 15,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 64
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.694243541638037,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 14
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 211.0788648333333,
+            "vy": -30.269999999999595,
+            "duck": 0,
+            "time": 2.2611999999821175,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.247314453125,
+            "rms": 0.040070366114377975,
+            "confidence": 0.9979863166809082,
+            "ageMs": 4,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 66
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.6936670292391723,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 6
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 213.78326927777778,
+            "vy": 72.4249999999999,
+            "duck": 0,
+            "time": 2.369299999982117,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.234375,
+            "rms": 0.040212854743003845,
+            "confidence": 0.9979981184005737,
+            "ageMs": 47,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 67
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.69466125335738,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 226.11852299999998,
+            "vy": 167.1399999999997,
+            "duck": 0,
+            "time": 2.468999999982117,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        }
+      ]
+    },
+    {
+      "emittedHz": 190,
+      "samples": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 520.7553100585938,
+            "rms": 0.03783561289310455,
+            "confidence": 0.9943394064903259,
+            "ageMs": 7,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 69
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.692815508235858,
+            "voiceBand": "high",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 250.16191188888897,
+            "vy": 269.835,
+            "duck": 0,
+            "time": 2.577099999982117,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.02010803297162056,
+            "confidence": 0,
+            "ageMs": 54,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 70
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.49121929487698945,
+            "voiceBand": "middle",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": false
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 282.10396583333346,
+            "vy": 364.36,
+            "duck": 0,
+            "time": 2.6765999999821175,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.04043579101562,
+            "rms": 0.008864938281476498,
+            "confidence": 0.9833871126174927,
+            "ageMs": 36,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 72
+          },
+          "visual": {
+            "animationFrame": 4,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3276272472484994,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 8
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 323.49741600000027,
+            "vy": 458.9800000000004,
+            "duck": 0,
+            "time": 2.776199999982118,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.2022705078125,
+            "rms": 0.009081453084945679,
+            "confidence": 0.9635375142097473,
+            "ageMs": 60,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 73
+          },
+          "visual": {
+            "animationFrame": 6,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3301173079669531,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 15
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6167999999999992,
+            "time": 2.884199999982118,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.4752197265625,
+            "rms": 0.009307428263127804,
+            "confidence": 0.9701181650161743,
+            "ageMs": 44,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 75
+          },
+          "visual": {
+            "animationFrame": 7,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3336304077179682,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 15
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.5836000000000002,
+            "time": 2.983799999982118,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.33560180664062,
+            "rms": 0.009030992165207863,
+            "confidence": 0.9673528075218201,
+            "ageMs": 26,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 77
+          },
+          "visual": {
+            "animationFrame": 7,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3339510449292187,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 15
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6084999999999999,
+            "time": 3.0916999999821186,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.6072540283203,
+            "rms": 0.008927843533456326,
+            "confidence": 0.9556469321250916,
+            "ageMs": 51,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 78
+          },
+          "visual": {
+            "animationFrame": 6,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.32731349254419057,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 15
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6416999999999998,
+            "time": 3.1913999999821185,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.1001739501953,
+            "rms": 0.009127301163971424,
+            "confidence": 0.9696553349494934,
+            "ageMs": 32,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 80
+          },
+          "visual": {
+            "animationFrame": 7,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3306492035485134,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 15
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6000999999999994,
+            "time": 3.2993999999821186,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.3067169189453,
+            "rms": 0.009004727937281132,
+            "confidence": 0.9761818647384644,
+            "ageMs": 16,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 82
+          },
+          "visual": {
+            "animationFrame": 6,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3287198430995208,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 7
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6333000000000002,
+            "time": 3.3990999999821185,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.34783935546875,
+            "rms": 0.009111907333135605,
+            "confidence": 0.9644942283630371,
+            "ageMs": 40,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 83
+          },
+          "visual": {
+            "animationFrame": 7,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3287198430995208,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6001999999999997,
+            "time": 3.4987999999821184,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.0269775390625,
+            "rms": 0.008948213420808315,
+            "confidence": 0.9744057059288025,
+            "ageMs": 23,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 85
+          },
+          "visual": {
+            "animationFrame": 6,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3276866812211015,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.6250999999999994,
+            "time": 3.606699999982119,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        },
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "pitch",
+            "error": "",
+            "pitch": 190.1455535888672,
+            "rms": 0.00897982157766819,
+            "confidence": 0.9708899259567261,
+            "ageMs": 5,
+            "command": "",
+            "commandAgeMs": 999999,
+            "commandSerial": 5,
+            "frames": 87
+          },
+          "visual": {
+            "animationFrame": 6,
+            "calibrated": true,
+            "starting": false,
+            "voiceLevel": 0.3283678586573198,
+            "voiceBand": "low",
+            "practice": true,
+            "practiceNotes": {
+              "middle": true,
+              "high": true,
+              "low": true
+            },
+            "particleCount": 0
+          },
+          "state": {
+            "level": 0,
+            "x": 80,
+            "y": 330,
+            "vy": 0,
+            "duck": 0.5919999999999999,
+            "time": 3.706299999982119,
+            "checkpoint": 80,
+            "won": false,
+            "paused": false,
+            "falls": 0,
+            "recovery": 0,
+            "collected": [],
+            "pending": null,
+            "activeDuck": -1,
+            "activeJump": -1
+          },
+          "paused": false,
+          "foreground": true
+        }
+      ]
+    }
+  ],
+  "background": {
+    "status": "idle",
+    "mode": "",
+    "error": "",
+    "pitch": 0,
+    "rms": 0,
+    "confidence": 0,
+    "ageMs": 933,
+    "command": "",
+    "commandAgeMs": 999999,
+    "commandSerial": 5,
+    "frames": 92
+  },
+  "practiceProgressUnchanged": true
+}

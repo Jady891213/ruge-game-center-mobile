@@ -1,0 +1,339 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 2,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          1
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 3,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 4,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 5,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 6,
+      "finished": true,
+      "pans": [
+        [
+          1,
+          2
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 7,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 8,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 9,
+      "finished": true,
+      "pans": [
+        [
+          1,
+          2
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 10,
+      "finished": true,
+      "pans": [
+        [
+          1,
+          3
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 11,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          3
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 12,
+      "finished": true,
+      "pans": [
+        [
+          1,
+          3
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 13,
+      "finished": true,
+      "pans": [
+        [
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 14,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 15,
+      "finished": true,
+      "pans": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 16,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 17,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "stars": 3
+    },
+    {
+      "level": 18,
+      "finished": true,
+      "pans": [
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "stars": 3
+    }
+  ],
+  "layouts": [
+    {
+      "size": [
+        320,
+        568
+      ],
+      "footerBottom": 555,
+      "bodyOverflow": false,
+      "panButtons": [
+        [
+          44,
+          52
+        ],
+        [
+          44,
+          52
+        ],
+        [
+          44,
+          52
+        ]
+      ],
+      "physics": {
+        "angle": 0.002470265151346169,
+        "velocity": -0.03259163840495426
+      }
+    },
+    {
+      "size": [
+        392,
+        872
+      ],
+      "footerBottom": 855,
+      "bodyOverflow": false,
+      "panButtons": [
+        [
+          44,
+          52
+        ],
+        [
+          44,
+          52
+        ],
+        [
+          44,
+          52
+        ]
+      ],
+      "physics": {
+        "angle": 0.0030244268924948686,
+        "velocity": -0.03496580697648685
+      }
+    }
+  ],
+  "drag": {
+    "pans": [
+      [
+        0
+      ]
+    ],
+    "ghost": false,
+    "physics": {
+      "angle": -7.962476612455503,
+      "velocity": -0.3920972414296632
+    }
+  },
+  "errors": [],
+  "assets": [
+    {
+      "file": "items.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "forest-table.png",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "file": "scale-parts.png",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "massResponse": {
+    "state": {
+      "level": 4,
+      "pans": [
+        [
+          2
+        ]
+      ],
+      "tested": [
+        null
+      ],
+      "attempts": 0,
+      "finished": false
+    },
+    "physics": {
+      "angle": -10.547130607263634,
+      "velocity": 0.560363590567256
+    }
+  }
+}

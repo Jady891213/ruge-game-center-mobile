@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-18",
+  "source_directory": "CODEX_HOME/generated_images/01a14b4c-7323-7fb1-9f3d-a628a439608e",
+  "assets": [
+    {
+      "asset": "app/assets/shared/playful-art/forest-props.png",
+      "tool": "built-in image_gen",
+      "intent": "background-extraction edit",
+      "source": "exec-3a7574ac-0d00-4780-b600-40fd5806884c.png",
+      "input": "root generated forest-props.png; original creation prompt in art-prompts-root.json",
+      "transparent_background": true,
+      "prompt": "Use case: background-extraction. EDIT TARGET is the provided six-icon game prop sheet. Remove ALL colored glow, haze, aura, backdrop, gradients and drop shadows OUTSIDE the actual six solid objects. Output real transparent alpha outside their hard clean silhouettes. Keep every object, its exact shape, colors, location, scale and arrangement unchanged: top row key/apple/star, bottom row teal cottage door/rabbit beside tiny cottage/bird nest. Keep the same exact 3 columns by 2 rows equal-cell atlas layout and the same image aspect ratio. Do not add anything, do not redraw new props, do not move objects between cells, no text, no checkerboard painted into pixels. Flat friendly children's cartoon game icons with clean contours. Only extract the existing objects with true transparent background.",
+      "sha256": "e060fe1137e59b70dd1195d55cfa00aeba3ab9bc4cc9a2547299210ae247a5c9",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "transparent_seam_samples": [
+        {
+          "point": [
+            20,
+            20
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            256,
+            20
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            510,
+            250
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            512,
+            512
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            768,
+            20
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            1023,
+            256
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            1024,
+            512
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            1530,
+            512
+          ],
+          "alpha": 0
+        },
+        {
+          "point": [
+            800,
+            500
+          ],
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "asset": "app/assets/shared/playful-art/forest-world.png",
+      "tool": "built-in image_gen",
+      "intent": "generate",
+      "source": "exec-6049299c-afc1-4099-87b5-d11ebd4c9ce0.png",
+      "transparent_background": false,
+      "prompt": "Use case: illustration-story. Asset type: background plate for a mobile preschool forest puzzle adventure, portrait 2:3 composition. Create an original friendly flat children's cartoon forest world for age five or six, simple rounded shapes, soft clean green and warm golden palette, clear non-realistic drawing. Match a cute mint-green fluffy monster game's world, but do NOT include any characters. Central 75 percent of image must be a clean pale mint-green grassy clearing, very low detail, open negative space, top-down-ish game view suitable for independently placing a rectangular tile map. Frame ONLY the extreme left and right edges and lower corners with a few charming large leafy tree branches, flowers, little grass tufts and rounded distant tree silhouettes. Little light blue sky peeking through top canopy is okay. No routes, no stone tiles, no paths, no houses, no goals, no gates, no pickups, no walls, no holes, no lakes, no actors. There must be no fixed blocking scenery inside the open central playing area. Bright simple flat cartoon art, crisp and cheerful, tiny subtle texture at most, no realistic rendering, no text, no letters, no numbers, no watermark, no UI controls.",
+      "sha256": "4cf81ddc7bd6de8b3ddc5fb2e856b5a2157940a0636fdb515a1c203bb740411e",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "shared_hero_source_rects": [
+    [
+      70,
+      52,
+      269,
+      301
+    ],
+    [
+      439,
+      97,
+      268,
+      261
+    ],
+    [
+      794,
+      61,
+      258,
+      300
+    ],
+    [
+      1152,
+      49,
+      263,
+      271
+    ],
+    [
+      70,
+      394,
+      280,
+      293
+    ],
+    [
+      427,
+      475,
+      274,
+      236
+    ],
+    [
+      799,
+      484,
+      258,
+      223
+    ],
+    [
+      1154,
+      492,
+      248,
+      214
+    ],
+    [
+      58,
+      752,
+      290,
+      284
+    ],
+    [
+      455,
+      770,
+      270,
+      267
+    ],
+    [
+      794,
+      756,
+      288,
+      283
+    ],
+    [
+      1170,
+      746,
+      244,
+      266
+    ]
+  ],
+  "hero_alignment": "Common scale 1.58 tile / 362 source pixels, actual silhouette crops and common foot baseline; last-row neighboring spill excluded. No programmatic raster editing."
+}

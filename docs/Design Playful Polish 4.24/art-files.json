@@ -1,0 +1,55 @@
+{
+  "tool": "Built-in image_gen generation and edit, no programmatic background removal. See root/Balance/quest/pitch prompt sets.",
+  "files": [
+    {
+      "path": "app/assets/shared/playful-art/hero-frames.png",
+      "bytes": 1069612,
+      "sha256": "85614149366ceaf0cdd60d8df9e54058114b17c17ded44087c249218a0c17212"
+    },
+    {
+      "path": "app/assets/shared/playful-art/forest-world.png",
+      "bytes": 1814855,
+      "sha256": "4cf81ddc7bd6de8b3ddc5fb2e856b5a2157940a0636fdb515a1c203bb740411e"
+    },
+    {
+      "path": "app/assets/shared/playful-art/forest-props.png",
+      "bytes": 1867218,
+      "sha256": "e060fe1137e59b70dd1195d55cfa00aeba3ab9bc4cc9a2547299210ae247a5c9"
+    },
+    {
+      "path": "app/assets/shared/playful-art/tree.png",
+      "bytes": 805867,
+      "sha256": "fc8845f37ff557ac02174ee7f24552ef82db69e6b362ffe5e31361bb53b45cee"
+    },
+    {
+      "path": "app/assets/shared/playful-art/pitch-forest.png",
+      "bytes": 1368525,
+      "sha256": "308f19b3a78c43fe1db47d86433082bbc8b254c72bade7a5da4a8379e1315002"
+    },
+    {
+      "path": "app/assets/animal-balance/art/items.png",
+      "bytes": 1564522,
+      "sha256": "05c43d8bc104fab088c960abd7fe84eb010b61440ef85b7ba95c5ff2ffd653e2"
+    },
+    {
+      "path": "app/assets/animal-balance/art/forest-table.png",
+      "bytes": 1353584,
+      "sha256": "f0e56c9e2c317279cd51de4e03f8a9e37c05178df240f6957fccf724ec55b1c8"
+    },
+    {
+      "path": "app/assets/animal-balance/art/scale-parts.png",
+      "bytes": 1292463,
+      "sha256": "1d351451b32baafa2803ac48dc6736b3899756d981a794ff9325b092f0dea1ce"
+    },
+    {
+      "path": "app/assets/pitch-adventure/art/forest-props.png",
+      "bytes": 1832056,
+      "sha256": "4eea2e410df5a829e78c2311bd7d417e85b3e23462691fc1173db50b28df815b"
+    },
+    {
+      "path": "docs/Design Playful Polish 4.24/visual-prototype.png",
+      "bytes": 2177341,
+      "sha256": "b4dd5382d02db07ce43e7d2d973f425c119669df4cf18061950ee70df741e9d3"
+    }
+  ]
+}

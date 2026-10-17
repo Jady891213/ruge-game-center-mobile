@@ -1,0 +1,37 @@
+{
+  "package": "com.dsh.gamecenter",
+  "versionName": "4.24",
+  "versionCode": 47,
+  "tests": {
+    "total": 309,
+    "passed": 309
+  },
+  "originalStorage": {
+    "keys": 23,
+    "exactlyRestoredBeforeUpgrade": true,
+    "delayedReadbackSeconds": 6,
+    "temporaryTestKeysRemoved": true
+  },
+  "originalNativePreferencesRestored": {
+    "sound": true,
+    "vibration": true,
+    "awake": true
+  },
+  "captureIdleBeforeUpgrade": true,
+  "sourceDevFormalAssetsEqual": 139,
+  "sharedNativeLibraries": [
+    "lib/arm64-v8a/libonnxruntime.so",
+    "lib/arm64-v8a/libsherpa-onnx-jni.so"
+  ],
+  "apkSha256": "f337a5ae26fd1c26dd6b78adb3579a9b6e2543bbe51e99dbd4747fc786be5167",
+  "devSha256": "19dd0521d1fceac8329665ad74dbca119b306f99b0588cd4831f177f09b29332",
+  "apkBytes": 68436535,
+  "installedApkSha256": "f337a5ae26fd1c26dd6b78adb3579a9b6e2543bbe51e99dbd4747fc786be5167",
+  "installedVersion": [
+    "versionCode=47 minSdk=21 targetSdk=34",
+    "versionName=4.24"
+  ],
+  "formalNotDebuggable": true,
+  "formalCdpAbsent": true,
+  "ownCdpForwardAbsent": true
+}

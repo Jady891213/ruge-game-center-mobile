@@ -1,0 +1,315 @@
+{
+  "cases": [
+    {
+      "dpr": 2.75,
+      "hero": {
+        "cssW": 158,
+        "cssH": 158,
+        "width": 435,
+        "height": 435,
+        "dpr": 2.75
+      },
+      "jump": {
+        "dpr": 2.75,
+        "cssW": 360,
+        "cssH": 419,
+        "width": 990,
+        "height": 1152,
+        "worldW": 275,
+        "transform": {
+          "a": 3.5999999046325684,
+          "b": 0,
+          "c": 0,
+          "d": 3.5999999046325684,
+          "e": 0,
+          "f": 0
+        },
+        "state": {
+          "level": 1,
+          "x": 109.07000000000019,
+          "y": 228.76042777777786,
+          "vy": -189.29999999999947,
+          "duck": 0,
+          "time": 0.30599999999999994,
+          "checkpoint": 80,
+          "won": false,
+          "paused": false,
+          "falls": 0,
+          "recovery": 0,
+          "collected": [],
+          "pending": null,
+          "activeDuck": -1,
+          "activeJump": -1
+        },
+        "visual": {
+          "animationFrame": 4,
+          "calibrated": false,
+          "starting": false,
+          "voiceLevel": 0,
+          "voiceBand": "middle",
+          "practice": false,
+          "practiceNotes": {
+            "middle": false,
+            "high": false,
+            "low": false
+          },
+          "particleCount": 6
+        }
+      },
+      "duck": {
+        "dpr": 2.75,
+        "cssW": 360,
+        "cssH": 419,
+        "width": 990,
+        "height": 1152,
+        "worldW": 275,
+        "transform": {
+          "a": 3.5999999046325684,
+          "b": 0,
+          "c": 0,
+          "d": 3.5999999046325684,
+          "e": 0,
+          "f": 0
+        },
+        "state": {
+          "level": 4,
+          "x": 471.21000000000424,
+          "y": 330,
+          "vy": 0,
+          "duck": 0.2,
+          "time": 4.118000000000003,
+          "checkpoint": 80,
+          "won": false,
+          "paused": true,
+          "falls": 0,
+          "recovery": 0,
+          "collected": [
+            0
+          ],
+          "pending": null,
+          "activeDuck": 0,
+          "activeJump": -1
+        },
+        "visual": {
+          "animationFrame": 6,
+          "calibrated": false,
+          "starting": false,
+          "voiceLevel": 0,
+          "voiceBand": "middle",
+          "practice": false,
+          "practiceNotes": {
+            "middle": false,
+            "high": false,
+            "low": false
+          },
+          "particleCount": 0
+        }
+      },
+      "landscape": {
+        "dpr": 2.75,
+        "cssW": 652,
+        "cssH": 270,
+        "width": 1793,
+        "height": 743,
+        "worldW": 773,
+        "transform": {
+          "a": 2.3195343017578125,
+          "b": 0,
+          "c": 0,
+          "d": 2.3218750953674316,
+          "e": 0,
+          "f": 0
+        },
+        "state": {
+          "level": 4,
+          "x": 471.21000000000424,
+          "y": 330,
+          "vy": 0,
+          "duck": 0.2,
+          "time": 4.118000000000003,
+          "checkpoint": 80,
+          "won": false,
+          "paused": true,
+          "falls": 0,
+          "recovery": 0,
+          "collected": [
+            0
+          ],
+          "pending": null,
+          "activeDuck": 0,
+          "activeJump": -1
+        },
+        "visual": {
+          "animationFrame": 6,
+          "calibrated": false,
+          "starting": false,
+          "voiceLevel": 0,
+          "voiceBand": "middle",
+          "practice": false,
+          "practiceNotes": {
+            "middle": false,
+            "high": false,
+            "low": false
+          },
+          "particleCount": 0
+        }
+      }
+    },
+    {
+      "dpr": 3,
+      "hero": {
+        "cssW": 158,
+        "cssH": 158,
+        "width": 474,
+        "height": 474,
+        "dpr": 3
+      },
+      "jump": {
+        "dpr": 3,
+        "cssW": 360,
+        "cssH": 419,
+        "width": 1080,
+        "height": 1257,
+        "worldW": 275,
+        "transform": {
+          "a": 3.9272727966308594,
+          "b": 0,
+          "c": 0,
+          "d": 3.9281249046325684,
+          "e": 0,
+          "f": 0
+        },
+        "state": {
+          "level": 1,
+          "x": 103.27500000000015,
+          "y": 241.83606666666648,
+          "vy": -247.24999999999943,
+          "duck": 0,
+          "time": 0.2449999999999999,
+          "checkpoint": 80,
+          "won": false,
+          "paused": false,
+          "falls": 0,
+          "recovery": 0,
+          "collected": [],
+          "pending": null,
+          "activeDuck": -1,
+          "activeJump": -1
+        },
+        "visual": {
+          "animationFrame": 4,
+          "calibrated": false,
+          "starting": false,
+          "voiceLevel": 0,
+          "voiceBand": "middle",
+          "practice": false,
+          "practiceNotes": {
+            "middle": false,
+            "high": false,
+            "low": false
+          },
+          "particleCount": 6
+        }
+      },
+      "duck": {
+        "dpr": 3,
+        "cssW": 360,
+        "cssH": 419,
+        "width": 1080,
+        "height": 1257,
+        "worldW": 275,
+        "transform": {
+          "a": 3.9272727966308594,
+          "b": 0,
+          "c": 0,
+          "d": 3.9281249046325684,
+          "e": 0,
+          "f": 0
+        },
+        "state": {
+          "level": 4,
+          "x": 470.83000000000425,
+          "y": 330,
+          "vy": 0,
+          "duck": 0.2,
+          "time": 4.114000000000003,
+          "checkpoint": 80,
+          "won": false,
+          "paused": true,
+          "falls": 0,
+          "recovery": 0,
+          "collected": [
+            0
+          ],
+          "pending": null,
+          "activeDuck": 0,
+          "activeJump": -1
+        },
+        "visual": {
+          "animationFrame": 6,
+          "calibrated": false,
+          "starting": false,
+          "voiceLevel": 0,
+          "voiceBand": "middle",
+          "practice": false,
+          "practiceNotes": {
+            "middle": false,
+            "high": false,
+            "low": false
+          },
+          "particleCount": 0
+        }
+      },
+      "landscape": {
+        "dpr": 3,
+        "cssW": 652,
+        "cssH": 270,
+        "width": 1956,
+        "height": 810,
+        "worldW": 773,
+        "transform": {
+          "a": 2.5304009914398193,
+          "b": 0,
+          "c": 0,
+          "d": 2.53125,
+          "e": 0,
+          "f": 0
+        },
+        "state": {
+          "level": 4,
+          "x": 470.83000000000425,
+          "y": 330,
+          "vy": 0,
+          "duck": 0.2,
+          "time": 4.114000000000003,
+          "checkpoint": 80,
+          "won": false,
+          "paused": true,
+          "falls": 0,
+          "recovery": 0,
+          "collected": [
+            0
+          ],
+          "pending": null,
+          "activeDuck": 0,
+          "activeJump": -1
+        },
+        "visual": {
+          "animationFrame": 7,
+          "calibrated": false,
+          "starting": false,
+          "voiceLevel": 0,
+          "voiceBand": "middle",
+          "practice": false,
+          "practiceNotes": {
+            "middle": false,
+            "high": false,
+            "low": false
+          },
+          "particleCount": 0
+        }
+      }
+    }
+  ],
+  "errors": []
+}

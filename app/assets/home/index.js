@@ -2,7 +2,7 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const games = [
-    {id:'animal-balance',cat:'puzzle',name:'动物天平桥'},
+    {id:'animal-balance',cat:'puzzle',name:'水果天平'},
     {id:'hat-trick',cat:'puzzle',name:'帽子小捣蛋'},
     {id:'pitch-adventure',cat:'react',name:'怪兽变声冒险'},
     {id:'voice-quest',cat:'react',name:'口令小冒险'},

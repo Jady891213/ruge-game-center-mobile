@@ -1,27 +1,29 @@
 (function(root){
   'use strict';
-  const ANIMALS=Object.freeze(['小鸟','兔子','狐狸','小猫','企鹅','小熊']);
-  const A=[1,2,3,4,5,6],B=[1,3,2,5,4,6],C=[2,3,5,4,6,7],D=[1,2,4,3,5,6];
+  const ANIMALS=Object.freeze(['草莓','橘子','苹果','梨','南瓜','西瓜']);
+  const WEIGHTS=Object.freeze([1,2,3,4,5,6]);
+  const A=WEIGHTS;
   const eq=(left,right)=>({left,right});
+  const clues=[eq([1],[0,0]),eq([2],[0,1]),eq([3],[1,1]),eq([4],[1,2]),eq([5],[2,2])];
   const specs=[
-    [A,[[1]],[3,0,0,0,0,0],[eq([1],[0,0])]],
-    [A,[[2]],[2,2,0,0,0,0],[eq([1],[0,0]),eq([2],[0,1])]],
-    [A,[[3]],[2,2,1,0,0,0],[eq([3],[1,1]),eq([2],[0,1]),eq([1],[0,0])]],
-    [A,[[4]],[3,2,1,0,0,0],[eq([4],[2,1]),eq([2],[0,1]),eq([1],[0,0])]],
-    [A,[[5]],[2,2,1,0,0,0],[eq([5],[2,2]),eq([2],[0,1])]],
-    [A,[[3,0]],[0,3,2,0,0,0],[eq([3],[1,1]),eq([2],[0,1]),eq([1],[0,0])],2],
-    [B,[[4]],[3,2,2,0,0,0],[eq([1],[0,2]),eq([2],[0,0]),eq([4],[2,2])]],
-    [B,[[3]],[2,1,2,0,0,0],[eq([3],[1,2]),eq([1],[0,2]),eq([2],[0,0])]],
-    [C,[[5]],[2,2,1,0,0,0],[eq([2],[0,1]),eq([5],[0,2])],2],
-    [D,[[5]],[2,2,1,1,0,0],[eq([3],[0,1]),eq([2],[1,1]),eq([5],[3,3])],2,[2]],
-    [A,[[5]],[3,3,2,1,0,0],[eq([5],[2,2]),eq([2],[1,0]),eq([1],[0,0])],3,[3]],
-    [C,[[4]],[2,2,1,1,0,0],[eq([3],[0,0]),eq([4],[1,1]),eq([2],[0,1])],2,[2]],
-    [A,[[2],[3]],[1,2,1,0,0,0],[eq([1],[0,0]),eq([2],[0,1]),eq([3],[1,1])]],
-    [A,[[4],[5]],[1,2,2,1,0,0],[eq([3],[1,1]),eq([4],[3,0]),eq([5],[2,2])]],
-    [B,[[3],[5]],[2,2,2,0,1,0],[eq([4],[2,2]),eq([3],[4,0]),eq([5],[1,1])],3,[2,2]],
-    [C,[[2],[5]],[3,3,0,1,0,0],[eq([2],[0,1]),eq([3],[0,0]),eq([5],[3,1])]],
-    [D,[[4],[5]],[2,3,0,2,0,0],[eq([4],[3,1]),eq([5],[3,3]),eq([1],[0,0])],3,[2,3]],
-    [C,[[4],[5]],[4,3,1,2,0,0],[eq([4],[1,1]),eq([2],[0,1]),eq([3],[0,0]),eq([5],[3,1])],3,[3,2]],
+    [A,[[1]],[3,0,0,0,0,0],clues.slice(0,1)],
+    [A,[[2]],[2,2,0,0,0,0],clues.slice(0,2)],
+    [A,[[3]],[2,2,1,0,0,0],clues.slice(0,3)],
+    [A,[[4]],[3,2,1,0,0,0],[clues[3],clues[1],clues[0]]],
+    [A,[[5]],[2,2,2,0,0,0],[clues[4],clues[1]]],
+    [A,[[3,0]],[0,3,2,0,0,0],clues.slice(0,3),2],
+    [A,[[3]],[3,2,2,0,0,0],clues.slice(0,3)],
+    [A,[[4]],[2,1,2,0,0,0],[clues[3],clues[1],clues[0]]],
+    [A,[[4]],[2,2,1,0,0,0],[clues[3],clues[1]],2],
+    [A,[[5]],[2,2,1,1,0,0],[clues[4],clues[2],clues[1]],2,[2]],
+    [A,[[5]],[3,3,2,1,0,0],[clues[4],clues[1],clues[0]],3,[3]],
+    [A,[[5]],[2,2,1,1,0,0],[clues[4],clues[2],clues[0]],2,[2]],
+    [A,[[2],[3]],[1,2,1,0,0,0],clues.slice(0,3)],
+    [A,[[4],[5]],[1,2,2,1,0,0],[clues[2],clues[3],clues[4]]],
+    [A,[[4],[5]],[2,2,2,0,1,0],[clues[3],clues[4],clues[0]],3,[2,2]],
+    [A,[[2],[5]],[3,3,0,1,0,0],[clues[1],clues[2],clues[4]]],
+    [A,[[4],[5]],[2,3,0,2,0,0],[clues[2],clues[3],clues[0]],3,[2,3]],
+    [A,[[4],[5]],[4,3,1,2,0,0],[clues[3],clues[4],clues[0]],3,[3,2]],
   ];
   const freeze=x=>{if(x&&typeof x==='object'){Object.values(x).forEach(freeze);Object.freeze(x);}return x;};
   const LEVELS=freeze(specs.map(([weights,targets,stock,clues,slots=3,exact=[]],i)=>({id:i+1,weights:weights.slice(),targets,stock,clues,slots,exact})));
@@ -45,11 +47,15 @@
     }
     return bridge(0);
   }
-  function restore(raw){const empty={stars:Array(18).fill(0),session:null};if(!raw||raw.schema!==1)return empty;const stars=Array.from({length:18},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0),fail=()=>({stars,session:null}),s=raw.session;
+  function restore(raw){const empty={stars:Array(18).fill(0),session:null};if(!raw||![1,2].includes(raw.schema))return empty;const stars=Array.from({length:18},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0),fail=()=>({stars,session:null}),s=raw.schema===2?raw.session:null;
     if(!s||!validLevel(s.level)||!Array.isArray(s.pans)||s.pans.length!==LEVELS[s.level].targets.length||!Array.isArray(s.tested)||s.tested.length!==s.pans.length||!Number.isInteger(s.attempts)||s.attempts<0||s.attempts>100000||typeof s.finished!=='boolean')return fail();
     const replay=createState(s.level);for(let b=0;b<s.pans.length;b++){if(!Array.isArray(s.pans[b]))return fail();for(const id of s.pans[b])if(!place(replay,b,id))return fail();}
     for(let b=0;b<s.tested.length;b++){if(s.tested[b]===null)continue;if(![-1,0,1,2].includes(s.tested[b])||s.tested[b]!==result(replay,b))return fail();replay.tested[b]=s.tested[b];}
     replay.finished=replay.tested.every((n,i)=>n===0&&result(replay,i)===0);if(replay.finished!==s.finished||s.attempts<replay.tested.filter(n=>n!==null).length)return fail();replay.attempts=s.attempts;return {stars,session:replay};
   }
-  const api={ANIMALS,LEVELS,createState,remaining,place,remove,clear,result,weigh,weight,solve,restore};root.AnimalBalance=api;if(typeof module==='object'&&module.exports)module.exports=api;
+  // Unitless damped balance: item mass changes the torque immediately, never a fixed tilt.
+  function createBalance(){return {angle:0,velocity:0};}
+  function targetAngle(left,right){return Math.atan2(right-left,Math.max(4,left+right)*1.8)*180/Math.PI;}
+  function advanceBalance(p,left,right,dt){let remaining=Math.max(0,Math.min(.1,Number(dt)||0));const target=targetAngle(left,right);while(remaining>0){const h=Math.min(remaining,1/120);p.velocity+=((target-p.angle)*58-p.velocity*9)*h;p.angle+=p.velocity*h;remaining-=h;}return p.angle;}
+  const api={ANIMALS,ITEMS:ANIMALS,WEIGHTS,createBalance,targetAngle,advanceBalance,LEVELS,createState,remaining,place,remove,clear,result,weigh,weight,solve,restore};root.AnimalBalance=api;if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

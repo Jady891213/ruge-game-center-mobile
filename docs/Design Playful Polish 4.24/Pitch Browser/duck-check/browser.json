@@ -1,0 +1,35 @@
+{
+  "views": [
+    {
+      "snapshot": {
+        "level": 4,
+        "x": 470.1650000000042,
+        "y": 330,
+        "vy": 0,
+        "duck": 0.2,
+        "time": 4.107000000000003,
+        "checkpoint": 80,
+        "won": false,
+        "paused": true,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [
+          0
+        ],
+        "pending": null,
+        "activeDuck": 0,
+        "activeJump": -1
+      },
+      "visual": {
+        "animationFrame": 6,
+        "calibrated": false,
+        "starting": false,
+        "voiceLevel": 0,
+        "voiceBand": "middle",
+        "particleCount": 0
+      }
+    }
+  ],
+  "levels": [],
+  "errors": []
+}

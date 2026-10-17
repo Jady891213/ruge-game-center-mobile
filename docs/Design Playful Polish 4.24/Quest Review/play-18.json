@@ -1,0 +1,2206 @@
+{
+  "input": "Real DOM auxiliary button clicks; audio bridge simulated listening (not real audio recognition)",
+  "viewport": [
+    320,
+    568
+  ],
+  "assets": [
+    {
+      "src": "../shared/playful-art/hero-frames.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "ok": true
+    },
+    {
+      "src": "../shared/playful-art/forest-props.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "ok": true
+    },
+    {
+      "src": "../shared/playful-art/tree.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "ok": true
+    },
+    {
+      "src": "../shared/playful-art/forest-world.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "ok": true
+    }
+  ],
+  "runs": [
+    {
+      "i": 1,
+      "elapsedMs": 2969,
+      "route": [
+        "right",
+        "right",
+        "take",
+        "right",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 2,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 3,
+          "y": 2,
+          "visible": {
+            "x": 3,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 3,
+            "y": 2
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 1,
+        "won": true,
+        "stars": 3,
+        "title": "门开啦！",
+        "reached": 2
+      }
+    },
+    {
+      "i": 2,
+      "elapsedMs": 3191,
+      "route": [
+        "right",
+        "up",
+        "right",
+        "take",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 2,
+        "won": true,
+        "stars": 3,
+        "title": "小兔吃到啦！",
+        "reached": 3
+      }
+    },
+    {
+      "i": 3,
+      "elapsedMs": 2710,
+      "route": [
+        "right",
+        "jump",
+        "take",
+        "right",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 3,
+        "won": true,
+        "stars": 3,
+        "title": "星星回家啦！",
+        "reached": 4
+      }
+    },
+    {
+      "i": 4,
+      "elapsedMs": 3397,
+      "route": [
+        "right",
+        "right",
+        "take",
+        "up",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 2,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 3,
+          "y": 2,
+          "visible": {
+            "x": 3,
+            "y": 2
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 4,
+        "won": true,
+        "stars": 3,
+        "title": "门开啦！",
+        "reached": 5
+      }
+    },
+    {
+      "i": 5,
+      "elapsedMs": 3762,
+      "route": [
+        "right",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "down",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        }
+      ],
+      "final": {
+        "level": 5,
+        "won": true,
+        "stars": 3,
+        "title": "小兔吃到啦！",
+        "reached": 6
+      }
+    },
+    {
+      "i": 6,
+      "elapsedMs": 2987,
+      "route": [
+        "right",
+        "jump",
+        "right",
+        "take",
+        "right",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 6,
+        "won": true,
+        "stars": 3,
+        "title": "星星回家啦！",
+        "reached": 7
+      }
+    },
+    {
+      "i": 7,
+      "elapsedMs": 4316,
+      "route": [
+        "up",
+        "up",
+        "take",
+        "down",
+        "down",
+        "right",
+        "right",
+        "jump",
+        "up",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 3,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 7,
+        "won": true,
+        "stars": 3,
+        "title": "门开啦！",
+        "reached": 8
+      }
+    },
+    {
+      "i": 8,
+      "elapsedMs": 4098,
+      "route": [
+        "up",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "right",
+        "down",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        }
+      ],
+      "final": {
+        "level": 8,
+        "won": true,
+        "stars": 3,
+        "title": "小兔吃到啦！",
+        "reached": 9
+      }
+    },
+    {
+      "i": 9,
+      "elapsedMs": 4283,
+      "route": [
+        "down",
+        "right",
+        "jump",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 4,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 9,
+        "won": true,
+        "stars": 3,
+        "title": "星星回家啦！",
+        "reached": 10
+      }
+    },
+    {
+      "i": 10,
+      "elapsedMs": 4132,
+      "route": [
+        "right",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 7,
+          "y": 1,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 10,
+        "won": true,
+        "stars": 3,
+        "title": "门开啦！",
+        "reached": 11
+      }
+    },
+    {
+      "i": 11,
+      "elapsedMs": 5397,
+      "route": [
+        "up",
+        "up",
+        "take",
+        "right",
+        "down",
+        "down",
+        "right",
+        "right",
+        "up",
+        "up",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 3,
+          "visible": {
+            "x": 3,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 11,
+        "won": true,
+        "stars": 3,
+        "title": "小兔吃到啦！",
+        "reached": 12
+      }
+    },
+    {
+      "i": 12,
+      "elapsedMs": 4378,
+      "route": [
+        "right",
+        "up",
+        "right",
+        "take",
+        "right",
+        "down",
+        "down",
+        "right",
+        "right",
+        "up",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 4,
+          "y": 3,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 3,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 3
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 12,
+        "won": true,
+        "stars": 3,
+        "title": "星星回家啦！",
+        "reached": 13
+      }
+    },
+    {
+      "i": 13,
+      "elapsedMs": 4667,
+      "route": [
+        "up",
+        "up",
+        "take",
+        "down",
+        "down",
+        "right",
+        "jump",
+        "right",
+        "right",
+        "up",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 4,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 3,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 3
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 6,
+          "y": 2,
+          "visible": {
+            "x": 6,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 13,
+        "won": true,
+        "stars": 3,
+        "title": "门开啦！",
+        "reached": 14
+      }
+    },
+    {
+      "i": 14,
+      "elapsedMs": 4663,
+      "route": [
+        "down",
+        "right",
+        "jump",
+        "right",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 4,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 7,
+          "y": 1,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 14,
+        "won": true,
+        "stars": 3,
+        "title": "小兔吃到啦！",
+        "reached": 15
+      }
+    },
+    {
+      "i": 15,
+      "elapsedMs": 4717,
+      "route": [
+        "up",
+        "up",
+        "right",
+        "right",
+        "take",
+        "right",
+        "right",
+        "right",
+        "right",
+        "down",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 7,
+          "y": 1,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 3,
+          "visible": {
+            "x": 7,
+            "y": 2
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 7,
+          "y": 3,
+          "visible": {
+            "x": 7,
+            "y": 3
+          }
+        }
+      ],
+      "final": {
+        "level": 15,
+        "won": true,
+        "stars": 3,
+        "title": "星星回家啦！",
+        "reached": 16
+      }
+    },
+    {
+      "i": 16,
+      "elapsedMs": 4665,
+      "route": [
+        "down",
+        "right",
+        "right",
+        "jump",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 5,
+          "y": 3,
+          "visible": {
+            "x": 3,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 5,
+          "y": 2,
+          "visible": {
+            "x": 5,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 7,
+          "y": 1,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 16,
+        "won": true,
+        "stars": 3,
+        "title": "门开啦！",
+        "reached": 17
+      }
+    },
+    {
+      "i": 17,
+      "elapsedMs": 4399,
+      "route": [
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "right",
+        "right",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 2,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 1,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 1,
+          "visible": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 3,
+          "y": 1,
+          "visible": {
+            "x": 2,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 3,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 7,
+          "y": 1,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 17,
+        "won": true,
+        "stars": 3,
+        "title": "小兔吃到啦！",
+        "reached": 18
+      }
+    },
+    {
+      "i": 18,
+      "elapsedMs": 4759,
+      "route": [
+        "down",
+        "right",
+        "jump",
+        "up",
+        "up",
+        "take",
+        "right",
+        "right",
+        "right",
+        "down",
+        "put"
+      ],
+      "phases": [
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 1,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 2
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 2,
+          "y": 3,
+          "visible": {
+            "x": 1,
+            "y": 3
+          }
+        },
+        {
+          "action": "jump",
+          "kind": "jump",
+          "x": 4,
+          "y": 3,
+          "visible": {
+            "x": 2,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 4,
+          "y": 2,
+          "visible": {
+            "x": 4,
+            "y": 3
+          }
+        },
+        {
+          "action": "up",
+          "kind": "move",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 2
+          }
+        },
+        {
+          "action": "take",
+          "kind": "take",
+          "x": 4,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 5,
+          "y": 1,
+          "visible": {
+            "x": 4,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 6,
+          "y": 1,
+          "visible": {
+            "x": 5,
+            "y": 1
+          }
+        },
+        {
+          "action": "right",
+          "kind": "move",
+          "x": 7,
+          "y": 1,
+          "visible": {
+            "x": 6,
+            "y": 1
+          }
+        },
+        {
+          "action": "down",
+          "kind": "move",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 1
+          }
+        },
+        {
+          "action": "put",
+          "kind": "win",
+          "x": 7,
+          "y": 2,
+          "visible": {
+            "x": 7,
+            "y": 2
+          }
+        }
+      ],
+      "final": {
+        "level": 18,
+        "won": true,
+        "stars": 3,
+        "title": "星星回家啦！",
+        "reached": 18
+      }
+    }
+  ],
+  "errors": []
+}

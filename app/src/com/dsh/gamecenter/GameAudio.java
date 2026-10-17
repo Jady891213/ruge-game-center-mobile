@@ -40,6 +40,8 @@ public final class GameAudio {
             if(Build.VERSION.SDK_INT>=23&&activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){status="permission";activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},PERMISSION_REQUEST);return;}
             final int token;
             synchronized(GameAudio.this){
+                // Consecutive levels share the live capture/model, not a new recorder each time.
+                if(requested.equals(mode)&&("loading".equals(status)||"warming".equals(status)||"listening".equals(status)))return;
                 stopNow();if(!foreground||closed)return;
                 mode=requested;status="loading";error="";frames=0;updated=0;
                 command="";commandAt=0;token=generation;

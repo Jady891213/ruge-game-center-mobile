@@ -1,0 +1,315 @@
+{
+  "source": "MIX4 fixed Mac Tingting synthetic WAV played through handset speaker→native microphone→KWS→animated mission; no native command injection. WAV only temporary; retries retained. Not child voice accuracy benchmark.",
+  "start": {
+    "audio": {
+      "status": "listening",
+      "mode": "command",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.003335340414196253,
+      "confidence": 0,
+      "ageMs": 47,
+      "command": "",
+      "commandAgeMs": 999999,
+      "commandSerial": 0,
+      "frames": 5
+    },
+    "paused": false,
+    "ready": false,
+    "foreground": true
+  },
+  "commands": [
+    {
+      "word": "向右",
+      "expected": "right",
+      "attempts": [
+        {
+          "ttsAccepted": true,
+          "peakRms": 0.1827746033668518,
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.0032889742869883776,
+            "confidence": 0,
+            "ageMs": 42,
+            "command": "right",
+            "commandAgeMs": 1025,
+            "commandSerial": 1,
+            "frames": 43
+          },
+          "state": {
+            "level": 1,
+            "x": 2,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 1
+          },
+          "heard": "向右",
+          "animating": false
+        }
+      ]
+    },
+    {
+      "word": "向右",
+      "expected": "right",
+      "attempts": [
+        {
+          "ttsAccepted": true,
+          "peakRms": 0.1889449506998062,
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.002588920760899782,
+            "confidence": 0,
+            "ageMs": 32,
+            "command": "right",
+            "commandAgeMs": 1012,
+            "commandSerial": 2,
+            "frames": 78
+          },
+          "state": {
+            "level": 1,
+            "x": 3,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 2
+          },
+          "heard": "拿起",
+          "animating": false
+        }
+      ]
+    },
+    {
+      "word": "拿起来",
+      "expected": "take",
+      "attempts": [
+        {
+          "ttsAccepted": true,
+          "peakRms": 0.16354811191558838,
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.0016716780373826623,
+            "confidence": 0,
+            "ageMs": 47,
+            "command": "take",
+            "commandAgeMs": 1031,
+            "commandSerial": 3,
+            "frames": 118
+          },
+          "state": {
+            "level": 1,
+            "x": 3,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": true,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 3
+          },
+          "heard": "拿起",
+          "animating": false
+        }
+      ]
+    },
+    {
+      "word": "向右",
+      "expected": "right",
+      "attempts": [
+        {
+          "ttsAccepted": true,
+          "peakRms": 0.15378649532794952,
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.008185255341231823,
+            "confidence": 0,
+            "ageMs": 54,
+            "command": "right",
+            "commandAgeMs": 1039,
+            "commandSerial": 4,
+            "frames": 158
+          },
+          "state": {
+            "level": 1,
+            "x": 4,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": true,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 4
+          },
+          "heard": "放下",
+          "animating": false
+        }
+      ]
+    },
+    {
+      "word": "放下",
+      "expected": "put",
+      "attempts": [
+        {
+          "ttsAccepted": true,
+          "peakRms": 0.17395764589309692,
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.0027768125291913748,
+            "confidence": 0,
+            "ageMs": 0,
+            "command": "put",
+            "commandAgeMs": 1047,
+            "commandSerial": 5,
+            "frames": 199
+          },
+          "state": {
+            "level": 1,
+            "x": 4,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": true,
+            "paused": false,
+            "moves": 5
+          },
+          "heard": "放下",
+          "animating": false
+        }
+      ]
+    }
+  ],
+  "win": {
+    "state": {
+      "level": 1,
+      "x": 4,
+      "y": 2,
+      "facing": "right",
+      "jump": false,
+      "carrying": false,
+      "item": [
+        3,
+        2
+      ],
+      "won": true,
+      "paused": false,
+      "moves": 5
+    },
+    "win": true,
+    "audio": {
+      "status": "listening",
+      "mode": "command",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.001579623087309301,
+      "confidence": 0,
+      "ageMs": 8,
+      "command": "put",
+      "commandAgeMs": 1554,
+      "commandSerial": 5,
+      "frames": 207
+    }
+  },
+  "next": {
+    "state": {
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "facing": "right",
+      "jump": false,
+      "carrying": false,
+      "item": [
+        3,
+        1
+      ],
+      "won": false,
+      "paused": false,
+      "moves": 0
+    },
+    "paused": false,
+    "ready": false,
+    "audio": {
+      "status": "listening",
+      "mode": "command",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.0018349996535107493,
+      "confidence": 0,
+      "ageMs": 5,
+      "command": "put",
+      "commandAgeMs": 2271,
+      "commandSerial": 5,
+      "frames": 218
+    }
+  },
+  "background": {
+    "status": "idle",
+    "mode": "",
+    "error": "",
+    "pitch": 0,
+    "rms": 0,
+    "confidence": 0,
+    "ageMs": 486,
+    "command": "put",
+    "commandAgeMs": 2874,
+    "commandSerial": 5,
+    "frames": 220
+  },
+  "resume": {
+    "paused": true,
+    "audio": {
+      "status": "idle",
+      "mode": "",
+      "error": "",
+      "pitch": 0,
+      "rms": 0,
+      "confidence": 0,
+      "ageMs": 1360,
+      "command": "put",
+      "commandAgeMs": 3748,
+      "commandSerial": 5,
+      "frames": 220
+    }
+  }
+}

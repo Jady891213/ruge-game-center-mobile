@@ -1,0 +1,64 @@
+{
+  "views": [
+    {
+      "mode": "abort",
+      "snapshot": {
+        "level": 1,
+        "x": 169.67999999999984,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 0.9440000000000005,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      },
+      "visual": {
+        "animationFrame": 1,
+        "calibrated": true,
+        "starting": false,
+        "voiceLevel": 0.6928203230275509,
+        "voiceBand": "middle",
+        "particleCount": 0
+      },
+      "micStarts": 1
+    },
+    {
+      "mode": "delay",
+      "snapshot": {
+        "level": 1,
+        "x": 169.67999999999984,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 0.9440000000000005,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      },
+      "visual": {
+        "animationFrame": 1,
+        "calibrated": true,
+        "starting": false,
+        "voiceLevel": 0.6928203230275509,
+        "voiceBand": "middle",
+        "particleCount": 0
+      },
+      "micStarts": 1
+    }
+  ],
+  "levels": [],
+  "errors": []
+}

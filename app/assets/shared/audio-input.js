@@ -4,7 +4,9 @@ const cover=typeof location!=='undefined'&&/[?&]cover=1(?:&|$)/.test(location.se
 let webStream=null,context=null,analyser=null,webStatus='idle',webMode='',generation=0,buffer=null;
 function estimatePitch(samples,rate){let energy=0,mean=0;for(const v of samples)mean+=v;mean/=samples.length;for(const v of samples)energy+=(v-mean)**2;const rms=Math.sqrt(energy/samples.length);if(rms<.006)return{pitch:0,rms,confidence:0};const max=Math.min(Math.floor(rate/75),Math.floor(samples.length/2)-1),min=Math.max(2,Math.floor(rate/900)),diff=new Float32Array(max+1);let sum=0;for(let lag=1;lag<=max;lag++){let d=0;for(let j=0;j<samples.length-max;j++)d+=(samples[j]-samples[j+lag])**2;sum+=d;diff[lag]=sum?d*lag/sum:1;}for(let lag=min;lag<max;lag++)if(diff[lag]<.18){while(lag<max&&diff[lag+1]<diff[lag])lag++;return{pitch:rate/lag,rms,confidence:1-diff[lag]};}return{pitch:0,rms,confidence:0};}
 function stop(){generation++;try{native?.stop();}catch(_){}webStream?.getTracks().forEach(t=>t.stop());webStream=null;if(context){context.close().catch(()=>{});context=null;}analyser=null;webStatus='idle';webMode='';}
-async function start(mode){if(cover||!['pitch','command'].includes(mode))return false;stop();const token=generation;
+async function start(mode){if(cover||!['pitch','command'].includes(mode)||document.hidden)return false;
+const current=read();if(current.mode===mode&&['loading','warming','listening'].includes(current.status))return true;
+stop();const token=generation;
 if(native){try{native.start(mode);return true;}catch(_){return false;}}
 if(mode==='command'){webStatus='unavailable';return false;}
 if(!navigator.mediaDevices?.getUserMedia){webStatus='unavailable';return false;}

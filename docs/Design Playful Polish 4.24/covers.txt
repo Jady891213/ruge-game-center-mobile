@@ -1,0 +1,3 @@
+animal-balance: app/assets/shared/animal-balance.png (1200 × 720)
+pitch-adventure: app/assets/shared/pitch-adventure.png (1200 × 720)
+voice-quest: app/assets/shared/voice-quest.png (1200 × 720)

@@ -1,0 +1,189 @@
+{
+  "views": [
+    {
+      "width": 320,
+      "height": 568,
+      "stage": {
+        "x": 12,
+        "y": 133.75,
+        "width": 296,
+        "height": 255.59375,
+        "top": 133.75,
+        "right": 308,
+        "bottom": 389.34375,
+        "left": 12
+      },
+      "jump": {
+        "x": 12,
+        "y": 485.109375,
+        "width": 142,
+        "height": 55,
+        "top": 485.109375,
+        "right": 154,
+        "bottom": 540.109375,
+        "left": 12
+      },
+      "duck": {
+        "x": 166,
+        "y": 485.109375,
+        "width": 142,
+        "height": 55,
+        "top": 485.109375,
+        "right": 308,
+        "bottom": 540.109375,
+        "left": 166
+      },
+      "scroll": 568,
+      "images": [],
+      "visual": {
+        "animationFrame": 2,
+        "calibrated": false,
+        "starting": false,
+        "voiceLevel": 0,
+        "voiceBand": "middle",
+        "particleCount": 0
+      },
+      "snapshot": {
+        "level": 1,
+        "x": 295.1749999999998,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 2.265000000000002,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      }
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "stage": {
+        "x": 12,
+        "y": 190.6875,
+        "width": 368,
+        "height": 427.265625,
+        "top": 190.6875,
+        "right": 380,
+        "bottom": 617.953125,
+        "left": 12
+      },
+      "jump": {
+        "x": 12,
+        "y": 762.65625,
+        "width": 178,
+        "height": 66,
+        "top": 762.65625,
+        "right": 190,
+        "bottom": 828.65625,
+        "left": 12
+      },
+      "duck": {
+        "x": 202,
+        "y": 762.65625,
+        "width": 178,
+        "height": 66,
+        "top": 762.65625,
+        "right": 380,
+        "bottom": 828.65625,
+        "left": 202
+      },
+      "scroll": 872,
+      "images": [],
+      "visual": {
+        "animationFrame": 2,
+        "calibrated": false,
+        "starting": false,
+        "voiceLevel": 0,
+        "voiceBand": "middle",
+        "particleCount": 0
+      },
+      "snapshot": {
+        "level": 1,
+        "x": 287.85999999999956,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 2.188000000000002,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      }
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "stage": {
+        "x": 12,
+        "y": 102,
+        "width": 660,
+        "height": 278,
+        "top": 102,
+        "right": 672,
+        "bottom": 380,
+        "left": 12
+      },
+      "jump": {
+        "x": 680,
+        "y": 316,
+        "width": 86,
+        "height": 62,
+        "top": 316,
+        "right": 766,
+        "bottom": 378,
+        "left": 680
+      },
+      "duck": {
+        "x": 774,
+        "y": 316,
+        "width": 86,
+        "height": 62,
+        "top": 316,
+        "right": 860,
+        "bottom": 378,
+        "left": 774
+      },
+      "scroll": 392,
+      "images": [],
+      "visual": {
+        "animationFrame": 2,
+        "calibrated": false,
+        "starting": false,
+        "voiceLevel": 0,
+        "voiceBand": "middle",
+        "particleCount": 0
+      },
+      "snapshot": {
+        "level": 1,
+        "x": 288.8099999999996,
+        "y": 330,
+        "vy": 0,
+        "duck": 0,
+        "time": 2.1980000000000017,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      }
+    }
+  ],
+  "levels": [],
+  "errors": []
+}

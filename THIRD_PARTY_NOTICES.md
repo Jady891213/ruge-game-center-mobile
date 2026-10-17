@@ -49,3 +49,7 @@
 - 本次 JNI 构建依赖：kaldi-native-fbank、kaldi-decoder、kaldifst、OpenFST、simple-sentencepiece（Apache-2.0）；KissFFT（BSD-3-Clause）；nlohmann/json（MIT）；Eigen（MPL-2.0，保留声明）；Android NDK r27d 静态 C++ 运行时（对应 LLVM/NDK NOTICE）。
 
 完整许可、固定源码链接、编译选项、原生依赖/导出检查和实际文件哈希见 `vendor/voice/`；修改补丁 `native-kws.patch` 与重建脚本 `scripts/build-voice-native.py` 随仓库提供。许可文本也随 APK 打包于 `assets/voice-model/licenses/`。最终仅分发一份共享 ONNX Runtime 与 KWS JNI，未给每个小游戏重复打包。
+
+## 4.24 水果天平与森林声音冒险美术
+
+使用内置 GPT 图片生成与编辑工具制作三联视觉原型、水果图集、木秤/森林桌面、12帧原创怪兽、森林场景、树与任务道具。正式素材位于 animal-balance/art、pitch-adventure/art 与 shared/playful-art；原型、完整提示词、生成来源及哈希在 docs/Design Playful Polish 4.24。未提取参考游戏美术；原生语音依赖与许可沿用上一版固定分发。

@@ -2,7 +2,7 @@
 'use strict';
 const patterns=[['gap'],['gap','gap'],['gap','rock'],['branch'],['branch','branch'],['gap','branch'],['rock','gap'],['branch','gap','branch'],['gap','rock','branch'],['branch','gap','rock'],['gap','branch','gap'],['rock','branch','rock'],['gap','branch','rock','gap'],['branch','rock','gap','branch'],['gap','gap','branch','rock'],['branch','gap','branch','gap'],['rock','branch','gap','rock','branch'],['gap','branch','rock','gap','branch']];
 const levels=patterns.map((pattern,i)=>{const spacing=i<6?360:i<12?330:310;const obstacles=pattern.map((type,j)=>({type,x:450+j*spacing,w:type==='gap'?(i<6?50:62):type==='branch'?82:38}));return{id:i+1,name:String(i+1),length:obstacles.at(-1).x+440,obstacles,coins:obstacles.map(o=>({x:o.x+o.w/2,y:o.type==='branch'?308:215})),speed:i<6?95:i<12?100:105};});
-function create(index=0,saved){const level=levels[Number.isInteger(index)?Math.max(0,Math.min(levels.length-1,index)):0];let x=80,y=330,vy=0,duck=0,time=0,checkpoint=80,won=false,paused=false,falls=0,recovery=0,jumpLock=false,pending=null,activeDuck=-1,activeJump=-1,launchGrace=0;let collected=new Set(),used=new Set(),contacts=new Map(),actionEvents=[];
+function create(index=0,saved,options={}){const practice=options?.practice===true,base=levels[Number.isInteger(index)?Math.max(0,Math.min(levels.length-1,index)):0],level=practice?{...base,id:0,obstacles:[],coins:[],length:Infinity,speed:0}:base;let x=80,y=330,vy=0,duck=0,time=0,checkpoint=80,won=false,paused=false,falls=0,recovery=0,jumpLock=false,pending=null,activeDuck=-1,activeJump=-1,launchGrace=0;let collected=new Set(),used=new Set(),contacts=new Map(),actionEvents=[];
 if(saved&&saved.level===level.id){const candidate=Number.isFinite(saved.x)?Math.max(80,Math.min(level.length-80,saved.x)):80;const safe=[80,...level.obstacles.map(o=>o.x+o.w+46)];x=Math.max(...safe.filter(p=>p<=candidate));checkpoint=x;falls=Number.isFinite(saved.falls)?Math.max(0,Math.min(9999,Math.floor(saved.falls))):0;collected=new Set((Array.isArray(saved.collected)?saved.collected:[]).filter(v=>Number.isInteger(v)&&v>=0&&v<level.coins.length));}
 function snapshot(){return{level:level.id,x,y,vy,duck,time,checkpoint,won,paused,falls,recovery,collected:[...collected],pending:pending?{...pending}:null,activeDuck,activeJump};}
 function upcoming(){return level.obstacles.findIndex(o=>o.x+o.w+22>x&&o.x-x<=150);}
@@ -22,6 +22,6 @@ if(y>415){events.push(fail());continue;}
 level.coins.forEach((c,i)=>{if(!collected.has(i)&&Math.abs(x-c.x)<28&&Math.abs(y-24-c.y)<56){collected.add(i);events.push({type:'collect',index:i});}});
 if(x>=level.length){won=true;events.push({type:'win'});break;}}
 return events;}
-return{level,act,step,snapshot,cue,pause(v=true){paused=!!v;if(paused){pending=null;actionEvents=[];}},save(){return{level:level.id,x:checkpoint,falls,collected:[...collected]};}};}
+return{level,practice,act,step,snapshot,cue,pause(v=true){paused=!!v;if(paused){pending=null;actionEvents=[];}},save(){return{level:level.id,x:checkpoint,falls,collected:[...collected]};}};}
 root.PitchAdventureCore={levels,create};
 })(typeof window==='undefined'?globalThis:window);

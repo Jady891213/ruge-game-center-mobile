@@ -1,0 +1,16 @@
+[
+  {
+    "file": "app/assets/animal-balance/art/forest-table.png",
+    "mode": "built-in image_gen generation",
+    "source": "/Users/wuzhiruge/.codex/generated_images/01a14b4c-1b11-7011-891d-4178c6ebe68b/exec-6b4ede44-e4d7-4c88-bcea-c5169e15352b.png",
+    "transparent_background": false,
+    "prompt": "Use case: illustration-story. Asset type: portrait background image for a preschool mobile balance puzzle. Create an original flat bright 2D cartoon forest fruit stand backdrop. Portrait 1024x1536. Light sky blue and cream central playable area, simple mint green forest leaves and tree silhouettes only around far side/top edges. Bottom 28 percent is a broad honey-colored wooden market table seen from a slightly elevated frontal view, gentle round plank edges, no objects on the table. The center 70 percent must be very empty and softly colored so an animated wooden balance scale and fruit sprites drawn by the game remain readable. Clean large simple shapes, few flat color layers, minimal texture, cheerful warm sunlight, not realistic, no depth of field, no heavy shading. No text, no labels, no UI buttons, no frames, no fruit, no scale, no characters, no watermark, no symbols. This is a clean background asset, not a full UI mockup."
+  },
+  {
+    "file": "app/assets/animal-balance/art/scale-parts.png",
+    "mode": "built-in image_gen generation",
+    "source": "/Users/wuzhiruge/.codex/generated_images/01a14b4c-1b11-7011-891d-4178c6ebe68b/exec-b13005e2-6ea8-4816-b321-9cb66d782e47.png",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: transparent component spritesheet for a preschool cartoon balance-scale puzzle. Generate a wide 1536x1024 image with a strict 3 columns by 2 rows of equal 512x512 cells, isolated on true transparent background. Original clean flat 2D cartoon honey-colored wood, dark warm brown clean outlines, gentle one-layer highlights, no texture noise. Top-left cell: a long perfectly straight horizontal wooden balance beam viewed front-on, rounded ends, approximately450 pixels wide and50 tall centered in cell, small round brass pivot pin at exact center. Top-middle cell: a tapered upright wooden support column with a neat wide rounded foot, front-on, about180 pixels wide by370 tall centered, no beam attached. Top-right cell: an empty shallow wooden weighing tray, perfectly horizontal front view, about440 pixels wide by120 tall, rounded shallow bowl with thick golden wood rim, no chain, no fruit, no cargo, centered. Bottom-left cell: another identical straight horizontal beam component. Bottom-middle cell: another identical support column component. Bottom-right cell: another identical shallow tray component. All 6 assets must have at least40 pixels fully transparent margin from every cell edge. NO scale assembled, NO perspective tilt, no cast shadow outside each object, absolutely no haze/glow/color wash, no text, no numerals, no background, no checkerboard. This is 6 isolated reusable wood sprites; solid opaque objects and fully transparent empty space."
+  }
+]
