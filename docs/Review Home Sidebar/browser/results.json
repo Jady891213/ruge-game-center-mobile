@@ -1,0 +1,3452 @@
+[
+  {
+    "viewport": [
+      320,
+      568
+    ],
+    "before": {
+      "viewport": [
+        320,
+        568
+      ],
+      "document": [
+        320,
+        568
+      ],
+      "body": [
+        320,
+        568
+      ],
+      "header": {
+        "x": 9,
+        "y": 12,
+        "w": 302,
+        "h": 48,
+        "bottom": 60,
+        "right": 311
+      },
+      "sidebar": {
+        "x": 9,
+        "y": 70,
+        "w": 60,
+        "h": 399,
+        "bottom": 469,
+        "right": 69
+      },
+      "scroll": {
+        "x": 75,
+        "y": 70,
+        "w": 236,
+        "h": 486,
+        "bottom": 556,
+        "right": 311
+      },
+      "scrollHeight": 792,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 77,
+            "y": 73,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 192.5,
+            "right": 188.5
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 196.5,
+            "y": 73,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 192.5,
+            "right": 308
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 77,
+            "y": 204.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 324,
+            "right": 188.5
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 196.5,
+            "y": 204.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 324,
+            "right": 308
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 77,
+            "y": 336,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 455.5,
+            "right": 188.5
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 196.5,
+            "y": 336,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 455.5,
+            "right": 308
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 77,
+            "y": 467.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 587,
+            "right": 188.5
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 196.5,
+            "y": 467.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 587,
+            "right": 308
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 77,
+            "y": 599,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 718.5,
+            "right": 188.5
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 196.5,
+            "y": 599,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 718.5,
+            "right": 308
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 77,
+            "y": 730.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 850,
+            "right": 188.5
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 196.5,
+            "y": 730.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 850,
+            "right": 308
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 173,
+            "y": 14,
+            "w": 42,
+            "h": 44,
+            "bottom": 58,
+            "right": 215
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 220,
+            "y": 14,
+            "w": 42,
+            "h": 44,
+            "bottom": 58,
+            "right": 262
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 267,
+            "y": 14,
+            "w": 42,
+            "h": 44,
+            "bottom": 58,
+            "right": 309
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 12,
+            "y": 75,
+            "w": 54,
+            "h": 59,
+            "bottom": 134,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 12,
+            "y": 141,
+            "w": 54,
+            "h": 59,
+            "bottom": 200,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 12,
+            "y": 207,
+            "w": 54,
+            "h": 59,
+            "bottom": 266,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 12,
+            "y": 273,
+            "w": 54,
+            "h": 59,
+            "bottom": 332,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 12,
+            "y": 339,
+            "w": 54,
+            "h": 59,
+            "bottom": 398,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 12,
+            "y": 405,
+            "w": 54,
+            "h": 59,
+            "bottom": 464,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "after": {
+      "viewport": [
+        320,
+        568
+      ],
+      "document": [
+        320,
+        568
+      ],
+      "body": [
+        320,
+        568
+      ],
+      "header": {
+        "x": 9,
+        "y": 12,
+        "w": 302,
+        "h": 48,
+        "bottom": 60,
+        "right": 311
+      },
+      "sidebar": {
+        "x": 9,
+        "y": 70,
+        "w": 60,
+        "h": 399,
+        "bottom": 469,
+        "right": 69
+      },
+      "scroll": {
+        "x": 75,
+        "y": 70,
+        "w": 236,
+        "h": 486,
+        "bottom": 556,
+        "right": 311
+      },
+      "scrollHeight": 792,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 77,
+            "y": -233,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": -113.5,
+            "right": 188.5
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 196.5,
+            "y": -233,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": -113.5,
+            "right": 308
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 77,
+            "y": -101.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 18,
+            "right": 188.5
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 196.5,
+            "y": -101.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 18,
+            "right": 308
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 77,
+            "y": 30,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 149.5,
+            "right": 188.5
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 196.5,
+            "y": 30,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 149.5,
+            "right": 308
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 77,
+            "y": 161.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 281,
+            "right": 188.5
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 196.5,
+            "y": 161.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 281,
+            "right": 308
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 77,
+            "y": 293,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 412.5,
+            "right": 188.5
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 196.5,
+            "y": 293,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 412.5,
+            "right": 308
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 77,
+            "y": 424.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 544,
+            "right": 188.5
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 196.5,
+            "y": 424.5,
+            "w": 111.5,
+            "h": 119.5,
+            "bottom": 544,
+            "right": 308
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 173,
+            "y": 14,
+            "w": 42,
+            "h": 44,
+            "bottom": 58,
+            "right": 215
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 220,
+            "y": 14,
+            "w": 42,
+            "h": 44,
+            "bottom": 58,
+            "right": 262
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 267,
+            "y": 14,
+            "w": 42,
+            "h": 44,
+            "bottom": 58,
+            "right": 309
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 12,
+            "y": 75,
+            "w": 54,
+            "h": 59,
+            "bottom": 134,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 12,
+            "y": 141,
+            "w": 54,
+            "h": 59,
+            "bottom": 200,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 12,
+            "y": 207,
+            "w": 54,
+            "h": 59,
+            "bottom": 266,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 12,
+            "y": 273,
+            "w": 54,
+            "h": 59,
+            "bottom": 332,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 12,
+            "y": 339,
+            "w": 54,
+            "h": 59,
+            "bottom": 398,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 12,
+            "y": 405,
+            "w": 54,
+            "h": 59,
+            "bottom": 464,
+            "right": 66
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "tilt": [
+      "gravity-maze",
+      "number-merge",
+      "tilt-star-box"
+    ],
+    "recent": [
+      "hanzi-puzzle",
+      "forest-juice",
+      "gravity-maze"
+    ],
+    "toggles": {
+      "#soundToggle": {
+        "pressed": "false",
+        "label": "音效关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#vibrationToggle": {
+        "pressed": "false",
+        "label": "震动关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#awake": {
+        "pressed": "false",
+        "label": "屏幕常亮关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      }
+    },
+    "navigationRecorded": true
+  },
+  {
+    "viewport": [
+      392,
+      872
+    ],
+    "before": {
+      "viewport": [
+        392,
+        872
+      ],
+      "document": [
+        392,
+        872
+      ],
+      "body": [
+        392,
+        872
+      ],
+      "header": {
+        "x": 12,
+        "y": 12,
+        "w": 368,
+        "h": 52,
+        "bottom": 64,
+        "right": 380
+      },
+      "sidebar": {
+        "x": 12,
+        "y": 78,
+        "w": 64,
+        "h": 413.125,
+        "bottom": 491.125,
+        "right": 76
+      },
+      "scroll": {
+        "x": 86,
+        "y": 78,
+        "w": 294,
+        "h": 782,
+        "bottom": 860,
+        "right": 380
+      },
+      "scrollHeight": 903,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 90,
+            "y": 81,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 217.390625,
+            "right": 228
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 238,
+            "y": 81,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 217.390625,
+            "right": 376
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 90,
+            "y": 231.390625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 367.78125,
+            "right": 228
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 238,
+            "y": 231.390625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 367.78125,
+            "right": 376
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 90,
+            "y": 381.78125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 518.171875,
+            "right": 228
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 238,
+            "y": 381.78125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 518.171875,
+            "right": 376
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 90,
+            "y": 532.171875,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 668.5625,
+            "right": 228
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 238,
+            "y": 532.171875,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 668.5625,
+            "right": 376
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 90,
+            "y": 682.5625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 818.953125,
+            "right": 228
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 238,
+            "y": 682.5625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 818.953125,
+            "right": 376
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 90,
+            "y": 832.953125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 969.34375,
+            "right": 228
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 238,
+            "y": 832.953125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 969.34375,
+            "right": 376
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 234,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 278
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 284,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 328
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 334,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 378
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 16,
+            "y": 84,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 144.1875,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 16,
+            "y": 152.1875,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 212.375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 16,
+            "y": 220.375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 280.5625,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 16,
+            "y": 288.5625,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 348.75,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 16,
+            "y": 356.75,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 416.9375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 16,
+            "y": 424.9375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 485.125,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "after": {
+      "viewport": [
+        392,
+        872
+      ],
+      "document": [
+        392,
+        872
+      ],
+      "body": [
+        392,
+        872
+      ],
+      "header": {
+        "x": 12,
+        "y": 12,
+        "w": 368,
+        "h": 52,
+        "bottom": 64,
+        "right": 380
+      },
+      "sidebar": {
+        "x": 12,
+        "y": 78,
+        "w": 64,
+        "h": 413.125,
+        "bottom": 491.125,
+        "right": 76
+      },
+      "scroll": {
+        "x": 86,
+        "y": 78,
+        "w": 294,
+        "h": 782,
+        "bottom": 860,
+        "right": 380
+      },
+      "scrollHeight": 903,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 90,
+            "y": -40,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 96.390625,
+            "right": 228
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 238,
+            "y": -40,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 96.390625,
+            "right": 376
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 90,
+            "y": 110.390625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 246.78125,
+            "right": 228
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 238,
+            "y": 110.390625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 246.78125,
+            "right": 376
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 90,
+            "y": 260.78125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 397.171875,
+            "right": 228
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 238,
+            "y": 260.78125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 397.171875,
+            "right": 376
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 90,
+            "y": 411.171875,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 547.5625,
+            "right": 228
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 238,
+            "y": 411.171875,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 547.5625,
+            "right": 376
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 90,
+            "y": 561.5625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 697.953125,
+            "right": 228
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 238,
+            "y": 561.5625,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 697.953125,
+            "right": 376
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 90,
+            "y": 711.953125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 848.34375,
+            "right": 228
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 238,
+            "y": 711.953125,
+            "w": 138,
+            "h": 136.390625,
+            "bottom": 848.34375,
+            "right": 376
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 234,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 278
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 284,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 328
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 334,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 378
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 16,
+            "y": 84,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 144.1875,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 16,
+            "y": 152.1875,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 212.375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 16,
+            "y": 220.375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 280.5625,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 16,
+            "y": 288.5625,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 348.75,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 16,
+            "y": 356.75,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 416.9375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 16,
+            "y": 424.9375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 485.125,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "tilt": [
+      "gravity-maze",
+      "number-merge",
+      "tilt-star-box"
+    ],
+    "recent": [
+      "hanzi-puzzle",
+      "forest-juice",
+      "gravity-maze"
+    ],
+    "toggles": {
+      "#soundToggle": {
+        "pressed": "false",
+        "label": "音效关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#vibrationToggle": {
+        "pressed": "false",
+        "label": "震动关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#awake": {
+        "pressed": "false",
+        "label": "屏幕常亮关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      }
+    },
+    "navigationRecorded": true
+  },
+  {
+    "viewport": [
+      430,
+      932
+    ],
+    "before": {
+      "viewport": [
+        430,
+        932
+      ],
+      "document": [
+        430,
+        932
+      ],
+      "body": [
+        430,
+        932
+      ],
+      "header": {
+        "x": 12,
+        "y": 12,
+        "w": 406,
+        "h": 52,
+        "bottom": 64,
+        "right": 418
+      },
+      "sidebar": {
+        "x": 12,
+        "y": 78,
+        "w": 64,
+        "h": 413.125,
+        "bottom": 491.125,
+        "right": 76
+      },
+      "scroll": {
+        "x": 86,
+        "y": 78,
+        "w": 332,
+        "h": 842,
+        "bottom": 920,
+        "right": 418
+      },
+      "scrollHeight": 972,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 90,
+            "y": 81,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 228.796875,
+            "right": 247
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 257,
+            "y": 81,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 228.796875,
+            "right": 414
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 90,
+            "y": 242.796875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 390.59375,
+            "right": 247
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 257,
+            "y": 242.796875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 390.59375,
+            "right": 414
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 90,
+            "y": 404.59375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 552.390625,
+            "right": 247
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 257,
+            "y": 404.59375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 552.390625,
+            "right": 414
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 90,
+            "y": 566.390625,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 714.1875,
+            "right": 247
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 257,
+            "y": 566.390625,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 714.1875,
+            "right": 414
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 90,
+            "y": 728.1875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 875.984375,
+            "right": 247
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 257,
+            "y": 728.1875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 875.984375,
+            "right": 414
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 90,
+            "y": 889.984375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 1037.78125,
+            "right": 247
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 257,
+            "y": 889.984375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 1037.78125,
+            "right": 414
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 272,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 316
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 322,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 366
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 372,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 416
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 16,
+            "y": 84,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 144.1875,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 16,
+            "y": 152.1875,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 212.375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 16,
+            "y": 220.375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 280.5625,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 16,
+            "y": 288.5625,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 348.75,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 16,
+            "y": 356.75,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 416.9375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 16,
+            "y": 424.9375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 485.125,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "after": {
+      "viewport": [
+        430,
+        932
+      ],
+      "document": [
+        430,
+        932
+      ],
+      "body": [
+        430,
+        932
+      ],
+      "header": {
+        "x": 12,
+        "y": 12,
+        "w": 406,
+        "h": 52,
+        "bottom": 64,
+        "right": 418
+      },
+      "sidebar": {
+        "x": 12,
+        "y": 78,
+        "w": 64,
+        "h": 413.125,
+        "bottom": 491.125,
+        "right": 76
+      },
+      "scroll": {
+        "x": 86,
+        "y": 78,
+        "w": 332,
+        "h": 842,
+        "bottom": 920,
+        "right": 418
+      },
+      "scrollHeight": 972,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 90,
+            "y": -49,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 98.796875,
+            "right": 247
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 257,
+            "y": -49,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 98.796875,
+            "right": 414
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 90,
+            "y": 112.796875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 260.59375,
+            "right": 247
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 257,
+            "y": 112.796875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 260.59375,
+            "right": 414
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 90,
+            "y": 274.59375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 422.390625,
+            "right": 247
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 257,
+            "y": 274.59375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 422.390625,
+            "right": 414
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 90,
+            "y": 436.390625,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 584.1875,
+            "right": 247
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 257,
+            "y": 436.390625,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 584.1875,
+            "right": 414
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 90,
+            "y": 598.1875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 745.984375,
+            "right": 247
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 257,
+            "y": 598.1875,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 745.984375,
+            "right": 414
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 90,
+            "y": 759.984375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 907.78125,
+            "right": 247
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 257,
+            "y": 759.984375,
+            "w": 157,
+            "h": 147.796875,
+            "bottom": 907.78125,
+            "right": 414
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 272,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 316
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 322,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 366
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 372,
+            "y": 16,
+            "w": 44,
+            "h": 44,
+            "bottom": 60,
+            "right": 416
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 16,
+            "y": 84,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 144.1875,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 16,
+            "y": 152.1875,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 212.375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 16,
+            "y": 220.375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 280.5625,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 16,
+            "y": 288.5625,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 348.75,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 16,
+            "y": 356.75,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 416.9375,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 16,
+            "y": 424.9375,
+            "w": 56,
+            "h": 60.1875,
+            "bottom": 485.125,
+            "right": 72
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "tilt": [
+      "gravity-maze",
+      "number-merge",
+      "tilt-star-box"
+    ],
+    "recent": [
+      "hanzi-puzzle",
+      "forest-juice",
+      "gravity-maze"
+    ],
+    "toggles": {
+      "#soundToggle": {
+        "pressed": "false",
+        "label": "音效关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#vibrationToggle": {
+        "pressed": "false",
+        "label": "震动关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#awake": {
+        "pressed": "false",
+        "label": "屏幕常亮关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      }
+    },
+    "navigationRecorded": true
+  },
+  {
+    "viewport": [
+      872,
+      392
+    ],
+    "before": {
+      "viewport": [
+        872,
+        392
+      ],
+      "document": [
+        872,
+        392
+      ],
+      "body": [
+        872,
+        392
+      ],
+      "header": {
+        "x": 68,
+        "y": 8,
+        "w": 736,
+        "h": 44,
+        "bottom": 52,
+        "right": 804
+      },
+      "sidebar": {
+        "x": 68,
+        "y": 62,
+        "w": 76,
+        "h": 244,
+        "bottom": 306,
+        "right": 144
+      },
+      "scroll": {
+        "x": 154,
+        "y": 62,
+        "w": 650,
+        "h": 322,
+        "bottom": 384,
+        "right": 804
+      },
+      "scrollHeight": 1129,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 158,
+            "y": 65,
+            "w": 316,
+            "h": 174,
+            "bottom": 239,
+            "right": 474
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 484,
+            "y": 65,
+            "w": 316,
+            "h": 174,
+            "bottom": 239,
+            "right": 800
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 158,
+            "y": 253,
+            "w": 316,
+            "h": 174,
+            "bottom": 427,
+            "right": 474
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 484,
+            "y": 253,
+            "w": 316,
+            "h": 174,
+            "bottom": 427,
+            "right": 800
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 158,
+            "y": 441,
+            "w": 316,
+            "h": 174,
+            "bottom": 615,
+            "right": 474
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 484,
+            "y": 441,
+            "w": 316,
+            "h": 174,
+            "bottom": 615,
+            "right": 800
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 158,
+            "y": 629,
+            "w": 316,
+            "h": 174,
+            "bottom": 803,
+            "right": 474
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 484,
+            "y": 629,
+            "w": 316,
+            "h": 174,
+            "bottom": 803,
+            "right": 800
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 158,
+            "y": 817,
+            "w": 316,
+            "h": 174,
+            "bottom": 991,
+            "right": 474
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 484,
+            "y": 817,
+            "w": 316,
+            "h": 174,
+            "bottom": 991,
+            "right": 800
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 158,
+            "y": 1005,
+            "w": 316,
+            "h": 174,
+            "bottom": 1179,
+            "right": 474
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 484,
+            "y": 1005,
+            "w": 316,
+            "h": 174,
+            "bottom": 1179,
+            "right": 800
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 658,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 702
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 708,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 752
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 758,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 802
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 72,
+            "y": 66,
+            "w": 68,
+            "h": 36,
+            "bottom": 102,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 72,
+            "y": 106,
+            "w": 68,
+            "h": 36,
+            "bottom": 142,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 72,
+            "y": 146,
+            "w": 68,
+            "h": 36,
+            "bottom": 182,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 72,
+            "y": 186,
+            "w": 68,
+            "h": 36,
+            "bottom": 222,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 72,
+            "y": 226,
+            "w": 68,
+            "h": 36,
+            "bottom": 262,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 72,
+            "y": 266,
+            "w": 68,
+            "h": 36,
+            "bottom": 302,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "after": {
+      "viewport": [
+        872,
+        392
+      ],
+      "document": [
+        872,
+        392
+      ],
+      "body": [
+        872,
+        392
+      ],
+      "header": {
+        "x": 68,
+        "y": 8,
+        "w": 736,
+        "h": 44,
+        "bottom": 52,
+        "right": 804
+      },
+      "sidebar": {
+        "x": 68,
+        "y": 62,
+        "w": 76,
+        "h": 244,
+        "bottom": 306,
+        "right": 144
+      },
+      "scroll": {
+        "x": 154,
+        "y": 62,
+        "w": 650,
+        "h": 322,
+        "bottom": 384,
+        "right": 804
+      },
+      "scrollHeight": 1129,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 158,
+            "y": -742,
+            "w": 316,
+            "h": 174,
+            "bottom": -568,
+            "right": 474
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 484,
+            "y": -742,
+            "w": 316,
+            "h": 174,
+            "bottom": -568,
+            "right": 800
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 158,
+            "y": -554,
+            "w": 316,
+            "h": 174,
+            "bottom": -380,
+            "right": 474
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 484,
+            "y": -554,
+            "w": 316,
+            "h": 174,
+            "bottom": -380,
+            "right": 800
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 158,
+            "y": -366,
+            "w": 316,
+            "h": 174,
+            "bottom": -192,
+            "right": 474
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 484,
+            "y": -366,
+            "w": 316,
+            "h": 174,
+            "bottom": -192,
+            "right": 800
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 158,
+            "y": -178,
+            "w": 316,
+            "h": 174,
+            "bottom": -4,
+            "right": 474
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 484,
+            "y": -178,
+            "w": 316,
+            "h": 174,
+            "bottom": -4,
+            "right": 800
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 158,
+            "y": 10,
+            "w": 316,
+            "h": 174,
+            "bottom": 184,
+            "right": 474
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 484,
+            "y": 10,
+            "w": 316,
+            "h": 174,
+            "bottom": 184,
+            "right": 800
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 158,
+            "y": 198,
+            "w": 316,
+            "h": 174,
+            "bottom": 372,
+            "right": 474
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 484,
+            "y": 198,
+            "w": 316,
+            "h": 174,
+            "bottom": 372,
+            "right": 800
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 658,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 702
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 708,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 752
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 758,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 802
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 72,
+            "y": 66,
+            "w": 68,
+            "h": 36,
+            "bottom": 102,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 72,
+            "y": 106,
+            "w": 68,
+            "h": 36,
+            "bottom": 142,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 72,
+            "y": 146,
+            "w": 68,
+            "h": 36,
+            "bottom": 182,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 72,
+            "y": 186,
+            "w": 68,
+            "h": 36,
+            "bottom": 222,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 72,
+            "y": 226,
+            "w": 68,
+            "h": 36,
+            "bottom": 262,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 72,
+            "y": 266,
+            "w": 68,
+            "h": 36,
+            "bottom": 302,
+            "right": 140
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "tilt": [
+      "gravity-maze",
+      "number-merge",
+      "tilt-star-box"
+    ],
+    "recent": [
+      "hanzi-puzzle",
+      "forest-juice",
+      "gravity-maze"
+    ],
+    "toggles": {
+      "#soundToggle": {
+        "pressed": "false",
+        "label": "音效关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#vibrationToggle": {
+        "pressed": "false",
+        "label": "震动关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#awake": {
+        "pressed": "false",
+        "label": "屏幕常亮关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      }
+    },
+    "navigationRecorded": true
+  },
+  {
+    "viewport": [
+      800,
+      320
+    ],
+    "before": {
+      "viewport": [
+        800,
+        320
+      ],
+      "document": [
+        800,
+        320
+      ],
+      "body": [
+        800,
+        320
+      ],
+      "header": {
+        "x": 32,
+        "y": 8,
+        "w": 736,
+        "h": 44,
+        "bottom": 52,
+        "right": 768
+      },
+      "sidebar": {
+        "x": 32,
+        "y": 62,
+        "w": 76,
+        "h": 244,
+        "bottom": 306,
+        "right": 108
+      },
+      "scroll": {
+        "x": 118,
+        "y": 62,
+        "w": 650,
+        "h": 250,
+        "bottom": 312,
+        "right": 768
+      },
+      "scrollHeight": 1129,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 122,
+            "y": 65,
+            "w": 316,
+            "h": 174,
+            "bottom": 239,
+            "right": 438
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 448,
+            "y": 65,
+            "w": 316,
+            "h": 174,
+            "bottom": 239,
+            "right": 764
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 122,
+            "y": 253,
+            "w": 316,
+            "h": 174,
+            "bottom": 427,
+            "right": 438
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 448,
+            "y": 253,
+            "w": 316,
+            "h": 174,
+            "bottom": 427,
+            "right": 764
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 122,
+            "y": 441,
+            "w": 316,
+            "h": 174,
+            "bottom": 615,
+            "right": 438
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 448,
+            "y": 441,
+            "w": 316,
+            "h": 174,
+            "bottom": 615,
+            "right": 764
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 122,
+            "y": 629,
+            "w": 316,
+            "h": 174,
+            "bottom": 803,
+            "right": 438
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 448,
+            "y": 629,
+            "w": 316,
+            "h": 174,
+            "bottom": 803,
+            "right": 764
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 122,
+            "y": 817,
+            "w": 316,
+            "h": 174,
+            "bottom": 991,
+            "right": 438
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 448,
+            "y": 817,
+            "w": 316,
+            "h": 174,
+            "bottom": 991,
+            "right": 764
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 122,
+            "y": 1005,
+            "w": 316,
+            "h": 174,
+            "bottom": 1179,
+            "right": 438
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 448,
+            "y": 1005,
+            "w": 316,
+            "h": 174,
+            "bottom": 1179,
+            "right": 764
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 622,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 666
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 672,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 716
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 722,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 766
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 36,
+            "y": 66,
+            "w": 68,
+            "h": 36,
+            "bottom": 102,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 36,
+            "y": 106,
+            "w": 68,
+            "h": 36,
+            "bottom": 142,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 36,
+            "y": 146,
+            "w": 68,
+            "h": 36,
+            "bottom": 182,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 36,
+            "y": 186,
+            "w": 68,
+            "h": 36,
+            "bottom": 222,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 36,
+            "y": 226,
+            "w": 68,
+            "h": 36,
+            "bottom": 262,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 36,
+            "y": 266,
+            "w": 68,
+            "h": 36,
+            "bottom": 302,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "after": {
+      "viewport": [
+        800,
+        320
+      ],
+      "document": [
+        800,
+        320
+      ],
+      "body": [
+        800,
+        320
+      ],
+      "header": {
+        "x": 32,
+        "y": 8,
+        "w": 736,
+        "h": 44,
+        "bottom": 52,
+        "right": 768
+      },
+      "sidebar": {
+        "x": 32,
+        "y": 62,
+        "w": 76,
+        "h": 244,
+        "bottom": 306,
+        "right": 108
+      },
+      "scroll": {
+        "x": 118,
+        "y": 62,
+        "w": 650,
+        "h": 250,
+        "bottom": 312,
+        "right": 768
+      },
+      "scrollHeight": 1129,
+      "cards": [
+        {
+          "id": "forest-juice",
+          "rect": {
+            "x": 122,
+            "y": -814,
+            "w": 316,
+            "h": 174,
+            "bottom": -640,
+            "right": 438
+          },
+          "title": "森林果汁屋",
+          "titleFits": true
+        },
+        {
+          "id": "code-breaker",
+          "rect": {
+            "x": 448,
+            "y": -814,
+            "w": 316,
+            "h": 174,
+            "bottom": -640,
+            "right": 764
+          },
+          "title": "小小密码箱",
+          "titleFits": true
+        },
+        {
+          "id": "pipe-flow",
+          "rect": {
+            "x": 122,
+            "y": -626,
+            "w": 316,
+            "h": 174,
+            "bottom": -452,
+            "right": 438
+          },
+          "title": "接水管",
+          "titleFits": true
+        },
+        {
+          "id": "gravity-maze",
+          "rect": {
+            "x": 448,
+            "y": -626,
+            "w": 316,
+            "h": 174,
+            "bottom": -452,
+            "right": 764
+          },
+          "title": "钢珠迷宫",
+          "titleFits": true
+        },
+        {
+          "id": "number-merge",
+          "rect": {
+            "x": 122,
+            "y": -438,
+            "w": 316,
+            "h": 174,
+            "bottom": -264,
+            "right": 438
+          },
+          "title": "数字碰碰",
+          "titleFits": true
+        },
+        {
+          "id": "tilt-star-box",
+          "rect": {
+            "x": 448,
+            "y": -438,
+            "w": 316,
+            "h": 174,
+            "bottom": -264,
+            "right": 764
+          },
+          "title": "翻转星星盒",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-puzzle",
+          "rect": {
+            "x": 122,
+            "y": -250,
+            "w": 316,
+            "h": 174,
+            "bottom": -76,
+            "right": 438
+          },
+          "title": "字里找字",
+          "titleFits": true
+        },
+        {
+          "id": "paint-mixing",
+          "rect": {
+            "x": 448,
+            "y": -250,
+            "w": 316,
+            "h": 174,
+            "bottom": -76,
+            "right": 764
+          },
+          "title": "小小调色师",
+          "titleFits": true
+        },
+        {
+          "id": "hanzi-typing",
+          "rect": {
+            "x": 122,
+            "y": -62,
+            "w": 316,
+            "h": 174,
+            "bottom": 112,
+            "right": 438
+          },
+          "title": "看字打拼音",
+          "titleFits": true
+        },
+        {
+          "id": "flappy-bird",
+          "rect": {
+            "x": 448,
+            "y": -62,
+            "w": 316,
+            "h": 174,
+            "bottom": 112,
+            "right": 764
+          },
+          "title": "扑翼小鸟",
+          "titleFits": true
+        },
+        {
+          "id": "dino-runner",
+          "rect": {
+            "x": 122,
+            "y": 126,
+            "w": 316,
+            "h": 174,
+            "bottom": 300,
+            "right": 438
+          },
+          "title": "小恐龙冲刺",
+          "titleFits": true
+        },
+        {
+          "id": "frog-pond",
+          "rect": {
+            "x": 448,
+            "y": 126,
+            "w": 316,
+            "h": 174,
+            "bottom": 300,
+            "right": 764
+          },
+          "title": "小青蛙跳池塘",
+          "titleFits": true
+        }
+      ],
+      "buttons": [
+        {
+          "id": "soundToggle",
+          "label": "音效开启",
+          "rect": {
+            "x": 622,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 666
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "vibrationToggle",
+          "label": "震动开启",
+          "rect": {
+            "x": 672,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 716
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "awake",
+          "label": "屏幕常亮开启",
+          "rect": {
+            "x": 722,
+            "y": 9,
+            "w": 44,
+            "h": 42,
+            "bottom": 51,
+            "right": 766
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "all",
+          "label": "全部",
+          "rect": {
+            "x": 36,
+            "y": 66,
+            "w": 68,
+            "h": 36,
+            "bottom": 102,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "true"
+        },
+        {
+          "id": "recent",
+          "label": "最近",
+          "rect": {
+            "x": 36,
+            "y": 106,
+            "w": 68,
+            "h": 36,
+            "bottom": 142,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "learn",
+          "label": "认字",
+          "rect": {
+            "x": 36,
+            "y": 146,
+            "w": 68,
+            "h": 36,
+            "bottom": 182,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "puzzle",
+          "label": "益智",
+          "rect": {
+            "x": 36,
+            "y": 186,
+            "w": 68,
+            "h": 36,
+            "bottom": 222,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "tilt",
+          "label": "重力",
+          "rect": {
+            "x": 36,
+            "y": 226,
+            "w": 68,
+            "h": 36,
+            "bottom": 262,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        },
+        {
+          "id": "react",
+          "label": "反应",
+          "rect": {
+            "x": 36,
+            "y": 266,
+            "w": 68,
+            "h": 36,
+            "bottom": 302,
+            "right": 104
+          },
+          "hit": true,
+          "pressed": "false"
+        }
+      ]
+    },
+    "tilt": [
+      "gravity-maze",
+      "number-merge",
+      "tilt-star-box"
+    ],
+    "recent": [
+      "hanzi-puzzle",
+      "forest-juice",
+      "gravity-maze"
+    ],
+    "toggles": {
+      "#soundToggle": {
+        "pressed": "false",
+        "label": "音效关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#vibrationToggle": {
+        "pressed": "false",
+        "label": "震动关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      },
+      "#awake": {
+        "pressed": "false",
+        "label": "屏幕常亮关闭",
+        "offMark": true,
+        "svg": true,
+        "text": ""
+      }
+    },
+    "navigationRecorded": true
+  }
+]

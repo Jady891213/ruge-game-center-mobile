@@ -1,0 +1,37 @@
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}
+body{background:var(--paper);color:var(--ink);font-family:ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+[hidden]{display:none!important}
+#homeApp{height:100vh;height:100dvh;max-width:760px;margin:auto;padding:calc(env(safe-area-inset-top,0px) + 12px) max(12px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 12px) max(12px,env(safe-area-inset-left,0px));display:grid;grid-template-rows:52px minmax(0,1fr);gap:14px}
+#homeHeader{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:0 2px}
+h1{font-size:22px;line-height:1.2;margin:0;white-space:nowrap;letter-spacing:0!important}
+.header-tools{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.header-toggle.ruge-pill{display:grid;place-items:center;min-height:44px;width:44px;height:44px;padding:9px;border-radius:16px;box-shadow:0 3px 0 #d7cdb8}
+.header-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.header-toggle[aria-pressed=true]{background:#d7eddb;border-color:#a1ccb0;color:#456c55}
+#awake[aria-pressed=true]{background:#ffe7a8;border-color:#e4c77d;color:#997324}
+.header-toggle[aria-pressed=false]{background:#f3ecdf;border-color:#e0d7c6;color:#999184}
+.off-mark{stroke:#bf776f;stroke-width:2.6}
+.library{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;min-height:0}
+.tabs{display:flex;flex-direction:column;align-items:stretch;gap:8px;align-self:start;background:#f0ecdc;border-radius:23px;padding:6px 4px}
+.tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:60px;padding:6px 2px;border:2px solid transparent;border-radius:17px;background:transparent;color:#65765e;font:800 16px/1.2 ui-rounded,"Arial Rounded MT Bold",system-ui,sans-serif;white-space:nowrap;cursor:pointer}
+.tabs svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.tabs button[aria-pressed=true]{background:#ffdc85;border-color:#e6bd65;box-shadow:0 3px 0 #d2b166;color:#72582e}
+#gameScroll{min-width:0;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;padding:3px 4px 12px;scrollbar-width:thin;scrollbar-color:#d2d5bf transparent;-webkit-overflow-scrolling:touch;border-radius:20px}
+#gameScroll:focus-visible{outline:3px solid #e6bd65;outline-offset:-3px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;align-content:start}
+.card{text-decoration:none;color:inherit;border:2px solid #c6d7bf;background:#e4eed8;border-radius:21px;overflow:hidden;box-shadow:0 4px 0 #aabfa0;transition:transform .12s;display:flex;flex-direction:column;min-width:0}
+.card:nth-child(4n+2){background:#ffe2bc;border-color:#e6c49a;box-shadow:0 4px 0 #d3b38d}
+.card:nth-child(4n+3){background:#e0e2fa;border-color:#c6c9e1;box-shadow:0 4px 0 #adb3d0}
+.card:nth-child(4n){background:#fad5c9;border-color:#e4bbae;box-shadow:0 4px 0 #d3aa9b}
+.card:active{transform:translateY(2px);box-shadow:0 2px 0 #c6bcaa}
+.cover{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:contain;background:#fff7e9;border-bottom:1px solid #ffffff90}
+.meta{display:grid;place-items:center;min-height:52px;padding:8px 5px;text-align:center;flex:1}
+.meta h2{font-size:16px;line-height:1.3;font-weight:850;margin:0;overflow-wrap:anywhere;text-wrap:balance}
+.empty{height:100%;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#8a9c85;text-align:center}
+.empty svg{width:75px;height:75px;fill:#e5edda;stroke:#9bb18c;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.empty p{font-size:19px;font-weight:800;margin:0}
+@media(max-width:350px){#homeApp{padding-left:9px;padding-right:9px;gap:10px;grid-template-rows:48px minmax(0,1fr)}h1{font-size:20px}.header-tools{gap:5px}.header-toggle.ruge-pill{width:42px;height:44px;padding:8px}.library{grid-template-columns:60px minmax(0,1fr);gap:6px}.tabs{padding:5px 3px;gap:7px}.tabs button{min-height:58px;font-size:15px}.cards{gap:12px 8px}.card{border-radius:17px}.meta{min-height:51px;padding:7px 4px}.meta h2{font-size:15px}#gameScroll{padding-left:2px;padding-right:3px}}
+@media(max-height:500px){#homeApp{padding-top:max(8px,env(safe-area-inset-top,0px));padding-bottom:max(8px,env(safe-area-inset-bottom,0px));grid-template-rows:44px minmax(0,1fr);gap:10px}.library{grid-template-columns:76px minmax(0,1fr)}.tabs{gap:4px;padding:4px}.tabs button{min-height:36px;height:36px;flex-direction:row;gap:5px;padding:3px;font-size:15px}.tabs svg{width:18px;height:18px}.cover{max-height:130px}.meta{min-height:40px}.header-toggle.ruge-pill{height:42px;min-height:42px}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}

@@ -1,0 +1,167 @@
+{
+  "version": "4.22-dev",
+  "originalStorageKeys": 17,
+  "nativeSettingsBefore": {
+    "sound": true,
+    "vibration": true,
+    "awake": true,
+    "labels": [
+      {
+        "id": "soundToggle",
+        "pressed": "true",
+        "label": "音效开启",
+        "off": false
+      },
+      {
+        "id": "vibrationToggle",
+        "pressed": "true",
+        "label": "震动开启",
+        "off": false
+      },
+      {
+        "id": "awake",
+        "pressed": "true",
+        "label": "屏幕常亮开启",
+        "off": false
+      }
+    ]
+  },
+  "checks": {
+    "onlyRightListScrolls": true,
+    "threeNativeTogglesIndependentAndRestored": true,
+    "allCategoriesCorrect": true,
+    "recentUsesOriginalHistory": true,
+    "realCardNavigationKeepsMarbleDraft": true,
+    "androidBackReturnsToNewHome": true,
+    "backgroundKeepsCurrentFilter": true
+  },
+  "beforeScroll": {
+    "header": {
+      "x": 12,
+      "y": 50,
+      "w": 368.727294921875,
+      "h": 52
+    },
+    "nav": {
+      "x": 12,
+      "y": 116,
+      "w": 64,
+      "h": 412
+    },
+    "list": {
+      "x": 86,
+      "y": 116,
+      "w": 294.727294921875,
+      "h": 744.727294921875
+    },
+    "scrollTop": 0,
+    "scrollHeight": 904,
+    "clientHeight": 745,
+    "windowY": 0,
+    "documentHeight": 872,
+    "bodyHeight": 873,
+    "bodyClientHeight": 873,
+    "viewport": [
+      392,
+      872
+    ],
+    "dpr": 2.75,
+    "columns": "138.364px 138.364px"
+  },
+  "afterActualTouchSwipe": {
+    "header": {
+      "x": 12,
+      "y": 50,
+      "w": 368.727294921875,
+      "h": 52
+    },
+    "nav": {
+      "x": 12,
+      "y": 116,
+      "w": 64,
+      "h": 412
+    },
+    "list": {
+      "x": 86,
+      "y": 116,
+      "w": 294.727294921875,
+      "h": 744.727294921875
+    },
+    "scrollTop": 159.27272033691406,
+    "scrollHeight": 904,
+    "clientHeight": 745,
+    "windowY": 0,
+    "documentHeight": 872,
+    "bodyHeight": 873,
+    "bodyClientHeight": 873,
+    "viewport": [
+      392,
+      872
+    ],
+    "dpr": 2.75,
+    "columns": "138.364px 138.364px"
+  },
+  "toggledSettings": {
+    "sound": false,
+    "vibration": false,
+    "awake": false,
+    "labels": [
+      {
+        "id": "soundToggle",
+        "pressed": "false",
+        "label": "音效关闭",
+        "off": true
+      },
+      {
+        "id": "vibrationToggle",
+        "pressed": "false",
+        "label": "震动关闭",
+        "off": true
+      },
+      {
+        "id": "awake",
+        "pressed": "false",
+        "label": "屏幕常亮关闭",
+        "off": true
+      }
+    ]
+  },
+  "recentIds": [
+    "gravity-maze",
+    "hanzi-puzzle",
+    "forest-juice",
+    "flappy-bird",
+    "code-breaker",
+    "pipe-flow",
+    "hanzi-typing",
+    "dino-runner",
+    "paint-mixing",
+    "frog-pond"
+  ],
+  "exactStorageRestore": true,
+  "nativeSettingsAfter": {
+    "sound": true,
+    "vibration": true,
+    "awake": true,
+    "labels": [
+      {
+        "id": "soundToggle",
+        "pressed": "true",
+        "label": "音效开启",
+        "off": false
+      },
+      {
+        "id": "vibrationToggle",
+        "pressed": "true",
+        "label": "震动开启",
+        "off": false
+      },
+      {
+        "id": "awake",
+        "pressed": "true",
+        "label": "屏幕常亮开启",
+        "off": false
+      }
+    ]
+  }
+}

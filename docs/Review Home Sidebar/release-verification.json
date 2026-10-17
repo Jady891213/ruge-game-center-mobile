@@ -1,0 +1,22 @@
+{
+  "versionName": "4.22",
+  "versionCode": 45,
+  "package": "com.dsh.gamecenter",
+  "localApkSha256": "50f96d47226485767ad9ed4c7200d80b0c40af972cbaaf53de918ed6bdcde19d",
+  "deviceApkSha256": "50f96d47226485767ad9ed4c7200d80b0c40af972cbaaf53de918ed6bdcde19d",
+  "apkHashesMatch": true,
+  "devApkSha256": "01902ec3dbe8c81a338c83bb8b41a84012e5b9d4a0c416711d5e46d6ff00a576",
+  "assetsEqualDevAndReleaseAndSource": true,
+  "assetCount": 71,
+  "webViewDebuggingClosed": true,
+  "adbForwardsRemaining": false,
+  "originalStorageKeys": 17,
+  "exactDelayedRestoreAndRecheckedBeforeInstall": true,
+  "nativeSoundVibrationAwakePreferencesRestored": true,
+  "coveringInstallWithoutUninstallOrClearData": true,
+  "launchVerified": true,
+  "formalPhysicalCategoryTapVerified": true,
+  "formalGravityShowsThreeCards": true,
+  "leftAt": "新版首页，全部分类，列表顶端",
+  "screenshot": "device-release-home.png"
+}

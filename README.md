@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、数字碰碰、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十二个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.21 / versionCode 44**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.22 / versionCode 45**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,14 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 首页侧栏与双列游戏（4.22）
+
+首页标题固定，音效、震动和常亮收为标题右侧三个图标，关闭时有斜线与无障碍状态标签。左侧窄栏为“全部、最近、认字、益智、重力、反应”，右侧始终双列缩略图；只有游戏区滚动，标题和分类不跟随滚走。游戏名完整显示，不增加描述文字。
+
+“最近”按既有rugeCenter使用时间排序，仅展示仍在合集的游戏；下架点心店的历史记录保留，但不恢复入口。钢珠迷宫、数字碰碰、翻转星星盒归入重力；其他玩法/存档不变。首页源码拆为app/assets/index.html与home/，继续共用shared反馈和原生常亮。
+
+[本次验收](docs/Review%20Home%20Sidebar/review.md)
 
 ## 钢珠迷宫连续过关（4.21）
 
