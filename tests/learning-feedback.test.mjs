@@ -35,8 +35,8 @@ test('字里找字：选择/反选、每个新答案和最后通关仅反馈一�
  game.toggle(0);game.toggle(0);assert.deepEqual(Array.from(events),['select','deselect']);events.length=0;
  const submit=set=>{game.setSelection(set);g.node('#submit').onclick();};
  submit([0]);assert.deepEqual(Array.from(events),['success']);assert(g.node('#answers').children.some(n=>n.classList.contains('new')));
- submit([2]);assert.deepEqual(Array.from(events),['success','deselect'],'重复答案只有轻反馈');
- submit([0,2]);submit([0,1,2]);assert.deepEqual(Array.from(events),['success','deselect','success','win']);
+ submit([2]);assert.deepEqual(Array.from(events),['success','error'],'重复答案给错误式轻提醒');
+ submit([0,2]);submit([0,1,2]);assert.deepEqual(Array.from(events),['success','error','success','win']);
  g.node('#submit').onclick();assert.equal(events.length,4,'完成后重复提交没有反馈');
 });
 
@@ -68,4 +68,30 @@ test('看字打拼音：正确只反馈一次、暂停无反馈、共享静音�
  g.click('#tSound');assert.equal(g.window.__sound,false);g.click('#tSound');assert.equal(g.window.__sound,true);assert.equal(events.at(-1),'tap');
  assert(g.node('#tRead'),'朗读保留');
  const c=learning(t,'hanzi-typing',{cover:true});c.g.input(c.game.norm(c.game.state().ans[0]));assert.deepEqual(Array.from(c.events),[]);
+});
+
+test('字里找字：重复答案保留选笔/提交入口，顶部只高亮对应字并短暂抖动，不新增答案',t=>{
+ const {g,game,events,click}=learning(t,'hanzi-puzzle');
+ game.setSelection([0]);click('submit');game.setSelection([0,2]);click('submit');
+ game.setSelection([2]);const before=JSON.parse(JSON.stringify(game.state()));events.length=0;click('submit');
+ assert.deepEqual(JSON.parse(JSON.stringify(game.state())),before);assert.deepEqual(Array.from(events),['error']);
+ const answers=g.node('#answers').children;
+ assert.equal(answers.filter(n=>n.classList.contains('repeated')).length,1);
+ assert.equal(answers.find(n=>n.classList.contains('repeated')).dataset.char,'一');
+ assert.equal(answers.some(n=>n.classList.contains('new')),false,'旧答案不重新庆祝');
+ assert.equal(g.node('#submit').disabled,false);assert.equal(g.node('#submit').hidden,false);
+ click('submit');assert.deepEqual(Array.from(game.state().selected),[2]);
+ g.tick(1500);assert(answers.every(n=>!n.classList.contains('repeated')),'高亮自动结束');
+ click('submit');game.pause();assert(g.node('#answers').children.every(n=>!n.classList.contains('repeated')),'暂停取消提醒');
+});
+test('字里找字：绘制置顶仅改变显示顺序，田中横与口保留原笔画索引/可反选',t=>{
+ const {g,game}=learning(t,'hanzi-puzzle');
+ for(let li=0;li<4;li++){for(const target of game.LEVELS[li].targets){game.setSelection(target.sets[0]);game.submit();}if(li<3)game.engine.next();}
+ game.loadLevel(3);game.engine.reset();game.setSelection([2]);
+ const paths=()=>g.node('#boards').children[0].children.find(n=>n.id==='strokes').children;
+ assert.equal(paths().at(-1).dataset.stroke,'2','中横在未选中的中竖之后绘制');
+ game.toggle(3);assert.deepEqual(paths().filter(p=>p.classList.contains('selected')).map(p=>p.dataset.stroke),['2','3']);
+ game.toggle(2);assert.deepEqual(Array.from(game.state().selected),[3]);assert.equal(paths().at(-1).dataset.stroke,'3');
+ game.setSelection([0,1,4]);assert.deepEqual(paths().slice(-3).map(p=>p.dataset.stroke),['0','1','4'],'口的整笔都在最上层');
+ assert.equal(paths().length,5,'不额外复制几何或扩大命中区');
 });

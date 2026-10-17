@@ -1,0 +1,28 @@
+{
+  "package": "com.dsh.gamecenter",
+  "version": "4.16",
+  "versionCode": 39,
+  "development": false,
+  "install": "Performing Streamed Install\nSuccess",
+  "apkSha256": "608c9c9a34deea836691845dbb472210ddb8594775997d029c564b43c715e6ba",
+  "installedApkMatches": true,
+  "debuggable": false,
+  "cdpSocketPresent": false,
+  "crashFound": false,
+  "storageKeysRestoredBeforeInstall": 16,
+  "allStorageValuesMatchedBeforeInstall": true,
+  "originalLevel": 4,
+  "originalSelected": [
+    2
+  ],
+  "formalUiLevel": 4,
+  "formalUiCount": "0 / 6",
+  "formalReturnedToGame": true,
+  "formalSelectedCrossPixel": [
+    54,
+    90,
+    73
+  ],
+  "note": "Opening the game normally updates the collection recent-play record; game saves were restored exactly before install.",
+  "adbForwardsAfter": ""
+}

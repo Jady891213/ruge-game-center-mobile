@@ -91,8 +91,8 @@ function createGame({storage=null,cover=false}={}){
    if(!state.selected.length)return {status:'empty'};
    const t=match(state.current,state.selected);
    if(!t)return {status:'invalid'};
+   if(state.found[state.current].includes(t.char))return {status:'repeat',char:t.char,pinyin:t.pinyin};
    state.selected=[];
-   if(state.found[state.current].includes(t.char)){save();return {status:'repeat',char:t.char,pinyin:t.pinyin};}
    state.found[state.current].push(t.char);state.reached=unlocked(state);save();return {status:'success',char:t.char,pinyin:t.pinyin,complete:complete(state,state.current)};
   },
   next(){if(!complete(state,state.current)||state.current>=LEVELS.length-1)return false;state.current++;state.selected=[];save();return true;},

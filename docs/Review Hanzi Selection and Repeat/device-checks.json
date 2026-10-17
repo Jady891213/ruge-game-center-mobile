@@ -1,0 +1,379 @@
+{
+  "version": "4.16-dev/39",
+  "device": "MIX 4 Android 14",
+  "checks": [
+    {
+      "check": "selected horizontal uninterrupted through vertical",
+      "layer": {
+        "order": [
+          {
+            "i": 0,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 1,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 3,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 4,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 2,
+            "selected": true,
+            "opacity": 1
+          }
+        ],
+        "selected": [
+          2
+        ],
+        "board": "田"
+      },
+      "intersectionPhysical": [
+        531.8112975225467,
+        1478.072039401794
+      ],
+      "pixel": [
+        54,
+        90,
+        73
+      ]
+    },
+    {
+      "check": "repeat mouth retains draft; only matching answer highlighted",
+      "before": {
+        "schema": 1,
+        "current": 3,
+        "reached": 4,
+        "found": [
+          [
+            "二",
+            "一",
+            "三"
+          ],
+          [
+            "一",
+            "二",
+            "干",
+            "三",
+            "十",
+            "王",
+            "工",
+            "土"
+          ],
+          [
+            "人",
+            "十",
+            "一",
+            "木"
+          ],
+          [
+            "口"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "selected": [
+          0,
+          1,
+          4
+        ],
+        "unlocked": 4,
+        "done": false,
+        "paused": false
+      },
+      "after": {
+        "schema": 1,
+        "current": 3,
+        "reached": 4,
+        "found": [
+          [
+            "二",
+            "一",
+            "三"
+          ],
+          [
+            "一",
+            "二",
+            "干",
+            "三",
+            "十",
+            "王",
+            "工",
+            "土"
+          ],
+          [
+            "人",
+            "十",
+            "一",
+            "木"
+          ],
+          [
+            "口"
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "selected": [
+          0,
+          1,
+          4
+        ],
+        "unlocked": 4,
+        "done": false,
+        "paused": false
+      },
+      "ui": {
+        "repeated": [
+          "口"
+        ],
+        "count": "1 / 6",
+        "notice": "已经找过啦",
+        "submitDisabled": false,
+        "animation": "answer-repeat"
+      },
+      "nativeBefore": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 10,
+        "sounds": 10,
+        "haptics": 10,
+        "last": "select",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "nativeAfter": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "events": 11,
+        "sounds": 11,
+        "haptics": 11,
+        "last": "error",
+        "hapticMode": "predefined",
+        "loaded": 13
+      },
+      "sameSave": true
+    },
+    {
+      "check": "duplicate draft survives reload without replayed reward",
+      "selected": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "check": "new 日 clears selection; invalid combination keeps it",
+      "found": [
+        "口",
+        "日"
+      ]
+    },
+    {
+      "check": "pause cancels highlight/output and retains duplicate draft"
+    },
+    {
+      "check": "compound 森 retains original indices and visible selected strokes",
+      "layer": {
+        "order": [
+          {
+            "i": 1,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 2,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 3,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 5,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 6,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 7,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 9,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 10,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 11,
+            "selected": false,
+            "opacity": 0.28
+          },
+          {
+            "i": 0,
+            "selected": true,
+            "opacity": 1
+          },
+          {
+            "i": 4,
+            "selected": true,
+            "opacity": 1
+          },
+          {
+            "i": 8,
+            "selected": true,
+            "opacity": 1
+          }
+        ],
+        "selected": [
+          0,
+          4,
+          8
+        ],
+        "board": "森"
+      }
+    },
+    {
+      "check": "cover remains silent and does not write saves"
+    }
+  ],
+  "error": null,
+  "storageKeys": 16,
+  "restoredExactly": true,
+  "originalLevel": 4,
+  "originalSelected": [
+    2
+  ]
+}

@@ -17,3 +17,10 @@
 @keyframes answer-spark{0%{transform:translateY(8px) scale(.3);opacity:0}30%{opacity:1;transform:scale(1.2)}100%{transform:translateY(-12px) scale(.7);opacity:0}}
 body:has(#pausePanel:not([hidden])) .answer.new,body:has(#pausePanel:not([hidden])) .answer.new::after{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.answer.new,.answer.new::after{animation:none!important}.answer.new::after{display:none}}
+
+/* Keep a selected stroke continuous through intersections, with quiet context behind it. */
+#boards .has-selection [data-stroke]:not(.selected){opacity:.28}
+#boards .has-selection [data-stroke].hinted{opacity:.85}
+.answer.repeated{background-color:#ffe4a6;border-color:#bf8c32;box-shadow:0 0 0 3px #ffcf6770;animation:answer-repeat .36s ease}
+@keyframes answer-repeat{0%,100%{transform:translateX(0)}25%,75%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.answer.repeated{animation:none!important}}

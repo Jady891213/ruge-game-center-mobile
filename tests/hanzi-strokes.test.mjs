@@ -47,9 +47,9 @@ test('选择可反选；空选、坏索引、重复笔、错误组合不消耗�
  const invalid=atLevel(1);invalid.setSelection([0,2]);assert.equal(invalid.submit().status,'invalid');assert.deepEqual(plain(invalid.state().found[1]),[]);assert.deepEqual(plain(invalid.state().selected),[0,2]);
  for(const bad of [null,[],[0,0],[-1],[0,999],['0'],[NaN]])assert.equal(H.match(0,bad),null);
 });
-test('同答案不同笔画只收一次，提交成功或重复后清选择，整局每字只计一次',()=>{
+test('同答案不同笔画只收一次，成功清选择而重复保留当前草稿，整局每字只计一次',()=>{
  const g=H.createGame();g.setSelection([0]);assert.equal(g.submit().char,'一');assert.deepEqual(plain(g.state().selected),[]);
- g.setSelection([2]);assert.equal(g.submit().status,'repeat');assert.equal(g.state().found[0].length,1);assert.deepEqual(plain(g.state().selected),[]);
+ g.setSelection([2]);assert.equal(g.submit().status,'repeat');assert.equal(g.state().found[0].length,1);assert.deepEqual(plain(g.state().selected),[2]);
  g.setSelection([0,2]);const result=g.submit();assert.equal(result.status,'success');assert.equal(result.complete,false);assert.equal(g.state().done,false);g.setSelection([0,1,2]);assert.equal(g.submit().char,'三');assert.equal(g.state().done,true);assert.equal(g.submit().status,'complete');assert.equal(g.toggle(1),false);
 });
 test('六十关可以真实逐关全部通关，完成才解锁，最后一关不越界',()=>{
@@ -112,4 +112,13 @@ test('已完成旧十关的存档自动解锁第十一关，原收集与其他�
 test('多字题可跨字板选整横组成二和三，重复答案不拆成多个目标',()=>{
  const li=H.LEVELS.findIndex(l=>l.source==='木木木');assert.equal(H.match(li,[0,4])?.char,'二');assert.equal(H.match(li,[0,4,8])?.char,'三');
  assert.equal(H.LEVELS[li].targets.filter(t=>t.char==='三').length,1);
+});
+
+test('田的口重复提交保留原选笔和存档，反复提交不改变收集/解锁，重启后草稿仍在',()=>{
+ const storage=memory(),g=atLevel(3,storage);g.setSelection([0,1,4]);assert.equal(g.submit().char,'口');
+ g.setSelection([4,0,1]);const before=plain(g.state()),saved=storage.getItem(H.KEY),writes=storage.writes;
+ for(let i=0;i<3;i++){assert.equal(g.submit().status,'repeat');assert.deepEqual(plain(g.state()),before);}
+ assert.equal(storage.getItem(H.KEY),saved);assert.equal(storage.writes,writes,'重复提示不改写已经保存的草稿');
+ const restored=H.createGame({storage});assert.deepEqual(plain(restored.state()),before);
+ restored.toggle(2);assert.equal(restored.submit().char,'日');assert.deepEqual(plain(restored.state().selected),[],'真正找到新字仍清选笔');
 });
