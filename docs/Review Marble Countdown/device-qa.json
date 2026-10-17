@@ -1,0 +1,72 @@
+{
+  "version": "4.21-dev",
+  "checks": {
+    "nativeFlatNextImmediate": {
+      "level": 1,
+      "paused": false,
+      "result": "run",
+      "waiting": false,
+      "title": "手机放平",
+      "count": "",
+      "guideHidden": true,
+      "readyHidden": true
+    },
+    "nextTiltShowsGuide": {
+      "level": 13,
+      "paused": true,
+      "result": "ready",
+      "waiting": true,
+      "title": "手机放平",
+      "count": "",
+      "guideHidden": false,
+      "readyHidden": true
+    },
+    "countdown2": {
+      "level": 13,
+      "paused": true,
+      "result": "ready",
+      "waiting": true,
+      "title": "放好啦！",
+      "count": "2",
+      "guideHidden": false,
+      "readyHidden": true
+    },
+    "countdown1": {
+      "level": 13,
+      "paused": true,
+      "result": "ready",
+      "waiting": true,
+      "title": "放好啦！",
+      "count": "1",
+      "guideHidden": false,
+      "readyHidden": true
+    },
+    "afterCountdownRuns": {
+      "level": 13,
+      "paused": false,
+      "result": "run",
+      "waiting": false,
+      "title": "放好啦！",
+      "count": "1",
+      "guideHidden": true,
+      "readyHidden": true
+    },
+    "smallWobbleDoesNotRestartCountdown": true,
+    "tiltCancelsCountdown": true,
+    "reflatRestartsAt2": true,
+    "actualBackgroundCancelsCountdown": true
+  },
+  "boundary": "Real WebView UI transitions use solved-state fixtures. Physical flat next uses actual native sensor; angled/countdown cases use explicit sensor sample fixtures, not claimed physical hand tilts.",
+  "originalStorageKeys": 17,
+  "nativeSample": {
+    "x": 0.0057112286,
+    "y": 0.048941948,
+    "z": 0.9984433,
+    "age": 17,
+    "available": true,
+    "source": "gravity",
+    "rotation": 0
+  },
+  "storageRestoredExactly": true,
+  "diagnosticAdapterRemovedOnNavigation": true
+}

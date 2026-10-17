@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，包含小小密码箱、接水管、钢珠迷宫、数字碰碰、翻转星星盒、字里找字、拼音练习、扑翼小鸟、恐龙跑酷、青蛙跳跃、小小调色师和森林果汁屋十二个游戏，无需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.20 / versionCode 43**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.21 / versionCode 44**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,12 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 钢珠迷宫连续过关（4.21）
+
+通关后点“下一关”立即检查当前姿态：有效新鲜的水平读数直接开玩，不再停留在第二次“开始”。姿势不合适才显示放平插画；放平稳定后用绿色“放好啦！”和大号“2、1”倒计时给出明确反馈，再进入游戏。倒计时中拿歪或样本变旧会重新等待，取消/后台/转屏/选关/重置会清除倒计时。
+
+[本次验收](docs/Review%20Marble%20Countdown/review.md)
 
 ## 钢珠迷宫放平即玩（4.20）
 

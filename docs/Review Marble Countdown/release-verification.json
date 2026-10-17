@@ -1,0 +1,21 @@
+{
+  "versionName": "4.21",
+  "versionCode": 44,
+  "package": "com.dsh.gamecenter",
+  "deviceApkSha256": "da1bbc01ccdf531d32b72e919fd689cfbaa2fab185b74ab8a8d138ac7398ba51",
+  "localApkSha256": "da1bbc01ccdf531d32b72e919fd689cfbaa2fab185b74ab8a8d138ac7398ba51",
+  "apkHashesMatch": true,
+  "devApkSha256": "1e417bf2d8c3ad172950e4d5886dccb291e183bf3c75560cb347fcbfedc62da9",
+  "assetsEqualDevAndReleaseAndSource": true,
+  "assetCount": 69,
+  "webViewDebuggingClosed": true,
+  "adbForwardsRemaining": false,
+  "originalStorageKeys": 17,
+  "exactDelayedRestoreBeforeInstall": true,
+  "originalCurrentLevel": 14,
+  "originalStarCount": 1,
+  "coveringInstallWithoutUninstallOrClearData": true,
+  "launchVerified": true,
+  "formalOriginalLevel14AndOneStarVisuallyConfirmed": true,
+  "screenshot": "device-release-progress.png"
+}

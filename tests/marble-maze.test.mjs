@@ -164,7 +164,7 @@ test('钢珠迷宫：后台和旋转保持暂停，只有明确继续才继续�
 test('钢珠迷宫：过期输入不能开局，新样本稳定后开始，运行失联暂停且可方向盘继续',async t=>{
   const {h,g}=game(t,{native:true});const tilt=h.window.__tilt;tilt.age=1501;
   h.click('#start');assert.equal(g.state().paused,true);assert.equal(g.state().result,'ready');
-  tilt.age=0;for(let n=0;n<20;n++)h.frame(30);assert.equal(g.state().paused,false);
+  tilt.age=0;for(let n=0;n<90;n++)h.frame(30);assert.equal(g.state().paused,false);
   tilt.age=1501;for(let n=0;n<20;n++)h.frame(30);
   assert.equal(g.state().paused,true);assert.equal(h.node('#pausePanel').hidden,false);
   h.click('#resume');assert.equal(g.state().paused,true);assert.equal(h.node('#flatGuide').hidden,false);

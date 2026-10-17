@@ -24,6 +24,7 @@
   let state = progress.draft && progress.draft.level === progress.current ? progress.draft : C.create(progress.current);
   let result = state.won ? 'win' : 'ready', paused = true, last = 0, saveClock = 0, staleTime = 0, toastTimer = 0, pointerId = null, joystick = { x: 0, y: 0 }, effects = [];
   let foreground = true, rotorButtons = [], pendingStart = null, canvasTap = null;
+  let countdownRemaining = null, countdownDigit = null;
   // The marble tray always uses the physical horizontal plane, never a saved pose.
   const input = window.RugeMotion.create({ reference: 'flat' });
   if (!COVER) {
@@ -112,7 +113,7 @@
   }
   function hidePanels() { for (const id of ['ready', 'pausePanel', 'win', 'levels', 'resetPanel', 'flatGuide']) $('#' + id).hidden = true; }
   function loadLevel(index, keep = false) {
-    release(); input.resetPosture?.(); pendingStart = null; state = keep ? state : C.create(index); result = state.won ? 'win' : 'ready'; paused = true; effects = []; staleTime = 0;
+    release(); input.resetPosture?.(); pendingStart = null; resetCountdown(); state = keep ? state : C.create(index); result = state.won ? 'win' : 'ready'; paused = true; effects = []; staleTime = 0;
     hidePanels(); $('#readyTitle').textContent = `第 ${state.level + 1} 关`;
     $('#start').textContent = keep && (state.time > 0 || state.stars.some(Boolean)) ? '继续' : '开始';
     if (state.won) showWin(false); else $('#ready').hidden = false;
@@ -123,30 +124,47 @@
   function posture(dt = 0) {
     return input.flatReady(dt);
   }
-  function updateFlatGuide(value) {
+  function resetCountdown() { countdownRemaining = countdownDigit = null; }
+  function updateFlatGuide(value, dt = 0) {
     $('#flatTouch').hidden = !!value.available;
     $('#flatProgress').classList.toggle('is-flat', !!value.flat);
     $('#flatProgress').classList.toggle('is-stable', !!value.stable);
+    // Qualify stability once, then tolerate small hand movements inside the flat range.
+    const ready = value.available && value.fresh && value.flat && (value.stable || countdownRemaining !== null);
+    if (!ready) resetCountdown();
+    else if (countdownRemaining === null) countdownRemaining = 2;
+    else countdownRemaining = Math.max(0, countdownRemaining - dt);
+    const digit = ready ? Math.max(1, Math.ceil(countdownRemaining)) : null;
+    const title = ready ? '放好啦！' : '手机放平', text = ready ? String(digit) : '';
+    if ($('#flatTitle').textContent !== title) $('#flatTitle').textContent = title;
+    $('#flatCountdown').hidden = !ready;
+    if ($('#flatCountdown').textContent !== text) $('#flatCountdown').textContent = text;
+    $('#flatProgress').hidden = !!ready;
+    $('#flatGuide').classList.toggle('is-ready', !!ready);
+    if (digit !== null && digit !== countdownDigit) window.RugeFX?.emit('select');
+    countdownDigit = digit;
+    if (ready && countdownRemaining === 0) beginRun();
   }
   function beginRun() {
     if (!foreground || document.hidden || !pendingStart || state.won) return false;
-    pendingStart = null; hidePanels(); result = 'run'; paused = false; release();
+    pendingStart = null; resetCountdown(); hidePanels(); result = 'run'; paused = false; release();
     state.vx = state.vy = 0; state.accumulator = 0; staleTime = 0; last = performance.now();
     updateRotors(); fx('tap'); save(); return true;
   }
   function requestStart(kind) {
     if (COVER || !foreground || document.hidden || !$('#resetPanel').hidden || !$('#levels').hidden || state.won) return false;
-    if (kind === 'start' ? result !== 'ready' : result !== 'run' || !paused) return false;
-    canvasTap = null; pendingStart = kind;
+    if (kind === 'resume' ? result !== 'run' || !paused : result !== 'ready') return false;
+    canvasTap = null; pendingStart = kind; resetCountdown();
     if (input.mode() === 'touch') return beginRun();
     const value = posture();
-    if (value.available && value.fresh && value.flat && value.stable) return beginRun();
+    // A freshly flat phone continues straight into the next level; no second Start tap.
+    if (value.available && value.fresh && value.flat && (value.stable || kind === 'next')) return beginRun();
     hidePanels(); $('#flatGuide').hidden = false; updateFlatGuide(value); updateRotors(); return false;
   }
   function start() { return requestStart('start'); }
   function cancelWaiting() {
     if (!pendingStart) return;
-    pendingStart = null; $('#flatGuide').hidden = true;
+    pendingStart = null; resetCountdown(); $('#flatGuide').hidden = true;
     if (result === 'ready') $('#ready').hidden = false;
     else if (result === 'run') { $('#pauseTitle').textContent = '休息一下'; $('#pausePanel').hidden = false; }
     updateRotors();
@@ -277,8 +295,7 @@
     if (foreground && !document.hidden && input.mode() === 'tilt' && paused) {
       const value = posture(dt);
       if (pendingStart) {
-        updateFlatGuide(value);
-        if (value.available && value.fresh && value.flat && value.stable) beginRun();
+        updateFlatGuide(value, dt);
       }
     }
     if (paused) return;
@@ -343,7 +360,11 @@
   $('#cancelFlat').addEventListener('click', cancelWaiting);
   $('#retry').addEventListener('click', askReset); $('#winRetry').addEventListener('click', () => { if (!COVER) { loadLevel(state.level); save(); } });
   $('#reset').addEventListener('click', askReset); $('#resetYes').addEventListener('click', resetLevel); $('#resetNo').addEventListener('click', cancelReset);
-  $('#next').addEventListener('click', () => { if (!state.won) return; loadLevel(state.level === C.LEVELS.length - 1 ? 0 : state.level + 1); save(); });
+  $('#next').addEventListener('click', () => {
+    if (COVER || !foreground || document.hidden || !state.won || $('#win').hidden) return;
+    loadLevel(state.level === C.LEVELS.length - 1 ? 0 : state.level + 1);
+    requestStart('next'); save();
+  });
   $('#levelBtn').addEventListener('click', showLevels); $('#pauseLevels').addEventListener('click', showLevels); $('#closeLevels').addEventListener('click', () => { $('#levels').hidden = true; updateRotors(); });
   $('#home').addEventListener('click', () => { save(); release(); input.destroy(); if (window.RugeNav?.home) window.RugeNav.home(); else location.href = '../index.html'; });
   addEventListener('ruge:pause', () => { foreground = false; cancelWaiting(); pauseGame('background'); release(); updateRotors(); });
