@@ -1,0 +1,17 @@
+{
+  "sourceAssetCount": 404,
+  "apk": {
+    "game-center-v4.33-dev.apk": {
+      "sha256": "e99fc4803bf72c6b4841c184394ec1754e2622c70e9c9b8a296f66a888c596f8",
+      "assetsEqual": true,
+      "unchangedLocalDemoMp3": 101,
+      "unchangedNativeLibraries": 2
+    },
+    "game-center-v4.33.apk": {
+      "sha256": "7e6b6eb184545206ea63bb3bc77fda824aec961c4c4bf46c6355048d1a8ed90f",
+      "assetsEqual": true,
+      "unchangedLocalDemoMp3": 101,
+      "unchangedNativeLibraries": 2
+    }
+  }
+}

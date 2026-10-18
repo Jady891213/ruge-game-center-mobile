@@ -5,16 +5,16 @@ import '../app/assets/tilt-star-box/core.js';
 import {loadGame} from './helpers/html-vm.mjs';
 const C=globalThis.TiltStarBox,copy=x=>JSON.parse(JSON.stringify(x));
 
-test('翻转星星盒12关真实BFS可解，短解1到8步，四向滑动而非重复换皮',()=>{
- assert.equal(C.LEVELS.length,12);const lengths=[];
+test('翻转星星盒36关真实BFS可解，原12关短解不变，四向滑动而非重复换皮',()=>{
+ assert.equal(C.LEVELS.length,36);const lengths=[];
  C.LEVELS.forEach((l,i)=>{
   const s=C.createState(i),initial=copy(s),answer=C.solve(i);assert.ok(answer,'第 '+(i+1)+' 关可解');
   answer.moves.forEach(d=>{const result=C.move(s,d);assert.ok(result?.moved);assert.ok(C.validPositions(s.positions,l));});
   assert.equal(s.finished,true);assert.ok(C.won(s.positions,l));assert.equal(s.moves,answer.moves.length);lengths.push(answer.moves.length);assert.deepEqual(C.createState(i),initial);
  });
- assert.deepEqual(lengths,[1,2,3,4,5,4,5,5,5,6,7,8]);assert.equal(new Set(C.LEVELS.map(l=>l.walls.join(',')+'|'+l.balls+'|'+l.goals)).size,12);
- assert.deepEqual(C.LEVELS.map(l=>l.balls.length),[1,1,1,1,1,2,2,1,2,2,2,2]);assert.equal(C.LEVELS[11].w,5);
- assert.throws(()=>C.createState(-1));assert.throws(()=>C.createState(12));
+ assert.deepEqual(lengths.slice(0,12),[1,2,3,4,5,4,5,5,5,6,7,8]);assert.equal(new Set(C.LEVELS.map(l=>l.walls.join(',')+'|'+l.balls+'|'+l.goals)).size,36);
+ assert.deepEqual(C.LEVELS.slice(0,12).map(l=>l.balls.length),[1,1,1,1,1,2,2,1,2,2,2,2]);assert.equal(C.LEVELS[11].w,5);
+ assert.throws(()=>C.createState(-1));assert.throws(()=>C.createState(C.LEVELS.length));
 });
 test('同方向全部星星滑动，后星跟随前星但不能重叠；墙与同色巢及时截停',()=>{
  const l=C.parse(['AB.a','.##.','....','...b'],99);
@@ -31,8 +31,8 @@ test('滑动可整体撤回，完成不能重复走或奖励，撤销完成恢�
 });
 test('存档严格重放历史，保留合法进度；坏档和伪造终局不能进入游戏',()=>{
  const s=C.createState(10),answer=C.solve(s).moves;answer.slice(0,3).forEach(d=>C.move(s,d));
- const raw={schema:1,stars:[3,2,0],session:s};assert.deepEqual(C.restore(copy(raw)).session,s);assert.deepEqual(C.restore(raw).stars,[3,2,0,0,0,0,0,0,0,0,0,0]);
- for(const change of [s=>s.positions[0]=999,s=>s.positions[0]=s.positions[1],s=>s.finished=true,s=>s.moves=999,s=>s.history.push('sideways'),s=>s.level=12,s=>s.history=Array(1001).fill('up')]){const bad=copy(raw);change(bad.session);assert.equal(C.restore(bad).session,null);}
+ const raw={schema:1,stars:[3,2,0],session:s};assert.deepEqual(C.restore(copy(raw)).session,s);assert.deepEqual(C.restore(raw).stars,[3,2,...Array(C.LEVELS.length-2).fill(0)]);
+ for(const change of [s=>s.positions[0]=999,s=>s.positions[0]=s.positions[1],s=>s.finished=true,s=>s.moves=999,s=>s.history.push('sideways'),s=>s.level=C.LEVELS.length,s=>s.history=Array(1001).fill('up')]){const bad=copy(raw);change(bad.session);assert.equal(C.restore(bad).session,null);}
  for(const bad of [null,{},[],{schema:2},{schema:1,session:{}}])assert.equal(C.restore(bad).session,null);
  const bad=copy(raw);delete bad.session.positions[0];assert.equal(C.restore(bad).session,null);
  answer.slice(3).forEach(d=>C.move(s,d));assert.equal(C.restore(copy(raw)).session.finished,true);
@@ -49,10 +49,10 @@ test('倾斜方向抖动取消候选，不把短噪声和回前台读数累计�
  g.reset(true);for(let i=0;i<30;i++)assert.equal(g.read(.5,0,.02),null);g.read(0,0,.02);for(let i=0;i<5;i++)assert.equal(g.read(.5,0,.02),null);assert.equal(g.read(.5,0,.02),'right');
 });
 
-test('真实页面十二关连续通关、动作动画互斥、选关和独立存档',()=>{
+test('真实页面36关连续通关、动作动画互斥、选关和独立存档',()=>{
  const g=loadGame('tilt-star-box');try{
   const a=g.window.__game;assert.equal(g.node('#levels').children[1].disabled,true);a.start(0);
-  for(let i=0;i<12;i++){
+  for(let i=0;i<C.LEVELS.length;i++){
    for(const d of C.solve(i).moves){assert.equal(a.act(d),true);assert.equal(a.busy(),true);assert.equal(a.act(d),false);g.tick(500);}
    assert.equal(a.state().finished,true);assert.equal(g.node('#win').hidden,false);assert.equal(a.progress()[i],3);g.node('#next').onclick();
   }

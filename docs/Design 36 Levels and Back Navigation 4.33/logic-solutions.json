@@ -1,0 +1,3360 @@
+{
+  "scope": "Rule and actual packaged-page VM evidence; no visual/device-playtest claim",
+  "games": {
+    "animal-balance": {
+      "count": 36,
+      "old18Unchanged": true,
+      "solutions": [
+        {
+          "level": 1,
+          "answer": [
+            [
+              0,
+              0
+            ]
+          ],
+          "stock": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 2,
+          "answer": [
+            [
+              0,
+              1
+            ]
+          ],
+          "stock": [
+            2,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 3,
+          "answer": [
+            [
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            0,
+            3,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 4,
+          "answer": [
+            [
+              1,
+              2
+            ]
+          ],
+          "stock": [
+            1,
+            2,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 5,
+          "answer": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "stock": [
+            2,
+            3,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 6,
+          "answer": [
+            [
+              1,
+              2
+            ]
+          ],
+          "stock": [
+            0,
+            2,
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 7,
+          "answer": [
+            [
+              1,
+              3
+            ]
+          ],
+          "stock": [
+            1,
+            2,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 8,
+          "answer": [
+            [
+              2,
+              3
+            ]
+          ],
+          "stock": [
+            1,
+            0,
+            2,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 9,
+          "answer": [
+            [
+              0,
+              2,
+              2
+            ]
+          ],
+          "stock": [
+            2,
+            1,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 10,
+          "answer": [
+            [
+              1,
+              2,
+              2
+            ]
+          ],
+          "stock": [
+            1,
+            2,
+            3,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 11,
+          "answer": [
+            [
+              0,
+              3,
+              3
+            ]
+          ],
+          "stock": [
+            2,
+            1,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 12,
+          "answer": [
+            [
+              4,
+              4
+            ]
+          ],
+          "stock": [
+            0,
+            1,
+            1,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "level": 13,
+          "answer": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 14,
+          "answer": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "stock": [
+            0,
+            2,
+            1,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 15,
+          "answer": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "stock": [
+            2,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 16,
+          "answer": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "stock": [
+            0,
+            1,
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 17,
+          "answer": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "stock": [
+            1,
+            1,
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 18,
+          "answer": [
+            [
+              3,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "stock": [
+            0,
+            1,
+            1,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 19,
+          "answer": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "stock": [
+            4,
+            2,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 20,
+          "answer": [
+            [
+              1,
+              1,
+              5
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "level": 21,
+          "answer": [
+            [
+              3,
+              3
+            ]
+          ],
+          "stock": [
+            0,
+            3,
+            1,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 22,
+          "answer": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "level": 23,
+          "answer": [
+            [
+              2,
+              2
+            ]
+          ],
+          "stock": [
+            3,
+            0,
+            3,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "level": 24,
+          "answer": [
+            [
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            0,
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "level": 25,
+          "answer": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "level": 26,
+          "answer": [
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "stock": [
+            2,
+            2,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 27,
+          "answer": [
+            [
+              0,
+              5
+            ]
+          ],
+          "stock": [
+            2,
+            0,
+            2,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "level": 28,
+          "answer": [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 29,
+          "answer": [
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            3,
+            4,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "level": 30,
+          "answer": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 31,
+          "answer": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ],
+          "stock": [
+            3,
+            0,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 32,
+          "answer": [
+            [
+              1,
+              1,
+              3
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            3,
+            4,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 33,
+          "answer": [
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "stock": [
+            4,
+            0,
+            3,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "level": 34,
+          "answer": [
+            [
+              1,
+              1,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "stock": [
+            0,
+            4,
+            0,
+            1,
+            3,
+            0
+          ]
+        },
+        {
+          "level": 35,
+          "answer": [
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            1,
+            4,
+            0,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "level": 36,
+          "answer": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "stock": [
+            3,
+            3,
+            0,
+            0,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    "hat-trick": {
+      "count": 36,
+      "old18Unchanged": true,
+      "solutions": [
+        {
+          "level": 1,
+          "mode": "track",
+          "positions": [
+            0
+          ]
+        },
+        {
+          "level": 2,
+          "mode": "track",
+          "positions": [
+            0
+          ]
+        },
+        {
+          "level": 3,
+          "mode": "track",
+          "positions": [
+            0
+          ]
+        },
+        {
+          "level": 4,
+          "mode": "track",
+          "positions": [
+            2
+          ]
+        },
+        {
+          "level": 5,
+          "mode": "track",
+          "positions": [
+            3
+          ]
+        },
+        {
+          "level": 6,
+          "mode": "late",
+          "positions": [
+            1
+          ]
+        },
+        {
+          "level": 7,
+          "mode": "late",
+          "positions": [
+            1,
+            3
+          ]
+        },
+        {
+          "level": 8,
+          "mode": "pair",
+          "positions": [
+            3,
+            2
+          ]
+        },
+        {
+          "level": 9,
+          "mode": "pair",
+          "positions": [
+            2,
+            4
+          ]
+        },
+        {
+          "level": 10,
+          "mode": "order",
+          "positions": [
+            1,
+            2
+          ]
+        },
+        {
+          "level": 11,
+          "mode": "late",
+          "positions": [
+            3
+          ]
+        },
+        {
+          "level": 12,
+          "mode": "pair",
+          "positions": [
+            1,
+            4
+          ]
+        },
+        {
+          "level": 13,
+          "mode": "order",
+          "positions": [
+            4,
+            2
+          ]
+        },
+        {
+          "level": 14,
+          "mode": "late",
+          "positions": [
+            3
+          ]
+        },
+        {
+          "level": 15,
+          "mode": "pair",
+          "positions": [
+            4,
+            3
+          ]
+        },
+        {
+          "level": 16,
+          "mode": "order",
+          "positions": [
+            1,
+            5,
+            0
+          ]
+        },
+        {
+          "level": 17,
+          "mode": "late",
+          "positions": [
+            4,
+            3
+          ]
+        },
+        {
+          "level": 18,
+          "mode": "order",
+          "positions": [
+            5,
+            3,
+            1
+          ]
+        },
+        {
+          "level": 19,
+          "mode": "late",
+          "positions": [
+            1
+          ]
+        },
+        {
+          "level": 20,
+          "mode": "pair",
+          "positions": [
+            0,
+            1
+          ]
+        },
+        {
+          "level": 21,
+          "mode": "order",
+          "positions": [
+            2,
+            0
+          ]
+        },
+        {
+          "level": 22,
+          "mode": "late",
+          "positions": [
+            3
+          ]
+        },
+        {
+          "level": 23,
+          "mode": "pair",
+          "positions": [
+            1,
+            2
+          ]
+        },
+        {
+          "level": 24,
+          "mode": "order",
+          "positions": [
+            2,
+            4
+          ]
+        },
+        {
+          "level": 25,
+          "mode": "late",
+          "positions": [
+            3
+          ]
+        },
+        {
+          "level": 26,
+          "mode": "pair",
+          "positions": [
+            3,
+            1
+          ]
+        },
+        {
+          "level": 27,
+          "mode": "order",
+          "positions": [
+            0,
+            2
+          ]
+        },
+        {
+          "level": 28,
+          "mode": "late",
+          "positions": [
+            0
+          ]
+        },
+        {
+          "level": 29,
+          "mode": "pair",
+          "positions": [
+            5,
+            3
+          ]
+        },
+        {
+          "level": 30,
+          "mode": "order",
+          "positions": [
+            2,
+            5
+          ]
+        },
+        {
+          "level": 31,
+          "mode": "late",
+          "positions": [
+            1
+          ]
+        },
+        {
+          "level": 32,
+          "mode": "pair",
+          "positions": [
+            3,
+            5,
+            4
+          ]
+        },
+        {
+          "level": 33,
+          "mode": "order",
+          "positions": [
+            5,
+            3,
+            2
+          ]
+        },
+        {
+          "level": 34,
+          "mode": "late",
+          "positions": [
+            5
+          ]
+        },
+        {
+          "level": 35,
+          "mode": "pair",
+          "positions": [
+            4,
+            0,
+            2
+          ]
+        },
+        {
+          "level": 36,
+          "mode": "order",
+          "positions": [
+            4,
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    "voice-quest": {
+      "count": 36,
+      "old18Unchanged": true,
+      "solutions": [
+        {
+          "level": 1,
+          "actions": [
+            "right",
+            "right",
+            "take",
+            "right",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 2,
+          "actions": [
+            "right",
+            "up",
+            "right",
+            "take",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 3,
+          "actions": [
+            "right",
+            "jump",
+            "take",
+            "right",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 4,
+          "actions": [
+            "right",
+            "right",
+            "take",
+            "up",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 5,
+          "actions": [
+            "right",
+            "up",
+            "right",
+            "right",
+            "take",
+            "right",
+            "down",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 6,
+          "actions": [
+            "right",
+            "jump",
+            "right",
+            "take",
+            "right",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 7,
+          "actions": [
+            "up",
+            "up",
+            "take",
+            "down",
+            "down",
+            "right",
+            "right",
+            "jump",
+            "up",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 8,
+          "actions": [
+            "up",
+            "up",
+            "right",
+            "right",
+            "take",
+            "right",
+            "right",
+            "down",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 9,
+          "actions": [
+            "down",
+            "right",
+            "jump",
+            "up",
+            "up",
+            "take",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 10,
+          "actions": [
+            "right",
+            "up",
+            "right",
+            "right",
+            "take",
+            "right",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 11,
+          "actions": [
+            "up",
+            "up",
+            "take",
+            "right",
+            "down",
+            "down",
+            "right",
+            "right",
+            "up",
+            "right",
+            "jump",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 12,
+          "actions": [
+            "right",
+            "up",
+            "right",
+            "take",
+            "right",
+            "down",
+            "right",
+            "jump",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 13,
+          "actions": [
+            "up",
+            "up",
+            "take",
+            "down",
+            "down",
+            "right",
+            "jump",
+            "right",
+            "right",
+            "up",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 14,
+          "actions": [
+            "down",
+            "right",
+            "jump",
+            "right",
+            "up",
+            "up",
+            "take",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 15,
+          "actions": [
+            "up",
+            "up",
+            "right",
+            "right",
+            "take",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 16,
+          "actions": [
+            "down",
+            "right",
+            "right",
+            "jump",
+            "up",
+            "up",
+            "take",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 17,
+          "actions": [
+            "up",
+            "up",
+            "take",
+            "right",
+            "right",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 18,
+          "actions": [
+            "down",
+            "right",
+            "jump",
+            "up",
+            "up",
+            "take",
+            "right",
+            "right",
+            "right",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 19,
+          "actions": [
+            "up",
+            "up",
+            "left",
+            "left",
+            "up",
+            "up",
+            "left",
+            "left",
+            "down",
+            "down",
+            "take",
+            "up",
+            "up",
+            "right",
+            "right",
+            "down",
+            "down",
+            "right",
+            "right",
+            "down",
+            "down",
+            "left",
+            "left",
+            "left",
+            "left",
+            "jump",
+            "put"
+          ],
+          "facing": "up"
+        },
+        {
+          "level": 20,
+          "actions": [
+            "down",
+            "down",
+            "right",
+            "right",
+            "up",
+            "up",
+            "up",
+            "up",
+            "take",
+            "down",
+            "down",
+            "down",
+            "down",
+            "left",
+            "left",
+            "up",
+            "up",
+            "left",
+            "jump",
+            "down",
+            "down",
+            "put"
+          ],
+          "facing": "left"
+        },
+        {
+          "level": 21,
+          "actions": [
+            "right",
+            "right",
+            "right",
+            "right",
+            "right",
+            "right",
+            "up",
+            "up",
+            "left",
+            "left",
+            "left",
+            "left",
+            "jump",
+            "up",
+            "up",
+            "take",
+            "down",
+            "down",
+            "right",
+            "jump",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "put"
+          ],
+          "facing": "down"
+        },
+        {
+          "level": 22,
+          "actions": [
+            "left",
+            "left",
+            "down",
+            "down",
+            "right",
+            "jump",
+            "down",
+            "down",
+            "left",
+            "left",
+            "left",
+            "left",
+            "up",
+            "up",
+            "up",
+            "up",
+            "take",
+            "down",
+            "down",
+            "down",
+            "down",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 23,
+          "actions": [
+            "left",
+            "left",
+            "take",
+            "right",
+            "right",
+            "down",
+            "down",
+            "right",
+            "right",
+            "down",
+            "down",
+            "left",
+            "left",
+            "left",
+            "left",
+            "left",
+            "left",
+            "up",
+            "jump",
+            "put"
+          ],
+          "facing": "up"
+        },
+        {
+          "level": 24,
+          "actions": [
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "down",
+            "down",
+            "left",
+            "left",
+            "jump",
+            "right",
+            "take",
+            "jump",
+            "right",
+            "right",
+            "put"
+          ],
+          "facing": "left"
+        },
+        {
+          "level": 25,
+          "actions": [
+            "jump",
+            "left",
+            "left",
+            "left",
+            "left",
+            "left",
+            "left",
+            "up",
+            "jump",
+            "right",
+            "right",
+            "up",
+            "up",
+            "left",
+            "left",
+            "take",
+            "right",
+            "right",
+            "right",
+            "right",
+            "put"
+          ],
+          "facing": "down"
+        },
+        {
+          "level": 26,
+          "actions": [
+            "jump",
+            "left",
+            "take",
+            "jump",
+            "down",
+            "down",
+            "left",
+            "left",
+            "down",
+            "down",
+            "right",
+            "right",
+            "jump",
+            "up",
+            "up",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 27,
+          "actions": [
+            "down",
+            "down",
+            "right",
+            "right",
+            "jump",
+            "up",
+            "up",
+            "left",
+            "left",
+            "up",
+            "jump",
+            "down",
+            "take",
+            "jump",
+            "right",
+            "right",
+            "put"
+          ],
+          "facing": "up"
+        },
+        {
+          "level": 28,
+          "actions": [
+            "left",
+            "left",
+            "up",
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "down",
+            "jump",
+            "right",
+            "right",
+            "down",
+            "jump",
+            "up",
+            "take",
+            "jump",
+            "left",
+            "left",
+            "put"
+          ],
+          "facing": "left"
+        },
+        {
+          "level": 29,
+          "actions": [
+            "right",
+            "right",
+            "take",
+            "up",
+            "up",
+            "left",
+            "left",
+            "jump",
+            "left",
+            "left",
+            "up",
+            "up",
+            "right",
+            "jump",
+            "right",
+            "right",
+            "put"
+          ],
+          "facing": "down"
+        },
+        {
+          "level": 30,
+          "actions": [
+            "up",
+            "jump",
+            "left",
+            "jump",
+            "up",
+            "up",
+            "left",
+            "left",
+            "down",
+            "down",
+            "down",
+            "down",
+            "right",
+            "right",
+            "take",
+            "left",
+            "left",
+            "up",
+            "up",
+            "up",
+            "up",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 31,
+          "actions": [
+            "up",
+            "up",
+            "jump",
+            "right",
+            "right",
+            "down",
+            "jump",
+            "down",
+            "down",
+            "take",
+            "up",
+            "up",
+            "jump",
+            "left",
+            "left",
+            "left",
+            "left",
+            "down",
+            "jump",
+            "put"
+          ],
+          "facing": "up"
+        },
+        {
+          "level": 32,
+          "actions": [
+            "down",
+            "down",
+            "jump",
+            "right",
+            "right",
+            "right",
+            "right",
+            "up",
+            "jump",
+            "jump",
+            "right",
+            "right",
+            "take",
+            "left",
+            "left",
+            "down",
+            "jump",
+            "jump",
+            "left",
+            "left",
+            "left",
+            "left",
+            "up",
+            "jump",
+            "put"
+          ],
+          "facing": "left"
+        },
+        {
+          "level": 33,
+          "actions": [
+            "left",
+            "jump",
+            "left",
+            "left",
+            "down",
+            "jump",
+            "left",
+            "left",
+            "up",
+            "up",
+            "up",
+            "up",
+            "right",
+            "jump",
+            "left",
+            "take",
+            "jump",
+            "down",
+            "down",
+            "down",
+            "down",
+            "right",
+            "right",
+            "right",
+            "right",
+            "put"
+          ],
+          "facing": "down"
+        },
+        {
+          "level": 34,
+          "actions": [
+            "right",
+            "right",
+            "up",
+            "up",
+            "left",
+            "left",
+            "up",
+            "up",
+            "right",
+            "jump",
+            "take",
+            "jump",
+            "down",
+            "jump",
+            "right",
+            "right",
+            "up",
+            "up",
+            "put"
+          ],
+          "facing": "right"
+        },
+        {
+          "level": 35,
+          "actions": [
+            "up",
+            "up",
+            "left",
+            "jump",
+            "right",
+            "take",
+            "jump",
+            "down",
+            "down",
+            "right",
+            "jump",
+            "down",
+            "down",
+            "left",
+            "jump",
+            "left",
+            "left",
+            "left",
+            "left",
+            "put"
+          ],
+          "facing": "up"
+        },
+        {
+          "level": 36,
+          "actions": [
+            "jump",
+            "jump",
+            "up",
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "right",
+            "right",
+            "right",
+            "take",
+            "down",
+            "down",
+            "left",
+            "jump",
+            "put"
+          ],
+          "facing": "left"
+        }
+      ]
+    },
+    "code-breaker": {
+      "count": 36,
+      "old18Unchanged": true,
+      "solutions": [
+        {
+          "level": 1,
+          "length": 2,
+          "guesses": [
+            "12",
+            "23",
+            "24"
+          ]
+        },
+        {
+          "level": 2,
+          "length": 2,
+          "guesses": [
+            "12",
+            "23",
+            "31"
+          ]
+        },
+        {
+          "level": 3,
+          "length": 2,
+          "guesses": [
+            "12",
+            "13",
+            "42"
+          ]
+        },
+        {
+          "level": 4,
+          "length": 2,
+          "guesses": [
+            "12",
+            "34",
+            "56"
+          ]
+        },
+        {
+          "level": 5,
+          "length": 2,
+          "guesses": [
+            "01",
+            "12",
+            "30",
+            "40",
+            "50",
+            "60"
+          ]
+        },
+        {
+          "level": 6,
+          "length": 2,
+          "guesses": [
+            "01",
+            "23",
+            "45",
+            "67",
+            "68",
+            "87"
+          ]
+        },
+        {
+          "level": 7,
+          "length": 3,
+          "guesses": [
+            "123",
+            "145",
+            "425"
+          ]
+        },
+        {
+          "level": 8,
+          "length": 3,
+          "guesses": [
+            "123",
+            "214",
+            "351",
+            "362"
+          ]
+        },
+        {
+          "level": 9,
+          "length": 3,
+          "guesses": [
+            "012",
+            "134",
+            "156",
+            "235",
+            "504"
+          ]
+        },
+        {
+          "level": 10,
+          "length": 3,
+          "guesses": [
+            "012",
+            "034",
+            "516",
+            "517",
+            "716"
+          ]
+        },
+        {
+          "level": 11,
+          "length": 3,
+          "guesses": [
+            "012",
+            "134",
+            "256",
+            "708",
+            "790",
+            "809"
+          ]
+        },
+        {
+          "level": 12,
+          "length": 3,
+          "guesses": [
+            "012",
+            "134",
+            "156",
+            "237",
+            "274"
+          ]
+        },
+        {
+          "level": 13,
+          "length": 4,
+          "guesses": [
+            "1234",
+            "1325",
+            "2136",
+            "3514",
+            "4251"
+          ]
+        },
+        {
+          "level": 14,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "0245",
+            "1463",
+            "1627",
+            "5713",
+            "6073"
+          ]
+        },
+        {
+          "level": 15,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1045",
+            "1256",
+            "1364",
+            "2057",
+            "8205"
+          ]
+        },
+        {
+          "level": 16,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1045",
+            "1267",
+            "1289",
+            "1368",
+            "1937"
+          ]
+        },
+        {
+          "level": 17,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1045",
+            "2354",
+            "3406",
+            "3517",
+            "5208",
+            "5802"
+          ]
+        },
+        {
+          "level": 18,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1456",
+            "2547",
+            "3684",
+            "3965",
+            "6085",
+            "6904",
+            "9064"
+          ]
+        },
+        {
+          "level": 19,
+          "length": 2,
+          "guesses": [
+            "01",
+            "02",
+            "03"
+          ]
+        },
+        {
+          "level": 20,
+          "length": 2,
+          "guesses": [
+            "01",
+            "02",
+            "31",
+            "41",
+            "51",
+            "61",
+            "71",
+            "81",
+            "91"
+          ]
+        },
+        {
+          "level": 21,
+          "length": 2,
+          "guesses": [
+            "01",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28"
+          ]
+        },
+        {
+          "level": 22,
+          "length": 2,
+          "guesses": [
+            "01",
+            "12",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70"
+          ]
+        },
+        {
+          "level": 23,
+          "length": 2,
+          "guesses": [
+            "01",
+            "23",
+            "45",
+            "46"
+          ]
+        },
+        {
+          "level": 24,
+          "length": 2,
+          "guesses": [
+            "01",
+            "23",
+            "45",
+            "56",
+            "57",
+            "58",
+            "59"
+          ]
+        },
+        {
+          "level": 25,
+          "length": 3,
+          "guesses": [
+            "012",
+            "023",
+            "031"
+          ]
+        },
+        {
+          "level": 26,
+          "length": 3,
+          "guesses": [
+            "012",
+            "134",
+            "256",
+            "708",
+            "790",
+            "907"
+          ]
+        },
+        {
+          "level": 27,
+          "length": 3,
+          "guesses": [
+            "012",
+            "134",
+            "245",
+            "246",
+            "247",
+            "248"
+          ]
+        },
+        {
+          "level": 28,
+          "length": 3,
+          "guesses": [
+            "012",
+            "134",
+            "256",
+            "507",
+            "670"
+          ]
+        },
+        {
+          "level": 29,
+          "length": 3,
+          "guesses": [
+            "012",
+            "345",
+            "346",
+            "375",
+            "385"
+          ]
+        },
+        {
+          "level": 30,
+          "length": 3,
+          "guesses": [
+            "012",
+            "023",
+            "142",
+            "152",
+            "162",
+            "172",
+            "182",
+            "192"
+          ]
+        },
+        {
+          "level": 31,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "0214",
+            "0235",
+            "0316",
+            "0317",
+            "0318"
+          ]
+        },
+        {
+          "level": 32,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1045",
+            "1267",
+            "2078",
+            "2086",
+            "9072"
+          ]
+        },
+        {
+          "level": 33,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1456",
+            "1478",
+            "1759",
+            "2486"
+          ]
+        },
+        {
+          "level": 34,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "0245",
+            "1463",
+            "1627",
+            "5713",
+            "6703"
+          ]
+        },
+        {
+          "level": 35,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "1045",
+            "2354",
+            "2406",
+            "3651",
+            "3750",
+            "3850"
+          ]
+        },
+        {
+          "level": 36,
+          "length": 4,
+          "guesses": [
+            "0123",
+            "0245",
+            "1426",
+            "1724",
+            "1824",
+            "1924"
+          ]
+        }
+      ]
+    },
+    "toy-memory": {
+      "count": 36,
+      "old18Unchanged": true,
+      "solutions": [
+        {
+          "level": 1,
+          "pairs": 2,
+          "columns": 2,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "level": 2,
+          "pairs": 2,
+          "columns": 2,
+          "preview": 2500,
+          "positions": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "level": 3,
+          "pairs": 3,
+          "columns": 3,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "level": 4,
+          "pairs": 3,
+          "columns": 2,
+          "preview": 3000,
+          "positions": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "level": 5,
+          "pairs": 4,
+          "columns": 4,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "level": 6,
+          "pairs": 4,
+          "columns": 2,
+          "preview": 3500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "level": 7,
+          "pairs": 5,
+          "columns": 3,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "level": 8,
+          "pairs": 5,
+          "columns": 5,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "level": 9,
+          "pairs": 6,
+          "columns": 3,
+          "preview": 3500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 10,
+          "pairs": 6,
+          "columns": 4,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 11,
+          "pairs": 7,
+          "columns": 4,
+          "preview": 4000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 12,
+          "pairs": 7,
+          "columns": 4,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 13,
+          "pairs": 8,
+          "columns": 4,
+          "preview": 4500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 14,
+          "pairs": 8,
+          "columns": 4,
+          "preview": 3000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 15,
+          "pairs": 6,
+          "columns": 3,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 16,
+          "pairs": 7,
+          "columns": 4,
+          "preview": 2500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 17,
+          "pairs": 8,
+          "columns": 4,
+          "preview": 2500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 18,
+          "pairs": 8,
+          "columns": 4,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 19,
+          "pairs": 5,
+          "columns": 3,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "level": 20,
+          "pairs": 5,
+          "columns": 4,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              9
+            ]
+          ]
+        },
+        {
+          "level": 21,
+          "pairs": 6,
+          "columns": 3,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 22,
+          "pairs": 6,
+          "columns": 4,
+          "preview": 2000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 23,
+          "pairs": 6,
+          "columns": 4,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 24,
+          "pairs": 6,
+          "columns": 3,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 25,
+          "pairs": 7,
+          "columns": 3,
+          "preview": 2000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 26,
+          "pairs": 7,
+          "columns": 4,
+          "preview": 2000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 27,
+          "pairs": 7,
+          "columns": 5,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 28,
+          "pairs": 7,
+          "columns": 3,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 29,
+          "pairs": 7,
+          "columns": 4,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 30,
+          "pairs": 7,
+          "columns": 5,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ]
+          ]
+        },
+        {
+          "level": 31,
+          "pairs": 8,
+          "columns": 4,
+          "preview": 2000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 32,
+          "pairs": 8,
+          "columns": 5,
+          "preview": 2000,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 33,
+          "pairs": 8,
+          "columns": 4,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 34,
+          "pairs": 8,
+          "columns": 5,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 35,
+          "pairs": 8,
+          "columns": 3,
+          "preview": 1500,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        },
+        {
+          "level": 36,
+          "pairs": 8,
+          "columns": 5,
+          "preview": 0,
+          "positions": [
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              14,
+              15
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

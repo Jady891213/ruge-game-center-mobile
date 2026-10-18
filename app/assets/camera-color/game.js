@@ -16,7 +16,7 @@ function renderLevels(){
  $('levels').innerHTML='';const stars=mode==='camera'?saved.cameraStars:saved.practiceStars;
  C.LEVELS.forEach((spec,i)=>{const b=document.createElement('button');b.className='level'+(state?.level===i?' selected':'');b.setAttribute('aria-label','第'+(i+1)+'关，'+spec.title+(stars[i]?'，已完成':''));b.innerHTML='<span>'+(i+1)+'</span><span class="mini">'+(stars[i]?'★ ★ ★':'')+'</span>';b.onclick=()=>begin(i);$('levels').appendChild(b);});
 }
-function menu(){stopCamera();stopTimers();active=false;paused=false;$('play').hidden=true;$('menu').hidden=false;$('pause').hidden=true;$('win').hidden=true;$('map').hidden=true;$('continue').hidden=!state;setMode(mode);save();}
+function menu(){window.RugeBack?.clearPause();stopCamera();stopTimers();active=false;paused=false;$('play').hidden=true;$('menu').hidden=false;$('pause').hidden=true;$('win').hidden=true;$('map').hidden=true;$('continue').hidden=!state;setMode(mode);save();}
 function begin(level,nextMode=mode){if(!C.LEVELS[level])return false;stopTimers();stopCamera();mode=nextMode==='practice'?'practice':'camera';state=C.createState(level,mode);practiceIndex=0;open();save();return true;}
 function open(){active=true;paused=false;$('menu').hidden=true;$('play').hidden=false;$('map').hidden=false;$('pause').hidden=true;$('win').hidden=true;render();if(!cover&&!state.finished){showClues();startInput();}}
 function stepIcon(step){if(step.kind==='color')return '<span class="clueDot" style="background:'+C.COLORS[step.color].hex+'"></span>';return icon(step.kind==='warm'?'warm':step.kind==='cool'?'cool':step.kind==='light'||step.kind==='lighter'?'sun':step.kind==='dark'||step.kind==='darker'?'moon':'different');}
@@ -36,7 +36,7 @@ function render(){
  const step=spec.steps[index];$('target').textContent=state.finished?'集齐啦':peeking?'记住顺序':spec.memory?'找第 '+(index+1)+' 个':(step.unique?'另一种':step.kind==='different'?'再找一种':'找')+C.label(step);
  $('peek').hidden=!spec.memory||state.finished||peeking;$('palette').hidden=state.mode!=='practice';$('practiceScene').hidden=state.mode!=='practice';$('cameraBlank').hidden=state.mode==='practice'||!$('preview').hidden;$('cameraHelp').hidden=true;
  $('capture').disabled=paused||peeking||state.finished||!ready;$('pauseButton').disabled=paused;$('restart').disabled=paused;
- $('win').hidden=cover||paused||!state.finished;$('winStars').textContent='★★★';$('next').textContent=state.level===17?'完成':'下一关';
+ $('win').hidden=cover||paused||!state.finished;$('winStars').textContent='★★★';$('next').textContent=state.level===C.LEVELS.length-1?'完成':'下一关';
  renderComparison();
 }
 function showClues(){clearTimeout(peekTimer);if(!C.LEVELS[state.level].memory)return;peeking=true;ready=false;render();peekTimer=setTimeout(()=>{peeking=false;stable.reset();render();if(state.mode==='practice')chooseSample(practiceIndex);},3600);}
@@ -90,11 +90,12 @@ function collect(){
 function pause(){if(!active||cover)return;stopTimers();stopCamera();paused=true;peeking=false;$('win').hidden=true;$('pause').hidden=false;render();save();}
 function resume(){if(!active)return;paused=false;$('pause').hidden=true;render();if(!state.finished){showClues();startInput();}}
 for(const [id,name] of [['home','back'],['map','map'],['restart','reset'],['pauseButton','pause'],['capture','camera']])$(id).innerHTML=icon(name);
-$('home').onclick=home;$('pauseHome').onclick=home;$('map').onclick=menu;$('winMap').onclick=menu;$('cameraMode').onclick=()=>setMode('camera');$('practiceMode').onclick=()=>setMode('practice');$('continue').onclick=()=>{if(state){mode=state.mode;open();}};
+$('home').onclick=()=>window.RugeBack.handle();$('pauseHome').onclick=home;$('map').onclick=menu;$('winMap').onclick=menu;$('cameraMode').onclick=()=>setMode('camera');$('practiceMode').onclick=()=>setMode('practice');$('continue').onclick=()=>{if(state){mode=state.mode;open();}};
 $('restart').onclick=()=>{if(!paused)begin(state.level,state.mode);};$('pauseButton').onclick=pause;$('resume').onclick=resume;$('capture').onclick=collect;$('peek').onclick=()=>{if(!paused){fx('hint');showClues();}};
 $('enableCamera').onclick=()=>{if(active&&!paused&&state.mode==='camera'){stopCamera();startInput();}};$('retryCamera').onclick=$('enableCamera').onclick;$('switchPractice').onclick=()=>{if(active&&!paused)begin(state.level,'practice');};
-$('next').onclick=()=>{if(state.finished&&!paused){if(state.level<17)begin(state.level+1,state.mode);else menu();}};
+$('next').onclick=()=>{if(state.finished&&!paused){if(state.level<C.LEVELS.length-1)begin(state.level+1,state.mode);else menu();}};
 window.addEventListener('ruge:pause',pause);window.addEventListener('pagehide',()=>{stopTimers();stopCamera();save();});document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 window.__game={core:C,start:begin,menu,state:()=>state,mode:()=>mode,chooseSample,collect,pause,resume,ready:()=>ready,progress:()=>({camera:saved.cameraStars.slice(),practice:saved.practiceStars.slice()}),storageKey:KEY};
 if(cover){document.body.classList.add('cover');state=C.createState(8,'camera');peeking=true;open();$('cameraBlank').hidden=false;$('target').textContent='找找颜色';}else menu();
+window.onRugeBack=()=>{if(!$('pause').hidden)return window.RugeBack.closePause(()=>{$('pause').hidden=true;},resume);if(active){menu();return true;}return false;};
 })();

@@ -21,6 +21,7 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
+import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -43,6 +44,9 @@ import java.util.Locale;
  *  正式版里这段代码会被编译器整段消除，不残留读取外部目录的能力。 */
 public class MainActivity extends Activity {
     private WebView web;
+    private volatile boolean backPending = false;
+    private volatile long backGeneration = 0L;
+    private long lastBackAt = 0L;
     private GameFeedback feedback;
     private GameAudio audio;
     private GameAssessment assessment;
@@ -258,6 +262,11 @@ public class MainActivity extends Activity {
      * 而且退出时没有任何状态提示。
      */
     private class NavBridge {
+        @JavascriptInterface
+        public boolean backRequestActive(long generation) {
+            return !destroyed && foreground && backPending && generation == backGeneration;
+        }
+
         @JavascriptInterface
         public void home() {
             runOnUiThread(new Runnable() {
@@ -560,6 +569,8 @@ public class MainActivity extends Activity {
     private class LocalPageClient extends WebViewClient {
         @Override
         public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+            backGeneration++;
+            backPending = false;
             // Leaving a game always closes its capture, even if pagehide never executes.
             assessmentPage = false;
             servicesPage = false;
@@ -677,29 +688,49 @@ public class MainActivity extends Activity {
         }
     }
 
-    /** 系统返回：游戏内统一回游戏中心首页，首页再返回退出。 */
+    /** 页面先消费内部层级，只有游戏根页才回合集；合集再返回退出。 */
     @Override
     public void onBackPressed() {
-        if (assessment != null) assessment.cancelInternal();
-        // Every game owns its internal menus. The system back gesture has one
-        // stable meaning: leave the game and return to the collection homepage.
-        // History can be empty after reloads or development-page navigation.
-        String current = web == null ? null : web.getUrl();
-        String home = startUrl();
+        if (destroyed || !foreground || web == null || backPending) return;
+        long now = SystemClock.uptimeMillis();
+        if (now - lastBackAt < 200L) return;
+        lastBackAt = now;
+        final String current = web.getUrl();
+        final String home = startUrl();
         boolean atHome = current != null
                 && android.net.Uri.parse(home).getPath().equals(android.net.Uri.parse(current).getPath());
-        if (web != null && !atHome) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-            web.loadUrl(home);
-            web.clearHistory();
-        } else {
+        if (atHome) {
             finish();
+            return;
         }
+        backPending = true;
+        final long generation = ++backGeneration;
+        web.evaluateJavascript("(function(){if(window.RugeNav && typeof window.RugeNav.backRequestActive === 'function' && !window.RugeNav.backRequestActive(" + generation + "))return true;return !!(window.RugeBack && window.RugeBack.handle());})()", new ValueCallback<String>() {
+            @Override public void onReceiveValue(String value) {
+                if (destroyed || web == null || generation != backGeneration) return;
+                backPending = false;
+                if (!foreground || current == null || !current.equals(web.getUrl())) return;
+                // Missing page code can fall back, but a slow/stale callback cannot
+                // send a newer page home. Internal handlers cancel their own media.
+                if (!"true".equals(value)) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+                    web.loadUrl(home);
+                }
+            }
+        });
+        // Release a stuck dispatch for retry; never navigate on a timer.
+        web.postDelayed(new Runnable() {
+            @Override public void run() {
+                if (generation == backGeneration) { backGeneration++; backPending = false; }
+            }
+        }, 1200L);
     }
 
     @Override
     protected void onPause() {
         foreground = false;
+        backGeneration++;
+        backPending = false;
         if (services != null) services.cancelInternal();
         if (assessment != null) assessment.cancelInternal();
         if (feedback != null) feedback.foreground(false);

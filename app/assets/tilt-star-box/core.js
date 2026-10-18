@@ -15,7 +15,32 @@ const boards=[
  ['.#...','A..b.','.....','.B..a','.###.'],
  ['..B..','.A#..','.#.b.','..a..','#....'],
  ['.....','...b#','...A#','Ba#..','..###'],
- ['B..A.','#..#a','...b.','.....','.....']
+ ['B..A.','#..#a','...b.','.....','.....'],
+    // 4.33: new fixed puzzles, solved with the real slide/pour rules before inclusion.
+    ["#..A",".B.#","..ab","...."],
+    [".#..",".#..",".#bA","#Ba."],
+    ["A.B#","ba..","....",".#.."],
+    ["#.B#","a..b","....","#.A."],
+    ["#b.#","a#..",".B..","A..."],
+    ["..BA","...#",".#.b","a..."],
+    ["...#A","#....",".b...","a.#..","B...#"],
+    ["..b.#","..B..",".....","a.#A.","#...#"],
+    [".....","#....","#b..a","..B..","A##.."],
+    [".A.##",".##.B",".....","#....","#ab.."],
+    [".#...","...#b","...a.",".AB#.","#...."],
+    ["bA..#",".B...","#...a",".....","#...."],
+    ["...a.","..B..",".b##A",".....",".##.."],
+    ["#....",".##.b","a...#",".A...","..B.."],
+    ["#..#.",".##a.",".B..#",".....","A..#b"],
+    [".#bA.",".a..B",".....","...#.","....."],
+    ["....A",".#..B","#....",".....","b#a.."],
+    [".#...","B.b.A",".....",".#a..","....."],
+    ["#.A.#",".....","#a#..","..#..",".b#.B"],
+    ["..A.#","##...",".....",".##..",".b#Ba"],
+    [".#A..","B..b.",".a.##","...#.","..#.."],
+    ["b..##","....#","#..AB","...#.","..#.a"],
+    [".B##.","..#.#",".A...","#.a.b","....."],
+    ["#....",".#...",".a#A#","..#b.","....B"]
 ];
 function parse(rows,id){
  const w=rows[0].length,h=rows.length,walls=[],balls=[],goals=[];
@@ -76,8 +101,8 @@ function solve(levelOrState,maxNodes=100000){
  return null;
 }
 function restore(raw){
- const empty={stars:Array(12).fill(0),session:null};if(!raw||raw.schema!==1)return empty;
- const stars=Array.from({length:12},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0),fail=()=>({stars,session:null});
+ const empty={stars:Array(LEVELS.length).fill(0),session:null};if(!raw||raw.schema!==1)return empty;
+ const stars=Array.from({length:LEVELS.length},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0),fail=()=>({stars,session:null});
  const s=raw.session;if(!s||!validLevel(s.level)||!validPositions(s.positions,LEVELS[s.level])||!Array.isArray(s.history)||s.history.length>1000||s.moves!==s.history.length||typeof s.finished!=='boolean')return fail();
  const replay=createState(s.level);for(const d of s.history)if(!move(replay,d))return fail();
  if(replay.finished!==s.finished||JSON.stringify(replay.positions)!==JSON.stringify(s.positions))return fail();

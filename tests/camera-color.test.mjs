@@ -37,10 +37,10 @@ test('晃动、换色和中断会重新稳定，不接受伪造时间/序号',()
  assert.equal(stable.push({seq:6,ageMs:0,pixels:pixels(C.COLORS.blue.rgb)},step,[],1700).ready,false);
  assert.equal(stable.push({seq:NaN,ageMs:0,pixels:pixels(C.COLORS.blue.rgb)},step,[],1800).ready,false);
 });
-test('18关均用真实规则搜索出完整答案，包含记忆、暖凉、不重复和相对明暗',()=>{
- assert.equal(C.LEVELS.length,18);const lengths=[];
+test('36关均用真实规则搜索出完整答案，包含记忆、暖凉、不重复和相对明暗',()=>{
+ assert.equal(C.LEVELS.length,36);const lengths=[];
  C.LEVELS.forEach((spec,i)=>{const answer=solution(i);assert.ok(answer,'关 '+(i+1)+' 无解');const state=C.createState(i);answer.forEach(index=>assert.equal(C.collect(state,swatches[index]),true));assert.equal(state.finished,true);assert.equal(state.collected.length,spec.steps.length);assert.equal(C.collect(state,swatches[0]),false);lengths.push(answer.length);});
- assert.ok(lengths.includes(4));assert.equal(C.LEVELS.filter(l=>l.memory).length,3);
+ assert.ok(lengths.includes(4));assert.equal(C.LEVELS.filter(l=>l.memory).length,8);
 });
 test('重复颜色不算不同线索，错误提交保留已收集内容',()=>{
  const state=C.createState(9);assert.equal(C.collect(state,C.COLORS.red.rgb),true);assert.equal(C.collect(state,C.COLORS.red.rgb),false);assert.equal(state.collected.length,1);assert.equal(C.collect(state,C.COLORS.yellow.rgb),true);
@@ -50,9 +50,9 @@ test('存档重放真实规则，损坏或不满足线索的记录不恢复，�
  const state=C.createState(6,'practice');C.collect(state,C.COLORS.red.rgb);const raw={schema:1,session:state,cameraStars:[0],practiceStars:[3]};assert.deepEqual(C.restore(raw).session,state);assert.equal(C.restore(raw).cameraStars[0],0);assert.equal(C.restore(raw).practiceStars[0],3);
  const bad=structuredClone(raw);bad.session.collected.push({rgb:C.COLORS.blue.rgb});assert.equal(C.restore(bad).session,null);bad.session.collected=[{rgb:[300,20,10]}];assert.equal(C.restore(bad).session,null);assert.equal(C.restore({schema:9}).session,null);
 });
-test('真实页面颜色卡完成所有18关，记忆阶段禁止提前提交，每关可暂停重来',()=>{
+test('真实页面颜色卡完成所有36关，记忆阶段禁止提前提交，每关可暂停重来',()=>{
  const g=loadGame('camera-color');try{
-  for(let level=0;level<18;level++){
+  for(let level=0;level<C.LEVELS.length;level++){
    g.window.__game.start(level,'practice');if(C.LEVELS[level].memory){assert.equal(g.window.__game.collect(),false);g.tick(3600);}
    for(const i of solution(level)){g.window.__game.chooseSample(i);assert.equal(g.window.__game.collect(),true);}
    assert.equal(g.window.__game.state().finished,true);assert.equal(g.window.__game.progress().practice[level],3);assert.equal(g.window.__game.progress().camera[level],0);

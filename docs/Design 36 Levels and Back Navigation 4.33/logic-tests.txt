@@ -1,0 +1,375 @@
+TAP version 13
+# Subtest: 水果天平36关全部用真实放置/称重求解，固定重量、限定只数、共享库存双桥
+ok 1 - 水果天平36关全部用真实放置/称重求解，固定重量、限定只数、共享库存双桥
+  ---
+  duration_ms: 9.146542
+  ...
+# Subtest: 库存和盘位限制不允许复制水果；越界/继承属性不改变本局
+ok 2 - 库存和盘位限制不允许复制水果；越界/继承属性不改变本局
+  ---
+  duration_ms: 0.45225
+  ...
+# Subtest: 轻重、数量不对与平衡是不同结果；未称重不能通关
+ok 3 - 轻重、数量不对与平衡是不同结果；未称重不能通关
+  ---
+  duration_ms: 0.222875
+  ...
+# Subtest: 第13关双天平共享库存，已平衡盘可取回再分配
+ok 4 - 第13关双天平共享库存，已平衡盘可取回再分配
+  ---
+  duration_ms: 0.323333
+  ...
+# Subtest: 水果存档保留草稿/星数，拒绝超库存、伪造轻重或胜利
+ok 5 - 水果存档保留草稿/星数，拒绝超库存、伪造轻重或胜利
+  ---
+  duration_ms: 0.905208
+  ...
+# Subtest: 真实页面36关连续求解与下一关，3星及36关解锁保存
+ok 6 - 真实页面36关连续求解与下一关，3星及36关解锁保存
+  ---
+  duration_ms: 144.24825
+  ...
+# Subtest: 真实页面取回、重来确认、暂停和后台保留，称重动画不能重入
+ok 7 - 真实页面取回、重来确认、暂停和后台保留，称重动画不能重入
+  ---
+  duration_ms: 22.871958
+  ...
+# Subtest: 水果封面不读写游戏存档，坏档安全回选关
+ok 8 - 水果封面不读写游戏存档，坏档安全回选关
+  ---
+  duration_ms: 13.747292
+  ...
+# Subtest: 旧版动物只迁移星数，不把不同重量的旧草稿放到新秤上
+ok 9 - 旧版动物只迁移星数，不把不同重量的旧草稿放到新秤上
+  ---
+  duration_ms: 0.457417
+  ...
+# Subtest: 真实阻尼天平即时按质量差摆动，有惯性并趋于平衡，不是固定角度
+ok 10 - 真实阻尼天平即时按质量差摆动，有惯性并趋于平衡，不是固定角度
+  ---
+  duration_ms: 1.156875
+  ...
+# Subtest: 点放即时驱动秤杆，暂停停住物理、恢复继续，拖出秤盘不消耗水果
+ok 11 - 点放即时驱动秤杆，暂停停住物理、恢复继续，拖出秤盘不消耗水果
+  ---
+  duration_ms: 32.736084
+  ...
+# Subtest: 4.24旧水果草稿失效但星数与解锁保持，schema3只恢复新题
+ok 12 - 4.24旧水果草稿失效但星数与解锁保持，schema3只恢复新题
+  ---
+  duration_ms: 0.309292
+  ...
+# Subtest: 第3～36关所有合法答案都至少换算两条比例，不能直接照抄任一提示或目标
+ok 13 - 第3～36关所有合法答案都至少换算两条比例，不能直接照抄任一提示或目标
+  ---
+  duration_ms: 25.667375
+  ...
+# Subtest: codebreaker: works as a classic browser script and as a globalThis script
+ok 14 - codebreaker: works as a classic browser script and as a globalThis script
+  ---
+  duration_ms: 5.734875
+  ...
+# Subtest: codebreaker: exact positions, misplaced digits and absent digits are disjoint
+ok 15 - codebreaker: exact positions, misplaced digits and absent digits are disjoint
+  ---
+  duration_ms: 1.382125
+  ...
+# Subtest: codebreaker: all legal two-digit pairs preserve totals and score symmetry
+ok 16 - codebreaker: all legal two-digit pairs preserve totals and score symmetry
+  ---
+  duration_ms: 162.945541
+  ...
+# Subtest: codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+ok 17 - codebreaker: 2, 3 and 4 unique ASCII digits accept zero in every position
+  ---
+  duration_ms: 1.175375
+  ...
+# Subtest: codebreaker: candidates include every legal permutation exactly once
+ok 18 - codebreaker: candidates include every legal permutation exactly once
+  ---
+  duration_ms: 24.734167
+  ...
+# Subtest: codebreaker: all thirty-six fixed levels are progressive, legal and solvable
+ok 19 - codebreaker: all thirty-six fixed levels are progressive, legal and solvable
+  ---
+  duration_ms: 127.9185
+  ...
+# Subtest: codebreaker: candidate filtering keeps the real answer and matches the complete history
+ok 20 - codebreaker: candidate filtering keeps the real answer and matches the complete history
+  ---
+  duration_ms: 8.549542
+  ...
+# Subtest: codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+ok 21 - codebreaker: invalid feedback is rejected; valid but incompatible rows yield no candidates
+  ---
+  duration_ms: 4.432417
+  ...
+# Subtest: codebreaker: random challenge samples all legal candidates without endpoint bias
+ok 22 - codebreaker: random challenge samples all legal candidates without endpoint bias
+  ---
+  duration_ms: 2671.76725
+  ...
+# Subtest: codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+ok 23 - codebreaker: hints state facts inferred from clues, with no hidden-secret argument
+  ---
+  duration_ms: 2.708583
+  ...
+# Subtest: codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+ok 24 - codebreaker: inferred hint facts hold for every two-digit feedback candidate set
+  ---
+  duration_ms: 20.372291
+  ...
+# Subtest: codebreaker UI: incomplete and duplicate inputs do not consume attempts
+ok 25 - codebreaker UI: incomplete and duplicate inputs do not consume attempts
+  ---
+  duration_ms: 28.3745
+  ...
+# Subtest: codebreaker UI: backspace stays available and removes one slot without changing submitted history
+ok 26 - codebreaker UI: backspace stays available and removes one slot without changing submitted history
+  ---
+  duration_ms: 17.112542
+  ...
+# Subtest: codebreaker UI: old campaign saves retain player guesses including a former starter guess
+ok 27 - codebreaker UI: old campaign saves retain player guesses including a former starter guess
+  ---
+  duration_ms: 4.430958
+  ...
+# Subtest: codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars
+ok 28 - codebreaker UI: restart confirms, cancels safely and resets this level without clearing earned stars
+  ---
+  duration_ms: 53.921125
+  ...
+# Subtest: codebreaker UI: restart keeps the current free password and challenge settings
+ok 29 - codebreaker UI: restart keeps the current free password and challenge settings
+  ---
+  duration_ms: 9.106709
+  ...
+# Subtest: codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+ok 30 - codebreaker UI: zero-first guesses keep their length, feedback and history after reload
+  ---
+  duration_ms: 66.852292
+  ...
+# Subtest: codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+ok 31 - codebreaker UI: zero-first secrets and draft survive reload and win exactly once
+  ---
+  duration_ms: 35.148958
+  ...
+# Subtest: codebreaker UI: all thirty-six levels unlock in sequence through real keypad and next-level clicks
+ok 32 - codebreaker UI: all thirty-six levels unlock in sequence through real keypad and next-level clicks
+  ---
+  duration_ms: 174.555958
+  ...
+# Subtest: codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+ok 33 - codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two
+  ---
+  duration_ms: 39.514209
+  ...
+# Subtest: codebreaker UI: one and two stars follow actual attempts beyond the published target
+ok 34 - codebreaker UI: one and two stars follow actual attempts beyond the published target
+  ---
+  duration_ms: 83.231084
+  ...
+# Subtest: codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+ok 35 - codebreaker UI: free 2/3/4-digit challenges win on the last allowed attempt and record once
+  ---
+  duration_ms: 102.2975
+  ...
+# Subtest: codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+ok 36 - codebreaker UI: challenge exhaustion ends at 6/8/10 attempts and practice remains unlimited
+  ---
+  duration_ms: 182.561083
+  ...
+# Subtest: codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+ok 37 - codebreaker UI: home and native pause preserve the secret, guesses and draft until explicit continue
+  ---
+  duration_ms: 11.192917
+  ...
+# Subtest: codebreaker UI: saved active guesses and draft restore through the actual continue button
+ok 38 - codebreaker UI: saved active guesses and draft restore through the actual continue button
+  ---
+  duration_ms: 9.666208
+  ...
+# Subtest: codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+ok 39 - codebreaker UI: malformed saves are ignored and ended wins are not counted again on load
+  ---
+  duration_ms: 49.781625
+  ...
+# Subtest: codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+ok 40 - codebreaker UI: invalid active histories do not restore duplicate attempts or guesses after victory
+  ---
+  duration_ms: 34.444375
+  ...
+# Subtest: 帽子36关每次只交换两顶帽子，按真实换位规则全部可解，含四种任务而非只加速
+ok 41 - 帽子36关每次只交换两顶帽子，按真实换位规则全部可解，含四种任务而非只加速
+  ---
+  duration_ms: 5.532833
+  ...
+# Subtest: 预览和换位不能偷选；越界及重复帽子没有副作用
+ok 42 - 预览和换位不能偷选；越界及重复帽子没有副作用
+  ---
+  duration_ms: 0.329041
+  ...
+# Subtest: 按顺序关必须先找当前目标，错误保留当前任务与所有正确结果
+ok 43 - 按顺序关必须先找当前目标，错误保留当前任务与所有正确结果
+  ---
+  duration_ms: 0.186833
+  ...
+# Subtest: 存档校验真实换位顺序、目标顺序和胜利；中断换位恢复原始观察而非暴露最终位置
+ok 44 - 存档校验真实换位顺序、目标顺序和胜利；中断换位恢复原始观察而非暴露最终位置
+  ---
+  duration_ms: 3.838709
+  ...
+# Subtest: 真实页面36关播放全部换位、点击真实目标通关和下一关，独立进度完整保存
+ok 45 - 真实页面36关播放全部换位、点击真实目标通关和下一关，独立进度完整保存
+  ---
+  duration_ms: 169.887625
+  ...
+# Subtest: 后公布目标关观察时只有问号，全部换完才公布目标；顺序关高亮当前目标
+ok 46 - 后公布目标关观察时只有问号，全部换完才公布目标；顺序关高亮当前目标
+  ---
+  duration_ms: 11.802208
+  ...
+# Subtest: 暂停遮住整个棋盘与目标，换位中断后从初始布局重看，不自动继续或暴露当前答案
+ok 47 - 暂停遮住整个棋盘与目标，换位中断后从初始布局重看，不自动继续或暴露当前答案
+  ---
+  duration_ms: 17.187333
+  ...
+# Subtest: 找错只抖动且保持帽子覆盖，找对留在原处，重来确认和重看不丢关卡进度
+ok 48 - 找错只抖动且保持帽子覆盖，找对留在原处，重来确认和重看不丢关卡进度
+  ---
+  duration_ms: 11.293375
+  ...
+# Subtest: 帽子换位草稿持久化恢复为初始观察且暂停，封面不读取或覆盖玩家存档
+ok 49 - 帽子换位草稿持久化恢复为初始观察且暂停，封面不读取或覆盖玩家存档
+  ---
+  duration_ms: 22.237458
+  ...
+# Subtest: 三种数组星数存档从18关扩至36关，旧草稿和星数逐项保留，新关不赠星
+ok 50 - 三种数组星数存档从18关扩至36关，旧草稿和星数逐项保留，新关不赠星
+  ---
+  duration_ms: 6.650167
+  ...
+# Subtest: 新18关是不同的天平换算、帽子路线与记忆配置，口令地图不可重复
+ok 51 - 新18关是不同的天平换算、帽子路线与记忆配置，口令地图不可重复
+  ---
+  duration_ms: 175.636458
+  ...
+# Subtest: 翻牌真实页面36关连续翻牌与下一关，最后回本游戏选关且保留独立存档
+ok 52 - 翻牌真实页面36关连续翻牌与下一关，最后回本游戏选关且保留独立存档
+  ---
+  duration_ms: 121.351875
+  ...
+# Subtest: 口令旧18关解锁与角色草稿保持，新关以自身朝向解释前进
+ok 53 - 口令旧18关解锁与角色草稿保持，新关以自身朝向解释前进
+  ---
+  duration_ms: 16.30525
+  ...
+# Subtest: 密码箱按位数分组展示12关，追加零首位密码仍按字符接受
+ok 54 - 密码箱按位数分组展示12关，追加零首位密码仍按字符接受
+  ---
+  duration_ms: 40.997917
+  ...
+# Subtest: 密码箱滚至末关后进入游戏或返回选关会归零根滚动，横屏顶部按钮不遗留在视口外
+ok 55 - 密码箱滚至末关后进入游戏或返回选关会归零根滚动，横屏顶部按钮不遗留在视口外
+  ---
+  duration_ms: 36.38325
+  ...
+# Subtest: 翻牌36关从2对到8对，随机排列的每种玩具恰好两张，全部按真实翻牌规则完成
+ok 56 - 翻牌36关从2对到8对，随机排列的每种玩具恰好两张，全部按真实翻牌规则完成
+  ---
+  duration_ms: 13.168083
+  ...
+# Subtest: 不匹配两张先一起展示，结算翻回；同一张、已消除和第三张都不能当作新翻牌
+ok 57 - 不匹配两张先一起展示，结算翻回；同一张、已消除和第三张都不能当作新翻牌
+  ---
+  duration_ms: 0.358375
+  ...
+# Subtest: 存档允许半翻牌与待翻回，严格拒绝伪造牌组、配对、相位或计数，不影响独立星数
+ok 58 - 存档允许半翻牌与待翻回，严格拒绝伪造牌组、配对、相位或计数，不影响独立星数
+  ---
+  duration_ms: 1.81375
+  ...
+# Subtest: 翻牌随机局不会总是相邻成对；异常输入和原帽子存档不混用
+ok 59 - 翻牌随机局不会总是相邻成对；异常输入和原帽子存档不混用
+  ---
+  duration_ms: 0.424666
+  ...
+# Subtest: 口令小冒险36关使用真实规则求解，每关拿取并送达
+ok 60 - 口令小冒险36关使用真实规则求解，每关拿取并送达
+  ---
+  duration_ms: 426.565542
+  ...
+# Subtest: 口令不能穿墙、不能走入水里，面对水跳跃会跨两格
+ok 61 - 口令不能穿墙、不能走入水里，面对水跳跃会跨两格
+  ---
+  duration_ms: 0.371792
+  ...
+# Subtest: 口令暂停与恢复保留位置和携带物，过关后命令无效
+ok 62 - 口令暂停与恢复保留位置和携带物，过关后命令无效
+  ---
+  duration_ms: 0.633833
+  ...
+# Subtest: 怪兽18关的真实物理可零碰撞通关
+ok 63 - 怪兽18关的真实物理可零碰撞通关
+  ---
+  duration_ms: 108.154042
+  ...
+# Subtest: 怪兽摔落会回到安全检查点，暂停不继续移动
+ok 64 - 怪兽摔落会回到安全检查点，暂停不继续移动
+  ---
+  duration_ms: 3.398
+  ...
+# Subtest: 口令UI按钮执行、重复进关和存档恢复使用同一核心
+ok 65 - 口令UI按钮执行、重复进关和存档恢复使用同一核心
+  ---
+  duration_ms: 146.530833
+  ...
+# Subtest: 两款声音游戏离开前台暂停，回到前台不自动开麦或行动
+ok 66 - 两款声音游戏离开前台暂停，回到前台不自动开麦或行动
+  ---
+  duration_ms: 20.854958
+  ...
+# Subtest: 声音输入YIN检测合成音高、静音，儿童相对音域校准后高跳低蹲
+ok 67 - 声音输入YIN检测合成音高、静音，儿童相对音域校准后高跳低蹲
+  ---
+  duration_ms: 40.030042
+  ...
+# Subtest: 损坏或原型名存档不会让口令跳跃或怪兽恢复崩溃
+ok 68 - 损坏或原型名存档不会让口令跳跃或怪兽恢复崩溃
+  ---
+  duration_ms: 0.742667
+  ...
+# Subtest: 从选关返回和页面退出保留草稿，重来只清本关草稿
+ok 69 - 从选关返回和页面退出保留草稿，重来只清本关草稿
+  ---
+  duration_ms: 31.51775
+  ...
+# Subtest: 口令完成一关后下一关可完整再玩，仍由真实按钮驱动
+ok 70 - 口令完成一关后下一关可完整再玩，仍由真实按钮驱动
+  ---
+  duration_ms: 320.558375
+  ...
+# Subtest: 两款封面模式不写存档、不申请麦克风
+ok 71 - 两款封面模式不写存档、不申请麦克风
+  ---
+  duration_ms: 9.974458
+  ...
+# Subtest: 高音与稳定低音直接交替也能再次起跳，持续高音仍只触发一次
+ok 72 - 高音与稳定低音直接交替也能再次起跳，持续高音仍只触发一次
+  ---
+  duration_ms: 4.664791
+  ...
+# Subtest: 口令小冒险真实页面36关连续按按钮通关，下一关与持久化不丢进度
+ok 73 - 口令小冒险真实页面36关连续按按钮通关，下一关与持久化不丢进度
+  ---
+  duration_ms: 6567.132125
+  ...
+1..73
+# tests 73
+# suites 0
+# pass 73
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6667.842792

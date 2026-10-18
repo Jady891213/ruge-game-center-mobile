@@ -62,7 +62,7 @@
       run = { kind: active.kind, levelId: active.kind === 'level' ? active.levelId : null, ...expected,
         guesses: active.guesses, draft: safeDraft, cursor: Number.isInteger(active.cursor) && active.cursor >= 0 && active.cursor < expected.length ? active.cursor : 0,
         hints: Number.isInteger(active.hints) && active.hints >= 0 ? Math.min(active.hints, 5000) : 0, won, ended };
-      if (run.kind === 'level') tier = Math.floor(run.levelId / 6);
+      if (run.kind === 'level') tier = run.length - 2;
     } catch (_) { /* A malformed save cannot prevent the other games from opening. */ }
   }
   function unlocked(id) { return id === 0 || Boolean(store.levels[id - 1]); }
@@ -106,9 +106,9 @@
     if (text) noticeTimer = setTimeout(() => { notice = ''; noticeType = ''; $('notice').textContent = ''; $('notice').hidden = true; }, 1800);
   }
   function showHome() { view = 'home'; closeDialog(); renderHome(); renderView(); save(); }
-  function renderView() { $('home').hidden = view !== 'home'; $('play').hidden = view !== 'play'; }
+  function renderView() { $('home').hidden = view !== 'home'; $('play').hidden = view !== 'play'; if (document.scrollingElement) document.scrollingElement.scrollTop = 0; }
   function renderHome() {
-    $('progressCount').textContent = completed() + ' / 18';
+    $('progressCount').textContent = completed() + ' / ' + C.LEVELS.length;
     $('tiers').innerHTML = '';
     tiers.forEach((title, index) => {
       const node = button($('tiers'), title, '', () => { tier = index; renderHome(); });
@@ -119,7 +119,7 @@
     $('chapterTitle').textContent = ''; $('chapterNote').textContent = '';
     $('levels').innerHTML = '';
     const next = C.LEVELS.find(l => !store.levels[l.id]);
-    C.LEVELS.slice(tier * 6, tier * 6 + 6).forEach(level => {
+    C.LEVELS.filter(level => level.length === tier + 2).forEach(level => {
       const available = unlocked(level.id), record = store.levels[level.id];
       const node = button($('levels'), '', 'level-button' + (!available ? ' locked' : '') + (next && next.id === level.id ? ' current' : ''), () => requestLevel(level.id));
       node.dataset.level = level.id;
@@ -136,7 +136,7 @@
     if (!level || !unlocked(id)) return false;
     run = { kind: 'level', levelId: id, length: level.length, pool: level.pool, secret: level.secret,
       guesses: [], draft: Array(level.length).fill(''), cursor: 0, hints: 0, limit: 0, challenge: false, won: false, ended: false };
-    paused = false; view = 'play'; tier = Math.floor(id / 6); notice = ''; noticeType = '';
+    paused = false; view = 'play'; tier = level.length - 2; notice = ''; noticeType = '';
     closeDialog(); renderPlay(); renderView(); save(); return true;
   }
   function startFree(length = 2, challenge = false) {
@@ -391,4 +391,5 @@
   }
   window.__game = { ...C, KEY, state: () => copy({ view, paused, run, progress: store.levels, free: store.free, modal: modalType, notice }),
     startLevel, startFree, pressDigit, selectSlot, erase, clear, submit, hint, showHome, resume, unlocked, showRules, continueRun };
+window.onRugeBack=()=>{if(!$('modal').hidden){closeDialog();return true;}if(view!=='home'){showHome();return true;}return false;};
 })();

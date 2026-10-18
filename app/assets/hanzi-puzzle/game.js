@@ -5,6 +5,7 @@ const COVER=new URLSearchParams(location.search).get('cover')==='1';
 let storage=null;try{storage=window.localStorage;}catch(e){}
 const G=H.createGame({storage,cover:COVER}),$=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
 function fx(name){if(!COVER&&!paused)window.RugeFX?.emit(name);}
+let backLevelMenu=false;
 let hintIndices=[],hintTimer=0,feedbackTimer=0,repeatTimer=0,repeatAnswer=null,paused=false,lastNew='';
 const preview={schema:1,current:30,found:H.LEVELS.map((l,i)=>i===30?['日','月','明']:[]),selected:[0,1,2,3],unlocked:30,done:false};
 function state(){return COVER?preview:G.state();}
@@ -88,13 +89,13 @@ function renderLevels(){
   const n=document.createElement('span');n.className='number';n.textContent=li+1;b.append(n);
   if(li<=s.unlocked){const ch=document.createElement('span');ch.className='source';ch.textContent=lv.source;b.append(ch);b.setAttribute('aria-label','第 '+(li+1)+' 关 '+lv.source);}
   else{b.disabled=true;b.innerHTML+='<svg class="lock" viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v11H5Z"/></svg>';b.setAttribute('aria-label','第 '+(li+1)+' 关，未解锁');}
-  b.onclick=()=>{if(COVER||paused)return;if(G.loadLevel(li)){fx('tap');clearHint();$('feedback').textContent='';$('levelDialog').close();render();}};
+  b.onclick=()=>{if(COVER||paused&&!backLevelMenu)return;paused=false;$('pausePanel').hidden=true;backLevelMenu=false;if(G.loadLevel(li)){fx('tap');clearHint();$('feedback').textContent='';$('levelDialog').close();render();}};
   $('levelGrid').append(b);
  });
 }
-$('levelBtn').onclick=()=>{if(COVER||paused)return;renderLevels();$('levelDialog').showModal();$('levelGrid').querySelector('.current')?.scrollIntoView({block:'nearest'});};$('closeLevels').onclick=()=>$('levelDialog').close();
+$('levelBtn').onclick=()=>{if(COVER||paused)return;window.RugeBack?.clearPause();backLevelMenu=false;renderLevels();$('levelDialog').showModal();$('levelGrid').querySelector('.current')?.scrollIntoView({block:'nearest'});};$('closeLevels').onclick=()=>{backLevelMenu=false;$('levelDialog').close();};
 function home(){if(COVER)return;try{if(window.RugeNav){window.RugeNav.home();return;}}catch(e){}location.href='../index.html';}
-$('home').onclick=home;$('pauseHome').onclick=home;
+$('home').onclick=()=>window.RugeBack.handle();$('pauseHome').onclick=home;
 function pause(){if(COVER||paused)return;paused=true;clearHint();clearRepeat();$('levelDialog').close();$('resetDialog').close();$('pausePanel').hidden=false;renderBoard();}
 function resume(){paused=false;$('pausePanel').hidden=true;render();}
 $('resume').onclick=resume;window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
@@ -102,4 +103,5 @@ window.addEventListener('ruge:resume',()=>{/* Resume only after an explicit tap.
 if(COVER)document.body.classList.add('cover-mode');
 render();
 window.__game={...H,DATA,COVER,board:B,geometry:boardGeometry,state:()=>({...state(),paused}),toggle:choose,setSelection:indices=>{if(COVER||paused)return false;clearHint();const result=G.setSelection(indices);render();return result;},submit:()=>{$('submit').click();},clear:()=>{$('clear').click();},reset:()=>{$('reset').click();},loadLevel:li=>{if(COVER)return false;const result=G.loadLevel(li);clearHint();render();return result;},pause,resume,engine:G};
+window.onRugeBack=()=>{if(!$('pausePanel').hidden)return window.RugeBack.closePause(()=>{$('pausePanel').hidden=true;},resume);if($('resetDialog').open){$('resetDialog').close();return true;}if($('levelDialog').open){if(backLevelMenu)return false;$('levelDialog').close();return true;}clearHint();clearRepeat();renderLevels();$('levelDialog').showModal();backLevelMenu=true;return true;};
 })();

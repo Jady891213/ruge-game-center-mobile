@@ -40,12 +40,12 @@ body.night #scores{color:#fff6e8}body.night #score{text-shadow:0 2px #55746b}bod
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <link rel="stylesheet" href="../shared/garden-ui.css">
-</head>
+<link rel="stylesheet" href="../shared/back-navigation.css"></head>
 <body class="action-game">
 <div id="stage">
   <canvas id="cv"></canvas>
   <div id="hud">
-    <div id="controls"><button id="homeBtn" aria-label="返回游戏中心"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M6 9v12h12V9M10 21v-7h4v7"/></svg></button><button id="pauseBtn" aria-label="暂停游戏"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button><button id="mute" aria-label="声音开关" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 8q4 4 0 8"/></svg></button></div>
+    <div id="controls"><button id="homeBtn" aria-label="返回上一级"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7M6 9v12h12V9M10 21v-7h4v7"/></svg></button><button id="pauseBtn" aria-label="暂停游戏"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button><button id="mute" aria-label="声音开关" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 8q4 4 0 8"/></svg></button></div>
     <div id="scores"><div id="score">0</div><div id="hi">BEST 0</div></div>
     <div id="mission"><span id="objective"></span><b id="progress"></b></div><div id="cue"></div>
     <div id="hint" hidden></div>
@@ -356,7 +356,7 @@ function goHome() {
   try { if (window.RugeNav && window.RugeNav.home) { window.RugeNav.home(); return; } } catch(e) {}
   location.href = '../index.html';
 }
-document.getElementById('homeBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run')setPaused(true);goHome();});
+document.getElementById('homeBtn').addEventListener('click', function(e){e.stopPropagation();window.RugeBack.handle();});
 document.getElementById('pauseBtn').addEventListener('click', function(e){e.stopPropagation();if(state==='run') setPaused(!paused);});
 document.getElementById('resumeBtn').addEventListener('click',function(){setPaused(false);});
 document.getElementById('restartBtn').addEventListener('click',function(){startGame();});
@@ -821,9 +821,11 @@ if(!showPreview())requestAnimationFrame(frame);
 if(window.RugeGardenArt)window.RugeGardenArt.whenReady(function(){showPreview();if(!/[?&]cover=1(?:&|$)/.test(location.search))render();});
 console.log('[flappy] ready, ' + W + 'x' + H + ' DPR=' + DPR + ' groundY=' + Math.round(L.groundY) + ' gap=' + Math.round(L.gap));
 
+window.onRugeBack=function(){if(paused&&!elPause.classList.contains('hide'))return window.RugeBack.closePause(()=>elPause.classList.add('hide'),()=>setPaused(false));if(state==='ready')return false;recordFeedbackPending=false;if(state==='run')setPaused(true);paused=false;state='ready';lastT=0;document.getElementById('pauseScreen').classList.add('hide');document.getElementById('overScreen').classList.add('hide');document.getElementById('startScreen').classList.remove('hide');return true;};
+
 })();
 </script>
 
 
-</body>
+<script src="../shared/back-navigation.js"></script></body>
 </html>

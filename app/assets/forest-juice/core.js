@@ -19,7 +19,32 @@
     [4,[[0,1,0,1],[1,0,1,0],[2,3,2,3],[3,2,3,2],[],[]]],
     [4,[[0,1,2,3],[1,2,3,0],[2,3,0,1],[3,0,1,2],[],[]]],
     [4,[[0,2,1,3],[1,3,2,0],[2,0,3,1],[3,1,0,2],[],[]]],
-    [4,[[0,1,2,3],[1,0,3,2],[2,3,0,1],[3,2,1,0],[],[]]]
+    [4,[[0,1,2,3],[1,0,3,2],[2,3,0,1],[3,2,1,0],[],[]]],
+    // 4.33: new fixed puzzles, solved with the real slide/pour rules before inclusion.
+    [3,[[2,1,0],[1,2,0],[1,0,2],[],[]]],
+    [3,[[0,1,2],[1,0,1],[2,0,2],[],[]]],
+    [3,[[0,2,1],[1,2,0],[1,0,2],[],[]]],
+    [3,[[0,2,1],[0,2,1],[1,0,2],[],[]]],
+    [3,[[2,1,0],[2,0,1],[2,0,1],[],[]]],
+    [3,[[0,2,1],[1,0,2],[1,0,2],[],[]]],
+    [4,[[1,3,1,3],[2,3,3,0],[1,2,2,0],[1,0,2,0],[],[]]],
+    [4,[[2,1,0,1],[2,3,2,0],[2,3,0,3],[1,3,0,1],[],[]]],
+    [4,[[0,1,1,3],[3,0,1,0],[3,2,3,1],[2,0,2,2],[],[]]],
+    [4,[[1,2,3,3],[1,0,1,3],[3,2,2,0],[0,2,1,0],[],[]]],
+    [4,[[0,2,3,3],[2,2,1,3],[0,2,0,1],[1,3,0,1],[],[]]],
+    [4,[[0,1,2,1],[0,3,0,3],[2,1,2,3],[0,1,2,3],[],[]]],
+    [4,[[2,1,1,0],[3,2,3,3],[2,3,1,0],[2,0,1,0],[],[]]],
+    [4,[[0,3,2,2],[0,2,0,1],[1,3,2,3],[0,1,3,1],[],[]]],
+    [4,[[0,1,2,2],[0,1,3,0],[0,3,2,3],[1,1,2,3],[],[]]],
+    [4,[[1,0,3,1],[0,3,0,3],[1,1,3,2],[2,0,2,2],[],[]]],
+    [4,[[3,3,1,3],[0,2,2,0],[1,2,2,3],[1,0,1,0],[],[]]],
+    [4,[[0,2,2,1],[0,3,0,3],[2,1,1,3],[0,1,2,3],[],[]]],
+    [4,[[2,1,0,1],[3,1,1,3],[2,0,2,3],[3,0,2,0],[],[]]],
+    [4,[[3,1,0,2],[3,2,1,3],[3,0,1,2],[0,0,1,2],[],[]]],
+    [4,[[0,2,0,2],[0,3,0,3],[1,3,1,1],[2,3,2,1],[],[]]],
+    [4,[[1,1,2,1],[1,2,3,0],[3,2,3,0],[3,2,0,0],[],[]]],
+    [4,[[2,0,1,3],[0,1,3,2],[0,3,0,2],[1,3,1,2],[],[]]],
+    [4,[[2,1,0,2],[2,1,0,3],[3,1,0,3],[0,1,2,3],[],[]]]
   ];
   const LEVELS=Object.freeze(boards.map(([capacity,tubes],i)=>Object.freeze({id:i+1,capacity,colors:tubes.filter(t=>t.length).length,tubes:Object.freeze(tubes.map(t=>Object.freeze(t)))})));
   const copy=tubes=>tubes.map(t=>t.slice());
@@ -59,8 +84,8 @@
     return count.every(n=>n===spec.capacity);
   }
   function restore(raw){
-    const empty={stars:Array(12).fill(0),session:null};if(!raw||raw.schema!==1)return empty;
-    const stars=Array.from({length:12},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0);
+    const empty={stars:Array(LEVELS.length).fill(0),session:null};if(!raw||raw.schema!==1)return empty;
+    const stars=Array.from({length:LEVELS.length},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0);
     const fail=()=>({stars,session:null}),s=raw.session;
     if(!s||!validLevel(s.level)||!validBoard(s.tubes,s.level)||!Array.isArray(s.history)||s.history.length>1000||s.moves!==s.history.length||typeof s.finished!=='boolean')return fail();
     const replay=createState(s.level);

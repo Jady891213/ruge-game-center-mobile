@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: 真实原生返回方法等待页内结果、防重入、旧页/迟到结果和超时误退；首页才能退出
+ok 1 - 真实原生返回方法等待页内结果、防重入、旧页/迟到结果和超时误退；首页才能退出
+  ---
+  duration_ms: 1098.746416
+  ...
+# Subtest: animal-balance：关内返回本游戏选关，再返回合集且不清草稿
+ok 2 - animal-balance：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 17.487291
+  ...
+# Subtest: camera-color：关内返回本游戏选关，再返回合集且不清草稿
+ok 3 - camera-color：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 8.449333
+  ...
+# Subtest: forest-juice：关内返回本游戏选关，再返回合集且不清草稿
+ok 4 - forest-juice：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 11.353458
+  ...
+# Subtest: hat-trick：关内返回本游戏选关，再返回合集且不清草稿
+ok 5 - hat-trick：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 7.143917
+  ...
+# Subtest: number-merge：关内返回本游戏选关，再返回合集且不清草稿
+ok 6 - number-merge：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 10.165125
+  ...
+# Subtest: tilt-star-box：关内返回本游戏选关，再返回合集且不清草稿
+ok 7 - tilt-star-box：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 11.110125
+  ...
+# Subtest: paint-mixing：关内返回本游戏选关，再返回合集且不清草稿
+ok 8 - paint-mixing：关内返回本游戏选关，再返回合集且不清草稿
+  ---
+  duration_ms: 15.176375
+  ...
+# Subtest: animal-balance：重置确认先取消，不越级离开本局
+ok 9 - animal-balance：重置确认先取消，不越级离开本局
+  ---
+  duration_ms: 4.757833
+  ...
+# Subtest: forest-juice：重置确认先取消，不越级离开本局
+ok 10 - forest-juice：重置确认先取消，不越级离开本局
+  ---
+  duration_ms: 3.837583
+  ...
+# Subtest: hat-trick：重置确认先取消，不越级离开本局
+ok 11 - hat-trick：重置确认先取消，不越级离开本局
+  ---
+  duration_ms: 4.24775
+  ...
+# Subtest: number-merge：重置确认先取消，不越级离开本局
+ok 12 - number-merge：重置确认先取消，不越级离开本局
+  ---
+  duration_ms: 4.584917
+  ...
+# Subtest: tilt-star-box：重置确认先取消，不越级离开本局
+ok 13 - tilt-star-box：重置确认先取消，不越级离开本局
+  ---
+  duration_ms: 5.330417
+  ...
+# Subtest: paint-mixing：重置确认先取消，不越级离开本局
+ok 14 - paint-mixing：重置确认先取消，不越级离开本局
+  ---
+  duration_ms: 4.507208
+  ...
+# Subtest: 字库详情、出处、列表、所属打字入口逐层返回；筛选与滚动位置保留
+ok 15 - 字库详情、出处、列表、所属打字入口逐层返回；筛选与滚动位置保留
+  ---
+  duration_ms: 14.52825
+  ...
+# Subtest: 从合集直接打开字库时，列表返回合集，不强塞打字入口
+ok 16 - 从合集直接打开字库时，列表返回合集，不强塞打字入口
+  ---
+  duration_ms: 6.8555
+  ...
+# Subtest: 打字统计、练习和原入口逐层返回，不写入多余题目成绩
+ok 17 - 打字统计、练习和原入口逐层返回，不写入多余题目成绩
+  ---
+  duration_ms: 18.266167
+  ...
+# Subtest: 专业朗读先关闭分组/设置弹层，再返回打字，取消收音且不自动开始
+ok 18 - 专业朗读先关闭分组/设置弹层，再返回打字，取消收音且不自动开始
+  ---
+  duration_ms: 8.510833
+  ...
+# Subtest: 翻牌子游戏回选关，再回帽子入口，不跨到合集
+ok 19 - 翻牌子游戏回选关，再回帽子入口，不跨到合集
+  ---
+  duration_ms: 6.591042
+  ...
+# Subtest: 口令返回选关停止收音、清队列，迟到开始不重开游戏
+ok 20 - 口令返回选关停止收音、清队列，迟到开始不重开游戏
+  ---
+  duration_ms: 21.426875
+  ...
+# Subtest: 飞机返回飞行入口停麦且保持横屏，离开游戏才恢复竖屏
+ok 21 - 飞机返回飞行入口停麦且保持横屏，离开游戏才恢复竖屏
+  ---
+  duration_ms: 13.712042
+  ...
+# Subtest: 雷达回模式入口再离开，停止本轮寻宝
+ok 22 - 雷达回模式入口再离开，停止本轮寻宝
+  ---
+  duration_ms: 6.64375
+  ...
+# Subtest: 英语冒险由拼写回选关、标题入口，再离开；草稿保持
+ok 23 - 英语冒险由拼写回选关、标题入口，再离开；草稿保持
+  ---
+  duration_ms: 7.899584
+  ...
+# Subtest: flappy-bird：进行中回开始画面，下一次才离开
+ok 24 - flappy-bird：进行中回开始画面，下一次才离开
+  ---
+  duration_ms: 9.065125
+  ...
+# Subtest: frog-pond：进行中回开始画面，下一次才离开
+ok 25 - frog-pond：进行中回开始画面，下一次才离开
+  ---
+  duration_ms: 9.401791
+  ...
+# Subtest: 水管默认棋盘返回关卡根页再合集，普通选关弹层关闭仍保留暂停
+ok 26 - 水管默认棋盘返回关卡根页再合集，普通选关弹层关闭仍保留暂停
+  ---
+  duration_ms: 11.846042
+  ...
+# Subtest: 钢珠默认棋盘返回选关根页再合集；选关弹层关闭不自动恢复物理
+ok 27 - 钢珠默认棋盘返回选关根页再合集；选关弹层关闭不自动恢复物理
+  ---
+  duration_ms: 13.608875
+  ...
+# Subtest: 字里找字确认框/普通选关先关闭；棋盘返回选关根页再合集
+ok 28 - 字里找字确认框/普通选关先关闭；棋盘返回选关根页再合集
+  ---
+  duration_ms: 30.1395
+  ...
+# Subtest: 密码箱弹层先关闭、再回本游戏首页，保留输入与猜测
+ok 29 - 密码箱弹层先关闭、再回本游戏首页，保留输入与猜测
+  ---
+  duration_ms: 8.40575
+  ...
+# Subtest: 共享返回防止同步重入和异常误退，不依赖浏览器history
+ok 30 - 共享返回防止同步重入和异常误退，不依赖浏览器history
+  ---
+  duration_ms: 1.044792
+  ...
+# Subtest: 全部当前游戏与设置入口都打包统一返回协议，旧legacy不冒充在架入口
+ok 31 - 全部当前游戏与设置入口都打包统一返回协议，旧legacy不冒充在架入口
+  ---
+  duration_ms: 2.754792
+  ...
+# Subtest: animal-balance：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 32 - animal-balance：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 7.60525
+  ...
+# Subtest: camera-color：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 33 - camera-color：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 3.827208
+  ...
+# Subtest: forest-juice：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 34 - forest-juice：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 3.797708
+  ...
+# Subtest: hat-trick：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 35 - hat-trick：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 3.634166
+  ...
+# Subtest: number-merge：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 36 - number-merge：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 5.484333
+  ...
+# Subtest: tilt-star-box：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 37 - tilt-star-box：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 4.737875
+  ...
+# Subtest: paint-mixing：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+ok 38 - paint-mixing：关闭暂停层保留paused，中央继续入口不重叠生成，明确点击才恢复
+  ---
+  duration_ms: 4.501208
+  ...
+# Subtest: 朗读/英语的暂停层返回不恢复收音，明确继续才取消paused
+ok 39 - 朗读/英语的暂停层返回不恢复收音，明确继续才取消paused
+  ---
+  duration_ms: 8.671959
+  ...
+# Subtest: 钢珠运行中暂停层关闭不会继续物理；中央继续显式走原水平校验
+ok 40 - 钢珠运行中暂停层关闭不会继续物理；中央继续显式走原水平校验
+  ---
+  duration_ms: 7.561917
+  ...
+# Subtest: pitch-adventure：关闭暂停层后切后台再回来保留唯一继续入口
+ok 41 - pitch-adventure：关闭暂停层后切后台再回来保留唯一继续入口
+  ---
+  duration_ms: 4.466083
+  ...
+# Subtest: pocket-radar：关闭暂停层后切后台再回来保留唯一继续入口
+ok 42 - pocket-radar：关闭暂停层后切后台再回来保留唯一继续入口
+  ---
+  duration_ms: 8.772416
+  ...
+# Subtest: hanzi-puzzle：关闭暂停层后切后台再回来保留唯一继续入口
+ok 43 - hanzi-puzzle：关闭暂停层后切后台再回来保留唯一继续入口
+  ---
+  duration_ms: 17.753375
+  ...
+# Subtest: english-k：关闭暂停层后切后台再回来保留唯一继续入口
+ok 44 - english-k：关闭暂停层后切后台再回来保留唯一继续入口
+  ---
+  duration_ms: 2.68725
+  ...
+# Subtest: hanzi-typing：关闭暂停层后切后台再回来保留唯一继续入口
+ok 45 - hanzi-typing：关闭暂停层后切后台再回来保留唯一继续入口
+  ---
+  duration_ms: 3.035
+  ...
+# Subtest: 字里找字暂停时点禁用选关不能删掉唯一继续入口
+ok 46 - 字里找字暂停时点禁用选关不能删掉唯一继续入口
+  ---
+  duration_ms: 13.501125
+  ...
+# Subtest: 钢珠暂停返回后去选关再关闭，仍有明确继续入口而非无响应棋盘
+ok 47 - 钢珠暂停返回后去选关再关闭，仍有明确继续入口而非无响应棋盘
+  ---
+  duration_ms: 5.972875
+  ...
+# Subtest: 钢珠已暂停再开重置并取消仍保留暂停入口
+ok 48 - 钢珠已暂停再开重置并取消仍保留暂停入口
+  ---
+  duration_ms: 6.07425
+  ...
+1..48
+# tests 48
+# suites 0
+# pass 48
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1179.781125

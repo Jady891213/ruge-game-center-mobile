@@ -5,9 +5,9 @@ import {loadGame} from './helpers/html-vm.mjs';
 const C=globalThis.HatTrick,copy=x=>JSON.parse(JSON.stringify(x));
 function game(t,storage={},cover=false){const h=loadGame('hat-trick',{storage,instrument:src=>cover?src.replace('cover=/[?&]cover=1(?:&|$)/.test(location.search)','cover=true'):src});t.after(()=>h.dispose());return {h,g:h.window.__game};}
 const finishShuffle=s=>{assert.equal(C.hide(s),true);while(s.phase==='shuffle')assert.equal(C.advance(s),true);};
-test('帽子18关每次只交换两顶帽子，按真实换位规则全部可解，含四种任务而非只加速',()=>{
-  assert.equal(C.LEVELS.length,18);assert.deepEqual([...new Set(C.LEVELS.map(l=>l.mode))],['track','late','pair','order']);assert.equal(C.LEVELS[0].initial.length,3);assert.equal(C.LEVELS[17].initial.length,6);assert.equal(C.LEVELS[17].targets.length,3);assert.ok(Math.min(...C.LEVELS.map(l=>l.duration))>=900);
-  for(let i=0;i<18;i++){const s=C.createState(i),l=C.LEVELS[i];assert.equal(new Set(l.initial).size,l.initial.length);assert.equal(C.hide(s),true);for(const pair of l.swaps){assert.deepEqual(C.nextSwap(s),pair);const before=s.order.slice();C.advance(s);assert.equal(s.order[pair[0]],before[pair[1]]);assert.equal(s.order[pair[1]],before[pair[0]]);before.forEach((id,p)=>{if(!pair.includes(p))assert.equal(s.order[p],id);});}assert.equal(s.phase,'choose');const answer=C.solution(i);answer.forEach(index=>assert.equal(C.pick(s,index).correct,true));assert.equal(s.phase,'won');assert.equal(C.pick(s,0),null);}
+test('帽子36关每次只交换两顶帽子，按真实换位规则全部可解，含四种任务而非只加速',()=>{
+  assert.equal(C.LEVELS.length,36);assert.deepEqual([...new Set(C.LEVELS.map(l=>l.mode))],['track','late','pair','order']);assert.equal(C.LEVELS[0].initial.length,3);assert.equal(C.LEVELS[17].initial.length,6);assert.equal(C.LEVELS[17].targets.length,3);assert.ok(Math.min(...C.LEVELS.map(l=>l.duration))>=900);
+  for(let i=0;i<36;i++){const s=C.createState(i),l=C.LEVELS[i];assert.equal(new Set(l.initial).size,l.initial.length);assert.equal(C.hide(s),true);for(const pair of l.swaps){assert.deepEqual(C.nextSwap(s),pair);const before=s.order.slice();C.advance(s);assert.equal(s.order[pair[0]],before[pair[1]]);assert.equal(s.order[pair[1]],before[pair[0]]);before.forEach((id,p)=>{if(!pair.includes(p))assert.equal(s.order[p],id);});}assert.equal(s.phase,'choose');const answer=C.solution(i);answer.forEach(index=>assert.equal(C.pick(s,index).correct,true));assert.equal(s.phase,'won');assert.equal(C.pick(s,0),null);}
 });
 test('预览和换位不能偷选；越界及重复帽子没有副作用',()=>{
   const s=C.createState(7);assert.equal(C.pick(s,0),null);C.hide(s);assert.equal(C.pick(s,0),null);while(s.phase==='shuffle')C.advance(s);for(const id of [-1,4,'1',NaN,1.5,'constructor'])assert.equal(C.pick(s,id),null);const first=C.solution(7)[0];assert.equal(C.pick(s,first).correct,true);const before=copy(s);assert.equal(C.pick(s,first),null);assert.deepEqual(s,before);
@@ -18,11 +18,11 @@ test('按顺序关必须先找当前目标，错误保留当前任务与所有�
 test('存档校验真实换位顺序、目标顺序和胜利；中断换位恢复原始观察而非暴露最终位置',()=>{
   const s=C.createState(17);C.hide(s);C.advance(s);const raw={schema:1,stars:[3,2],session:s},restored=C.restore(copy(raw));assert.equal(restored.session.phase,'preview');assert.deepEqual(restored.session.order,C.LEVELS[17].initial);assert.equal(restored.session.move,0);
   while(s.phase==='shuffle')C.advance(s);C.pick(s,C.solution(17)[0]);assert.deepEqual(C.restore(copy(raw)).session,s);
-  for(const change of [x=>x.order.reverse(),x=>x.found=[0],x=>x.phase='won',x=>x.move=999,x=>x.attempts=-1,x=>x.mistakes=2,x=>x.level=18]){const bad=copy(raw);change(bad.session);assert.equal(C.restore(bad).session,null);}assert.throws(()=>C.createState(18));
+  for(const change of [x=>x.order.reverse(),x=>x.found=[0],x=>x.phase='won',x=>x.move=999,x=>x.attempts=-1,x=>x.mistakes=2,x=>x.level=36]){const bad=copy(raw);change(bad.session);assert.equal(C.restore(bad).session,null);}assert.throws(()=>C.createState(36));
 });
-test('真实页面18关播放全部换位、点击真实目标通关和下一关，独立进度完整保存',t=>{
+test('真实页面36关播放全部换位、点击真实目标通关和下一关，独立进度完整保存',t=>{
   const {h,g}=game(t,{other:'keep'});assert.equal(h.node('#levels').children[1].disabled,true);g.start(0);
-  for(let i=0;i<18;i++){assert.equal(g.state().level,i);h.node('#hideAnimals').onclick();assert.equal(g.busy(),true);assert.equal(g.pick(0),null);h.tick(20000);assert.equal(g.state().phase,'choose');assert.equal(g.busy(),false);for(const index of C.solution(i))h.node('#hatStage').children[index].onclick();assert.equal(g.state().phase,'won');assert.equal(h.node('#win').hidden,false);assert.equal(g.progress()[i],3);h.node('#next').onclick();}
+  for(let i=0;i<36;i++){assert.equal(g.state().level,i);h.node('#hideAnimals').onclick();assert.equal(g.busy(),true);assert.equal(g.pick(0),null);h.tick(20000);assert.equal(g.state().phase,'choose');assert.equal(g.busy(),false);for(const index of C.solution(i))h.node('#hatStage').children[index].onclick();assert.equal(g.state().phase,'won');assert.equal(h.node('#win').hidden,false);assert.equal(g.progress()[i],3);h.node('#next').onclick();}
   assert.equal(h.node('#menu').hidden,false);assert.ok(h.node('#levels').children.every(b=>!b.disabled));assert.equal(h.saved.get('other'),'keep');assert.equal(C.restore(JSON.parse(h.saved.get(g.storageKey))).session.phase,'won');
 });
 test('后公布目标关观察时只有问号，全部换完才公布目标；顺序关高亮当前目标',t=>{

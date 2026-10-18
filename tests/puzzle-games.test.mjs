@@ -22,10 +22,10 @@ function solvePipe(h, game) {
   assert.equal(h.node('#win').hidden, false);
 }
 
-test('pipe: ten deterministic boards start unsolved and are solved through legal rotations', t => {
+test('pipe: 36 deterministic boards start unsolved and are solved through legal rotations', t => {
   const { game } = puzzle(t, 'pipe-flow');
-  assert.equal(game.LEVELS.length, 10);
-  for (let level = 0; level < 10; level++) {
+  assert.equal(game.LEVELS.length, 36);
+  for (let level = 0; level < game.LEVELS.length; level++) {
     const board = game.newGame(level);
     assert.deepEqual(plain(board), plain(game.newGame(level)), `level ${level + 1} must be reproducible`);
     assert.equal(game.isSolved(board), false);
@@ -79,10 +79,10 @@ test('pipe: three hints consume no rotations, cannot record an unassisted best a
   assert.deepEqual(plain(game.state().tiles.map(tile => tile.rot)), plain(before));
 });
 
-test('pipe: completing the tenth board starts a second campaign whose Next still advances', t => {
+test('pipe: completing the last board starts a second campaign whose Next still advances', t => {
   const { h, game } = puzzle(t, 'pipe-flow');
-  game.loadLevel(9); solvePipe(h, game);
-  assert.equal(JSON.parse(h.saved.get('gardenFlowV2')).highest, 9);
+  game.loadLevel(game.LEVELS.length-1); solvePipe(h, game);
+  assert.equal(JSON.parse(h.saved.get('gardenFlowV2')).highest, game.LEVELS.length-1);
   h.click('#next');
   assert.equal(game.state().li, 0);
   solvePipe(h, game); h.click('#next');

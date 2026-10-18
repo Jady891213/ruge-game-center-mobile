@@ -29,8 +29,8 @@ function steer(state, point) {
   assert.fail(`could not roll to ${point.x},${point.y} from ${state.x},${state.y}`);
 }
 
-test('钢珠迷宫：24张固定关均可解，原18关几何保持，钥匙在门前，前三关没有坑',()=>{
-  assert.equal(C.LEVELS.length,24);
+test('钢珠迷宫：36张固定关均可解，原18关几何保持，钥匙在门前，前三关没有坑',()=>{
+  assert.equal(C.LEVELS.length,36);
   assert.equal(createHash('sha256').update(JSON.stringify(C.LEVELS.slice(0,18))).digest('hex'),'f3dce96e53d8b7d43a90dace583fa69e965d947972255594398d81705ed89b2a','4.19原18关全部几何/收集/机关初态不得改变');
   const keys=['cols','rows','w','h','theme','route','edges','walls','start','goal','stars','key','gate','holes','bumpers'];
   const baseline=JSON.stringify(C.LEVELS.slice(0,12).map(l=>Object.fromEntries(keys.map(k=>[k,l[k]]))));
@@ -192,8 +192,8 @@ test('钢珠迷宫：最后一关结束可再玩一轮，第二轮下一关仍�
     g.loadLevel(index);g.start();const {ball,level}=g.world();ball.stars.fill(true);ball.key=!!level.key;ball.x=level.goal.x;ball.y=level.goal.y;h.frame(30);
     assert.equal(g.state().result,'win');assert.equal(g.state().paused,true);
   }
-  finish(23);h.click('#next');assert.equal(g.state().li,0);finish(0);h.click('#next');assert.equal(g.state().li,1);
-  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).mechanismReached,23);
+  finish(C.LEVELS.length-1);h.click('#next');assert.equal(g.state().li,0);finish(0);h.click('#next');assert.equal(g.state().li,1);
+  assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).mechanismReached,C.LEVELS.length-1);
   assert.equal(JSON.parse(h.saved.get('rugeMarbleMazeV1')).reached,1);
 });
 
@@ -204,7 +204,7 @@ test('钢珠迷宫：封面无输入、无物理、无写盘、无奖励',t=>{
 });
 
 
-test('钢珠机关：十二关按真实求解器与120Hz物理完成，六关必须中途改变挡板朝向',()=>{
+test('钢珠机关：24关按真实求解器与120Hz物理完成，六关必须中途改变挡板朝向',()=>{
   for(const level of C.LEVELS.slice(12)) {
     const solution=C.solveLevel(level);assert.ok(solution);const state=C.create(level.id),turns=[];
     for(const action of solution) {

@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 const C=window.ForestJuice,$=id=>document.getElementById(id),cover=/[?&]cover=1(?:&|$)/.test(location.search),KEY='rugeForestJuiceV1';
-let saved={stars:Array(12).fill(0),session:null};
+let saved={stars:Array(C.LEVELS.length).fill(0),session:null};
 if(!cover){try{saved=C.restore(JSON.parse(localStorage.getItem(KEY)||'null'));}catch(_){}}
 let state=saved.session,active=false,paused=false,busy=false,selected=-1,timer=0;
 const fx=name=>{if(!cover&&!paused)window.RugeFX?.emit(name);};
@@ -11,20 +11,20 @@ $('home').innerHTML=icon('back');$('map').innerHTML=icon('map');$('restart').inn
 function save(){if(cover)return;saved.session=state;try{localStorage.setItem(KEY,JSON.stringify({schema:1,stars:saved.stars,session:state}));}catch(_){}}
 function cancelAnimation(){clearTimeout(timer);timer=0;busy=false;}
 function home(){cancelAnimation();save();if(window.RugeNav&&typeof window.RugeNav.home==='function')window.RugeNav.home();else location.href='../index.html';}
-function unlocked(){let max=0;saved.stars.forEach((n,i)=>{if(n)max=Math.max(max,Math.min(11,i+1));});return max;}
+function unlocked(){let max=0;saved.stars.forEach((n,i)=>{if(n)max=Math.max(max,Math.min(C.LEVELS.length-1,i+1));});return max;}
 function canAct(){return active&&!paused&&!busy&&$('confirm').hidden&&$('win').hidden;}
-function menu(){
+function menu(){window.RugeBack?.clearPause();
   cancelAnimation();active=false;paused=false;selected=-1;$('pause').hidden=true;$('confirm').hidden=true;$('win').hidden=true;$('play').hidden=true;$('menu').hidden=false;$('map').hidden=true;$('levels').innerHTML='';
   C.LEVELS.forEach((l,i)=>{const b=document.createElement('button');b.disabled=i>unlocked();b.setAttribute('aria-label','第 '+(i+1)+' 关'+(b.disabled?'，未解锁':''));b.innerHTML=b.disabled?icon('lock','lockIcon'):'<span>'+(i+1)+'</span><span class="levelStars">'+(saved.stars[i]?'★'.repeat(saved.stars[i]):'')+'</span>';b.onclick=()=>{if(i<=unlocked())begin(i);};$('levels').appendChild(b);});
   $('continue').hidden=!state;$('continue').onclick=()=>{if(state)open();};save();
 }
-function begin(level){if(!Number.isInteger(level)||level<0||level>=12)return false;cancelAnimation();state=C.createState(level);selected=-1;open();save();return true;}
+function begin(level){if(!Number.isInteger(level)||level<0||level>=C.LEVELS.length)return false;cancelAnimation();state=C.createState(level);selected=-1;open();save();return true;}
 function open(){cancelAnimation();active=true;paused=false;selected=-1;$('menu').hidden=true;$('play').hidden=false;$('map').hidden=false;$('pause').hidden=true;$('confirm').hidden=true;$('win').hidden=true;render();}
 function render(){
   if(!state)return;
   const spec=C.LEVELS[state.level];
   $('levelName').textContent='第 '+(state.level+1)+' 关';$('steps').textContent=state.moves?String(state.moves):'';$('steps').setAttribute('aria-label','已倒入 '+state.moves+' 次');
-  $('board').style.setProperty('--columns',state.tubes.length>4?3:2);$('board').style.setProperty('--capacity',spec.capacity);$('board').innerHTML='';
+  $('board').style.setProperty('--columns',state.tubes.length>4?3:2);$('board').style.setProperty('--capacity',spec.capacity);$('board').style.setProperty('--tube-count',state.tubes.length);$('board').innerHTML='';
   state.tubes.forEach((t,i)=>{
     const b=document.createElement('button'),complete=t.length===spec.capacity&&t.every(c=>c===t[0]),legal=selected>=0&&C.pourCount(state.tubes,spec.capacity,selected,i)>0;
     b.className='bottle'+(selected===i?' selected':'')+(legal?' legal':'')+(complete?' complete':'');b.dataset.tube=String(i);b.disabled=paused||busy||state.finished;
@@ -34,7 +34,7 @@ function render(){
   });
   $('undo').disabled=paused||busy||!state.history.length||state.finished;$('restart').disabled=paused||busy;$('pauseButton').disabled=paused||busy;
   document.querySelectorAll('.customer').forEach(el=>{el.style.backgroundPosition=(state.level%3)*50+'% 0';});
-  $('next').textContent=state.level===11?'完成':'下一关';$('win').hidden=cover||paused||busy||!state.finished;
+  $('next').textContent=state.level===C.LEVELS.length-1?'完成':'下一关';$('win').hidden=cover||paused||busy||!state.finished;
 }
 function tap(i){
   if(!canAct()||state.finished||!Number.isInteger(i)||i<0||i>=state.tubes.length)return false;
@@ -53,12 +53,13 @@ function tap(i){
 }
 function pause(){if(!active||cover)return;cancelAnimation();paused=true;selected=-1;$('confirm').hidden=true;$('win').hidden=true;$('pause').hidden=false;render();save();}
 function resume(){if(!active)return;paused=false;$('pause').hidden=true;render();}
-$('home').onclick=home;$('pauseHome').onclick=home;$('map').onclick=menu;$('winMap').onclick=menu;$('pauseButton').onclick=()=>{if(canAct())pause();};$('resume').onclick=resume;
+$('home').onclick=()=>window.RugeBack.handle();$('pauseHome').onclick=home;$('map').onclick=menu;$('winMap').onclick=menu;$('pauseButton').onclick=()=>{if(canAct())pause();};$('resume').onclick=resume;
 $('undo').onclick=()=>{if(canAct()&&!state.finished&&C.undo(state)){selected=-1;render();save();fx('undo');}};
 $('restart').onclick=()=>{if(!canAct())return;if(state.history.length){$('confirm').hidden=false;}else begin(state.level);};
 $('confirmRestart').onclick=()=>{if(!active||paused||$('confirm').hidden)return;begin(state.level);};$('cancelRestart').onclick=()=>{$('confirm').hidden=true;};
-$('next').onclick=()=>{if(!active||paused||busy||!state.finished)return;if(state.level<11)begin(state.level+1);else menu();};
+$('next').onclick=()=>{if(!active||paused||busy||!state.finished)return;if(state.level<C.LEVELS.length-1)begin(state.level+1);else menu();};
 window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});window.addEventListener('pagehide',()=>{cancelAnimation();save();});
 window.__game={core:C,start:begin,menu,tap,state:()=>state,progress:()=>saved.stars.slice(),selected:()=>selected,busy:()=>busy,pause,resume,storageKey:KEY};
 if(cover){document.body.classList.add('cover');$('sceneArt').src='../shared/forest-juice-scene.png';state=C.createState(8);open();}else if(state){open();}else menu();
+window.onRugeBack=()=>{if(!$('pause').hidden)return window.RugeBack.closePause(()=>{$('pause').hidden=true;},resume);if(!$('confirm').hidden){$('cancelRestart').onclick();return true;}if(active){menu();return true;}return false;};
 })();

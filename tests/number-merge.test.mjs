@@ -6,15 +6,15 @@ import {loadGame} from './helpers/html-vm.mjs';
 const C=globalThis.NumberMerge,copy=x=>JSON.parse(JSON.stringify(x));
 const total=a=>a.reduce((n,v)=>n+v,0);
 
-test('数字碰碰12固定关真实BFS可解，答案不超过10，后10关必须换向且中段有干扰数字',()=>{
- assert.equal(C.LEVELS.length,12);const lengths=[];
+test('数字碰碰36固定关真实BFS可解，答案不超过10，后10关必须换向且中段有干扰数字',()=>{
+ assert.equal(C.LEVELS.length,36);const lengths=[];
  C.LEVELS.forEach((l,i)=>{const s=C.createState(i),before=copy(s),answer=C.solve(i);assert.ok(answer,'第'+(i+1)+'关');assert.ok(l.goals.every(g=>g.value>0&&g.value<=10));assert.ok(new Set(l.walls).size===l.walls.length);assert.ok(l.goals.every(g=>!l.walls.includes(g.p)&&!l.cells[g.p]));
   answer.moves.forEach(d=>{const sum=total(s.cells);assert.ok(C.move(s,d));assert.equal(total(s.cells),sum);assert.ok(C.validCells(s.cells,l));});assert.equal(s.finished,true);assert.equal(C.won(s.cells,l),true);lengths.push(s.moves);assert.deepEqual(C.createState(i),before);
   if(i>=2){assert.ok(new Set(answer.moves).size>=2);for(const d of Object.keys(C.DIRECTIONS)){const same=C.createState(i);for(let n=0;n<20;n++)if(!C.move(same,d))break;assert.equal(same.finished,false,'第'+(i+1)+'关不能一直'+d);}}
  });
- assert.deepEqual(lengths,[1,1,2,3,3,4,4,4,4,4,5,6]);
+ assert.deepEqual(lengths.slice(0,12),[1,1,2,3,3,4,4,4,4,4,5,6]);
  for(const i of [7,8]){const s=C.createState(i);C.solve(s).moves.forEach(d=>C.move(s,d));assert.ok(s.cells.filter(Boolean).length>C.LEVELS[i].goals.length,'多余数字无需清空');}
- assert.deepEqual(C.LEVELS.map(l=>l.goals.length),[1,1,1,1,1,1,1,1,1,2,2,2]);assert.throws(()=>C.createState(12));
+ assert.deepEqual(C.LEVELS.slice(0,12).map(l=>l.goals.length),[1,1,1,1,1,1,1,1,1,2,2,2]);assert.throws(()=>C.createState(C.LEVELS.length));
 });
 test('任意两个数相加而非2048翻倍，每个数字单步最多合一次，10以上不合并',()=>{
  const level=C.define(99,4,2,[],[[0,1],[1,2],[2,3]],[[4,6]]);let r=C.slide(level,level.cells,'right');
@@ -30,18 +30,18 @@ test('只有指定星格上的正确数才锁定，路过会停住，锁定块�
  const blocked=C.define(99,4,2,[1],[[0,1]],[[7,3]]);assert.equal(C.slide(blocked,blocked.cells,'right').moved,false);
 });
 test('撤回整步还原所有合并与目标，完成/无效动作不重复写历史',()=>{
- for(let i=0;i<12;i++){const s=C.createState(i),initial=copy(s);for(const d of C.solve(i).moves){const before=copy(s);assert.ok(C.move(s,d));assert.equal(C.undo(s),true);assert.deepEqual(s,before);C.move(s,d);}assert.equal(s.finished,true);assert.equal(C.move(s,'right'),null);while(C.undo(s)){}assert.deepEqual(s,initial);assert.equal(C.undo(s),false);}
+ for(let i=0;i<C.LEVELS.length;i++){const s=C.createState(i),initial=copy(s);for(const d of C.solve(i).moves){const before=copy(s);assert.ok(C.move(s,d));assert.equal(C.undo(s),true);assert.deepEqual(s,before);C.move(s,d);}assert.equal(s.finished,true);assert.equal(C.move(s,'right'),null);while(C.undo(s)){}assert.deepEqual(s,initial);assert.equal(C.undo(s),false);}
  const s=C.createState(0),before=copy(s);for(const d of ['constructor','toString','__proto__','unknown',null,5,{},[]]){assert.equal(C.move(s,d),null);assert.deepEqual(s,before);assert.equal(C.slide(C.LEVELS[0],s.cells,d),null);}
 });
 test('存档严格重放历史保留进度，拒绝伪造数字/完成/原型方向/洞数组',()=>{
- const s=C.createState(11);C.solve(s).moves.slice(0,3).forEach(d=>C.move(s,d));const raw={schema:1,stars:[3,2],session:s};assert.deepEqual(C.restore(copy(raw)).session,s);assert.deepEqual(C.restore(raw).stars,[3,2,0,0,0,0,0,0,0,0,0,0]);
- for(const mutate of [s=>s.cells[0]=10,s=>s.cells[1]=NaN,s=>s.cells[3]=1,s=>s.finished=true,s=>s.moves=44,s=>s.history.push('constructor'),s=>s.history.push('toString'),s=>s.history.push('__proto__'),s=>s.level=12,s=>delete s.cells[0],s=>s.history=Array(501).fill('up')]){const bad=copy(raw);mutate(bad.session);assert.equal(C.restore(bad).session,null);}
+ const s=C.createState(11);C.solve(s).moves.slice(0,3).forEach(d=>C.move(s,d));const raw={schema:1,stars:[3,2],session:s};assert.deepEqual(C.restore(copy(raw)).session,s);assert.deepEqual(C.restore(raw).stars,[3,2,...Array(C.LEVELS.length-2).fill(0)]);
+ for(const mutate of [s=>s.cells[0]=10,s=>s.cells[1]=NaN,s=>s.cells[3]=1,s=>s.finished=true,s=>s.moves=44,s=>s.history.push('constructor'),s=>s.history.push('toString'),s=>s.history.push('__proto__'),s=>s.level=C.LEVELS.length,s=>delete s.cells[0],s=>s.history=Array(501).fill('up')]){const bad=copy(raw);mutate(bad.session);assert.equal(C.restore(bad).session,null);}
  for(const bad of [null,{},[],{schema:2},{schema:1,session:{}}])assert.equal(C.restore(bad).session,null);
  C.solve(s).moves.forEach(d=>C.move(s,d));assert.equal(C.restore(copy(raw)).session.finished,true);
 });
-test('真实页面12关连续完成、动画阻止重入、独立存档与关卡解锁',()=>{
+test('真实页面36关连续完成、动画阻止重入、独立存档与关卡解锁',()=>{
  const g=loadGame('number-merge');try{const a=g.window.__game;assert.equal(g.node('#levels').children[1].disabled,true);a.start(0);
-  for(let i=0;i<12;i++){for(const d of C.solve(i).moves){assert.equal(a.act(d),true);assert.equal(a.busy(),true);assert.equal(a.act(d),false);g.tick(500);}assert.equal(a.state().finished,true);assert.equal(g.node('#win').hidden,false);assert.equal(a.progress()[i],3);g.node('#next').onclick();}
+  for(let i=0;i<C.LEVELS.length;i++){for(const d of C.solve(i).moves){assert.equal(a.act(d),true);assert.equal(a.busy(),true);assert.equal(a.act(d),false);g.tick(500);}assert.equal(a.state().finished,true);assert.equal(g.node('#win').hidden,false);assert.equal(a.progress()[i],3);g.node('#next').onclick();}
   assert.equal(g.node('#menu').hidden,false);assert.ok(g.node('#levels').children.every(b=>!b.disabled));assert.equal(C.restore(JSON.parse(g.saved.get(a.storageKey))).session.finished,true);
  }finally{g.dispose();}
 });

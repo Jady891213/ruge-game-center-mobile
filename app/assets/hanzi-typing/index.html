@@ -26,7 +26,7 @@
 body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-size:200px!important;overflow:hidden}.cover-mode #menu{display:none!important}.cover-mode #play{width:600px;max-width:none;height:360px;padding:20px 25px;overflow:hidden}.cover-mode header{height:43px;min-height:43px}.cover-mode header .tb,.cover-mode #mRotate{display:none}.cover-mode #groupTag{font-size:24px}.cover-mode #prog{margin-top:9px;height:8px}.cover-mode #body{flex-direction:row;gap:28px;align-items:center}.cover-mode #main{flex:1;padding:0;min-height:0}.cover-mode #stage{width:200px;height:200px;min-width:200px;min-height:200px}.cover-mode #py{font-size:29px;margin-top:10px}.cover-mode #bar{flex:1;padding:0}.cover-mode #type{font-size:36px;min-height:74px}.cover-mode .tools{display:flex;gap:9px}.cover-mode .tools .tb{min-width:65px;height:58px}.cover-mode #foot{font-size:25px;margin:13px 0}.cover-mode #big{font-size:154px}
 .library-link{align-self:center;margin-top:16px;text-decoration:none;min-height:48px;padding:9px 24px}.cover-mode .library-link{display:none!important}
 </style>
-</head>
+<link rel="stylesheet" href="../shared/back-navigation.css"></head>
 <body>
 
 <!-- ══════════ 选关 ══════════ -->
@@ -44,7 +44,7 @@ body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-siz
   </div>
   <div id="levels"></div>
   <a class="tb library-link" id="mReading" href="speaking.html">开口读拼音</a>
-  <a class="tb library-link" id="mLibrary" href="../hanzi-library/index.html">识字库</a>
+  <a class="tb library-link" id="mLibrary" href="../hanzi-library/index.html?from=typing">识字库</a>
   <button class="tb rotate" id="mRotate" aria-label="切换横屏" title="切换横屏"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="3"/><path d="M17 3h4v4M21 3l-4 4M6 12v2"/></svg></button>
   <div id="menuFoot">
     60 个常用字 · 拼音字母练习，不区分声调<br>答对后看看笔顺，再读下一个字
@@ -144,7 +144,7 @@ window.STROKES = {"一":{"s":["M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 9
    · 打对后逐笔演示这个字怎么写
    ════════════════════════════════════════════════════════════ */
 
-const LEVELS = window.HanziVocabulary.levels;
+const LEVELS = window.HanziVocabulary.practiceLevels;
 const PY = window.HanziVocabulary.pinyin;
 const PER_GROUP = 5;
 
@@ -420,7 +420,7 @@ async function readCurrent(){
 
 function strokeCount(ch){ return (window.STROKES && window.STROKES[ch] && window.STROKES[ch].s.length) || 0; }
 function diff(ch){ return diffOf(ch, strokeCount(ch), answersOf(ch)); }
-function levelChars(li){ return li < 0 ? LEVELS.map(l=>l.chars).join('') : LEVELS[li].chars; }
+function levelChars(li){ return li < 0 ? [...new Set(LEVELS.flatMap(l=>[...l.chars]))].join('') : LEVELS[li].chars; }
 function parOfLevel(li){
   const chars = levelChars(li);
   let par = 0;
@@ -448,7 +448,7 @@ function renderMenu(){
     b.className='lvcard' + (rec && passed(rec.grade) ? ' pass' : '');
     b.innerHTML = '<div class="top"><span class="no">'+(i+1)+'</span>' +
       (rec&&passed(rec.grade)?'<span class="done">✓</span>':'') + '</div>' +
-      '<div class="nm">'+THEMES[i]+'</div><div class="cs">'+chars.slice(0,2)+'</div>';
+      '<div class="nm">'+(THEMES[i]||lv.name)+'</div><div class="cs">'+chars.slice(0,2)+'</div>';
     b.addEventListener('click', ()=>startLevel(i));
     box.appendChild(b);
   });
@@ -674,7 +674,7 @@ function renderStats(){
 }
 
 /* ══════════ 按钮 ══════════ */
-function backToMenu(){
+function backToMenu(){window.RugeBack?.clearPause();
   cancelAdvance();stopReading();S.session++;S.playing=false;S.accepting=false;S.paused=false;S.pausedAt=0;
   $('#type').blur();$('#type').readOnly=false;
   document.body.classList.remove('is-paused');$('#pausePanel').classList.remove('on');
@@ -734,5 +734,7 @@ window.__game = {
 syncViewport();renderMenu();
 if(COVER){startLevel(5);S.groups=groupsOf([...LEVELS[5].chars]);S.gi=0;startGroup();$('#type').value='tian';$('#foot').textContent='✦';}
 </script>
-</body>
+<script>
+window.onRugeBack=()=>{if($('#pausePanel').classList.contains('on'))return window.RugeBack.closePause(()=>{$('#pausePanel').classList.remove('on');},()=>setPaused(false));if($('#stats').classList.contains('on')){$('#stats').classList.remove('on');return true;}if(S.playing||$('#over').classList.contains('on')||$('#gpanel').classList.contains('on')){backToMenu();return true;}stopReading();return false;};
+</script><script src="../shared/back-navigation.js"></script></body>
 </html>

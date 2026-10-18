@@ -169,10 +169,10 @@ test('codebreaker UI: zero-first secrets and draft survive reload and win exactl
   }
 });
 
-test('codebreaker UI: all eighteen levels unlock in sequence through real keypad and next-level clicks', t => {
+test('codebreaker UI: all thirty-six levels unlock in sequence through real keypad and next-level clicks', t => {
   const { h, g } = game(t);
   assert.equal(g.startLevel(1), false);
-  assert.equal(g.startLevel(18), false);
+  assert.equal(g.startLevel(36), false);
   assert.equal(g.unlocked(1), false);
   h.node('#levels').children[0].dispatch('click');
   for (const level of g.LEVELS) {
@@ -191,14 +191,14 @@ test('codebreaker UI: all eighteen levels unlock in sequence through real keypad
     assert.deepEqual(plain(state.progress[level.id]), { best: 1, stars: 3 });
     assert.equal(Object.keys(state.progress).length, level.id + 1);
     assert.equal(g.submit(), false);
-    if (level.id < 17) {
+    if (level.id < 35) {
       assert.equal(g.unlocked(level.id + 1), true);
       dialogAction(h, '下一关 →');
     }
   }
   dialogAction(h, '回到关卡');
   assert.equal(g.state().view, 'home');
-  assert.equal(h.node('#progressCount').textContent, '18 / 18');
+  assert.equal(h.node('#progressCount').textContent, '36 / 36');
 });
 
 test('codebreaker UI: misplaced digits are not a win and hints cost no attempts but cap new stars at two', t => {

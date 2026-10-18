@@ -69,6 +69,43 @@
     {name:'水果派对',palette:IDS,targets:[target('小橘子','orange',[R,Y,Y]),target('紫葡萄','grapes',[R,B,W])]},
     {name:'彩虹派对',palette:IDS,targets:[target('小鱼儿','fish',[Y,B,B]),target('粉兔兔','bunny',[R,W,W]),target('小花花','flower',[R,B,W,W])]}
   ];
+  // Fixed recipes: r/y/b/w = red/yellow/blue/white. Ratios, tints, then
+  // two/three-order sets. The original ten levels remain byte-for-byte above.
+  const EXTRA_ORDERS=[
+    ['薄荷叶',[['leaf','ybw']]],
+    ['蜜桃兔',[['bunny','ryw']]],
+    ['淡紫云',[['cloud','rbww']]],
+    ['暖橘花',[['flower','rry']]],
+    ['嫩芽叶',[['leaf','yyyb']]],
+    ['深海鱼',[['fish','ybbb']]],
+    ['莓紫葡萄',[['grapes','rrb']]],
+    ['蓝紫葡萄',[['grapes','rbb']]],
+    ['秋日叶',[['leaf','ryb']]],
+    ['奶茶兔',[['bunny','rybw']]],
+    ['蓝天云',[['cloud','bbw']]],
+    ['棉花兔',[['bunny','rwwww']]],
+    ['春日花园',[['leaf','yybw'],['flower','rryw']]],
+    ['海边晚霞',[['fish','ybbw'],['cloud','rbbw']]],
+    ['葡萄新芽',[['grapes','rrbw'],['leaf','yyybw']]],
+    ['橙蓝派对',[['orange','ryyw'],['cloud','bww']]],
+    ['果园寻色',[['orange','rryyy'],['fish','yybbb']]],
+    ['花果盛会',[['flower','rrryy'],['grapes','rrbbb']]],
+    ['清晨花园',[['leaf','yyybbw'],['flower','rryyyw']]],
+    ['黄昏花园',[['grapes','rrrbbw'],['orange','rrybw']]],
+    ['秋天三色',[['leaf','ryyb'],['fish','rybb'],['flower','rryb']]],
+    ['软软三色',[['orange','rrryww'],['leaf','yyybww'],['grapes','rrrbww']]],
+    ['森林调色',[['flower','rrybw'],['leaf','ryybw'],['fish','rybbw']]],
+    ['糖果调色',[['orange','rryyyww'],['fish','yybbbww'],['grapes','rrbbbww']]],
+    ['大地三色',[['flower','rrryyb'],['leaf','ryyybb'],['fish','rrybbb']]],
+    ['森林庆典',[['bunny','rrybww'],['leaf','ryybww'],['fish','rybbww']]]
+  ];
+  const pigment={r:R,y:Y,b:B,w:W};
+  EXTRA_ORDERS.forEach(([name,orders],i)=>{
+    const targets=orders.map(([shape,recipe])=>target(name,shape,[...recipe].map(c=>pigment[c])));
+    const palette=i<12?IDS.filter(c=>targets.some(t=>t.recipe.includes(c))):IDS;
+    LEVELS.push({name,palette,targets});
+  });
+
   const canPaint=(drops,targetColor)=>!!drops.length&&distance(mix(drops),targetColor)<=17;
   function createState(level=0,free=false){
     const li=Number.isInteger(level)&&level>=0&&level<LEVELS.length?level:0;
@@ -87,10 +124,10 @@
   function next(state){if(!state.accepted)return false;if(!state.free&&state.order+1>=LEVELS[state.level].targets.length){state.finished=true;return true;}state.order++;state.drops=[];state.accepted=false;return true;}
   const stars=state=>Math.max(1,3-Math.floor(state.mistakes/2));
   function restore(raw){
-    if(!raw||raw.schema!==1)return {stars:Array(10).fill(0),session:null};
-    const savedStars=Array.from({length:10},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0);
+    if(!raw||raw.schema!==1)return {stars:Array(LEVELS.length).fill(0),session:null};
+    const savedStars=Array.from({length:LEVELS.length},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0);
     const s=raw.session;
-    if(!s||!Number.isInteger(s.level)||s.level<0||s.level>=10||typeof s.free!=='boolean'||!Number.isInteger(s.order)||s.order<0||(!s.free&&s.order>=LEVELS[s.level].targets.length)||s.order>1000||!validDrops(s.drops)||!Number.isInteger(s.mistakes)||s.mistakes<0||s.mistakes>100000||typeof s.accepted!=='boolean'||typeof s.finished!=='boolean'||!Array.isArray(s.painted)||s.painted.length>1001)return {stars:savedStars,session:null};
+    if(!s||!Number.isInteger(s.level)||s.level<0||s.level>=LEVELS.length||typeof s.free!=='boolean'||!Number.isInteger(s.order)||s.order<0||(!s.free&&s.order>=LEVELS[s.level].targets.length)||s.order>1000||!validDrops(s.drops)||!Number.isInteger(s.mistakes)||s.mistakes<0||s.mistakes>100000||typeof s.accepted!=='boolean'||typeof s.finished!=='boolean'||!Array.isArray(s.painted)||s.painted.length>1001)return {stars:savedStars,session:null};
     const palette=s.free?IDS:LEVELS[s.level].palette;
     if(!s.drops.every(c=>palette.includes(c)))return {stars:savedStars,session:null};
     if(s.painted.length!==s.order+(s.accepted?1:0)||s.finished&&(!s.accepted||s.free||s.order!==LEVELS[s.level].targets.length-1))return {stars:savedStars,session:null};

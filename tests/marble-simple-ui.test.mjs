@@ -106,9 +106,9 @@ function finishForNavigation(h,g){
 }
 
 test('钢珠连续过关：平放时点下一关立即运行，无第二次开始/引导/倒计时，末关回首关也相同',t=>{
-  for(const index of [0,12,23]){
+  for(const index of [0,12,23,35]){
     const {h,g}=game(t);g.loadLevel(index);finishForNavigation(h,g);h.click('#next');
-    assert.equal(g.state().level,(index+1)%24);assert.equal(g.state().result,'run');assert.equal(g.state().paused,false);
+    assert.equal(g.state().level,(index+1)%h.window.MarbleMaze.LEVELS.length);assert.equal(g.state().result,'run');assert.equal(g.state().paused,false);
     assert.equal(g.state().waitingFlat,false);assert.equal(h.node('#ready').hidden,true);assert.equal(h.node('#flatGuide').hidden,true);
     const after=g.state().level;h.click('#next');assert.equal(g.state().level,after,'double tap cannot skip another level');
   }

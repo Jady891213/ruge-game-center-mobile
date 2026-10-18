@@ -3,3 +3,6 @@
 #scene .king{width:auto;height:77%;bottom:10%}#scene .blob{width:auto;height:69%;bottom:12%}#scene .friend{width:auto;height:55%;bottom:13%}#scene .castle{width:auto;height:82%;bottom:13%;right:2%}.scene-sky{background-position:center 48%}
 
 body.cover #letters button:disabled{visibility:visible;opacity:1}body.cover #actions button:disabled{opacity:1}
+/* Keep all five life markers and the level button inside the narrow fallback header. */
+@media(max-width:350px){header{gap:4px}header .round{width:40px;height:40px;font-size:24px}.level{white-space:nowrap;flex-shrink:0;font-size:15px;padding:7px 8px}#hearts{white-space:nowrap;font-size:14px;letter-spacing:-1px}#total{min-width:38px;font-size:16px}}
+@media(orientation:portrait) and (max-height:650px){#app{grid-template-rows:48px minmax(80px,1fr) minmax(0,55%)}#task{padding:9px;gap:5px}#work{gap:5px}#actions{gap:14px}#status{min-height:20px}}

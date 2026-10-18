@@ -11,7 +11,8 @@ function typing(t, storage = {}) {
 
 test('typing: sixty unique practice characters have pinyin and complete offline stroke data', t => {
   const { h, game } = typing(t);
-  const chars = game.LEVELS.flatMap(level => [...level.chars]);
+  assert.equal(game.LEVELS.length,36);
+  const chars = [...new Set(game.LEVELS.flatMap(level => [...level.chars]))];
   assert.equal(chars.length, 60);
   assert.equal(new Set(chars).size, 60);
   for (const char of chars) {

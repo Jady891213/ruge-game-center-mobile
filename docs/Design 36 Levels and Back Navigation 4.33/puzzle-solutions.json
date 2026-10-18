@@ -1,0 +1,5964 @@
+{
+  "version": "4.33",
+  "scope": "Actual shipped core solvers, moves, RYB recipes and 120Hz marble physics. Not a child usability or sensor test.",
+  "games": {
+    "gravity-maze": {
+      "count": 36,
+      "levels": [
+        {
+          "level": 1,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            }
+          ],
+          "rotations": 0,
+          "steps": 5,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 2,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            }
+          ],
+          "rotations": 0,
+          "steps": 7,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 3,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 0
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            }
+          ],
+          "rotations": 0,
+          "steps": 9,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 4,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 0
+            }
+          ],
+          "rotations": 0,
+          "steps": 9,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 5,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 0,
+          "steps": 7,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 6,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 0,
+          "steps": 11,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 7,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 0,
+          "steps": 9,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 8,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 0,
+          "steps": 11,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 9,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 0,
+          "steps": 11,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 10,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 0,
+          "steps": 13,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 11,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 0,
+          "steps": 13,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 12,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 27
+            },
+            {
+              "type": "move",
+              "cell": 22
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 0,
+          "steps": 15,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 13,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 1,
+          "steps": 8,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 14,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 1,
+          "steps": 12,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 15,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 2,
+          "steps": 9,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 16,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 19
+            },
+            {
+              "type": "move",
+              "cell": 24
+            }
+          ],
+          "rotations": 2,
+          "steps": 14,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 17,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 2,
+          "steps": 12,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 18,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 19
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 4,
+          "steps": 23,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 19,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 0
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            }
+          ],
+          "rotations": 1,
+          "steps": 10,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 20,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 0
+            }
+          ],
+          "rotations": 2,
+          "steps": 14,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 21,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 2,
+          "steps": 14,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 22,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 23
+            },
+            {
+              "type": "move",
+              "cell": 22
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 0
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 2,
+          "steps": 18,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 23,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 0
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 3,
+          "steps": 20,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 24,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 28
+            },
+            {
+              "type": "move",
+              "cell": 27
+            },
+            {
+              "type": "move",
+              "cell": 22
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 4,
+          "steps": 29,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 25,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 19
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 17
+            }
+          ],
+          "rotations": 2,
+          "steps": 13,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 26,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 8
+            }
+          ],
+          "rotations": 1,
+          "steps": 15,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 27,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 0
+            },
+            {
+              "type": "move",
+              "cell": 4
+            }
+          ],
+          "rotations": 2,
+          "steps": 17,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 28,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 19
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 4
+            },
+            {
+              "type": "move",
+              "cell": 8
+            }
+          ],
+          "rotations": 2,
+          "steps": 18,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 29,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 0
+            }
+          ],
+          "rotations": 3,
+          "steps": 21,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 30,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 23
+            },
+            {
+              "type": "move",
+              "cell": 24
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 23
+            },
+            {
+              "type": "move",
+              "cell": 22
+            }
+          ],
+          "rotations": 1,
+          "steps": 12,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 31,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 2
+            }
+          ],
+          "rotations": 2,
+          "steps": 16,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 32,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 1
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 3
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 9
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 18
+            },
+            {
+              "type": "move",
+              "cell": 19
+            }
+          ],
+          "rotations": 4,
+          "steps": 23,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 33,
+          "actions": [
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 27
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 1
+            }
+          ],
+          "rotations": 3,
+          "steps": 17,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 34,
+          "actions": [
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 27
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 26
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 12
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 2
+            },
+            {
+              "type": "move",
+              "cell": 1
+            }
+          ],
+          "rotations": 3,
+          "steps": 19,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 35,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 27
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 28
+            },
+            {
+              "type": "move",
+              "cell": 29
+            },
+            {
+              "type": "rotate",
+              "index": 0
+            },
+            {
+              "type": "move",
+              "cell": 28
+            },
+            {
+              "type": "move",
+              "cell": 23
+            },
+            {
+              "type": "move",
+              "cell": 22
+            },
+            {
+              "type": "move",
+              "cell": 21
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 15
+            },
+            {
+              "type": "move",
+              "cell": 20
+            },
+            {
+              "type": "move",
+              "cell": 25
+            }
+          ],
+          "rotations": 2,
+          "steps": 13,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        },
+        {
+          "level": 36,
+          "actions": [
+            {
+              "type": "move",
+              "cell": 27
+            },
+            {
+              "type": "move",
+              "cell": 22
+            },
+            {
+              "type": "move",
+              "cell": 23
+            },
+            {
+              "type": "move",
+              "cell": 24
+            },
+            {
+              "type": "move",
+              "cell": 19
+            },
+            {
+              "type": "move",
+              "cell": 14
+            },
+            {
+              "type": "move",
+              "cell": 13
+            },
+            {
+              "type": "move",
+              "cell": 8
+            },
+            {
+              "type": "move",
+              "cell": 7
+            },
+            {
+              "type": "move",
+              "cell": 6
+            },
+            {
+              "type": "move",
+              "cell": 5
+            },
+            {
+              "type": "move",
+              "cell": 10
+            },
+            {
+              "type": "move",
+              "cell": 11
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 17
+            },
+            {
+              "type": "rotate",
+              "index": 1
+            },
+            {
+              "type": "move",
+              "cell": 16
+            },
+            {
+              "type": "move",
+              "cell": 15
+            }
+          ],
+          "rotations": 1,
+          "steps": 18,
+          "physics120Hz": true,
+          "falls": 0,
+          "finished": true
+        }
+      ]
+    },
+    "tilt-star-box": {
+      "count": 36,
+      "levels": [
+        {
+          "level": 1,
+          "actions": [
+            "right"
+          ],
+          "steps": 1,
+          "finished": true
+        },
+        {
+          "level": 2,
+          "actions": [
+            "right",
+            "down"
+          ],
+          "steps": 2,
+          "finished": true
+        },
+        {
+          "level": 3,
+          "actions": [
+            "down",
+            "left",
+            "up"
+          ],
+          "steps": 3,
+          "finished": true
+        },
+        {
+          "level": 4,
+          "actions": [
+            "down",
+            "left",
+            "down",
+            "right"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 5,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 6,
+          "actions": [
+            "down",
+            "left",
+            "up",
+            "right"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 7,
+          "actions": [
+            "right",
+            "down",
+            "left",
+            "down",
+            "left"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 8,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 9,
+          "actions": [
+            "right",
+            "up",
+            "left",
+            "right",
+            "down"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 10,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "left",
+            "up",
+            "right"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 11,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "left",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 12,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "down",
+            "left",
+            "up",
+            "right",
+            "up"
+          ],
+          "steps": 8,
+          "finished": true
+        },
+        {
+          "level": 13,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 14,
+          "actions": [
+            "down",
+            "right",
+            "up",
+            "down",
+            "left"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 15,
+          "actions": [
+            "right",
+            "down",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 16,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 17,
+          "actions": [
+            "right",
+            "up",
+            "left",
+            "up",
+            "left"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 18,
+          "actions": [
+            "down",
+            "right",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 19,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "left",
+            "down",
+            "left",
+            "up"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 20,
+          "actions": [
+            "up",
+            "down",
+            "left",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 21,
+          "actions": [
+            "up",
+            "right",
+            "up",
+            "down",
+            "left",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 22,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "down",
+            "left",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 23,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 24,
+          "actions": [
+            "down",
+            "left",
+            "up",
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 25,
+          "actions": [
+            "right",
+            "up",
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "down",
+            "up",
+            "right"
+          ],
+          "steps": 10,
+          "finished": true
+        },
+        {
+          "level": 26,
+          "actions": [
+            "up",
+            "right",
+            "up",
+            "left",
+            "right",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 27,
+          "actions": [
+            "right",
+            "down",
+            "right",
+            "up",
+            "right",
+            "up",
+            "down"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 28,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 29,
+          "actions": [
+            "down",
+            "left",
+            "up",
+            "right",
+            "down",
+            "left",
+            "down"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 30,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 31,
+          "actions": [
+            "down",
+            "left",
+            "up",
+            "left",
+            "down",
+            "right",
+            "down",
+            "left",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 11,
+          "finished": true
+        },
+        {
+          "level": 32,
+          "actions": [
+            "down",
+            "right",
+            "up",
+            "left",
+            "down",
+            "right",
+            "down"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 33,
+          "actions": [
+            "right",
+            "left",
+            "down",
+            "left",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 34,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "down",
+            "right",
+            "down",
+            "up",
+            "left"
+          ],
+          "steps": 9,
+          "finished": true
+        },
+        {
+          "level": 35,
+          "actions": [
+            "down",
+            "left",
+            "up",
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "right",
+            "down"
+          ],
+          "steps": 10,
+          "finished": true
+        },
+        {
+          "level": 36,
+          "actions": [
+            "down",
+            "left",
+            "up",
+            "left",
+            "down",
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 8,
+          "finished": true
+        }
+      ]
+    },
+    "number-merge": {
+      "count": 36,
+      "levels": [
+        {
+          "level": 1,
+          "actions": [
+            "right"
+          ],
+          "steps": 1,
+          "finished": true
+        },
+        {
+          "level": 2,
+          "actions": [
+            "left"
+          ],
+          "steps": 1,
+          "finished": true
+        },
+        {
+          "level": 3,
+          "actions": [
+            "right",
+            "down"
+          ],
+          "steps": 2,
+          "finished": true
+        },
+        {
+          "level": 4,
+          "actions": [
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 3,
+          "finished": true
+        },
+        {
+          "level": 5,
+          "actions": [
+            "up",
+            "down",
+            "left"
+          ],
+          "steps": 3,
+          "finished": true
+        },
+        {
+          "level": 6,
+          "actions": [
+            "right",
+            "down",
+            "right",
+            "left"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 7,
+          "actions": [
+            "right",
+            "down",
+            "right",
+            "left"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 8,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "down"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 9,
+          "actions": [
+            "left",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 10,
+          "actions": [
+            "down",
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 11,
+          "actions": [
+            "left",
+            "down",
+            "left",
+            "up",
+            "right"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 12,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 13,
+          "actions": [
+            "down",
+            "right",
+            "down",
+            "left"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 14,
+          "actions": [
+            "right",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 15,
+          "actions": [
+            "right",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 16,
+          "actions": [
+            "down",
+            "right",
+            "left",
+            "up"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 17,
+          "actions": [
+            "right",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 18,
+          "actions": [
+            "down",
+            "left",
+            "down",
+            "right"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 19,
+          "actions": [
+            "up",
+            "right",
+            "right",
+            "down",
+            "left"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 20,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "left"
+          ],
+          "steps": 4,
+          "finished": true
+        },
+        {
+          "level": 21,
+          "actions": [
+            "down",
+            "right",
+            "up",
+            "left",
+            "down",
+            "right"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 22,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 23,
+          "actions": [
+            "down",
+            "right",
+            "up",
+            "down",
+            "left"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 24,
+          "actions": [
+            "up",
+            "down",
+            "right",
+            "down",
+            "left",
+            "up",
+            "left"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 25,
+          "actions": [
+            "down",
+            "left",
+            "down",
+            "right",
+            "up",
+            "right",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 9,
+          "finished": true
+        },
+        {
+          "level": 26,
+          "actions": [
+            "up",
+            "left",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 27,
+          "actions": [
+            "right",
+            "down",
+            "left",
+            "right",
+            "up"
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 28,
+          "actions": [
+            "left",
+            "up",
+            "right",
+            "up",
+            "left",
+            "up",
+            "down",
+            "right",
+            "up",
+            "left"
+          ],
+          "steps": 10,
+          "finished": true
+        },
+        {
+          "level": 29,
+          "actions": [
+            "right",
+            "up",
+            "left",
+            "right",
+            "down",
+            "left",
+            "up",
+            "right"
+          ],
+          "steps": 8,
+          "finished": true
+        },
+        {
+          "level": 30,
+          "actions": [
+            "up",
+            "right",
+            "down",
+            "left",
+            "down",
+            "right"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 31,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "up"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 32,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "up",
+            "right",
+            "left"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 33,
+          "actions": [
+            "right",
+            "down",
+            "left",
+            "up",
+            "left",
+            "down",
+            "right"
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 34,
+          "actions": [
+            "left",
+            "up",
+            "right",
+            "down",
+            "right",
+            "up"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 35,
+          "actions": [
+            "left",
+            "down",
+            "right",
+            "up",
+            "right",
+            "down"
+          ],
+          "steps": 6,
+          "finished": true
+        },
+        {
+          "level": 36,
+          "actions": [
+            "right",
+            "down",
+            "left",
+            "up",
+            "right",
+            "left",
+            "down",
+            "right"
+          ],
+          "steps": 8,
+          "finished": true
+        }
+      ]
+    },
+    "forest-juice": {
+      "count": 36,
+      "levels": [
+        {
+          "level": 1,
+          "actions": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 3,
+          "finished": true
+        },
+        {
+          "level": 2,
+          "actions": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "steps": 3,
+          "finished": true
+        },
+        {
+          "level": 3,
+          "actions": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "steps": 5,
+          "finished": true
+        },
+        {
+          "level": 4,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 5,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 6,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 7,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 8,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "steps": 10,
+          "finished": true
+        },
+        {
+          "level": 9,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "steps": 14,
+          "finished": true
+        },
+        {
+          "level": 10,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "steps": 13,
+          "finished": true
+        },
+        {
+          "level": 11,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "steps": 14,
+          "finished": true
+        },
+        {
+          "level": 12,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "steps": 14,
+          "finished": true
+        },
+        {
+          "level": 13,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 14,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 15,
+          "actions": [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 16,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 8,
+          "finished": true
+        },
+        {
+          "level": 17,
+          "actions": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 8,
+          "finished": true
+        },
+        {
+          "level": 18,
+          "actions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 7,
+          "finished": true
+        },
+        {
+          "level": 19,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 20,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "steps": 15,
+          "finished": true
+        },
+        {
+          "level": 21,
+          "actions": [
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 11,
+          "finished": true
+        },
+        {
+          "level": 22,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 23,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 24,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "steps": 14,
+          "finished": true
+        },
+        {
+          "level": 25,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 26,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "steps": 13,
+          "finished": true
+        },
+        {
+          "level": 27,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 28,
+          "actions": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 29,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 30,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 31,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "steps": 13,
+          "finished": true
+        },
+        {
+          "level": 32,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 13,
+          "finished": true
+        },
+        {
+          "level": 33,
+          "actions": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "steps": 13,
+          "finished": true
+        },
+        {
+          "level": 34,
+          "actions": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "steps": 12,
+          "finished": true
+        },
+        {
+          "level": 35,
+          "actions": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "steps": 14,
+          "finished": true
+        },
+        {
+          "level": 36,
+          "actions": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "steps": 14,
+          "finished": true
+        }
+      ]
+    },
+    "paint-mixing": {
+      "count": 36,
+      "levels": [
+        {
+          "level": 1,
+          "orders": [
+            {
+              "shape": "frog",
+              "recipe": [
+                "yellow",
+                "blue"
+              ],
+              "hex": "#29a640",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 2,
+          "orders": [
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "yellow"
+              ],
+              "hex": "#ff780a",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 3,
+          "orders": [
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "blue"
+              ],
+              "hex": "#8c38b8",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 4,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "blue"
+              ],
+              "hex": "#94c328",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 5,
+          "orders": [
+            {
+              "shape": "fish",
+              "recipe": [
+                "yellow",
+                "blue",
+                "blue"
+              ],
+              "hex": "#247d93",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 6,
+          "orders": [
+            {
+              "shape": "bunny",
+              "recipe": [
+                "red",
+                "white",
+                "white"
+              ],
+              "hex": "#ffc6c5",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 7,
+          "orders": [
+            {
+              "shape": "cloud",
+              "recipe": [
+                "blue",
+                "white",
+                "white",
+                "white"
+              ],
+              "hex": "#d5def5",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 8,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "blue"
+              ],
+              "hex": "#29a640",
+              "score": 100
+            },
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "yellow",
+                "white",
+                "white"
+              ],
+              "hex": "#ffc99b",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 9,
+          "orders": [
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "yellow",
+                "yellow"
+              ],
+              "hex": "#ffac0d",
+              "score": 100
+            },
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "blue",
+                "white"
+              ],
+              "hex": "#c092d5",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 10,
+          "orders": [
+            {
+              "shape": "fish",
+              "recipe": [
+                "yellow",
+                "blue",
+                "blue"
+              ],
+              "hex": "#247d93",
+              "score": 100
+            },
+            {
+              "shape": "bunny",
+              "recipe": [
+                "red",
+                "white",
+                "white"
+              ],
+              "hex": "#ffc6c5",
+              "score": 100
+            },
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#d2b0df",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 11,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#8ace94",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 12,
+          "orders": [
+            {
+              "shape": "bunny",
+              "recipe": [
+                "red",
+                "yellow",
+                "white"
+              ],
+              "hex": "#ffb576",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 13,
+          "orders": [
+            {
+              "shape": "cloud",
+              "recipe": [
+                "red",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#d2b0df",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 14,
+          "orders": [
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "yellow"
+              ],
+              "hex": "#ff4d1c",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 15,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "yellow",
+                "blue"
+              ],
+              "hex": "#c7d11c",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 16,
+          "orders": [
+            {
+              "shape": "fish",
+              "recipe": [
+                "yellow",
+                "blue",
+                "blue",
+                "blue"
+              ],
+              "hex": "#2169bb",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 17,
+          "orders": [
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "red",
+                "blue"
+              ],
+              "hex": "#c62d73",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 18,
+          "orders": [
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "blue",
+                "blue"
+              ],
+              "hex": "#5546cf",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 19,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "red",
+                "yellow",
+                "blue"
+              ],
+              "hex": "#66472b",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 20,
+          "orders": [
+            {
+              "shape": "bunny",
+              "recipe": [
+                "red",
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#9e8b77",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 21,
+          "orders": [
+            {
+              "shape": "cloud",
+              "recipe": [
+                "blue",
+                "blue",
+                "white"
+              ],
+              "hex": "#84a1ee",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 22,
+          "orders": [
+            {
+              "shape": "bunny",
+              "recipe": [
+                "red",
+                "white",
+                "white",
+                "white",
+                "white"
+              ],
+              "hex": "#ffdddb",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 23,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#bbd975",
+              "score": 100
+            },
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "white"
+              ],
+              "hex": "#ff8e6d",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 24,
+          "orders": [
+            {
+              "shape": "fish",
+              "recipe": [
+                "yellow",
+                "blue",
+                "blue",
+                "white"
+              ],
+              "hex": "#75acb8",
+              "score": 100
+            },
+            {
+              "shape": "cloud",
+              "recipe": [
+                "red",
+                "blue",
+                "blue",
+                "white"
+              ],
+              "hex": "#948ade",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 25,
+          "orders": [
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "red",
+                "blue",
+                "white"
+              ],
+              "hex": "#db7aa4",
+              "score": 100
+            },
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#d9df61",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 26,
+          "orders": [
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "yellow",
+                "yellow",
+                "white"
+              ],
+              "hex": "#ffca64",
+              "score": 100
+            },
+            {
+              "shape": "cloud",
+              "recipe": [
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#c6d3f4",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 27,
+          "orders": [
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "yellow",
+                "yellow"
+              ],
+              "hex": "#ff930c",
+              "score": 100
+            },
+            {
+              "shape": "fish",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "blue",
+                "blue",
+                "blue"
+              ],
+              "hex": "#26916b",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 28,
+          "orders": [
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "red",
+                "yellow",
+                "yellow"
+              ],
+              "hex": "#ff6113",
+              "score": 100
+            },
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "red",
+                "blue",
+                "blue",
+                "blue"
+              ],
+              "hex": "#703fc4",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 29,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "yellow",
+                "blue",
+                "blue",
+                "white"
+              ],
+              "hex": "#8cc96a",
+              "score": 100
+            },
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "yellow",
+                "yellow",
+                "white"
+              ],
+              "hex": "#ffb04d",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 30,
+          "orders": [
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "red",
+                "red",
+                "blue",
+                "blue",
+                "white"
+              ],
+              "hex": "#c16ab0",
+              "score": 100
+            },
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#d1807f",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 31,
+          "orders": [
+            {
+              "shape": "leaf",
+              "recipe": [
+                "red",
+                "yellow",
+                "yellow",
+                "blue"
+              ],
+              "hex": "#a39121",
+              "score": 100
+            },
+            {
+              "shape": "fish",
+              "recipe": [
+                "red",
+                "yellow",
+                "blue",
+                "blue"
+              ],
+              "hex": "#4e5e82",
+              "score": 100
+            },
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "blue"
+              ],
+              "hex": "#bc4647",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 32,
+          "orders": [
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "red",
+                "red",
+                "yellow",
+                "white",
+                "white"
+              ],
+              "hex": "#ff9185",
+              "score": 100
+            },
+            {
+              "shape": "leaf",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "yellow",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#e1e580",
+              "score": 100
+            },
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "red",
+                "red",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#ef889d",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 33,
+          "orders": [
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#d1807f",
+              "score": 100
+            },
+            {
+              "shape": "leaf",
+              "recipe": [
+                "red",
+                "yellow",
+                "yellow",
+                "blue",
+                "white"
+              ],
+              "hex": "#c0b365",
+              "score": 100
+            },
+            {
+              "shape": "fish",
+              "recipe": [
+                "red",
+                "yellow",
+                "blue",
+                "blue",
+                "white"
+              ],
+              "hex": "#8690a7",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 34,
+          "orders": [
+            {
+              "shape": "orange",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "yellow",
+                "yellow",
+                "white",
+                "white"
+              ],
+              "hex": "#ffbe6c",
+              "score": 100
+            },
+            {
+              "shape": "fish",
+              "recipe": [
+                "yellow",
+                "yellow",
+                "blue",
+                "blue",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#7ebda4",
+              "score": 100
+            },
+            {
+              "shape": "grapes",
+              "recipe": [
+                "red",
+                "red",
+                "blue",
+                "blue",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#aa8dd9",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 35,
+          "orders": [
+            {
+              "shape": "flower",
+              "recipe": [
+                "red",
+                "red",
+                "red",
+                "yellow",
+                "yellow",
+                "blue"
+              ],
+              "hex": "#da5a23",
+              "score": 100
+            },
+            {
+              "shape": "leaf",
+              "recipe": [
+                "red",
+                "yellow",
+                "yellow",
+                "yellow",
+                "blue",
+                "blue"
+              ],
+              "hex": "#6c9c2f",
+              "score": 100
+            },
+            {
+              "shape": "fish",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "blue",
+                "blue",
+                "blue"
+              ],
+              "hex": "#69489d",
+              "score": 100
+            }
+          ],
+          "finished": true
+        },
+        {
+          "level": 36,
+          "orders": [
+            {
+              "shape": "bunny",
+              "recipe": [
+                "red",
+                "red",
+                "yellow",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#da9997",
+              "score": 100
+            },
+            {
+              "shape": "leaf",
+              "recipe": [
+                "red",
+                "yellow",
+                "yellow",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#cdc283",
+              "score": 100
+            },
+            {
+              "shape": "fish",
+              "recipe": [
+                "red",
+                "yellow",
+                "blue",
+                "blue",
+                "white",
+                "white"
+              ],
+              "hex": "#9ea7b8",
+              "score": 100
+            }
+          ],
+          "finished": true
+        }
+      ]
+    }
+  }
+}

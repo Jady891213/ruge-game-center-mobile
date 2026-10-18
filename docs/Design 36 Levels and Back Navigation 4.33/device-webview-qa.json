@@ -1,0 +1,51 @@
+{
+  "method": "Actual MIX 4 WebView via CDP, device locked; not physical Android gesture validation",
+  "deviceLocked": true,
+  "physicalGestureVerified": false,
+  "checks": [
+    {
+      "check": "library opens detail",
+      "result": true
+    },
+    {
+      "check": "library detail back preserves list and context",
+      "result": true
+    },
+    {
+      "check": "library list back goes to typing parent",
+      "result": true
+    },
+    {
+      "check": "memory has 36 levels",
+      "result": true
+    },
+    {
+      "check": "memory menu back goes to hats parent",
+      "result": true
+    },
+    {
+      "check": "English 36 starts",
+      "result": true
+    },
+    {
+      "check": "English back goes to own level list",
+      "result": true
+    },
+    {
+      "check": "English next back goes to own title",
+      "result": true
+    },
+    {
+      "check": "pipe has 36",
+      "result": true
+    },
+    {
+      "check": "pipe board back opens own level root",
+      "result": true
+    },
+    {
+      "check": "pipe level root back goes home",
+      "result": true
+    }
+  ]
+}

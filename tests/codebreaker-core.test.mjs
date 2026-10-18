@@ -15,7 +15,7 @@ test('codebreaker: works as a classic browser script and as a globalThis script'
   const browser = vm.createContext({ window: {} });
   vm.runInContext(source, browser);
   assert.equal(typeof browser.window.RugeCodebreaker.score, 'function');
-  assert.equal(core.LEVELS.length, 18);
+  assert.equal(core.LEVELS.length, 36);
   assert.ok(Object.isFrozen(core));
 });
 
@@ -72,8 +72,8 @@ test('codebreaker: candidates include every legal permutation exactly once', () 
   }
 });
 
-test('codebreaker: all eighteen fixed levels are progressive, legal and solvable', () => {
-  assert.deepEqual(plain(core.LEVELS.map(level => level.length)), [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4]);
+test('codebreaker: all thirty-six fixed levels are progressive, legal and solvable', () => {
+  assert.deepEqual(plain(core.LEVELS.slice(0,18).map(level => level.length)), [2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4]);
   for (const [id, level] of core.LEVELS.entries()) {
     assert.equal(level.id, id);
     assert.ok(level.title && level.lesson);

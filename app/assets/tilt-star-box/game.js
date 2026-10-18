@@ -20,7 +20,7 @@ function refreshMode(){
  $('tiltMode').setAttribute('aria-pressed',String(mode==='tilt'));$('touchMode').setAttribute('aria-pressed',String(mode==='touch'));$('calibrate').hidden=mode!=='tilt';
  $('tiltIndicator').classList.toggle('touch',mode==='touch');if(mode==='touch')$('sensorNotice').hidden=true;
 }
-function menu(){
+function menu(){window.RugeBack?.clearPause();
  cancelAnimation();active=false;paused=false;gate.reset(true);if(motion)motion.release();
  $('play').hidden=true;$('menu').hidden=false;$('map').hidden=true;$('pause').hidden=true;$('confirm').hidden=true;$('win').hidden=true;$('levels').innerHTML='';
  C.LEVELS.forEach((l,i)=>{const b=document.createElement('button');b.disabled=i>unlocked();b.className=saved.stars[i]?'done':'';b.setAttribute('aria-label','第 '+(i+1)+' 关'+(b.disabled?'，未解锁':''));b.innerHTML=b.disabled?icon('lock'):'<span>'+(i+1)+'</span><span class="levelStars">'+(saved.stars[i]?'★ ★ ★':'')+'</span>';b.onclick=()=>{if(i<=unlocked())begin(i);};$('levels').appendChild(b);});
@@ -74,7 +74,7 @@ function onFrame(time){
  unavailableSince=0;$('sensorNotice').hidden=true;if(pendingCalibration){if(motion.calibrate()){pendingCalibration=false;gate.reset(true);$('tiltDot').style.transform='translate(0,0)';}return;}const x=Number.isFinite(input.x)?input.x:0,y=Number.isFinite(input.y)?input.y:0;$('tiltDot').style.transform='translate('+(Math.max(-1,Math.min(1,x/.45))*11)+'px,'+(Math.max(-1,Math.min(1,y/.45))*11)+'px)';
  const d=gate.read(x,y,dt),preview=gate.status().candidate;indicate(preview);if(d)act(d,'tilt');
 }
-$('home').onclick=home;$('pauseHome').onclick=home;$('map').onclick=menu;$('winMap').onclick=menu;
+$('home').onclick=()=>window.RugeBack.handle();$('pauseHome').onclick=home;$('map').onclick=menu;$('winMap').onclick=menu;
 $('pauseButton').onclick=()=>{if(canAct())pause();};$('resume').onclick=resume;$('pauseTouch').onclick=()=>{setMode('touch');resume();};
 $('tiltMode').onclick=()=>{if(canAct()){setMode('tilt');fx('select');}};$('touchMode').onclick=()=>{if(canAct()){setMode('touch');fx('select');}};
 $('calibrate').onclick=()=>{if(!canAct()||!motion)return;gate.reset(true);if(motion.calibrate()){pendingCalibration=false;fx('select');$('status').textContent='已校准';}else{$('sensorNotice').hidden=false;fx('tap');}};
@@ -86,4 +86,5 @@ $('next').onclick=()=>{if(!active||paused||busy||!state.finished)return;if(state
 window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});window.addEventListener('ruge:orientation',()=>{gate.reset(true);if(active)pause();});window.addEventListener('pagehide',()=>{gone=true;cancelAnimation();cancelAnimationFrame(frame);if(motion)motion.destroy();save();});
 window.__game={core:C,start:begin,menu,act,undo:()=>$('undo').onclick(),pause,resume,state:()=>state,progress:()=>saved.stars.slice(),busy:()=>busy,mode:()=>mode,setMode,gate,motionStatus:()=>motion?motion.status():null,pendingCalibration:()=>pendingCalibration,storageKey:KEY,animationDuration:result=>Math.max(...result.paths.map(duration))+30};
 if(cover){document.body.classList.add('cover');state=C.createState(8);open();}else{menu();frame=requestAnimationFrame(onFrame);}
+window.onRugeBack=()=>{if(!$('pause').hidden)return window.RugeBack.closePause(()=>{$('pause').hidden=true;},resume);if(!$('confirm').hidden){$('cancelRestart').onclick();return true;}if(active){menu();return true;}return false;};
 })();

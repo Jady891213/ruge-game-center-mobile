@@ -1,0 +1,18 @@
+{
+  "versionName": "4.33",
+  "versionCode": 56,
+  "apkSha256": "7e6b6eb184545206ea63bb3bc77fda824aec961c4c4bf46c6355048d1a8ed90f",
+  "installedSha256": "7e6b6eb184545206ea63bb3bc77fda824aec961c4c4bf46c6355048d1a8ed90f",
+  "exactApkMatch": true,
+  "debuggable": false,
+  "webviewDebugSocketPresent": false,
+  "adbForwards": [],
+  "saveRestore": {
+    "exact": true,
+    "keys": 31,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  },
+  "physicalAndroidGestureVerified": false,
+  "reason": "Device locked; actual WebView page handlers checked separately using identical DEV assets, native asynchronous back covered by Java harness."
+}

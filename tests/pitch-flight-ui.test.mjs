@@ -43,7 +43,7 @@ test('图片不可用的真实脚本仍绘画，无不合法Canvas ellipse，按
 });
 
 test('固定横屏：进入请求landscape，后台暂停不改方向，真正离开才portrait',()=>{
-  const h=page();try{assert.ok(h.window.__rotations.includes('landscape'));h.window.__game.beginTouch();h.emitWindow('ruge:pause');assert.equal(h.window.__rotations.at(-1),'landscape');h.emitWindow('ruge:resume');assert.equal(h.window.__rotations.at(-1),'landscape');h.node('#home').onclick();assert.equal(h.window.__rotations.at(-1),'portrait');}finally{h.dispose();}
+  const h=page();try{assert.ok(h.window.__rotations.includes('landscape'));h.window.__game.beginTouch();h.emitWindow('ruge:pause');assert.equal(h.window.__rotations.at(-1),'landscape');h.emitWindow('ruge:resume');assert.equal(h.window.__rotations.at(-1),'landscape');h.node('#home').onclick();assert.equal(h.window.__rotations.at(-1),'landscape');assert.equal(h.window.__game.state.screen,'paused');h.node('#home').onclick();assert.equal(h.window.__game.state.screen,'menu');assert.equal(h.window.__rotations.at(-1),'landscape');h.node('#home').onclick();assert.equal(h.window.__rotations.at(-1),'portrait');}finally{h.dispose();}
 });
 
 test('真实声音链中音或静音不能一直挂机通关，云门必须主动改变高度',async()=>{

@@ -8,8 +8,10 @@
   function progressFrom(raw, legacy) {
     if (raw?.schema === 1) {
       const reached = C.clamp(Math.floor(Number(raw.reached) || 0), 0, 11);
-      const mechanismReached = C.clamp(Math.floor(Number(raw.mechanismReached) || 12), 12, C.LEVELS.length - 1);
       const completed = Array.isArray(raw.completed) ? [...new Set(raw.completed.filter(i => Number.isInteger(i) && i >= 0 && i < C.LEVELS.length))] : [];
+      // Finishing the old final mechanism unlocks the newly appended chapter.
+      const completedNext = Math.max(11, ...completed.filter(i => i >= 12)) + 1;
+      const mechanismReached = C.clamp(Math.max(Math.floor(Number(raw.mechanismReached) || 12), completedNext), 12, C.LEVELS.length - 1);
       const draft = C.restore(raw.draft);
       const allowed = i => i >= 0 && (i < 12 ? i <= reached : i <= mechanismReached && i < C.LEVELS.length);
       const current = Number.isInteger(raw.current) && allowed(raw.current) ? raw.current : 0;
@@ -97,9 +99,10 @@
   }
   function askReset() {
     if (COVER || !foreground || document.hidden) return;
+    window.RugeBack?.clearPause();
     cancelWaiting(); pauseGame(); release(); $('#resetPanel').hidden = false; updateRotors();
   }
-  function cancelReset() { $('#resetPanel').hidden = true; updateRotors(); }
+  function cancelReset() { $('#resetPanel').hidden = true; if (result === 'run' && paused) $('#pausePanel').hidden = false; updateRotors(); }
   function resetLevel() {
     if (COVER || !foreground || $('#resetPanel').hidden) return;
     loadLevel(state.level); save();
@@ -192,7 +195,10 @@
     $('#next').textContent = state.level === C.LEVELS.length - 1 ? '再玩一轮' : '下一关';
     $('#win').hidden = false; updateRotors(); if (celebrate) save();
   }
+  let backLevelMenu = false;
   function showLevels() {
+    window.RugeBack?.clearPause();
+    backLevelMenu = false;
     if (COVER) return;
     cancelWaiting(); pauseGame(); release(); const grid = $('#levelGrid'), mechanisms = $('#mechanismGrid'); grid.innerHTML = ''; mechanisms.innerHTML = '';
     C.LEVELS.forEach((item, i) => {
@@ -200,6 +206,7 @@
       b.setAttribute('aria-label', `第 ${i + 1} 关${b.disabled ? '，尚未解锁' : ''}`);
       b.className = `${i === state.level ? 'current ' : ''}${progress.completed.includes(i) ? 'done' : ''}`;
       b.addEventListener('click', () => {
+        backLevelMenu = false;
         if (i < 12 ? i > progress.reached : i > progress.mechanismReached) return;
         if (i === state.level) { $('#levels').hidden = true; updateRotors(); return; }
         loadLevel(i); save();
@@ -369,8 +376,8 @@
     loadLevel(state.level === C.LEVELS.length - 1 ? 0 : state.level + 1);
     requestStart('next'); save();
   });
-  $('#levelBtn').addEventListener('click', showLevels); $('#pauseLevels').addEventListener('click', showLevels); $('#closeLevels').addEventListener('click', () => { $('#levels').hidden = true; updateRotors(); });
-  $('#home').addEventListener('click', () => { save(); release(); input.destroy(); if (window.RugeNav?.home) window.RugeNav.home(); else location.href = '../index.html'; });
+  $('#levelBtn').addEventListener('click', showLevels); $('#pauseLevels').addEventListener('click', showLevels); $('#closeLevels').addEventListener('click', () => { backLevelMenu = false; $('#levels').hidden = true; if (result === 'run' && paused) $('#pausePanel').hidden = false; updateRotors(); });
+  $('#home').addEventListener('click', () => window.RugeBack.handle());
   addEventListener('ruge:pause', () => { foreground = false; cancelWaiting(); pauseGame('background'); release(); updateRotors(); });
   addEventListener('ruge:resume', () => { foreground = true; last = performance.now(); updateRotors(); });
   addEventListener('ruge:orientation', () => { cancelWaiting(); pauseGame('orientation'); release(); layout(); render(); });
@@ -386,4 +393,5 @@
     document.body.classList.add('cover'); state = C.create(12);
     result = 'run'; paused = true; hidePanels(); syncHud(); layout(); render();
   } else { loadLevel(state.level, true); requestAnimationFrame(frame); }
+window.onRugeBack=()=>{if(!$('#pausePanel').hidden&&$('#levels').hidden&&$('#resetPanel').hidden)return window.RugeBack.closePause(()=>{$('#pausePanel').hidden=true;},resume);if(!$('#resetPanel').hidden){cancelReset();return true;}if(!$('#levels').hidden){if(backLevelMenu)return false;$('#levels').hidden=true;updateRotors();return true;}if(pendingStart){cancelWaiting();return true;}showLevels();backLevelMenu=true;return true;};
 })();

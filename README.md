@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十九款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，游戏资源离线打包；专业语音评分需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.32 / versionCode 55**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.33 / versionCode 56**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,12 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 关卡与分层返回（4.33）
+
+所有在架固定闯关玩法至少36关，原关卡与成绩保留，新增关逐关验证解法；字里找字保持60关，无限游戏保持无限模式。安卓返回先退当前弹层、详情或游戏内菜单，再回游戏中心；识字库详情先回字列表，语音与翻牌子玩法先回所属游戏。
+
+[4.33关卡清单与验收](docs/Design%2036%20Levels%20and%20Back%20Navigation%204.33/review.md)。
 
 ## 全部离线朗读与扩充口令（4.32）
 

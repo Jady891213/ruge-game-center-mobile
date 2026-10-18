@@ -20,7 +20,25 @@ const LEVELS=[
  {title:'越找越暗',steps:[light,darker,darker]},
  {title:'记住三色',memory:true,steps:[color('red'),color('yellow'),color('blue')]},
  {title:'记住四色',memory:true,steps:[color('green'),color('blue'),color('yellow'),color('red')]},
- {title:'侦探徽章',memory:true,steps:[color('red'),cool,lighter,color('yellow')]}
+ {title:'侦探徽章',memory:true,steps:[color('red'),cool,lighter,color('yellow')]},
+ {title:'橙色邮差',steps:[color('orange')]},
+ {title:'紫色星球',steps:[color('purple')]},
+ {title:'橙紫接力',steps:[color('orange'),color('purple')]},
+ {title:'冷暖转转',steps:[cool,warm,cool]},
+ {title:'暖色花园',steps:[color('orange'),{kind:'warm',unique:true},{kind:'warm',unique:true}]},
+ {title:'凉色海洋',steps:[color('purple'),{kind:'cool',unique:true},{kind:'cool',unique:true}]},
+ {title:'四季颜色',steps:[color('green'),color('yellow'),color('orange'),color('blue')]},
+ {title:'明暗回声',steps:[light,darker,lighter]},
+ {title:'影子阶梯',steps:[dark,lighter,darker]},
+ {title:'彩虹口袋',steps:[color('purple'),different,different,different]},
+ {title:'暖凉交替',steps:[warm,cool,{kind:'warm',unique:true},{kind:'cool',unique:true}]},
+ {title:'五色收藏',steps:[color('orange'),different,different,different,different]},
+ {title:'蓝紫记忆',memory:true,steps:[color('blue'),color('purple'),color('blue')]},
+ {title:'秋日记忆',memory:true,steps:[color('yellow'),color('orange'),color('red')]},
+ {title:'森林记忆',memory:true,steps:[color('green'),color('purple'),color('yellow'),color('blue')]},
+ {title:'光影记忆',memory:true,steps:[dark,lighter,lighter]},
+ {title:'六色徽章',steps:[color('red'),different,different,different,different,different]},
+ {title:'侦探大巡游',memory:true,steps:[color('purple'),color('orange'),color('green'),color('blue'),color('yellow')]}
 ].map((l,i)=>Object.freeze({id:i,...l,steps:l.steps.map(Object.freeze)}));
 function rgbValid(rgb){return Array.isArray(rgb)&&rgb.length===3&&rgb.every(n=>Number.isFinite(n)&&n>=0&&n<=255);}
 function describe(rgb){
@@ -90,7 +108,7 @@ function collect(state,rgb){
  state.collected.push({rgb:sample.rgb});state.finished=state.collected.length===spec.steps.length;return true;
 }
 function restore(raw){
- const out={schema:1,cameraStars:Array(18).fill(0),practiceStars:Array(18).fill(0),session:null};
+ const out={schema:1,cameraStars:Array(LEVELS.length).fill(0),practiceStars:Array(LEVELS.length).fill(0),session:null};
  if(!raw||raw.schema!==1)return out;
  for(const key of ['cameraStars','practiceStars'])if(Array.isArray(raw[key]))out[key]=out[key].map((_,i)=>[1,2,3].includes(raw[key][i])?raw[key][i]:0);
  const s=raw.session;if(!s||!Number.isInteger(s.level)||!LEVELS[s.level]||!['camera','practice'].includes(s.mode)||!Array.isArray(s.collected))return out;
