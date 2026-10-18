@@ -27,11 +27,12 @@ test('示范只播打包manifest白名单，使用shared绝对资源位置，不
 });
 test('后台/退出/新示范会停止旧音频，迟到play完成不重新播',async()=>{
  const g=setup({deferred:true});const first=g.api.play('en:apple');const a=g.instances[0];g.events.get('ruge:pause')();a.resolve();assert.equal(await first,false);assert.equal(a.paused,true);
+ assert.equal(await g.api.play('en:apple'),false);assert.equal(g.instances.length,1);g.events.get('ruge:resume')();
  const second=g.api.play('en:apple');const b=g.instances[1];g.document.hidden=true;g.documentEvents.get('visibilitychange')();b.resolve();assert.equal(await second,false);assert.equal(b.paused,true);
  assert.equal(await g.api.play('en:apple'),false);assert.equal(g.instances.length,2);
  g.document.hidden=false;const third=g.api.play('en:apple');const c=g.instances[2];g.events.get('pagehide')();c.resolve();assert.equal(await third,false);
 });
-test('媒体解码/播放失败返回false，供调用方在仍前台且未录音时兜底',async()=>{const g=setup({reject:true});assert.equal(await g.api.play('en:apple'),false);});
+test('媒体解码/播放失败返回false，由界面明确示范不可用，不造分',async()=>{const g=setup({reject:true});assert.equal(await g.api.play('en:apple'),false);});
 test('每条打包MP3与来源manifest的SHA一致，文件名无远程路径',()=>{
  const dir=new URL('app/assets/shared/demo-audio/',root),manifest=JSON.parse(readFileSync(new URL('manifest.json',dir),'utf8'));
  assert.equal(manifest.model,'speech-2.8-hd');assert.ok(Object.keys(manifest.clips).length>=3);

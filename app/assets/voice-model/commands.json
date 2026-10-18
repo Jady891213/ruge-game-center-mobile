@@ -1,0 +1,1668 @@
+{
+  "schema": 1,
+  "tokenType": "ppinyin",
+  "commands": [
+    {
+      "id": "left",
+      "label": "向左",
+      "phrases": [
+        {
+          "text": "向左",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "z",
+              "uǒ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往左",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "z",
+              "uǒ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "左边",
+          "tokens": [
+            [
+              "z",
+              "uǒ",
+              "b",
+              "iān"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向左走",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "z",
+              "uǒ",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往左走",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "z",
+              "uǒ",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "走左边",
+          "tokens": [
+            [
+              "z",
+              "ǒu",
+              "z",
+              "uǒ",
+              "b",
+              "iān"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "right",
+      "label": "向右",
+      "phrases": [
+        {
+          "text": "向右",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "y",
+              "òu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往右",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "y",
+              "òu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "右边",
+          "tokens": [
+            [
+              "y",
+              "òu",
+              "b",
+              "iān"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向右走",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "y",
+              "òu",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往右走",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "y",
+              "òu",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "走右边",
+          "tokens": [
+            [
+              "z",
+              "ǒu",
+              "y",
+              "òu",
+              "b",
+              "iān"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "up",
+      "label": "向上",
+      "phrases": [
+        {
+          "text": "向上",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "sh",
+              "àng"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往上",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "sh",
+              "àng"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "上面",
+          "tokens": [
+            [
+              "sh",
+              "àng",
+              "m",
+              "iàn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向上走",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "sh",
+              "àng",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往上走",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "sh",
+              "àng",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往上面",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "sh",
+              "àng",
+              "m",
+              "iàn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "down",
+      "label": "向下",
+      "phrases": [
+        {
+          "text": "向下",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往下",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "下面",
+          "tokens": [
+            [
+              "x",
+              "ià",
+              "m",
+              "iàn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向下走",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "x",
+              "ià",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往下走",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "x",
+              "ià",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往下面",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "x",
+              "ià",
+              "m",
+              "iàn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "forward",
+      "label": "前进",
+      "phrases": [
+        {
+          "text": "前进",
+          "tokens": [
+            [
+              "q",
+              "ián",
+              "j",
+              "ìn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往前",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "q",
+              "ián"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向前",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "q",
+              "ián"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往前走",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "q",
+              "ián",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向前走",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "q",
+              "ián",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "前进一步",
+          "tokens": [
+            [
+              "q",
+              "ián",
+              "j",
+              "ìn",
+              "y",
+              "í",
+              "b",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "backward",
+      "label": "后退",
+      "phrases": [
+        {
+          "text": "后退",
+          "tokens": [
+            [
+              "h",
+              "òu",
+              "t",
+              "uì"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往后",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "h",
+              "òu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向后",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "h",
+              "òu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往后走",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "h",
+              "òu",
+              "z",
+              "ǒu"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向后退",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "h",
+              "òu",
+              "t",
+              "uì"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "退一步",
+          "tokens": [
+            [
+              "t",
+              "uì",
+              "y",
+              "ī",
+              "b",
+              "ù"
+            ],
+            [
+              "t",
+              "uì",
+              "y",
+              "í",
+              "b",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "turnLeft",
+      "label": "左转",
+      "phrases": [
+        {
+          "text": "左转",
+          "tokens": [
+            [
+              "z",
+              "uǒ",
+              "zh",
+              "uǎn"
+            ],
+            [
+              "z",
+              "uó",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向左转",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "z",
+              "uǒ",
+              "zh",
+              "uǎn"
+            ],
+            [
+              "x",
+              "iàng",
+              "z",
+              "uó",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往左转",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "z",
+              "uǒ",
+              "zh",
+              "uǎn"
+            ],
+            [
+              "w",
+              "ǎng",
+              "z",
+              "uó",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "朝左转",
+          "tokens": [
+            [
+              "ch",
+              "áo",
+              "z",
+              "uǒ",
+              "zh",
+              "uǎn"
+            ],
+            [
+              "ch",
+              "áo",
+              "z",
+              "uó",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "左转一下",
+          "tokens": [
+            [
+              "z",
+              "uǒ",
+              "zh",
+              "uǎn",
+              "y",
+              "ī",
+              "x",
+              "ià"
+            ],
+            [
+              "z",
+              "uó",
+              "zh",
+              "uǎn",
+              "y",
+              "í",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "转向左边",
+          "tokens": [
+            [
+              "zh",
+              "uǎn",
+              "x",
+              "iàng",
+              "z",
+              "uǒ",
+              "b",
+              "iān"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "turnRight",
+      "label": "右转",
+      "phrases": [
+        {
+          "text": "右转",
+          "tokens": [
+            [
+              "y",
+              "òu",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向右转",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "y",
+              "òu",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "往右转",
+          "tokens": [
+            [
+              "w",
+              "ǎng",
+              "y",
+              "òu",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "朝右转",
+          "tokens": [
+            [
+              "ch",
+              "áo",
+              "y",
+              "òu",
+              "zh",
+              "uǎn"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "右转一下",
+          "tokens": [
+            [
+              "y",
+              "òu",
+              "zh",
+              "uǎn",
+              "y",
+              "ī",
+              "x",
+              "ià"
+            ],
+            [
+              "y",
+              "òu",
+              "zh",
+              "uǎn",
+              "y",
+              "í",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "转向右边",
+          "tokens": [
+            [
+              "zh",
+              "uǎn",
+              "x",
+              "iàng",
+              "y",
+              "òu",
+              "b",
+              "iān"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "jump",
+      "label": "跳一下",
+      "phrases": [
+        {
+          "text": "跳一下",
+          "tokens": [
+            [
+              "t",
+              "iào",
+              "y",
+              "ī",
+              "x",
+              "ià"
+            ],
+            [
+              "t",
+              "iào",
+              "y",
+              "í",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "跳起来",
+          "tokens": [
+            [
+              "t",
+              "iào",
+              "q",
+              "ǐ",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "向前跳",
+          "tokens": [
+            [
+              "x",
+              "iàng",
+              "q",
+              "ián",
+              "t",
+              "iào"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "跳过去",
+          "tokens": [
+            [
+              "t",
+              "iào",
+              "g",
+              "uò",
+              "q",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "蹦一下",
+          "tokens": [
+            [
+              "b",
+              "èng",
+              "y",
+              "ī",
+              "x",
+              "ià"
+            ],
+            [
+              "b",
+              "èng",
+              "y",
+              "í",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "蹦过去",
+          "tokens": [
+            [
+              "b",
+              "èng",
+              "g",
+              "uò",
+              "q",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "take",
+      "label": "拿起",
+      "phrases": [
+        {
+          "text": "拿起",
+          "tokens": [
+            [
+              "n",
+              "á",
+              "q",
+              "ǐ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "拿起来",
+          "tokens": [
+            [
+              "n",
+              "á",
+              "q",
+              "ǐ",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "捡起来",
+          "tokens": [
+            [
+              "j",
+              "iǎn",
+              "q",
+              "ǐ",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "捡起",
+          "tokens": [
+            [
+              "j",
+              "iǎn",
+              "q",
+              "ǐ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "拿东西",
+          "tokens": [
+            [
+              "n",
+              "á",
+              "d",
+              "ōng",
+              "x",
+              "i"
+            ],
+            [
+              "n",
+              "á",
+              "d",
+              "ōng",
+              "x",
+              "ī"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "拾起来",
+          "tokens": [
+            [
+              "sh",
+              "í",
+              "q",
+              "ǐ",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "把它拿起来",
+          "tokens": [
+            [
+              "b",
+              "ǎ",
+              "t",
+              "ā",
+              "n",
+              "á",
+              "q",
+              "ǐ",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "把东西拿起来",
+          "tokens": [
+            [
+              "b",
+              "ǎ",
+              "d",
+              "ōng",
+              "x",
+              "ī",
+              "n",
+              "á",
+              "q",
+              "ǐ",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "put",
+      "label": "放下",
+      "phrases": [
+        {
+          "text": "放下",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "放下来",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "x",
+              "ià",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "放东西",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "d",
+              "ōng",
+              "x",
+              "i"
+            ],
+            [
+              "f",
+              "àng",
+              "d",
+              "ōng",
+              "x",
+              "ī"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "放在这里",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "z",
+              "ài",
+              "zh",
+              "è",
+              "l",
+              "ǐ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "放到这里",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "d",
+              "ào",
+              "zh",
+              "è",
+              "l",
+              "ǐ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "把它放下",
+          "tokens": [
+            [
+              "b",
+              "ǎ",
+              "t",
+              "ā",
+              "f",
+              "àng",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "open",
+      "label": "开门",
+      "phrases": [
+        {
+          "text": "开门",
+          "tokens": [
+            [
+              "k",
+              "āi",
+              "m",
+              "én"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "打开门",
+          "tokens": [
+            [
+              "d",
+              "ǎ",
+              "k",
+              "āi",
+              "m",
+              "én"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "把门打开",
+          "tokens": [
+            [
+              "b",
+              "ǎ",
+              "m",
+              "én",
+              "d",
+              "ǎ",
+              "k",
+              "āi"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "打开大门",
+          "tokens": [
+            [
+              "d",
+              "ǎ",
+              "k",
+              "āi",
+              "d",
+              "à",
+              "m",
+              "én"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "开一下门",
+          "tokens": [
+            [
+              "k",
+              "āi",
+              "y",
+              "ī",
+              "x",
+              "ià",
+              "m",
+              "én"
+            ],
+            [
+              "k",
+              "āi",
+              "y",
+              "í",
+              "x",
+              "ià",
+              "m",
+              "én"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "把大门打开",
+          "tokens": [
+            [
+              "b",
+              "ǎ",
+              "d",
+              "à",
+              "m",
+              "én",
+              "d",
+              "ǎ",
+              "k",
+              "āi"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "label": "喂小兔",
+      "phrases": [
+        {
+          "text": "喂小兔",
+          "tokens": [
+            [
+              "w",
+              "èi",
+              "x",
+              "iǎo",
+              "t",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "给兔子",
+          "tokens": [
+            [
+              "g",
+              "ěi",
+              "t",
+              "ù",
+              "z",
+              "i"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "交给兔子",
+          "tokens": [
+            [
+              "j",
+              "iāo",
+              "g",
+              "ěi",
+              "t",
+              "ù",
+              "z",
+              "i"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "喂兔子",
+          "tokens": [
+            [
+              "w",
+              "èi",
+              "t",
+              "ù",
+              "z",
+              "i"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "给小兔",
+          "tokens": [
+            [
+              "g",
+              "ěi",
+              "x",
+              "iǎo",
+              "t",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "交给小兔",
+          "tokens": [
+            [
+              "j",
+              "iāo",
+              "g",
+              "ěi",
+              "x",
+              "iǎo",
+              "t",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "deliver",
+      "label": "送回家",
+      "phrases": [
+        {
+          "text": "送回家",
+          "tokens": [
+            [
+              "s",
+              "òng",
+              "h",
+              "uí",
+              "j",
+              "iā"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "放进窝",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "j",
+              "ìn",
+              "w",
+              "ō"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "送到家",
+          "tokens": [
+            [
+              "s",
+              "òng",
+              "d",
+              "ào",
+              "j",
+              "iā"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "送进窝",
+          "tokens": [
+            [
+              "s",
+              "òng",
+              "j",
+              "ìn",
+              "w",
+              "ō"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "放回家",
+          "tokens": [
+            [
+              "f",
+              "àng",
+              "h",
+              "uí",
+              "j",
+              "iā"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "送到小窝",
+          "tokens": [
+            [
+              "s",
+              "òng",
+              "d",
+              "ào",
+              "x",
+              "iǎo",
+              "w",
+              "ō"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    },
+    {
+      "id": "stop",
+      "label": "停止",
+      "phrases": [
+        {
+          "text": "停下",
+          "tokens": [
+            [
+              "t",
+              "íng",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "停止",
+          "tokens": [
+            [
+              "t",
+              "íng",
+              "zh",
+              "ǐ"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "停一下",
+          "tokens": [
+            [
+              "t",
+              "íng",
+              "y",
+              "ī",
+              "x",
+              "ià"
+            ],
+            [
+              "t",
+              "íng",
+              "y",
+              "í",
+              "x",
+              "ià"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "停下来",
+          "tokens": [
+            [
+              "t",
+              "íng",
+              "x",
+              "ià",
+              "l",
+              "ái"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "停住",
+          "tokens": [
+            [
+              "t",
+              "íng",
+              "zh",
+              "ù"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        },
+        {
+          "text": "别动",
+          "tokens": [
+            [
+              "b",
+              "ié",
+              "d",
+              "òng"
+            ]
+          ],
+          "score": 2.0,
+          "threshold": 0.2
+        }
+      ]
+    }
+  ],
+  "ignoredPhrases": [
+    {
+      "text": "不要前进",
+      "tokens": [
+        [
+          "b",
+          "ú",
+          "y",
+          "ào",
+          "q",
+          "ián",
+          "j",
+          "ìn"
+        ]
+      ],
+      "score": 2.0,
+      "threshold": 0.2
+    },
+    {
+      "text": "不要后退",
+      "tokens": [
+        [
+          "b",
+          "ú",
+          "y",
+          "ào",
+          "h",
+          "òu",
+          "t",
+          "uì"
+        ]
+      ],
+      "score": 2.0,
+      "threshold": 0.2
+    },
+    {
+      "text": "不许开门",
+      "tokens": [
+        [
+          "b",
+          "ù",
+          "x",
+          "ǔ",
+          "k",
+          "āi",
+          "m",
+          "én"
+        ]
+      ],
+      "score": 2.0,
+      "threshold": 0.2
+    },
+    {
+      "text": "不要跳",
+      "tokens": [
+        [
+          "b",
+          "ú",
+          "y",
+          "ào",
+          "t",
+          "iào"
+        ]
+      ],
+      "score": 2.0,
+      "threshold": 0.2
+    },
+    {
+      "text": "不要动",
+      "tokens": [
+        [
+          "b",
+          "ú",
+          "y",
+          "ào",
+          "d",
+          "òng"
+        ]
+      ],
+      "score": 2.0,
+      "threshold": 0.2
+    },
+    {
+      "text": "别开门",
+      "tokens": [
+        [
+          "b",
+          "ié",
+          "k",
+          "āi",
+          "m",
+          "én"
+        ]
+      ],
+      "score": 2.0,
+      "threshold": 0.2
+    }
+  ]
+}

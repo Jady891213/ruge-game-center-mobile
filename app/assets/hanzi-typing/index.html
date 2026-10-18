@@ -126,6 +126,8 @@ body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-siz
 
 <script src="../shared/feedback.js"></script>
 <script src="../shared/hanzi-vocabulary.js"></script>
+<script src="../shared/demo-audio/manifest.js"></script>
+<script src="../shared/demo-audio.js"></script>
 <script>
 'use strict';
 /* 笔画数据：chanind/hanzi-writer-data / Make Me A Hanzi，Arphic Public License。
@@ -354,7 +356,8 @@ function armAdvance(){
   },advanceRemaining);
 }
 function queueAdvance(action,delay){cancelAdvance();advanceAction=action;advanceRemaining=delay;armAdvance();}
-function stopReading(){try{if(window.RugeTTS&&RugeTTS.stop)RugeTTS.stop();}catch(e){}try{if(window.speechSynthesis)window.speechSynthesis.cancel();}catch(e){}}
+let readingGeneration=0;
+function stopReading(){readingGeneration++;try{window.DemoAudio?.stop();}catch(e){}}
 function setPaused(value){
   if(!S.playing||S.paused===!!value)return;
   S.paused=!!value;
@@ -402,15 +405,17 @@ if(window.visualViewport){window.visualViewport.addEventListener('resize',syncVi
 window.addEventListener('resize',syncViewport);
 window.addEventListener('ruge:orientation',syncViewport);
 window.addEventListener('ruge:pause',()=>setPaused(true));
+window.addEventListener('pagehide',stopReading);
 window.addEventListener('ruge:resume',syncViewport);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)setPaused(true);else syncViewport();});
 function reportTyping(){if(COVER)return;try{const all=JSON.parse(localStorage.getItem('rugeStat')||'{}');const rec=all['hanzi-typing']||{};rec.best=Math.max(rec.best||0,Save.d.best||0);rec.last=Date.now();all['hanzi-typing']=rec;localStorage.setItem('rugeStat',JSON.stringify(all));}catch(e){}}
 function goHome(){backToMenu();try{if(window.RugeNav&&RugeNav.home){RugeNav.home();return;}}catch(e){}location.href='../index.html';}
-function readCurrent(){
-  const ch=cur();if(!S.playing||S.paused||!ch)return;
-  try{if(window.RugeTTS&&RugeTTS.speak){if(RugeTTS.speak(ch)===false)$('#foot').textContent='声音不可用';return;}}catch(e){}
-  try{if(window.speechSynthesis&&window.SpeechSynthesisUtterance){const u=new window.SpeechSynthesisUtterance(ch);u.lang='zh-CN';u.rate=.8;window.speechSynthesis.cancel();window.speechSynthesis.speak(u);return;}}catch(e){}
-  $('#foot').textContent='声音不可用';
+async function readCurrent(){
+  const ch=cur();if(COVER||!S.playing||S.paused||document.hidden||!ch)return;
+  stopReading();const mine=readingGeneration,key='read:'+ch+':'+answersOf(ch)[0];
+  let ok=false;try{if(window.DemoAudio?.available(key))ok=await window.DemoAudio.play(key);}catch(e){}
+  if(mine!==readingGeneration||!S.playing||S.paused||document.hidden||!S.accepting||cur()!==ch)return;
+  if(!ok)$('#foot').textContent='示范暂不可用';
 }
 
 function strokeCount(ch){ return (window.STROKES && window.STROKES[ch] && window.STROKES[ch].s.length) || 0; }
@@ -491,6 +496,7 @@ function cur(){ return S.list[S.pos]; }
 
 function showCard(){
   if(!S.playing||S.paused)return;
+  stopReading();
   const ch=cur();if(!ch){endGroup();return;}
   S.accepting=true;
   $('#big').textContent = ch;
@@ -555,6 +561,7 @@ $('#type').addEventListener('input', ()=>{
 
 function hit(){
   if(!S.playing||!S.accepting||S.paused)return;
+  stopReading();
   S.accepting=false;
   const ch=cur();
   const secs = (performance.now()-S.t0)/1000;

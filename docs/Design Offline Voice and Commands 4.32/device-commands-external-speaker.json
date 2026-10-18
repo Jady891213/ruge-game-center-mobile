@@ -1,0 +1,203 @@
+{
+  "source": "External Mac speaker at unchanged system volume6; actual phone microphone/KWS, no recorded PCM saved. Physical speaker distance not controlled.",
+  "results": [
+    {
+      "spoken": "前进",
+      "before": {
+        "native": {
+          "commands": [],
+          "status": "listening",
+          "mode": "command",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.003461456624791026,
+          "confidence": 0,
+          "ageMs": 24,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 11,
+          "frames": 12
+        },
+        "game": {
+          "level": 1,
+          "x": 1,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        }
+      },
+      "after": {
+        "native": {
+          "commands": [],
+          "status": "listening",
+          "mode": "command",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.004343157634139061,
+          "confidence": 0,
+          "ageMs": 51,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 11,
+          "frames": 83
+        },
+        "game": {
+          "level": 1,
+          "x": 1,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        },
+        "heard": "我在听"
+      }
+    },
+    {
+      "spoken": "往前",
+      "before": {
+        "native": {
+          "commands": [],
+          "status": "listening",
+          "mode": "command",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.0036622558254748583,
+          "confidence": 0,
+          "ageMs": 52,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 11,
+          "frames": 87
+        },
+        "game": {
+          "level": 1,
+          "x": 1,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        }
+      },
+      "after": {
+        "native": {
+          "commands": [],
+          "status": "listening",
+          "mode": "command",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.005403781309723854,
+          "confidence": 0,
+          "ageMs": 27,
+          "command": "right",
+          "commandAgeMs": 2024,
+          "commandSerial": 12,
+          "frames": 139
+        },
+        "game": {
+          "level": 1,
+          "x": 2,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "heard": "向右"
+      }
+    },
+    {
+      "spoken": "向前",
+      "before": {
+        "native": {
+          "commands": [],
+          "status": "listening",
+          "mode": "command",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.0043874881230294704,
+          "confidence": 0,
+          "ageMs": 69,
+          "command": "right",
+          "commandAgeMs": 2247,
+          "commandSerial": 12,
+          "frames": 142
+        },
+        "game": {
+          "level": 1,
+          "x": 2,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        }
+      },
+      "after": {
+        "native": {
+          "commands": [],
+          "status": "listening",
+          "mode": "command",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.005728507414460182,
+          "confidence": 0,
+          "ageMs": 69,
+          "command": "take",
+          "commandAgeMs": 1926,
+          "commandSerial": 13,
+          "frames": 192
+        },
+        "game": {
+          "level": 1,
+          "x": 2,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "heard": "拿起 · 先走到物品上"
+      }
+    }
+  ]
+}

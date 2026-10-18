@@ -1,0 +1,9 @@
+{
+  "physicalTapVerified": false,
+  "reason": "Device locked before final physical relisten tap; unlock requested.",
+  "verifiedElsewhere": [
+    "Real page handler stop/start and preserved actor state test passed.",
+    "Native fresh capture and continuous capture tested on MIX 4."
+  ],
+  "claim": "Final physical button restart is not marked as passed."
+}

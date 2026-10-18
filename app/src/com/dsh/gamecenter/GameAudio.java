@@ -12,6 +12,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.webkit.JavascriptInterface;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -28,6 +29,7 @@ public final class GameAudio {
     private volatile float pitch,rms,confidence;
     private volatile long updated,commandAt,commandSerial;
     private volatile int frames;
+    private final VoiceCommandBuffer commands = new VoiceCommandBuffer();
     public GameAudio(Activity activity){this.activity=activity;}
     public void foreground(boolean value){foreground=value;if(!value)stopNow();}
     public void permissionResult(int requestCode,int[] grants){if(requestCode==PERMISSION_REQUEST){status=grants.length>0&&grants[0]==PackageManager.PERMISSION_GRANTED?"ready":"denied";}}
@@ -35,11 +37,14 @@ public final class GameAudio {
     @JavascriptInterface public String status(){return status;}
     @JavascriptInterface public void start(final String requested){
         if(!"pitch".equals(requested)&&!"command".equals(requested))return;
+        final int requestedGeneration;
+        synchronized(this){requestedGeneration=generation;}
         main.post(new Runnable(){public void run(){
-            if(!foreground||closed)return;
+            if(!foreground||closed||requestedGeneration!=generation)return;
             if(Build.VERSION.SDK_INT>=23&&activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){status="permission";activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO},PERMISSION_REQUEST);return;}
             final int token;
             synchronized(GameAudio.this){
+                if(requestedGeneration!=generation)return;
                 // Consecutive levels share the live capture/model, not a new recorder each time.
                 if(requested.equals(mode)&&("loading".equals(status)||"warming".equals(status)||"listening".equals(status)))return;
                 stopNow();if(!foreground||closed)return;
@@ -51,7 +56,7 @@ public final class GameAudio {
     }
     @JavascriptInterface public void stop(){stopNow();}
     private synchronized void stopNow(){
-        generation++;mode="";pitch=0;rms=0;confidence=0;status=closed?"closed":"idle";
+        generation++;mode="";command="";commandAt=0;commands.clear();pitch=0;rms=0;confidence=0;status=closed?"closed":"idle";
         AudioRecord r=recorder;if(r!=null)try{r.stop();}catch(RuntimeException ignored){}
     }
     public void close(){closed=true;foreground=false;stopNow();worker.shutdown();}
@@ -83,10 +88,10 @@ public final class GameAudio {
                     untilPitch=0;
                 }
                 if(recognizer!=null){
-                    String heard=recognizer.accept(samples,n);
+                    String[] heard=recognizer.accept(samples,n);
                     synchronized(this){
                         if(token!=generation||!foreground||closed)break;
-                        if(heard.length()>0&&"listening".equals(status)){command=heard;commandAt=SystemClock.elapsedRealtime();commandSerial++;}
+                        if("listening".equals(status))for(String name:heard){command=name;commandAt=SystemClock.elapsedRealtime();commandSerial++;commands.add(name,commandAt,commandSerial);}
                     }
                 }
             }
@@ -98,7 +103,7 @@ public final class GameAudio {
         }
     }
     @JavascriptInterface public synchronized String read(){
-        try{return new JSONObject().put("status",status).put("mode",mode).put("error",error).put("pitch",pitch).put("rms",rms).put("confidence",confidence).put("ageMs",updated==0?999999:SystemClock.elapsedRealtime()-updated).put("command",command).put("commandAgeMs",commandAt==0?999999:SystemClock.elapsedRealtime()-commandAt).put("commandSerial",commandSerial).put("frames",frames).toString();}
+        try{long now=SystemClock.elapsedRealtime();JSONArray sequence=new JSONArray();for(VoiceCommandBuffer.Entry event:commands.snapshot(now))sequence.put(new JSONObject().put("command",event.command).put("serial",event.serial).put("ageMs",Math.max(0,now-event.at)));return new JSONObject().put("commands",sequence).put("status",status).put("mode",mode).put("error",error).put("pitch",pitch).put("rms",rms).put("confidence",confidence).put("ageMs",updated==0?999999:SystemClock.elapsedRealtime()-updated).put("command",command).put("commandAgeMs",commandAt==0?999999:SystemClock.elapsedRealtime()-commandAt).put("commandSerial",commandSerial).put("frames",frames).toString();}
         catch(Exception ignored){return "{\"status\":\"error\"}";}
     }
 }

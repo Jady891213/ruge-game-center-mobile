@@ -1,0 +1,450 @@
+[
+  {
+    "id": "left",
+    "text": "向左"
+  },
+  {
+    "id": "left",
+    "text": "往左"
+  },
+  {
+    "id": "left",
+    "text": "左边"
+  },
+  {
+    "id": "left",
+    "text": "向左走"
+  },
+  {
+    "id": "left",
+    "text": "往左走"
+  },
+  {
+    "id": "left",
+    "text": "走左边"
+  },
+  {
+    "id": "right",
+    "text": "向右"
+  },
+  {
+    "id": "right",
+    "text": "往右"
+  },
+  {
+    "id": "right",
+    "text": "右边"
+  },
+  {
+    "id": "right",
+    "text": "向右走"
+  },
+  {
+    "id": "right",
+    "text": "往右走"
+  },
+  {
+    "id": "right",
+    "text": "走右边"
+  },
+  {
+    "id": "up",
+    "text": "向上"
+  },
+  {
+    "id": "up",
+    "text": "往上"
+  },
+  {
+    "id": "up",
+    "text": "上面"
+  },
+  {
+    "id": "up",
+    "text": "向上走"
+  },
+  {
+    "id": "up",
+    "text": "往上走"
+  },
+  {
+    "id": "up",
+    "text": "往上面"
+  },
+  {
+    "id": "down",
+    "text": "向下"
+  },
+  {
+    "id": "down",
+    "text": "往下"
+  },
+  {
+    "id": "down",
+    "text": "下面"
+  },
+  {
+    "id": "down",
+    "text": "向下走"
+  },
+  {
+    "id": "down",
+    "text": "往下走"
+  },
+  {
+    "id": "down",
+    "text": "往下面"
+  },
+  {
+    "id": "forward",
+    "text": "前进"
+  },
+  {
+    "id": "forward",
+    "text": "往前"
+  },
+  {
+    "id": "forward",
+    "text": "向前"
+  },
+  {
+    "id": "forward",
+    "text": "往前走"
+  },
+  {
+    "id": "forward",
+    "text": "向前走"
+  },
+  {
+    "id": "forward",
+    "text": "前进一步"
+  },
+  {
+    "id": "backward",
+    "text": "后退"
+  },
+  {
+    "id": "backward",
+    "text": "往后"
+  },
+  {
+    "id": "backward",
+    "text": "向后"
+  },
+  {
+    "id": "backward",
+    "text": "往后走"
+  },
+  {
+    "id": "backward",
+    "text": "向后退"
+  },
+  {
+    "id": "backward",
+    "text": "退一步"
+  },
+  {
+    "id": "turnLeft",
+    "text": "左转"
+  },
+  {
+    "id": "turnLeft",
+    "text": "向左转"
+  },
+  {
+    "id": "turnLeft",
+    "text": "往左转"
+  },
+  {
+    "id": "turnLeft",
+    "text": "朝左转"
+  },
+  {
+    "id": "turnLeft",
+    "text": "左转一下"
+  },
+  {
+    "id": "turnLeft",
+    "text": "转向左边"
+  },
+  {
+    "id": "turnRight",
+    "text": "右转"
+  },
+  {
+    "id": "turnRight",
+    "text": "向右转"
+  },
+  {
+    "id": "turnRight",
+    "text": "往右转"
+  },
+  {
+    "id": "turnRight",
+    "text": "朝右转"
+  },
+  {
+    "id": "turnRight",
+    "text": "右转一下"
+  },
+  {
+    "id": "turnRight",
+    "text": "转向右边"
+  },
+  {
+    "id": "jump",
+    "text": "跳一下"
+  },
+  {
+    "id": "jump",
+    "text": "跳起来"
+  },
+  {
+    "id": "jump",
+    "text": "向前跳"
+  },
+  {
+    "id": "jump",
+    "text": "跳过去"
+  },
+  {
+    "id": "jump",
+    "text": "蹦一下"
+  },
+  {
+    "id": "jump",
+    "text": "蹦过去"
+  },
+  {
+    "id": "take",
+    "text": "拿起"
+  },
+  {
+    "id": "take",
+    "text": "拿起来"
+  },
+  {
+    "id": "take",
+    "text": "捡起来"
+  },
+  {
+    "id": "take",
+    "text": "捡起"
+  },
+  {
+    "id": "take",
+    "text": "拿东西"
+  },
+  {
+    "id": "take",
+    "text": "拾起来"
+  },
+  {
+    "id": "take",
+    "text": "把它拿起来"
+  },
+  {
+    "id": "take",
+    "text": "把东西拿起来"
+  },
+  {
+    "id": "put",
+    "text": "放下"
+  },
+  {
+    "id": "put",
+    "text": "放下来"
+  },
+  {
+    "id": "put",
+    "text": "放东西"
+  },
+  {
+    "id": "put",
+    "text": "放在这里"
+  },
+  {
+    "id": "put",
+    "text": "放到这里"
+  },
+  {
+    "id": "put",
+    "text": "把它放下"
+  },
+  {
+    "id": "open",
+    "text": "开门"
+  },
+  {
+    "id": "open",
+    "text": "打开门"
+  },
+  {
+    "id": "open",
+    "text": "把门打开"
+  },
+  {
+    "id": "open",
+    "text": "打开大门"
+  },
+  {
+    "id": "open",
+    "text": "开一下门"
+  },
+  {
+    "id": "open",
+    "text": "把大门打开"
+  },
+  {
+    "id": "feed",
+    "text": "喂小兔"
+  },
+  {
+    "id": "feed",
+    "text": "给兔子"
+  },
+  {
+    "id": "feed",
+    "text": "交给兔子"
+  },
+  {
+    "id": "feed",
+    "text": "喂兔子"
+  },
+  {
+    "id": "feed",
+    "text": "给小兔"
+  },
+  {
+    "id": "feed",
+    "text": "交给小兔"
+  },
+  {
+    "id": "deliver",
+    "text": "送回家"
+  },
+  {
+    "id": "deliver",
+    "text": "放进窝"
+  },
+  {
+    "id": "deliver",
+    "text": "送到家"
+  },
+  {
+    "id": "deliver",
+    "text": "送进窝"
+  },
+  {
+    "id": "deliver",
+    "text": "放回家"
+  },
+  {
+    "id": "deliver",
+    "text": "送到小窝"
+  },
+  {
+    "id": "stop",
+    "text": "停下"
+  },
+  {
+    "id": "stop",
+    "text": "停止"
+  },
+  {
+    "id": "stop",
+    "text": "停一下"
+  },
+  {
+    "id": "stop",
+    "text": "停下来"
+  },
+  {
+    "id": "stop",
+    "text": "停住"
+  },
+  {
+    "id": "stop",
+    "text": "别动"
+  },
+  {
+    "id": "",
+    "text": "今天下雨了"
+  },
+  {
+    "id": "",
+    "text": "我想吃香蕉"
+  },
+  {
+    "id": "",
+    "text": "这是我的电脑"
+  },
+  {
+    "id": "",
+    "text": "我们回去吃饭"
+  },
+  {
+    "id": "",
+    "text": "小兔正在睡觉"
+  },
+  {
+    "id": "",
+    "text": "大门是蓝色的"
+  },
+  {
+    "id": "",
+    "text": "前面的花很漂亮"
+  },
+  {
+    "id": "",
+    "text": "后面的树很高"
+  },
+  {
+    "id": "",
+    "text": "老师今天没来"
+  },
+  {
+    "id": "",
+    "text": "不能这样做"
+  },
+  {
+    "id": "",
+    "text": "向日葵开花了"
+  },
+  {
+    "id": "",
+    "text": "别的地方有小鸟"
+  },
+  {
+    "id": "",
+    "text": "我最喜欢苹果"
+  },
+  {
+    "id": "",
+    "text": "哥哥在看书"
+  },
+  {
+    "id": "",
+    "text": "妹妹在玩积木"
+  },
+  {
+    "id": "",
+    "text": "你好小朋友"
+  },
+  {
+    "id": "",
+    "text": "不要跳"
+  },
+  {
+    "id": "",
+    "text": "不要前进"
+  },
+  {
+    "id": "",
+    "text": "不要后退"
+  },
+  {
+    "id": "",
+    "text": "不许开门"
+  }
+]

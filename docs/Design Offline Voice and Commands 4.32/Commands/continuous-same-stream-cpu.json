@@ -1,0 +1,438 @@
+{
+  "baseline": [
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "往前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "往前走",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进一步",
+      "id": "forward",
+      "heard": [],
+      "pass": false,
+      "effectiveHeard": [],
+      "effectivePass": false
+    },
+    {
+      "text": "向左",
+      "id": "left",
+      "heard": [
+        "left"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "left"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向左转",
+      "id": "turnLeft",
+      "heard": [
+        "left"
+      ],
+      "pass": false,
+      "effectiveHeard": [
+        "left"
+      ],
+      "effectivePass": false
+    },
+    {
+      "text": "向右转",
+      "id": "turnRight",
+      "heard": [
+        "right"
+      ],
+      "pass": false,
+      "effectiveHeard": [
+        "right"
+      ],
+      "effectivePass": false
+    },
+    {
+      "text": "拿起",
+      "id": "take",
+      "heard": [
+        "take"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "take"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "拿东西",
+      "id": "take",
+      "heard": [],
+      "pass": false,
+      "effectiveHeard": [],
+      "effectivePass": false
+    },
+    {
+      "text": "前面的花很漂亮",
+      "id": "",
+      "heard": [],
+      "pass": true,
+      "effectiveHeard": [],
+      "effectivePass": true
+    },
+    {
+      "text": "不要前进",
+      "id": "",
+      "heard": [
+        "forward"
+      ],
+      "pass": false,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": false
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "往前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向前",
+      "id": "forward",
+      "heard": [],
+      "pass": false,
+      "effectiveHeard": [],
+      "effectivePass": false
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward",
+        "forward"
+      ],
+      "pass": false,
+      "effectiveHeard": [
+        "forward",
+        "forward"
+      ],
+      "effectivePass": false
+    }
+  ],
+  "expanded": [
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "往前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "往前走",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进一步",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向左",
+      "id": "left",
+      "heard": [
+        "left"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "left"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向左转",
+      "id": "turnLeft",
+      "heard": [
+        "turnLeft"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "turnLeft"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向右转",
+      "id": "turnRight",
+      "heard": [
+        "turnRight"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "turnRight"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "拿起",
+      "id": "take",
+      "heard": [
+        "take"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "take"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "拿东西",
+      "id": "take",
+      "heard": [
+        "take"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "take"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前面的花很漂亮",
+      "id": "",
+      "heard": [],
+      "pass": true,
+      "effectiveHeard": [],
+      "effectivePass": true
+    },
+    {
+      "text": "不要前进",
+      "id": "",
+      "heard": [
+        "__ignore__"
+      ],
+      "pass": false,
+      "effectiveHeard": [],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "往前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "向前",
+      "id": "forward",
+      "heard": [
+        "forward"
+      ],
+      "pass": true,
+      "effectiveHeard": [
+        "forward"
+      ],
+      "effectivePass": true
+    },
+    {
+      "text": "前进",
+      "id": "forward",
+      "heard": [],
+      "pass": false,
+      "effectiveHeard": [],
+      "effectivePass": false
+    }
+  ]
+}

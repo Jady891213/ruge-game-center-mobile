@@ -1,0 +1,210 @@
+{
+  "baseline": [
+    {
+      "id": "forward",
+      "text": "前进",
+      "wav": "00.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "往前",
+      "wav": "01.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "向前",
+      "wav": "02.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "往前走",
+      "wav": "03.wav",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "forward",
+      "text": "前进一步",
+      "wav": "04.wav",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "left",
+      "text": "向左",
+      "wav": "05.wav",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnLeft",
+      "text": "向左转",
+      "wav": "06.wav",
+      "heard": [
+        "left"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnRight",
+      "text": "向右转",
+      "wav": "07.wav",
+      "heard": [
+        "right"
+      ],
+      "pass": false
+    },
+    {
+      "id": "take",
+      "text": "拿起",
+      "wav": "08.wav",
+      "heard": [
+        "take"
+      ],
+      "pass": true
+    },
+    {
+      "id": "take",
+      "text": "拿东西",
+      "wav": "09.wav",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "",
+      "text": "前面的花很漂亮",
+      "wav": "10.wav",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "不要前进",
+      "wav": "11.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": false
+    }
+  ],
+  "expanded": [
+    {
+      "id": "forward",
+      "text": "前进",
+      "wav": "00.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "往前",
+      "wav": "01.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "向前",
+      "wav": "02.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "往前走",
+      "wav": "03.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "前进一步",
+      "wav": "04.wav",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "left",
+      "text": "向左",
+      "wav": "05.wav",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnLeft",
+      "text": "向左转",
+      "wav": "06.wav",
+      "heard": [
+        "turnLeft"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnRight",
+      "text": "向右转",
+      "wav": "07.wav",
+      "heard": [
+        "turnRight"
+      ],
+      "pass": true
+    },
+    {
+      "id": "take",
+      "text": "拿起",
+      "wav": "08.wav",
+      "heard": [
+        "take"
+      ],
+      "pass": true
+    },
+    {
+      "id": "take",
+      "text": "拿东西",
+      "wav": "09.wav",
+      "heard": [
+        "take"
+      ],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "前面的花很漂亮",
+      "wav": "10.wav",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "不要前进",
+      "wav": "11.wav",
+      "heard": [],
+      "pass": true
+    }
+  ]
+}

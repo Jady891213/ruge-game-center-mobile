@@ -1,0 +1,18 @@
+{
+  "versionName": "4.32",
+  "versionCode": 55,
+  "apkSha256": "c5ed6f0e9d388c1420ba432ea47480bf3e41f22670cf7d4f2b10e4a5cf59c3f6",
+  "installedSha256": "c5ed6f0e9d388c1420ba432ea47480bf3e41f22670cf7d4f2b10e4a5cf59c3f6",
+  "exactApkMatch": true,
+  "debuggable": false,
+  "webviewDebugSocketPresent": false,
+  "adbForwards": [],
+  "saveRestore": {
+    "exact": true,
+    "keys": 31,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  },
+  "formalForegroundInteractionVerified": false,
+  "interactionBoundary": "Four audio buttons physically verified with identical DEV assets; final relisten physical tap blocked by lock screen."
+}

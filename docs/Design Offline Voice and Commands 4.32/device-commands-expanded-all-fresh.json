@@ -1,0 +1,836 @@
+[
+  {
+    "spoken": "前进",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0015768591547384858,
+        "confidence": 0,
+        "ageMs": 13,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 2,
+        "frames": 14
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "forward",
+            "serial": 3,
+            "ageMs": 826
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0029995825607329607,
+        "confidence": 0,
+        "ageMs": 48,
+        "command": "forward",
+        "commandAgeMs": 826,
+        "commandSerial": 3,
+        "frames": 55
+      },
+      "game": {
+        "level": 1,
+        "x": 2,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 1
+      },
+      "heard": "前进"
+    }
+  },
+  {
+    "spoken": "往前",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0029871617443859577,
+        "confidence": 0,
+        "ageMs": 56,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 3,
+        "frames": 12
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0030527703929692507,
+        "confidence": 0,
+        "ageMs": 38,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 3,
+        "frames": 55
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "我在听"
+    }
+  },
+  {
+    "spoken": "向前",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.034826334565877914,
+        "confidence": 0,
+        "ageMs": 24,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 3,
+        "frames": 13
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0030032701324671507,
+        "confidence": 0,
+        "ageMs": 26,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 3,
+        "frames": 55
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "我在听"
+    }
+  },
+  {
+    "spoken": "往前走",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.004088651388883591,
+        "confidence": 0,
+        "ageMs": 38,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 3,
+        "frames": 11
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "forward",
+            "serial": 4,
+            "ageMs": 734
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0036029303446412086,
+        "confidence": 0,
+        "ageMs": 10,
+        "command": "forward",
+        "commandAgeMs": 734,
+        "commandSerial": 4,
+        "frames": 54
+      },
+      "game": {
+        "level": 1,
+        "x": 2,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 1
+      },
+      "heard": "前进"
+    }
+  },
+  {
+    "spoken": "前进一步",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.006159243639558554,
+        "confidence": 0,
+        "ageMs": 3,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 4,
+        "frames": 9
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "forward",
+            "serial": 5,
+            "ageMs": 573
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.007086907047778368,
+        "confidence": 0,
+        "ageMs": 50,
+        "command": "forward",
+        "commandAgeMs": 573,
+        "commandSerial": 5,
+        "frames": 51
+      },
+      "game": {
+        "level": 1,
+        "x": 2,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 1
+      },
+      "heard": "前进"
+    }
+  },
+  {
+    "spoken": "向左",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.005567069631069899,
+        "confidence": 0,
+        "ageMs": 31,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 5,
+        "frames": 10
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.010435092262923717,
+        "confidence": 0,
+        "ageMs": 34,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 5,
+        "frames": 52
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "我在听"
+    }
+  },
+  {
+    "spoken": "向左转",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.006977318786084652,
+        "confidence": 0,
+        "ageMs": 5,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 5,
+        "frames": 14
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "turnLeft",
+            "serial": 7,
+            "ageMs": 608
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0074682761915028095,
+        "confidence": 0,
+        "ageMs": 29,
+        "command": "turnLeft",
+        "commandAgeMs": 608,
+        "commandSerial": 7,
+        "frames": 57
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 3,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      },
+      "heard": "左转"
+    }
+  },
+  {
+    "spoken": "向右转",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0056342738680541515,
+        "confidence": 0,
+        "ageMs": 50,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 7,
+        "frames": 14
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "turnRight",
+            "serial": 8,
+            "ageMs": 630
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.00181187957059592,
+        "confidence": 0,
+        "ageMs": 49,
+        "command": "turnRight",
+        "commandAgeMs": 631,
+        "commandSerial": 8,
+        "frames": 57
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "down",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 1
+      },
+      "heard": "右转"
+    }
+  },
+  {
+    "spoken": "拿起",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.004847189877182245,
+        "confidence": 0,
+        "ageMs": 36,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 8,
+        "frames": 9
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "take",
+            "serial": 9,
+            "ageMs": 576
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.005119611043483019,
+        "confidence": 0,
+        "ageMs": 57,
+        "command": "take",
+        "commandAgeMs": 576,
+        "commandSerial": 9,
+        "frames": 51
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "拿起 · 先走到物品上"
+    }
+  },
+  {
+    "spoken": "拿东西",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.002422832418233156,
+        "confidence": 0,
+        "ageMs": 64,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 9,
+        "frames": 12
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "take",
+            "serial": 11,
+            "ageMs": 778
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0015280094230547547,
+        "confidence": 0,
+        "ageMs": 62,
+        "command": "take",
+        "commandAgeMs": 780,
+        "commandSerial": 11,
+        "frames": 54
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "拿起 · 先走到物品上"
+    }
+  },
+  {
+    "spoken": "前面的花很漂亮",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0016991266747936606,
+        "confidence": 0,
+        "ageMs": 16,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 11,
+        "frames": 8
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0052118184976279736,
+        "confidence": 0,
+        "ageMs": 49,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 11,
+        "frames": 50
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "我在听"
+    }
+  },
+  {
+    "spoken": "不要前进",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0024612261913716793,
+        "confidence": 0,
+        "ageMs": 11,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 11,
+        "frames": 9
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0023234416730701923,
+        "confidence": 0,
+        "ageMs": 25,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 11,
+        "frames": 52
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "我在听"
+    }
+  }
+]

@@ -1,0 +1,824 @@
+{
+  "runtime": "1.13.8",
+  "backend": "macOS arm64 CPU, same 1.13.8 and bundled model assets; synthetic TTS not child accuracy",
+  "seconds": 3.49718976020813,
+  "results": [
+    {
+      "id": "left",
+      "text": "向左",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "left",
+      "text": "往左",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "left",
+      "text": "左边",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "left",
+      "text": "向左走",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "left",
+      "text": "往左走",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "left",
+      "text": "走左边",
+      "heard": [
+        "left"
+      ],
+      "pass": true
+    },
+    {
+      "id": "right",
+      "text": "向右",
+      "heard": [
+        "right"
+      ],
+      "pass": true
+    },
+    {
+      "id": "right",
+      "text": "往右",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "right",
+      "text": "右边",
+      "heard": [
+        "right"
+      ],
+      "pass": true
+    },
+    {
+      "id": "right",
+      "text": "向右走",
+      "heard": [
+        "right"
+      ],
+      "pass": true
+    },
+    {
+      "id": "right",
+      "text": "往右走",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "right",
+      "text": "走右边",
+      "heard": [
+        "right"
+      ],
+      "pass": true
+    },
+    {
+      "id": "up",
+      "text": "向上",
+      "heard": [
+        "up"
+      ],
+      "pass": true
+    },
+    {
+      "id": "up",
+      "text": "往上",
+      "heard": [
+        "up"
+      ],
+      "pass": true
+    },
+    {
+      "id": "up",
+      "text": "上面",
+      "heard": [
+        "up"
+      ],
+      "pass": true
+    },
+    {
+      "id": "up",
+      "text": "向上走",
+      "heard": [
+        "up"
+      ],
+      "pass": true
+    },
+    {
+      "id": "up",
+      "text": "往上走",
+      "heard": [
+        "up"
+      ],
+      "pass": true
+    },
+    {
+      "id": "up",
+      "text": "往上面",
+      "heard": [
+        "up"
+      ],
+      "pass": true
+    },
+    {
+      "id": "down",
+      "text": "向下",
+      "heard": [
+        "down"
+      ],
+      "pass": true
+    },
+    {
+      "id": "down",
+      "text": "往下",
+      "heard": [
+        "down"
+      ],
+      "pass": true
+    },
+    {
+      "id": "down",
+      "text": "下面",
+      "heard": [
+        "down"
+      ],
+      "pass": true
+    },
+    {
+      "id": "down",
+      "text": "向下走",
+      "heard": [
+        "down"
+      ],
+      "pass": true
+    },
+    {
+      "id": "down",
+      "text": "往下走",
+      "heard": [
+        "down"
+      ],
+      "pass": true
+    },
+    {
+      "id": "down",
+      "text": "往下面",
+      "heard": [
+        "down"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "前进",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "往前",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "向前",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "往前走",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "向前走",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "forward",
+      "text": "前进一步",
+      "heard": [
+        "forward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "backward",
+      "text": "后退",
+      "heard": [
+        "backward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "backward",
+      "text": "往后",
+      "heard": [
+        "backward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "backward",
+      "text": "向后",
+      "heard": [
+        "backward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "backward",
+      "text": "往后走",
+      "heard": [
+        "backward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "backward",
+      "text": "向后退",
+      "heard": [
+        "backward"
+      ],
+      "pass": true
+    },
+    {
+      "id": "backward",
+      "text": "退一步",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "turnLeft",
+      "text": "左转",
+      "heard": [
+        "turnLeft"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnLeft",
+      "text": "向左转",
+      "heard": [
+        "left"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnLeft",
+      "text": "往左转",
+      "heard": [
+        "turnLeft"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnLeft",
+      "text": "朝左转",
+      "heard": [
+        "turnLeft"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnLeft",
+      "text": "左转一下",
+      "heard": [
+        "turnLeft",
+        "down"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnLeft",
+      "text": "转向左边",
+      "heard": [
+        "left"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnRight",
+      "text": "右转",
+      "heard": [
+        "turnRight"
+      ],
+      "pass": true
+    },
+    {
+      "id": "turnRight",
+      "text": "向右转",
+      "heard": [
+        "right"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnRight",
+      "text": "往右转",
+      "heard": [
+        "right"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnRight",
+      "text": "朝右转",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "turnRight",
+      "text": "右转一下",
+      "heard": [
+        "turnRight",
+        "down"
+      ],
+      "pass": false
+    },
+    {
+      "id": "turnRight",
+      "text": "转向右边",
+      "heard": [
+        "right"
+      ],
+      "pass": false
+    },
+    {
+      "id": "jump",
+      "text": "跳一下",
+      "heard": [
+        "jump"
+      ],
+      "pass": true
+    },
+    {
+      "id": "jump",
+      "text": "跳起来",
+      "heard": [
+        "jump"
+      ],
+      "pass": true
+    },
+    {
+      "id": "jump",
+      "text": "向前跳",
+      "heard": [
+        "forward"
+      ],
+      "pass": false
+    },
+    {
+      "id": "jump",
+      "text": "跳过去",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "jump",
+      "text": "蹦一下",
+      "heard": [
+        "down"
+      ],
+      "pass": false
+    },
+    {
+      "id": "jump",
+      "text": "蹦过去",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "take",
+      "text": "拿起",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "take",
+      "text": "拿起来",
+      "heard": [
+        "take"
+      ],
+      "pass": true
+    },
+    {
+      "id": "take",
+      "text": "捡起来",
+      "heard": [
+        "take"
+      ],
+      "pass": true
+    },
+    {
+      "id": "take",
+      "text": "捡起",
+      "heard": [
+        "take"
+      ],
+      "pass": true
+    },
+    {
+      "id": "take",
+      "text": "拿东西",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "take",
+      "text": "拾起来",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "put",
+      "text": "放下",
+      "heard": [
+        "put"
+      ],
+      "pass": true
+    },
+    {
+      "id": "put",
+      "text": "放下来",
+      "heard": [
+        "put"
+      ],
+      "pass": true
+    },
+    {
+      "id": "put",
+      "text": "放东西",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "put",
+      "text": "放在这里",
+      "heard": [
+        "put"
+      ],
+      "pass": true
+    },
+    {
+      "id": "put",
+      "text": "放到这里",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "put",
+      "text": "把它放下",
+      "heard": [
+        "put"
+      ],
+      "pass": true
+    },
+    {
+      "id": "open",
+      "text": "开门",
+      "heard": [
+        "open"
+      ],
+      "pass": true
+    },
+    {
+      "id": "open",
+      "text": "打开门",
+      "heard": [
+        "open"
+      ],
+      "pass": true
+    },
+    {
+      "id": "open",
+      "text": "把门打开",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "open",
+      "text": "打开大门",
+      "heard": [
+        "open"
+      ],
+      "pass": true
+    },
+    {
+      "id": "open",
+      "text": "开一下门",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "open",
+      "text": "把大门打开",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "feed",
+      "text": "喂小兔",
+      "heard": [
+        "feed"
+      ],
+      "pass": true
+    },
+    {
+      "id": "feed",
+      "text": "给兔子",
+      "heard": [
+        "feed"
+      ],
+      "pass": true
+    },
+    {
+      "id": "feed",
+      "text": "交给兔子",
+      "heard": [
+        "feed"
+      ],
+      "pass": true
+    },
+    {
+      "id": "feed",
+      "text": "喂兔子",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "feed",
+      "text": "给小兔",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "feed",
+      "text": "交给小兔",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "deliver",
+      "text": "送回家",
+      "heard": [
+        "deliver"
+      ],
+      "pass": true
+    },
+    {
+      "id": "deliver",
+      "text": "放进窝",
+      "heard": [
+        "deliver"
+      ],
+      "pass": true
+    },
+    {
+      "id": "deliver",
+      "text": "送到家",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "deliver",
+      "text": "送进窝",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "deliver",
+      "text": "放回家",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "deliver",
+      "text": "送到小窝",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "stop",
+      "text": "停下",
+      "heard": [
+        "stop"
+      ],
+      "pass": true
+    },
+    {
+      "id": "stop",
+      "text": "停止",
+      "heard": [
+        "stop"
+      ],
+      "pass": true
+    },
+    {
+      "id": "stop",
+      "text": "停一下",
+      "heard": [
+        "stop"
+      ],
+      "pass": true
+    },
+    {
+      "id": "stop",
+      "text": "停下来",
+      "heard": [
+        "stop"
+      ],
+      "pass": true
+    },
+    {
+      "id": "stop",
+      "text": "停住",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "stop",
+      "text": "别动",
+      "heard": [],
+      "pass": false
+    },
+    {
+      "id": "",
+      "text": "今天下雨了",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "我想吃香蕉",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "这是我的电脑",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "我们回去吃饭",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "小兔正在睡觉",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "大门是蓝色的",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "前面的花很漂亮",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "后面的树很高",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "老师今天没来",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "不能这样做",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "向日葵开花了",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "别的地方有小鸟",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "我最喜欢苹果",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "哥哥在看书",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "妹妹在玩积木",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "你好小朋友",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "不要跳",
+      "heard": [],
+      "pass": true
+    },
+    {
+      "id": "",
+      "text": "不要前进",
+      "heard": [
+        "forward"
+      ],
+      "pass": false
+    },
+    {
+      "id": "",
+      "text": "不要后退",
+      "heard": [
+        "backward"
+      ],
+      "pass": false
+    },
+    {
+      "id": "",
+      "text": "不许开门",
+      "heard": [
+        "open"
+      ],
+      "pass": false
+    },
+    {
+      "id": "",
+      "text": "silence",
+      "heard": []
+    },
+    {
+      "id": "",
+      "text": "white-noise",
+      "heard": []
+    },
+    {
+      "id": "",
+      "text": "pink-room-noise",
+      "heard": []
+    }
+  ]
+}

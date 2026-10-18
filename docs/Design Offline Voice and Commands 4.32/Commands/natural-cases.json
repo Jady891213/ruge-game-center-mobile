@@ -1,0 +1,62 @@
+[
+  {
+    "id": "forward",
+    "text": "前进",
+    "wav": "00.wav"
+  },
+  {
+    "id": "forward",
+    "text": "往前",
+    "wav": "01.wav"
+  },
+  {
+    "id": "forward",
+    "text": "向前",
+    "wav": "02.wav"
+  },
+  {
+    "id": "forward",
+    "text": "往前走",
+    "wav": "03.wav"
+  },
+  {
+    "id": "forward",
+    "text": "前进一步",
+    "wav": "04.wav"
+  },
+  {
+    "id": "left",
+    "text": "向左",
+    "wav": "05.wav"
+  },
+  {
+    "id": "turnLeft",
+    "text": "向左转",
+    "wav": "06.wav"
+  },
+  {
+    "id": "turnRight",
+    "text": "向右转",
+    "wav": "07.wav"
+  },
+  {
+    "id": "take",
+    "text": "拿起",
+    "wav": "08.wav"
+  },
+  {
+    "id": "take",
+    "text": "拿东西",
+    "wav": "09.wav"
+  },
+  {
+    "id": "",
+    "text": "前面的花很漂亮",
+    "wav": "10.wav"
+  },
+  {
+    "id": "",
+    "text": "不要前进",
+    "wav": "11.wav"
+  }
+]

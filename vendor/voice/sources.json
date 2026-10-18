@@ -50,8 +50,8 @@
     },
     {
       "path": "app/assets/voice-model/keywords.txt",
-      "bytes": 1327,
-      "sha256": "151990cd97b382157092737f060e83b2c777b5cec5e65e72a4e9473684fa7baf"
+      "bytes": 4016,
+      "sha256": "6e75959fdf897422be2b5d7ab5f6d6d015789ca9b7ee1d427e16d1856b73a5c8"
     },
     {
       "path": "app/assets/voice-model/licenses/LICENSE-eigen-MPL2.txt",
@@ -132,6 +132,11 @@
       "path": "app/assets/voice-model/tokens.txt",
       "bytes": 1627,
       "sha256": "72316508d9119696145abc6f1f8cdc46287535c34e5ce7e595f845cb1499cf2e"
+    },
+    {
+      "path": "app/assets/voice-model/commands.json",
+      "bytes": 30842,
+      "sha256": "e4c7eecbdb085ab4f075fd15912b42cb8ef996098cc97d3cd46d24a582369e47"
     }
   ],
   "onnxruntime": "1.28.2 (version string in official libonnxruntime.so)",

@@ -1,0 +1,56 @@
+{
+  "typing": {
+    "played": [
+      "5bf017cf7fb67da490.mp3"
+    ],
+    "expected": "5bf017cf7fb67da490.mp3",
+    "paused": false,
+    "time": 0.635979,
+    "duration": 0.847531,
+    "ready": 4,
+    "source": "file:///android_asset/shared/demo-audio/5bf017cf7fb67da490.mp3",
+    "sysSpeech": "undefined",
+    "scoreAndInputUnchanged": true,
+    "stoppedOnPause": true
+  },
+  "library": {
+    "played": [
+      "054b20729d69ae346b.mp3"
+    ],
+    "expected": "054b20729d69ae346b.mp3",
+    "paused": false,
+    "time": 0.548189,
+    "duration": 0.847531,
+    "ready": 4,
+    "source": "file:///android_asset/shared/demo-audio/054b20729d69ae346b.mp3",
+    "sysSpeech": "undefined",
+    "stoppedOnNext": true
+  },
+  "professional": {
+    "played": [
+      "760f64ef268b252382.mp3"
+    ],
+    "expected": "760f64ef268b252382.mp3",
+    "paused": false,
+    "time": 0.446398,
+    "duration": 2.885313,
+    "ready": 4,
+    "source": "file:///android_asset/shared/demo-audio/760f64ef268b252382.mp3",
+    "sysSpeech": "undefined",
+    "stoppedOnPause": true
+  },
+  "english": {
+    "played": [
+      "a031b121cd2022db84.mp3"
+    ],
+    "expected": "a031b121cd2022db84.mp3",
+    "paused": false,
+    "time": 0.539495,
+    "duration": 0.952031,
+    "ready": 4,
+    "source": "file:///android_asset/shared/demo-audio/a031b121cd2022db84.mp3",
+    "sysSpeech": "undefined",
+    "stoppedOnPause": true
+  },
+  "boundary": "Actual packaged WebView + ADB physical taps. Real MP3 loaded/decoded/played, media paused on actual UI lifecycle; no cloud assessment request, no human microphone/audio saved."
+}

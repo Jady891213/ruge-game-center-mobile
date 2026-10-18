@@ -1,42 +1,111 @@
-x iàng z uǒ :2.0 #.15 @left
-w ǎng z uǒ :2.0 #.15 @left
-z uǒ b iān :2.0 #.15 @left
-x iàng y òu :2.0 #.15 @right
-w ǎng y òu :2.0 #.15 @right
-y òu b iān :2.0 #.15 @right
-x iàng sh àng :2.0 #.15 @up
-w ǎng sh àng :2.0 #.15 @up
-sh àng m iàn :2.0 #.15 @up
-x iàng x ià :2.0 #.15 @down
-w ǎng x ià :2.0 #.15 @down
-x ià m iàn :2.0 #.15 @down
-q ián j ìn :2.0 #.15 @forward
-w ǎng q ián :2.0 #.15 @forward
-x iàng q ián :2.0 #.15 @forward
-h òu t uì :2.0 #.15 @backward
-w ǎng h òu :2.0 #.15 @backward
-x iàng h òu :2.0 #.15 @backward
-z uǒ zh uǎn :2.0 #.15 @turnLeft
-y òu zh uǎn :2.0 #.15 @turnRight
-t iào y í x ià :2.0 #.15 @jump
-t iào q ǐ l ái :2.0 #.15 @jump
-t iào :2.0 #.50 @jump
-n á q ǐ l ái :2.0 #.15 @take
-n á q ǐ :2.0 #.15 @take
-j iǎn q ǐ l ái :2.0 #.15 @take
-f àng x ià l ái :2.0 #.15 @put
-f àng x ià :2.0 #.15 @put
-k āi m én :2.0 #.15 @open
-d ǎ k āi m én :2.0 #.15 @open
-w èi x iǎo t ù :2.0 #.15 @feed
-g ěi t ù z ǐ :2.0 #.15 @feed
-j iāo g ěi t ù z ǐ :2.0 #.15 @feed
-s òng h uí j iā :2.0 #.15 @deliver
-f àng j ìn w ō :2.0 #.15 @deliver
-t íng x ià :2.0 #.15 @stop
-t íng zh ǐ :2.0 #.15 @stop
-t íng y í x ià :2.0 #.15 @stop
-t íng x ià l ái :2.0 #.15 @stop
-w àng y òu :3.0 #.12 @right
-w àng h òu :3.0 #.12 @backward
-w áng z uǒ :2.0 #.15 @left
+x iàng z uǒ :2.0 #0.2 @left
+w ǎng z uǒ :2.0 #0.2 @left
+z uǒ b iān :2.0 #0.2 @left
+x iàng z uǒ z ǒu :2.0 #0.2 @left
+w ǎng z uǒ z ǒu :2.0 #0.2 @left
+z ǒu z uǒ b iān :2.0 #0.2 @left
+x iàng y òu :2.0 #0.2 @right
+w ǎng y òu :2.0 #0.2 @right
+y òu b iān :2.0 #0.2 @right
+x iàng y òu z ǒu :2.0 #0.2 @right
+w ǎng y òu z ǒu :2.0 #0.2 @right
+z ǒu y òu b iān :2.0 #0.2 @right
+x iàng sh àng :2.0 #0.2 @up
+w ǎng sh àng :2.0 #0.2 @up
+sh àng m iàn :2.0 #0.2 @up
+x iàng sh àng z ǒu :2.0 #0.2 @up
+w ǎng sh àng z ǒu :2.0 #0.2 @up
+w ǎng sh àng m iàn :2.0 #0.2 @up
+x iàng x ià :2.0 #0.2 @down
+w ǎng x ià :2.0 #0.2 @down
+x ià m iàn :2.0 #0.2 @down
+x iàng x ià z ǒu :2.0 #0.2 @down
+w ǎng x ià z ǒu :2.0 #0.2 @down
+w ǎng x ià m iàn :2.0 #0.2 @down
+q ián j ìn :2.0 #0.2 @forward
+w ǎng q ián :2.0 #0.2 @forward
+x iàng q ián :2.0 #0.2 @forward
+w ǎng q ián z ǒu :2.0 #0.2 @forward
+x iàng q ián z ǒu :2.0 #0.2 @forward
+q ián j ìn y í b ù :2.0 #0.2 @forward
+h òu t uì :2.0 #0.2 @backward
+w ǎng h òu :2.0 #0.2 @backward
+x iàng h òu :2.0 #0.2 @backward
+w ǎng h òu z ǒu :2.0 #0.2 @backward
+x iàng h òu t uì :2.0 #0.2 @backward
+t uì y ī b ù :2.0 #0.2 @backward
+t uì y í b ù :2.0 #0.2 @backward
+z uǒ zh uǎn :2.0 #0.2 @turnLeft
+z uó zh uǎn :2.0 #0.2 @turnLeft
+x iàng z uǒ zh uǎn :2.0 #0.2 @turnLeft
+x iàng z uó zh uǎn :2.0 #0.2 @turnLeft
+w ǎng z uǒ zh uǎn :2.0 #0.2 @turnLeft
+w ǎng z uó zh uǎn :2.0 #0.2 @turnLeft
+ch áo z uǒ zh uǎn :2.0 #0.2 @turnLeft
+ch áo z uó zh uǎn :2.0 #0.2 @turnLeft
+z uǒ zh uǎn y ī x ià :2.0 #0.2 @turnLeft
+z uó zh uǎn y í x ià :2.0 #0.2 @turnLeft
+zh uǎn x iàng z uǒ b iān :2.0 #0.2 @turnLeft
+y òu zh uǎn :2.0 #0.2 @turnRight
+x iàng y òu zh uǎn :2.0 #0.2 @turnRight
+w ǎng y òu zh uǎn :2.0 #0.2 @turnRight
+ch áo y òu zh uǎn :2.0 #0.2 @turnRight
+y òu zh uǎn y ī x ià :2.0 #0.2 @turnRight
+y òu zh uǎn y í x ià :2.0 #0.2 @turnRight
+zh uǎn x iàng y òu b iān :2.0 #0.2 @turnRight
+t iào y ī x ià :2.0 #0.2 @jump
+t iào y í x ià :2.0 #0.2 @jump
+t iào q ǐ l ái :2.0 #0.2 @jump
+x iàng q ián t iào :2.0 #0.2 @jump
+t iào g uò q ù :2.0 #0.2 @jump
+b èng y ī x ià :2.0 #0.2 @jump
+b èng y í x ià :2.0 #0.2 @jump
+b èng g uò q ù :2.0 #0.2 @jump
+n á q ǐ :2.0 #0.2 @take
+n á q ǐ l ái :2.0 #0.2 @take
+j iǎn q ǐ l ái :2.0 #0.2 @take
+j iǎn q ǐ :2.0 #0.2 @take
+n á d ōng x i :2.0 #0.2 @take
+n á d ōng x ī :2.0 #0.2 @take
+sh í q ǐ l ái :2.0 #0.2 @take
+b ǎ t ā n á q ǐ l ái :2.0 #0.2 @take
+b ǎ d ōng x ī n á q ǐ l ái :2.0 #0.2 @take
+f àng x ià :2.0 #0.2 @put
+f àng x ià l ái :2.0 #0.2 @put
+f àng d ōng x i :2.0 #0.2 @put
+f àng d ōng x ī :2.0 #0.2 @put
+f àng z ài zh è l ǐ :2.0 #0.2 @put
+f àng d ào zh è l ǐ :2.0 #0.2 @put
+b ǎ t ā f àng x ià :2.0 #0.2 @put
+k āi m én :2.0 #0.2 @open
+d ǎ k āi m én :2.0 #0.2 @open
+b ǎ m én d ǎ k āi :2.0 #0.2 @open
+d ǎ k āi d à m én :2.0 #0.2 @open
+k āi y ī x ià m én :2.0 #0.2 @open
+k āi y í x ià m én :2.0 #0.2 @open
+b ǎ d à m én d ǎ k āi :2.0 #0.2 @open
+w èi x iǎo t ù :2.0 #0.2 @feed
+g ěi t ù z i :2.0 #0.2 @feed
+j iāo g ěi t ù z i :2.0 #0.2 @feed
+w èi t ù z i :2.0 #0.2 @feed
+g ěi x iǎo t ù :2.0 #0.2 @feed
+j iāo g ěi x iǎo t ù :2.0 #0.2 @feed
+s òng h uí j iā :2.0 #0.2 @deliver
+f àng j ìn w ō :2.0 #0.2 @deliver
+s òng d ào j iā :2.0 #0.2 @deliver
+s òng j ìn w ō :2.0 #0.2 @deliver
+f àng h uí j iā :2.0 #0.2 @deliver
+s òng d ào x iǎo w ō :2.0 #0.2 @deliver
+t íng x ià :2.0 #0.2 @stop
+t íng zh ǐ :2.0 #0.2 @stop
+t íng y ī x ià :2.0 #0.2 @stop
+t íng y í x ià :2.0 #0.2 @stop
+t íng x ià l ái :2.0 #0.2 @stop
+t íng zh ù :2.0 #0.2 @stop
+b ié d òng :2.0 #0.2 @stop
+b ú y ào q ián j ìn :2.0 #0.2 @__ignore__
+b ú y ào h òu t uì :2.0 #0.2 @__ignore__
+b ù x ǔ k āi m én :2.0 #0.2 @__ignore__
+b ú y ào t iào :2.0 #0.2 @__ignore__
+b ú y ào d òng :2.0 #0.2 @__ignore__
+b ié k āi m én :2.0 #0.2 @__ignore__

@@ -38,14 +38,14 @@ public final class GameServices {
     private boolean allowed() { return !closed && host.servicesPageAllowed(); }
     @JavascriptInterface public synchronized String read() {
         try {
-            if (!allowed()) return "{\"version\":\"4.31\",\"services\":[]}";
+            if (!allowed()) return "{\"version\":\"4.32\",\"services\":[]}";
             boolean tencent = assessment.privateConfigured();
             boolean minimax = assessment.minimaxConfigured();
             JSONArray rows = new JSONArray();
             rows.put(row("tencent-soe", "腾讯云口语评测", tencent ? "unsupported" : "unconfigured", tencent, null, 0, tencent ? "quota-console-only" : ""));
             rows.put(row("minimax-token-plan", "MiniMax 共享套餐", minimax ? state : "unconfigured", minimax, minimax ? quota : null, minimax ? updatedAt : 0, minimax ? error : ""));
-            return new JSONObject().put("version", "4.31").put("services", rows).toString();
-        } catch (Exception ignored) { return "{\"version\":\"4.31\",\"services\":[]}"; }
+            return new JSONObject().put("version", "4.32").put("services", rows).toString();
+        } catch (Exception ignored) { return "{\"version\":\"4.32\",\"services\":[]}"; }
     }
     static JSONObject row(String id, String name, String status, boolean configured, JSONObject quota, long at, String error) throws Exception {
         return new JSONObject().put("id", id).put("name", name).put("status", status).put("configured", configured)

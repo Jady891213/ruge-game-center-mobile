@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十九款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，游戏资源离线打包；专业语音评分需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.31 / versionCode 54**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.32 / versionCode 55**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,14 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 全部离线朗读与扩充口令（4.32）
+
+全部四个朗读入口统一为MiniMax预生成的本地音频：看字打拼音、识字库、开口读拼音、K国王回家。复用已生成的101条MP3，221处朗读映射零缺口；不再退回系统或浏览器TTS。手动播放、切字停止、后台暂停及打字成绩保持原语义，播放不联网。
+
+口令小冒险15个动作共92种说法，每动作6种、拿取8种。“前进、往前、向前、往前走、向前走、前进一步”均已实际注册。共享词表、KWS与界面提示由单一目录生成。修复原生与动画队列覆盖/卡住、转向短前缀抢占；受阻时保留已听到的动作名。点麦克风会真正重新采集并保留角色进度，正常连续关仍复用会话。
+
+[4.32验收与边界](docs/Design%20Offline%20Voice%20and%20Commands%204.32/review.md)。口令仍为离线关键词识别；合成标准音能用于对照，不能替代儿童声线和家庭环境的试玩，连续语音仍可能漏听或误触。
 
 ## K国王回家与专业读音（4.31）
 

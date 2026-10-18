@@ -1,0 +1,22 @@
+{
+  "runtime": "sherpa-onnx 1.13.8",
+  "platform": "macOS arm64 CPU",
+  "wheels": [
+    {
+      "file": "sherpa_onnx_core-1.13.8-py3-none-macosx_11_0_arm64.whl",
+      "bytes": 9552498,
+      "sha256": "9312bbd46c93e31cecd3abda9cc8e71881d86cc3da3c35c7445ab04025b9fc3e",
+      "source": "Official sherpa-onnx 1.13.8 PyPI distribution; archive hash verified before isolated extraction, not installed globally or shipped"
+    },
+    {
+      "file": "sherpa_onnx-1.13.8-cp312-cp312-macosx_11_0_arm64.whl",
+      "bytes": 2146858,
+      "sha256": "04b9268c348e9f4bd61315754ad06b02a3c185d3d7770acd8e2dcee9c2e039f9",
+      "source": "Official sherpa-onnx 1.13.8 PyPI distribution; archive hash verified before isolated extraction, not installed globally or shipped"
+    }
+  ],
+  "apkRuntime": "Existing vendor .so/.jar unchanged",
+  "modelInputs": "Actual bundled voice-model/*.onnx and tokens.txt",
+  "speaker": "macOS Tingting synthetic 150 words/min and 12 MiniMax male-qn-qingse short standard clips",
+  "noHumanAudio": true
+}

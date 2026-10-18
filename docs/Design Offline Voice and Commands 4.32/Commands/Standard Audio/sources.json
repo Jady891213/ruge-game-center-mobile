@@ -1,0 +1,83 @@
+{
+  "provider": "MiniMax",
+  "model": "speech-2.8-hd",
+  "voice": "male-qn-qingse",
+  "language": "Chinese",
+  "speed": 0.85,
+  "purpose": "Synthetic standard audio for actual offline KWS regression, not human recordings or child accuracy evidence",
+  "calls": 12,
+  "clips": [
+    {
+      "text": "前进",
+      "expected": "forward",
+      "file": "00.mp3",
+      "sha256": "507357f5dddab48201d96740dcb88965302e27824d0f759bf3b9c8c396ad62b6"
+    },
+    {
+      "text": "往前",
+      "expected": "forward",
+      "file": "01.mp3",
+      "sha256": "1f5c9a31d5fa632a12879afaaeb8534b141089d0f7b46a542b608a9b84034dba"
+    },
+    {
+      "text": "向前",
+      "expected": "forward",
+      "file": "02.mp3",
+      "sha256": "59337dd0757c6b4dd393988811884512cad077a00420c61699c67947712cc5ff"
+    },
+    {
+      "text": "往前走",
+      "expected": "forward",
+      "file": "03.mp3",
+      "sha256": "29385d53a009da662cd0892be991083892fedad8b6c5b72b812cc5505b2e2e49"
+    },
+    {
+      "text": "前进一步",
+      "expected": "forward",
+      "file": "04.mp3",
+      "sha256": "0097a70473aa39eb754b1775eba6659de8adb689a4d6426917af88e791485072"
+    },
+    {
+      "text": "向左",
+      "expected": "left",
+      "file": "05.mp3",
+      "sha256": "e6c887a7232c933cc6d6a8dc85f2c0adb73260e65b417a67a628160ef332b538"
+    },
+    {
+      "text": "向左转",
+      "expected": "turnLeft",
+      "file": "06.mp3",
+      "sha256": "91ee12a64a1059991ba4984a980094acb46d6a8efdab4a6b1dc8b135defc404f"
+    },
+    {
+      "text": "向右转",
+      "expected": "turnRight",
+      "file": "07.mp3",
+      "sha256": "31b82e2c6a44cf90c24be7ecc5a323a2bbf1fd9077c3e6e71492967b61dcb825"
+    },
+    {
+      "text": "拿起",
+      "expected": "take",
+      "file": "08.mp3",
+      "sha256": "2b746887c8a75cc028a6d7ec10bb50b89309afd0b67052512e30cbea2c1ac4e5"
+    },
+    {
+      "text": "拿东西",
+      "expected": "take",
+      "file": "09.mp3",
+      "sha256": "95f3a5f38b3912b2dddc7fd7e308b3a83527cd30b8436c020f47ecfb91710281"
+    },
+    {
+      "text": "前面的花很漂亮",
+      "expected": "",
+      "file": "10.mp3",
+      "sha256": "a6c057f22f0e5f55c38575b095c518b8aa9301ddec2d1bf04e48a20a3b67fe38"
+    },
+    {
+      "text": "不要前进",
+      "expected": "",
+      "file": "11.mp3",
+      "sha256": "e064180b9b6f4fb8fe8373f1562b89b3f1f25b57d49e1dec41dfe508ed438a7a"
+    }
+  ]
+}

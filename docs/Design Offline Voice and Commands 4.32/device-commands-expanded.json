@@ -1,0 +1,212 @@
+[
+  {
+    "spoken": "前进",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0017054370837286115,
+        "confidence": 0,
+        "ageMs": 71,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 0,
+        "frames": 12
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "forward",
+            "serial": 1,
+            "ageMs": 801
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.002029304625466466,
+        "confidence": 0,
+        "ageMs": 19,
+        "command": "forward",
+        "commandAgeMs": 801,
+        "commandSerial": 1,
+        "frames": 55
+      },
+      "game": {
+        "level": 1,
+        "x": 2,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 1
+      },
+      "heard": "前进"
+    }
+  },
+  {
+    "spoken": "往前",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.001697749481536448,
+        "confidence": 0,
+        "ageMs": 9,
+        "command": "forward",
+        "commandAgeMs": 1494,
+        "commandSerial": 1,
+        "frames": 66
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [
+          {
+            "command": "forward",
+            "serial": 2,
+            "ageMs": 1006
+          }
+        ],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.0018662309739738703,
+        "confidence": 0,
+        "ageMs": 27,
+        "command": "forward",
+        "commandAgeMs": 1006,
+        "commandSerial": 2,
+        "frames": 108
+      },
+      "game": {
+        "level": 1,
+        "x": 2,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 1
+      },
+      "heard": "前进"
+    }
+  },
+  {
+    "spoken": "向前",
+    "before": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.001691904617473483,
+        "confidence": 0,
+        "ageMs": 3,
+        "command": "forward",
+        "commandAgeMs": 1744,
+        "commandSerial": 2,
+        "frames": 120
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      }
+    },
+    "after": {
+      "native": {
+        "commands": [],
+        "status": "listening",
+        "mode": "command",
+        "error": "",
+        "pitch": 0,
+        "rms": 0.002189357066527009,
+        "confidence": 0,
+        "ageMs": 39,
+        "command": "forward",
+        "commandAgeMs": 4458,
+        "commandSerial": 2,
+        "frames": 162
+      },
+      "game": {
+        "level": 1,
+        "x": 1,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 0
+      },
+      "heard": "我在听"
+    }
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "phrases": 92,
+  "positivePass": 88,
+  "positiveByAction": {
+    "left": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "right": {
+      "passed": 5,
+      "total": 6,
+      "misses": [
+        "往右"
+      ]
+    },
+    "up": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "down": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "forward": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "backward": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "turnLeft": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "turnRight": {
+      "passed": 5,
+      "total": 6,
+      "misses": [
+        "转向右边"
+      ]
+    },
+    "jump": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "take": {
+      "passed": 7,
+      "total": 8,
+      "misses": [
+        "拿起"
+      ]
+    },
+    "put": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "open": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "feed": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "deliver": {
+      "passed": 6,
+      "total": 6,
+      "misses": []
+    },
+    "stop": {
+      "passed": 5,
+      "total": 6,
+      "misses": [
+        "停住"
+      ]
+    }
+  },
+  "spokenNegativePass": 20,
+  "spokenNegativeTotal": 20,
+  "noisePass": 2,
+  "noiseTotal": 3,
+  "naturalSameSamples": {
+    "baseline": 6,
+    "expanded": 12
+  },
+  "naturalSamples": 12,
+  "continuous": {
+    "baseline": {
+      "passed": 12,
+      "total": 19
+    },
+    "expanded": {
+      "passed": 18,
+      "total": 19
+    }
+  },
+  "rejectedGate": {
+    "reason": "The actual Java VoicePitch recent-voiced gate removed one colored-noise false stop but reduced five genuine synthetic positive phrases; NOT shipped."
+  }
+}
