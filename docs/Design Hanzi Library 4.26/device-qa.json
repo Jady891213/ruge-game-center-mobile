@@ -1,0 +1,796 @@
+{
+  "homeLearnNames": [
+    "字里找字",
+    "看字打拼音",
+    "识字库"
+  ],
+  "libraryEntry": {
+    "view": "list",
+    "char": null,
+    "group": "all",
+    "query": "",
+    "listPosition": 0,
+    "total": 60,
+    "visible": [
+      "这",
+      "那",
+      "说",
+      "着",
+      "是",
+      "的",
+      "只",
+      "个",
+      "成",
+      "就",
+      "看",
+      "为",
+      "什",
+      "么",
+      "我",
+      "和",
+      "你",
+      "他",
+      "哪",
+      "里",
+      "来",
+      "去",
+      "又",
+      "要",
+      "还",
+      "能",
+      "起",
+      "儿",
+      "子",
+      "也",
+      "都",
+      "没",
+      "不",
+      "可",
+      "以",
+      "大",
+      "小",
+      "少",
+      "多",
+      "过",
+      "一",
+      "二",
+      "三",
+      "方",
+      "对",
+      "面",
+      "到",
+      "好",
+      "了",
+      "有",
+      "天",
+      "地",
+      "人",
+      "们",
+      "山",
+      "日",
+      "出",
+      "上",
+      "中",
+      "下"
+    ],
+    "cover": false
+  },
+  "searchedDetail": {
+    "state": {
+      "view": "detail",
+      "char": "日",
+      "group": "all",
+      "query": "ri",
+      "listPosition": 0,
+      "total": 60,
+      "visible": [
+        "日"
+      ],
+      "cover": false
+    },
+    "story": "古字像太阳的轮廓，中间加一点，便于和其他圆圈区别。后来圆的轮廓逐渐写成方形。",
+    "forms": [
+      "甲骨文",
+      "金文",
+      "篆文",
+      "今字"
+    ]
+  },
+  "tts": {
+    "ready": true,
+    "status": "ok lang=zh_CN avail=0",
+    "toast": ""
+  },
+  "images": [
+    {
+      "src": "forms/8aaa-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/662f-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/662f-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65f3-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6210-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6210-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6210-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c31-oracle.svg",
+      "ok": true,
+      "w": 90,
+      "h": 90
+    },
+    {
+      "src": "forms/5c31-bronze.svg",
+      "ok": true,
+      "w": 90,
+      "h": 90
+    },
+    {
+      "src": "forms/5c31-seal.svg",
+      "ok": true,
+      "w": 90,
+      "h": 90
+    },
+    {
+      "src": "forms/770b-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/70ba-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/70ba-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/70ba-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4ec0-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6211-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6211-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6211-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53bb-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53bb-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53c8-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53c8-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53c8-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/8981-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/9084-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/9084-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/80fd-oracle.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/80fd-bronze.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/80fd-seal.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/8d77-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5152-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5152-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5152-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5b50-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5b50-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5b50-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e5f-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/90fd-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/90fd-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6c92-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0d-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0d-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53ef-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53ef-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/53ef-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4ee5-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4ee5-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5927-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5927-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5927-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c0f-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c0f-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c0f-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c11-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/591a-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/591a-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/591a-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/904e-bronze.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/904e-seal.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/4e00-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e00-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e00-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e8c-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e8c-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e8c-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e09-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e09-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e09-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65b9-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65b9-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65b9-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c0d-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c0d-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c0d-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/9762-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/9762-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5230-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/597d-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/597d-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/597d-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e86-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6709-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/6709-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5929-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5929-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5929-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5730-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4eba-oracle.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/4eba-bronze.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/4eba-seal.svg",
+      "ok": true,
+      "w": 100,
+      "h": 100
+    },
+    {
+      "src": "forms/5c71-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c71-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/5c71-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65e5-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65e5-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/65e5-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/51fa-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/51fa-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/51fa-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0a-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0a-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0a-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e2d-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e2d-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e2d-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0b-oracle.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0b-bronze.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    },
+    {
+      "src": "forms/4e0b-seal.svg",
+      "ok": true,
+      "w": 300,
+      "h": 300
+    }
+  ],
+  "sourceBrowserActivity": [
+    "topResumedActivity=ActivityRecord{a4082d u0 com.android.browser/.BrowserActivity t499}"
+  ],
+  "browserReturn": {
+    "view": "detail",
+    "char": "日",
+    "group": "all",
+    "query": "ri",
+    "listPosition": 0,
+    "total": 60,
+    "visible": [
+      "日"
+    ],
+    "cover": false
+  },
+  "searchRetained": {
+    "view": "list",
+    "char": null,
+    "group": "all",
+    "query": "ri",
+    "listPosition": 0,
+    "total": 60,
+    "visible": [
+      "日"
+    ],
+    "cover": false
+  },
+  "relatedReference": [
+    "相关古字“旳”的参考形；不等于助词“的”的直接演变链。",
+    "现代规范字"
+  ],
+  "laterCharacter": {
+    "forms": 2,
+    "note": "“們”是较晚的字，简体写“们”；本轮未核得可用甲骨形。 本次未收录古字形图片，不代表断言历史上绝无。"
+  },
+  "typingMenuLink": 60,
+  "backgroundRetained": 60,
+  "changedKeys": [
+    "rugeCenter"
+  ],
+  "interactionBoundary": "ADB touch taps for entry/cards/buttons; search text assigned through CDP; no claim of physical keyboard input or human hearing.",
+  "browserReturnMethod": "Source link launches existing Xiaomi browser task. Android Back can traverse browser history; returned via am start existing Game Center task, retained 日 detail."
+}

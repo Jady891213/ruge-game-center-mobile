@@ -24,6 +24,7 @@
 .keyboard-open .tools{display:none}.keyboard-open #stage{border-radius:22px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-size:200px!important;overflow:hidden}.cover-mode #menu{display:none!important}.cover-mode #play{width:600px;max-width:none;height:360px;padding:20px 25px;overflow:hidden}.cover-mode header{height:43px;min-height:43px}.cover-mode header .tb,.cover-mode #mRotate{display:none}.cover-mode #groupTag{font-size:24px}.cover-mode #prog{margin-top:9px;height:8px}.cover-mode #body{flex-direction:row;gap:28px;align-items:center}.cover-mode #main{flex:1;padding:0;min-height:0}.cover-mode #stage{width:200px;height:200px;min-width:200px;min-height:200px}.cover-mode #py{font-size:29px;margin-top:10px}.cover-mode #bar{flex:1;padding:0}.cover-mode #type{font-size:36px;min-height:74px}.cover-mode .tools{display:flex;gap:9px}.cover-mode .tools .tb{min-width:65px;height:58px}.cover-mode #foot{font-size:25px;margin:13px 0}.cover-mode #big{font-size:154px}
+.library-link{align-self:center;margin-top:16px;text-decoration:none;min-height:48px;padding:9px 24px}.cover-mode .library-link{display:none!important}
 </style>
 </head>
 <body>
@@ -42,6 +43,7 @@ body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-siz
     <button class="tb" id="mStats" aria-label="练习记录"><svg viewBox="0 0 24 24"><path d="M5 19V12M12 19V5M19 19V9"/></svg></button>
   </div>
   <div id="levels"></div>
+  <a class="tb library-link" id="mLibrary" href="../hanzi-library/index.html">识字库</a>
   <button class="tb rotate" id="mRotate" aria-label="切换横屏" title="切换横屏"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="3"/><path d="M17 3h4v4M21 3l-4 4M6 12v2"/></svg></button>
   <div id="menuFoot">
     60 个常用字 · 拼音字母练习，不区分声调<br>答对后看看笔顺，再读下一个字
@@ -122,6 +124,7 @@ body.cover-mode{width:600px;height:360px;--app-height:360px!important;--char-siz
 <div id="dbg"></div>
 
 <script src="../shared/feedback.js"></script>
+<script src="../shared/hanzi-vocabulary.js"></script>
 <script>
 'use strict';
 /* 笔画数据：chanind/hanzi-writer-data / Make Me A Hanzi，Arphic Public License。
@@ -138,27 +141,8 @@ window.STROKES = {"一":{"s":["M 518 382 Q 572 385 623 389 Q 758 399 900 383 Q 9
    · 打对后逐笔演示这个字怎么写
    ════════════════════════════════════════════════════════════ */
 
-const LEVELS = [
-  { name:'第一关', chars:'这那说着是的只个成就' },
-  { name:'第二关', chars:'看为什么我和你他哪里' },
-  { name:'第三关', chars:'来去又要还能起儿子也' },
-  { name:'第四关', chars:'都没不可以大小少多过' },
-  { name:'第五关', chars:'一二三方对面到好了有' },
-  { name:'第六关', chars:'天地人们山日出上中下' },
-];
-const PY = {
-  '这':['zhè'],'那':['nà'],'说':['shuō','shuì'],'着':['zhe','zháo','zhuó','zhāo'],'是':['shì'],'的':['de'],
-  '只':['zhǐ','zhī'],'个':['gè'],'成':['chéng'],'就':['jiù'],'看':['kàn','kān'],
-  '为':['wèi','wéi'],'什':['shén'],'么':['me'],'我':['wǒ'],'和':['hé','hè','huó','huò','hú'],'你':['nǐ'],
-  '他':['tā'],'哪':['nǎ','něi'],'里':['lǐ'],'来':['lái'],'去':['qù'],'又':['yòu'],
-  '要':['yào'],'还':['hái','huán'],'能':['néng'],'起':['qǐ'],'儿':['ér'],'子':['zǐ'],
-  '也':['yě'],'都':['dōu','dū'],'没':['méi','mò'],'不':['bù'],'可':['kě'],'以':['yǐ'],
-  '大':['dà'],'小':['xiǎo'],'少':['shǎo','shào'],'多':['duō'],'过':['guò'],
-  '一':['yī'],'二':['èr'],'三':['sān'],'方':['fāng'],'对':['duì'],'面':['miàn'],
-  '到':['dào'],'好':['hǎo','hào'],'了':['le','liǎo'],'有':['yǒu'],'天':['tiān'],
-  '地':['dì','de'],'人':['rén'],'们':['men'],'山':['shān'],'日':['rì'],'出':['chū'],
-  '上':['shàng'],'中':['zhōng','zhòng'],'下':['xià'],
-};
+const LEVELS = window.HanziVocabulary.levels;
+const PY = window.HanziVocabulary.pinyin;
 const PER_GROUP = 5;
 
 /* ════════════════ ENGINE-START ════════════════ */
@@ -444,7 +428,7 @@ function parOfGroup(chars){
 }
 
 /* ══════════ 选关界面 ══════════ */
-const THEMES=['常用表达','日常对话','动作与称呼','多少大小','数字与位置','天地自然'];
+const THEMES=window.HanziVocabulary.themes;
 const GRADE_ICON = { S:'★', A:'✓', B:'·', C:'·', D:'·' };
 function renderMenu(){
   $('#mStars').textContent = Object.values(Save.d.lv).filter(r=>passed(r.grade)).length;

@@ -57,3 +57,12 @@
 ## 4.25 新生成美术与口令
 
 帽子/翻牌的6物件透明图集、小兔12帧透明图集由内置GPT图片工具原创生成；原PNG保留alpha，按实际主体框等比取景，不提取第三方游戏角色或程序去底。提示词、来源与摘要见`docs/Design Playful Refinement 4.25/generated-art.json`。新口令词表为本项目维护的固定关键词配置；原sherpa-onnx运行库、模型和许可未变。macOS合成声音只用于临时诊断，不打包或提交WAV。
+
+
+## 汉字小书架古字形（4.26）
+
+- 学术说明主要参考香港中文大学《汉语多功能字库》，辅以汉典及教育部《异体字字典》；每字具体页面在`app/assets/hanzi-library/data.json`。说明为精简转述，没有打包原站文章或页面。
+- 字形图像来自Wikimedia Commons Ancient Chinese Characters项目的公开字形摹本。本轮只纳入逐图许可元数据为Public domain或CC0的108张SVG；具体数字化作者、描述、原页面、许可URL及哈希在`docs/Design Hanzi Library 4.26/form-sources.json`。有字形争议或语义分支的字另加说明。
+- 离线图片取自公开镜像[lxs602/Chinese-Mandarin-Dictionaries](https://github.com/lxs602/Chinese-Mandarin-Dictionaries/tree/93649527294b8f7b363493c1a3fa907713dddd36)，固定提交`93649527294b8f7b363493c1a3fa907713dddd36`，2022年“維基共古漢字的圖片資料庫”tab包，Git blob `4b6711cfdac81a4dbfe5ef2350e183542e78afe5`。按字与阶段选第一张SVG，保留矢量几何，仅清理编辑器元数据并规范展示尺寸；镜像HTML已调整过SVG，因此不声称与当前Commons原始字节完全相同。镜像片段与包内文件SHA-256均入清单。
+- Commons项目逐图页面标明古代字形与相关数字化图像的公有领域/CC0状态；可参考[日的甲骨摹本](https://commons.wikimedia.org/wiki/File:日-oracle.svg)与[人字篆文摹本](https://commons.wikimedia.org/wiki/File:人-seal.svg)。中研院[小学堂使用指南](https://xiaoxue.iis.sinica.edu.tw/guide/)说明其字形查询图片与属性资料采用CC0。
+- 不把古字形称为AI美术，不使用现代篆体字体推造未见古字。今字和繁体今字由系统字体显示。

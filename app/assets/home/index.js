@@ -17,6 +17,7 @@
     {id:'hanzi-puzzle',cat:'learn',name:'字里找字'},
     {id:'paint-mixing',cat:'puzzle',name:'小小调色师'},
     {id:'hanzi-typing',cat:'learn',name:'看字打拼音'},
+    {id:'hanzi-library',cat:'learn',name:'识字库'},
     {id:'flappy-bird',cat:'react',name:'扑翼小鸟'},
     {id:'frog-pond',cat:'react',name:'小青蛙跳池塘'},
   ];

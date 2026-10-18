@@ -1,6 +1,7 @@
 package com.dsh.gamecenter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.hardware.Sensor;
@@ -233,6 +234,22 @@ public class MainActivity extends Activity {
         }
         @JavascriptInterface
         public boolean available() { return true; }
+
+        @JavascriptInterface
+        public boolean openSource(final String address) {
+            if (destroyed || !foreground || !SourceLinks.allowed(address)) return false;
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    if (destroyed || !foreground) return;
+                    try {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(address));
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        startActivity(intent);
+                    } catch (RuntimeException ignored) { }
+                }
+            });
+            return true;
+        }
     }
 
     /**

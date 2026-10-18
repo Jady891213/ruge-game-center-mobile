@@ -1,0 +1,1 @@
+hanzi-library: app/assets/shared/hanzi-library.png (1200 × 720)

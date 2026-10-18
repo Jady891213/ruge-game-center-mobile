@@ -1,0 +1,24 @@
+{
+  "versionName": "4.26",
+  "versionCode": 49,
+  "development": false,
+  "apkSha256": "78a7aba18255f3b4b111a1599e2c43b05d03092bb71d10fb59302b5ea4db873b",
+  "assetCount": 265,
+  "sourceDevReleaseAssetsEqual": true,
+  "nativeLibraryCount": 2,
+  "nativeLibrariesUnchangedFrom425": true,
+  "saveRestore": {
+    "restoredKeys": 26,
+    "delayedSeconds": 6,
+    "exact": true,
+    "nativePreferencesExact": true
+  },
+  "deviceApkSha256": "78a7aba18255f3b4b111a1599e2c43b05d03092bb71d10fb59302b5ea4db873b",
+  "installedPackageVersionConfirmed": true,
+  "formalNotDebuggable": true,
+  "formalCdpAbsent": true,
+  "adbForwardEmpty": true,
+  "formalForegroundActivity": [
+    "topResumedActivity=ActivityRecord{2ae0fc5 u0 com.dsh.gamecenter/.MainActivity t501}"
+  ]
+}

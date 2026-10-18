@@ -1,0 +1,50 @@
+TAP version 13
+# Subtest: typing: sixty unique practice characters have pinyin and complete offline stroke data
+ok 1 - typing: sixty unique practice characters have pinyin and complete offline stroke data
+  ---
+  duration_ms: 5.085542
+  ...
+# Subtest: typing: existing hzTypingSave2 progress is loaded without resetting it
+ok 2 - typing: existing hzTypingSave2 progress is loaded without resetting it
+  ---
+  duration_ms: 1.788041
+  ...
+# Subtest: typing: one question can score only once while its stroke animation is playing
+ok 3 - typing: one question can score only once while its stroke animation is playing
+  ---
+  duration_ms: 4.345292
+  ...
+# Subtest: typing: leaving or restarting during animation cancels the previous question advance
+ok 4 - typing: leaving or restarting during animation cancels the previous question advance
+  ---
+  duration_ms: 3.187959
+  ...
+# Subtest: typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+ok 5 - typing: paused input is ignored and thirty seconds of rest are excluded from answer time
+  ---
+  duration_ms: 1.89825
+  ...
+# Subtest: typing: animation resumes its remaining hold and visibility needs explicit Continue
+ok 6 - typing: animation resumes its remaining hold and visibility needs explicit Continue
+  ---
+  duration_ms: 2.211833
+  ...
+# Subtest: typing: full sixty-question sequence includes every character and saves its result once
+ok 7 - typing: full sixty-question sequence includes every character and saves its result once
+  ---
+  duration_ms: 40.678417
+  ...
+# Subtest: typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置
+ok 8 - typing: 横屏图标调用原生方向桥，键盘改变可见高度不误判方向，题目草稿不重置
+  ---
+  duration_ms: 1.995375
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 94.594833

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>汉字小书架</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<header class="topbar"><button id="back" class="icon-button" aria-label="回游戏中心"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button><h1 id="pageTitle">汉字小书架</h1><span id="count" class="count"></span></header>
+<section id="listView" class="list-view" aria-label="字库">
+<div class="list-tools"><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="search" type="search" placeholder="找字或拼音" aria-label="找字或拼音" autocomplete="off"><button id="clearSearch" aria-label="清除搜索" hidden>×</button></label><div id="groups" class="groups" aria-label="字库分组"></div></div>
+<div id="listScroll" class="list-scroll"><div id="grid" class="char-grid"></div><p id="empty" class="empty" hidden>还没有找到这个字</p></div>
+</section>
+<section id="detailView" class="detail-view" aria-label="汉字故事" hidden>
+<div id="detailScroll" class="detail-scroll">
+<div class="character-head"><div id="modernChar" class="modern-char"></div><div class="character-name"><div id="pinyin" class="pinyin"></div><p id="traditional" class="traditional" hidden></p><button id="speak" class="read-button" aria-label="读这个字" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5 5 9H2v6h3l5 4zM15 8c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg>读一读</button></div></div>
+<p id="meaning" class="meaning"></p>
+<div class="story-card"><h2>字的故事</h2><p id="story"></p></div>
+<section class="evolution"><div class="section-title"><h2>字形慢慢变</h2><span id="swipeHint">左右滑一滑</span></div><div id="forms" class="forms"></div><p id="evolutionNote" class="evolution-note" hidden></p></section>
+<details id="sourceDetails" class="source-details"><summary>出处与说明<span aria-hidden="true">⌄</span></summary><div id="confidenceNotes" class="confidence-notes"></div><div id="sources" class="sources"></div></details>
+</div>
+<nav class="detail-nav" aria-label="前后汉字"><button id="previous" class="nav-button" aria-label="上一个字">← <span id="previousChar"></span></button><button id="backList" class="back-list">回字库</button><button id="next" class="nav-button" aria-label="下一个字"><span id="nextChar"></span> →</button></nav>
+</section>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="catalog.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

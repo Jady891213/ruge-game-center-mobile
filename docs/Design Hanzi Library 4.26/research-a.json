@@ -1,0 +1,701 @@
+[
+  {
+    "char": "这",
+    "traditional": "這",
+    "pinyin": [
+      "zhè",
+      "zhèi"
+    ],
+    "meaning": "指眼前或较近的人、物。",
+    "story": "“這”是较晚出现的指示词，唐诗里已经用它表示“这个”。现在把“這”简写成“这”。",
+    "evolutionNote": "未核得甲骨、金文或小篆；不把今天的“文＋辶”编成古代图画。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：這",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%80%99"
+      }
+    ],
+    "confidenceNotes": "此字出现较晚；“合音词”是该库引述的一说，不据此指定唯一造字年代。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "那",
+    "traditional": "那",
+    "pinyin": [
+      "nà",
+      "nèi",
+      "nā"
+    ],
+    "meaning": "指较远的人、物。",
+    "story": "“那”后来常与“这”相对，用来指远处。古字书另有地名字“𨙻”，不能把那段地名解释直接当现代代词的来历。",
+    "evolutionNote": "本轮未核得该字可靠甲骨、金文、小篆目录字例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：那",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%82%A3"
+      }
+    ],
+    "confidenceNotes": "代词与古地名字的关系仍需区分；不据现代偏旁讲象形。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "说",
+    "traditional": "說",
+    "pinyin": [
+      "shuō",
+      "shuì"
+    ],
+    "meaning": "讲话；shuì用于游说。",
+    "story": "传统写作“說”，左边“言”提示与言语有关，右边“兌”也提示古代读音；后来“言”简写成“讠”。",
+    "evolutionNote": "该库有說的小篆、简帛；未列可靠甲骨、金文字例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：說",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%AA%AA"
+      }
+    ],
+    "confidenceNotes": "古书的說也可表示喜悦，不能将所有古义都按现代shuō解读。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    }
+  },
+  {
+    "char": "着",
+    "traditional": "著",
+    "pinyin": [
+      "zhe",
+      "zháo",
+      "zhuó",
+      "zhāo"
+    ],
+    "meaning": "zhe表示动作持续，如看着。",
+    "story": "“着”是“著”的俗写，后来分担了持续、接触、穿戴等读音和用法；“著作”的著仍读zhù，不写作着。",
+    "evolutionNote": "该库著有简帛例，未核甲骨、金文、小篆；不按“羊＋目”解释字源。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：著",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%91%97"
+      },
+      {
+        "title": "汉典：着的读音与古籍用例",
+        "url": "https://www.zdic.net/hans/着"
+      }
+    ],
+    "confidenceNotes": "这里讲“看着”的轻声zhe；著的“显著”古义不是持续助词的直接图解。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "是",
+    "traditional": "是",
+    "pinyin": [
+      "shì"
+    ],
+    "meaning": "表示判断，也表示正确。",
+    "story": "古代“是”常表示“这”，后来常用来作判断。较晚古形写成“日＋正”，但更早字形的本义尚有争论。",
+    "evolutionNote": "有金文、小篆，未核该库甲骨例；不把“太阳正直”当定论。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：是",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%98%AF"
+      }
+    ],
+    "confidenceNotes": "CUHK明确标注早期本义不明，匙的初文只是一说。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "的",
+    "traditional": "的",
+    "pinyin": [
+      "de",
+      "dí",
+      "dì"
+    ],
+    "meaning": "de连接修饰语，如我的书。",
+    "story": "字库把“的”的古形联系到“旳”：日旁提示明亮，勺提示声音；今天“我的”的轻声de是后来的用法。",
+    "evolutionNote": "的本页无古形；旳的小篆仅作相关古字参考，不是一条已证实的助词演变链。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：的",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%9A%84"
+      },
+      {
+        "title": "香港中文大学汉语多功能字库：旳",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%97%B3"
+      }
+    ],
+    "confidenceNotes": "区分助词de、的确dí、目的dì；不可把古代“明亮”直接解释成所属关系。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "只",
+    "traditional": "只",
+    "pinyin": [
+      "zhǐ",
+      "zhī"
+    ],
+    "meaning": "zhǐ表示仅仅；zhī用来计数。",
+    "story": "“只有”的只古来可作语气词；“一只鸟”原写“隻”，古形像手持鸟。简化以后，两种写法合到“只”。",
+    "evolutionNote": "只有小篆；隻另有甲骨、金文，属量词这一支的参考。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：只",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AA"
+      },
+      {
+        "title": "香港中文大学汉语多功能字库：隻",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%9A%BB"
+      }
+    ],
+    "confidenceNotes": "甲骨文隻不能标成“只有”的只的甲骨文；traditional以主字只为准，另列来源隻。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    }
+  },
+  {
+    "char": "个",
+    "traditional": "個",
+    "pinyin": [
+      "gè"
+    ],
+    "meaning": "量词，如一个苹果。",
+    "story": "“个、個、箇”都曾用来计数。传统“個”是人旁配提示声音的固；今天统一常用笔画更少的“个”。",
+    "evolutionNote": "该库個未列甲骨、金文、小篆字例；“个”也有古代用例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：個",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%80%8B"
+      }
+    ],
+    "confidenceNotes": "不要把个说成现代才凭空造出，也不要将今天形状讲成古人或树木的图画。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "成",
+    "traditional": "成",
+    "pinyin": [
+      "chéng"
+    ],
+    "meaning": "完成；变成。",
+    "story": "古形有像兵器的部分，另一部分的解释有分歧；有学者认为与守护城邑有关。后来常用来表示完成、成就。",
+    "evolutionNote": "有甲骨、金文、小篆；细部及早期本义有异说。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：成",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%88%90"
+      }
+    ],
+    "confidenceNotes": "保留“有学者认为”，不把城的初文说当作无争议定论。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "就",
+    "traditional": "就",
+    "pinyin": [
+      "jiù"
+    ],
+    "meaning": "靠近、前往；也可连接事情。",
+    "story": "一种解释把早期“就”看作高台上的宗庙建筑；古代还表示前往、完成。秦简以后字形逐渐接近今天。",
+    "evolutionNote": "有甲骨、金文、小篆；早形与今形部件不能逐笔硬配。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：就",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%B1"
+      }
+    ],
+    "confidenceNotes": "高台祭享解释属所引学者意见，不是唯一无争议的结论。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "看",
+    "traditional": "看",
+    "pinyin": [
+      "kàn",
+      "kān"
+    ],
+    "meaning": "kàn用眼观察；kān表示看守。",
+    "story": "小篆把“手”放在“目”上。可以像用手遮住阳光、望向远处那样记住它，目就是眼睛。",
+    "evolutionNote": "有小篆，未核该库甲骨、金文字例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：看",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%9C%8B"
+      }
+    ],
+    "confidenceNotes": "“手遮目”有桂馥解释依据，非声称发现了相应甲骨字。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    }
+  },
+  {
+    "char": "为",
+    "traditional": "為",
+    "pinyin": [
+      "wéi",
+      "wèi"
+    ],
+    "meaning": "wéi表示做、成为；wèi表示为了、替。",
+    "story": "传统字“為”的早形有手和大象，一说与役使大象做事有关，表示做、作为；“为”是后来采用的简写。",
+    "evolutionNote": "為有甲骨、金文、小篆；不能按“为”的四笔拆讲甲骨形。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：為",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%82%BA"
+      }
+    ],
+    "confidenceNotes": "手和象的古形可核，役象劳动的语义连接按CUHK说明用“一说”。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "什",
+    "traditional": "什",
+    "pinyin": [
+      "shén",
+      "shí"
+    ],
+    "meaning": "shén用于什么；shí用于什锦。",
+    "story": "“什”由人和十组成，原与十人为一组有关。后来与“么”连用，变成常见的疑问词“什么”。",
+    "evolutionNote": "有小篆、简帛；未核该库甲骨、金文字例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：什",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BB%80"
+      }
+    ],
+    "confidenceNotes": "不能把现在“什么”的shén读音与古代计数义完全等同。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    }
+  },
+  {
+    "char": "么",
+    "traditional": "麼",
+    "pinyin": [
+      "me"
+    ],
+    "meaning": "用在什么、怎么、这么等词里。",
+    "story": "“么”在“什么”中是“麼”的简写。“麼”旧有细小的意思，幺与麻分别关联字义和古音；疑问词是后来的用法。",
+    "evolutionNote": "该库列麼的小篆，属《说文新附》；未核甲骨、金文。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：麼",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%BA%BC"
+      }
+    ],
+    "confidenceNotes": "这里取me；不要与另有用法和读音的幺yāo混讲，也不把新附字形标成秦代实物。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    }
+  },
+  {
+    "char": "我",
+    "traditional": "我",
+    "pinyin": [
+      "wǒ"
+    ],
+    "meaning": "说话的人自己。",
+    "story": "早期字形像带齿的长柄工具或兵器，后来借它来表示自己。古字的意思有时会被借去记录另一个词。",
+    "evolutionNote": "有甲骨、金文、小篆；究竟是哪一种工具或兵器仍有不同解释。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：我",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%88%91"
+      }
+    ],
+    "confidenceNotes": "只讲可见的带齿长柄形，不把具体武器名称说成定论。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "和",
+    "traditional": "和",
+    "pinyin": [
+      "hé",
+      "hè",
+      "huó",
+      "huò",
+      "hú"
+    ],
+    "meaning": "hé可表示和睦，也可表示与。",
+    "story": "古形有口，禾帮助提示古代声音。早期与声音相应、和谐有关；不是把“禾与口”画成吃饭的故事。",
+    "evolutionNote": "有金文、小篆，未核该库甲骨例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：和",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%92%8C"
+      }
+    ],
+    "confidenceNotes": "重点讲hé；唱和、和面等词另有读音，不能用现代同音推翻古声符关系。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "你",
+    "traditional": "你",
+    "pinyin": [
+      "nǐ"
+    ],
+    "meaning": "说话时称呼对方。",
+    "story": "“你”是较晚常用起来的第二人称字，隋代文献已经使用。更早的人也常用“汝、尔”等字称呼对方。",
+    "evolutionNote": "该库未列可靠甲骨、金文、小篆；不将尔的古形冒充你的古形。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：你",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BD%A0"
+      }
+    ],
+    "confidenceNotes": "“你”不是把尔加人旁就能无条件回推到甲骨时代的字。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "他",
+    "traditional": "他",
+    "pinyin": [
+      "tā"
+    ],
+    "meaning": "指说话双方之外的人。",
+    "story": "“他”早先常表示“别的”，如他人、他处。后来用作第三人称；古代并不只指男性。",
+    "evolutionNote": "该库未列可靠甲骨、金文、小篆；不把也的古形当成他的甲骨文。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：他",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BB%96"
+      }
+    ],
+    "confidenceNotes": "现代男性用法是后起分工，避免把古代他与现代她的区别倒推。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "哪",
+    "traditional": "哪",
+    "pinyin": [
+      "nǎ",
+      "něi",
+      "na"
+    ],
+    "meaning": "nǎ用来发问，如哪里。",
+    "story": "“哪”是较晚出现的字，常在口语中发问。可用“你在哪里”认识它，不必给它编一个甲骨文故事。",
+    "evolutionNote": "该库未列甲骨、金文、小篆，亦指出不见于《说文》。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：哪",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%93%AA"
+      }
+    ],
+    "confidenceNotes": "哪吒读né属专名，本卡主要讲nǎ／něi及语气词na。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    }
+  },
+  {
+    "char": "里",
+    "traditional": "裏",
+    "pinyin": [
+      "lǐ"
+    ],
+    "meaning": "里面；也可表示里程、乡里。",
+    "story": "“里面”旧写“裏”，古形有衣，里提示声音，原与衣服内层有关。乡里、公里的“里”原本是另一个字。",
+    "evolutionNote": "裏有金文、小篆，未核甲骨例；与田土构成的里区分。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：裏",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%A3%8F"
+      },
+      {
+        "title": "香港中文大学汉语多功能字库：里",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%87%8C"
+      }
+    ],
+    "confidenceNotes": "简化将裏／裡并入里，不把乡里的古形直接当“里面”的象形。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "来",
+    "traditional": "來",
+    "pinyin": [
+      "lái"
+    ],
+    "meaning": "从别处到这里。",
+    "story": "传统“來”的甲骨形像一株麦子，有穗、叶和根。后来借来记“到来”的来，字形又渐渐变成今天这样。",
+    "evolutionNote": "來有甲骨、金文、小篆；来是后来的简写。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：來",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BE%86"
+      }
+    ],
+    "confidenceNotes": "不把“麦子从外国来”当造字史实；来、麦古字关系另有细节争论。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "去",
+    "traditional": "去",
+    "pinyin": [
+      "qù"
+    ],
+    "meaning": "离开这里，到别处。",
+    "story": "古形上部像人，下部的解释有分歧：有人认为与张口有关，也有人认为像离开洞口的人。早期已用来表示离去。",
+    "evolutionNote": "有甲骨、金文、小篆；构形解释不唯一。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：去",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8E%BB"
+      }
+    ],
+    "confidenceNotes": "不单独采用“走出山洞”作无争议故事；并注意去与盍的同形问题。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "又",
+    "traditional": "又",
+    "pinyin": [
+      "yòu"
+    ],
+    "meaning": "表示再一次或还有。",
+    "story": "古形像右手的侧面，几笔代表手指。后来借来表示“再次”的又，右手的意思另常用“右”。",
+    "evolutionNote": "有甲骨、金文、小篆；古形手指不是要求画足五根。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：又",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%88"
+      }
+    ],
+    "confidenceNotes": "侧面右手是较稳妥解释；不要将三指当成古人只有三根手指。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "要",
+    "traditional": "要",
+    "pinyin": [
+      "yào",
+      "yāo"
+    ],
+    "meaning": "yào表示想要、需要；yāo用于要求等词。",
+    "story": "古形像人的身体，两手叉在腰间，本来表示腰部。后来“要”有了重要、求取等用法，腰另加月旁来写。",
+    "evolutionNote": "有小篆、简帛；该库未列可核甲骨、金文字例。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：要",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%A6%81"
+      }
+    ],
+    "confidenceNotes": "可讲古字与腰的关系，但本轮不展示无出处甲骨形。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    }
+  },
+  {
+    "char": "还",
+    "traditional": "還",
+    "pinyin": [
+      "hái",
+      "huán"
+    ],
+    "meaning": "hái表示仍然、还有；huán表示归还。",
+    "story": "传统“還”有表示行走的部分，原与返回有关；后来也能表示仍然、还有。“还”是今天常用的简写。",
+    "evolutionNote": "還有甲骨、金文、小篆；早期不同字形不一定逐笔直线相接。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：還",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%82%84"
+      }
+    ],
+    "confidenceNotes": "不能把简体中的“不”解释成不走；hái与huán须按词语区分。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "能",
+    "traditional": "能",
+    "pinyin": [
+      "néng"
+    ],
+    "meaning": "有能力做到；可以。",
+    "story": "早期字形与熊有关，能看出头、嘴和爪的痕迹。后来借来表示能力、能够，熊这一意思另有写法。",
+    "evolutionNote": "该库有甲骨、金文、小篆；部分甲骨形释读有争论。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：能",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%83%BD"
+      }
+    ],
+    "confidenceNotes": "不能把某件争议甲骨例当唯一证据，也不保证“熊强壮所以能力”的连接无争议。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "起",
+    "traditional": "起",
+    "pinyin": [
+      "qǐ"
+    ],
+    "meaning": "站起来；开始。",
+    "story": "古形里与行走有关的部分提示动作，己或巳提示古代读音，原来表示站起；后来也能表示开始、兴起。",
+    "evolutionNote": "有小篆和楚简；该库金文目录有例但释读存疑，甲骨未核。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：起",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%B5%B7"
+      }
+    ],
+    "confidenceNotes": "bronze=true仅表示该库有目录字例；CUHK正文怀疑部分金文非起，应用不宜默认展示。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "儿",
+    "traditional": "兒",
+    "pinyin": [
+      "ér",
+      "r"
+    ],
+    "meaning": "小孩；也用在词尾儿化。",
+    "story": "传统“兒”的古形像一个孩子。头部画法有人解释为幼儿头顶，也有人认为像儿童发髻；现在常简写成“儿”。",
+    "evolutionNote": "兒有甲骨、金文、小篆；简体儿不能按少两笔回推古形。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：兒",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%85%92"
+      }
+    ],
+    "confidenceNotes": "儿化r不另成一个完整音节；头部象什么有异说，应保留。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "子",
+    "traditional": "子",
+    "pinyin": [
+      "zǐ",
+      "zi"
+    ],
+    "meaning": "孩子；也可作词尾。",
+    "story": "甲骨文的“子”像头大的婴儿，伸着两臂，下部较细。后来既能称孩子，也用在许多词的末尾。",
+    "evolutionNote": "有甲骨、金文、小篆；早形方向与繁简存在多种写法。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：子",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%AD%90"
+      }
+    ],
+    "confidenceNotes": "儿子zǐ、桌子zi的读音不同；不把所有词尾子都讲成小孩。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    }
+  },
+  {
+    "char": "也",
+    "traditional": "也",
+    "pinyin": [
+      "yě"
+    ],
+    "meaning": "表示同样、还，如我也会。",
+    "story": "古代“也”常放在句末帮助停顿或判断。它的构形有不同解释，今天“我也会”的意思是后来常见的用法。",
+    "evolutionNote": "有金文、小篆，未核该库甲骨；不选一种象形说硬讲成定论。",
+    "sources": [
+      {
+        "title": "香港中文大学汉语多功能字库：也",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B9%9F"
+      }
+    ],
+    "confidenceNotes": "CUHK现代解释与《说文》说法不同，因此儿童正文只讲已知用法演变。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    }
+  }
+]

@@ -1,0 +1,942 @@
+[
+  {
+    "char": "都",
+    "traditional": "都",
+    "pinyin": [
+      "dōu",
+      "dū"
+    ],
+    "meaning": "表示全部；读dū时指都城。",
+    "story": "古字把与城邑有关的“邑”和提示声音的“者”合在一起，原指都城。后来也用来表示全部。",
+    "evolutionNote": "字库列有金文、小篆；未列甲骨字例。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·都",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%83%BD"
+      },
+      {
+        "title": "汉典·都",
+        "url": "https://zdic.net/hans/%E9%83%BD"
+      }
+    ],
+    "confidenceNotes": "“都是”与“首都”读音不同；不把“者”编成煮饭的故事。 本轮CUHK目录未列甲骨字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "8/30",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "没",
+    "traditional": "沒",
+    "pinyin": [
+      "méi",
+      "mò"
+    ],
+    "meaning": "没有；读mò时指沉下或淹没。",
+    "story": "《说文》把“沒”解释为沉入水中，水旁提示与水有关。“没有”是今天常用的另一种意思。",
+    "evolutionNote": "可查“沒”的小篆；简体写“没”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·沒",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%B2%92"
+      },
+      {
+        "title": "汉典·没",
+        "url": "https://zdic.net/hans/%E6%B2%A1"
+      }
+    ],
+    "confidenceNotes": "所查字库未列甲骨、金文，不能据现代“殳”旁编造古画。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "0",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "不",
+    "traditional": "不",
+    "pinyin": [
+      "bù"
+    ],
+    "meaning": "表示否定，例如不去、不多。",
+    "story": "这个字的早期形状，有学者解释为植物根须，也有人解释为花萼。甲骨文里已经用它表示否定。",
+    "evolutionNote": "甲骨、金文到小篆，轮廓逐渐规整。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·不",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%8D"
+      },
+      {
+        "title": "汉典·不",
+        "url": "https://zdic.net/hans/%E4%B8%8D"
+      }
+    ],
+    "confidenceNotes": "构形本义有争议；不采用“鸟飞上天不下来”的故事当定论。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "2/2",
+      "bronze": "11/510",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "可",
+    "traditional": "可",
+    "pinyin": [
+      "kě",
+      "kè"
+    ],
+    "meaning": "表示能够、允许，例如可以。",
+    "story": "古字有“口”和“丂”两个部分，但最初画的是什么还没有定论。甲骨文中已经有“可以”的用法。",
+    "evolutionNote": "可查甲骨、金文和小篆字形。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·可",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AF"
+      },
+      {
+        "title": "汉典·可",
+        "url": "https://zdic.net/hans/%E5%8F%AF"
+      }
+    ],
+    "confidenceNotes": "本义不确定；“可汗”读kè，儿童常用“可以”读kě。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "8/24",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "以",
+    "traditional": "以",
+    "pinyin": [
+      "yǐ"
+    ],
+    "meaning": "常表示用、凭借；也见于可以、以前。",
+    "story": "一种解释认为，古字像一个人提着东西。后来这个字常用来表示使用、凭借等意思。",
+    "evolutionNote": "早期也写作“㠯”，有的字形加上人旁，逐渐成为“以”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·以",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BB%A5"
+      },
+      {
+        "title": "汉典·以",
+        "url": "https://zdic.net/hans/%E4%BB%A5"
+      }
+    ],
+    "confidenceNotes": "人提物是所查字库采用的解释；不把“可以”整体意思硬拆给单字。 本轮CUHK目录未列小篆字例，不代表断言历史上绝无。 小篆“㠯”应另查其本字页，不把“以”页空栏算作已核得。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": false
+    },
+    "rawcounts": {
+      "oracle": "8/10",
+      "bronze": "1/387",
+      "seal": "0"
+    }
+  },
+  {
+    "char": "大",
+    "traditional": "大",
+    "pinyin": [
+      "dà",
+      "dài"
+    ],
+    "meaning": "与小相对，表示体积或程度较大。",
+    "story": "古字像一个从正面看站立的人，身体和手臂都展开。它原来与成年人有关，后来表示大小的“大”。",
+    "evolutionNote": "甲骨、金文到小篆，都能看出正面人形。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·大",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%A7"
+      },
+      {
+        "title": "汉典·大",
+        "url": "https://zdic.net/hans/%E5%A4%A7"
+      }
+    ],
+    "confidenceNotes": "不说成“一个人比天地还大”；“大夫”有dài音。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "7/798",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "小",
+    "traditional": "小",
+    "pinyin": [
+      "xiǎo"
+    ],
+    "meaning": "与大相对，表示比较细小。",
+    "story": "早期写成几个小点，表示细小的东西。有人把这些点解释为沙粒，但这还不是唯一说法。",
+    "evolutionNote": "小点逐渐写成长笔画，成为今天的“小”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·小",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%8F"
+      },
+      {
+        "title": "汉典·小",
+        "url": "https://zdic.net/hans/%E5%B0%8F"
+      }
+    ],
+    "confidenceNotes": "点表示微小较可靠；“沙粒”应保留为一种解释。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "8/185",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "少",
+    "traditional": "少",
+    "pinyin": [
+      "shǎo",
+      "shào"
+    ],
+    "meaning": "读shǎo表示数量不多；读shào表示年纪轻。",
+    "story": "古代“小”和“少”关系很近，都曾写成小点。后来它们逐渐分开，“少”下方的一点拉长成撇。",
+    "evolutionNote": "甲骨的小点，到金文逐渐出现下面的一撇。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·少",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%91"
+      },
+      {
+        "title": "汉典·少",
+        "url": "https://zdic.net/hans/%E5%B0%91"
+      }
+    ],
+    "confidenceNotes": "不能说四点数量比三点少，所以造出“少”；不是按点数多少推理。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "12/67",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "多",
+    "traditional": "多",
+    "pinyin": [
+      "duō"
+    ],
+    "meaning": "表示数量大，与少相对。",
+    "story": "甲骨字形像上下叠着的两块肉，后来部件变得像两个“夕”。为什么这样表示多，学者仍有讨论。",
+    "evolutionNote": "甲骨的肉形，到金文逐渐与“夕”形相近。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·多",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%9A"
+      },
+      {
+        "title": "汉典·多",
+        "url": "https://zdic.net/hans/%E5%A4%9A"
+      }
+    ],
+    "confidenceNotes": "两块肉的字形解释较常见；“古人七十岁才能吃肉”不能当确凿造字事实。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "2/2",
+      "bronze": "6/172",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "过",
+    "traditional": "過",
+    "pinyin": [
+      "guò",
+      "guo"
+    ],
+    "meaning": "从这里经过，也表示超出或曾经。",
+    "story": "“過”的走之旁提示行走，“咼”主要提示声音。原来与渡过、经过有关。",
+    "evolutionNote": "字库列有金文、小篆；“過”后来简化为“过”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·過",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%81%8E"
+      },
+      {
+        "title": "汉典·过",
+        "url": "https://zdic.net/hans/%E8%BF%87"
+      }
+    ],
+    "confidenceNotes": "不替“过”补画甲骨文；“寸”不是传统古字的原部件。 本轮CUHK目录未列甲骨字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "1/1",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "一",
+    "traditional": "一",
+    "pinyin": [
+      "yī"
+    ],
+    "meaning": "最小的正整数，例如一个苹果。",
+    "story": "古人用一条横线表示数量一。从很早的甲骨文到今天，这个字的基本样子变化很小。",
+    "evolutionNote": "甲骨、金文、小篆都能看到一条横画。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·一",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%80"
+      },
+      {
+        "title": "汉典·一",
+        "url": "https://zdic.net/hans/%E4%B8%80"
+      }
+    ],
+    "confidenceNotes": "普通话独读yī；词语中会变调，不将变调另列成字源。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "5/199",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "二",
+    "traditional": "二",
+    "pinyin": [
+      "èr"
+    ],
+    "meaning": "一加一的数量。",
+    "story": "用两条横线表示数量二。古字的“二”和“上、下”很像，要看两条线的长短和位置来分辨。",
+    "evolutionNote": "甲骨、金文到小篆，保留两横的基本结构。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·二",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%8C"
+      },
+      {
+        "title": "汉典·二",
+        "url": "https://zdic.net/hans/%E4%BA%8C"
+      }
+    ],
+    "confidenceNotes": "不把《说文》的天地数说当作最初造字的实证。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "2/2",
+      "bronze": "8/241",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "三",
+    "traditional": "三",
+    "pinyin": [
+      "sān"
+    ],
+    "meaning": "二加一的数量。",
+    "story": "古人用三条横线表示数量三。和一、二放在一起看，就能发现用横线记录数量的办法。",
+    "evolutionNote": "甲骨、金文到小篆，三横结构保持下来。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·三",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%89"
+      },
+      {
+        "title": "汉典·三",
+        "url": "https://zdic.net/hans/%E4%B8%89"
+      }
+    ],
+    "confidenceNotes": "“三横就是天、地、人”可作后世解释，不能当确定造字事实。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "2/2",
+      "bronze": "14/271",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "方",
+    "traditional": "方",
+    "pinyin": [
+      "fāng"
+    ],
+    "meaning": "可以指方向，也可以指方形。",
+    "story": "这个字很早就表示四方、方向。它原来的形状有多种解释，有学者认为与刀刃有关，并不只是画一个方块。",
+    "evolutionNote": "可比较甲骨、金文和小篆；字形的本义仍有争论。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·方",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%96%B9"
+      },
+      {
+        "title": "汉典·方",
+        "url": "https://zdic.net/hans/%E6%96%B9"
+      }
+    ],
+    "confidenceNotes": "刀锋、农具、并船等说法不一致；不能把《说文》并船说当定论。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/4",
+      "bronze": "10/98",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "对",
+    "traditional": "對",
+    "pinyin": [
+      "duì"
+    ],
+    "meaning": "表示正确，也表示面对、相对。",
+    "story": "“對”的古字有手和复杂的器具形状。甲骨构形的解释不一，金文里已经用它表示应答、答谢。",
+    "evolutionNote": "“對”有甲骨、金文字例，后来简化为“对”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·對",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%8D"
+      },
+      {
+        "title": "汉典·对",
+        "url": "https://zdic.net/hans/%E5%AF%B9"
+      }
+    ],
+    "confidenceNotes": "不把闢地立界说当唯一结论；简体“又”不能直接当“對”的完整古形。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "2/3",
+      "bronze": "10/371",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "面",
+    "traditional": "面",
+    "pinyin": [
+      "miàn"
+    ],
+    "meaning": "脸；也指朝向或物体的表面。",
+    "story": "甲骨字形像一张脸的外框，中间画着眼睛。用最醒目的眼睛来帮助表示整张脸。",
+    "evolutionNote": "可查甲骨和小篆；后来轮廓与眼睛写得更方正。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·面",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%9D%A2"
+      },
+      {
+        "title": "汉典·面",
+        "url": "https://zdic.net/hans/%E9%9D%A2"
+      }
+    ],
+    "confidenceNotes": "“面条”的面来自“麵”的简化合并，与脸的面需要区分。 本轮CUHK目录未列金文字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": false,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "5/5",
+      "bronze": "0",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "到",
+    "traditional": "到",
+    "pinyin": [
+      "dào"
+    ],
+    "meaning": "来到某处，达到目标。",
+    "story": "“至”这一边提示到达的意思，“刀”这一边主要提示声音。它不是用刀砍倒东西的意思。",
+    "evolutionNote": "可查小篆及简帛字形，不补画甲骨字形。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·到",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%88%B0"
+      },
+      {
+        "title": "汉典·到",
+        "url": "https://zdic.net/hans/%E5%88%B0"
+      }
+    ],
+    "confidenceNotes": "所查CUHK页未列甲骨、金文；刀作声旁不按现代读音完全相同理解。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "0",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "了",
+    "traditional": "了",
+    "pinyin": [
+      "le",
+      "liǎo"
+    ],
+    "meaning": "读le表示完成或变化；读liǎo可表示结束。",
+    "story": "《说文》记录的字形像省去手臂的“子”。今天常用的“做完了”等意思，不能直接从这个形状看出来。",
+    "evolutionNote": "所查字库列有小篆，未列甲骨、金文字例。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·了",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%86"
+      },
+      {
+        "title": "汉典·了",
+        "url": "https://zdic.net/hans/%E4%BA%86"
+      }
+    ],
+    "confidenceNotes": "“无臂之子”是古书的析形；现代完成助词的来源不能据此编故事。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "0",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "好",
+    "traditional": "好",
+    "pinyin": [
+      "hǎo",
+      "hào"
+    ],
+    "meaning": "读hǎo表示美好；读hào表示喜欢。",
+    "story": "古字由“女”和“子”组成。可以讲成大人和孩子相亲相爱；这是对字形的一种解释，后来常用来表示美好。",
+    "evolutionNote": "甲骨、金文能看到女与孩子的形状，小篆逐渐规整。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·好",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A5%BD"
+      },
+      {
+        "title": "汉典·好",
+        "url": "https://zdic.net/hans/%E5%A5%BD"
+      }
+    ],
+    "confidenceNotes": "造字本义有不同观点；不可讲成只有女人生男孩才是好。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "13/129",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "有",
+    "traditional": "有",
+    "pinyin": [
+      "yǒu"
+    ],
+    "meaning": "表示拥有或存在，例如有一本书。",
+    "story": "金文字形像手拿着一块肉，表示持有、拥有。今天看起来像“月”的部分，在这个古字里与肉有关。",
+    "evolutionNote": "字库列有金文、小篆，未列“有”的甲骨本字。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·有",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%89"
+      },
+      {
+        "title": "汉典·有",
+        "url": "https://zdic.net/hans/%E6%9C%89"
+      }
+    ],
+    "confidenceNotes": "甲骨有用“又”等字记录相近用法的情况，不能混标为同一字形。 本轮CUHK目录未列甲骨字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "12/141",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "天",
+    "traditional": "天",
+    "pinyin": [
+      "tiān"
+    ],
+    "meaning": "天空，也可指一天、天气。",
+    "story": "古字像正面站立的人，特别画出头部。头在身体的上方，后来用这个字表示头顶上的天空。",
+    "evolutionNote": "甲骨的头部圆点或方框，后来逐渐变成横画。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·天",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%A9"
+      },
+      {
+        "title": "汉典·天",
+        "url": "https://zdic.net/hans/%E5%A4%A9"
+      }
+    ],
+    "confidenceNotes": "此为所查字库采用的解释；不说成“一加大就是天空”的原始造字。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "3/3",
+      "bronze": "8/514",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "地",
+    "traditional": "地",
+    "pinyin": [
+      "dì",
+      "de"
+    ],
+    "meaning": "读dì指大地、土地；读de常用在“慢慢地走”中。",
+    "story": "土旁提示大地、土地，“也”主要提示声音。这个字表示脚下的大地，与天空相对。",
+    "evolutionNote": "可查小篆和简帛字形；不补画甲骨文。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·地",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%9C%B0"
+      },
+      {
+        "title": "汉典·地",
+        "url": "https://zdic.net/hans/%E5%9C%B0"
+      }
+    ],
+    "confidenceNotes": "古今语音不同；不能要求“也”和“地”的现代发音一样。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "0",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "人",
+    "traditional": "人",
+    "pinyin": [
+      "rén"
+    ],
+    "meaning": "人类，也指一个个具体的人。",
+    "story": "古字像从侧面看到的站立的人，可以看见身体和下垂的手臂。后来笔画变简，成为今天的“人”。",
+    "evolutionNote": "甲骨、金文到小篆，侧面人形逐渐简练。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·人",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%BA"
+      },
+      {
+        "title": "汉典·人",
+        "url": "https://zdic.net/hans/%E4%BA%BA"
+      }
+    ],
+    "confidenceNotes": "不是“左右两个人互相支撑”的造字故事。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "21/317",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "们",
+    "traditional": "們",
+    "pinyin": [
+      "men"
+    ],
+    "meaning": "放在人称或人的名称后，表示不止一个。",
+    "story": "“們”左边是人旁，右边“門”主要提示声音。我们、朋友们，都是把许多人放在一起说。",
+    "evolutionNote": "“們”是较晚的字，简体写“们”；本轮未核得可用甲骨形。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·們",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%80%91"
+      },
+      {
+        "title": "教育部《异体字字典》·們",
+        "url": "https://dict.variants.moe.edu.tw/dictView.jsp?educode=A00183"
+      }
+    ],
+    "confidenceNotes": "CUHK引唐代用例；教育部异体字字典明确《说文》不录，不得伪造篆文。 本轮CUHK目录未列甲骨、金文、小篆字例，不代表断言历史上绝无。",
+    "attestedStages": {
+      "oracle": false,
+      "bronze": false,
+      "seal": false
+    },
+    "rawcounts": {
+      "oracle": "0",
+      "bronze": "0",
+      "seal": "0"
+    }
+  },
+  {
+    "char": "山",
+    "traditional": "山",
+    "pinyin": [
+      "shān"
+    ],
+    "meaning": "地面上隆起得很高的部分。",
+    "story": "古字像几座并立的山峰，下面连在一起。慢慢写得方正，就变成今天的“山”。",
+    "evolutionNote": "甲骨、金文、小篆都能比较山峰轮廓的变化。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·山",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B1%B1"
+      },
+      {
+        "title": "汉典·山",
+        "url": "https://zdic.net/hans/%E5%B1%B1"
+      }
+    ],
+    "confidenceNotes": "不把每一画都硬对应现实中固定的三座山。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "8/65",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "日",
+    "traditional": "日",
+    "pinyin": [
+      "rì"
+    ],
+    "meaning": "太阳，也表示一天或白天。",
+    "story": "古字像太阳的轮廓，中间加一点，便于和其他圆圈区别。后来圆的轮廓逐渐写成方形。",
+    "evolutionNote": "甲骨、金文的轮廓，到小篆和楷书逐渐规整。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·日",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%97%A5"
+      },
+      {
+        "title": "汉典·日",
+        "url": "https://zdic.net/hans/%E6%97%A5"
+      }
+    ],
+    "confidenceNotes": "中点不是太阳黑子的确凿记录，也不是固定画日晷。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "9/240",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "出",
+    "traditional": "出",
+    "pinyin": [
+      "chū"
+    ],
+    "meaning": "从里面到外面，例如出门。",
+    "story": "一种解释认为，古字像脚走出洞穴：上部是脚，下部像洞口。它不是把两座山叠起来。",
+    "evolutionNote": "甲骨、金文的脚与洞口，后来笔画相连，变成“出”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·出",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%87%BA"
+      },
+      {
+        "title": "汉典·出",
+        "url": "https://zdic.net/hans/%E5%87%BA"
+      }
+    ],
+    "confidenceNotes": "CUHK采用足出洞穴说；《说文》草木生长说不同，不能声称完全无争议。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "2/2",
+      "bronze": "9/54",
+      "seal": "2/2"
+    }
+  },
+  {
+    "char": "上",
+    "traditional": "上",
+    "pinyin": [
+      "shàng"
+    ],
+    "meaning": "位置较高，也表示从低处往高处。",
+    "story": "古字用一条长线作基准，再在上方加一条短线，告诉人们位置在上面。后来加上竖画，便于辨认。",
+    "evolutionNote": "甲骨的长短两画，经过金文、小篆发展为“上”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·上",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%8A"
+      },
+      {
+        "title": "汉典·上",
+        "url": "https://zdic.net/hans/%E4%B8%8A"
+      }
+    ],
+    "confidenceNotes": "“上声”另有shǎng读音，常用词条先讲shàng。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "11/145",
+      "seal": "3/3"
+    }
+  },
+  {
+    "char": "中",
+    "traditional": "中",
+    "pinyin": [
+      "zhōng",
+      "zhòng"
+    ],
+    "meaning": "读zhōng表示中间；读zhòng表示命中。",
+    "story": "早期有在直线中间画圈、标出中心的写法。也有带飘带的长杆形，学者联系到测风工具。",
+    "evolutionNote": "后来飘带省去，中央的圈逐渐写成方框。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·中",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%AD"
+      },
+      {
+        "title": "汉典·中",
+        "url": "https://zdic.net/hans/%E4%B8%AD"
+      }
+    ],
+    "confidenceNotes": "字形源流有多说；不把“箭射中靶心”作为确定的原始造字故事。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "17/23",
+      "bronze": "22/239",
+      "seal": "1/1"
+    }
+  },
+  {
+    "char": "下",
+    "traditional": "下",
+    "pinyin": [
+      "xià"
+    ],
+    "meaning": "位置较低，也表示从高处往低处。",
+    "story": "古字用一条长线作基准，在下方加短线，标出下面的位置。把上、下两个古字放一起就很容易比较。",
+    "evolutionNote": "甲骨的长短两画，经过金文、小篆发展为“下”。",
+    "sources": [
+      {
+        "title": "香港中文大学《汉语多功能字库》·下",
+        "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%8B"
+      },
+      {
+        "title": "汉典·下",
+        "url": "https://zdic.net/hans/%E4%B8%8B"
+      }
+    ],
+    "confidenceNotes": "用长短与位置区分二、上、下；不是把上字简单倒置所得的全部历史。",
+    "attestedStages": {
+      "oracle": true,
+      "bronze": true,
+      "seal": true
+    },
+    "rawcounts": {
+      "oracle": "1/1",
+      "bronze": "11/93",
+      "seal": "2/2"
+    }
+  }
+]

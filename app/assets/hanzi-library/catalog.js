@@ -1,0 +1,2889 @@
+window.HanziLibraryData = {
+  "version": 1,
+  "title": "汉字小书架",
+  "groups": [
+    {
+      "id": "1",
+      "name": "常用表达",
+      "chars": "这那说着是的只个成就"
+    },
+    {
+      "id": "2",
+      "name": "日常对话",
+      "chars": "看为什么我和你他哪里"
+    },
+    {
+      "id": "3",
+      "name": "动作与称呼",
+      "chars": "来去又要还能起儿子也"
+    },
+    {
+      "id": "4",
+      "name": "多少大小",
+      "chars": "都没不可以大小少多过"
+    },
+    {
+      "id": "5",
+      "name": "数字与位置",
+      "chars": "一二三方对面到好了有"
+    },
+    {
+      "id": "6",
+      "name": "天地自然",
+      "chars": "天地人们山日出上中下"
+    }
+  ],
+  "entries": [
+    {
+      "char": "这",
+      "traditional": "這",
+      "pinyin": [
+        "zhè"
+      ],
+      "meaning": "指眼前或较近的人、物。",
+      "story": "“這”是较晚出现的指示词，唐诗里已经用它表示“这个”。现在把“這”简写成“这”。",
+      "evolutionNote": "未核得甲骨、金文或小篆；不把今天的“文＋辶”编成古代图画。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：這",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%80%99"
+        }
+      ],
+      "confidenceNotes": "此字出现较晚；“合音词”是该库引述的一说，不据此指定唯一造字年代。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "zhè",
+        "zhèi"
+      ]
+    },
+    {
+      "char": "那",
+      "traditional": "那",
+      "pinyin": [
+        "nà"
+      ],
+      "meaning": "指较远的人、物。",
+      "story": "“那”后来常与“这”相对，用来指远处。古字书另有地名字“𨙻”，不能把那段地名解释直接当现代代词的来历。",
+      "evolutionNote": "本轮未核得该字可靠甲骨、金文、小篆目录字例。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：那",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%82%A3"
+        }
+      ],
+      "confidenceNotes": "代词与古地名字的关系仍需区分；不据现代偏旁讲象形。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "nà",
+        "nèi",
+        "nā"
+      ]
+    },
+    {
+      "char": "说",
+      "traditional": "說",
+      "pinyin": [
+        "shuō",
+        "shuì"
+      ],
+      "meaning": "讲话；shuì用于游说。",
+      "story": "传统写作“說”，左边“言”提示与言语有关，右边“兌”也提示古代读音；后来“言”简写成“讠”。",
+      "evolutionNote": "该库有說的小篆、简帛；未列可靠甲骨、金文字例。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：說",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%AA%AA"
+        }
+      ],
+      "confidenceNotes": "古书的說也可表示喜悦，不能将所有古义都按现代shuō解读。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "說",
+          "src": "forms/8aaa-seal.svg",
+          "caption": "字形摹本选例；源字“說”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%AA%AA-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "shuō",
+        "shuì"
+      ]
+    },
+    {
+      "char": "着",
+      "traditional": "著",
+      "pinyin": [
+        "zhe",
+        "zháo",
+        "zhuó",
+        "zhāo"
+      ],
+      "meaning": "zhe表示动作持续，如看着。",
+      "story": "“着”是“著”的俗写，后来分担了持续、接触、穿戴等读音和用法；“著作”的著仍读zhù，不写作着。",
+      "evolutionNote": "该库著有简帛例，未核甲骨、金文、小篆；不按“羊＋目”解释字源。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：著",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%91%97"
+        },
+        {
+          "title": "汉典：着的读音与古籍用例",
+          "url": "https://www.zdic.net/hans/着"
+        }
+      ],
+      "confidenceNotes": "这里讲“看着”的轻声zhe；著的“显著”古义不是持续助词的直接图解。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "zhe",
+        "zháo",
+        "zhuó",
+        "zhāo"
+      ]
+    },
+    {
+      "char": "是",
+      "traditional": "是",
+      "pinyin": [
+        "shì"
+      ],
+      "meaning": "表示判断，也表示正确。",
+      "story": "古代“是”常表示“这”，后来常用来作判断。较晚古形写成“日＋正”，但更早字形的本义尚有争论。",
+      "evolutionNote": "有金文、小篆，未核该库甲骨例；不把“太阳正直”当定论。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：是",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%98%AF"
+        }
+      ],
+      "confidenceNotes": "CUHK明确标注早期本义不明，匙的初文只是一说。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "是",
+          "src": "forms/662f-bronze.svg",
+          "caption": "字形摹本选例；源字“是”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%98%AF-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "是",
+          "src": "forms/662f-seal.svg",
+          "caption": "字形摹本选例；源字“是”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%98%AF-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "shì"
+      ]
+    },
+    {
+      "char": "的",
+      "traditional": "的",
+      "pinyin": [
+        "de"
+      ],
+      "meaning": "de连接修饰语，如我的书。",
+      "story": "字库把“的”的古形联系到“旳”：日旁提示明亮，勺提示声音；今天“我的”的轻声de是后来的用法。",
+      "evolutionNote": "的本页无古形；旳的小篆仅作相关古字参考，不是一条已证实的助词演变链。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：的",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%9A%84"
+        },
+        {
+          "title": "香港中文大学汉语多功能字库：旳",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%97%B3"
+        }
+      ],
+      "confidenceNotes": "区分助词de、的确dí、目的dì；不可把古代“明亮”直接解释成所属关系。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "相关字篆文",
+          "sourceChar": "旳",
+          "src": "forms/65f3-seal.svg",
+          "caption": "相关古字“旳”的参考形；不等于助词“的”的直接演变链。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%97%B3-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "de",
+        "dí",
+        "dì"
+      ]
+    },
+    {
+      "char": "只",
+      "traditional": "只",
+      "pinyin": [
+        "zhǐ",
+        "zhī"
+      ],
+      "meaning": "zhǐ表示仅仅；zhī用来计数。",
+      "story": "“只有”的只古来可作语气词；“一只鸟”原写“隻”，古形像手持鸟。简化以后，两种写法合到“只”。",
+      "evolutionNote": "只有小篆；隻另有甲骨、金文，属量词这一支的参考。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：只",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AA"
+        },
+        {
+          "title": "香港中文大学汉语多功能字库：隻",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%9A%BB"
+        }
+      ],
+      "confidenceNotes": "甲骨文隻不能标成“只有”的只的甲骨文；traditional以主字只为准，另列来源隻。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [],
+      "formNotes": [
+        "本次未收录篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "zhǐ",
+        "zhī"
+      ]
+    },
+    {
+      "char": "个",
+      "traditional": "個",
+      "pinyin": [
+        "gè"
+      ],
+      "meaning": "量词，如一个苹果。",
+      "story": "“个、個、箇”都曾用来计数。传统“個”是人旁配提示声音的固；今天统一常用笔画更少的“个”。",
+      "evolutionNote": "该库個未列甲骨、金文、小篆字例；“个”也有古代用例。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：個",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%80%8B"
+        }
+      ],
+      "confidenceNotes": "不要把个说成现代才凭空造出，也不要将今天形状讲成古人或树木的图画。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "gè"
+      ]
+    },
+    {
+      "char": "成",
+      "traditional": "成",
+      "pinyin": [
+        "chéng"
+      ],
+      "meaning": "完成；变成。",
+      "story": "古形有像兵器的部分，另一部分的解释有分歧；有学者认为与守护城邑有关。后来常用来表示完成、成就。",
+      "evolutionNote": "有甲骨、金文、小篆；细部及早期本义有异说。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：成",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%88%90"
+        }
+      ],
+      "confidenceNotes": "保留“有学者认为”，不把城的初文说当作无争议定论。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "成",
+          "src": "forms/6210-oracle.svg",
+          "caption": "字形摹本选例；源字“成”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%88%90-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "成",
+          "src": "forms/6210-bronze.svg",
+          "caption": "字形摹本选例；源字“成”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%88%90-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "成",
+          "src": "forms/6210-seal.svg",
+          "caption": "字形摹本选例；源字“成”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%88%90-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "chéng"
+      ]
+    },
+    {
+      "char": "就",
+      "traditional": "就",
+      "pinyin": [
+        "jiù"
+      ],
+      "meaning": "靠近、前往；也可连接事情。",
+      "story": "一种解释把早期“就”看作高台上的宗庙建筑；古代还表示前往、完成。秦简以后字形逐渐接近今天。",
+      "evolutionNote": "有甲骨、金文、小篆；早形与今形部件不能逐笔硬配。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：就",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%B1"
+        }
+      ],
+      "confidenceNotes": "高台祭享解释属所引学者意见，不是唯一无争议的结论。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "就",
+          "src": "forms/5c31-oracle.svg",
+          "caption": "字形摹本选例；源字“就”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%B1-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "就",
+          "src": "forms/5c31-bronze.svg",
+          "caption": "字形摹本选例；源字“就”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%B1-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "就",
+          "src": "forms/5c31-seal.svg",
+          "caption": "字形摹本选例；源字“就”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%B1-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "jiù"
+      ]
+    },
+    {
+      "char": "看",
+      "traditional": "看",
+      "pinyin": [
+        "kàn",
+        "kān"
+      ],
+      "meaning": "kàn用眼观察；kān表示看守。",
+      "story": "小篆把“手”放在“目”上。可以像用手遮住阳光、望向远处那样记住它，目就是眼睛。",
+      "evolutionNote": "有小篆，未核该库甲骨、金文字例。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：看",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%9C%8B"
+        }
+      ],
+      "confidenceNotes": "“手遮目”有桂馥解释依据，非声称发现了相应甲骨字。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "看",
+          "src": "forms/770b-seal.svg",
+          "caption": "字形摹本选例；源字“看”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%9C%8B-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "kàn",
+        "kān"
+      ]
+    },
+    {
+      "char": "为",
+      "traditional": "為",
+      "pinyin": [
+        "wèi",
+        "wéi"
+      ],
+      "meaning": "wéi表示做、成为；wèi表示为了、替。",
+      "story": "传统字“為”的早形有手和大象，一说与役使大象做事有关，表示做、作为；“为”是后来采用的简写。",
+      "evolutionNote": "為有甲骨、金文、小篆；不能按“为”的四笔拆讲甲骨形。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：為",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%82%BA"
+        }
+      ],
+      "confidenceNotes": "手和象的古形可核，役象劳动的语义连接按CUHK说明用“一说”。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "為",
+          "src": "forms/70ba-oracle.svg",
+          "caption": "字形摹本选例；源字“為”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%82%BA-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "為",
+          "src": "forms/70ba-bronze.svg",
+          "caption": "字形摹本选例；源字“為”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%82%BA-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "為",
+          "src": "forms/70ba-seal.svg",
+          "caption": "字形摹本选例；源字“為”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E7%82%BA-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "wéi",
+        "wèi"
+      ]
+    },
+    {
+      "char": "什",
+      "traditional": "什",
+      "pinyin": [
+        "shén"
+      ],
+      "meaning": "shén用于什么；shí用于什锦。",
+      "story": "“什”由人和十组成，原与十人为一组有关。后来与“么”连用，变成常见的疑问词“什么”。",
+      "evolutionNote": "有小篆、简帛；未核该库甲骨、金文字例。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：什",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BB%80"
+        }
+      ],
+      "confidenceNotes": "不能把现在“什么”的shén读音与古代计数义完全等同。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "什",
+          "src": "forms/4ec0-seal.svg",
+          "caption": "字形摹本选例；源字“什”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BB%80-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "shén",
+        "shí"
+      ]
+    },
+    {
+      "char": "么",
+      "traditional": "麼",
+      "pinyin": [
+        "me"
+      ],
+      "meaning": "用在什么、怎么、这么等词里。",
+      "story": "“么”在“什么”中是“麼”的简写。“麼”旧有细小的意思，幺与麻分别关联字义和古音；疑问词是后来的用法。",
+      "evolutionNote": "该库列麼的小篆，属《说文新附》；未核甲骨、金文。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：麼",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%BA%BC"
+        }
+      ],
+      "confidenceNotes": "这里取me；不要与另有用法和读音的幺yāo混讲，也不把新附字形标成秦代实物。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [],
+      "formNotes": [
+        "本次未收录篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "me"
+      ]
+    },
+    {
+      "char": "我",
+      "traditional": "我",
+      "pinyin": [
+        "wǒ"
+      ],
+      "meaning": "说话的人自己。",
+      "story": "早期字形像带齿的长柄工具或兵器，后来借它来表示自己。古字的意思有时会被借去记录另一个词。",
+      "evolutionNote": "有甲骨、金文、小篆；究竟是哪一种工具或兵器仍有不同解释。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：我",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%88%91"
+        }
+      ],
+      "confidenceNotes": "只讲可见的带齿长柄形，不把具体武器名称说成定论。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "我",
+          "src": "forms/6211-oracle.svg",
+          "caption": "字形摹本选例；源字“我”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%88%91-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "我",
+          "src": "forms/6211-bronze.svg",
+          "caption": "字形摹本选例；源字“我”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%88%91-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "我",
+          "src": "forms/6211-seal.svg",
+          "caption": "字形摹本选例；源字“我”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%88%91-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "wǒ"
+      ]
+    },
+    {
+      "char": "和",
+      "traditional": "和",
+      "pinyin": [
+        "hé",
+        "hè",
+        "huó",
+        "huò",
+        "hú"
+      ],
+      "meaning": "hé可表示和睦，也可表示与。",
+      "story": "古形有口，禾帮助提示古代声音。早期与声音相应、和谐有关；不是把“禾与口”画成吃饭的故事。",
+      "evolutionNote": "有金文、小篆，未核该库甲骨例。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：和",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%92%8C"
+        }
+      ],
+      "confidenceNotes": "重点讲hé；唱和、和面等词另有读音，不能用现代同音推翻古声符关系。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [],
+      "formNotes": [
+        "本次未收录金文、篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "hé",
+        "hè",
+        "huó",
+        "huò",
+        "hú"
+      ]
+    },
+    {
+      "char": "你",
+      "traditional": "你",
+      "pinyin": [
+        "nǐ"
+      ],
+      "meaning": "说话时称呼对方。",
+      "story": "“你”是较晚常用起来的第二人称字，隋代文献已经使用。更早的人也常用“汝、尔”等字称呼对方。",
+      "evolutionNote": "该库未列可靠甲骨、金文、小篆；不将尔的古形冒充你的古形。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：你",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BD%A0"
+        }
+      ],
+      "confidenceNotes": "“你”不是把尔加人旁就能无条件回推到甲骨时代的字。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "nǐ"
+      ]
+    },
+    {
+      "char": "他",
+      "traditional": "他",
+      "pinyin": [
+        "tā"
+      ],
+      "meaning": "指说话双方之外的人。",
+      "story": "“他”早先常表示“别的”，如他人、他处。后来用作第三人称；古代并不只指男性。",
+      "evolutionNote": "该库未列可靠甲骨、金文、小篆；不把也的古形当成他的甲骨文。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：他",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BB%96"
+        }
+      ],
+      "confidenceNotes": "现代男性用法是后起分工，避免把古代他与现代她的区别倒推。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "tā"
+      ]
+    },
+    {
+      "char": "哪",
+      "traditional": "哪",
+      "pinyin": [
+        "nǎ",
+        "něi"
+      ],
+      "meaning": "nǎ用来发问，如哪里。",
+      "story": "“哪”是较晚出现的字，常在口语中发问。可用“你在哪里”认识它，不必给它编一个甲骨文故事。",
+      "evolutionNote": "该库未列甲骨、金文、小篆，亦指出不见于《说文》。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：哪",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%93%AA"
+        }
+      ],
+      "confidenceNotes": "哪吒读né属专名，本卡主要讲nǎ／něi及语气词na。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "nǎ",
+        "něi",
+        "na"
+      ]
+    },
+    {
+      "char": "里",
+      "traditional": "裏",
+      "pinyin": [
+        "lǐ"
+      ],
+      "meaning": "里面；也可表示里程、乡里。",
+      "story": "“里面”旧写“裏”，古形有衣，里提示声音，原与衣服内层有关。乡里、公里的“里”原本是另一个字。",
+      "evolutionNote": "裏有金文、小篆，未核甲骨例；与田土构成的里区分。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：裏",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%A3%8F"
+        },
+        {
+          "title": "香港中文大学汉语多功能字库：里",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%87%8C"
+        }
+      ],
+      "confidenceNotes": "简化将裏／裡并入里，不把乡里的古形直接当“里面”的象形。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [],
+      "formNotes": [
+        "本次未收录金文、篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "lǐ"
+      ]
+    },
+    {
+      "char": "来",
+      "traditional": "來",
+      "pinyin": [
+        "lái"
+      ],
+      "meaning": "从别处到这里。",
+      "story": "传统“來”的甲骨形像一株麦子，有穗、叶和根。后来借来记“到来”的来，字形又渐渐变成今天这样。",
+      "evolutionNote": "來有甲骨、金文、小篆；来是后来的简写。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：來",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BE%86"
+        }
+      ],
+      "confidenceNotes": "不把“麦子从外国来”当造字史实；来、麦古字关系另有细节争论。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [],
+      "formNotes": [
+        "本次未收录甲骨文、金文、篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "lái"
+      ]
+    },
+    {
+      "char": "去",
+      "traditional": "去",
+      "pinyin": [
+        "qù"
+      ],
+      "meaning": "离开这里，到别处。",
+      "story": "古形上部像人，下部的解释有分歧：有人认为与张口有关，也有人认为像离开洞口的人。早期已用来表示离去。",
+      "evolutionNote": "有甲骨、金文、小篆；构形解释不唯一。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：去",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8E%BB"
+        }
+      ],
+      "confidenceNotes": "不单独采用“走出山洞”作无争议故事；并注意去与盍的同形问题。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "去",
+          "src": "forms/53bb-oracle.svg",
+          "caption": "字形摹本选例；源字“去”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8E%BB-oracle.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "去",
+          "src": "forms/53bb-seal.svg",
+          "caption": "字形摹本选例；源字“去”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8E%BB-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "本次未收录金文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "qù"
+      ]
+    },
+    {
+      "char": "又",
+      "traditional": "又",
+      "pinyin": [
+        "yòu"
+      ],
+      "meaning": "表示再一次或还有。",
+      "story": "古形像右手的侧面，几笔代表手指。后来借来表示“再次”的又，右手的意思另常用“右”。",
+      "evolutionNote": "有甲骨、金文、小篆；古形手指不是要求画足五根。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：又",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%88"
+        }
+      ],
+      "confidenceNotes": "侧面右手是较稳妥解释；不要将三指当成古人只有三根手指。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "又",
+          "src": "forms/53c8-oracle.svg",
+          "caption": "字形摹本选例；源字“又”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%88-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "又",
+          "src": "forms/53c8-bronze.svg",
+          "caption": "字形摹本选例；源字“又”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%88-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "又",
+          "src": "forms/53c8-seal.svg",
+          "caption": "字形摹本选例；源字“又”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%88-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "yòu"
+      ]
+    },
+    {
+      "char": "要",
+      "traditional": "要",
+      "pinyin": [
+        "yào"
+      ],
+      "meaning": "yào表示想要、需要；yāo用于要求等词。",
+      "story": "古形像人的身体，两手叉在腰间，本来表示腰部。后来“要”有了重要、求取等用法，腰另加月旁来写。",
+      "evolutionNote": "有小篆、简帛；该库未列可核甲骨、金文字例。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：要",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%A6%81"
+        }
+      ],
+      "confidenceNotes": "可讲古字与腰的关系，但本轮不展示无出处甲骨形。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "要",
+          "src": "forms/8981-seal.svg",
+          "caption": "字形摹本选例；源字“要”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%A6%81-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "yào",
+        "yāo"
+      ]
+    },
+    {
+      "char": "还",
+      "traditional": "還",
+      "pinyin": [
+        "hái",
+        "huán"
+      ],
+      "meaning": "hái表示仍然、还有；huán表示归还。",
+      "story": "传统“還”有表示行走的部分，原与返回有关；后来也能表示仍然、还有。“还”是今天常用的简写。",
+      "evolutionNote": "還有甲骨、金文、小篆；早期不同字形不一定逐笔直线相接。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：還",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%82%84"
+        }
+      ],
+      "confidenceNotes": "不能把简体中的“不”解释成不走；hái与huán须按词语区分。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "還",
+          "src": "forms/9084-bronze.svg",
+          "caption": "字形摹本选例；源字“還”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%82%84-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "還",
+          "src": "forms/9084-seal.svg",
+          "caption": "字形摹本选例；源字“還”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%82%84-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "本次未收录甲骨文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "hái",
+        "huán"
+      ]
+    },
+    {
+      "char": "能",
+      "traditional": "能",
+      "pinyin": [
+        "néng"
+      ],
+      "meaning": "有能力做到；可以。",
+      "story": "早期字形与熊有关，能看出头、嘴和爪的痕迹。后来借来表示能力、能够，熊这一意思另有写法。",
+      "evolutionNote": "该库有甲骨、金文、小篆；部分甲骨形释读有争论。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：能",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%83%BD"
+        }
+      ],
+      "confidenceNotes": "不能把某件争议甲骨例当唯一证据，也不保证“熊强壮所以能力”的连接无争议。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "能",
+          "src": "forms/80fd-oracle.svg",
+          "caption": "字形摹本选例；源字“能”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%83%BD-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "能",
+          "src": "forms/80fd-bronze.svg",
+          "caption": "字形摹本选例；源字“能”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%83%BD-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "能",
+          "src": "forms/80fd-seal.svg",
+          "caption": "字形摹本选例；源字“能”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%83%BD-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "néng"
+      ]
+    },
+    {
+      "char": "起",
+      "traditional": "起",
+      "pinyin": [
+        "qǐ"
+      ],
+      "meaning": "站起来；开始。",
+      "story": "古形里与行走有关的部分提示动作，己或巳提示古代读音，原来表示站起；后来也能表示开始、兴起。",
+      "evolutionNote": "有小篆和楚简；该库金文目录有例但释读存疑，甲骨未核。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：起",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%B5%B7"
+        }
+      ],
+      "confidenceNotes": "bronze=true仅表示该库有目录字例；CUHK正文怀疑部分金文非起，应用不宜默认展示。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "起",
+          "src": "forms/8d77-seal.svg",
+          "caption": "字形摹本选例；源字“起”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E8%B5%B7-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "本次未收录金文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "qǐ"
+      ]
+    },
+    {
+      "char": "儿",
+      "traditional": "兒",
+      "pinyin": [
+        "ér"
+      ],
+      "meaning": "小孩；也用在词尾儿化。",
+      "story": "传统“兒”的古形像一个孩子。头部画法有人解释为幼儿头顶，也有人认为像儿童发髻；现在常简写成“儿”。",
+      "evolutionNote": "兒有甲骨、金文、小篆；简体儿不能按少两笔回推古形。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：兒",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%85%92"
+        }
+      ],
+      "confidenceNotes": "儿化r不另成一个完整音节；头部象什么有异说，应保留。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "兒",
+          "src": "forms/5152-oracle.svg",
+          "caption": "字形摹本选例；源字“兒”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%85%92-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "兒",
+          "src": "forms/5152-bronze.svg",
+          "caption": "字形摹本选例；源字“兒”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%85%92-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "兒",
+          "src": "forms/5152-seal.svg",
+          "caption": "字形摹本选例；源字“兒”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%85%92-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "ér",
+        "r"
+      ]
+    },
+    {
+      "char": "子",
+      "traditional": "子",
+      "pinyin": [
+        "zǐ"
+      ],
+      "meaning": "孩子；也可作词尾。",
+      "story": "甲骨文的“子”像头大的婴儿，伸着两臂，下部较细。后来既能称孩子，也用在许多词的末尾。",
+      "evolutionNote": "有甲骨、金文、小篆；早形方向与繁简存在多种写法。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：子",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%AD%90"
+        }
+      ],
+      "confidenceNotes": "儿子zǐ、桌子zi的读音不同；不把所有词尾子都讲成小孩。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "子",
+          "src": "forms/5b50-oracle.svg",
+          "caption": "字形摹本选例；源字“子”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%AD%90-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "子",
+          "src": "forms/5b50-bronze.svg",
+          "caption": "字形摹本选例；源字“子”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%AD%90-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "子",
+          "src": "forms/5b50-seal.svg",
+          "caption": "字形摹本选例；源字“子”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%AD%90-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "zǐ",
+        "zi"
+      ]
+    },
+    {
+      "char": "也",
+      "traditional": "也",
+      "pinyin": [
+        "yě"
+      ],
+      "meaning": "表示同样、还，如我也会。",
+      "story": "古代“也”常放在句末帮助停顿或判断。它的构形有不同解释，今天“我也会”的意思是后来常见的用法。",
+      "evolutionNote": "有金文、小篆，未核该库甲骨；不选一种象形说硬讲成定论。",
+      "sources": [
+        {
+          "title": "香港中文大学汉语多功能字库：也",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B9%9F"
+        }
+      ],
+      "confidenceNotes": "CUHK现代解释与《说文》说法不同，因此儿童正文只讲已知用法演变。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "也",
+          "src": "forms/4e5f-seal.svg",
+          "caption": "字形摹本选例；源字“也”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B9%9F-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "本次未收录金文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "yě"
+      ]
+    },
+    {
+      "char": "都",
+      "traditional": "都",
+      "pinyin": [
+        "dōu",
+        "dū"
+      ],
+      "meaning": "表示全部；读dū时指都城。",
+      "story": "古字把与城邑有关的“邑”和提示声音的“者”合在一起，原指都城。后来也用来表示全部。",
+      "evolutionNote": "字库列有金文、小篆；未列甲骨字例。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·都",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%83%BD"
+        },
+        {
+          "title": "汉典·都",
+          "url": "https://zdic.net/hans/%E9%83%BD"
+        }
+      ],
+      "confidenceNotes": "“都是”与“首都”读音不同；不把“者”编成煮饭的故事。 本轮CUHK目录未列甲骨字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "都",
+          "src": "forms/90fd-bronze.svg",
+          "caption": "字形摹本选例；源字“都”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%83%BD-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "都",
+          "src": "forms/90fd-seal.svg",
+          "caption": "字形摹本选例；源字“都”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%83%BD-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "dōu",
+        "dū"
+      ]
+    },
+    {
+      "char": "没",
+      "traditional": "沒",
+      "pinyin": [
+        "méi",
+        "mò"
+      ],
+      "meaning": "没有；读mò时指沉下或淹没。",
+      "story": "《说文》把“沒”解释为沉入水中，水旁提示与水有关。“没有”是今天常用的另一种意思。",
+      "evolutionNote": "可查“沒”的小篆；简体写“没”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·沒",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%B2%92"
+        },
+        {
+          "title": "汉典·没",
+          "url": "https://zdic.net/hans/%E6%B2%A1"
+        }
+      ],
+      "confidenceNotes": "所查字库未列甲骨、金文，不能据现代“殳”旁编造古画。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "沒",
+          "src": "forms/6c92-seal.svg",
+          "caption": "字形摹本选例；源字“沒”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%B2%92-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "méi",
+        "mò"
+      ]
+    },
+    {
+      "char": "不",
+      "traditional": "不",
+      "pinyin": [
+        "bù"
+      ],
+      "meaning": "表示否定，例如不去、不多。",
+      "story": "这个字的早期形状，有学者解释为植物根须，也有人解释为花萼。甲骨文里已经用它表示否定。",
+      "evolutionNote": "甲骨、金文到小篆，轮廓逐渐规整。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·不",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%8D"
+        },
+        {
+          "title": "汉典·不",
+          "url": "https://zdic.net/hans/%E4%B8%8D"
+        }
+      ],
+      "confidenceNotes": "构形本义有争议；不采用“鸟飞上天不下来”的故事当定论。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "不",
+          "src": "forms/4e0d-oracle.svg",
+          "caption": "字形摹本选例；源字“不”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8D-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "不",
+          "src": "forms/4e0d-bronze.svg",
+          "caption": "字形摹本选例；源字“不”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8D-bronze.svg"
+        }
+      ],
+      "formNotes": [
+        "本次未收录篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "bù"
+      ]
+    },
+    {
+      "char": "可",
+      "traditional": "可",
+      "pinyin": [
+        "kě"
+      ],
+      "meaning": "表示能够、允许，例如可以。",
+      "story": "古字有“口”和“丂”两个部分，但最初画的是什么还没有定论。甲骨文中已经有“可以”的用法。",
+      "evolutionNote": "可查甲骨、金文和小篆字形。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·可",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AF"
+        },
+        {
+          "title": "汉典·可",
+          "url": "https://zdic.net/hans/%E5%8F%AF"
+        }
+      ],
+      "confidenceNotes": "本义不确定；“可汗”读kè，儿童常用“可以”读kě。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "可",
+          "src": "forms/53ef-oracle.svg",
+          "caption": "字形摹本选例；源字“可”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%AF-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "可",
+          "src": "forms/53ef-bronze.svg",
+          "caption": "字形摹本选例；源字“可”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%AF-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "可",
+          "src": "forms/53ef-seal.svg",
+          "caption": "字形摹本选例；源字“可”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8F%AF-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "kě",
+        "kè"
+      ]
+    },
+    {
+      "char": "以",
+      "traditional": "以",
+      "pinyin": [
+        "yǐ"
+      ],
+      "meaning": "常表示用、凭借；也见于可以、以前。",
+      "story": "一种解释认为，古字像一个人提着东西。后来这个字常用来表示使用、凭借等意思。",
+      "evolutionNote": "早期也写作“㠯”，有的字形加上人旁，逐渐成为“以”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·以",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BB%A5"
+        },
+        {
+          "title": "汉典·以",
+          "url": "https://zdic.net/hans/%E4%BB%A5"
+        }
+      ],
+      "confidenceNotes": "人提物是所查字库采用的解释；不把“可以”整体意思硬拆给单字。 本轮CUHK目录未列小篆字例，不代表断言历史上绝无。 小篆“㠯”应另查其本字页，不把“以”页空栏算作已核得。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": false
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "以",
+          "src": "forms/4ee5-oracle.svg",
+          "caption": "字形摹本选例；源字“以”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BB%A5-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "以",
+          "src": "forms/4ee5-bronze.svg",
+          "caption": "字形摹本选例；源字“以”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BB%A5-bronze.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "yǐ"
+      ]
+    },
+    {
+      "char": "大",
+      "traditional": "大",
+      "pinyin": [
+        "dà"
+      ],
+      "meaning": "与小相对，表示体积或程度较大。",
+      "story": "古字像一个从正面看站立的人，身体和手臂都展开。它原来与成年人有关，后来表示大小的“大”。",
+      "evolutionNote": "甲骨、金文到小篆，都能看出正面人形。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·大",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%A7"
+        },
+        {
+          "title": "汉典·大",
+          "url": "https://zdic.net/hans/%E5%A4%A7"
+        }
+      ],
+      "confidenceNotes": "不说成“一个人比天地还大”；“大夫”有dài音。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "大",
+          "src": "forms/5927-oracle.svg",
+          "caption": "字形摹本选例；源字“大”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "大",
+          "src": "forms/5927-bronze.svg",
+          "caption": "字形摹本选例；源字“大”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "大",
+          "src": "forms/5927-seal.svg",
+          "caption": "字形摹本选例；源字“大”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "dà",
+        "dài"
+      ]
+    },
+    {
+      "char": "小",
+      "traditional": "小",
+      "pinyin": [
+        "xiǎo"
+      ],
+      "meaning": "与大相对，表示比较细小。",
+      "story": "早期写成几个小点，表示细小的东西。有人把这些点解释为沙粒，但这还不是唯一说法。",
+      "evolutionNote": "小点逐渐写成长笔画，成为今天的“小”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·小",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%8F"
+        },
+        {
+          "title": "汉典·小",
+          "url": "https://zdic.net/hans/%E5%B0%8F"
+        }
+      ],
+      "confidenceNotes": "点表示微小较可靠；“沙粒”应保留为一种解释。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "小",
+          "src": "forms/5c0f-oracle.svg",
+          "caption": "字形摹本选例；源字“小”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "小",
+          "src": "forms/5c0f-bronze.svg",
+          "caption": "字形摹本选例；源字“小”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "小",
+          "src": "forms/5c0f-seal.svg",
+          "caption": "字形摹本选例；源字“小”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8F-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "xiǎo"
+      ]
+    },
+    {
+      "char": "少",
+      "traditional": "少",
+      "pinyin": [
+        "shǎo",
+        "shào"
+      ],
+      "meaning": "读shǎo表示数量不多；读shào表示年纪轻。",
+      "story": "古代“小”和“少”关系很近，都曾写成小点。后来它们逐渐分开，“少”下方的一点拉长成撇。",
+      "evolutionNote": "甲骨的小点，到金文逐渐出现下面的一撇。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·少",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%91"
+        },
+        {
+          "title": "汉典·少",
+          "url": "https://zdic.net/hans/%E5%B0%91"
+        }
+      ],
+      "confidenceNotes": "不能说四点数量比三点少，所以造出“少”；不是按点数多少推理。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "少",
+          "src": "forms/5c11-oracle.svg",
+          "caption": "字形摹本选例；源字“少”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%91-oracle.svg"
+        }
+      ],
+      "formNotes": [
+        "本次未收录金文、篆文图片；字库有相关资料时可点击出处继续看。",
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "shǎo",
+        "shào"
+      ]
+    },
+    {
+      "char": "多",
+      "traditional": "多",
+      "pinyin": [
+        "duō"
+      ],
+      "meaning": "表示数量大，与少相对。",
+      "story": "甲骨字形像上下叠着的两块肉，后来部件变得像两个“夕”。为什么这样表示多，学者仍有讨论。",
+      "evolutionNote": "甲骨的肉形，到金文逐渐与“夕”形相近。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·多",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%9A"
+        },
+        {
+          "title": "汉典·多",
+          "url": "https://zdic.net/hans/%E5%A4%9A"
+        }
+      ],
+      "confidenceNotes": "两块肉的字形解释较常见；“古人七十岁才能吃肉”不能当确凿造字事实。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "多",
+          "src": "forms/591a-oracle.svg",
+          "caption": "字形摹本选例；源字“多”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%9A-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "多",
+          "src": "forms/591a-bronze.svg",
+          "caption": "字形摹本选例；源字“多”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%9A-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "多",
+          "src": "forms/591a-seal.svg",
+          "caption": "字形摹本选例；源字“多”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%9A-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "duō"
+      ]
+    },
+    {
+      "char": "过",
+      "traditional": "過",
+      "pinyin": [
+        "guò"
+      ],
+      "meaning": "从这里经过，也表示超出或曾经。",
+      "story": "“過”的走之旁提示行走，“咼”主要提示声音。原来与渡过、经过有关。",
+      "evolutionNote": "字库列有金文、小篆；“過”后来简化为“过”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·過",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%81%8E"
+        },
+        {
+          "title": "汉典·过",
+          "url": "https://zdic.net/hans/%E8%BF%87"
+        }
+      ],
+      "confidenceNotes": "不替“过”补画甲骨文；“寸”不是传统古字的原部件。 本轮CUHK目录未列甲骨字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "過",
+          "src": "forms/904e-bronze.svg",
+          "caption": "字形摹本选例；源字“過”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%81%8E-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "過",
+          "src": "forms/904e-seal.svg",
+          "caption": "字形摹本选例；源字“過”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%81%8E-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "guò",
+        "guo"
+      ]
+    },
+    {
+      "char": "一",
+      "traditional": "一",
+      "pinyin": [
+        "yī"
+      ],
+      "meaning": "最小的正整数，例如一个苹果。",
+      "story": "古人用一条横线表示数量一。从很早的甲骨文到今天，这个字的基本样子变化很小。",
+      "evolutionNote": "甲骨、金文、小篆都能看到一条横画。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·一",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%80"
+        },
+        {
+          "title": "汉典·一",
+          "url": "https://zdic.net/hans/%E4%B8%80"
+        }
+      ],
+      "confidenceNotes": "普通话独读yī；词语中会变调，不将变调另列成字源。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "一",
+          "src": "forms/4e00-oracle.svg",
+          "caption": "字形摹本选例；源字“一”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%80-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "一",
+          "src": "forms/4e00-bronze.svg",
+          "caption": "字形摹本选例；源字“一”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%80-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "一",
+          "src": "forms/4e00-seal.svg",
+          "caption": "字形摹本选例；源字“一”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%80-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "yī"
+      ]
+    },
+    {
+      "char": "二",
+      "traditional": "二",
+      "pinyin": [
+        "èr"
+      ],
+      "meaning": "一加一的数量。",
+      "story": "用两条横线表示数量二。古字的“二”和“上、下”很像，要看两条线的长短和位置来分辨。",
+      "evolutionNote": "甲骨、金文到小篆，保留两横的基本结构。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·二",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%8C"
+        },
+        {
+          "title": "汉典·二",
+          "url": "https://zdic.net/hans/%E4%BA%8C"
+        }
+      ],
+      "confidenceNotes": "不把《说文》的天地数说当作最初造字的实证。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "二",
+          "src": "forms/4e8c-oracle.svg",
+          "caption": "字形摹本选例；源字“二”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "二",
+          "src": "forms/4e8c-bronze.svg",
+          "caption": "字形摹本选例；源字“二”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "二",
+          "src": "forms/4e8c-seal.svg",
+          "caption": "字形摹本选例；源字“二”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%8C-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "èr"
+      ]
+    },
+    {
+      "char": "三",
+      "traditional": "三",
+      "pinyin": [
+        "sān"
+      ],
+      "meaning": "二加一的数量。",
+      "story": "古人用三条横线表示数量三。和一、二放在一起看，就能发现用横线记录数量的办法。",
+      "evolutionNote": "甲骨、金文到小篆，三横结构保持下来。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·三",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%89"
+        },
+        {
+          "title": "汉典·三",
+          "url": "https://zdic.net/hans/%E4%B8%89"
+        }
+      ],
+      "confidenceNotes": "“三横就是天、地、人”可作后世解释，不能当确定造字事实。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "三",
+          "src": "forms/4e09-oracle.svg",
+          "caption": "字形摹本选例；源字“三”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%89-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "三",
+          "src": "forms/4e09-bronze.svg",
+          "caption": "字形摹本选例；源字“三”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%89-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "三",
+          "src": "forms/4e09-seal.svg",
+          "caption": "字形摹本选例；源字“三”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%89-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "sān"
+      ]
+    },
+    {
+      "char": "方",
+      "traditional": "方",
+      "pinyin": [
+        "fāng"
+      ],
+      "meaning": "可以指方向，也可以指方形。",
+      "story": "这个字很早就表示四方、方向。它原来的形状有多种解释，有学者认为与刀刃有关，并不只是画一个方块。",
+      "evolutionNote": "可比较甲骨、金文和小篆；字形的本义仍有争论。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·方",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%96%B9"
+        },
+        {
+          "title": "汉典·方",
+          "url": "https://zdic.net/hans/%E6%96%B9"
+        }
+      ],
+      "confidenceNotes": "刀锋、农具、并船等说法不一致；不能把《说文》并船说当定论。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "方",
+          "src": "forms/65b9-oracle.svg",
+          "caption": "字形摹本选例；源字“方”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%96%B9-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "方",
+          "src": "forms/65b9-bronze.svg",
+          "caption": "字形摹本选例；源字“方”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%96%B9-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "方",
+          "src": "forms/65b9-seal.svg",
+          "caption": "字形摹本选例；源字“方”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%96%B9-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "fāng"
+      ]
+    },
+    {
+      "char": "对",
+      "traditional": "對",
+      "pinyin": [
+        "duì"
+      ],
+      "meaning": "表示正确，也表示面对、相对。",
+      "story": "“對”的古字有手和复杂的器具形状。甲骨构形的解释不一，金文里已经用它表示应答、答谢。",
+      "evolutionNote": "“對”有甲骨、金文字例，后来简化为“对”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·對",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B0%8D"
+        },
+        {
+          "title": "汉典·对",
+          "url": "https://zdic.net/hans/%E5%AF%B9"
+        }
+      ],
+      "confidenceNotes": "不把闢地立界说当唯一结论；简体“又”不能直接当“對”的完整古形。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "對",
+          "src": "forms/5c0d-oracle.svg",
+          "caption": "字形摹本选例；源字“對”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8D-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "對",
+          "src": "forms/5c0d-bronze.svg",
+          "caption": "字形摹本选例；源字“對”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8D-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "對",
+          "src": "forms/5c0d-seal.svg",
+          "caption": "字形摹本选例；源字“對”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B0%8D-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "duì"
+      ]
+    },
+    {
+      "char": "面",
+      "traditional": "面",
+      "pinyin": [
+        "miàn"
+      ],
+      "meaning": "脸；也指朝向或物体的表面。",
+      "story": "甲骨字形像一张脸的外框，中间画着眼睛。用最醒目的眼睛来帮助表示整张脸。",
+      "evolutionNote": "可查甲骨和小篆；后来轮廓与眼睛写得更方正。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·面",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%9D%A2"
+        },
+        {
+          "title": "汉典·面",
+          "url": "https://zdic.net/hans/%E9%9D%A2"
+        }
+      ],
+      "confidenceNotes": "“面条”的面来自“麵”的简化合并，与脸的面需要区分。 本轮CUHK目录未列金文字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "面",
+          "src": "forms/9762-oracle.svg",
+          "caption": "字形摹本选例；源字“面”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%9D%A2-oracle.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "面",
+          "src": "forms/9762-seal.svg",
+          "caption": "字形摹本选例；源字“面”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%9D%A2-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "miàn"
+      ]
+    },
+    {
+      "char": "到",
+      "traditional": "到",
+      "pinyin": [
+        "dào"
+      ],
+      "meaning": "来到某处，达到目标。",
+      "story": "“至”这一边提示到达的意思，“刀”这一边主要提示声音。它不是用刀砍倒东西的意思。",
+      "evolutionNote": "可查小篆及简帛字形，不补画甲骨字形。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·到",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%88%B0"
+        },
+        {
+          "title": "汉典·到",
+          "url": "https://zdic.net/hans/%E5%88%B0"
+        }
+      ],
+      "confidenceNotes": "所查CUHK页未列甲骨、金文；刀作声旁不按现代读音完全相同理解。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "到",
+          "src": "forms/5230-seal.svg",
+          "caption": "字形摹本选例；源字“到”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%88%B0-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "dào"
+      ]
+    },
+    {
+      "char": "好",
+      "traditional": "好",
+      "pinyin": [
+        "hǎo",
+        "hào"
+      ],
+      "meaning": "读hǎo表示美好；读hào表示喜欢。",
+      "story": "古字由“女”和“子”组成。可以讲成大人和孩子相亲相爱；这是对字形的一种解释，后来常用来表示美好。",
+      "evolutionNote": "甲骨、金文能看到女与孩子的形状，小篆逐渐规整。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·好",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A5%BD"
+        },
+        {
+          "title": "汉典·好",
+          "url": "https://zdic.net/hans/%E5%A5%BD"
+        }
+      ],
+      "confidenceNotes": "造字本义有不同观点；不可讲成只有女人生男孩才是好。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "好",
+          "src": "forms/597d-oracle.svg",
+          "caption": "字形摹本选例；源字“好”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A5%BD-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "好",
+          "src": "forms/597d-bronze.svg",
+          "caption": "字形摹本选例；源字“好”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A5%BD-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "好",
+          "src": "forms/597d-seal.svg",
+          "caption": "字形摹本选例；源字“好”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A5%BD-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "hǎo",
+        "hào"
+      ]
+    },
+    {
+      "char": "了",
+      "traditional": "了",
+      "pinyin": [
+        "le",
+        "liǎo"
+      ],
+      "meaning": "读le表示完成或变化；读liǎo可表示结束。",
+      "story": "《说文》记录的字形像省去手臂的“子”。今天常用的“做完了”等意思，不能直接从这个形状看出来。",
+      "evolutionNote": "所查字库列有小篆，未列甲骨、金文字例。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·了",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%86"
+        },
+        {
+          "title": "汉典·了",
+          "url": "https://zdic.net/hans/%E4%BA%86"
+        }
+      ],
+      "confidenceNotes": "“无臂之子”是古书的析形；现代完成助词的来源不能据此编故事。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "了",
+          "src": "forms/4e86-seal.svg",
+          "caption": "字形摹本选例；源字“了”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%86-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "le",
+        "liǎo"
+      ]
+    },
+    {
+      "char": "有",
+      "traditional": "有",
+      "pinyin": [
+        "yǒu"
+      ],
+      "meaning": "表示拥有或存在，例如有一本书。",
+      "story": "金文字形像手拿着一块肉，表示持有、拥有。今天看起来像“月”的部分，在这个古字里与肉有关。",
+      "evolutionNote": "字库列有金文、小篆，未列“有”的甲骨本字。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·有",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%89"
+        },
+        {
+          "title": "汉典·有",
+          "url": "https://zdic.net/hans/%E6%9C%89"
+        }
+      ],
+      "confidenceNotes": "甲骨有用“又”等字记录相近用法的情况，不能混标为同一字形。 本轮CUHK目录未列甲骨字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "有",
+          "src": "forms/6709-bronze.svg",
+          "caption": "字形摹本选例；源字“有”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9C%89-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "有",
+          "src": "forms/6709-seal.svg",
+          "caption": "字形摹本选例；源字“有”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9C%89-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "yǒu"
+      ]
+    },
+    {
+      "char": "天",
+      "traditional": "天",
+      "pinyin": [
+        "tiān"
+      ],
+      "meaning": "天空，也可指一天、天气。",
+      "story": "古字像正面站立的人，特别画出头部。头在身体的上方，后来用这个字表示头顶上的天空。",
+      "evolutionNote": "甲骨的头部圆点或方框，后来逐渐变成横画。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·天",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%A9"
+        },
+        {
+          "title": "汉典·天",
+          "url": "https://zdic.net/hans/%E5%A4%A9"
+        }
+      ],
+      "confidenceNotes": "此为所查字库采用的解释；不说成“一加大就是天空”的原始造字。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "天",
+          "src": "forms/5929-oracle.svg",
+          "caption": "字形摹本选例；源字“天”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "天",
+          "src": "forms/5929-bronze.svg",
+          "caption": "字形摹本选例；源字“天”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "天",
+          "src": "forms/5929-seal.svg",
+          "caption": "字形摹本选例；源字“天”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%A4%A9-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "tiān"
+      ]
+    },
+    {
+      "char": "地",
+      "traditional": "地",
+      "pinyin": [
+        "dì",
+        "de"
+      ],
+      "meaning": "读dì指大地、土地；读de常用在“慢慢地走”中。",
+      "story": "土旁提示大地、土地，“也”主要提示声音。这个字表示脚下的大地，与天空相对。",
+      "evolutionNote": "可查小篆和简帛字形；不补画甲骨文。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·地",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%9C%B0"
+        },
+        {
+          "title": "汉典·地",
+          "url": "https://zdic.net/hans/%E5%9C%B0"
+        }
+      ],
+      "confidenceNotes": "古今语音不同；不能要求“也”和“地”的现代发音一样。 本轮CUHK目录未列甲骨、金文字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "地",
+          "src": "forms/5730-seal.svg",
+          "caption": "字形摹本选例；源字“地”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%9C%B0-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "dì",
+        "de"
+      ]
+    },
+    {
+      "char": "人",
+      "traditional": "人",
+      "pinyin": [
+        "rén"
+      ],
+      "meaning": "人类，也指一个个具体的人。",
+      "story": "古字像从侧面看到的站立的人，可以看见身体和下垂的手臂。后来笔画变简，成为今天的“人”。",
+      "evolutionNote": "甲骨、金文到小篆，侧面人形逐渐简练。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·人",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%BA"
+        },
+        {
+          "title": "汉典·人",
+          "url": "https://zdic.net/hans/%E4%BA%BA"
+        }
+      ],
+      "confidenceNotes": "不是“左右两个人互相支撑”的造字故事。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "人",
+          "src": "forms/4eba-oracle.svg",
+          "caption": "字形摹本选例；源字“人”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%BA-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "人",
+          "src": "forms/4eba-bronze.svg",
+          "caption": "字形摹本选例；源字“人”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%BA-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "人",
+          "src": "forms/4eba-seal.svg",
+          "caption": "字形摹本选例；源字“人”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%BA%BA-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "rén"
+      ]
+    },
+    {
+      "char": "们",
+      "traditional": "們",
+      "pinyin": [
+        "men"
+      ],
+      "meaning": "放在人称或人的名称后，表示不止一个。",
+      "story": "“們”左边是人旁，右边“門”主要提示声音。我们、朋友们，都是把许多人放在一起说。",
+      "evolutionNote": "“們”是较晚的字，简体写“们”；本轮未核得可用甲骨形。 本次未收录古字形图片，不代表断言历史上绝无。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·們",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%80%91"
+        },
+        {
+          "title": "教育部《异体字字典》·們",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?educode=A00183"
+        }
+      ],
+      "confidenceNotes": "CUHK引唐代用例；教育部异体字字典明确《说文》不录，不得伪造篆文。 本轮CUHK目录未列甲骨、金文、小篆字例，不代表断言历史上绝无。",
+      "attestedStages": {
+        "oracle": false,
+        "bronze": false,
+        "seal": false
+      },
+      "forms": [],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "men"
+      ]
+    },
+    {
+      "char": "山",
+      "traditional": "山",
+      "pinyin": [
+        "shān"
+      ],
+      "meaning": "地面上隆起得很高的部分。",
+      "story": "古字像几座并立的山峰，下面连在一起。慢慢写得方正，就变成今天的“山”。",
+      "evolutionNote": "甲骨、金文、小篆都能比较山峰轮廓的变化。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·山",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%B1%B1"
+        },
+        {
+          "title": "汉典·山",
+          "url": "https://zdic.net/hans/%E5%B1%B1"
+        }
+      ],
+      "confidenceNotes": "不把每一画都硬对应现实中固定的三座山。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "山",
+          "src": "forms/5c71-oracle.svg",
+          "caption": "字形摹本选例；源字“山”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "山",
+          "src": "forms/5c71-bronze.svg",
+          "caption": "字形摹本选例；源字“山”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "山",
+          "src": "forms/5c71-seal.svg",
+          "caption": "字形摹本选例；源字“山”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%B1%B1-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "shān"
+      ]
+    },
+    {
+      "char": "日",
+      "traditional": "日",
+      "pinyin": [
+        "rì"
+      ],
+      "meaning": "太阳，也表示一天或白天。",
+      "story": "古字像太阳的轮廓，中间加一点，便于和其他圆圈区别。后来圆的轮廓逐渐写成方形。",
+      "evolutionNote": "甲骨、金文的轮廓，到小篆和楷书逐渐规整。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·日",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%97%A5"
+        },
+        {
+          "title": "汉典·日",
+          "url": "https://zdic.net/hans/%E6%97%A5"
+        }
+      ],
+      "confidenceNotes": "中点不是太阳黑子的确凿记录，也不是固定画日晷。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "日",
+          "src": "forms/65e5-oracle.svg",
+          "caption": "字形摹本选例；源字“日”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%97%A5-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "日",
+          "src": "forms/65e5-bronze.svg",
+          "caption": "字形摹本选例；源字“日”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%97%A5-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "日",
+          "src": "forms/65e5-seal.svg",
+          "caption": "字形摹本选例；源字“日”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%97%A5-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "rì"
+      ]
+    },
+    {
+      "char": "出",
+      "traditional": "出",
+      "pinyin": [
+        "chū"
+      ],
+      "meaning": "从里面到外面，例如出门。",
+      "story": "一种解释认为，古字像脚走出洞穴：上部是脚，下部像洞口。它不是把两座山叠起来。",
+      "evolutionNote": "甲骨、金文的脚与洞口，后来笔画相连，变成“出”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·出",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%87%BA"
+        },
+        {
+          "title": "汉典·出",
+          "url": "https://zdic.net/hans/%E5%87%BA"
+        }
+      ],
+      "confidenceNotes": "CUHK采用足出洞穴说；《说文》草木生长说不同，不能声称完全无争议。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "出",
+          "src": "forms/51fa-oracle.svg",
+          "caption": "字形摹本选例；源字“出”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%87%BA-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "出",
+          "src": "forms/51fa-bronze.svg",
+          "caption": "字形摹本选例；源字“出”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%87%BA-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "出",
+          "src": "forms/51fa-seal.svg",
+          "caption": "字形摹本选例；源字“出”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%87%BA-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "chū"
+      ]
+    },
+    {
+      "char": "上",
+      "traditional": "上",
+      "pinyin": [
+        "shàng"
+      ],
+      "meaning": "位置较高，也表示从低处往高处。",
+      "story": "古字用一条长线作基准，再在上方加一条短线，告诉人们位置在上面。后来加上竖画，便于辨认。",
+      "evolutionNote": "甲骨的长短两画，经过金文、小篆发展为“上”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·上",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%8A"
+        },
+        {
+          "title": "汉典·上",
+          "url": "https://zdic.net/hans/%E4%B8%8A"
+        }
+      ],
+      "confidenceNotes": "“上声”另有shǎng读音，常用词条先讲shàng。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "上",
+          "src": "forms/4e0a-oracle.svg",
+          "caption": "字形摹本选例；源字“上”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8A-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "上",
+          "src": "forms/4e0a-bronze.svg",
+          "caption": "字形摹本选例；源字“上”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8A-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "上",
+          "src": "forms/4e0a-seal.svg",
+          "caption": "字形摹本选例；源字“上”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8A-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "shàng"
+      ]
+    },
+    {
+      "char": "中",
+      "traditional": "中",
+      "pinyin": [
+        "zhōng",
+        "zhòng"
+      ],
+      "meaning": "读zhōng表示中间；读zhòng表示命中。",
+      "story": "早期有在直线中间画圈、标出中心的写法。也有带飘带的长杆形，学者联系到测风工具。",
+      "evolutionNote": "后来飘带省去，中央的圈逐渐写成方框。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·中",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%AD"
+        },
+        {
+          "title": "汉典·中",
+          "url": "https://zdic.net/hans/%E4%B8%AD"
+        }
+      ],
+      "confidenceNotes": "字形源流有多说；不把“箭射中靶心”作为确定的原始造字故事。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "中",
+          "src": "forms/4e2d-oracle.svg",
+          "caption": "字形摹本选例；源字“中”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "中",
+          "src": "forms/4e2d-bronze.svg",
+          "caption": "字形摹本选例；源字“中”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "中",
+          "src": "forms/4e2d-seal.svg",
+          "caption": "字形摹本选例；源字“中”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "zhōng",
+        "zhòng"
+      ]
+    },
+    {
+      "char": "下",
+      "traditional": "下",
+      "pinyin": [
+        "xià"
+      ],
+      "meaning": "位置较低，也表示从高处往低处。",
+      "story": "古字用一条长线作基准，在下方加短线，标出下面的位置。把上、下两个古字放一起就很容易比较。",
+      "evolutionNote": "甲骨的长短两画，经过金文、小篆发展为“下”。",
+      "sources": [
+        {
+          "title": "香港中文大学《汉语多功能字库》·下",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%8B"
+        },
+        {
+          "title": "汉典·下",
+          "url": "https://zdic.net/hans/%E4%B8%8B"
+        }
+      ],
+      "confidenceNotes": "用长短与位置区分二、上、下；不是把上字简单倒置所得的全部历史。",
+      "attestedStages": {
+        "oracle": true,
+        "bronze": true,
+        "seal": true
+      },
+      "forms": [
+        {
+          "stage": "oracle",
+          "label": "甲骨文",
+          "sourceChar": "下",
+          "src": "forms/4e0b-oracle.svg",
+          "caption": "字形摹本选例；源字“下”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8B-oracle.svg"
+        },
+        {
+          "stage": "bronze",
+          "label": "金文",
+          "sourceChar": "下",
+          "src": "forms/4e0b-bronze.svg",
+          "caption": "字形摹本选例；源字“下”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8B-bronze.svg"
+        },
+        {
+          "stage": "seal",
+          "label": "篆文",
+          "sourceChar": "下",
+          "src": "forms/4e0b-seal.svg",
+          "caption": "字形摹本选例；源字“下”。",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E4%B8%8B-seal.svg"
+        }
+      ],
+      "formNotes": [
+        "图片是古字形的摹本选例，不是原文物照片；各阶段不一定只有这一种写法。"
+      ],
+      "dictionaryReadings": [
+        "xià"
+      ]
+    }
+  ]
+};
