@@ -1,0 +1,21 @@
+{
+  "package": "com.dsh.gamecenter",
+  "versionName": "4.29",
+  "versionCode": 52,
+  "installedFormal": true,
+  "apkSha256": "099b479fb00ea289181966fe9d22f6e9961e4e61fdddd0833a9bdbf60863f77e",
+  "sourceDevReleaseAssetsExact": 276,
+  "nativeLibrariesUnchanged": [
+    "lib/arm64-v8a/libonnxruntime.so",
+    "lib/arm64-v8a/libsherpa-onnx-jni.so"
+  ],
+  "notDebuggable": true,
+  "webViewCDPClosed": true,
+  "adbForwardsEmpty": true,
+  "progressRestore": {
+    "exact": true,
+    "keys": 27,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  }
+}

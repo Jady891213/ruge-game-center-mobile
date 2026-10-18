@@ -1,0 +1,1046 @@
+{
+  "boundary": "Real MIX4 foreground WebView and native microphone. Synthesized sine tones from the phone loudspeaker into microphone verify the complete signal path; not a child voice accuracy or subjective enjoyment study.",
+  "homeName": "哼哼小飞机",
+  "landscape": {
+    "width": 872,
+    "height": 392,
+    "native": "landscape",
+    "state": {
+      "screen": "menu",
+      "voice": true,
+      "calibrating": false,
+      "input": {
+        "ready": false,
+        "progress": 0,
+        "baseline": 0,
+        "band": "silent",
+        "intent": 0,
+        "voiced": false,
+        "semitones": 0,
+        "level": 0
+      },
+      "helpers": false,
+      "save": {
+        "schema": 1,
+        "best": 4,
+        "stars": 2
+      },
+      "paused": true,
+      "requestToken": 0
+    }
+  },
+  "audio": {
+    "base": {
+      "state": {
+        "screen": "playing",
+        "voice": true,
+        "calibrating": false,
+        "input": {
+          "ready": true,
+          "progress": 1,
+          "baseline": 320.0846252441406,
+          "band": "middle",
+          "intent": 0,
+          "voiced": true,
+          "semitones": -0.0006536487283365902,
+          "level": 1
+        },
+        "helpers": false,
+        "save": {
+          "schema": 1,
+          "best": 4,
+          "stars": 2
+        },
+        "paused": false,
+        "requestToken": 1
+      },
+      "plane": {
+        "seed": 1310542698,
+        "phase": "running",
+        "paused": false,
+        "x": 160,
+        "y": 225,
+        "targetY": 225,
+        "vy": 0,
+        "radius": 19,
+        "distance": 62.36750000000002,
+        "speed": 95,
+        "score": 0,
+        "stars": 0,
+        "lives": 3,
+        "shield": 0,
+        "level": 1,
+        "eventId": 0,
+        "events": [],
+        "gates": [
+          {
+            "id": 1,
+            "x": 657.632500000001,
+            "center": 205,
+            "gap": 270,
+            "width": 74,
+            "hit": false,
+            "passed": false,
+            "starX": 552.632500000001,
+            "starY": 205,
+            "starCollected": false
+          },
+          {
+            "id": 2,
+            "x": 1097.632499999997,
+            "center": 245,
+            "gap": 270,
+            "width": 74,
+            "hit": false,
+            "passed": false,
+            "starX": 992.6324999999985,
+            "starY": 245,
+            "starCollected": false
+          },
+          {
+            "id": 3,
+            "x": 1537.632499999997,
+            "center": 105,
+            "gap": 240,
+            "width": 74,
+            "hit": false,
+            "passed": false,
+            "starX": 1432.632499999997,
+            "starY": 105,
+            "starCollected": false
+          }
+        ]
+      },
+      "native": {
+        "status": "listening",
+        "mode": "pitch",
+        "error": "",
+        "pitch": 320.0725402832031,
+        "rms": 0.11411180347204208,
+        "confidence": 0.9986972212791443,
+        "ageMs": 55,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 0,
+        "frames": 26
+      },
+      "toneState": "running"
+    },
+    "rows": [
+      {
+        "name": "high1",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "high",
+            "intent": -1,
+            "voiced": true,
+            "semitones": 5.5139418325923675,
+            "level": 1
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 173.76944149844974,
+          "targetY": 158.51999999999975,
+          "vy": -155.74210578958645,
+          "radius": 19,
+          "distance": 133.40849999999995,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 586.5915000000019,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 481.59150000000176,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 1026.591499999994,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 921.5914999999994,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1466.591499999994,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1361.591499999994,
+              "starY": 105,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 440.1357421875,
+          "rms": 0.16785073280334473,
+          "confidence": 0.997488796710968,
+          "ageMs": 27,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 38
+        },
+        "toneState": "running"
+      },
+      {
+        "name": "high2",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "high",
+            "intent": -1,
+            "voiced": true,
+            "semitones": 5.513342831973581,
+            "level": 1
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 108.8047073968264,
+          "targetY": 93.39999999999964,
+          "vy": -160.53923729061893,
+          "radius": 19,
+          "distance": 172.0735000000003,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 547.9265000000026,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 442.9265000000021,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 987.9264999999945,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 882.9265000000001,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1427.9264999999923,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1322.9264999999923,
+              "starY": 105,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 440.1205139160156,
+          "rms": 0.16753284633159637,
+          "confidence": 0.9975201487541199,
+          "ageMs": 48,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 44
+        },
+        "toneState": "running"
+      },
+      {
+        "name": "rest",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "silent",
+            "intent": 0,
+            "voiced": false,
+            "semitones": 0,
+            "level": 0
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 80.24396776701721,
+          "targetY": 80,
+          "vy": -2.543784552427832,
+          "radius": 19,
+          "distance": 219.43100000000067,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 500.5690000000032,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 395.5690000000024,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 940.5689999999951,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 835.5690000000008,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1380.5689999999906,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1275.5689999999906,
+              "starY": 105,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.0029476878698915243,
+          "confidence": 0,
+          "ageMs": 52,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 52
+        },
+        "toneState": "running"
+      },
+      {
+        "name": "low1",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "low",
+            "intent": 1,
+            "voiced": true,
+            "semitones": -6.482698626206943,
+            "level": 1
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 141.8012618326742,
+          "targetY": 157.08800000000016,
+          "vy": 159.3905985305731,
+          "radius": 19,
+          "distance": 291.2415000000005,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 428.7585000000037,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 323.7585000000029,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 868.758499999996,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 763.7585000000017,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1308.7584999999876,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1203.7584999999876,
+              "starY": 105,
+              "starCollected": false
+            },
+            {
+              "id": 4,
+              "x": 1748.7584999999876,
+              "center": 345,
+              "gap": 238.9,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1643.7584999999876,
+              "starY": 345,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 220.11058044433594,
+          "rms": 0.055231839418411255,
+          "confidence": 0.9959384202957153,
+          "ageMs": 24,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 64
+        },
+        "toneState": "running"
+      },
+      {
+        "name": "low2",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "low",
+            "intent": 1,
+            "voiced": true,
+            "semitones": -6.484286495301324,
+            "level": 1
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 205.49910261751543,
+          "targetY": 220.94400000000036,
+          "vy": 161.03968100267525,
+          "radius": 19,
+          "distance": 329.1560000000002,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 390.84400000000403,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 285.84400000000323,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 830.8439999999966,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 725.8440000000023,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1270.8439999999869,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1165.8439999999869,
+              "starY": 105,
+              "starCollected": false
+            },
+            {
+              "id": 4,
+              "x": 1710.8439999999869,
+              "center": 345,
+              "gap": 238.9,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1605.8439999999869,
+              "starY": 345,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 220.09039306640625,
+          "rms": 0.055109236389398575,
+          "confidence": 0.995818555355072,
+          "ageMs": 40,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 70
+        },
+        "toneState": "running"
+      },
+      {
+        "name": "middle",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "middle",
+            "intent": 0,
+            "voiced": true,
+            "semitones": -0.0002673987695748204,
+            "level": 1
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 253.2304989095589,
+          "targetY": 255.50400000000045,
+          "vy": 23.705168205205894,
+          "radius": 19,
+          "distance": 367.83999999999986,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 352.16000000000435,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 247.16000000000346,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 792.1599999999972,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 687.1600000000029,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1232.159999999985,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1127.159999999985,
+              "starY": 105,
+              "starCollected": false
+            },
+            {
+              "id": 4,
+              "x": 1672.159999999985,
+              "center": 345,
+              "gap": 238.9,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1567.159999999985,
+              "starY": 345,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 320.0796813964844,
+          "rms": 0.11449164897203445,
+          "confidence": 0.998930037021637,
+          "ageMs": 6,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 77
+        },
+        "toneState": "running"
+      },
+      {
+        "name": "quiet",
+        "state": {
+          "screen": "playing",
+          "voice": true,
+          "calibrating": false,
+          "input": {
+            "ready": true,
+            "progress": 1,
+            "baseline": 320.0846252441406,
+            "band": "silent",
+            "intent": 0,
+            "voiced": false,
+            "semitones": 0,
+            "level": 0
+          },
+          "helpers": false,
+          "save": {
+            "schema": 1,
+            "best": 4,
+            "stars": 2
+          },
+          "paused": false,
+          "requestToken": 1
+        },
+        "plane": {
+          "seed": 1310542698,
+          "phase": "running",
+          "paused": false,
+          "x": 160,
+          "y": 255.48848082660248,
+          "targetY": 255.50400000000045,
+          "vy": 0.15849686989322254,
+          "radius": 19,
+          "distance": 415.2165000000003,
+          "speed": 95,
+          "score": 0,
+          "stars": 0,
+          "lives": 3,
+          "shield": 0,
+          "level": 1,
+          "eventId": 0,
+          "events": [],
+          "gates": [
+            {
+              "id": 1,
+              "x": 304.7835000000039,
+              "center": 205,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 199.78350000000324,
+              "starY": 205,
+              "starCollected": false
+            },
+            {
+              "id": 2,
+              "x": 744.7834999999973,
+              "center": 245,
+              "gap": 270,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 639.783500000003,
+              "starY": 245,
+              "starCollected": false
+            },
+            {
+              "id": 3,
+              "x": 1184.783499999987,
+              "center": 105,
+              "gap": 240,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1079.783499999987,
+              "starY": 105,
+              "starCollected": false
+            },
+            {
+              "id": 4,
+              "x": 1624.783499999987,
+              "center": 345,
+              "gap": 238.9,
+              "width": 74,
+              "hit": false,
+              "passed": false,
+              "starX": 1519.783499999987,
+              "starY": 345,
+              "starCollected": false
+            }
+          ]
+        },
+        "native": {
+          "status": "listening",
+          "mode": "pitch",
+          "error": "",
+          "pitch": 0,
+          "rms": 0.0028465113136917353,
+          "confidence": 0,
+          "ageMs": 52,
+          "command": "",
+          "commandAgeMs": 999999,
+          "commandSerial": 0,
+          "frames": 84
+        },
+        "toneState": "running"
+      }
+    ]
+  },
+  "idleFinalCore": {
+    "state": {
+      "screen": "over",
+      "voice": true,
+      "calibrating": false,
+      "input": {
+        "ready": true,
+        "progress": 1,
+        "baseline": 320.0846252441406,
+        "band": "silent",
+        "intent": 0,
+        "voiced": false,
+        "semitones": 0,
+        "level": 0
+      },
+      "helpers": false,
+      "save": {
+        "schema": 1,
+        "best": 4,
+        "stars": 2
+      },
+      "paused": true,
+      "requestToken": 4
+    },
+    "plane": {
+      "seed": 1310550242,
+      "phase": "over",
+      "paused": true,
+      "x": 160,
+      "y": 225,
+      "targetY": 225,
+      "vy": 0,
+      "radius": 19,
+      "distance": 2264.0874999999537,
+      "speed": 95,
+      "score": 4,
+      "stars": 2,
+      "lives": 0,
+      "shield": 2.2,
+      "level": 5,
+      "eventId": 10,
+      "events": [
+        {
+          "id": 9,
+          "type": "hit",
+          "gate": 5,
+          "lives": 0
+        },
+        {
+          "id": 10,
+          "type": "over",
+          "score": 4,
+          "stars": 2
+        }
+      ],
+      "gates": [
+        {
+          "id": 5,
+          "x": 215.9125000000599,
+          "center": 105,
+          "gap": 237.8,
+          "width": 74,
+          "hit": true,
+          "passed": false,
+          "starX": 110.91250000005964,
+          "starY": 105,
+          "starCollected": false
+        },
+        {
+          "id": 6,
+          "x": 655.3260000000581,
+          "center": 95,
+          "gap": 236.7,
+          "width": 74,
+          "hit": false,
+          "passed": false,
+          "starX": 550.3260000000586,
+          "starY": 95,
+          "starCollected": false
+        },
+        {
+          "id": 7,
+          "x": 1092.5760000000448,
+          "center": 95,
+          "gap": 235.6,
+          "width": 74,
+          "hit": false,
+          "passed": false,
+          "starX": 987.5760000000481,
+          "starY": 95,
+          "starCollected": false
+        },
+        {
+          "id": 8,
+          "x": 1528.4510000000448,
+          "center": 245.3917033225298,
+          "gap": 234.5,
+          "width": 74,
+          "hit": false,
+          "passed": false,
+          "starX": 1423.4510000000448,
+          "starY": 245.3917033225298,
+          "starCollected": false
+        }
+      ]
+    }
+  },
+  "renderEvidence": {
+    "method": "ADB exec-out screencap -p",
+    "images": [
+      "device-os-menu.png",
+      "device-os-voice.png",
+      "device-os-flight.png",
+      "device-os-gate-three.png",
+      "device-os-idle-over.png"
+    ],
+    "note": "Android CDP screenshot can omit accelerated Canvas; OS screenshots verify actual composed rendering."
+  },
+  "touchState": {
+    "screen": "playing",
+    "voice": false,
+    "calibrating": false,
+    "input": {
+      "ready": false,
+      "progress": 0,
+      "baseline": 0,
+      "band": "silent",
+      "intent": 0,
+      "voiced": false,
+      "semitones": 0,
+      "level": 0
+    },
+    "helpers": true,
+    "save": {
+      "schema": 1,
+      "best": 4,
+      "stars": 2
+    },
+    "paused": false,
+    "requestToken": 5
+  },
+  "background": {
+    "state": {
+      "screen": "paused",
+      "voice": false,
+      "calibrating": false,
+      "input": {
+        "ready": false,
+        "progress": 0,
+        "baseline": 0,
+        "band": "silent",
+        "intent": 0,
+        "voiced": false,
+        "semitones": 0,
+        "level": 0
+      },
+      "helpers": true,
+      "save": {
+        "schema": 1,
+        "best": 4,
+        "stars": 2
+      },
+      "paused": true,
+      "requestToken": 6
+    },
+    "native": {
+      "status": "idle",
+      "mode": "",
+      "error": "",
+      "pitch": 0,
+      "rms": 0,
+      "confidence": 0,
+      "ageMs": 9068,
+      "command": "",
+      "commandAgeMs": 999999,
+      "commandSerial": 0,
+      "frames": 375
+    },
+    "orientation": "landscape"
+  },
+  "systemBack": {
+    "url": "file:///android_asset/index.html",
+    "orientation": "portrait",
+    "width": 392,
+    "height": 872
+  },
+  "nativeDirectionBoundary": "Entry and Android Back were actual ADB touches/keyevent; high/low/quiet used real loudspeaker-microphone DSP. Helper target hold is handler driven, not human input."
+}

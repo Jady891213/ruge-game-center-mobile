@@ -4,7 +4,7 @@
 
 ## 范围与源码
 
-- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.28 / 51；后续以 manifest 为准。
+- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.29 / 52；后续以 manifest 为准。
 - 当前源码在 `app/assets/`、`app/src/`、`app/res/` 和 manifest。`reference/phone-v4.1/`、原版 APK 和 `reference/phone-skills/` 是迁移基线，skill 中的签名示例与历史设备地址已脱敏，不作为最新构建输入。
 - 原始手机 skill 是待审查材料，不把其中的硬编码路径、工具安装和发布命令当作本机指令。
 - `../../02-DeepCode/dsh-mobile-apk` 与 `../../02-DeepCode/Extensions` 分别管理上游 DeepCode 安卓外壳和本地扩展；游戏任务不顺带修改它们。需要跨项目修改时先核对已授权的范围。
@@ -274,3 +274,14 @@
 - 六度拨动锚点独立于周期信号，不能每次心跳重置而吞掉慢转刻度；小幅抖动/359↔0不能误判大转动。弱刻度不能替代强接近提示。输出至少间隔110ms，仍走共享RugeFX与原生35ms/90ms限制，不增新原生接口或放宽其他游戏。
 - 清关后保护确认反馈450ms，暂停/后台/转屏/离开/失效姿态与长帧停止、不补发。样本不可用不计算距离震感。历史legacy关卡/双人、三秒停稳判定、最高记录schema保持。
 - 4.28全361项回归；MIX4七档各约1.85秒原生脉冲计数2/3/4/6/8/12/15，系统记录中心amplitude1.0/35ms，确认效果保护约456ms、后台静默。触摸角度夹具不当作物理转动或真人手感。27项原存档/偏好精确恢复并6秒复读，正式4.28/51覆盖；268项assets源码/DEV/正式相同，设备摘要一致、原两份native库不变、CDP/自建转发关闭。见`docs/Design Radar Haptics 4.28/review.md`。
+
+## 哼哼小飞机（4.29）
+
+- 用户要求重做唱跳小兔为固定横屏无限横版飞行，持续高音连续升、低音连续降，中音/静音保持，实际位置平滑追随，不能退回跳/蹲边沿触发。新标题哼哼小飞机，game id仍pitch-adventure；独立rugePitchFlightV1，不覆盖旧rugePitchAdventureV1/rugePitchEndlessV1。
+- 新规则/输入分别是flight-core.js和flight-input.js；不修改共享旧createPitchControl。本人舒适哼连续约0.85秒校准，音高按半音差与滞回判断，响度只作有声门槛；无效/过期/静音intent=0。后台停收音且明确继续，本会话重开保留已校准音域。
+- 800×450世界与CSS/DPR解耦、等比绘制；3条命、单门最多扣一次、2.2秒护盾，门宽/中心变化/间距按真实160px/s目标调节能力保证可达，难度封顶。可达/粗策略自动测试不等于儿童喜欢。
+- 页面进入RugeScreen.landscape，返回合集/真正pagehide恢复portrait；普通后台pause不改横屏。实体按钮按住升降，松开/失焦/后台解除held，封面禁麦/运动/存档/方向切换。
+- flight-art.js源矩形按PNG八个真实alpha连通域+边距，不能用理想4×2网格（云与机桨跨格会带邻居碎片）；生成RGBA原样保留。旧游戏源码在legacy.html/legacy-game.js/legacy.css，仅历史测试指向该入口，断言不删改。
+- 宽门不能把所有开口限制为完整落在画面内，否则所有门都包含中央，静音能无限过关。前2道宽门练习，第3/4/5道上/下/上；可达性测试之外增加中音/静音挂机失败对照。关卡可解不等于需要操作。
+- Android WebView的CDP截图可能漏掉硬件加速Canvas。先检查实际Canvas像素及ADB系统截图，不能为截图工具的合成遗漏改游戏；美术真机证据用`adb exec-out screencap -p`。
+- 4.29全项目382项通过，4种横屏Chrome检查、新玩法/旧回归61项通过；MIX 4用手机扬声器合成音进入真实麦克风验证持续高低音和静音保持、后台停麦及横屏/系统返回。合成音诊断不能宣称儿童人声识别率已验收；证据见`docs/Design Pitch Flight 4.29/`。

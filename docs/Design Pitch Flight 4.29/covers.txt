@@ -1,0 +1,1 @@
+pitch-adventure: app/assets/shared/pitch-adventure.png (1200 × 720)

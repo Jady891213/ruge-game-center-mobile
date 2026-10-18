@@ -1,0 +1,1 @@
+window.PitchFlightArt = {"sprites":"art/flight-sprites.png","sky":"art/flight-sky.png","imageWidth":1536,"imageHeight":1024,"rects":{"plane":[14,179,356,242],"planes":[[14,179,356,242],[404,160,366,245],[773,178,388,242],[1164,171,359,269]],"cloud":[21,592,372,278],"gate":[410,624,398,226],"star":[825,564,326,312],"heart":[1196,607,313,260]}};

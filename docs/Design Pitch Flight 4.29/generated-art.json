@@ -1,0 +1,82 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "path": "app/assets/pitch-adventure/art/flight-sprites.png",
+      "bytes": 1479500,
+      "sha256": "4ea68b43c874f6f8fa583de11315be8922334dc5e716598c3c661d63529e57a5"
+    },
+    {
+      "path": "app/assets/pitch-adventure/art/flight-sky.png",
+      "bytes": 1269381,
+      "sha256": "4dd51a842f0924fba9606a9e5d36c35878eae0dfc41b4bb388e81532a6b9737d"
+    }
+  ],
+  "geometry": {
+    "sprites": "art/flight-sprites.png",
+    "sky": "art/flight-sky.png",
+    "imageWidth": 1536,
+    "imageHeight": 1024,
+    "rects": {
+      "plane": [
+        14,
+        179,
+        356,
+        242
+      ],
+      "planes": [
+        [
+          14,
+          179,
+          356,
+          242
+        ],
+        [
+          404,
+          160,
+          366,
+          245
+        ],
+        [
+          773,
+          178,
+          388,
+          242
+        ],
+        [
+          1164,
+          171,
+          359,
+          269
+        ]
+      ],
+      "cloud": [
+        21,
+        592,
+        372,
+        278
+      ],
+      "gate": [
+        410,
+        624,
+        398,
+        226
+      ],
+      "star": [
+        825,
+        564,
+        326,
+        312
+      ],
+      "heart": [
+        1196,
+        607,
+        313,
+        260
+      ]
+    }
+  },
+  "alphaBoundsThreshold": 96,
+  "originalPngPreserved": true,
+  "notes": "RGBA kept unchanged. Eight primary alpha-connected components identified at threshold96; actual object boxes plus3px padding used. Objects cross ideal grid column boundaries, so nominal-cell cropping must not be used. Fully transparent RGB is not rendered."
+}

@@ -4,7 +4,7 @@
   const games = [
     {id:'animal-balance',cat:'puzzle',name:'水果天平'},
     {id:'hat-trick',cat:'puzzle',name:'帽子小捣蛋'},
-    {id:'pitch-adventure',cat:'react',name:'唱跳小兔'},
+    {id:'pitch-adventure',cat:'react',name:'哼哼小飞机'},
     {id:'voice-quest',cat:'react',name:'口令小冒险'},
     {id:'pocket-radar',cat:'tilt',name:'口袋探宝'},
     {id:'camera-color',cat:'puzzle',name:'颜色小侦探'},
