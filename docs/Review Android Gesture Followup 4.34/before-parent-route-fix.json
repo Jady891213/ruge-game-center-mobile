@@ -1,0 +1,87 @@
+{
+  "method": "ADB input swipe from physical display edge; UI taps via ADB input tap; CDP used only setup/read state, never invokes return handler",
+  "physicalAndroidGestureVerified": true,
+  "checks": [
+    {
+      "check": "source expanded",
+      "passed": true
+    },
+    {
+      "check": "left edge back closes source only",
+      "passed": true
+    },
+    {
+      "check": "right edge back returns detail to word list",
+      "passed": true
+    },
+    {
+      "check": "library root back returns collection",
+      "passed": true
+    },
+    {
+      "check": "typing linked library detail back to list",
+      "passed": true
+    },
+    {
+      "check": "linked library list returns typing parent",
+      "passed": true
+    },
+    {
+      "check": "typing menu back then returns collection",
+      "passed": true
+    },
+    {
+      "check": "pipe ordinary level overlay closes to same board",
+      "passed": true
+    },
+    {
+      "check": "pause back keeps game paused with explicit continue",
+      "passed": true
+    },
+    {
+      "check": "pause continue survives actual Home and app resume",
+      "passed": true
+    },
+    {
+      "check": "only explicit continue resumes",
+      "passed": true
+    },
+    {
+      "check": "pipe board back opens own level root",
+      "passed": true
+    },
+    {
+      "check": "pipe root back then collection",
+      "passed": true
+    },
+    {
+      "check": "juice pause back reveals explicit continue",
+      "passed": true
+    },
+    {
+      "check": "juice next back goes to own menu",
+      "passed": true
+    },
+    {
+      "check": "juice board draft unchanged by returning to menu",
+      "passed": true
+    },
+    {
+      "check": "juice root back goes collection",
+      "passed": true
+    },
+    {
+      "check": "memory board back to own selection",
+      "passed": true
+    },
+    {
+      "check": "memory menu back to hats parent",
+      "passed": true
+    },
+    {
+      "check": "hat parent root back to collection",
+      "passed": false
+    }
+  ],
+  "passed": false
+}

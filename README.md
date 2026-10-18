@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十九款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，游戏资源离线打包；专业语音评分需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.33 / versionCode 56**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.34 / versionCode 57**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,10 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 安卓实体侧滑补验（4.34）
+
+补验真机左右侧滑和暂停继续，修复接水管通用按压样式覆盖中央继续按钮的居中transform、导致实际点击落到遮罩的问题；翻牌返回帽子选关时保留旧局草稿，不自动跳进旧局。详见[4.34实体补验记录](docs/Review%20Android%20Gesture%20Followup%204.34/review.md)。
 
 ## 关卡与分层返回（4.33）
 

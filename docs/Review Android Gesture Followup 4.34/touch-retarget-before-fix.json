@@ -1,0 +1,40 @@
+{
+  "game": "pipe-flow",
+  "buttonBoundsCss": {
+    "x": 121.36363983154297,
+    "y": 404.3636474609375,
+    "width": 150,
+    "height": 64
+  },
+  "adbTapPhysical": [
+    540,
+    1200
+  ],
+  "events": [
+    {
+      "type": "pointerdown",
+      "target": "rugeBackContinue"
+    },
+    {
+      "type": "pointerup",
+      "target": "rugeBackContinue"
+    },
+    {
+      "type": "mousedown",
+      "targetClass": "ruge-back-shield"
+    },
+    {
+      "type": "mouseup",
+      "targetClass": "ruge-back-shield"
+    },
+    {
+      "type": "click",
+      "targetClass": "ruge-back-shield"
+    }
+  ],
+  "pausedAfterTap": true,
+  "diagnosticCssOverrideThenRealTap": {
+    "paused": false,
+    "buttonPresent": false
+  }
+}

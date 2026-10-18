@@ -1,0 +1,157 @@
+{
+  "method": "ADB input swipe from physical display edge; UI taps via ADB input tap; CDP used only setup/read state, never invokes return handler",
+  "physicalAndroidGestureVerified": true,
+  "checks": [
+    {
+      "check": "source expanded",
+      "passed": true
+    },
+    {
+      "check": "left edge back closes source only",
+      "passed": true
+    },
+    {
+      "check": "right edge back returns detail to word list",
+      "passed": true
+    },
+    {
+      "check": "library root back returns collection",
+      "passed": true
+    },
+    {
+      "check": "typing linked library detail back to list",
+      "passed": true
+    },
+    {
+      "check": "linked library list returns typing parent",
+      "passed": true
+    },
+    {
+      "check": "typing menu back then returns collection",
+      "passed": true
+    },
+    {
+      "check": "pipe ordinary level overlay closes to same board",
+      "passed": true
+    },
+    {
+      "check": "pause back keeps game paused with explicit continue",
+      "passed": true
+    },
+    {
+      "check": "pause continue survives actual Home and app resume",
+      "passed": true
+    },
+    {
+      "check": "only explicit continue resumes",
+      "passed": true
+    },
+    {
+      "check": "pipe board back opens own level root",
+      "passed": true
+    },
+    {
+      "check": "pipe root back then collection",
+      "passed": true
+    },
+    {
+      "check": "juice pause back reveals explicit continue",
+      "passed": true
+    },
+    {
+      "check": "juice next back goes to own menu",
+      "passed": true
+    },
+    {
+      "check": "juice board draft unchanged by returning to menu",
+      "passed": true
+    },
+    {
+      "check": "juice root back goes collection",
+      "passed": true
+    },
+    {
+      "check": "memory board back to own selection",
+      "passed": true
+    },
+    {
+      "check": "memory menu back to hats parent",
+      "passed": true
+    },
+    {
+      "check": "hat parent root back to collection",
+      "passed": true
+    },
+    {
+      "check": "marble ordinary selection closes without leaving game",
+      "passed": true
+    },
+    {
+      "check": "marble board back opens own selection root",
+      "passed": true
+    },
+    {
+      "check": "marble selection root then collection",
+      "passed": true
+    },
+    {
+      "check": "IME back first keeps library page",
+      "passed": true
+    },
+    {
+      "check": "edge gesture hides actual IME first",
+      "passed": true
+    },
+    {
+      "check": "second back after IME hides goes collection",
+      "passed": true
+    },
+    {
+      "check": "English starts in landscape",
+      "passed": true
+    },
+    {
+      "check": "English board edge back to own 36 selection",
+      "passed": true
+    },
+    {
+      "check": "English selection back to own title and stays landscape",
+      "passed": true
+    },
+    {
+      "check": "English title back to collection and portrait",
+      "passed": true
+    },
+    {
+      "check": "actual unoccluded relisten button tap restarts native capture and preserves actor",
+      "passed": true
+    },
+    {
+      "check": "voice edge back returns own selection stops capture and clears queue",
+      "passed": true
+    },
+    {
+      "check": "voice selection next back to collection",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "imeShownBeforeBack": true,
+  "microphoneRestart": {
+    "initialCenterTapOccludedByDeepCodeFloatingOverlay": true,
+    "initialAttempt": {
+      "framesBefore": 44,
+      "framesAfterTap": 79,
+      "statusAfterTap": "listening",
+      "captureRestarted": false,
+      "actorUnchanged": true
+    },
+    "unoccludedTapFractionX": 0.85,
+    "framesBefore": 1635,
+    "framesAfterTap": 0,
+    "statusAfterTap": "warming",
+    "captureRestarted": true,
+    "actorUnchanged": true
+  },
+  "testedVersion": "4.34 / 57"
+}

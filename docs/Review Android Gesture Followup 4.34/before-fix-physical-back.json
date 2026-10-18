@@ -1,0 +1,51 @@
+{
+  "method": "ADB input swipe from physical display edge; UI taps via ADB input tap; CDP used only setup/read state, never invokes return handler",
+  "physicalAndroidGestureVerified": true,
+  "checks": [
+    {
+      "check": "source expanded",
+      "passed": true
+    },
+    {
+      "check": "left edge back closes source only",
+      "passed": true
+    },
+    {
+      "check": "right edge back returns detail to word list",
+      "passed": true
+    },
+    {
+      "check": "library root back returns collection",
+      "passed": true
+    },
+    {
+      "check": "typing linked library detail back to list",
+      "passed": true
+    },
+    {
+      "check": "linked library list returns typing parent",
+      "passed": true
+    },
+    {
+      "check": "typing menu back then returns collection",
+      "passed": true
+    },
+    {
+      "check": "pipe ordinary level overlay closes to same board",
+      "passed": true
+    },
+    {
+      "check": "pause back keeps game paused with explicit continue",
+      "passed": true
+    },
+    {
+      "check": "pause continue survives actual Home and app resume",
+      "passed": true
+    },
+    {
+      "check": "only explicit continue resumes",
+      "passed": false
+    }
+  ],
+  "passed": false
+}

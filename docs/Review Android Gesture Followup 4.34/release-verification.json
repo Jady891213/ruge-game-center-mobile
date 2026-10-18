@@ -1,0 +1,19 @@
+{
+  "versionName": "4.34",
+  "versionCode": 57,
+  "apkSha256": "b813d709ad05597bb826bff643553095365127096c54a92e59510ad08ea11b16",
+  "installedSha256": "b813d709ad05597bb826bff643553095365127096c54a92e59510ad08ea11b16",
+  "exactApkMatch": true,
+  "debuggable": false,
+  "webviewDebugSocketPresent": false,
+  "adbForwards": [],
+  "saveRestore": {
+    "exact": true,
+    "keys": 31,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  },
+  "physicalAndroidGestureVerified": true,
+  "physicalChecks": 33,
+  "note": "DEV package physical edge gestures and actual taps passed; final release has identical assets, same navigation native source, closes developer tools."
+}

@@ -4,7 +4,7 @@
 
 ## 范围与源码
 
-- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.33 / 56；后续以 manifest 为准。
+- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.34 / 57；后续以 manifest 为准。
 - 当前源码在 `app/assets/`、`app/src/`、`app/res/` 和 manifest。`reference/phone-v4.1/`、原版 APK 和 `reference/phone-skills/` 是迁移基线，skill 中的签名示例与历史设备地址已脱敏，不作为最新构建输入。
 - 原始手机 skill 是待审查材料，不把其中的硬编码路径、工具安装和发布命令当作本机指令。
 - `../../02-DeepCode/dsh-mobile-apk` 与 `../../02-DeepCode/Extensions` 分别管理上游 DeepCode 安卓外壳和本地扩展；游戏任务不顺带修改它们。需要跨项目修改时先核对已授权的范围。
@@ -328,3 +328,10 @@
 - 新关需要真实规则解法回放；钢珠以120Hz真实物理执行，不仅验证逻辑可达。检查旧尾关全通存档能解锁追加关，并在小屏实际滚动选择36关，不能只把数组长度改36。
 - 固定的Android直接javac/d8构建链不支持新增Java lambda；WebView ValueCallback与延迟Runnable使用匿名类。桌面Java harness能编译并不等于Android bootclasspath可编译，新增原生代码须实际构建。
 - 4.33交付证据：515项全项目回归通过；真实浏览器60组合及45次第36关点击通过；MIX 4实际WebView 11项返回层级检查通过，但当时锁屏，未记作实体侧滑/IME真机通过。测试前31项存档精确恢复后覆盖安装正式4.33/56，原资源与原生库复用。详见 `docs/Design 36 Levels and Back Navigation 4.33/`。
+
+## 实体触摸与通用按钮样式（4.34）
+
+- Android触摸会在touch/pointer阶段之后合成mouse/click。暂停继续按钮在pressed态不能被游戏的`button:active:not(:disabled)`覆盖居中transform，否则触点落到遮罩，pointerup仍在按钮而最终click打到遮罩、无法继续。共享继续按钮pressed态使用唯一ID选择器压过游戏通用规则，不能只看DOM onclick或静态中心位置。
+- 验证暂停返回必须实际按下/松开并确认游戏恢复，另外覆盖真正Home→前台；JS调用onclick不能发现CSS命中变化。所有菜单层级测试仍以真实手机两侧边缘手势作为实体验收。
+- 子玩法返回父入口必须显式选择父菜单（翻牌→帽子使用固定`?menu=1`），不能依赖父页默认载入逻辑：默认逻辑可能自动恢复旧session、造成返回后又进入旧局。父页保留草稿与继续入口，正常从合集进入时保持原恢复行为。
+- 4.34补验：516项回归通过，33项MIX 4真实边缘手势/触摸及IME优先收起通过；浏览器126项指针、6项真实暂停恢复及4项旧CSS故障对照通过。实测修复继续按钮pressed命中偏移和翻牌回帽子旧局误入。证据见`docs/Review Android Gesture Followup 4.34/`。

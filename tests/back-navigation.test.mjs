@@ -45,7 +45,7 @@ test('专业朗读先关闭分组/设置弹层，再返回打字，取消收音�
  h.window.RugeBack.handle();assert.equal(h.window.__location.href,'index.html');assert.equal(h.window.__homes,0);
 });
 test('翻牌子游戏回选关，再回帽子入口，不跨到合集',t=>{
- const h=page(t,'hat-trick',{entry:'memory.html'}),g=h.window.__game;g.start(0);h.window.RugeBack.handle();assert.equal(h.node('#menu').hidden,false);assert.equal(h.window.__homes,0);h.window.RugeBack.handle();assert.equal(h.window.__location.href,'index.html');assert.equal(h.window.__homes,0);
+ const h=page(t,'hat-trick',{entry:'memory.html'}),g=h.window.__game;g.start(0);h.window.RugeBack.handle();assert.equal(h.node('#menu').hidden,false);assert.equal(h.window.__homes,0);h.window.RugeBack.handle();assert.equal(h.window.__location.href,'index.html?menu=1');assert.equal(h.window.__homes,0);
 });
 test('口令返回选关停止收音、清队列，迟到开始不重开游戏',async t=>{
  const h=page(t,'voice-quest'),g=h.window.__game;g.openLevel(0,false);g.beginTouch();g.command('right');g.command('left','voice');h.window.RugeBack.handle();await Promise.resolve();
@@ -113,4 +113,9 @@ test('钢珠暂停返回后去选关再关闭，仍有明确继续入口而非�
 
 test('钢珠已暂停再开重置并取消仍保留暂停入口',async t=>{
  const h=page(t,'gravity-maze'),g=h.window.__game;await g.setMode('touch');g.start();g.pause();h.window.RugeBack.handle();g.askReset();assert.equal(h.node('#resetPanel').hidden,false);h.click('#resetNo');assert.equal(g.state().paused,true);assert.equal(h.node('#pausePanel').hidden,false);h.window.RugeBack.handle();assert.ok(h.document.body.children.find(n=>n.id==='rugeBackContinue'&&!n.hidden));
+});
+test('翻牌回帽子入口即使有旧局也停在选关，草稿与继续入口保留',t=>{
+ const seed=page(t,'hat-trick');seed.window.__game.start(3);const raw=seed.saved.get('rugeHatTrickV1');assert.ok(raw);const old=JSON.parse(raw);
+ const h=page(t,'hat-trick',{search:'?menu=1',storage:{rugeHatTrickV1:raw}});assert.equal(h.node('#menu').hidden,false);assert.equal(h.node('#play').hidden,true);assert.equal(h.node('#continue').hidden,false);assert.equal(h.window.__game.state().level,3);assert.equal(JSON.stringify(h.window.__game.state()),JSON.stringify(old.session));h.node('#continue').onclick();assert.equal(h.node('#play').hidden,false);assert.equal(h.window.__game.state().level,3);
+ const direct=page(t,'hat-trick',{storage:{rugeHatTrickV1:raw}});assert.equal(direct.node('#play').hidden,false);assert.equal(direct.window.__game.state().level,3);assert.equal(direct.saved.get('unrelated'),'preserve');
 });

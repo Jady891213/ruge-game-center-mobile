@@ -40,6 +40,6 @@
   $('restart').onclick=()=>{if(!active||paused)return;cancel();$('confirm').hidden=false;render();};$('confirmRestart').onclick=()=>{if(active&&!paused&&!$('confirm').hidden)start(state.level);};$('cancelRestart').onclick=()=>{$('confirm').hidden=true;if(state.phase==='shuffle'){C.replay(state);save();}render();};$('next').onclick=()=>{if(!active||paused||busy||state.phase!=='won')return;if(state.level<C.LEVELS.length-1)start(state.level+1);else menu();};
   window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});window.addEventListener('pagehide',()=>{cancel();save();});window.addEventListener('resize',()=>{if(active)pause();});
   window.__game={core:C,start,menu,hideAnimals,pick,replay,state:()=>state,progress:()=>saved.stars.slice(),isPaused:()=>paused,busy:()=>busy,pause,resume,storageKey:KEY};
-  if(cover){document.body.classList.add('cover');state=C.createState(8);open();}else if(state){open();if(state.phase!=='won')pause();}else menu();
+  if(cover){document.body.classList.add('cover');state=C.createState(8);open();}else if(state&&!/[?&]menu=1(?:&|$)/.test(location.search)){open();if(state.phase!=='won')pause();}else menu();
 window.onRugeBack=()=>{if(!$('pause').hidden)return window.RugeBack.closePause(()=>{$('pause').hidden=true;},resume);if(!$('confirm').hidden){$('cancelRestart').onclick();return true;}if(active){menu();return true;}return false;};
 })();

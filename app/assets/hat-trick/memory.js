@@ -24,7 +24,7 @@
   function flip(index){if(!active||paused||!$('confirm').hidden)return null;const result=C.flip(state,index);if(!result)return null;fx('select');save();render();schedule();return result;}
   function pause(){if(!active)return;cancel();paused=true;document.body.classList.add('paused');$('confirm').hidden=true;$('pause').hidden=false;render();save();}
   function resume(){if(!active)return;paused=false;document.body.classList.remove('paused');$('pause').hidden=true;render();schedule();}
-  function exit(){cancel();save();location.href='index.html';}
+  function exit(){cancel();save();location.href='index.html?menu=1';}
   $('home').onclick=()=>window.RugeBack.handle();$('hatMode').onclick=exit;$('map').onclick=menu;$('winMap').onclick=menu;$('pauseMap').onclick=menu;$('continue').onclick=()=>{if(state)open();};$('pauseButton').onclick=pause;$('resume').onclick=resume;$('restart').onclick=()=>{if(!active||paused)return;cancel();$('confirm').hidden=false;render();};$('confirmRestart').onclick=()=>{if(active&&!paused&&!$('confirm').hidden)start(state.level);};$('cancelRestart').onclick=()=>{$('confirm').hidden=true;render();schedule();};$('next').onclick=()=>{if(active&&!paused&&state.phase==='won'){if(state.level<C.PAIRS.length-1)start(state.level+1);else menu();}};
   window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});window.addEventListener('pagehide',()=>{cancel();save();});window.addEventListener('resize',()=>{if(active)pause();});
   window.onRugeBack=()=>{if(!$('pause').hidden)return window.RugeBack.closePause(()=>{$('pause').hidden=true;},resume);if(!$('confirm').hidden){$('cancelRestart').onclick();return true;}if(active){menu();return true;}cancel();save();return false;};

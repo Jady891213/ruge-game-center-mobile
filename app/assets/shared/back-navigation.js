@@ -12,7 +12,7 @@ function closePause(hide,resume){
 function parent(){
  const path=String(location.pathname||'');
  if(/\/hanzi-typing\/speaking\.html$/.test(path))return 'index.html';
- if(/\/hat-trick\/memory\.html$/.test(path))return 'index.html';
+ if(/\/hat-trick\/memory\.html$/.test(path))return 'index.html?menu=1';
  if(/\/hanzi-library\/index\.html$/.test(path)&&/[?&]from=typing(?:&|$)/.test(location.search))return '../hanzi-typing/index.html';
  return null;
 }

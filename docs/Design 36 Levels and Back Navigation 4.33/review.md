@@ -51,3 +51,7 @@
 - [测试前存档恢复](save-restore.json)精确核对原31项localStorage与原生偏好，之后覆盖安装同签名4.33 / versionCode56；[正式安装核对](release-verification.json)单独记录，安装不清数据。
 
 临时备份仅在恢复确认后删除；浏览器、HTTP服务与自建转发已清理。
+
+## 后续实体补验
+
+4.34补验发现并修复继续按钮按压样式冲突、子玩法返回父菜单时自动恢复旧局的问题；最终实测与正式安装见[4.34实体补验](../Review%20Android%20Gesture%20Followup%204.34/review.md)。本页保留4.33当时的验证边界。
