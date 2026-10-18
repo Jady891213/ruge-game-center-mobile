@@ -1,0 +1,1028 @@
+{
+  "boundary": "True MIX4 WebView+shared feedback+native vibrator. Input angles use touch-mode fixture, not remotely rotating the physical phone. Native counter and OS waveform records verify delivery, not subjective hand feel.",
+  "phases": [
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 0,
+        "last": "",
+        "hapticMode": "none",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 2,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.14110000000005,
+        "elapsed": 1.8589000000000035,
+        "hold": 0,
+        "heading": 33.57691698009148,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 33.57691698009148,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 995,
+          "a": 65,
+          "d": 13
+        },
+        {
+          "type": "pulse",
+          "time": 2045.699999988079,
+          "a": 65,
+          "d": 13
+        }
+      ],
+      "error": 160,
+      "deliveredPulses": 2
+    },
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 2,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 5,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.15500000000008,
+        "elapsed": 1.845000000000003,
+        "hold": 0,
+        "heading": 333.5769169800915,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 333.5769169800915,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 3125.7999999821186,
+          "a": 100,
+          "d": 17
+        },
+        {
+          "type": "pulse",
+          "time": 3832.2999999821186,
+          "a": 100,
+          "d": 17
+        },
+        {
+          "type": "pulse",
+          "time": 4538.9000000059605,
+          "a": 100,
+          "d": 17
+        }
+      ],
+      "error": 100,
+      "deliveredPulses": 3
+    },
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 5,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 9,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.14840000000005,
+        "elapsed": 1.8516000000000035,
+        "hold": 0,
+        "heading": 293.5769169800915,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 293.5769169800915,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 5304.0999999940395,
+          "a": 145,
+          "d": 21
+        },
+        {
+          "type": "pulse",
+          "time": 5784.699999988079,
+          "a": 145,
+          "d": 21
+        },
+        {
+          "type": "pulse",
+          "time": 6266.799999982119,
+          "a": 145,
+          "d": 21
+        },
+        {
+          "type": "pulse",
+          "time": 6748.699999988079,
+          "a": 145,
+          "d": 21
+        }
+      ],
+      "error": 60,
+      "deliveredPulses": 4
+    },
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 9,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 15,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.14680000000001,
+        "elapsed": 1.8532000000000033,
+        "hold": 0,
+        "heading": 273.5769169800915,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 273.5769169800915,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 7437.5999999940395,
+          "a": 180,
+          "d": 24
+        },
+        {
+          "type": "pulse",
+          "time": 7779.299999982119,
+          "a": 180,
+          "d": 24
+        },
+        {
+          "type": "pulse",
+          "time": 8119.699999988079,
+          "a": 180,
+          "d": 24
+        },
+        {
+          "type": "pulse",
+          "time": 8460.90000000596,
+          "a": 180,
+          "d": 24
+        },
+        {
+          "type": "pulse",
+          "time": 8801.5,
+          "a": 180,
+          "d": 24
+        },
+        {
+          "type": "pulse",
+          "time": 9143.09999999404,
+          "a": 180,
+          "d": 24
+        }
+      ],
+      "error": 40,
+      "deliveredPulses": 6
+    },
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 15,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 23,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.14040000000008,
+        "elapsed": 1.859600000000003,
+        "hold": 0,
+        "heading": 258.5769169800915,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 258.5769169800915,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 9787,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 10013.90000000596,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 10245.199999988079,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 10478.299999982119,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 10711.40000000596,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 10944,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 11175.59999999404,
+          "a": 210,
+          "d": 28
+        },
+        {
+          "type": "pulse",
+          "time": 11407.90000000596,
+          "a": 210,
+          "d": 28
+        }
+      ],
+      "error": 25,
+      "deliveredPulses": 8
+    },
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 23,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 35,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.1471000000001,
+        "elapsed": 1.8529000000000027,
+        "hold": 1.8529000000000027,
+        "heading": 245.57691698009148,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 245.57691698009148,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 12010,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 12173.199999988079,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 12339,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 12506,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 12672.299999982119,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 12838.09999999404,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 13004,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 13170.199999988079,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 13336.40000000596,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 13503.09999999404,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 13668.799999982119,
+          "a": 235,
+          "d": 32
+        },
+        {
+          "type": "pulse",
+          "time": 13834.199999988079,
+          "a": 235,
+          "d": 32
+        }
+      ],
+      "error": 12,
+      "deliveredPulses": 12
+    },
+    {
+      "before": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 35,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "after": {
+        "active": true,
+        "sound": true,
+        "vibration": true,
+        "vibrator": true,
+        "amplitudeControl": true,
+        "events": 0,
+        "sounds": 0,
+        "haptics": 50,
+        "last": "signal",
+        "hapticMode": "amplitude-pulse",
+        "loaded": 13
+      },
+      "state": {
+        "mode": "safe",
+        "seed": 3067928073,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 58.146500000000074,
+        "elapsed": 1.853500000000003,
+        "hold": 1.853500000000003,
+        "heading": 233.57691698009148,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 233.57691698009148,
+          "elevation": 0
+        },
+        "lastHeading": 233.57691698009148,
+        "lastElevation": 0
+      },
+      "events": [
+        {
+          "type": "pulse",
+          "time": 14147.5,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 14267.90000000596,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 14392.5,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 14516.90000000596,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 14641.40000000596,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 14766,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 14892,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15015.09999999404,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15139.90000000596,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15264.799999982119,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15389,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15513.59999999404,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15637.799999982119,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15763.799999982119,
+          "a": 255,
+          "d": 35
+        },
+        {
+          "type": "pulse",
+          "time": 15887.5,
+          "a": 255,
+          "d": 35
+        }
+      ],
+      "error": 0,
+      "deliveredPulses": 15
+    }
+  ],
+  "turning": {
+    "headings": [
+      28.576916980091482,
+      40.57691698009148,
+      52.57691698009148,
+      64.57691698009148,
+      76.57691698009148,
+      88.57691698009148,
+      100.57691698009148,
+      112.57691698009148
+    ],
+    "events": [
+      {
+        "type": "pulse",
+        "time": 16338.90000000596,
+        "a": 65,
+        "d": 13
+      },
+      {
+        "type": "pulse",
+        "time": 16520.09999999404,
+        "a": 105,
+        "d": 16
+      },
+      {
+        "type": "pulse",
+        "time": 16702.19999998808,
+        "a": 105,
+        "d": 16
+      },
+      {
+        "type": "pulse",
+        "time": 16877.19999998808,
+        "a": 105,
+        "d": 16
+      },
+      {
+        "type": "pulse",
+        "time": 17060.09999999404,
+        "a": 105,
+        "d": 16
+      },
+      {
+        "type": "pulse",
+        "time": 17242,
+        "a": 105,
+        "d": 16
+      },
+      {
+        "type": "pulse",
+        "time": 17392.29999998212,
+        "a": 65,
+        "d": 13
+      },
+      {
+        "type": "pulse",
+        "time": 17509,
+        "a": 105,
+        "d": 16
+      },
+      {
+        "type": "pulse",
+        "time": 17624.69999998808,
+        "a": 105,
+        "d": 16
+      }
+    ],
+    "native": {
+      "active": true,
+      "sound": true,
+      "vibration": true,
+      "vibrator": true,
+      "amplitudeControl": true,
+      "events": 0,
+      "sounds": 0,
+      "haptics": 59,
+      "last": "signal",
+      "hapticMode": "amplitude-pulse",
+      "loaded": 13
+    }
+  },
+  "confirmation": {
+    "s": {
+      "mode": "safe",
+      "seed": 889114580,
+      "round": 2,
+      "cleared": 1,
+      "remaining": 68.29499999999992,
+      "elapsed": 3.705,
+      "hold": 0,
+      "heading": 233.57691698009148,
+      "elevation": 0,
+      "finished": false,
+      "target": {
+        "heading": 340.3301969659515,
+        "elevation": 0
+      },
+      "lastHeading": 233.57691698009148,
+      "lastElevation": 0
+    },
+    "events": [
+      {
+        "type": "pulse",
+        "time": 18059.79999998212,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18181,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18306,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18431.09999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18555.19999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18680,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18803.69999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 18929,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19053.40000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19177.59999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19302.40000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19426.79999998212,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19551.69999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19676.79999998212,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19800.40000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 19925.59999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20051.40000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20175,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20299.5,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20425.09999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20549,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20673.59999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20799.40000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 20922.19999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 21048.19999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "success",
+        "time": 21056.79999998212
+      },
+      {
+        "type": "pulse",
+        "time": 21512.59999999404,
+        "a": 100,
+        "d": 17
+      }
+    ],
+    "confirmationProtectedMs": 455.80000001192093
+  },
+  "space": {
+    "wrong": [
+      {
+        "type": "pulse",
+        "time": 21963,
+        "a": 145,
+        "d": 21
+      },
+      {
+        "type": "pulse",
+        "time": 22443.09999999404,
+        "a": 145,
+        "d": 21
+      }
+    ],
+    "aligned": [
+      {
+        "type": "pulse",
+        "time": 22866.19999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 22991.09999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 23114.90000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 23239.90000000596,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 23364.59999999404,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 23488.79999998212,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 23613.69999998808,
+        "a": 255,
+        "d": 35
+      },
+      {
+        "type": "pulse",
+        "time": 23738.29999998212,
+        "a": 255,
+        "d": 35
+      }
+    ]
+  },
+  "background": {
+    "paused": true,
+    "before": {
+      "active": true,
+      "sound": true,
+      "vibration": true,
+      "vibrator": true,
+      "amplitudeControl": true,
+      "events": 1,
+      "sounds": 1,
+      "haptics": 102,
+      "last": "signal",
+      "hapticMode": "amplitude-pulse",
+      "loaded": 13
+    },
+    "after": {
+      "active": true,
+      "sound": true,
+      "vibration": true,
+      "vibrator": true,
+      "amplitudeControl": true,
+      "events": 1,
+      "sounds": 1,
+      "haptics": 102,
+      "last": "signal",
+      "hapticMode": "amplitude-pulse",
+      "loaded": 13
+    }
+  },
+  "osGameWaveforms": [
+    "createTime: 10-18 15:53:56.477, startTime: 10-18 15:53:56.481, endTime: 10-18 15:53:56.517, durationMs: 40, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:56.603, startTime: 10-18 15:53:56.608, endTime: 10-18 15:53:56.645, durationMs: 42, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:56.729, startTime: 10-18 15:53:56.734, endTime: 10-18 15:53:56.770, durationMs: 41, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:56.852, startTime: 10-18 15:53:56.855, endTime: 10-18 15:53:56.891, durationMs: 39, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:56.980, startTime: 10-18 15:53:56.984, endTime: 10-18 15:53:57.020, durationMs: 40, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:57.101, startTime: 10-18 15:53:57.107, endTime: 10-18 15:53:57.124, durationMs: 23, status: cancelled_by_user, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:57.383, startTime: 10-18 15:53:57.387, endTime: 10-18 15:53:57.422, durationMs: 40, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:57.508, startTime: 10-18 15:53:57.512, endTime: 10-18 15:53:57.547, durationMs: 39, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:57.633, startTime: 10-18 15:53:57.636, endTime: 10-18 15:53:57.672, durationMs: 39, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:57.757, startTime: 10-18 15:53:57.761, endTime: 10-18 15:53:57.798, durationMs: 41, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:57.957, startTime: 10-18 15:53:57.960, endTime: 10-18 15:53:57.995, durationMs: 38, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}",
+    "createTime: 10-18 15:53:58.073, startTime: 10-18 15:53:58.076, endTime: 10-18 15:53:58.112, durationMs: 38, status: finished, effect: Mono{mEffect=Composed{segments=[Step{amplitude=1.0, frequencyHz=0.0, duration=35}], repeat=-1}}, originalEffect: null, scale: 0.00, callerInfo: CallerInfo{ attrs=VibrationAttributes: Usage=TOUCH Audio Usage= USAGE_UNKNOWN Flags=0, uid=10543, displayId=0, opPkg=com.dsh.gamecenter, reason=null}"
+  ]
+}

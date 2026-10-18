@@ -1,0 +1,19 @@
+{
+  "versionName": "4.28",
+  "versionCode": 51,
+  "sourceDevReleaseAssetsEqual": true,
+  "assetCount": 268,
+  "nativeLibrariesUnchanged": true,
+  "nativeLibraryCount": 2,
+  "saveRestore": {
+    "exact": true,
+    "keys": 27,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  },
+  "deviceApkSha256": "c26c807022c15f174661077632e600b6cdeabe0b28e2abecd9e1f68246cbf177",
+  "deviceApkMatches": true,
+  "debuggable": false,
+  "cdpAbsent": true,
+  "adbForwardsEmpty": true
+}

@@ -2,10 +2,10 @@
 'use strict';
 const C=window.RadarChallenge,KEY='rugePocketRadarChallengeV1',cover=/[?&]cover=1(?:&|$)/.test(location.search),$=id=>document.getElementById(id);
 let records=C.restoreRecords(null);try{if(!cover)records=C.restoreRecords(JSON.parse(localStorage.getItem(KEY)));}catch(_){}
-const pose=window.RadarOrientation.create(),canvas=$('board'),ctx=canvas.getContext('2d');
-let state=null,active=false,paused=false,gone=false,last=0,frame=0,mode=window.RugeOrientation?'sensor':'touch',touchHeading=0,touchElevation=0,lastPulse=-Infinity,lastTickHeading=0,bonusUntil=0,dragging=false;
+const haptics=window.RadarHaptics.create(C),pose=window.RadarOrientation.create(),canvas=$('board'),ctx=canvas.getContext('2d');
+let state=null,active=false,paused=false,gone=false,last=0,frame=0,mode=window.RugeOrientation?'sensor':'touch',touchHeading=0,touchElevation=0,signalUsable=false,bonusUntil=0,dragging=false;
 const fx=name=>{if(!cover&&!paused&&!document.hidden)window.RugeFX?.emit(name);};
-function stopPulse(){lastPulse=-Infinity;try{window.RugeFeedback?.cancelVibration();}catch(_){} }
+function stopPulse(time,quietMs=0){signalUsable=false;haptics.reset(time,quietMs);try{window.RugeFeedback?.cancelVibration();}catch(_){} }
 function clearInput(){dragging=false;C.interrupt(state);stopPulse();}
 function saveRecord(){if(cover||!state)return;if(state.cleared>records[state.mode]){records[state.mode]=state.cleared;try{localStorage.setItem(KEY,JSON.stringify(records));}catch(_){}}}
 function menu(){if(state)saveRecord();active=false;paused=false;clearInput();pose.release();$('menu').hidden=false;$('play').hidden=true;$('pause').hidden=true;$('win').hidden=true;$('posture').hidden=true;$('mapButton').hidden=true;$('safeBest').textContent='最高 '+records.safe+' 关';$('spaceBest').textContent='最高 '+records.space+' 关';}
@@ -16,13 +16,16 @@ function pause(){if(!active||cover||paused)return;paused=true;clearInput();$('po
 function resume(){if(!active)return;clearInput();pose.anchor(state.heading);paused=false;last=0;$('pause').hidden=true;refresh();if(state.finished)finish();}
 function finish(){clearInput();saveRecord();$('winTitle').textContent='闯过 '+state.cleared+' 关';$('result').textContent='最高 '+records[state.mode]+' 关';$('win').hidden=false;fx('win');}
 function refresh(){if(!state)return;$('levelName').textContent=(state.mode==='safe'?'开锁':'寻宝')+' · 第 '+state.round+' 关';$('timer').textContent=Math.ceil(state.remaining)+' 秒';$('timer').classList.toggle('urgent',state.remaining<=10);$('bestLive').textContent='最高 '+Math.max(records[state.mode],state.cleared)+' 关';$('inputMode').textContent=mode==='sensor'?'手机':'手指';$('inputMode').setAttribute('aria-pressed',String(mode==='sensor'));$('touchControls').hidden=mode!=='touch';$('pitchLabel').hidden=state.mode==='safe';$('elevation').hidden=state.mode==='safe';$('direction').textContent=Math.round(state.heading)+'°';$('elevation').textContent='↕ '+Math.round(state.elevation)+'°';const strength=C.signal(state);Array.from($('signal').children).forEach((n,i)=>n.classList.toggle('on',strength>=i*.2+.15));const progress=Math.min(100,state.hold/3*100);$('holdFill').style.width=progress+'%';$('holdTrack').setAttribute('aria-valuenow',String(Math.round(progress)));$('holdTrack').classList.toggle('ready',state.hold>0);$('holdBadge').hidden=state.hold<=0||paused||!$('posture').hidden;$('holdCount').textContent=String(Math.max(1,Math.ceil(3-state.hold)));$('cue').textContent=state.hold>0?'停住，3秒':strength>.87?'很近啦':state.mode==='safe'?'慢慢转':'转一转，抬一抬';}
-function feedback(time){if(cover||paused||document.hidden||!canAct()||!$('posture').hidden)return;const s=C.signal(state),near=state.hold>0,interval=near?95:Math.round(1000-880*s*s),moved=Math.abs(C.delta(state.heading,lastTickHeading))>=7;if(time-lastPulse>=interval||state.mode==='safe'&&moved&&time-lastPulse>=90){lastPulse=time;lastTickHeading=state.heading;window.RugeFX?.pulse(Math.round(near?245:25+195*s*s),near?24:moved?9:13);}}
+function feedback(time){
+ if(cover||paused||document.hidden||!canAct()||!$('posture').hidden)return;
+ signalUsable=true;const pulse=haptics.next(state,time);if(pulse)window.RugeFX?.pulse(pulse.strength,pulse.duration);
+}
 function tick(dt,time){if(!canAct())return;const reading=mode==='sensor'?pose.read():{available:true,heading:touchHeading,elevation:touchElevation,age:0};
  if(reading.reason==='restarted'){pause();return;}
  const good=reading.available&&Math.abs(reading.elevation)<=80;$('posture').hidden=good;$('postureText').textContent='竖起手机，慢慢转';
  const event=C.step(state,reading,dt);if(event==='timeout'){finish();refresh();draw();return;}
- if(event?.type==='clear'){stopPulse();saveRecord();fx('success');bonusUntil=time+1100;$('bonus').textContent='+'+event.bonus+' 秒';$('bonus').hidden=false;}
- if(time>bonusUntil)$('bonus').hidden=true;if(good&&!event)feedback(time);refresh();draw();}
+ if(event?.type==='clear'){stopPulse(time,450);saveRecord();fx('success');bonusUntil=time+1100;$('bonus').textContent='+'+event.bonus+' 秒';$('bonus').hidden=false;}
+ if(time>bonusUntil)$('bonus').hidden=true;if(good&&!event&&Number.isFinite(dt)&&dt>0&&dt<=.25)feedback(time);else if(!good||!Number.isFinite(dt)||dt<=0||dt>.25){if(signalUsable)stopPulse();}refresh();draw();}
 function draw(){if(!state||cover)return;const b=canvas.getBoundingClientRect(),w=b.width,h=b.height,d=window.devicePixelRatio||1;if(canvas.width!==Math.round(w*d)||canvas.height!==Math.round(h*d)){canvas.width=Math.round(w*d);canvas.height=Math.round(h*d);}ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);const cx=w/2,cy=h*.47,r=Math.min(w*.37,h*.33),signal=C.signal(state),green=state.hold>0;
  ctx.fillStyle=state.mode==='safe'?'#a9d9ce':'#b5ddf0';ctx.fillRect(0,0,w,h);
  if(state.mode==='space'){
