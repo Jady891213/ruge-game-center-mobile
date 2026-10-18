@@ -1,0 +1,30 @@
+{
+  "originalImageUnchanged": true,
+  "frames": [
+    {
+      "frame": 6,
+      "rect": [
+        796,
+        472,
+        244,
+        213
+      ],
+      "strongAlphaBottom": 683,
+      "drawHeightWorld": 25,
+      "soleAboveAnchorWorld": 0.2347417840375587
+    },
+    {
+      "frame": 7,
+      "rect": [
+        1135,
+        494,
+        273,
+        191
+      ],
+      "strongAlphaBottom": 683,
+      "drawHeightWorld": 25,
+      "soleAboveAnchorWorld": 0.2617801047120419
+    }
+  ],
+  "soleDifferenceWorld": 0.027038320674483196
+}

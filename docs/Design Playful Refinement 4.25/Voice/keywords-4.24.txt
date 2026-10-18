@@ -1,0 +1,16 @@
+x iàng z uǒ :2.0 #0.15 @left
+x iàng y òu :2.0 #0.15 @right
+x iàng sh àng :2.0 #0.15 @up
+x iàng x ià :2.0 #0.15 @down
+q ián j ìn :2.0 #0.15 @up
+h òu t uì :2.0 #0.15 @down
+t iào y í x ià :2.0 #0.15 @jump
+t iào :2.0 #0.50 @jump
+n á q ǐ l ái :2.0 #0.15 @take
+n á q ǐ :2.0 #0.15 @take
+f àng x ià :2.0 #0.15 @put
+t íng x ià :2.0 #0.15 @stop
+t íng y ī x ià :2.0 #0.20 @stop
+t íng zh ǐ :2.0 #0.20 @stop
+t íng x ià l ái :2.0 #0.20 @stop
+t íng y í x ià :2.0 #0.20 @stop

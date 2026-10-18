@@ -60,6 +60,25 @@ function matches(step,sample,history=[]){
  default:return false;
  }
 }
+const PASS_SCORE=80;
+// The display uses the same category / brightness / uniqueness decision as collect().
+// 80 is the rule boundary, not an RGB contrast ratio or a camera accuracy measure.
+function comparison(step,sample,history=[]){
+ if(!step||!sample||!rgbValid(sample.rgb))return {score:0,pass:false,target:null};
+ const value=describe(sample.rgb),prior=history.at(-1),seen=history.map(p=>describe(p.rgb).color);
+ let candidates=step.kind==='color'?[step.color]:step.kind==='warm'?['red','orange','yellow']:step.kind==='cool'?['green','blue','purple']:step.kind==='different'?Object.keys(COLORS).filter(c=>!seen.includes(c)):[];
+ let raw=0,target=null;
+ if(candidates.length){
+  const delta=c=>{const t=describe(COLORS[c].rgb),h=Math.abs(value.hue-t.hue);return Math.min(h,360-h)/180*.8+Math.abs(value.saturation-t.saturation)*.2;};
+  candidates.sort((a,b)=>delta(a)-delta(b));target=COLORS[candidates[0]].rgb.slice();raw=Math.max(0,1-delta(candidates[0]));
+ }else if(['light','dark','lighter','darker'].includes(step.kind)){
+  const before=prior?describe(prior.rgb).brightness:null;
+  const bound=step.kind==='light'?.68:step.kind==='dark'?.28:before===null?null:step.kind==='lighter'?before+.16:before-.16;
+  if(bound!==null){const goal=Math.max(0,Math.min(1,bound)),n=Math.round(goal*255);target=[n,n,n];raw=step.kind==='light'||step.kind==='lighter'?Math.min(1,value.brightness/Math.max(.01,goal)):Math.min(1,(1-value.brightness)/Math.max(.01,1-goal));}
+ }else raw=1;
+ const pass=matches(step,sample,history);
+ return {score:pass?Math.max(PASS_SCORE,Math.round(80+20*raw)):Math.min(79,Math.max(0,Math.round(79*raw))),pass,target};
+}
 function createState(level,mode='camera'){
  if(!Number.isInteger(level)||!LEVELS[level])throw new RangeError('level');
  return {level,mode:mode==='practice'?'practice':'camera',collected:[],finished:false};
@@ -95,5 +114,5 @@ function stabilizer(){
  }
  return {push,reset};
 }
-root.CameraColor={COLORS,LEVELS,describe,analyze,label,matches,createState,collect,restore,stabilizer};
+root.CameraColor={COLORS,LEVELS,describe,analyze,label,matches,comparison,PASS_SCORE,createState,collect,restore,stabilizer};
 })(typeof window!=='undefined'?window:globalThis);

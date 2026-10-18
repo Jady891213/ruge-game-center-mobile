@@ -53,3 +53,7 @@
 ## 4.24 水果天平与森林声音冒险美术
 
 使用内置 GPT 图片生成与编辑工具制作三联视觉原型、水果图集、木秤/森林桌面、12帧原创怪兽、森林场景、树与任务道具。正式素材位于 animal-balance/art、pitch-adventure/art 与 shared/playful-art；原型、完整提示词、生成来源及哈希在 docs/Design Playful Polish 4.24。未提取参考游戏美术；原生语音依赖与许可沿用上一版固定分发。
+
+## 4.25 新生成美术与口令
+
+帽子/翻牌的6物件透明图集、小兔12帧透明图集由内置GPT图片工具原创生成；原PNG保留alpha，按实际主体框等比取景，不提取第三方游戏角色或程序去底。提示词、来源与摘要见`docs/Design Playful Refinement 4.25/generated-art.json`。新口令词表为本项目维护的固定关键词配置；原sherpa-onnx运行库、模型和许可未变。macOS合成声音只用于临时诊断，不打包或提交WAV。

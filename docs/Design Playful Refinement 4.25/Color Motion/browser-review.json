@@ -1,0 +1,498 @@
+{
+  "layouts": [
+    {
+      "game": "paint-mixing",
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": 568,
+      "inner": 568,
+      "controls": [
+        {
+          "id": "colorGuide",
+          "x": 12,
+          "y": 238,
+          "right": 308,
+          "bottom": 382,
+          "w": 296,
+          "h": 144
+        },
+        {
+          "id": "colorMap",
+          "x": 22,
+          "y": 260,
+          "right": 298,
+          "bottom": 377,
+          "w": 276,
+          "h": 117
+        },
+        {
+          "id": "palette",
+          "x": 12,
+          "y": 441,
+          "right": 308,
+          "bottom": 507,
+          "w": 296,
+          "h": 66
+        },
+        {
+          "id": "paint",
+          "x": 12,
+          "y": 514,
+          "right": 308,
+          "bottom": 560,
+          "w": 296,
+          "h": 46
+        }
+      ]
+    },
+    {
+      "game": "camera-color",
+      "viewport": [
+        320,
+        568
+      ],
+      "scroll": 568,
+      "inner": 568,
+      "controls": [
+        {
+          "id": "palette",
+          "x": 12,
+          "y": 462,
+          "right": 308,
+          "bottom": 556,
+          "w": 296,
+          "h": 94
+        },
+        {
+          "id": "comparison",
+          "x": 54,
+          "y": 176,
+          "right": 266,
+          "bottom": 244.09375,
+          "w": 212,
+          "h": 68.09375
+        },
+        {
+          "id": "capture",
+          "x": 122,
+          "y": 395,
+          "right": 198,
+          "bottom": 452,
+          "w": 76,
+          "h": 57
+        }
+      ]
+    },
+    {
+      "game": "paint-mixing",
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": 872,
+      "inner": 872,
+      "controls": [
+        {
+          "id": "colorGuide",
+          "x": 16,
+          "y": 427,
+          "right": 376,
+          "bottom": 625,
+          "w": 360,
+          "h": 198
+        },
+        {
+          "id": "colorMap",
+          "x": 28,
+          "y": 454,
+          "right": 364,
+          "bottom": 618,
+          "w": 336,
+          "h": 164
+        },
+        {
+          "id": "palette",
+          "x": 16,
+          "y": 704,
+          "right": 376,
+          "bottom": 792,
+          "w": 360,
+          "h": 88
+        },
+        {
+          "id": "paint",
+          "x": 16,
+          "y": 802,
+          "right": 376,
+          "bottom": 858,
+          "w": 360,
+          "h": 56
+        }
+      ]
+    },
+    {
+      "game": "camera-color",
+      "viewport": [
+        392,
+        872
+      ],
+      "scroll": 872,
+      "inner": 872,
+      "controls": [
+        {
+          "id": "palette",
+          "x": 14,
+          "y": 740.46875,
+          "right": 378,
+          "bottom": 835.46875,
+          "w": 364,
+          "h": 95
+        },
+        {
+          "id": "comparison",
+          "x": 77,
+          "y": 215,
+          "right": 315,
+          "bottom": 292.390625,
+          "w": 238,
+          "h": 77.390625
+        },
+        {
+          "id": "capture",
+          "x": 153.5,
+          "y": 659.46875,
+          "right": 238.5,
+          "bottom": 728.46875,
+          "w": 85,
+          "h": 69
+        }
+      ]
+    },
+    {
+      "game": "paint-mixing",
+      "viewport": [
+        872,
+        392
+      ],
+      "scroll": 392,
+      "inner": 392,
+      "controls": [
+        {
+          "id": "colorGuide",
+          "x": 537.765625,
+          "y": 86,
+          "right": 860,
+          "bottom": 268,
+          "w": 322.234375,
+          "h": 182
+        },
+        {
+          "id": "colorMap",
+          "x": 547.765625,
+          "y": 108,
+          "right": 850,
+          "bottom": 263,
+          "w": 302.234375,
+          "h": 155
+        },
+        {
+          "id": "palette",
+          "x": 537.765625,
+          "y": 274,
+          "right": 860,
+          "bottom": 331,
+          "w": 322.234375,
+          "h": 57
+        },
+        {
+          "id": "paint",
+          "x": 537.765625,
+          "y": 337,
+          "right": 860,
+          "bottom": 386,
+          "w": 322.234375,
+          "h": 49
+        }
+      ]
+    },
+    {
+      "game": "camera-color",
+      "viewport": [
+        872,
+        392
+      ],
+      "scroll": 392,
+      "inner": 392,
+      "controls": [
+        {
+          "id": "palette",
+          "x": 402.09375,
+          "y": 288,
+          "right": 860,
+          "bottom": 384,
+          "w": 457.90625,
+          "h": 96
+        },
+        {
+          "id": "comparison",
+          "x": 20.46875,
+          "y": 166,
+          "right": 359.65625,
+          "bottom": 231,
+          "w": 339.1875,
+          "h": 65
+        },
+        {
+          "id": "capture",
+          "x": 152.078125,
+          "y": 325,
+          "right": 228.078125,
+          "bottom": 382,
+          "w": 76,
+          "h": 57
+        }
+      ]
+    },
+    {
+      "game": "paint-mixing",
+      "viewport": [
+        800,
+        320
+      ],
+      "scroll": 320,
+      "inner": 320,
+      "controls": [
+        {
+          "id": "colorGuide",
+          "x": 493.125,
+          "y": 86,
+          "right": 788,
+          "bottom": 196,
+          "w": 294.875,
+          "h": 110
+        },
+        {
+          "id": "colorMap",
+          "x": 503.125,
+          "y": 108,
+          "right": 778,
+          "bottom": 191,
+          "w": 274.875,
+          "h": 83
+        },
+        {
+          "id": "palette",
+          "x": 493.125,
+          "y": 202,
+          "right": 788,
+          "bottom": 259,
+          "w": 294.875,
+          "h": 57
+        },
+        {
+          "id": "paint",
+          "x": 493.125,
+          "y": 265,
+          "right": 788,
+          "bottom": 314,
+          "w": 294.875,
+          "h": 49
+        }
+      ]
+    },
+    {
+      "game": "camera-color",
+      "viewport": [
+        800,
+        320
+      ],
+      "scroll": 320,
+      "inner": 320,
+      "controls": [
+        {
+          "id": "palette",
+          "x": 368.96875,
+          "y": 216,
+          "right": 788,
+          "bottom": 312,
+          "w": 419.03125,
+          "h": 96
+        },
+        {
+          "id": "comparison",
+          "x": 19.75,
+          "y": 166,
+          "right": 330.140625,
+          "bottom": 231,
+          "w": 310.390625,
+          "h": 65
+        },
+        {
+          "id": "capture",
+          "x": 136.953125,
+          "y": 253,
+          "right": 212.953125,
+          "bottom": 310,
+          "w": 76,
+          "h": 57
+        }
+      ]
+    }
+  ],
+  "paint": {
+    "orders": 14,
+    "stars": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "cameraLevels": [
+    {
+      "i": 0,
+      "route": [
+        0
+      ]
+    },
+    {
+      "i": 1,
+      "route": [
+        3
+      ]
+    },
+    {
+      "i": 2,
+      "route": [
+        1
+      ]
+    },
+    {
+      "i": 3,
+      "route": [
+        2
+      ]
+    },
+    {
+      "i": 4,
+      "route": [
+        0
+      ]
+    },
+    {
+      "i": 5,
+      "route": [
+        2
+      ]
+    },
+    {
+      "i": 6,
+      "route": [
+        0,
+        1
+      ]
+    },
+    {
+      "i": 7,
+      "route": [
+        3,
+        2
+      ]
+    },
+    {
+      "i": 8,
+      "route": [
+        0,
+        3,
+        0
+      ]
+    },
+    {
+      "i": 9,
+      "route": [
+        0,
+        1
+      ]
+    },
+    {
+      "i": 10,
+      "route": [
+        2,
+        3
+      ]
+    },
+    {
+      "i": 11,
+      "route": [
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "i": 12,
+      "route": [
+        6,
+        9
+      ]
+    },
+    {
+      "i": 13,
+      "route": [
+        9,
+        0,
+        6
+      ]
+    },
+    {
+      "i": 14,
+      "route": [
+        6,
+        0,
+        8
+      ]
+    },
+    {
+      "i": 15,
+      "route": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "i": 16,
+      "route": [
+        2,
+        3,
+        1,
+        0
+      ]
+    },
+    {
+      "i": 17,
+      "route": [
+        0,
+        2,
+        6,
+        1
+      ]
+    }
+  ],
+  "flat": {
+    "waiting": true,
+    "paused": true,
+    "progress": 44,
+    "digit": "2"
+  },
+  "errors": [],
+  "cleanup": "owned Chrome process/profile stopped in finally"
+}

@@ -50,8 +50,8 @@
     },
     {
       "path": "app/assets/voice-model/keywords.txt",
-      "bytes": 496,
-      "sha256": "fe8da1f42e3a02b091ac98118d1c67d7fd8187f49c4c9818600bed74d7e1697c"
+      "bytes": 1327,
+      "sha256": "151990cd97b382157092737f060e83b2c777b5cec5e65e72a4e9473684fa7baf"
     },
     {
       "path": "app/assets/voice-model/licenses/LICENSE-eigen-MPL2.txt",

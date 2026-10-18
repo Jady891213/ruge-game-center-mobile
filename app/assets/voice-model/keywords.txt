@@ -1,16 +1,42 @@
-x iàng z uǒ :2.0 #0.15 @left
-x iàng y òu :2.0 #0.15 @right
-x iàng sh àng :2.0 #0.15 @up
-x iàng x ià :2.0 #0.15 @down
-q ián j ìn :2.0 #0.15 @up
-h òu t uì :2.0 #0.15 @down
-t iào y í x ià :2.0 #0.15 @jump
-t iào :2.0 #0.50 @jump
-n á q ǐ l ái :2.0 #0.15 @take
-n á q ǐ :2.0 #0.15 @take
-f àng x ià :2.0 #0.15 @put
-t íng x ià :2.0 #0.15 @stop
-t íng y ī x ià :2.0 #0.20 @stop
-t íng zh ǐ :2.0 #0.20 @stop
-t íng x ià l ái :2.0 #0.20 @stop
-t íng y í x ià :2.0 #0.20 @stop
+x iàng z uǒ :2.0 #.15 @left
+w ǎng z uǒ :2.0 #.15 @left
+z uǒ b iān :2.0 #.15 @left
+x iàng y òu :2.0 #.15 @right
+w ǎng y òu :2.0 #.15 @right
+y òu b iān :2.0 #.15 @right
+x iàng sh àng :2.0 #.15 @up
+w ǎng sh àng :2.0 #.15 @up
+sh àng m iàn :2.0 #.15 @up
+x iàng x ià :2.0 #.15 @down
+w ǎng x ià :2.0 #.15 @down
+x ià m iàn :2.0 #.15 @down
+q ián j ìn :2.0 #.15 @forward
+w ǎng q ián :2.0 #.15 @forward
+x iàng q ián :2.0 #.15 @forward
+h òu t uì :2.0 #.15 @backward
+w ǎng h òu :2.0 #.15 @backward
+x iàng h òu :2.0 #.15 @backward
+z uǒ zh uǎn :2.0 #.15 @turnLeft
+y òu zh uǎn :2.0 #.15 @turnRight
+t iào y í x ià :2.0 #.15 @jump
+t iào q ǐ l ái :2.0 #.15 @jump
+t iào :2.0 #.50 @jump
+n á q ǐ l ái :2.0 #.15 @take
+n á q ǐ :2.0 #.15 @take
+j iǎn q ǐ l ái :2.0 #.15 @take
+f àng x ià l ái :2.0 #.15 @put
+f àng x ià :2.0 #.15 @put
+k āi m én :2.0 #.15 @open
+d ǎ k āi m én :2.0 #.15 @open
+w èi x iǎo t ù :2.0 #.15 @feed
+g ěi t ù z ǐ :2.0 #.15 @feed
+j iāo g ěi t ù z ǐ :2.0 #.15 @feed
+s òng h uí j iā :2.0 #.15 @deliver
+f àng j ìn w ō :2.0 #.15 @deliver
+t íng x ià :2.0 #.15 @stop
+t íng zh ǐ :2.0 #.15 @stop
+t íng y í x ià :2.0 #.15 @stop
+t íng x ià l ái :2.0 #.15 @stop
+w àng y òu :3.0 #.12 @right
+w àng h òu :3.0 #.12 @backward
+w áng z uǒ :2.0 #.15 @left

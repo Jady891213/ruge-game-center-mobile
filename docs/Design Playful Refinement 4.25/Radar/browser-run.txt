@@ -1,0 +1,1 @@
+{"rules": ["safe", "space"], "cross360": [359, 0, 1], "layouts": 12, "errors": 0}

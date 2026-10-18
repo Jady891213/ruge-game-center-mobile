@@ -1,0 +1,37 @@
+{
+  "package": "com.dsh.gamecenter",
+  "versionName": "4.25",
+  "versionCode": 48,
+  "tests": {
+    "total": 337,
+    "passed": 337
+  },
+  "originalStorage": {
+    "keys": 26,
+    "exactlyRestoredBeforeUpgrade": true,
+    "delayedReadbackSeconds": 6,
+    "temporaryTestKeysRemoved": true
+  },
+  "originalNativePreferencesRestored": {
+    "sound": true,
+    "vibration": true,
+    "awake": true
+  },
+  "captureIdleBeforeUpgrade": true,
+  "sourceDevFormalAssetsEqual": 150,
+  "sharedNativeLibraries": [
+    "lib/arm64-v8a/libonnxruntime.so",
+    "lib/arm64-v8a/libsherpa-onnx-jni.so"
+  ],
+  "apkSha256": "d313d75e72fd7e9d2e400719cb4229ce152bccf39aa7ecb6531c91fec3d58e9f",
+  "devSha256": "a42554bd0eacd51c76ba3fa8d91f2e7d91b0ce300934a5d1f8842571c6f8be98",
+  "apkBytes": 71009683,
+  "installedApkSha256": "d313d75e72fd7e9d2e400719cb4229ce152bccf39aa7ecb6531c91fec3d58e9f",
+  "installedVersion": [
+    "versionCode=48 minSdk=21 targetSdk=34",
+    "versionName=4.25"
+  ],
+  "formalNotDebuggable": true,
+  "formalCdpAbsent": true,
+  "ownCdpForwardAbsent": true
+}

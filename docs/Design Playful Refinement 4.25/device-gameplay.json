@@ -1,0 +1,214 @@
+{
+  "fruit": {
+    "finished": true,
+    "pans": [
+      [
+        1,
+        1
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          1
+        ],
+        "right": [
+          0,
+          0
+        ]
+      },
+      {
+        "left": [
+          2
+        ],
+        "right": [
+          0,
+          1
+        ]
+      },
+      {
+        "left": [
+          3
+        ],
+        "right": [
+          0,
+          2
+        ]
+      }
+    ]
+  },
+  "memory": {
+    "phase": "won",
+    "pairs": 8,
+    "moves": 9
+  },
+  "radar_safe": {
+    "before": {
+      "round": 1,
+      "hold": 2.5412000000000043,
+      "progress": "85"
+    },
+    "after": {
+      "round": 2,
+      "cleared": 1,
+      "remaining": 67.58169999999976
+    },
+    "input": "actual DOM range input + real elapsed frames; not physical phone rotation"
+  },
+  "radar_space": {
+    "before": {
+      "round": 1,
+      "hold": 2.6250000000000036,
+      "progress": "88"
+    },
+    "after": {
+      "round": 2,
+      "cleared": 1,
+      "remaining": 66.2023999999999
+    },
+    "input": "actual DOM range input + real elapsed frames; not physical phone rotation"
+  },
+  "flatProgress": {
+    "progress": "65",
+    "digit": "1",
+    "paused": true
+  },
+  "flatBoundary": "Real WebView UI with explicit posture fixture, not a physical sensor motion benchmark.",
+  "pitchCalibrated": {
+    "audio": {
+      "status": "listening",
+      "mode": "pitch",
+      "error": "",
+      "pitch": 0,
+      "rms": 0.048829421401023865,
+      "confidence": 0,
+      "ageMs": 51,
+      "command": "",
+      "commandAgeMs": 999999,
+      "commandSerial": 0,
+      "frames": 80
+    },
+    "visual": {
+      "animationFrame": 2,
+      "calibrated": true,
+      "starting": false,
+      "voiceLevel": 0.6776612431977936,
+      "voiceBand": "middle",
+      "practice": true,
+      "endless": false,
+      "endlessBest": 0,
+      "practiceNotes": {
+        "middle": true,
+        "high": false,
+        "low": true
+      },
+      "particleCount": 0
+    }
+  },
+  "pitchSamples": [
+    {
+      "audio": {
+        "status": "listening",
+        "mode": "pitch",
+        "error": "",
+        "pitch": 520.09130859375,
+        "rms": 0.059805408120155334,
+        "confidence": 0.9682840704917908,
+        "ageMs": 9,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 0,
+        "frames": 97
+      },
+      "state": {
+        "level": 0,
+        "endless": false,
+        "stage": 1,
+        "lives": 3,
+        "over": false,
+        "x": 80,
+        "y": 210.7206697222221,
+        "vy": -6.425000000000231,
+        "duck": 0,
+        "time": 3.7492999999880796,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      },
+      "visual": {
+        "animationFrame": 4,
+        "calibrated": true,
+        "starting": false,
+        "voiceLevel": 0.8468327631394448,
+        "voiceBand": "high",
+        "practice": true,
+        "endless": false,
+        "endlessBest": 0,
+        "practiceNotes": {
+          "middle": true,
+          "high": true,
+          "low": true
+        },
+        "particleCount": 14
+      }
+    },
+    {
+      "audio": {
+        "status": "listening",
+        "mode": "pitch",
+        "error": "",
+        "pitch": 189.8820037841797,
+        "rms": 0.013480561785399914,
+        "confidence": 0.9230896830558777,
+        "ageMs": 34,
+        "command": "",
+        "commandAgeMs": 999999,
+        "commandSerial": 0,
+        "frames": 113
+      },
+      "state": {
+        "level": 0,
+        "endless": false,
+        "stage": 1,
+        "lives": 3,
+        "over": false,
+        "x": 80,
+        "y": 330,
+        "vy": 0,
+        "duck": 0.6167999999999993,
+        "time": 4.812199999988082,
+        "checkpoint": 80,
+        "won": false,
+        "paused": false,
+        "falls": 0,
+        "recovery": 0,
+        "collected": [],
+        "pending": null,
+        "activeDuck": -1,
+        "activeJump": -1
+      },
+      "visual": {
+        "animationFrame": 7,
+        "calibrated": true,
+        "starting": false,
+        "voiceLevel": 0.40220236377326146,
+        "voiceBand": "low",
+        "practice": true,
+        "endless": false,
+        "endlessBest": 0,
+        "practiceNotes": {
+          "middle": true,
+          "high": true,
+          "low": true
+        },
+        "particleCount": 7
+      }
+    }
+  ]
+}

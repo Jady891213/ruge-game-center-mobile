@@ -14,3 +14,11 @@ body.cover main{width:100vw;max-width:none;height:100vh;padding:0}
 body.cover #play{display:flex;height:100%;width:100%;gap:0}
 body.cover #world{width:100%;height:100%;min-height:0;max-height:none;padding:28px 24px;margin:0;align-items:center}
 body.cover #board{height:100%;width:auto;max-width:100%;margin:auto;flex-shrink:1}
+
+/* Parent-readable keyword list, scrolls inside its own bounded space. */
+#commandCards{display:block;max-height:154px;min-height:80px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;border-radius:19px;background:#fff9e9;border:3px solid #fffdf4;padding:8px 11px;box-shadow:0 3px #dce0bd;touch-action:pan-y}
+#commandCards .command-group{display:grid;grid-template-columns:1fr;gap:5px;padding:6px 1px 10px;border-bottom:2px dashed #e2e7c9}#commandCards .command-group:last-child{border-bottom:0}#commandCards strong{font-size:18px;color:#537b4a}#commandCards span{height:auto;min-height:26px;display:block;font-size:18px;line-height:1.5;box-shadow:none;background:none;border-radius:0;white-space:normal;max-height:none}
+.compass{position:absolute;right:7px;top:5px;width:66px;height:66px;z-index:8;display:grid;grid-template-columns:repeat(3,22px);grid-template-rows:repeat(3,22px);border-radius:50%;background:#fffbe8df;box-shadow:0 2px #9fbb7a33;pointer-events:none}.compass span{font-size:20px;line-height:22px;text-align:center;color:#9aaa80}.compass [data-facing=up]{grid-column:2;grid-row:1}.compass [data-facing=left]{grid-column:1;grid-row:2}.compass [data-facing=right]{grid-column:3;grid-row:2}.compass [data-facing=down]{grid-column:2;grid-row:3}.compass .active{color:#1d805c;background:#c3e7a9;border-radius:50%;font-weight:950;transform:scale(1.15)}
+@media(max-height:650px) and (orientation:portrait){#commandCards{max-height:110px;min-height:72px}#commandCards span{font-size:16px;min-height:24px}#commandCards strong{font-size:17px}.compass{transform:scale(.8);transform-origin:100% 0}}
+@media(orientation:landscape){#commandCards{display:block;height:100%;max-height:none;min-height:0}#commandCards span{height:auto;max-height:none;min-height:26px}}
+body.cover .compass{display:none}

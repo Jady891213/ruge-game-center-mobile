@@ -1,0 +1,1163 @@
+[
+  {
+    "level": 1,
+    "targets": [
+      [
+        "橘子"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "橘子"
+        ],
+        "right": [
+          "草莓",
+          "草莓"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 3
+    },
+    "exact": [],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "草莓"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": 1,
+    "witness": [
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "level": 2,
+    "targets": [
+      [
+        "苹果"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "橘子"
+        ],
+        "right": [
+          "草莓",
+          "草莓"
+        ]
+      },
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 2,
+      "橘子": 2
+    },
+    "exact": [],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "橘子"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": 1,
+    "witness": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "level": 3,
+    "targets": [
+      [
+        "梨"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "橘子"
+        ],
+        "right": [
+          "草莓",
+          "草莓"
+        ]
+      },
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 3,
+      "苹果": 1
+    },
+    "exact": [
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "橘子"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "level": 4,
+    "targets": [
+      [
+        "南瓜"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "南瓜"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "橘子",
+          "梨"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 1,
+      "橘子": 2,
+      "苹果": 2
+    },
+    "exact": [
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "苹果"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "level": 5,
+    "targets": [
+      [
+        "西瓜"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "橘子"
+        ],
+        "right": [
+          "草莓",
+          "草莓"
+        ]
+      },
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "草莓",
+          "草莓"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "苹果",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 2,
+      "橘子": 3,
+      "苹果": 1
+    },
+    "exact": [
+      3
+    ],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "橘子",
+          "苹果"
+        ]
+      ],
+      [
+        [
+          "橘子",
+          "橘子",
+          "橘子"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        0,
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "level": 6,
+    "targets": [
+      [
+        "梨",
+        "草莓"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "梨"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "橘子"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 2,
+      "苹果": 2,
+      "梨": 1
+    },
+    "exact": [
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "苹果"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "level": 7,
+    "targets": [
+      [
+        "南瓜",
+        "草莓"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "南瓜"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 1,
+      "橘子": 2,
+      "梨": 2
+    },
+    "exact": [
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 8,
+    "targets": [
+      [
+        "西瓜",
+        "草莓"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "橘子",
+          "梨"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 1,
+      "苹果": 2,
+      "梨": 2
+    },
+    "exact": [
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "苹果",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 9,
+    "targets": [
+      [
+        "南瓜",
+        "橘子"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "橘子",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "橘子",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 2,
+      "橘子": 1,
+      "苹果": 2
+    },
+    "exact": [
+      3
+    ],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "苹果",
+          "苹果"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        0,
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "level": 10,
+    "targets": [
+      [
+        "西瓜",
+        "橘子"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "橘子",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "南瓜"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 1,
+      "橘子": 2,
+      "苹果": 3
+    },
+    "exact": [
+      3
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "苹果",
+          "苹果"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "level": 11,
+    "targets": [
+      [
+        "西瓜",
+        "苹果"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "梨"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "南瓜"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 2,
+      "橘子": 1,
+      "梨": 2
+    },
+    "exact": [
+      3
+    ],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "梨",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        0,
+        3,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 12,
+    "targets": [
+      [
+        "西瓜",
+        "梨"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "橘子",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "橘子",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "苹果",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 1,
+      "苹果": 1,
+      "南瓜": 2
+    },
+    "exact": [
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "南瓜",
+          "南瓜"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        4,
+        4
+      ]
+    ]
+  },
+  {
+    "level": 13,
+    "targets": [
+      [
+        "梨"
+      ],
+      [
+        "南瓜"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "梨"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "橘子"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 4,
+      "苹果": 1
+    },
+    "exact": [
+      2,
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "橘子"
+        ],
+        [
+          "橘子",
+          "苹果"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "level": 14,
+    "targets": [
+      [
+        "南瓜"
+      ],
+      [
+        "西瓜"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "南瓜"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 2,
+      "苹果": 1,
+      "梨": 2
+    },
+    "exact": [
+      2,
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "苹果"
+        ],
+        [
+          "橘子",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 15,
+    "targets": [
+      [
+        "梨"
+      ],
+      [
+        "西瓜"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "梨"
+        ],
+        "right": [
+          "草莓",
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "苹果",
+          "苹果"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "苹果"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 2,
+      "橘子": 1,
+      "苹果": 1,
+      "梨": 1
+    },
+    "exact": [
+      2,
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "苹果"
+        ],
+        [
+          "橘子",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 16,
+    "targets": [
+      [
+        "南瓜"
+      ],
+      [
+        "西瓜",
+        "草莓"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "橘子",
+          "梨"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 1,
+      "苹果": 2,
+      "梨": 1
+    },
+    "exact": [
+      2,
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "橘子",
+          "苹果"
+        ],
+        [
+          "苹果",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 17,
+    "targets": [
+      [
+        "南瓜",
+        "草莓"
+      ],
+      [
+        "西瓜",
+        "草莓"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "苹果"
+        ],
+        "right": [
+          "草莓",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "橘子",
+          "梨"
+        ]
+      }
+    ],
+    "stock": {
+      "草莓": 1,
+      "橘子": 1,
+      "苹果": 2,
+      "梨": 1
+    },
+    "exact": [
+      3,
+      2
+    ],
+    "solutions": [
+      [
+        [
+          "草莓",
+          "橘子",
+          "苹果"
+        ],
+        [
+          "苹果",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  {
+    "level": 18,
+    "targets": [
+      [
+        "西瓜",
+        "橘子"
+      ],
+      [
+        "西瓜",
+        "苹果"
+      ]
+    ],
+    "clues": [
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "梨"
+        ]
+      },
+      {
+        "left": [
+          "南瓜"
+        ],
+        "right": [
+          "草莓",
+          "橘子",
+          "橘子"
+        ]
+      },
+      {
+        "left": [
+          "西瓜"
+        ],
+        "right": [
+          "橘子",
+          "橘子",
+          "橘子"
+        ]
+      }
+    ],
+    "stock": {
+      "橘子": 1,
+      "苹果": 1,
+      "梨": 3
+    },
+    "exact": [
+      2,
+      3
+    ],
+    "solutions": [
+      [
+        [
+          "梨",
+          "梨"
+        ],
+        [
+          "橘子",
+          "苹果",
+          "梨"
+        ]
+      ]
+    ],
+    "minRequiredClueCount": "at least 2; verified for every feasible local pan by rank test",
+    "witness": [
+      [
+        3,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ]
+  }
+]

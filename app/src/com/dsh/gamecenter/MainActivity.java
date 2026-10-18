@@ -60,6 +60,7 @@ public class MainActivity extends Activity {
     //   devicemotion 直接移除了 —— 连构造函数都是 undefined。
     //   而 APK 里走 file:// 也不一定稳，所以干脆用原生传感器 + JS 桥推送。
     //   TYPE_ACCELEROMETER 不需要任何权限。
+    private GameOrientation orientation;
     private SensorManager sensors;
     private Sensor tiltSensor;
     private final Object tiltLock = new Object();
@@ -178,6 +179,8 @@ public class MainActivity extends Activity {
         // 原生桥只供白名单内的打包页面 / 开发页面使用。
         web.addJavascriptInterface(new TtsBridge(), "RugeTTS");
         web.addJavascriptInterface(new TiltBridge(), "RugeTilt");
+        orientation = new GameOrientation(this);
+        web.addJavascriptInterface(orientation, "RugeOrientation");
         web.addJavascriptInterface(new ScreenBridge(), "RugeScreen");
         web.addJavascriptInterface(new NavBridge(), "RugeNav");
         web.addJavascriptInterface(feedback, "RugeFeedback");
@@ -640,6 +643,7 @@ public class MainActivity extends Activity {
         dispatchLifecycle("pause");
         if (web != null) web.onPause();
         stopTilt();
+        if (orientation != null) orientation.foreground(false);
         stopSpeech();
         applyKeepAwake();
         super.onPause();
@@ -655,6 +659,7 @@ public class MainActivity extends Activity {
         if (camera != null) camera.onResume();
         updateDisplayRotation();
         startTilt();
+        if (orientation != null) orientation.foreground(true);
         applyKeepAwake();
         goEdgeToEdge();
         if (web != null) {
@@ -681,6 +686,7 @@ public class MainActivity extends Activity {
         if (camera != null) camera.onDestroy();
         foreground = false;
         stopTilt();
+        if (orientation != null) orientation.close();
         ttsReady = false;
         TextToSpeech engine = tts;
         tts = null;
@@ -692,6 +698,7 @@ public class MainActivity extends Activity {
             web.stopLoading();
             web.removeJavascriptInterface("RugeTTS");
             web.removeJavascriptInterface("RugeTilt");
+            web.removeJavascriptInterface("RugeOrientation");
             web.removeJavascriptInterface("RugeScreen");
             web.removeJavascriptInterface("RugeNav");
             web.removeJavascriptInterface("RugeFeedback");

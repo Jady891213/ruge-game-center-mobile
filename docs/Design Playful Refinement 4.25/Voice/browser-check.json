@@ -1,0 +1,561 @@
+{
+  "quest": [
+    {
+      "level": 1,
+      "moves": 5,
+      "won": true
+    },
+    {
+      "level": 2,
+      "moves": 7,
+      "won": true
+    },
+    {
+      "level": 3,
+      "moves": 5,
+      "won": true
+    },
+    {
+      "level": 4,
+      "moves": 8,
+      "won": true
+    },
+    {
+      "level": 5,
+      "moves": 9,
+      "won": true
+    },
+    {
+      "level": 6,
+      "moves": 6,
+      "won": true
+    },
+    {
+      "level": 7,
+      "moves": 10,
+      "won": true
+    },
+    {
+      "level": 8,
+      "moves": 10,
+      "won": true
+    },
+    {
+      "level": 9,
+      "moves": 10,
+      "won": true
+    },
+    {
+      "level": 10,
+      "moves": 10,
+      "won": true
+    },
+    {
+      "level": 11,
+      "moves": 14,
+      "won": true
+    },
+    {
+      "level": 12,
+      "moves": 11,
+      "won": true
+    },
+    {
+      "level": 13,
+      "moves": 11,
+      "won": true
+    },
+    {
+      "level": 14,
+      "moves": 11,
+      "won": true
+    },
+    {
+      "level": 15,
+      "moves": 12,
+      "won": true
+    },
+    {
+      "level": 16,
+      "moves": 11,
+      "won": true
+    },
+    {
+      "level": 17,
+      "moves": 11,
+      "won": true
+    },
+    {
+      "level": 18,
+      "moves": 11,
+      "won": true
+    }
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "height": 568,
+      "bodyWidth": 320,
+      "boxes": [
+        {
+          "id": "play",
+          "x": 12,
+          "y": 54,
+          "width": 296,
+          "height": 504,
+          "bottom": 558,
+          "scrollHeight": 504,
+          "clientHeight": 504
+        },
+        {
+          "id": "world",
+          "x": 12,
+          "y": 107,
+          "width": 296,
+          "height": 274,
+          "bottom": 381,
+          "scrollHeight": 264,
+          "clientHeight": 264
+        },
+        {
+          "id": "commandCards",
+          "x": 12,
+          "y": 448,
+          "width": 296,
+          "height": 110,
+          "bottom": 558,
+          "scrollHeight": 632,
+          "clientHeight": 104
+        }
+      ],
+      "game": "voice-quest"
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "bodyWidth": 392,
+      "boxes": [
+        {
+          "id": "play",
+          "x": 12,
+          "y": 66,
+          "width": 368,
+          "height": 794,
+          "bottom": 860,
+          "scrollHeight": 794,
+          "clientHeight": 794
+        },
+        {
+          "id": "world",
+          "x": 12,
+          "y": 131,
+          "width": 368,
+          "height": 494,
+          "bottom": 625,
+          "scrollHeight": 484,
+          "clientHeight": 484
+        },
+        {
+          "id": "commandCards",
+          "x": 12,
+          "y": 706,
+          "width": 368,
+          "height": 154,
+          "bottom": 860,
+          "scrollHeight": 679,
+          "clientHeight": 148
+        }
+      ],
+      "game": "voice-quest"
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "bodyWidth": 872,
+      "boxes": [
+        {
+          "id": "play",
+          "x": 12,
+          "y": 52,
+          "width": 848,
+          "height": 330,
+          "bottom": 382,
+          "scrollHeight": 330,
+          "clientHeight": 330
+        },
+        {
+          "id": "world",
+          "x": 12,
+          "y": 104,
+          "width": 593,
+          "height": 278,
+          "bottom": 382,
+          "scrollHeight": 268,
+          "clientHeight": 268
+        },
+        {
+          "id": "commandCards",
+          "x": 614,
+          "y": 170,
+          "width": 246,
+          "height": 212,
+          "bottom": 382,
+          "scrollHeight": 679,
+          "clientHeight": 206
+        }
+      ],
+      "game": "voice-quest"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "bodyWidth": 320,
+      "boxes": [
+        {
+          "id": "play",
+          "x": 12,
+          "y": 53,
+          "width": 296,
+          "height": 503,
+          "bottom": 556,
+          "scrollHeight": 503,
+          "clientHeight": 503
+        },
+        {
+          "id": "stage",
+          "x": 12,
+          "y": 133.75,
+          "width": 296,
+          "height": 255.59375,
+          "bottom": 389.34375,
+          "scrollHeight": 248,
+          "clientHeight": 248
+        },
+        {
+          "id": "jump",
+          "x": 12,
+          "y": 485.109375,
+          "width": 142,
+          "height": 55,
+          "bottom": 540.109375,
+          "scrollHeight": 49,
+          "clientHeight": 49
+        },
+        {
+          "id": "duck",
+          "x": 166,
+          "y": 485.109375,
+          "width": 142,
+          "height": 55,
+          "bottom": 540.109375,
+          "scrollHeight": 49,
+          "clientHeight": 49
+        }
+      ],
+      "game": "pitch-adventure"
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "bodyWidth": 392,
+      "boxes": [
+        {
+          "id": "play",
+          "x": 12,
+          "y": 66,
+          "width": 368,
+          "height": 794,
+          "bottom": 860,
+          "scrollHeight": 794,
+          "clientHeight": 794
+        },
+        {
+          "id": "stage",
+          "x": 12,
+          "y": 190.6875,
+          "width": 368,
+          "height": 427.265625,
+          "bottom": 617.953125,
+          "scrollHeight": 419,
+          "clientHeight": 419
+        },
+        {
+          "id": "jump",
+          "x": 12,
+          "y": 762.65625,
+          "width": 178,
+          "height": 66,
+          "bottom": 828.65625,
+          "scrollHeight": 60,
+          "clientHeight": 60
+        },
+        {
+          "id": "duck",
+          "x": 202,
+          "y": 762.65625,
+          "width": 178,
+          "height": 66,
+          "bottom": 828.65625,
+          "scrollHeight": 60,
+          "clientHeight": 60
+        }
+      ],
+      "game": "pitch-adventure"
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "bodyWidth": 872,
+      "boxes": [
+        {
+          "id": "play",
+          "x": 12,
+          "y": 54,
+          "width": 848,
+          "height": 326,
+          "bottom": 380,
+          "scrollHeight": 326,
+          "clientHeight": 326
+        },
+        {
+          "id": "stage",
+          "x": 12,
+          "y": 102,
+          "width": 660,
+          "height": 278,
+          "bottom": 380,
+          "scrollHeight": 270,
+          "clientHeight": 270
+        },
+        {
+          "id": "jump",
+          "x": 680,
+          "y": 316,
+          "width": 86,
+          "height": 62,
+          "bottom": 378,
+          "scrollHeight": 56,
+          "clientHeight": 56
+        },
+        {
+          "id": "duck",
+          "x": 774,
+          "y": 316,
+          "width": 86,
+          "height": 62,
+          "bottom": 378,
+          "scrollHeight": 56,
+          "clientHeight": 56
+        }
+      ],
+      "game": "pitch-adventure"
+    }
+  ],
+  "pitch": [
+    {
+      "level": 1,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 2,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 3,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 4,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 5,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 6,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 7,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 8,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 9,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 10,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 11,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 12,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 13,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 14,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 15,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 16,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 17,
+      "won": true,
+      "falls": 0
+    },
+    {
+      "level": 18,
+      "won": true,
+      "falls": 0
+    }
+  ],
+  "endless": {
+    "stage": 12,
+    "falls": 0,
+    "stages": [
+      {
+        "stage": 1,
+        "speed": 95,
+        "obstacles": 4
+      },
+      {
+        "stage": 2,
+        "speed": 100,
+        "obstacles": 9
+      },
+      {
+        "stage": 3,
+        "speed": 105,
+        "obstacles": 13
+      },
+      {
+        "stage": 4,
+        "speed": 110,
+        "obstacles": 17
+      },
+      {
+        "stage": 5,
+        "speed": 115,
+        "obstacles": 21
+      },
+      {
+        "stage": 6,
+        "speed": 120,
+        "obstacles": 25
+      },
+      {
+        "stage": 7,
+        "speed": 125,
+        "obstacles": 29
+      },
+      {
+        "stage": 8,
+        "speed": 130,
+        "obstacles": 33
+      },
+      {
+        "stage": 9,
+        "speed": 135,
+        "obstacles": 37
+      },
+      {
+        "stage": 10,
+        "speed": 140,
+        "obstacles": 41
+      },
+      {
+        "stage": 11,
+        "speed": 140,
+        "obstacles": 45
+      }
+    ],
+    "oldDraftUnchanged": true
+  },
+  "crop6": {
+    "snapshot": {
+      "level": 4,
+      "endless": false,
+      "stage": 1,
+      "lives": 3,
+      "over": false,
+      "x": 481.2800000000045,
+      "y": 330,
+      "vy": 0,
+      "duck": 0.2,
+      "time": 4.224000000000003,
+      "checkpoint": 80,
+      "won": false,
+      "paused": false,
+      "falls": 0,
+      "recovery": 0,
+      "collected": [
+        0
+      ],
+      "pending": null,
+      "activeDuck": 0,
+      "activeJump": -1
+    },
+    "frame": 6
+  },
+  "crop7": {
+    "snapshot": {
+      "level": 4,
+      "endless": false,
+      "stage": 1,
+      "lives": 3,
+      "over": false,
+      "x": 490.40000000000475,
+      "y": 330,
+      "vy": 0,
+      "duck": 0.2,
+      "time": 4.320000000000003,
+      "checkpoint": 80,
+      "won": false,
+      "paused": false,
+      "falls": 0,
+      "recovery": 0,
+      "collected": [
+        0
+      ],
+      "pending": null,
+      "activeDuck": 0,
+      "activeJump": -1
+    },
+    "frame": 7
+  },
+  "errors": []
+}

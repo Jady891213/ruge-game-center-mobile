@@ -1,0 +1,1478 @@
+{
+  "runtime": "sherpa-onnx 1.13.8 host arm64",
+  "syntheticVoice": "macOS Tingting,190wpm,16kHz PCM; no room noise, not child voice",
+  "results": [
+    {
+      "config": "old4b2",
+      "maxActivePaths": 4,
+      "trailingBlanks": 2,
+      "correct": 21,
+      "total": 49,
+      "rows": [
+        {
+          "phrase": "向左",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往左",
+          "expected": "left",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "左边",
+          "expected": "left",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向右",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往右",
+          "expected": "right",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "右边",
+          "expected": "right",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往上",
+          "expected": "up",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "上面",
+          "expected": "up",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往下",
+          "expected": "down",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "下面",
+          "expected": "down",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "前进",
+          "expected": "forward",
+          "heard": [
+            "up"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "往前",
+          "expected": "forward",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向前",
+          "expected": "forward",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "后退",
+          "expected": "backward",
+          "heard": [
+            "down"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "往后",
+          "expected": "backward",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向后",
+          "expected": "backward",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "左转",
+          "expected": "turnLeft",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向左转",
+          "expected": "turnLeft",
+          "heard": [
+            "left"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "右转",
+          "expected": "turnRight",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向右转",
+          "expected": "turnRight",
+          "heard": [
+            "right"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "跳一下",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳起来",
+          "expected": "jump",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "跳",
+          "expected": "jump",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "拿起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "拿起",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "捡起来",
+          "expected": "take",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "放下来",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "开门",
+          "expected": "open",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "打开门",
+          "expected": "open",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "喂小兔",
+          "expected": "feed",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "给兔子",
+          "expected": "feed",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "交给兔子",
+          "expected": "feed",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "送回家",
+          "expected": "deliver",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "放进窝",
+          "expected": "deliver",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "停下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停止",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停一下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停下来",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "今天真好玩",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我们去公园",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我想喝水",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "小兔子真可爱",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "大苹果",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "黄色的花",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "一二三四五",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "什么都不要做",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        }
+      ]
+    },
+    {
+      "config": "new4b2",
+      "maxActivePaths": 4,
+      "trailingBlanks": 2,
+      "correct": 42,
+      "total": 49,
+      "rows": [
+        {
+          "phrase": "向左",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往左",
+          "expected": "left",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "左边",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向右",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往右",
+          "expected": "right",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "右边",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "上面",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "下面",
+          "expected": "down",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "前进",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往前",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向前",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "后退",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往后",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向后",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "左转",
+          "expected": "turnLeft",
+          "heard": [
+            "turnLeft"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向左转",
+          "expected": "turnLeft",
+          "heard": [
+            "left"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "右转",
+          "expected": "turnRight",
+          "heard": [
+            "turnRight"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向右转",
+          "expected": "turnRight",
+          "heard": [
+            "right"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "跳一下",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳起来",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳",
+          "expected": "jump",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "拿起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "拿起",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "捡起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下来",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "开门",
+          "expected": "open",
+          "heard": [
+            "open"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "打开门",
+          "expected": "open",
+          "heard": [
+            "open"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "喂小兔",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "给兔子",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "交给兔子",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "送回家",
+          "expected": "deliver",
+          "heard": [
+            "deliver"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放进窝",
+          "expected": "deliver",
+          "heard": [
+            "deliver"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停止",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停一下",
+          "expected": "stop",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "停下来",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "今天真好玩",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我们去公园",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我想喝水",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "小兔子真可爱",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "大苹果",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "黄色的花",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "一二三四五",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "什么都不要做",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        }
+      ]
+    },
+    {
+      "config": "new8b2",
+      "maxActivePaths": 8,
+      "trailingBlanks": 2,
+      "correct": 43,
+      "total": 49,
+      "rows": [
+        {
+          "phrase": "向左",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往左",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "左边",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向右",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往右",
+          "expected": "right",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "右边",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "上面",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "下面",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "前进",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往前",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向前",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "后退",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往后",
+          "expected": "backward",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向后",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "左转",
+          "expected": "turnLeft",
+          "heard": [
+            "turnLeft"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向左转",
+          "expected": "turnLeft",
+          "heard": [
+            "left"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "右转",
+          "expected": "turnRight",
+          "heard": [
+            "turnRight"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向右转",
+          "expected": "turnRight",
+          "heard": [
+            "right"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "跳一下",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳起来",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳",
+          "expected": "jump",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "拿起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "拿起",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "捡起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下来",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "开门",
+          "expected": "open",
+          "heard": [
+            "open"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "打开门",
+          "expected": "open",
+          "heard": [
+            "open"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "喂小兔",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "给兔子",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "交给兔子",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "送回家",
+          "expected": "deliver",
+          "heard": [
+            "deliver"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放进窝",
+          "expected": "deliver",
+          "heard": [
+            "deliver"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停止",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停一下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停下来",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "今天真好玩",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我们去公园",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我想喝水",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "小兔子真可爱",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "大苹果",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "黄色的花",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "一二三四五",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "什么都不要做",
+          "expected": "",
+          "heard": [
+            "up"
+          ],
+          "correct": false
+        }
+      ]
+    },
+    {
+      "config": "new8b4",
+      "maxActivePaths": 8,
+      "trailingBlanks": 4,
+      "correct": 45,
+      "total": 49,
+      "rows": [
+        {
+          "phrase": "向左",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往左",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "左边",
+          "expected": "left",
+          "heard": [
+            "left"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向右",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往右",
+          "expected": "right",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "右边",
+          "expected": "right",
+          "heard": [
+            "right"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往上",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "上面",
+          "expected": "up",
+          "heard": [
+            "up"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往下",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "下面",
+          "expected": "down",
+          "heard": [
+            "down"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "前进",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往前",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向前",
+          "expected": "forward",
+          "heard": [
+            "forward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "后退",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "往后",
+          "expected": "backward",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "向后",
+          "expected": "backward",
+          "heard": [
+            "backward"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "左转",
+          "expected": "turnLeft",
+          "heard": [
+            "turnLeft"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向左转",
+          "expected": "turnLeft",
+          "heard": [
+            "turnLeft"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "右转",
+          "expected": "turnRight",
+          "heard": [
+            "turnRight"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "向右转",
+          "expected": "turnRight",
+          "heard": [
+            "right"
+          ],
+          "correct": false
+        },
+        {
+          "phrase": "跳一下",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳起来",
+          "expected": "jump",
+          "heard": [
+            "jump"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "跳",
+          "expected": "jump",
+          "heard": [],
+          "correct": false
+        },
+        {
+          "phrase": "拿起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "拿起",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "捡起来",
+          "expected": "take",
+          "heard": [
+            "take"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下来",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放下",
+          "expected": "put",
+          "heard": [
+            "put"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "开门",
+          "expected": "open",
+          "heard": [
+            "open"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "打开门",
+          "expected": "open",
+          "heard": [
+            "open"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "喂小兔",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "给兔子",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "交给兔子",
+          "expected": "feed",
+          "heard": [
+            "feed"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "送回家",
+          "expected": "deliver",
+          "heard": [
+            "deliver"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "放进窝",
+          "expected": "deliver",
+          "heard": [
+            "deliver"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停止",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停一下",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "停下来",
+          "expected": "stop",
+          "heard": [
+            "stop"
+          ],
+          "correct": true
+        },
+        {
+          "phrase": "今天真好玩",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我们去公园",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "我想喝水",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "小兔子真可爱",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "大苹果",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "黄色的花",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "一二三四五",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        },
+        {
+          "phrase": "什么都不要做",
+          "expected": "",
+          "heard": [],
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

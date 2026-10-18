@@ -1,0 +1,8 @@
+animal-balance: app/assets/shared/animal-balance.png (1200 × 720)
+hat-trick: app/assets/shared/hat-trick.png (1200 × 720)
+pitch-adventure: app/assets/shared/pitch-adventure.png (1200 × 720)
+voice-quest: app/assets/shared/voice-quest.png (1200 × 720)
+pocket-radar: app/assets/shared/pocket-radar.png (1200 × 720)
+camera-color: app/assets/shared/camera-color.png (1200 × 720)
+paint-mixing: app/assets/shared/paint-mixing.png (1200 × 720)
+gravity-maze: app/assets/shared/gravity-maze.png (1200 × 720)

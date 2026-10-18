@@ -1,0 +1,48 @@
+{
+  "mode": "built-in image_gen",
+  "asset": "app/assets/hat-trick/art/toys.png",
+  "initialPrompt": "Use case: stylized-concept. Production sprite atlas for a cute flat preschool memory game, true transparent alpha background. EXACTLY 6 isolated objects in an evenly spaced 3 columns x 2 rows grid, identical square cells, with ample transparent gutters and margins, all subjects complete inside own cell, front facing. Top row left to right: yellow five-point star with tiny happy face, red toy rocket with blue window, mint green toy robot with rounded square head. Bottom row: purple gift box with yellow ribbon, blue toy sailboat with coral sail, pink flower with yellow face and two leaves. Simple flat children animation style, bold clean rounded shapes, subtle dark colored outlines, big readable silhouettes, cheerful warm colors, almost no shading. Equal apparent size, no ground, no shadows outside shapes, no text, no labels, no frames, no grid lines, no animals, no photographic texture. 1536x1024 landscape atlas, each object centered in its 512x512 cell.",
+  "initialOutput": "/Users/wuzhiruge/.codex/generated_images/01a14dab-47bf-7491-8dfc-b8d30e0ada06/exec-17a3ce01-0ffc-4172-acbd-2b9556f812ca.png",
+  "editPrompt": "Precise asset clean-up. Preserve the same 6 objects, same grid order, same outline geometry, flat colors and their positions. Remove EVERY colored glow, halo, soft shadow, haze and background around all objects. Outside each bold clean outline must be fully transparent alpha 0. Inside objects must be fully opaque alpha255. No gradient at all, no lighting bloom, no shadows, no background. Truly clean flat game sprites for compositing on cream UI, not neon objects. Keep 3 columns by2rows,1536x1024, ample margin, exact same order star/rocket/robot/gift/sailboat/flower.",
+  "finalOutput": "/Users/wuzhiruge/.codex/generated_images/01a14dab-47bf-7491-8dfc-b8d30e0ada06/exec-36fdabf2-37f0-49f8-8f3b-fbb144c6a1cb.png",
+  "rendering": "Original RGBA preserved. No pixel editing or background removal scripts. SVG viewBox clips each object and preserveAspectRatio=xMidYMid meet keeps its original proportions. Fruit items reuse 4.24 GPT atlas. Each sprite additionally uses an independently named clipPath with its exact frame rectangle, preventing adjacent atlas fragments from showing in letterboxed tall cards.",
+  "sha256": "cc0cd1d7deaa6a314b90bc04d056444c9d36342f8d40d4893e95dcecfb3f6a3a",
+  "frames": [
+    [
+      49,
+      63,
+      416,
+      390
+    ],
+    [
+      579,
+      39,
+      377,
+      423
+    ],
+    [
+      1092,
+      19,
+      376,
+      478
+    ],
+    [
+      63,
+      552,
+      386,
+      422
+    ],
+    [
+      561,
+      530,
+      416,
+      453
+    ],
+    [
+      1097,
+      537,
+      370,
+      473
+    ]
+  ]
+}

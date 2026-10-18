@@ -24,7 +24,7 @@ final class VoiceRecognizer {
         model.setNumThreads(2);model.setDebug(false);model.setProvider("cpu");model.setModelType("zipformer2");
         FeatureConfig feature=new FeatureConfig();feature.setSampleRate(16000);feature.setFeatureDim(80);feature.setDither(0);
         KeywordSpotterConfig config=new KeywordSpotterConfig();config.setFeatConfig(feature);config.setModelConfig(model);
-        config.setKeywordsFile(dir+"keywords.txt");config.setMaxActivePaths(4);config.setKeywordsScore(1.5f);config.setKeywordsThreshold(.45f);config.setNumTrailingBlanks(2);
+        config.setKeywordsFile(dir+"keywords.txt");config.setMaxActivePaths(8);config.setKeywordsScore(1.5f);config.setKeywordsThreshold(.45f);config.setNumTrailingBlanks(4);
         spotter=new KeywordSpotter(context.getAssets(),config);
         stream=spotter.createStream("");
         if(stream.getPtr()==0){spotter.release();spotter=null;throw new IllegalStateException("keyword-stream-unavailable");}
@@ -39,7 +39,7 @@ final class VoiceRecognizer {
             String value=spotter.getResult(stream).getKeyword();
             if(value.length()>0){spotter.reset(stream);heard=value;}
         }
-        return "|left|right|up|down|stop|jump|take|put|".contains("|"+heard+"|")?heard:"";
+        return "|left|right|up|down|forward|backward|turnLeft|turnRight|stop|jump|take|put|open|feed|deliver|".contains("|"+heard+"|")?heard:"";
     }
     void close(){if(stream!=null){stream.release();stream=null;}if(spotter!=null){spotter.release();spotter=null;}}
 }

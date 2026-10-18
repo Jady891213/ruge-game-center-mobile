@@ -37,14 +37,28 @@ def stop_owned_browser(process, profile):
     """Close our browser group and any Chrome child retaining this unique profile."""
     if process is not None and process.poll() is None:
         try:
-            os.killpg(process.pid, signal.SIGTERM)
-            process.wait(timeout=5)
-        except (ProcessLookupError, subprocess.TimeoutExpired):
+            # Screenshot mode often exits between poll() and killpg() on macOS.
+            process.wait(timeout=.5)
+        except subprocess.TimeoutExpired:
             try:
-                os.killpg(process.pid, signal.SIGKILL)
-                process.wait(timeout=5)
+                os.killpg(process.pid, signal.SIGTERM)
+            except PermissionError:
+                try:
+                    process.terminate()
+                except ProcessLookupError:
+                    pass
             except ProcessLookupError:
                 pass
+            try:
+                process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except PermissionError:
+                    process.kill()
+                except ProcessLookupError:
+                    pass
+                process.wait(timeout=5)
     listing = subprocess.run(["ps", "-ax", "-o", "pid=,command="], capture_output=True, text=True)
     for line in listing.stdout.splitlines():
         fields = line.strip().split(None, 1)

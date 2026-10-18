@@ -30,6 +30,21 @@
   }
   const hex=rgb=>rgb?'#'+rgb.map(n=>Math.max(0,Math.min(255,Math.round(n))).toString(16).padStart(2,'0')).join(''):'#fffdf5';
   function distance(a,b){if(!a||!b)return Infinity;return Math.sqrt(a.reduce((s,v,i)=>s+(v-b[i])**2,0));}
+  // Perceptual a/b color map; lightness is shown separately so adding white stays visible.
+  function mapPoint(rgb){
+    if(!rgb||rgb.length!==3||rgb.some(v=>!Number.isFinite(v)||v<0||v>255))return null;
+    const [r,g,b]=rgb.map(v=>{v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4);});
+    const l=Math.cbrt(.4122214708*r+.5363325363*g+.0514459929*b),m=Math.cbrt(.2119034982*r+.6806995451*g+.1073969566*b),s=Math.cbrt(.0883024619*r+.2817188376*g+.6299787005*b);
+    return {x:100+(1.9779984951*l-2.428592205*m+.4505937099*s)*290,y:92-(.0259040371*l+.7827717662*m-.808675766*s)*290,light:.2104542553*l+.793617785*m-.0040720468*s};
+  }
+  const gamutCache=new Map();
+  function gamut(palette=IDS){
+    const ids=IDS.filter(c=>palette.includes(c)),key=ids.join(',');if(gamutCache.has(key))return gamutCache.get(key);
+    const points=[],seen=new Set();
+    function visit(i,drops){if(i===ids.length){if(drops.length){const rgb=mix(drops),key=rgb.join(',');if(!seen.has(key)){seen.add(key);points.push({rgb,point:mapPoint(rgb)});}}return;}for(let n=0;n+drops.length<=MAX_DROPS;n++)visit(i+1,[...drops,...Array(n).fill(ids[i])]);}
+    visit(0,[]);gamutCache.set(key,points);return points;
+  }
+  function guidance(drops,targetColor){const rgb=mix(drops),d=distance(rgb,targetColor);return {current:mapPoint(rgb),target:mapPoint(targetColor),distance:d,score:!rgb?0:d<=17?Math.round(90+10*(1-d/17)):Math.max(0,Math.min(89,Math.round(90*(1-(d-17)/300)))),pass:!!rgb&&d<=17};}
   const R='red',Y='yellow',B='blue',W='white';
   const target=(name,shape,recipe)=>({name,shape,recipe,color:mix(recipe)});
   const LEVELS=[
@@ -74,6 +89,6 @@
     if(s.accepted&&(!s.drops.length||!s.free&&!canPaint(s.drops,LEVELS[s.level].targets[s.order].color)))return {stars:savedStars,session:null};
     return {stars:savedStars,session:{level:s.level,free:s.free,order:s.order,drops:s.drops.slice(),painted,mistakes:s.mistakes,accepted:s.accepted,finished:s.finished}};
   }
-  const api={COLORS,IDS,MAX_DROPS,LEVELS,mix,hex,distance,canPaint,createState,add,undo,reset,restart,current,paint,next,stars,restore};
+  const api={COLORS,IDS,MAX_DROPS,LEVELS,mix,hex,distance,mapPoint,gamut,guidance,canPaint,createState,add,undo,reset,restart,current,paint,next,stars,restore};
   if(typeof module==='object'&&module.exports)module.exports=api;root.PaintMixing=api;
 })(typeof window!=='undefined'?window:globalThis);

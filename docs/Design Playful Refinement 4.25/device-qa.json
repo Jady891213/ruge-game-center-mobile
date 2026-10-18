@@ -1,0 +1,410 @@
+{
+  "paintBefore": {
+    "score": "79分",
+    "drops": [
+      "red",
+      "yellow"
+    ],
+    "hasTrail": true
+  },
+  "paintAfter": {
+    "score": "100分",
+    "accepted": true
+  },
+  "cameraPractice": {
+    "score": "100分",
+    "match": true
+  },
+  "cameraActual": {
+    "running": true,
+    "status": "running",
+    "seq": 5,
+    "ageMs": 218,
+    "score": "46分"
+  },
+  "voiceDoorWon": true,
+  "voicePhysical": [
+    {
+      "phrase": "往右",
+      "expected": "right",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.048270922154188156,
+            "confidence": 0,
+            "ageMs": 71,
+            "command": "right",
+            "commandAgeMs": 658,
+            "commandSerial": 1,
+            "frames": 42
+          },
+          "state": {
+            "level": 1,
+            "x": 2,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 1
+          },
+          "heard": "向右"
+        }
+      ]
+    },
+    {
+      "phrase": "后退",
+      "expected": "backward",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.00789411086589098,
+            "confidence": 0,
+            "ageMs": 43,
+            "command": "backward",
+            "commandAgeMs": 1085,
+            "commandSerial": 2,
+            "frames": 79
+          },
+          "state": {
+            "level": 1,
+            "x": 1,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 2
+          },
+          "heard": "后退"
+        }
+      ]
+    },
+    {
+      "phrase": "前进",
+      "expected": "forward",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.0031297204550355673,
+            "confidence": 0,
+            "ageMs": 12,
+            "command": "forward",
+            "commandAgeMs": 1225,
+            "commandSerial": 3,
+            "frames": 117
+          },
+          "state": {
+            "level": 1,
+            "x": 2,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 3
+          },
+          "heard": "前进"
+        }
+      ]
+    },
+    {
+      "phrase": "前进",
+      "expected": "forward",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.00770089915022254,
+            "confidence": 0,
+            "ageMs": 26,
+            "command": "forward",
+            "commandAgeMs": 1004,
+            "commandSerial": 4,
+            "frames": 153
+          },
+          "state": {
+            "level": 1,
+            "x": 3,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 4
+          },
+          "heard": "拿起"
+        }
+      ]
+    },
+    {
+      "phrase": "拿起来",
+      "expected": "take",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.00599591014906764,
+            "confidence": 0,
+            "ageMs": 44,
+            "command": "take",
+            "commandAgeMs": 1205,
+            "commandSerial": 5,
+            "frames": 196
+          },
+          "state": {
+            "level": 1,
+            "x": 3,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": true,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 5
+          },
+          "heard": "拿起"
+        }
+      ]
+    },
+    {
+      "phrase": "往右",
+      "expected": "right",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.006246708799153566,
+            "confidence": 0,
+            "ageMs": 40,
+            "command": "right",
+            "commandAgeMs": 1021,
+            "commandSerial": 6,
+            "frames": 233
+          },
+          "state": {
+            "level": 1,
+            "x": 4,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": true,
+            "item": [
+              3,
+              2
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 6
+          },
+          "heard": "说：开门"
+        }
+      ]
+    },
+    {
+      "phrase": "开门",
+      "expected": "open",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.006722941529005766,
+            "confidence": 0,
+            "ageMs": 18,
+            "command": "open",
+            "commandAgeMs": 1180,
+            "commandSerial": 7,
+            "frames": 271
+          },
+          "state": {
+            "level": 1,
+            "x": 4,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              2
+            ],
+            "won": true,
+            "paused": false,
+            "moves": 7
+          },
+          "heard": "开门"
+        }
+      ]
+    },
+    {
+      "phrase": "左转",
+      "expected": "turnLeft",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.0039832573384046555,
+            "confidence": 0,
+            "ageMs": 3,
+            "command": "turnLeft",
+            "commandAgeMs": 1101,
+            "commandSerial": 8,
+            "frames": 330
+          },
+          "state": {
+            "level": 2,
+            "x": 1,
+            "y": 2,
+            "facing": "up",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              1
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 1
+          },
+          "heard": "左转"
+        }
+      ]
+    },
+    {
+      "phrase": "右转",
+      "expected": "turnRight",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.0075486283749341965,
+            "confidence": 0,
+            "ageMs": 35,
+            "command": "turnRight",
+            "commandAgeMs": 1018,
+            "commandSerial": 9,
+            "frames": 368
+          },
+          "state": {
+            "level": 2,
+            "x": 1,
+            "y": 2,
+            "facing": "right",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              1
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 2
+          },
+          "heard": "右转"
+        }
+      ]
+    },
+    {
+      "phrase": "往左",
+      "expected": "left",
+      "attempts": [
+        {
+          "audio": {
+            "status": "listening",
+            "mode": "command",
+            "error": "",
+            "pitch": 0,
+            "rms": 0.004659747704863548,
+            "confidence": 0,
+            "ageMs": 33,
+            "command": "left",
+            "commandAgeMs": 1135,
+            "commandSerial": 10,
+            "frames": 405
+          },
+          "state": {
+            "level": 2,
+            "x": 1,
+            "y": 2,
+            "facing": "left",
+            "jump": false,
+            "carrying": false,
+            "item": [
+              3,
+              1
+            ],
+            "won": false,
+            "paused": false,
+            "moves": 2
+          },
+          "heard": "换个方向"
+        }
+      ]
+    }
+  ],
+  "voiceBoundary": "Fixed synthetic Tingting PCM from handset speaker into real mic/KWS/UI, not children or room-noise accuracy.",
+  "backgroundAudio": "idle",
+  "orientationActual": {
+    "available": false,
+    "heading": 278.7246417250861,
+    "elevation": -88.2851184221961,
+    "age": 16,
+    "generation": 2,
+    "relative": true,
+    "source": "game-rotation-vector"
+  },
+  "orientationBoundary": "MIX4 live rotation-vector sample while phone lies flat. Upright 360/elevation direction math and input gating tested separately, no claim of automated physical phone rotation."
+}

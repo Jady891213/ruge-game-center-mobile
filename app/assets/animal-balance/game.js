@@ -18,7 +18,7 @@
   const tray=wood([1030,190,475,125],'trayWood');
   const beamWood=document.createElement('div');beamWood.className='beamWood';beamWood.innerHTML=wood([35,210,492,60],'');$('beam').appendChild(beamWood);
   document.querySelector('.pivot').innerHTML=wood([646,52,245,390],'supportWood');
-  function save(){if(cover)return;try{localStorage.setItem(KEY,JSON.stringify({schema:2,stars:saved.stars,session:state}));}catch(_){}}
+  function save(){if(cover)return;try{localStorage.setItem(KEY,JSON.stringify({schema:3,stars:saved.stars,session:state}));}catch(_){}}
   function cancel(){clearTimeout(timer);timer=0;busy=false;stopMotion();}
   function home(){cancel();save();if(window.RugeNav?.home)window.RugeNav.home();else location.href='../index.html';}
   function unlocked(){let max=0;saved.stars.forEach((n,i)=>{if(n)max=Math.max(max,Math.min(17,i+1));});return max;}
@@ -48,5 +48,5 @@
   $('restart').onclick=()=>{if(!active||paused||busy)return;if(state.pans.some(p=>p.length))$('confirm').hidden=false;else start(state.level);};$('confirmRestart').onclick=()=>{if(active&&!paused&&!$('confirm').hidden)start(state.level);};$('cancelRestart').onclick=()=>{$('confirm').hidden=true;};$('next').onclick=()=>{if(!active||paused||busy||!state.finished)return;if(state.level<17)start(state.level+1);else menu();};
   window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});window.addEventListener('pagehide',()=>{cancel();save();});window.addEventListener('resize',()=>{if(active)pause();});
   window.__game={core:C,start,menu,add,take,weigh,chooseBridge,state:()=>state,progress:()=>saved.stars.slice(),bridge:()=>bridge,isPaused:()=>paused,busy:()=>busy,pause,resume,physics:()=>({...physics}),storageKey:KEY};
-  if(cover){document.body.classList.add('cover');state=C.createState(3);C.place(state,0,1);C.place(state,0,2);C.weigh(state,0);open();}else if(state){open();if(!state.finished)pause();}else menu();
+  if(cover){document.body.classList.add('cover');state=C.createState(3);C.solve(3)[0].forEach(id=>C.place(state,0,id));C.weigh(state,0);open();}else if(state){open();if(!state.finished)pause();}else menu();
 })();

@@ -3,8 +3,8 @@ import vm from 'node:vm';
 
 /** Run the actual packaged page offline with a small DOM and deterministic clock.
  * Canvas methods are no-ops: these tests cover game state, not pixel rendering. */
-export function loadGame(game, { storage = {}, instrument = source => source } = {}) {
-  const html = readFileSync(new URL(`../../app/assets/${game}/index.html`, import.meta.url), 'utf8');
+export function loadGame(game, { storage = {}, instrument = source => source, entry = 'index.html' } = {}) {
+  const html = readFileSync(new URL(`../../app/assets/${game}/${entry}`, import.meta.url), 'utf8');
   const nodes = new Map();
   const markupRoots = [];
   const windowEvents = new Map();
@@ -185,7 +185,7 @@ export function loadGame(game, { storage = {}, instrument = source => source } =
     const external = /\bsrc="([^"]+)"/.exec(match[1]);
     const raw = external ? readFileSync(new URL(`../../app/assets/${game}/${external[1]}`, import.meta.url), 'utf8') : match[2];
     const source = instrument(raw, index);
-    new vm.Script(source, { filename: `${game}/index.html:script-${index}` }).runInContext(context);
+    new vm.Script(source, { filename: `${game}/${entry}:script-${index}` }).runInContext(context);
   });
 
   function tick(milliseconds) {

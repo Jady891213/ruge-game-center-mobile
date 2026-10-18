@@ -20,6 +20,15 @@ function menu(){stopCamera();stopTimers();active=false;paused=false;$('play').hi
 function begin(level,nextMode=mode){if(!C.LEVELS[level])return false;stopTimers();stopCamera();mode=nextMode==='practice'?'practice':'camera';state=C.createState(level,mode);practiceIndex=0;open();save();return true;}
 function open(){active=true;paused=false;$('menu').hidden=true;$('play').hidden=false;$('map').hidden=false;$('pause').hidden=true;$('win').hidden=true;render();if(!cover&&!state.finished){showClues();startInput();}}
 function stepIcon(step){if(step.kind==='color')return '<span class="clueDot" style="background:'+C.COLORS[step.color].hex+'"></span>';return icon(step.kind==='warm'?'warm':step.kind==='cool'?'cool':step.kind==='light'||step.kind==='lighter'?'sun':step.kind==='dark'||step.kind==='darker'?'moon':'different');}
+function renderComparison(){
+ const spec=C.LEVELS[state.level],step=spec.steps[state.collected.length],hidden=state.finished||spec.memory&&!peeking;
+ $('comparison').hidden=hidden||cover;if(hidden)return;
+ const result=C.comparison(step,current,state.collected),rgb=result.target||(step?.kind==='color'?C.COLORS[step.color].rgb:null);
+ $('compareTarget').style.background=rgb?'rgb('+rgb.join(',')+')':'conic-gradient(#e44d53,#f7ca42,#56b86b,#559cdd,#a779cc,#e44d53)';
+ $('compareSample').style.background=current?'rgb('+current.rgb.join(',')+')':'#e5e6d8';
+ $('matchScore').textContent=current?result.score+'分':'—';$('matchFill').style.width=(current?result.score:0)+'%';
+ $('comparison').classList.toggle('is-match',!!current&&result.pass);$('comparison').setAttribute('aria-label',current?'匹配度'+result.score+'分，80分合格':'等待取景');
+}
 function render(){
  if(!state)return;const spec=C.LEVELS[state.level],index=state.collected.length;
  $('levelName').textContent='第 '+(state.level+1)+' 关';$('inputBadge').textContent=state.mode==='camera'?'相机':'颜色卡';$('stepCount').textContent=index+'/'+spec.steps.length;
@@ -28,6 +37,7 @@ function render(){
  $('peek').hidden=!spec.memory||state.finished||peeking;$('palette').hidden=state.mode!=='practice';$('practiceScene').hidden=state.mode!=='practice';$('cameraBlank').hidden=state.mode==='practice'||!$('preview').hidden;$('cameraHelp').hidden=true;
  $('capture').disabled=paused||peeking||state.finished||!ready;$('pauseButton').disabled=paused;$('restart').disabled=paused;
  $('win').hidden=cover||paused||!state.finished;$('winStars').textContent='★★★';$('next').textContent=state.level===17?'完成':'下一关';
+ renderComparison();
 }
 function showClues(){clearTimeout(peekTimer);if(!C.LEVELS[state.level].memory)return;peeking=true;ready=false;render();peekTimer=setTimeout(()=>{peeking=false;stable.reset();render();if(state.mode==='practice')chooseSample(practiceIndex);},3600);}
 function startInput(){
@@ -55,6 +65,7 @@ function poll(){
   }
  }
  $('sampleBox').classList.toggle('ready',ready);$('capture').disabled=!ready||peeking||paused;
+ renderComparison();
  pollTimer=setTimeout(poll,180);
 }
 function renderPalette(){
@@ -63,7 +74,7 @@ function renderPalette(){
 function chooseSample(index){
  if(!active||paused||state.mode!=='practice'||state.finished||!samples[index])return false;
  practiceIndex=index;current=C.describe(samples[index]);ready=!peeking;$('practiceScene').style.setProperty('--sample','rgb('+current.rgb.join(',')+')');$('sampleColor').style.background='rgb('+current.rgb.join(',')+')';$('sampleBox').classList.toggle('ready',ready);$('capture').disabled=!ready;$('viewState').textContent='';
- Array.from($('palette').children).forEach((b,i)=>b.classList.toggle('active',i===index));fx('select');return true;
+ Array.from($('palette').children).forEach((b,i)=>b.classList.toggle('active',i===index));renderComparison();fx('select');return true;
 }
 function collect(){
  if(!active||paused||peeking||state.finished||!ready||!current)return false;

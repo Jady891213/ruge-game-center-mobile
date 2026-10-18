@@ -2,31 +2,10 @@
   'use strict';
   const ANIMALS=Object.freeze(['草莓','橘子','苹果','梨','南瓜','西瓜']);
   const WEIGHTS=Object.freeze([1,2,3,4,5,6]);
-  const A=WEIGHTS;
-  const eq=(left,right)=>({left,right});
-  const clues=[eq([1],[0,0]),eq([2],[0,1]),eq([3],[1,1]),eq([4],[1,2]),eq([5],[2,2])];
-  const specs=[
-    [A,[[1]],[3,0,0,0,0,0],clues.slice(0,1)],
-    [A,[[2]],[2,2,0,0,0,0],clues.slice(0,2)],
-    [A,[[3]],[2,2,1,0,0,0],clues.slice(0,3)],
-    [A,[[4]],[3,2,1,0,0,0],[clues[3],clues[1],clues[0]]],
-    [A,[[5]],[2,2,2,0,0,0],[clues[4],clues[1]]],
-    [A,[[3,0]],[0,3,2,0,0,0],clues.slice(0,3),2],
-    [A,[[3]],[3,2,2,0,0,0],clues.slice(0,3)],
-    [A,[[4]],[2,1,2,0,0,0],[clues[3],clues[1],clues[0]]],
-    [A,[[4]],[2,2,1,0,0,0],[clues[3],clues[1]],2],
-    [A,[[5]],[2,2,1,1,0,0],[clues[4],clues[2],clues[1]],2,[2]],
-    [A,[[5]],[3,3,2,1,0,0],[clues[4],clues[1],clues[0]],3,[3]],
-    [A,[[5]],[2,2,1,1,0,0],[clues[4],clues[2],clues[0]],2,[2]],
-    [A,[[2],[3]],[1,2,1,0,0,0],clues.slice(0,3)],
-    [A,[[4],[5]],[1,2,2,1,0,0],[clues[2],clues[3],clues[4]]],
-    [A,[[4],[5]],[2,2,2,0,1,0],[clues[3],clues[4],clues[0]],3,[2,2]],
-    [A,[[2],[5]],[3,3,0,1,0,0],[clues[1],clues[2],clues[4]]],
-    [A,[[4],[5]],[2,3,0,2,0,0],[clues[2],clues[3],clues[0]],3,[2,3]],
-    [A,[[4],[5]],[4,3,1,2,0,0],[clues[3],clues[4],clues[0]],3,[3,2]],
-  ];
   const freeze=x=>{if(x&&typeof x==='object'){Object.values(x).forEach(freeze);Object.freeze(x);}return x;};
-  const LEVELS=freeze(specs.map(([weights,targets,stock,clues,slots=3,exact=[]],i)=>({id:i+1,weights:weights.slice(),targets,stock,clues,slots,exact})));
+  // Only the first two levels demonstrate direct substitution. Later targets
+  // require at least two pictured equations; distractor stock is deliberate.
+  const LEVELS=freeze([{"id":1,"weights":[1,2,3,4,5,6],"targets":[[1]],"stock":[3,0,0,0,0,0],"slots":3,"exact":[],"clues":[{"left":[1],"right":[0,0]}]},{"id":2,"weights":[1,2,3,4,5,6],"targets":[[2]],"stock":[2,2,0,0,0,0],"slots":3,"exact":[],"clues":[{"left":[1],"right":[0,0]},{"left":[2],"right":[0,1]}]},{"id":3,"weights":[1,2,3,4,5,6],"targets":[[3]],"stock":[0,3,1,0,0,0],"slots":3,"exact":[2],"clues":[{"left":[1],"right":[0,0]},{"left":[2],"right":[0,1]},{"left":[3],"right":[0,2]}]},{"id":4,"weights":[1,2,3,4,5,6],"targets":[[4]],"stock":[1,2,2,0,0,0],"slots":3,"exact":[2],"clues":[{"left":[3],"right":[0,2]},{"left":[5],"right":[0,4]},{"left":[5],"right":[1,3]}]},{"id":5,"weights":[1,2,3,4,5,6],"targets":[[5]],"stock":[2,3,1,0,0,0],"slots":3,"exact":[3],"clues":[{"left":[1],"right":[0,0]},{"left":[2],"right":[0,0,0]},{"left":[5],"right":[2,2]}]},{"id":6,"weights":[1,2,3,4,5,6],"targets":[[3,0]],"stock":[0,2,2,1,0,0],"slots":3,"exact":[2],"clues":[{"left":[2],"right":[0,1]},{"left":[4],"right":[0,3]},{"left":[4],"right":[0,1,1]}]},{"id":7,"weights":[1,2,3,4,5,6],"targets":[[4,0]],"stock":[1,2,0,2,0,0],"slots":3,"exact":[2],"clues":[{"left":[3],"right":[0,2]},{"left":[5],"right":[0,4]},{"left":[5],"right":[0,1,2]}]},{"id":8,"weights":[1,2,3,4,5,6],"targets":[[5,0]],"stock":[1,0,2,2,0,0],"slots":3,"exact":[2],"clues":[{"left":[3],"right":[0,2]},{"left":[3],"right":[0,0,1]},{"left":[5],"right":[1,3]}]},{"id":9,"weights":[1,2,3,4,5,6],"targets":[[4,1]],"stock":[2,1,2,0,0,0],"slots":3,"exact":[3],"clues":[{"left":[3],"right":[0,2]},{"left":[3],"right":[1,1]},{"left":[4],"right":[1,2]}]},{"id":10,"weights":[1,2,3,4,5,6],"targets":[[5,1]],"stock":[1,2,3,0,0,0],"slots":3,"exact":[3],"clues":[{"left":[2],"right":[0,1]},{"left":[4],"right":[1,2]},{"left":[5],"right":[0,4]}]},{"id":11,"weights":[1,2,3,4,5,6],"targets":[[5,2]],"stock":[2,1,0,2,0,0],"slots":3,"exact":[3],"clues":[{"left":[3],"right":[0,2]},{"left":[4],"right":[0,3]},{"left":[5],"right":[0,4]}]},{"id":12,"weights":[1,2,3,4,5,6],"targets":[[5,3]],"stock":[0,1,1,0,2,0],"slots":3,"exact":[2],"clues":[{"left":[3],"right":[1,1]},{"left":[4],"right":[1,2]},{"left":[5],"right":[2,2]}]},{"id":13,"weights":[1,2,3,4,5,6],"targets":[[3],[4]],"stock":[0,4,1,0,0,0],"slots":3,"exact":[2,2],"clues":[{"left":[2],"right":[0,1]},{"left":[4],"right":[0,3]},{"left":[4],"right":[0,1,1]}]},{"id":14,"weights":[1,2,3,4,5,6],"targets":[[4],[5]],"stock":[0,2,1,2,0,0],"slots":3,"exact":[2,2],"clues":[{"left":[3],"right":[0,2]},{"left":[5],"right":[0,4]},{"left":[5],"right":[0,1,2]}]},{"id":15,"weights":[1,2,3,4,5,6],"targets":[[3],[5]],"stock":[2,1,1,1,0,0],"slots":3,"exact":[2,2],"clues":[{"left":[3],"right":[0,0,1]},{"left":[5],"right":[2,2]},{"left":[5],"right":[0,1,2]}]},{"id":16,"weights":[1,2,3,4,5,6],"targets":[[4],[5,0]],"stock":[0,1,2,1,0,0],"slots":3,"exact":[2,2],"clues":[{"left":[2],"right":[0,1]},{"left":[4],"right":[0,1,1]},{"left":[5],"right":[1,3]}]},{"id":17,"weights":[1,2,3,4,5,6],"targets":[[4,0],[5,0]],"stock":[1,1,2,1,0,0],"slots":3,"exact":[3,2],"clues":[{"left":[2],"right":[0,1]},{"left":[4],"right":[0,1,1]},{"left":[5],"right":[1,3]}]},{"id":18,"weights":[1,2,3,4,5,6],"targets":[[5,1],[5,2]],"stock":[0,1,1,3,0,0],"slots":3,"exact":[2,3],"clues":[{"left":[4],"right":[0,3]},{"left":[4],"right":[0,1,1]},{"left":[5],"right":[1,1,1]}]}]);
   const validLevel=i=>Number.isInteger(i)&&i>=0&&i<LEVELS.length;
   const weight=(level,animals)=>animals.reduce((n,id)=>n+LEVELS[level].weights[id],0);
   const validAnimal=id=>Number.isInteger(id)&&id>=0&&id<ANIMALS.length;
@@ -47,7 +26,7 @@
     }
     return bridge(0);
   }
-  function restore(raw){const empty={stars:Array(18).fill(0),session:null};if(!raw||![1,2].includes(raw.schema))return empty;const stars=Array.from({length:18},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0),fail=()=>({stars,session:null}),s=raw.schema===2?raw.session:null;
+  function restore(raw){const empty={stars:Array(18).fill(0),session:null};if(!raw||![1,2,3].includes(raw.schema))return empty;const stars=Array.from({length:18},(_,i)=>Number.isInteger(raw.stars?.[i])&&raw.stars[i]>=0&&raw.stars[i]<=3?raw.stars[i]:0),fail=()=>({stars,session:null}),s=raw.schema===3?raw.session:null;
     if(!s||!validLevel(s.level)||!Array.isArray(s.pans)||s.pans.length!==LEVELS[s.level].targets.length||!Array.isArray(s.tested)||s.tested.length!==s.pans.length||!Number.isInteger(s.attempts)||s.attempts<0||s.attempts>100000||typeof s.finished!=='boolean')return fail();
     const replay=createState(s.level);for(let b=0;b<s.pans.length;b++){if(!Array.isArray(s.pans[b]))return fail();for(const id of s.pans[b])if(!place(replay,b,id))return fail();}
     for(let b=0;b<s.tested.length;b++){if(s.tested[b]===null)continue;if(![-1,0,1,2].includes(s.tested[b])||s.tested[b]!==result(replay,b))return fail();replay.tested[b]=s.tested[b];}

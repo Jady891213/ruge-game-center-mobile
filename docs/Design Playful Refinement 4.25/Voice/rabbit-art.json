@@ -1,0 +1,85 @@
+{
+  "tool": "built-in image_gen",
+  "source": "/Users/wuzhiruge/.codex/generated_images/01a14dab-75ee-7e20-9060-b7b1bd002dd7/exec-69a37556-3b8a-426b-bf8e-7fc272fd9d06.png",
+  "asset": "app/assets/pitch-adventure/art/rabbit-frames.png",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "sha256": "e064cf9bcc6b3589c6dbd4cafeb1c2758264a405eed641179b9e2c78482b370c",
+  "rects": [
+    [
+      95,
+      48,
+      224,
+      301
+    ],
+    [
+      448,
+      50,
+      223,
+      301
+    ],
+    [
+      813,
+      47,
+      215,
+      306
+    ],
+    [
+      1158,
+      48,
+      233,
+      305
+    ],
+    [
+      76,
+      372,
+      240,
+      310
+    ],
+    [
+      451,
+      406,
+      227,
+      279
+    ],
+    [
+      796,
+      472,
+      244,
+      213
+    ],
+    [
+      1135,
+      494,
+      273,
+      191
+    ],
+    [
+      53,
+      725,
+      274,
+      312
+    ],
+    [
+      431,
+      729,
+      247,
+      307
+    ],
+    [
+      790,
+      729,
+      245,
+      306
+    ],
+    [
+      1155,
+      710,
+      244,
+      313
+    ]
+  ],
+  "analysis": "Read-only strong-alpha (>128) bounds with manual y=700 partition between crawling frame 7 and victory frame 11; exact grid crop previously included frame 11 ear at y=712..724 and truncated its top. Original PNG bytes/alpha unchanged."
+}

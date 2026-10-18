@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "path": "app/assets/hat-trick/art/toys.png",
+      "bytes": 1547459,
+      "sha256": "cc0cd1d7deaa6a314b90bc04d056444c9d36342f8d40d4893e95dcecfb3f6a3a"
+    },
+    {
+      "path": "app/assets/pitch-adventure/art/rabbit-frames.png",
+      "bytes": 1135716,
+      "sha256": "e064cf9bcc6b3589c6dbd4cafeb1c2758264a405eed641179b9e2c78482b370c"
+    }
+  ],
+  "promptSets": [
+    "Balance Memory/art-prompts.json",
+    "Voice/rabbit-prompt.txt"
+  ],
+  "sourceAndCropMetadata": [
+    "Balance Memory/art-prompts.json",
+    "Voice/rabbit-art.json",
+    "Voice/rabbit-crop-review.json"
+  ]
+}

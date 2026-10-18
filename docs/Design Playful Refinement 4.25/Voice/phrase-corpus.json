@@ -1,0 +1,248 @@
+[
+  {
+    "phrase": "向左",
+    "command": "left",
+    "tokens": "x iàng z uǒ",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "往左",
+    "command": "left",
+    "tokens": "w ǎng z uǒ",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "左边",
+    "command": "left",
+    "tokens": "z uǒ b iān",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向右",
+    "command": "right",
+    "tokens": "x iàng y òu",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "往右",
+    "command": "right",
+    "tokens": "w ǎng y òu",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "右边",
+    "command": "right",
+    "tokens": "y òu b iān",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向上",
+    "command": "up",
+    "tokens": "x iàng sh àng",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "往上",
+    "command": "up",
+    "tokens": "w ǎng sh àng",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "上面",
+    "command": "up",
+    "tokens": "sh àng m iàn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向下",
+    "command": "down",
+    "tokens": "x iàng x ià",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "往下",
+    "command": "down",
+    "tokens": "w ǎng x ià",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "下面",
+    "command": "down",
+    "tokens": "x ià m iàn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "前进",
+    "command": "forward",
+    "tokens": "q ián j ìn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "往前",
+    "command": "forward",
+    "tokens": "w ǎng q ián",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向前",
+    "command": "forward",
+    "tokens": "x iàng q ián",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "后退",
+    "command": "backward",
+    "tokens": "h òu t uì",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "往后",
+    "command": "backward",
+    "tokens": "w ǎng h òu",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向后",
+    "command": "backward",
+    "tokens": "x iàng h òu",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "左转",
+    "command": "turnLeft",
+    "tokens": "z uǒ zh uǎn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向左转",
+    "command": "turnLeft",
+    "tokens": "x iàng z uǒ zh uǎn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "右转",
+    "command": "turnRight",
+    "tokens": "y òu zh uǎn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "向右转",
+    "command": "turnRight",
+    "tokens": "x iàng y òu zh uǎn",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "跳一下",
+    "command": "jump",
+    "tokens": "t iào y í x ià",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "跳起来",
+    "command": "jump",
+    "tokens": "t iào q ǐ l ái",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "跳",
+    "command": "jump",
+    "tokens": "t iào",
+    "threshold": 0.5
+  },
+  {
+    "phrase": "拿起来",
+    "command": "take",
+    "tokens": "n á q ǐ l ái",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "拿起",
+    "command": "take",
+    "tokens": "n á q ǐ",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "捡起来",
+    "command": "take",
+    "tokens": "j iǎn q ǐ l ái",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "放下来",
+    "command": "put",
+    "tokens": "f àng x ià l ái",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "放下",
+    "command": "put",
+    "tokens": "f àng x ià",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "开门",
+    "command": "open",
+    "tokens": "k āi m én",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "打开门",
+    "command": "open",
+    "tokens": "d ǎ k āi m én",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "喂小兔",
+    "command": "feed",
+    "tokens": "w èi x iǎo t ù",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "给兔子",
+    "command": "feed",
+    "tokens": "g ěi t ù z ǐ",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "交给兔子",
+    "command": "feed",
+    "tokens": "j iāo g ěi t ù z ǐ",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "送回家",
+    "command": "deliver",
+    "tokens": "s òng h uí j iā",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "放进窝",
+    "command": "deliver",
+    "tokens": "f àng j ìn w ō",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "停下",
+    "command": "stop",
+    "tokens": "t íng x ià",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "停止",
+    "command": "stop",
+    "tokens": "t íng zh ǐ",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "停一下",
+    "command": "stop",
+    "tokens": "t íng y í x ià",
+    "threshold": 0.15
+  },
+  {
+    "phrase": "停下来",
+    "command": "stop",
+    "tokens": "t íng x ià l ái",
+    "threshold": 0.15
+  }
+]

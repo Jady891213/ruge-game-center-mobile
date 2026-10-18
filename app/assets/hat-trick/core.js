@@ -1,6 +1,6 @@
 (function(root){
   'use strict';
-  const ANIMALS=Object.freeze(['小鸟','兔子','狐狸','小猫','企鹅','小熊']);
+  const ANIMALS=Object.freeze(['星星','火箭','机器人','礼物','帆船','小花']);
   // Positions are stable places on the mat. Each move exchanges only two hats,
   // and the view animates those same two objects before advancing this state.
   const specs=[

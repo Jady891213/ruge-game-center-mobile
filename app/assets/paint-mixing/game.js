@@ -4,6 +4,7 @@ const C=window.PaintMixing,$=id=>document.getElementById(id),cover=/[?&]cover=1(
 const KEY='rugePaintMixingV1';let saved={stars:Array(10).fill(0),session:null};
 if(!cover){try{saved=C.restore(JSON.parse(localStorage.getItem(KEY)||'null'));}catch(_){}}
 let state=saved.session,active=false,paused=false;
+let lastMapKey='',mapTrail=[];
 function canPlay(){return !cover&&active&&!paused&&$('confirm').hidden!==false;}
 function fx(name){if(!cover&&!paused)window.RugeFX?.emit(name);}
 const icons={back:'<path d="m15 5-8 7 8 7M7 12h15"/>',map:'<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="15" y="4" width="6" height="6" rx="1"/><rect x="4" y="15" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/>',undo:'<path d="M10 5 4 11l6 6M4 11h10a6 6 0 0 1 0 12" transform="translate(0 -3)"/>',empty:'<path d="M6 7h14M9 7V4h8v3M8 7l1 14h9l1-14M12 11v6M15 11v6"/>',reset:'<path d="M5 7v6h6M5 13a8 8 0 1 0 2-7"/>',lock:'<rect x="6" y="10" width="12" height="11" rx="3"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/>'};
@@ -28,7 +29,7 @@ function unlock(){let max=0;for(let i=0;i<10;i++)if(saved.stars[i])max=Math.max(
 function menu(){active=false;paused=false;$('pause').hidden=true;$('confirm').hidden=true;$('play').hidden=true;$('menu').hidden=false;$('map').hidden=true;$('levels').innerHTML='';
   const old=state;state=C.createState(0);document.querySelector('.mascot').innerHTML=art('frog',C.hex(C.mix(['yellow','blue'])));state=old;
   C.LEVELS.forEach((l,i)=>{const b=document.createElement('button');b.disabled=i>unlock();b.setAttribute('aria-label','第 '+(i+1)+' 关 '+l.name+(b.disabled?' 未解锁':''));b.innerHTML='<span class="levelnum">'+(i+1)+'</span><span class="levelname">'+l.name+'<span class="levelstar">'+(saved.stars[i]?'★'.repeat(saved.stars[i]):'')+'</span></span>'+(b.disabled?'<span class="lock">'+icon('lock')+'</span>':'');b.onclick=()=>begin(i,false);$('levels').appendChild(b);});save();}
-function begin(level,free){state=C.createState(level,free);open();save();}
+function begin(level,free){state=C.createState(level,free);lastMapKey='';mapTrail=[];open();save();}
 function open(){active=true;paused=false;$('menu').hidden=true;$('play').hidden=false;$('map').hidden=false;$('pause').hidden=true;render();}
 function render(){
   const target=C.current(state),mixed=C.mix(state.drops),isDone=state.accepted;
@@ -42,6 +43,21 @@ function render(){
   $('undo').disabled=paused||isDone||!state.drops.length;$('empty').disabled=paused||isDone||!state.drops.length;$('paint').hidden=isDone;$('paint').disabled=paused||!state.drops.length;
   $('next').hidden=!isDone;$('next').textContent=state.free?'再画一个':state.order+1<C.LEVELS[state.level].targets.length?'下一个':state.level<9?'下一关':'完成';
   $('artStars').textContent=isDone?'★ '.repeat(state.free?3:C.stars(state)).trim():'';$('artStars').hidden=!isDone;$('message').textContent='';
+  renderColorMap(target,mixed);
+}
+function renderColorMap(target,mixed){
+  $('colorGuide').hidden=cover;
+  const palette=state.free?C.IDS:C.LEVELS[state.level].palette,g=C.guidance(state.drops,state.free?mixed:target.color),key=state.level+':'+state.free+':'+state.order;
+  if(lastMapKey!==key){mapTrail=[];lastMapKey=key;}
+  const last=mapTrail.at(-1),point=g.current;
+  if(point&&(!last||Math.hypot(point.x-last.x,point.y-last.y)>.01||Math.abs(point.light-last.light)>.001)){mapTrail.push(point);if(mapTrail.length>8)mapTrail.shift();}
+  if(!mixed)mapTrail=[];
+  const circles=C.gamut(palette).map(({rgb,point:p})=>'<circle cx="'+p.x.toFixed(2)+'" cy="'+p.y.toFixed(2)+'" r="5.5" fill="'+C.hex(rgb)+'" opacity=".7"/>').join('');
+  const star=(p,fill)=>'<path transform="translate('+p.x+' '+p.y+')" d="M0-10 3-3 10-3 5 2 7 9 0 5-7 9-5 2-10-3-3-3Z" fill="'+fill+'" stroke="#35544b" stroke-width="2"/>';
+  const goal=!state.free&&g.target?star(g.target,C.hex(target.color)):'',current=point?'<circle cx="'+point.x+'" cy="'+point.y+'" r="7" fill="'+C.hex(mixed)+'" stroke="white" stroke-width="3"/><circle cx="'+point.x+'" cy="'+point.y+'" r="8.5" fill="none" stroke="#35544b" stroke-width="1.5"/>':'';
+  const lightY=p=>151-p.light*120;
+  $('colorMap').innerHTML='<svg viewBox="0 0 252 180" role="img" aria-label="星星是目标，圆点是当前颜色；右侧是亮暗"><defs><linearGradient id="brightness" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffdf0"/><stop offset="1" stop-color="#51596b"/></linearGradient></defs><circle cx="100" cy="92" r="77" fill="#f3f0e4" stroke="#dedfce" stroke-width="2"/><path d="M23 92h154M100 15v154" stroke="#e3e4d8" stroke-dasharray="3 5"/>'+circles+(mapTrail.length>1?'<polyline points="'+mapTrail.map(p=>p.x+','+p.y).join(' ')+'" stroke="#35544b" opacity=".65" stroke-width="2" stroke-dasharray="3 4" fill="none"/>':'')+goal+current+'<rect x="220" y="31" width="14" height="120" rx="7" fill="url(#brightness)" stroke="#a8b6a2"/>'+(!state.free&&g.target?'<path d="m211 '+lightY(g.target)+'-6-5v10z" fill="#e5b34b" stroke="#35544b"/>':'')+(point?'<circle cx="227" cy="'+lightY(point)+'" r="6" fill="'+C.hex(mixed)+'" stroke="#35544b" stroke-width="2"/>':'')+'<text x="227" y="21" text-anchor="middle" fill="#65816b" font-size="12">亮</text><text x="227" y="168" text-anchor="middle" fill="#65816b" font-size="12">暗</text></svg>';
+  $('paintMatch').textContent=state.free?'自由配色':mixed?g.score+'分':'90分上色';$('paintMatch').classList.toggle('matched',g.pass&&!state.free);
 }
 $('home').onclick=home;$('pauseHome').onclick=home;$('map').onclick=menu;$('free').onclick=()=>begin(0,true);
 $('undo').onclick=()=>{if(canPlay()&&C.undo(state)){fx('undo');render();save();}};$('empty').onclick=()=>{if(canPlay()&&state.drops.length&&C.reset(state)){fx('undo');render();save();}};

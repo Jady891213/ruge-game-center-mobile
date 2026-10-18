@@ -1,0 +1,825 @@
+{
+  "rules": {
+    "safe": {
+      "before3s": {
+        "mode": "safe",
+        "seed": 1047194723,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 57.05000000000017,
+        "elapsed": 2.9499999999999975,
+        "hold": 2.9499999999999975,
+        "heading": 115.95475534675643,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 115.95475534675643,
+          "elevation": 0
+        },
+        "lastHeading": 115.95475534675643,
+        "lastElevation": 0
+      },
+      "after3s": {
+        "mode": "safe",
+        "seed": 397895270,
+        "round": 2,
+        "cleared": 1,
+        "remaining": 69.00000000000017,
+        "elapsed": 2.9999999999999973,
+        "hold": 0,
+        "heading": 115.95475534675643,
+        "elevation": 0,
+        "finished": false,
+        "target": {
+          "heading": 194.115308301989,
+          "elevation": 0
+        },
+        "lastHeading": null,
+        "lastElevation": null
+      },
+      "backFacingSignal": 0,
+      "stale": {
+        "hold": 0,
+        "round": 2,
+        "remaining": 65.95000000000034
+      },
+      "pauseExplicit": true,
+      "generationRestartPaused": true,
+      "pitchRequired": false,
+      "timeoutCleared": 2
+    },
+    "space": {
+      "before3s": {
+        "mode": "space",
+        "seed": 397895270,
+        "round": 1,
+        "cleared": 0,
+        "remaining": 57.05000000000017,
+        "elapsed": 2.9499999999999975,
+        "hold": 2.9499999999999975,
+        "heading": 115.95475534675643,
+        "elevation": -14,
+        "finished": false,
+        "target": {
+          "heading": 115.95475534675643,
+          "elevation": -14
+        },
+        "lastHeading": 115.95475534675643,
+        "lastElevation": -14
+      },
+      "after3s": {
+        "mode": "space",
+        "seed": 1753180808,
+        "round": 2,
+        "cleared": 1,
+        "remaining": 69.00000000000017,
+        "elapsed": 2.9999999999999973,
+        "hold": 0,
+        "heading": 115.95475534675643,
+        "elevation": -14,
+        "finished": false,
+        "target": {
+          "heading": 299.3795570358634,
+          "elevation": -3
+        },
+        "lastHeading": null,
+        "lastElevation": null
+      },
+      "backFacingSignal": 4.743186843292335e-09,
+      "stale": {
+        "hold": 0,
+        "round": 2,
+        "remaining": 65.95000000000034
+      },
+      "pauseExplicit": true,
+      "generationRestartPaused": true,
+      "pitchRequired": true,
+      "timeoutCleared": 2
+    }
+  },
+  "layouts": [
+    {
+      "scrollWidth": 320,
+      "scrollHeight": 568,
+      "innerWidth": 320,
+      "innerHeight": 568,
+      "board": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 10,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 264,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "safeStart",
+          "x": 10,
+          "y": 196.265625,
+          "width": 146,
+          "height": 153,
+          "bottom": 349.265625
+        },
+        {
+          "id": "spaceStart",
+          "x": 164,
+          "y": 196.265625,
+          "width": 146,
+          "height": 153,
+          "bottom": 349.265625
+        }
+      ],
+      "viewport": [
+        320,
+        568
+      ],
+      "view": "menu"
+    },
+    {
+      "scrollWidth": 320,
+      "scrollHeight": 568,
+      "innerWidth": 320,
+      "innerHeight": 568,
+      "board": {
+        "x": 10,
+        "y": 115,
+        "width": 300,
+        "height": 285
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 10,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 264,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 266,
+          "y": 65,
+          "width": 44,
+          "height": 44,
+          "bottom": 109
+        },
+        {
+          "id": "inputMode",
+          "x": 10,
+          "y": 458,
+          "width": 58,
+          "height": 44,
+          "bottom": 502
+        },
+        {
+          "id": "headingSlider",
+          "x": 12,
+          "y": 510,
+          "width": 300,
+          "height": 44,
+          "bottom": 554
+        }
+      ],
+      "viewport": [
+        320,
+        568
+      ],
+      "view": "safe"
+    },
+    {
+      "scrollWidth": 320,
+      "scrollHeight": 568,
+      "innerWidth": 320,
+      "innerHeight": 568,
+      "board": {
+        "x": 10,
+        "y": 115,
+        "width": 300,
+        "height": 232
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 10,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 264,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 266,
+          "y": 65,
+          "width": 44,
+          "height": 44,
+          "bottom": 109
+        },
+        {
+          "id": "inputMode",
+          "x": 10,
+          "y": 405,
+          "width": 58,
+          "height": 44,
+          "bottom": 449
+        },
+        {
+          "id": "headingSlider",
+          "x": 12,
+          "y": 457,
+          "width": 300,
+          "height": 44,
+          "bottom": 501
+        },
+        {
+          "id": "elevationSlider",
+          "x": 32.78125,
+          "y": 510,
+          "width": 275.21875,
+          "height": 44,
+          "bottom": 554
+        }
+      ],
+      "viewport": [
+        320,
+        568
+      ],
+      "view": "space"
+    },
+    {
+      "scrollWidth": 392,
+      "scrollHeight": 872,
+      "innerWidth": 392,
+      "innerHeight": 872,
+      "board": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 332,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "safeStart",
+          "x": 14,
+          "y": 293.265625,
+          "width": 176,
+          "height": 169,
+          "bottom": 462.265625
+        },
+        {
+          "id": "spaceStart",
+          "x": 202,
+          "y": 293.265625,
+          "width": 176,
+          "height": 169,
+          "bottom": 462.265625
+        }
+      ],
+      "viewport": [
+        392,
+        872
+      ],
+      "view": "menu"
+    },
+    {
+      "scrollWidth": 392,
+      "scrollHeight": 872,
+      "innerWidth": 392,
+      "innerHeight": 872,
+      "board": {
+        "x": 14,
+        "y": 124,
+        "width": 364,
+        "height": 548
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 332,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 334,
+          "y": 68,
+          "width": 44,
+          "height": 44,
+          "bottom": 112
+        },
+        {
+          "id": "inputMode",
+          "x": 14,
+          "y": 752,
+          "width": 58,
+          "height": 44,
+          "bottom": 796
+        },
+        {
+          "id": "headingSlider",
+          "x": 16,
+          "y": 810,
+          "width": 364,
+          "height": 44,
+          "bottom": 854
+        }
+      ],
+      "viewport": [
+        392,
+        872
+      ],
+      "view": "safe"
+    },
+    {
+      "scrollWidth": 392,
+      "scrollHeight": 872,
+      "innerWidth": 392,
+      "innerHeight": 872,
+      "board": {
+        "x": 14,
+        "y": 124,
+        "width": 364,
+        "height": 499
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 332,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 334,
+          "y": 68,
+          "width": 44,
+          "height": 44,
+          "bottom": 112
+        },
+        {
+          "id": "inputMode",
+          "x": 14,
+          "y": 703,
+          "width": 58,
+          "height": 44,
+          "bottom": 747
+        },
+        {
+          "id": "headingSlider",
+          "x": 16,
+          "y": 761,
+          "width": 364,
+          "height": 44,
+          "bottom": 805
+        },
+        {
+          "id": "elevationSlider",
+          "x": 36.78125,
+          "y": 814,
+          "width": 339.21875,
+          "height": 44,
+          "bottom": 858
+        }
+      ],
+      "viewport": [
+        392,
+        872
+      ],
+      "view": "space"
+    },
+    {
+      "scrollWidth": 568,
+      "scrollHeight": 320,
+      "innerWidth": 568,
+      "innerHeight": 320,
+      "board": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 508,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "safeStart",
+          "x": 263.8125,
+          "y": 68,
+          "width": 139.09375,
+          "height": 124,
+          "bottom": 192
+        },
+        {
+          "id": "spaceStart",
+          "x": 414.90625,
+          "y": 68,
+          "width": 139.09375,
+          "height": 124,
+          "bottom": 192
+        }
+      ],
+      "viewport": [
+        568,
+        320
+      ],
+      "view": "menu"
+    },
+    {
+      "scrollWidth": 568,
+      "scrollHeight": 320,
+      "innerWidth": 568,
+      "innerHeight": 320,
+      "board": {
+        "x": 14,
+        "y": 115,
+        "width": 315.875,
+        "height": 193
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 508,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 510,
+          "y": 68,
+          "width": 44,
+          "height": 44,
+          "bottom": 112
+        },
+        {
+          "id": "inputMode",
+          "x": 332.875,
+          "y": 173,
+          "width": 58,
+          "height": 44,
+          "bottom": 217
+        },
+        {
+          "id": "headingSlider",
+          "x": 332.875,
+          "y": 220,
+          "width": 221.125,
+          "height": 44,
+          "bottom": 264
+        }
+      ],
+      "viewport": [
+        568,
+        320
+      ],
+      "view": "safe"
+    },
+    {
+      "scrollWidth": 568,
+      "scrollHeight": 320,
+      "innerWidth": 568,
+      "innerHeight": 320,
+      "board": {
+        "x": 14,
+        "y": 115,
+        "width": 315.875,
+        "height": 193
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 508,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 510,
+          "y": 68,
+          "width": 44,
+          "height": 44,
+          "bottom": 112
+        },
+        {
+          "id": "inputMode",
+          "x": 332.875,
+          "y": 173,
+          "width": 58,
+          "height": 44,
+          "bottom": 217
+        },
+        {
+          "id": "headingSlider",
+          "x": 332.875,
+          "y": 220,
+          "width": 221.125,
+          "height": 44,
+          "bottom": 264
+        },
+        {
+          "id": "elevationSlider",
+          "x": 353.65625,
+          "y": 264,
+          "width": 221.125,
+          "height": 44,
+          "bottom": 308
+        }
+      ],
+      "viewport": [
+        568,
+        320
+      ],
+      "view": "space"
+    },
+    {
+      "scrollWidth": 872,
+      "scrollHeight": 392,
+      "innerWidth": 872,
+      "innerHeight": 392,
+      "board": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 812,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "safeStart",
+          "x": 402,
+          "y": 68,
+          "width": 222,
+          "height": 165.65625,
+          "bottom": 233.65625
+        },
+        {
+          "id": "spaceStart",
+          "x": 636,
+          "y": 68,
+          "width": 222,
+          "height": 165.65625,
+          "bottom": 233.65625
+        }
+      ],
+      "viewport": [
+        872,
+        392
+      ],
+      "view": "menu"
+    },
+    {
+      "scrollWidth": 872,
+      "scrollHeight": 392,
+      "innerWidth": 872,
+      "innerHeight": 392,
+      "board": {
+        "x": 14,
+        "y": 115,
+        "width": 494.703125,
+        "height": 265
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 812,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 813.984375,
+          "y": 68,
+          "width": 44,
+          "height": 44,
+          "bottom": 112
+        },
+        {
+          "id": "inputMode",
+          "x": 511.703125,
+          "y": 245,
+          "width": 58,
+          "height": 44,
+          "bottom": 289
+        },
+        {
+          "id": "headingSlider",
+          "x": 511.703125,
+          "y": 292,
+          "width": 346.28125,
+          "height": 44,
+          "bottom": 336
+        }
+      ],
+      "viewport": [
+        872,
+        392
+      ],
+      "view": "safe"
+    },
+    {
+      "scrollWidth": 872,
+      "scrollHeight": 392,
+      "innerWidth": 872,
+      "innerHeight": 392,
+      "board": {
+        "x": 14,
+        "y": 115,
+        "width": 494.703125,
+        "height": 265
+      },
+      "controls": [
+        {
+          "id": "home",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "mapButton",
+          "x": 812,
+          "y": 10,
+          "width": 46,
+          "height": 48,
+          "bottom": 58
+        },
+        {
+          "id": "pauseButton",
+          "x": 813.984375,
+          "y": 68,
+          "width": 44,
+          "height": 44,
+          "bottom": 112
+        },
+        {
+          "id": "inputMode",
+          "x": 511.703125,
+          "y": 245,
+          "width": 58,
+          "height": 44,
+          "bottom": 289
+        },
+        {
+          "id": "headingSlider",
+          "x": 511.703125,
+          "y": 292,
+          "width": 346.28125,
+          "height": 44,
+          "bottom": 336
+        },
+        {
+          "id": "elevationSlider",
+          "x": 532.484375,
+          "y": 336,
+          "width": 346.28125,
+          "height": 44,
+          "bottom": 380
+        }
+      ],
+      "viewport": [
+        872,
+        392
+      ],
+      "view": "space"
+    }
+  ],
+  "errors": [],
+  "cross360": [
+    359,
+    0,
+    1
+  ],
+  "preserved": {
+    "legacy": "legacy-unchanged",
+    "other": "keep"
+  },
+  "legacyEntry": {
+    "levelButtons": 18,
+    "firstLockWon": true,
+    "returnedToChallenge": true
+  }
+}

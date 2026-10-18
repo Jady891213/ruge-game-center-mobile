@@ -124,7 +124,7 @@
   function posture(dt = 0) {
     return input.flatReady(dt);
   }
-  function resetCountdown() { countdownRemaining = countdownDigit = null; }
+  function resetCountdown() { countdownRemaining = countdownDigit = null; $('#flatProgress').style.setProperty('--fill','0%'); $('#flatProgress').setAttribute('aria-valuenow','0'); }
   function updateFlatGuide(value, dt = 0) {
     $('#flatTouch').hidden = !!value.available;
     $('#flatProgress').classList.toggle('is-flat', !!value.flat);
@@ -139,7 +139,11 @@
     if ($('#flatTitle').textContent !== title) $('#flatTitle').textContent = title;
     $('#flatCountdown').hidden = !ready;
     if ($('#flatCountdown').textContent !== text) $('#flatCountdown').textContent = text;
-    $('#flatProgress').hidden = !!ready;
+    const fill = ready ? Math.min(1,.2+(2-countdownRemaining)/2*.8) : value.flat&&value.fresh ? Math.min(1,(value.elapsed||0)/.5)*.2 : 0;
+    $('#flatProgress').hidden = false;
+    $('#flatProgress').style.setProperty('--fill',(fill*100).toFixed(1)+'%');
+    $('#flatProgress').setAttribute('aria-valuenow',String(Math.round(fill*100)));
+    $('#flatProgress').setAttribute('aria-label',ready?'放平进度 '+Math.round(fill*100)+'%':'正在检测水平');
     $('#flatGuide').classList.toggle('is-ready', !!ready);
     if (digit !== null && digit !== countdownDigit) window.RugeFX?.emit('select');
     countdownDigit = digit;

@@ -1,0 +1,32 @@
+(function(){
+  'use strict';
+  const C=window.ToyMemory,$=id=>document.getElementById(id),KEY='rugeToyMemoryV1';
+  let saved=C.restore(null);try{saved=C.restore(JSON.parse(localStorage.getItem(KEY)||'null'));}catch(_){}
+  let state=saved.session,active=false,paused=false,timer=0,renderedDeck='';
+  const names=['星星','火箭','机器人','礼物','帆船','小花','橘子','苹果'];
+  const frames=[[49,63,416,390],[579,39,377,423],[1092,19,376,478],[63,552,386,422],[561,530,416,453],[1097,537,370,473]];
+  const fruitFrames=[[565,75,390,410],[1080,48,408,430]];
+  let spriteSerial=0;
+  const sprite=id=>{const f=id>=6?fruitFrames[id-6]:frames[id],clip='memoryToyClip'+(++spriteSerial),image=id>=6?'../animal-balance/art/items.png':'art/toys.png';return '<svg viewBox="'+f.join(' ')+'" preserveAspectRatio="xMidYMid meet" role="img" aria-label="'+names[id]+'"><defs><clipPath id="'+clip+'"><rect x="'+f[0]+'" y="'+f[1]+'" width="'+f[2]+'" height="'+f[3]+'"/></clipPath></defs><image href="'+image+'" width="1536" height="1024" clip-path="url(#'+clip+')"/></svg>';};
+  const fx=name=>window.RugeFX?.emit(name);
+  function save(){try{localStorage.setItem(KEY,JSON.stringify({schema:1,stars:saved.stars,session:state}));}catch(_){}}
+  function cancel(){clearTimeout(timer);timer=0;}
+  function unlocked(){let max=0;saved.stars.forEach((n,i)=>{if(n)max=Math.max(max,Math.min(17,i+1));});return max;}
+  function menu(){cancel();active=false;paused=false;document.body.classList.remove('paused');$('play').hidden=true;$('menu').hidden=false;$('map').hidden=true;for(const id of ['pause','confirm','win'])$(id).hidden=true;$('levels').innerHTML='';C.PAIRS.forEach((_,i)=>{const b=document.createElement('button');b.textContent=i+1;b.disabled=i>unlocked();if(saved.stars[i])b.className='done';b.setAttribute('aria-label','第 '+(i+1)+' 关');b.onclick=()=>{if(i<=unlocked())start(i);};$('levels').appendChild(b);});$('continue').hidden=!state;save();}
+  function start(level){if(!Number.isInteger(level)||level<0||level>=18)return false;state=C.createState(level);open();save();return true;}
+  function open(){cancel();active=true;paused=false;document.body.classList.remove('paused');$('menu').hidden=true;$('play').hidden=false;$('map').hidden=false;for(const id of ['pause','confirm','win'])$(id).hidden=true;render();schedule();}
+  function render(){if(!state)return;$('levelName').textContent='第 '+(state.level+1)+' 关';$('pairCount').textContent=state.phase==='preview'?'记一记':state.matched.length/2+' / '+C.PAIRS[state.level];const cols=innerWidth/innerHeight>=4/3?state.deck.length/2:C.COLUMNS[state.level];$('cards').style.setProperty('--cols',cols);$('cards').style.setProperty('--rows',Math.ceil(state.deck.length/cols));const signature=state.deck.join(',');
+    if(renderedDeck!==signature||$('cards').children.length!==state.deck.length){renderedDeck=signature;$('cards').innerHTML='';state.deck.forEach((id,i)=>{const b=document.createElement('button');b.className='card';b.innerHTML='<span class="cardFace cardBack" aria-hidden="true">★</span><span class="cardFace cardFront" aria-hidden="true">'+sprite(id)+'</span>';b.onclick=()=>flip(i);$('cards').appendChild(b);});}
+    state.deck.forEach((id,i)=>{const b=$('cards').children[i],isOpen=state.phase==='preview'||state.open.includes(i),matched=state.matched.includes(i),pair=state.open.length===2,isMatch=pair&&state.deck[state.open[0]]===state.deck[state.open[1]];b.className='card'+(isOpen||matched?' open':'')+(matched?' matched':'')+(isOpen&&pair?(isMatch?' matching':' wrong'):'');b.setAttribute('aria-label',matched?'已配对':isOpen?names[id]:'第 '+(i+1)+' 张牌');b.querySelector('.cardFront').setAttribute('aria-hidden',String(!isOpen));b.disabled=paused||!$('confirm').hidden||state.phase!=='choose'||isOpen||matched;});
+    $('memoryProgress').innerHTML=Array.from({length:C.PAIRS[state.level]},(_,i)=>'<span class="'+(i<state.matched.length/2?'done':'')+'"></span>').join('');$('win').hidden=paused||state.phase!=='won';$('stars').textContent='★'.repeat(C.stars(state));$('next').textContent=state.level===17?'完成':'下一关';$('restart').disabled=paused;$('pauseButton').disabled=paused;
+  }
+  function schedule(){cancel();if(!active||paused||!$('confirm').hidden)return;if(state.phase==='preview'){timer=setTimeout(()=>{timer=0;if(!active||paused)return;C.hidePreview(state);save();render();},C.PREVIEW[state.level]);return;}if(state.phase!=='reveal')return;const matching=state.deck[state.open[0]]===state.deck[state.open[1]];timer=setTimeout(()=>{timer=0;if(!active||paused)return;const result=C.settle(state);if(!result)return;if(result.finished){saved.stars[state.level]=Math.max(saved.stars[state.level],C.stars(state));fx('win');}else fx(result.match?'collect':'error');save();render();},matching?550:1000);}
+  function flip(index){if(!active||paused||!$('confirm').hidden)return null;const result=C.flip(state,index);if(!result)return null;fx('select');save();render();schedule();return result;}
+  function pause(){if(!active)return;cancel();paused=true;document.body.classList.add('paused');$('confirm').hidden=true;$('pause').hidden=false;render();save();}
+  function resume(){if(!active)return;paused=false;document.body.classList.remove('paused');$('pause').hidden=true;render();schedule();}
+  function exit(){cancel();save();location.href='index.html';}
+  $('home').onclick=exit;$('hatMode').onclick=exit;$('map').onclick=menu;$('winMap').onclick=menu;$('pauseMap').onclick=menu;$('continue').onclick=()=>{if(state)open();};$('pauseButton').onclick=pause;$('resume').onclick=resume;$('restart').onclick=()=>{if(!active||paused)return;cancel();$('confirm').hidden=false;render();};$('confirmRestart').onclick=()=>{if(active&&!paused&&!$('confirm').hidden)start(state.level);};$('cancelRestart').onclick=()=>{$('confirm').hidden=true;render();schedule();};$('next').onclick=()=>{if(active&&!paused&&state.phase==='won'){if(state.level<17)start(state.level+1);else menu();}};
+  window.addEventListener('ruge:pause',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});window.addEventListener('pagehide',()=>{cancel();save();});window.addEventListener('resize',()=>{if(active)pause();});
+  window.__game={core:C,start,menu,flip,pause,resume,state:()=>state,progress:()=>saved.stars.slice(),isPaused:()=>paused,storageKey:KEY};
+  if(state){open();if(state.phase!=='won')pause();}else menu();
+})();
