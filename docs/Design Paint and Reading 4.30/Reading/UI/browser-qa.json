@@ -1,0 +1,356 @@
+{
+  "productionLayouts": [
+    {
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "scrollHeight": 568,
+      "overflow": [],
+      "charFont": "112px",
+      "ring": {
+        "width": 125.421875,
+        "height": 125.421875
+      },
+      "buttons": [
+        {
+          "id": "readingBack",
+          "x": 10,
+          "y": 6,
+          "width": 40,
+          "height": 42,
+          "bottom": 48
+        },
+        {
+          "id": "readingRotate",
+          "x": 229,
+          "y": 6,
+          "width": 40,
+          "height": 42,
+          "bottom": 48
+        },
+        {
+          "id": "readingPause",
+          "x": 273,
+          "y": 6,
+          "width": 37,
+          "height": 42,
+          "bottom": 48
+        },
+        {
+          "id": "modeSpell",
+          "x": 77,
+          "y": 58,
+          "width": 83,
+          "height": 35,
+          "bottom": 93
+        },
+        {
+          "id": "modeRead",
+          "x": 160,
+          "y": 58,
+          "width": 83,
+          "height": 35,
+          "bottom": 93
+        },
+        {
+          "id": "readingSpeak",
+          "x": 259,
+          "y": 123,
+          "width": 43,
+          "height": 43,
+          "bottom": 166
+        },
+        {
+          "id": "readingMic",
+          "x": 122.5,
+          "y": 367,
+          "width": 75,
+          "height": 75,
+          "bottom": 442
+        },
+        {
+          "id": "readingNext",
+          "x": 10,
+          "y": 483,
+          "width": 300,
+          "height": 46,
+          "bottom": 529
+        },
+        {
+          "id": "readingSetup",
+          "x": 84.5,
+          "y": 534,
+          "width": 151,
+          "height": 25,
+          "bottom": 559
+        }
+      ]
+    },
+    {
+      "width": 392,
+      "height": 872,
+      "scrollWidth": 392,
+      "scrollHeight": 872,
+      "overflow": [],
+      "charFont": "196.56px",
+      "ring": {
+        "width": 298.46875,
+        "height": 298.46875
+      },
+      "buttons": [
+        {
+          "id": "readingBack",
+          "x": 14,
+          "y": 10,
+          "width": 46,
+          "height": 46,
+          "bottom": 56
+        },
+        {
+          "id": "readingRotate",
+          "x": 285,
+          "y": 10,
+          "width": 46,
+          "height": 46,
+          "bottom": 56
+        },
+        {
+          "id": "readingPause",
+          "x": 338,
+          "y": 10,
+          "width": 40,
+          "height": 46,
+          "bottom": 56
+        },
+        {
+          "id": "modeSpell",
+          "x": 99,
+          "y": 71,
+          "width": 97,
+          "height": 40,
+          "bottom": 111
+        },
+        {
+          "id": "modeRead",
+          "x": 196,
+          "y": 71,
+          "width": 97,
+          "height": 40,
+          "bottom": 111
+        },
+        {
+          "id": "readingSpeak",
+          "x": 322,
+          "y": 150,
+          "width": 48,
+          "height": 48,
+          "bottom": 198
+        },
+        {
+          "id": "readingMic",
+          "x": 144,
+          "y": 614,
+          "width": 104,
+          "height": 104,
+          "bottom": 718
+        },
+        {
+          "id": "readingNext",
+          "x": 14,
+          "y": 770,
+          "width": 364,
+          "height": 50,
+          "bottom": 820
+        },
+        {
+          "id": "readingSetup",
+          "x": 120.5,
+          "y": 830,
+          "width": 151,
+          "height": 28,
+          "bottom": 858
+        }
+      ]
+    },
+    {
+      "width": 568,
+      "height": 320,
+      "scrollWidth": 568,
+      "scrollHeight": 320,
+      "overflow": [],
+      "charFont": "150px",
+      "ring": {
+        "width": 186,
+        "height": 186
+      },
+      "buttons": [
+        {
+          "id": "readingBack",
+          "x": 12,
+          "y": 5,
+          "width": 46,
+          "height": 40,
+          "bottom": 45
+        },
+        {
+          "id": "readingRotate",
+          "x": 455,
+          "y": 5,
+          "width": 46,
+          "height": 40,
+          "bottom": 45
+        },
+        {
+          "id": "readingPause",
+          "x": 510,
+          "y": 5,
+          "width": 46,
+          "height": 40,
+          "bottom": 45
+        },
+        {
+          "id": "modeSpell",
+          "x": 205,
+          "y": 52,
+          "width": 79,
+          "height": 28,
+          "bottom": 80
+        },
+        {
+          "id": "modeRead",
+          "x": 284,
+          "y": 52,
+          "width": 79,
+          "height": 28,
+          "bottom": 80
+        },
+        {
+          "id": "readingSpeak",
+          "x": 231.5,
+          "y": 99,
+          "width": 44,
+          "height": 44,
+          "bottom": 143
+        },
+        {
+          "id": "readingMic",
+          "x": 296.5,
+          "y": 186.875,
+          "width": 61,
+          "height": 61,
+          "bottom": 247.875
+        },
+        {
+          "id": "readingNext",
+          "x": 292.5,
+          "y": 253.875,
+          "width": 263.5,
+          "height": 39,
+          "bottom": 292.875
+        },
+        {
+          "id": "readingSetup",
+          "x": 362.25,
+          "y": 296.875,
+          "width": 124,
+          "height": 20,
+          "bottom": 316.875
+        }
+      ]
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "scrollWidth": 872,
+      "scrollHeight": 392,
+      "overflow": [],
+      "charFont": "222px",
+      "ring": {
+        "width": 258,
+        "height": 258
+      },
+      "buttons": [
+        {
+          "id": "readingBack",
+          "x": 15,
+          "y": 7,
+          "width": 46,
+          "height": 40,
+          "bottom": 47
+        },
+        {
+          "id": "readingRotate",
+          "x": 756,
+          "y": 7,
+          "width": 46,
+          "height": 40,
+          "bottom": 47
+        },
+        {
+          "id": "readingPause",
+          "x": 811,
+          "y": 7,
+          "width": 46,
+          "height": 40,
+          "bottom": 47
+        },
+        {
+          "id": "modeSpell",
+          "x": 357,
+          "y": 55,
+          "width": 79,
+          "height": 28,
+          "bottom": 83
+        },
+        {
+          "id": "modeRead",
+          "x": 436,
+          "y": 55,
+          "width": 79,
+          "height": 28,
+          "bottom": 83
+        },
+        {
+          "id": "readingSpeak",
+          "x": 379.5,
+          "y": 104,
+          "width": 44,
+          "height": 44,
+          "bottom": 148
+        },
+        {
+          "id": "readingMic",
+          "x": 458.5,
+          "y": 220.171875,
+          "width": 74,
+          "height": 74,
+          "bottom": 294.171875
+        },
+        {
+          "id": "readingNext",
+          "x": 448.5,
+          "y": 303.171875,
+          "width": 408.5,
+          "height": 45,
+          "bottom": 348.171875
+        },
+        {
+          "id": "readingSetup",
+          "x": 586.25,
+          "y": 354.171875,
+          "width": 133,
+          "height": 24,
+          "bottom": 378.171875
+        }
+      ]
+    }
+  ],
+  "fixtureOnly": true,
+  "realAssessmentTested": false,
+  "errors": [],
+  "flowFixture": "recording/finish/85 pass/next/read group/polyphonic choice",
+  "bird": {
+    "loaded": true,
+    "width": 1212
+  }
+}

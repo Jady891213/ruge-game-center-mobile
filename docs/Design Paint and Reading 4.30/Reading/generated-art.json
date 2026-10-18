@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "asset": "app/assets/hanzi-typing/art/reading-bird.png",
+  "sha256": "e4bade4e67ed58b19d9cf10cbad68a7d50bc7bf45e7265f528bd68b86d218a45",
+  "size": [
+    1212,
+    1298
+  ],
+  "mode": "RGBA",
+  "alphaPreserved": true,
+  "prototype": "reading-prototype.png",
+  "prompts": "imagegen-prompts.json"
+}

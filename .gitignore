@@ -10,3 +10,4 @@ __pycache__/
 *password*.txt
 .env
 .env.*
+.local-voice/

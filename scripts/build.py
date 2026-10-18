@@ -19,6 +19,19 @@ PACKAGE = "com.dsh.gamecenter"
 ET.register_namespace("android", "http://schemas.android.com/apk/res/android")
 
 
+def validate_permissions(manifest):
+    """Only the explicitly authorized professional-assessment network exception."""
+    permissions = [item.get(ANDROID + "name") for item in manifest.findall("uses-permission")]
+    allowed = {"android.permission.VIBRATE", "android.permission.RECORD_AUDIO",
+               "android.permission.CAMERA", "android.permission.INTERNET"}
+    if len(permissions) != len(set(permissions)) or set(permissions) - allowed:
+        raise RuntimeError("Unexpected or duplicate application permission")
+    application = manifest.find("application")
+    if "android.permission.INTERNET" in permissions:
+        if application is None or application.get(ANDROID + "usesCleartextTraffic") != "false":
+            raise RuntimeError("Professional assessment must forbid cleartext network traffic")
+
+
 def run(label, command, environment):
     print(label, flush=True)
     result = subprocess.run([str(arg) for arg in command], env=environment,
@@ -118,8 +131,7 @@ def build(args, env, temporary):
     if application is None:
         raise RuntimeError("Missing application in manifest")
     application.set(ANDROID + "debuggable", "true" if args.dev else "false")
-    if any(item.get(ANDROID + "name") == "android.permission.INTERNET" for item in manifest.findall("uses-permission")):
-        raise RuntimeError("This offline application must not request INTERNET permission")
+    validate_permissions(manifest)
     sdk = manifest.find("uses-sdk")
     minimum = sdk.get(ANDROID + "minSdkVersion", "21") if sdk is not None else "21"
     tree.write(manifest_file, encoding="utf-8", xml_declaration=True)

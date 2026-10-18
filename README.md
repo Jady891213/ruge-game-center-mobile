@@ -1,8 +1,8 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十七款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，全部离线运行。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十七款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，游戏资源离线打包；专业语音评分需联网，尚待开通服务。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.29 / versionCode 52**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.30 / versionCode 53**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,12 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 连续色盘与开口读拼音（4.30）
+
+小小调色师使用GPT生成原型与角色素材，换成放大的连续色盘，目标星/当前圆点/轨迹与亮度对照保留，原颜料混色和过关逻辑保持。
+
+看字打拼音新增“开口读拼音”入口：原60字朗读、12字入门拼读，含“b → ān → 班”。界面与腾讯云专业评测接入代码已准备；用户尚未开通服务，本版明确显示待家长配置，禁用收音，不显示模拟分数。服务接通后采用真实总分、片段分与声调结果，达标才下一题，语音记录独立于打字。详情见[调色与语音记录](docs/Design%20Paint%20and%20Reading%204.30/review.md)。
 
 ## 哼哼小飞机（4.29）
 

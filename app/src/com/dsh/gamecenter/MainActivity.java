@@ -45,6 +45,8 @@ public class MainActivity extends Activity {
     private WebView web;
     private GameFeedback feedback;
     private GameAudio audio;
+    private GameAssessment assessment;
+    private volatile boolean assessmentPage = false;
     private GameCamera camera;
     private volatile TextToSpeech tts;
     private volatile boolean foreground = false;
@@ -156,6 +158,13 @@ public class MainActivity extends Activity {
 
         web = new WebView(this);
         audio = new GameAudio(this);
+        assessment = new GameAssessment(this, new GameAssessment.Host() {
+            public boolean assessmentPageAllowed() { return foreground && !destroyed && assessmentPage; }
+            public void prepareAssessmentMicrophone() {
+                if (audio != null) audio.stop();
+                stopSpeech();
+            }
+        });
         camera = new GameCamera(this, web);
         if (BuildConfig.DEV) WebView.setWebContentsDebuggingEnabled(true);
         WebSettings s = web.getSettings();
@@ -186,6 +195,7 @@ public class MainActivity extends Activity {
         web.addJavascriptInterface(new NavBridge(), "RugeNav");
         web.addJavascriptInterface(feedback, "RugeFeedback");
         web.addJavascriptInterface(audio, "RugeAudioNative");
+        web.addJavascriptInterface(assessment, "RugeAssessment");
         web.addJavascriptInterface(camera, "RugeCamera");
 
         setContentView(web);
@@ -202,6 +212,7 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public boolean speak(String text) {
             TextToSpeech engine = tts;
+            if (assessment != null && assessment.recording()) return false;
             if (!foreground || destroyed || !ttsReady || engine == null || text == null || text.isEmpty()) return false;
             try {
                 return engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "ruge") != TextToSpeech.ERROR;
@@ -526,6 +537,8 @@ public class MainActivity extends Activity {
         @Override
         public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
             // Leaving a game always closes its capture, even if pagehide never executes.
+            assessmentPage = false;
+            if (assessment != null) assessment.cancelInternal();
             if (audio != null) audio.stop();
             if (camera != null) camera.stop();
             if (feedback != null) feedback.stop();
@@ -546,6 +559,11 @@ public class MainActivity extends Activity {
         }
         @Override
         public void onPageFinished(WebView view, String url) {
+            // Privileged provisioning/PCM/signing are never exposed to dev overrides,
+            // other games, query variants, iframes or remote pages. speaking.html also
+            // enforces frame-src 'none' in its own CSP.
+            assessmentPage = "file:///android_asset/hanzi-typing/speaking.html".equals(url)
+                    && url.equals(view.getUrl());
             if (isAllowedLocalUrl(url)) dispatchLifecycle(foreground ? "resume" : "pause");
         }
     }
@@ -635,6 +653,7 @@ public class MainActivity extends Activity {
     /** 系统返回：游戏内统一回游戏中心首页，首页再返回退出。 */
     @Override
     public void onBackPressed() {
+        if (assessment != null) assessment.cancelInternal();
         // Every game owns its internal menus. The system back gesture has one
         // stable meaning: leave the game and return to the collection homepage.
         // History can be empty after reloads or development-page navigation.
@@ -654,6 +673,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         foreground = false;
+        if (assessment != null) assessment.cancelInternal();
         if (feedback != null) feedback.foreground(false);
         if (audio != null) audio.foreground(false);
         if (camera != null) camera.onPause();
@@ -698,6 +718,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         destroyed = true;
+        assessmentPage = false;
+        if (assessment != null) assessment.close();
         if (feedback != null) feedback.release();
         if (audio != null) audio.close();
         if (camera != null) camera.onDestroy();
@@ -720,6 +742,7 @@ public class MainActivity extends Activity {
             web.removeJavascriptInterface("RugeNav");
             web.removeJavascriptInterface("RugeFeedback");
             web.removeJavascriptInterface("RugeAudioNative");
+            web.removeJavascriptInterface("RugeAssessment");
             web.removeJavascriptInterface("RugeCamera");
             if (web.getParent() instanceof ViewGroup) ((ViewGroup) web.getParent()).removeView(web);
             web.destroy();
@@ -732,6 +755,7 @@ public class MainActivity extends Activity {
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grants) {
         super.onRequestPermissionsResult(requestCode, permissions, grants);
         if (audio != null) audio.permissionResult(requestCode, grants);
+        if (assessment != null) assessment.permissionResult(requestCode, grants);
         if (camera != null) camera.onRequestPermissionsResult(requestCode, permissions, grants);
     }
 }

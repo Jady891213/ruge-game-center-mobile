@@ -1,0 +1,71 @@
+{
+  "generator": "built-in image_gen",
+  "prototype": {
+    "path": "docs/Design Paint and Reading 4.30/Paint/paint-ui-prototype.png",
+    "source": "/Users/wuzhiruge/.codex/generated_images/01a14eb6-f8da-77a1-b5f8-41c915558874/exec-97f6c6fb-6d70-47dc-9043-34f5c6109a5c.png",
+    "sha256": "328a05a5962585a1205fc7436690158f45edd487d27c95a3f3eb4239b81be6ce"
+  },
+  "atlas": {
+    "path": "app/assets/paint-mixing/art/paint-friends.png",
+    "source": "/Users/wuzhiruge/.codex/generated_images/01a14eb6-f8da-77a1-b5f8-41c915558874/exec-d6ad0e5b-924c-452d-92ad-0e1c87784893.png",
+    "sha256": "53fc530c64d7246b300953b4a10ba1f8fd1482e173ab0e8e71305d11be743af2",
+    "size": [
+      1774,
+      887
+    ],
+    "alpha": "preserved original RGBA",
+    "rects": {
+      "frog": [
+        52,
+        79,
+        374,
+        375
+      ],
+      "orange": [
+        495,
+        43,
+        359,
+        398
+      ],
+      "grapes": [
+        934,
+        30,
+        381,
+        444
+      ],
+      "leaf": [
+        1397,
+        52,
+        330,
+        412
+      ],
+      "fish": [
+        37,
+        523,
+        398,
+        312
+      ],
+      "bunny": [
+        520,
+        485,
+        320,
+        373
+      ],
+      "cloud": [
+        895,
+        553,
+        437,
+        295
+      ],
+      "flower": [
+        1375,
+        489,
+        363,
+        355
+      ]
+    },
+    "rectMethod": "alpha>=96 connected component bounds plus 4px margin; explicit SVG clipPath clips each figure, original pixels not edited",
+    "tint": "SVG sRGB color matrix scales grayscale body with actual RYB output; unique per shape/color filter ID prevents hidden-menu collision"
+  },
+  "wheel": "deterministic standard continuous HSV disk only for display; RYB mix and distance<=17 unchanged"
+}

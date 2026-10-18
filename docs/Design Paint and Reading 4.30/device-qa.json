@@ -1,0 +1,195 @@
+{
+  "boundary": "Actual MIX4 WebView, ADB physical touches, native bridge unconfigured path. No cloud request or real pronunciation score. Paint level9 entered through the existing engine hook solely to inspect full palette; color additions and reading controls use physical touches.",
+  "bridgeOutsideReading": {
+    "available": false,
+    "configured": false
+  },
+  "paintMix": {
+    "drops": [
+      "yellow",
+      "blue"
+    ],
+    "score": "29分",
+    "continuous": "radial-gradient(circle closest-side, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%), conic-gradient(rgb(255, 0, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 255), rgb(0, 0, 255), rgb(255, 0, 255), rgb(255, 0, 0))",
+    "wheel": {
+      "x": 25.823863983154297,
+      "y": 318.1420593261719,
+      "width": 307.0738830566406,
+      "height": 307.0738830566406,
+      "top": 318.1420593261719,
+      "right": 332.8977470397949,
+      "bottom": 625.2159423828125,
+      "left": 25.823863983154297
+    }
+  },
+  "paintWhite": {
+    "drops": [
+      "yellow",
+      "blue",
+      "white"
+    ],
+    "point": {
+      "x": 156.28894513326222,
+      "y": 150.76402945673746,
+      "hue": 128.82352941176472,
+      "saturation": 0.33009708737864085,
+      "value": 0.807843137254902
+    }
+  },
+  "keyboardBefore": {
+    "li": 0,
+    "gi": 0,
+    "groups": 0,
+    "pos": 0,
+    "total": 0,
+    "score": 0,
+    "combo": 0,
+    "right": 0,
+    "wrong": 0,
+    "playing": false,
+    "accepting": false,
+    "paused": false,
+    "secsTotal": 0,
+    "advanceRemaining": 0,
+    "hasAdvance": false,
+    "ch": null,
+    "ans": [],
+    "diff": 0,
+    "parLevel": 1738,
+    "parGroup": 0,
+    "savedLevels": 0,
+    "days": 0,
+    "stars": 0
+  },
+  "reading": {
+    "url": "file:///android_asset/hanzi-typing/speaking.html",
+    "bridge": {
+      "available": true,
+      "configured": false,
+      "state": {
+        "status": "unconfigured",
+        "sessionId": "",
+        "elapsedMs": 0,
+        "level": 0,
+        "error": ""
+      }
+    },
+    "ui": {
+      "mode": "spell",
+      "group": 0,
+      "index": 0,
+      "task": {
+        "id": "spell:班:bān",
+        "char": "班",
+        "pinyin": "bān",
+        "choices": [
+          "bān"
+        ],
+        "mode": "spell",
+        "evalMode": 8,
+        "reference": "b an1 ban1",
+        "items": [
+          {
+            "label": "b",
+            "reference": "b",
+            "tone": 0,
+            "kind": "part"
+          },
+          {
+            "label": "ān",
+            "reference": "an1",
+            "tone": 1,
+            "kind": "part"
+          },
+          {
+            "label": "班",
+            "reference": "ban1",
+            "tone": 1,
+            "kind": "word"
+          }
+        ]
+      },
+      "result": null,
+      "phase": "idle",
+      "paused": false,
+      "inFlight": false,
+      "records": {}
+    },
+    "micDisabled": true,
+    "score": "—"
+  },
+  "unconfiguredBegin": {
+    "status": "unconfigured",
+    "sessionId": "",
+    "elapsedMs": 0,
+    "level": 0,
+    "error": ""
+  },
+  "readingGroup": {
+    "mode": "read",
+    "group": 1,
+    "index": 0,
+    "task": {
+      "id": "read:看:kàn",
+      "char": "看",
+      "pinyin": "kàn",
+      "choices": [
+        "kàn",
+        "kān"
+      ],
+      "mode": "read",
+      "evalMode": 8,
+      "reference": "kan4",
+      "items": [
+        {
+          "label": "kàn",
+          "reference": "kan4",
+          "tone": 4,
+          "kind": "word"
+        }
+      ]
+    },
+    "result": null,
+    "phase": "idle",
+    "paused": false,
+    "inFlight": false,
+    "records": {}
+  },
+  "rotation": {
+    "native": "landscape",
+    "width": 872,
+    "height": 392
+  },
+  "background": {
+    "paused": true,
+    "native": {
+      "status": "unconfigured",
+      "sessionId": "",
+      "elapsedMs": 0,
+      "level": 0,
+      "error": ""
+    },
+    "audio": {
+      "status": "idle",
+      "mode": "",
+      "error": "",
+      "pitch": 0,
+      "rms": 0,
+      "confidence": 0,
+      "ageMs": 999999,
+      "command": "",
+      "commandAgeMs": 999999,
+      "commandSerial": 0,
+      "frames": 0
+    }
+  },
+  "keyboardStillPresent": {
+    "input": "zhe",
+    "stats": null
+  },
+  "systemBack": {
+    "url": "file:///android_asset/hanzi-typing/index.html",
+    "native": "portrait",
+    "bridge": false
+  }
+}

@@ -37,6 +37,16 @@
     const l=Math.cbrt(.4122214708*r+.5363325363*g+.0514459929*b),m=Math.cbrt(.2119034982*r+.6806995451*g+.1073969566*b),s=Math.cbrt(.0883024619*r+.2817188376*g+.6299787005*b);
     return {x:100+(1.9779984951*l-2.428592205*m+.4505937099*s)*290,y:92-(.0259040371*l+.7827717662*m-.808675766*s)*290,light:.2104542553*l+.793617785*m-.0040720468*s};
   }
+  // Standard continuous HSV disk is a DISPLAY of the resulting RGB only.
+  // Mixing and the acceptance threshold still use the RYB model above.
+  // Hue starts at top and runs clockwise. Saturation is radius; V uses a rail.
+  function wheelPoint(rgb){
+    if(!mapPoint(rgb))return null;
+    const [r,g,b]=rgb.map(v=>v/255),v=Math.max(r,g,b),min=Math.min(r,g,b),d=v-min;
+    let hue=0;if(d){hue=v===r?(g-b)/d+(g<b?6:0):v===g?(b-r)/d+2:(r-g)/d+4;hue*=60;}
+    const saturation=v?d/v:0,angle=hue*Math.PI/180;
+    return {x:128+Math.sin(angle)*110*saturation,y:128-Math.cos(angle)*110*saturation,hue,saturation,value:v};
+  }
   const gamutCache=new Map();
   function gamut(palette=IDS){
     const ids=IDS.filter(c=>palette.includes(c)),key=ids.join(',');if(gamutCache.has(key))return gamutCache.get(key);
@@ -89,6 +99,6 @@
     if(s.accepted&&(!s.drops.length||!s.free&&!canPaint(s.drops,LEVELS[s.level].targets[s.order].color)))return {stars:savedStars,session:null};
     return {stars:savedStars,session:{level:s.level,free:s.free,order:s.order,drops:s.drops.slice(),painted,mistakes:s.mistakes,accepted:s.accepted,finished:s.finished}};
   }
-  const api={COLORS,IDS,MAX_DROPS,LEVELS,mix,hex,distance,mapPoint,gamut,guidance,canPaint,createState,add,undo,reset,restart,current,paint,next,stars,restore};
+  const api={COLORS,IDS,MAX_DROPS,LEVELS,mix,hex,distance,mapPoint,wheelPoint,gamut,guidance,canPaint,createState,add,undo,reset,restart,current,paint,next,stars,restore};
   if(typeof module==='object'&&module.exports)module.exports=api;root.PaintMixing=api;
 })(typeof window!=='undefined'?window:globalThis);

@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src wss://soe.cloud.tencent.com; frame-src 'none'; object-src 'none'; base-uri 'none'"><meta name="theme-color" content="#fff8e9"><title>开口读拼音</title><link rel="icon" href="data:,"><link rel="stylesheet" href="speaking.css"></head><body>
+<main id="readingApp">
+<header><button id="readingBack" class="icon" aria-label="返回看字打拼音"></button><h1>开口读拼音</h1><button id="readingRotate" class="icon" aria-label="切换横屏"></button><button id="readingPause" class="icon" aria-label="暂停"></button></header>
+<div class="mode-row"><div class="mode-tabs" role="group" aria-label="练习模式"><button id="modeSpell" aria-pressed="true">拼一拼</button><button id="modeRead" aria-pressed="false">读汉字</button></div><button id="readingGroup" class="group-button">入门</button></div>
+<div id="readingProgress" aria-label="本组进度"></div>
+<div id="readingBody">
+<section class="word-scene" aria-label="当前汉字"><div id="wordRing"><strong id="readingChar">班</strong></div><img id="readingBird" src="art/reading-bird.png" alt="" aria-hidden="true"><button id="readingSpeak" class="listen" aria-label="听汉字示范"></button><div id="readingPinyin"></div></section>
+<section class="voice-scene"><div id="readingParts" aria-label="朗读顺序"></div><div id="readingResult" role="status" aria-live="polite"><span id="readingScore">—</span><strong id="readingVerdict">准备好了吗</strong></div><div class="record-controls"><button id="readingMic" class="mic" aria-label="开始朗读"></button><div id="readingMeter" role="meter" aria-label="录音音量" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><span id="readingStatus" aria-live="polite">点一下，开始读</span></div><button id="readingNext" class="primary" disabled>下一个</button><button id="readingSetup" class="setup-link" hidden>请家长配置语音评分</button></section>
+</div>
+</main>
+<div id="readingOverlay" class="overlay" hidden><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="readingDialogTitle"><h2 id="readingDialogTitle">歇一歇</h2><div id="readingDialogText"></div><div id="readingGroups"></div><button id="readingContinue" class="primary">继续</button><button id="readingExit" class="secondary">返回</button></section></div>
+<script src="../shared/feedback.js"></script><script src="../shared/hanzi-vocabulary.js"></script><script src="reading-core.js"></script><script src="reading-assessment.js"></script><script src="speaking.js"></script>
+</body></html>
