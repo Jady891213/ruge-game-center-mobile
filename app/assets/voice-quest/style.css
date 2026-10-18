@@ -22,3 +22,10 @@ body.cover #board{height:100%;width:auto;max-width:100%;margin:auto;flex-shrink:
 @media(max-height:650px) and (orientation:portrait){#commandCards{max-height:110px;min-height:72px}#commandCards span{font-size:16px;min-height:24px}#commandCards strong{font-size:17px}.compass{transform:scale(.8);transform-origin:100% 0}}
 @media(orientation:landscape){#commandCards{display:block;height:100%;max-height:none;min-height:0}#commandCards span{height:auto;max-height:none;min-height:26px}}
 body.cover .compass{display:none}
+
+/* Actual front/back/left/right frames; never rotate or mirror a side-facing creature for vertical movement. */
+.actor #player{background-image:url('art/hero-directions.png');transform:none;z-index:2}
+.actor[data-facing="up"] #carried{z-index:1;left:25%;right:auto;top:-46%;transform:none}
+.actor[data-facing="down"] #carried{left:26%;right:auto;top:20%;transform:none}
+.actor[data-facing="left"] #carried{left:-28%;right:auto;top:-15%;transform:rotate(-9deg)}
+.actor[data-facing="right"] #carried{left:auto;right:-28%;top:-15%}

@@ -1,0 +1,298 @@
+{
+  "directions": [
+    {
+      "facing": "up",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "up",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "facing": "up",
+        "image": "3.27706% 92.323%"
+      },
+      "moving": {
+        "result": {
+          "type": "move"
+        },
+        "facing": "up",
+        "pose": "2",
+        "visual": {
+          "x": 3,
+          "y": 1.7054332260740732
+        }
+      },
+      "afterForward": {
+        "level": 1,
+        "x": 3,
+        "y": 1,
+        "facing": "up",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      },
+      "back": {
+        "facing": "up",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "up",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 3
+      }
+    },
+    {
+      "facing": "down",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "down",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "facing": "down",
+        "image": "3.5468% 5.35183%"
+      },
+      "moving": {
+        "result": {
+          "type": "move"
+        },
+        "facing": "down",
+        "pose": "2",
+        "visual": {
+          "x": 3,
+          "y": 2.3343350187407417
+        }
+      },
+      "afterForward": {
+        "level": 1,
+        "x": 3,
+        "y": 3,
+        "facing": "down",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      },
+      "back": {
+        "facing": "down",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "down",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 3
+      }
+    },
+    {
+      "facing": "left",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "left",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "facing": "left",
+        "image": "4.19103% 34.0573%"
+      },
+      "moving": {
+        "result": {
+          "type": "move"
+        },
+        "facing": "left",
+        "pose": "2",
+        "visual": {
+          "x": 2.6666142059999984,
+          "y": 2
+        }
+      },
+      "afterForward": {
+        "level": 1,
+        "x": 2,
+        "y": 2,
+        "facing": "left",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      },
+      "back": {
+        "facing": "left",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "left",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 3
+      }
+    },
+    {
+      "facing": "right",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "facing": "right",
+        "image": "3.93701% 62.7723%"
+      },
+      "moving": {
+        "result": {
+          "type": "move"
+        },
+        "facing": "right",
+        "pose": "2",
+        "visual": {
+          "x": 3.295488,
+          "y": 2
+        }
+      },
+      "afterForward": {
+        "level": 1,
+        "x": 4,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      },
+      "back": {
+        "facing": "right",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 3
+      }
+    }
+  ],
+  "boundary": "Fixture places actor in a clear first-level corridor. Absolute moves use ADB touch pad taps; forward/backward use actual UI command handler via CDP, not microphone recognition accuracy.",
+  "turnInPlace": {
+    "facing": "up",
+    "s": {
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "facing": "up",
+      "jump": false,
+      "carrying": false,
+      "item": [
+        3,
+        2
+      ],
+      "won": false,
+      "paused": false,
+      "moves": 4
+    }
+  },
+  "background": {
+    "paused": true,
+    "facing": "up",
+    "carrying": true
+  },
+  "microphoneStopped": "idle",
+  "systemBackHome": true
+}

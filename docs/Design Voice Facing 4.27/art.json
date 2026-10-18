@@ -1,0 +1,142 @@
+{
+  "imageWidth": 1254,
+  "imageHeight": 1254,
+  "basis": 313.5,
+  "rows": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "rects": [
+    [
+      [
+        36,
+        54,
+        239,
+        245
+      ],
+      [
+        349,
+        54,
+        242,
+        257
+      ],
+      [
+        662,
+        54,
+        242,
+        250
+      ],
+      [
+        978,
+        54,
+        242,
+        257
+      ]
+    ],
+    [
+      [
+        43,
+        345,
+        228,
+        241
+      ],
+      [
+        360,
+        347,
+        234,
+        243
+      ],
+      [
+        674,
+        346,
+        229,
+        244
+      ],
+      [
+        990,
+        344,
+        230,
+        246
+      ]
+    ],
+    [
+      [
+        40,
+        634,
+        238,
+        244
+      ],
+      [
+        360,
+        635,
+        237,
+        249
+      ],
+      [
+        668,
+        633,
+        236,
+        249
+      ],
+      [
+        980,
+        632,
+        241,
+        252
+      ]
+    ],
+    [
+      [
+        33,
+        926,
+        247,
+        251
+      ],
+      [
+        350,
+        928,
+        244,
+        260
+      ],
+      [
+        663,
+        927,
+        244,
+        250
+      ],
+      [
+        977,
+        927,
+        244,
+        261
+      ]
+    ]
+  ],
+  "alphaThresholdForBounds": 96,
+  "sha256": "b85aaee36a3c2f7567a7841e4c48dcce9fd1cc58e36e3fa629e6085c1f730a86",
+  "rowWindows": [
+    [
+      0,
+      320
+    ],
+    [
+      320,
+      615
+    ],
+    [
+      615,
+      905
+    ],
+    [
+      905,
+      1254
+    ]
+  ],
+  "tool": "built-in image_gen",
+  "path": "app/assets/voice-quest/art/hero-directions.png",
+  "prompt": "imagegen-prompt.txt",
+  "bytes": 1243264,
+  "notes": "Generated RGBA preserved unchanged. Runtime crops use row windows to exclude neighboring poses; source rectangles do not rescale individual body parts. Four genuine directions, not rotated side view."
+}

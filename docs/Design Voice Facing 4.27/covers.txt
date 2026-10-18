@@ -1,0 +1,1 @@
+voice-quest: app/assets/shared/voice-quest.png (1200 × 720)

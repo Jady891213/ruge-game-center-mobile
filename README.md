@@ -2,7 +2,7 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十七款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，全部离线运行。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.26 / versionCode 49**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.27 / versionCode 50**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
@@ -20,6 +20,10 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## 口令角色朝向（4.27）
+
+口令小冒险使用四朝向各四帧的生成角色图集：向上看背面、向下看正面、左右有独立侧面；前进沿面朝方向，后退不转身，原地转向即时换姿态。站立、行走、跳跃、拿物品与暂停都保留朝向，原18关、口令词表和存档格式保持。素材与验收见[四向角色记录](docs/Design%20Voice%20Facing%204.27/review.md)。
 
 ## 汉字小书架（4.26）
 

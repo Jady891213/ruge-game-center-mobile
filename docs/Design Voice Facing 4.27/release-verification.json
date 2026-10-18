@@ -1,0 +1,19 @@
+{
+  "versionName": "4.27",
+  "versionCode": 50,
+  "sourceDevReleaseAssetsEqual": true,
+  "assetCount": 267,
+  "nativeLibrariesUnchanged": true,
+  "nativeLibraryCount": 2,
+  "saveRestore": {
+    "exact": true,
+    "keys": 27,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  },
+  "deviceApkSha256": "b793dd99b1027a9e72f0c58b50bd9d8f73e9410ec9854938b115bd65067dd61e",
+  "deviceApkMatches": true,
+  "debuggable": false,
+  "cdpAbsent": true,
+  "adbForwardsEmpty": true
+}

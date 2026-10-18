@@ -1,0 +1,311 @@
+{
+  "layouts": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "world": {
+        "x": 12,
+        "y": 107,
+        "width": 296,
+        "height": 242,
+        "bottom": 349
+      },
+      "playerBackground": "url(\"http://127.0.0.1:54165/voice-quest/art/hero-directions.png\")"
+    },
+    {
+      "width": 392,
+      "scrollWidth": 392,
+      "world": {
+        "x": 12,
+        "y": 133,
+        "width": 368,
+        "height": 500,
+        "bottom": 633
+      },
+      "playerBackground": "url(\"http://127.0.0.1:54165/voice-quest/art/hero-directions.png\")"
+    },
+    {
+      "width": 568,
+      "scrollWidth": 568,
+      "world": {
+        "x": 12,
+        "y": 104,
+        "width": 289,
+        "height": 206,
+        "bottom": 310
+      },
+      "playerBackground": "url(\"http://127.0.0.1:54165/voice-quest/art/hero-directions.png\")"
+    },
+    {
+      "width": 872,
+      "scrollWidth": 872,
+      "world": {
+        "x": 12,
+        "y": 104,
+        "width": 593,
+        "height": 278,
+        "bottom": 382
+      },
+      "playerBackground": "url(\"http://127.0.0.1:54165/voice-quest/art/hero-directions.png\")"
+    }
+  ],
+  "directions": [
+    {
+      "direction": "up",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "up",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        },
+        "image": "3.27706% 92.323%",
+        "facing": "up"
+      },
+      "moving": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 1,
+          "facing": "up",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "pose": "2",
+        "facing": "up",
+        "visual": {
+          "x": 3,
+          "y": 1.663764738
+        }
+      },
+      "back": {
+        "facing": "up",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "up",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      }
+    },
+    {
+      "direction": "down",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "down",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        },
+        "image": "3.5468% 5.35183%",
+        "facing": "down"
+      },
+      "moving": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 3,
+          "facing": "down",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "pose": "2",
+        "facing": "down",
+        "visual": {
+          "x": 3,
+          "y": 2.3362352619999998
+        }
+      },
+      "back": {
+        "facing": "down",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "down",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      }
+    },
+    {
+      "direction": "left",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "left",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        },
+        "image": "4.19103% 34.0573%",
+        "facing": "left"
+      },
+      "moving": {
+        "s": {
+          "level": 1,
+          "x": 2,
+          "y": 2,
+          "facing": "left",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "pose": "2",
+        "facing": "left",
+        "visual": {
+          "x": 2.664240021925926,
+          "y": 2
+        }
+      },
+      "back": {
+        "facing": "left",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "left",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      }
+    },
+    {
+      "direction": "right",
+      "start": {
+        "s": {
+          "level": 1,
+          "x": 3,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 0
+        },
+        "image": "3.93701% 62.7723%",
+        "facing": "right"
+      },
+      "moving": {
+        "s": {
+          "level": 1,
+          "x": 4,
+          "y": 2,
+          "facing": "right",
+          "jump": false,
+          "carrying": false,
+          "item": [
+            3,
+            2
+          ],
+          "won": false,
+          "paused": false,
+          "moves": 1
+        },
+        "pose": "2",
+        "facing": "right",
+        "visual": {
+          "x": 3.336235262,
+          "y": 2
+        }
+      },
+      "back": {
+        "facing": "right",
+        "backward": true
+      },
+      "end": {
+        "level": 1,
+        "x": 3,
+        "y": 2,
+        "facing": "right",
+        "jump": false,
+        "carrying": false,
+        "item": [
+          3,
+          2
+        ],
+        "won": false,
+        "paused": false,
+        "moves": 2
+      }
+    }
+  ],
+  "errors": []
+}
