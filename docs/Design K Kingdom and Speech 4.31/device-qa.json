@@ -1,0 +1,48 @@
+{
+  "home": {
+    "cards": 19,
+    "assessmentAvailable": false,
+    "configured": false
+  },
+  "englishRead": {
+    "word": "me",
+    "phase": "read",
+    "landscape": "landscape",
+    "micDisabled": false,
+    "localDemo": true
+  },
+  "englishDemo": {
+    "played": [
+      "a031b121cd2022db84.mp3"
+    ],
+    "paused": false
+  },
+  "recordingBeforePause": {
+    "status": "recording",
+    "busy": true,
+    "demoPaused": true
+  },
+  "resumed": {
+    "status": "idle",
+    "paused": true,
+    "busy": false,
+    "demoPaused": true
+  },
+  "back": {
+    "url": "file:///android_asset/index.html",
+    "orientation": "portrait",
+    "assessmentAvailable": false
+  },
+  "chineseDemo": {
+    "played": [
+      "760f64ef268b252382.mp3"
+    ],
+    "paused": false,
+    "task": "spell:班:bān"
+  },
+  "chinesePause": {
+    "paused": true,
+    "demoPaused": true,
+    "status": "idle"
+  }
+}

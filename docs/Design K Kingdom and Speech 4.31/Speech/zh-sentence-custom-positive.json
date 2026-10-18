@@ -1,0 +1,44 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 92.81452178955078,
+    "PronAccuracy": 92.81452178955078,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.947303831577301,
+    "Words": [
+      {
+        "Word": "啊",
+        "ReferenceWord": "",
+        "PronAccuracy": 92.81452178955078,
+        "MatchTag": 0,
+        "MemBeginTime": 90,
+        "MemEndTime": 600,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 89.77172088623047,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "",
+            "PronAccuracy": 94.33592987060547,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "啊{::pron{ban1}}",
+  "mode": 1,
+  "syntheticText": "班",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

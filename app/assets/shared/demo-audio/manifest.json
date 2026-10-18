@@ -1,0 +1,1926 @@
+{
+  "schema": 1,
+  "provider": "MiniMax",
+  "model": "speech-2.8-hd",
+  "clips": {
+    "en:apple": {
+      "key": "en:apple",
+      "text": "apple",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "apple",
+      "file": "b7a47eabc0611a3727.mp3",
+      "sha256": "1d06861cdd0bf36ff67723d2427bf5fff7a0587b198139e52d3eb2082380db48",
+      "requestSha256": "f2065d6fb48eb3b16dc8445e89ae0d44453ed11f45e5aee05f131f985b5959e3",
+      "duration": 0.952,
+      "metadata": {
+        "audio_length": 1008,
+        "audio_sample_rate": 32000,
+        "audio_size": 17844,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "spell:班:bān": {
+      "key": "spell:班:bān",
+      "text": "(bo1)<#0.45#>(an1)<#0.45#>(ban1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "班 bān",
+      "file": "760f64ef268b252382.mp3",
+      "sha256": "0f0474a30b8c55f3a545cecd1212dd29968c845cc5aaff66b2ea54e38f9e38ae",
+      "requestSha256": "3bd903def2a5fd9b88f16b844a95528d60dad0320934ee46ce83748e51ef4b0c",
+      "duration": 2.885,
+      "metadata": {
+        "audio_length": 2952,
+        "audio_sample_rate": 32000,
+        "audio_size": 48948,
+        "audio_format": "mp3",
+        "usage_characters": 32
+      }
+    },
+    "spell:山:shān": {
+      "key": "spell:山:shān",
+      "text": "(shi1)<#0.45#>(an1)<#0.45#>(shan1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "山 shān",
+      "file": "c1382a72f77082c56a.mp3",
+      "sha256": "2344b9e844b1100c940399625b52f84da9214f2f9f92bfa944e9e1a4aba38f4a",
+      "requestSha256": "c6cc96a1522a551d3c0e263a24c635a2e23b8dfb2e61acd02e854673579875f8",
+      "duration": 3.292,
+      "metadata": {
+        "audio_length": 3348,
+        "audio_sample_rate": 32000,
+        "audio_size": 55284,
+        "audio_format": "mp3",
+        "usage_characters": 34
+      }
+    },
+    "en:banana": {
+      "key": "en:banana",
+      "text": "banana",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "banana",
+      "file": "61234f236e38412323.mp3",
+      "sha256": "05a4543cc2fdb89149dcc0d42842a411b7b92263ecd445af7b6ecf6885f97881",
+      "requestSha256": "a55548a0512da93ae31c16026895f9a5ab4953b27a5c9446cf5fe5fd4817d3da",
+      "duration": 1.196,
+      "metadata": {
+        "audio_length": 1260,
+        "audio_sample_rate": 32000,
+        "audio_size": 21876,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "en:bed": {
+      "key": "en:bed",
+      "text": "bed",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "bed",
+      "file": "cc50f1da04c0836557.mp3",
+      "sha256": "2dc5b5d8ee277829b6c38483766589ddd9eac4806967934e649a5ea47f6b327b",
+      "requestSha256": "fe81f0e8315ecbaf8c0419a9477c43fe4d2fa2ebb23b881128711614200315f7",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 3
+      }
+    },
+    "en:computer": {
+      "key": "en:computer",
+      "text": "computer",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "computer",
+      "file": "b816ac44494a4bbbd8.mp3",
+      "sha256": "e0b128276cf764b64e8143d29a94caafd72b5af408e211480c5ec2a320084689",
+      "requestSha256": "c9b448acccc261f65607e34e493da97a7b7f33f17e7585b4185632cbfce75fb1",
+      "duration": 1.103,
+      "metadata": {
+        "audio_length": 1152,
+        "audio_sample_rate": 32000,
+        "audio_size": 20148,
+        "audio_format": "mp3",
+        "usage_characters": 8
+      }
+    },
+    "en:dad": {
+      "key": "en:dad",
+      "text": "dad",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "dad",
+      "file": "ef55424555f17f7568.mp3",
+      "sha256": "fd048d1613a8da4f717ea1665db2c1b44a6eac658d08763dd86483a07e94ccfe",
+      "requestSha256": "612334574c85f8be2a7f7c7ff890bc1ffcb9c5eae8a988e993b55e4fdb47c11c",
+      "duration": 1.1,
+      "metadata": {
+        "audio_length": 1152,
+        "audio_sample_rate": 32000,
+        "audio_size": 20148,
+        "audio_format": "mp3",
+        "usage_characters": 3
+      }
+    },
+    "en:mom": {
+      "key": "en:mom",
+      "text": "mom",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "mom",
+      "file": "900e2921f6b62abb2d.mp3",
+      "sha256": "004b708d3eb49f8b400617271847034f474fc12d5e30a228780a87f672f520a7",
+      "requestSha256": "c8d81e00f08f835545ed8a68960af62b3ca3e7bd6ba5cacc0ab9c2c42e93559a",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 3
+      }
+    },
+    "en:brother": {
+      "key": "en:brother",
+      "text": "brother",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "brother",
+      "file": "4d4cc0f74d92745762.mp3",
+      "sha256": "e0362ca180eec8ff4a8f9c45887280c1d52f834d0c9f1a37b5a74eee163fbc3a",
+      "requestSha256": "386f0858f827827068bbad120f02a068e8305d7df58a14cbd85bc9907c5f496b",
+      "duration": 1.045,
+      "metadata": {
+        "audio_length": 1116,
+        "audio_sample_rate": 32000,
+        "audio_size": 19572,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "en:me": {
+      "key": "en:me",
+      "text": "me",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "me",
+      "file": "a031b121cd2022db84.mp3",
+      "sha256": "47c1bbdadf8efc64968402afbb1b2fd587ad0251e78541b30f705874da07742d",
+      "requestSha256": "962b3af053df50decf4831f2bac21a9310e12da0ac21b9c7723a742d759ea72d",
+      "duration": 0.952,
+      "metadata": {
+        "audio_length": 1008,
+        "audio_sample_rate": 32000,
+        "audio_size": 17844,
+        "audio_format": "mp3",
+        "usage_characters": 2
+      }
+    },
+    "en:sister": {
+      "key": "en:sister",
+      "text": "sister",
+      "voice": "English_expressive_narrator",
+      "language": "English",
+      "kind": "word",
+      "label": "sister",
+      "file": "471612ba113e3f2f5b.mp3",
+      "sha256": "eba055122b221a5ec601d9b39cfc70e40ad9178f2dc5025c82e231a44eda998f",
+      "requestSha256": "713271ac2c87cbd657fbd578b11eeb386b65e391be82d89a421fce3a202c7f39",
+      "duration": 1.149,
+      "metadata": {
+        "audio_length": 1188,
+        "audio_sample_rate": 32000,
+        "audio_size": 20724,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:这:zhè": {
+      "key": "read:这:zhè",
+      "text": "(zhe4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "这 zhè",
+      "file": "5bf017cf7fb67da490.mp3",
+      "sha256": "0ad15514aa8488aedd2802974301721851922aa6cdfe991161250346a9d0540e",
+      "requestSha256": "b19cb096fb6d9bf668dc461c4033c56debbc76bdba1359ee684df1fad9e1df3a",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:那:nà": {
+      "key": "read:那:nà",
+      "text": "(na4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "那 nà",
+      "file": "e87b4dfb3c9ee3d264.mp3",
+      "sha256": "addf26229542f88589b88e099494b4969cec38d9f3f2431c639885db1966ba7c",
+      "requestSha256": "f9652312282d03721c7c2fe217f45ffb49620f7d6fd2d7cb0d5d09af630d71a3",
+      "duration": 1.254,
+      "metadata": {
+        "audio_length": 1296,
+        "audio_sample_rate": 32000,
+        "audio_size": 22452,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:说:shuō": {
+      "key": "read:说:shuō",
+      "text": "(shuo1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "说 shuō",
+      "file": "e61dae8fb4349cb423.mp3",
+      "sha256": "ed7cef2d924ca9aed03f0afbc2c3df9760392713953c95fe806b4181996d4792",
+      "requestSha256": "250221f8b71a4e0fcbac18da9ba5dfb194460a61dd1b4119086f231df98a91bb",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:说:shuì": {
+      "key": "read:说:shuì",
+      "text": "(shui4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "说 shuì",
+      "file": "d1d2aa4f3d7eeb01a4.mp3",
+      "sha256": "275688e0a91724ab6b8c03c96a0eb257530890c1aebdde3a76462548bc74e9a4",
+      "requestSha256": "44bc860580c83e66d8cc19917c10df88a7db8ecbf7b5986bc46d965103b5264e",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:着:zhe": {
+      "key": "read:着:zhe",
+      "text": "(zhe5)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "着 zhe",
+      "file": "4f9e2c6c8bf7ec3cc3.mp3",
+      "sha256": "8868a880a35fdb65a7bf056c8db554ab604074b7df1e1c965a6bdb0d15eb0942",
+      "requestSha256": "2871c8fb20a82a717168a7b9dcc98a071cab676bfb25d20580d7061b5568e1dd",
+      "duration": 1.045,
+      "metadata": {
+        "audio_length": 1116,
+        "audio_sample_rate": 32000,
+        "audio_size": 19572,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:着:zháo": {
+      "key": "read:着:zháo",
+      "text": "(zhao2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "着 zháo",
+      "file": "5ecb3140766f504f56.mp3",
+      "sha256": "3df050c880f2320bbfcda5f234195f97775af1b57b6584b1e38c82fa1e5496ee",
+      "requestSha256": "19589381bfab51cf7a8ad6dfb8171e30034e8966813f6fa10feb0807a5c1d4cd",
+      "duration": 0.801,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:着:zhuó": {
+      "key": "read:着:zhuó",
+      "text": "(zhuo2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "着 zhuó",
+      "file": "8447e9a11b22cf0db4.mp3",
+      "sha256": "0a034b9d0d1b5019786f7db4c318d77aff5884596b3324febfdc50d3513d1654",
+      "requestSha256": "4e0f75544f6d8aa96f597de7a3e30b478886d51ad6d10202c50dcb146c20f524",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:着:zhāo": {
+      "key": "read:着:zhāo",
+      "text": "(zhao1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "着 zhāo",
+      "file": "4dc58829c1170c2bf7.mp3",
+      "sha256": "11cba66b279141ce470eb48f69bae9615ff3a4f3ed8a1cfd21aa4454fade07d8",
+      "requestSha256": "e91abdac0cb3fac6065197318eb640108944acd402f3049c6644215c97bade45",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:是:shì": {
+      "key": "read:是:shì",
+      "text": "(shi4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "是 shì",
+      "file": "72686a4ea408bd59ea.mp3",
+      "sha256": "0280b245e2500bb99573bc6f7fae68d57eddf4aa4febd5d1f688411d17f9ceae",
+      "requestSha256": "c5e8205bae36b31bbfaff905e41dbf0a9f18bfcfd6e4ca9a4df564f3ac2cd490",
+      "duration": 0.801,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:的:de": {
+      "key": "read:的:de",
+      "text": "(de5)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "的 de",
+      "file": "920d2b88f1a4e7824f.mp3",
+      "sha256": "468fc504b510508c3d73c7e04326795f59bfceb1eb8e8042dfbe727928c3031a",
+      "requestSha256": "ed7611d2f571a8a156bd3e3f8d4f6590f197b5146209d871bb5e61eea50a6c18",
+      "duration": 0.697,
+      "metadata": {
+        "audio_length": 756,
+        "audio_sample_rate": 32000,
+        "audio_size": 13812,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:只:zhǐ": {
+      "key": "read:只:zhǐ",
+      "text": "(zhi3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "只 zhǐ",
+      "file": "7847d7f50810cdf69c.mp3",
+      "sha256": "d889f053ca95727a6910c596988f8412b538524e9b2007599b2fc34f8de4d197",
+      "requestSha256": "ae26f0dde70ad51663ad56bd4d5ef4a2b52a9c812cd4076813b1522ccc7c6991",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:只:zhī": {
+      "key": "read:只:zhī",
+      "text": "(zhi1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "只 zhī",
+      "file": "bd358dd432444b6edf.mp3",
+      "sha256": "ade415438caf9f90274c8c79a68b4fcb462800396df68fa84cc4886edf9b573b",
+      "requestSha256": "9bf1d72765c81e6c926b21c4e3aaf04eeba6d8215a3c0d446720e76eb1d3728d",
+      "duration": 0.697,
+      "metadata": {
+        "audio_length": 756,
+        "audio_sample_rate": 32000,
+        "audio_size": 13812,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:个:gè": {
+      "key": "read:个:gè",
+      "text": "(ge4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "个 gè",
+      "file": "7cb90d219b2b6a0fa4.mp3",
+      "sha256": "27cb213bb0093cf1aa28016425ca3c4a04d05a8bdc377cb7f4f760ae983cd67a",
+      "requestSha256": "2436404da6af8a118ba82a39c5238b49248b8e24f0e2b59268a4d5a38313870e",
+      "duration": 0.697,
+      "metadata": {
+        "audio_length": 756,
+        "audio_sample_rate": 32000,
+        "audio_size": 13812,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:成:chéng": {
+      "key": "read:成:chéng",
+      "text": "(cheng2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "成 chéng",
+      "file": "4658c1037567928073.mp3",
+      "sha256": "bf1ca8be8d654147490946bcd9ac8091375fcd6617b5c5e402e66e9dc7aaabfb",
+      "requestSha256": "ef83998eaf82b193d3d18b688984453f7aa7a2872da2eb464a483bebbe5c04e6",
+      "duration": 0.894,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 8
+      }
+    },
+    "read:就:jiù": {
+      "key": "read:就:jiù",
+      "text": "(jiu4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "就 jiù",
+      "file": "98dcc0c62af290e17c.mp3",
+      "sha256": "73ca730835065de61be34b782d79ccd86ce251395f0c5a12fc97e1e5ef3ea91a",
+      "requestSha256": "597be2f3cc928a828d96a935044844275181a99f4206492372d85642cd912e73",
+      "duration": 0.998,
+      "metadata": {
+        "audio_length": 1044,
+        "audio_sample_rate": 32000,
+        "audio_size": 18420,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:看:kàn": {
+      "key": "read:看:kàn",
+      "text": "(kan4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "看 kàn",
+      "file": "42ca772543216f9aa1.mp3",
+      "sha256": "2a0cf8a76a1c4972663ecfd961c937a3423ac22e1869956ec16fe5bdab05edab",
+      "requestSha256": "12e756cc0e13a29af90d13ce7a089d5dacf9b071b52b4f98d2de3eb67c45ee02",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:看:kān": {
+      "key": "read:看:kān",
+      "text": "(kan1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "看 kān",
+      "file": "feb5ed061fa8f390b7.mp3",
+      "sha256": "471272448a17cdc09f80bd06883cda4064d3a439e5a1be1961681b1739c1c586",
+      "requestSha256": "07908ca74cb87b1b2c8d0fdecfa1371f267c39fb8d694ff002e45a7ecf40d346",
+      "duration": 1.045,
+      "metadata": {
+        "audio_length": 1116,
+        "audio_sample_rate": 32000,
+        "audio_size": 19572,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:为:wèi": {
+      "key": "read:为:wèi",
+      "text": "(wei4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "为 wèi",
+      "file": "3b82efec080e37238b.mp3",
+      "sha256": "f1b79d5385799cfefd9565f714d56b9a1f290ea84496f892960588cf90a96656",
+      "requestSha256": "d2d55ec57a98337f64ad5533ce4fd5119a4b651be0b57615aeb67ed7349bd94f",
+      "duration": 0.801,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:为:wéi": {
+      "key": "read:为:wéi",
+      "text": "(wei2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "为 wéi",
+      "file": "a44567598fc59f36e0.mp3",
+      "sha256": "a5871c7093d0960b4b687956b65eed716ed156859c5161376883788ff4ced317",
+      "requestSha256": "ee915c4e56ccd2eb75933d0f5a6be9999e9ecda91f4253813dcb5dd00a87288c",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:什:shén": {
+      "key": "read:什:shén",
+      "text": "(shen2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "什 shén",
+      "file": "70ccfda2e29199f838.mp3",
+      "sha256": "1256dfbf0ddab5756b9fa980e77896a2585230f833489ff3df85c764b2b4450d",
+      "requestSha256": "69b71ed1aec1e4bc27af839edfb5bd43adbb6c6fb9ef79bd5d4e99bad8ae4de0",
+      "duration": 1.045,
+      "metadata": {
+        "audio_length": 1116,
+        "audio_sample_rate": 32000,
+        "audio_size": 19572,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:么:me": {
+      "key": "read:么:me",
+      "text": "(me5)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "么 me",
+      "file": "cdf940234c67f6b9ca.mp3",
+      "sha256": "7593f4f661a4b760e9fb1059e8ee911591a77eaa2d6a21476599a0f2e18af100",
+      "requestSha256": "d58b7da531026d60cd888205decf21c1c9cc2b3a750d38d3961182a73f5addac",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:我:wǒ": {
+      "key": "read:我:wǒ",
+      "text": "(wo3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "我 wǒ",
+      "file": "7bf3ba7025a8563c2a.mp3",
+      "sha256": "7e3e7b71602c79e0cfc8771fbcbd715b3a856034f0ae50149988c5d3749d7208",
+      "requestSha256": "1f56e97cbca4f8911b65b29fdb1aeca640f9edf548eee7a8ba4679ca1403f62c",
+      "duration": 1.049,
+      "metadata": {
+        "audio_length": 1116,
+        "audio_sample_rate": 32000,
+        "audio_size": 19572,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:和:hé": {
+      "key": "read:和:hé",
+      "text": "(he2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "和 hé",
+      "file": "9cf3cb5d1feb506ff6.mp3",
+      "sha256": "6a659ddf0d34d2df17390df3d6e96a1f2f794f597150152d8908b56a4d375e44",
+      "requestSha256": "b12b001d47d0e1c8607bf92034d39d739427c6bba3609fa5abf47ae16d89de7d",
+      "duration": 0.697,
+      "metadata": {
+        "audio_length": 756,
+        "audio_sample_rate": 32000,
+        "audio_size": 13812,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:和:hè": {
+      "key": "read:和:hè",
+      "text": "(he4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "和 hè",
+      "file": "8efd47e95f137cd680.mp3",
+      "sha256": "d0336cdee43f9bd94e0533e46c0f78a34e528333960b2427ec63fad846234839",
+      "requestSha256": "227330fd0930c1927df69219940d55ed0f8d3beab4efe6dfa0ca887d5421a7ed",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:和:huó": {
+      "key": "read:和:huó",
+      "text": "(huo2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "和 huó",
+      "file": "e4e4e7760da167a0ad.mp3",
+      "sha256": "da1b7b5038fdb9defdac3aaa44a7e77776e65cc3dd46fa871a5c071888a6e536",
+      "requestSha256": "9878805e0475bb54b50ef8d88706e6a4da5e933566998df44366852b651980e5",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:和:huò": {
+      "key": "read:和:huò",
+      "text": "(huo4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "和 huò",
+      "file": "1ee45d000d69b34928.mp3",
+      "sha256": "c70699cfcb23b0d417c6c54289be7d9baf4deff7ea58480c57ae98fa38d552f9",
+      "requestSha256": "79cd9df3e5f50cd0909a8577d1b073f67103a0b32628e744384dde568d94437e",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:和:hú": {
+      "key": "read:和:hú",
+      "text": "(hu2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "和 hú",
+      "file": "e19d8cf8196a0ce8c1.mp3",
+      "sha256": "ad0ab2370d0d6a22a3646a9757419d5bbbcef25820f5364e671edeee6cf6e47e",
+      "requestSha256": "336a131ccb766e37e777d680ce45275503dace0f435b7240a80d181a9424d777",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:你:nǐ": {
+      "key": "read:你:nǐ",
+      "text": "(ni3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "你 nǐ",
+      "file": "52c0e4b323c9296a5c.mp3",
+      "sha256": "4ccf354ba4e327cc710e2aa6ee33a0b9bcbadb0d47b0e9a30c410571a329ad78",
+      "requestSha256": "5ad7043535e178af325ce0ae6bd0925d2cb551940858dc46c2767ce0eeed1f46",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:他:tā": {
+      "key": "read:他:tā",
+      "text": "(ta1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "他 tā",
+      "file": "3f6f5b4eac5cb66c11.mp3",
+      "sha256": "5fee550384dc415351128cf6abb90a3d4a6c7c1aeef5c62e2f650949fcc8851d",
+      "requestSha256": "44ee977ac46f9348b2f23a17f4822b2f61313859e5e6ab3245a04c1372003ef7",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:哪:nǎ": {
+      "key": "read:哪:nǎ",
+      "text": "(na3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "哪 nǎ",
+      "file": "c2fab9ca28529dd992.mp3",
+      "sha256": "e8e922ca0c1ea3ed624ef1594e7ac87a894d9b41cee52b6084529e89ff5604cc",
+      "requestSha256": "73ada4a7b2c7583886260f597053715520020af83a677818780623d4332d4777",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:哪:něi": {
+      "key": "read:哪:něi",
+      "text": "(nei3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "哪 něi",
+      "file": "421f540a1306c46e37.mp3",
+      "sha256": "e97480540eb8affecf2ad578324713c15b17058219cfdb0739fb5d892c5d4c36",
+      "requestSha256": "cee467ba5f9d24f079f32d46ea7a78e5391253fd9d1364bffd03dc5190cdefc5",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:里:lǐ": {
+      "key": "read:里:lǐ",
+      "text": "(li3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "里 lǐ",
+      "file": "851221412f778163f1.mp3",
+      "sha256": "15ef6f93e1466f2f1fb89ff197c5067bfc31067d872bc59daffdfb1c6695fa26",
+      "requestSha256": "e21bb11692eaa815a0a6df8cae9829796eac291dde63e5046e060c3b4c4afca6",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:来:lái": {
+      "key": "read:来:lái",
+      "text": "(lai2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "来 lái",
+      "file": "614a7f9fc41a4d6f47.mp3",
+      "sha256": "1663273fadd282afd614643d7ee62982fa0b162f0150c7c9a400f9fe555e04e1",
+      "requestSha256": "354eecc61103f38c188b82f3e312399b3d17f4bfccc639dc90f1044c46e8338c",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:去:qù": {
+      "key": "read:去:qù",
+      "text": "(qu4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "去 qù",
+      "file": "ccbbdd0eee85f210bf.mp3",
+      "sha256": "b776493b53cc926fbe23fd1ba0ce08dff1f048adee223b0b7f5b557014b929ec",
+      "requestSha256": "5c09e2539a4459d3a8dc0829c79507d4ad48e0ac391bb9e16f9e3300fd2ca1b4",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:又:yòu": {
+      "key": "read:又:yòu",
+      "text": "(you4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "又 yòu",
+      "file": "98890bafb60cdec652.mp3",
+      "sha256": "4c076b9f00a814a41c5737f3e577bac83cd758c009c91e644fb09e48fb9d9b12",
+      "requestSha256": "48b6e28ce1c896670de71f1f3ce07eeefd8ed2c132a9507de89c706dd5415ec7",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:要:yào": {
+      "key": "read:要:yào",
+      "text": "(yao4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "要 yào",
+      "file": "b1187660f360305bb2.mp3",
+      "sha256": "6dde7b0666e0137ddaf1ef26aa6524cac8f2156d3ed882740fe26ac26f38e066",
+      "requestSha256": "1d0996fe5be17510453085d471b57dba8b3d48397a8e3bd253ef04da3b1446a5",
+      "duration": 0.8,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:还:hái": {
+      "key": "read:还:hái",
+      "text": "(hai2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "还 hái",
+      "file": "c7c27c5c1ceb667fd9.mp3",
+      "sha256": "95ae8b65eeb4940a2df5de1166123e83d30e3b0a1f6d88800a6c55a70f97f6fa",
+      "requestSha256": "6d66d4b452adb92961df9f777314e8298bb29b8c9145a057cd2223bc8ac6856c",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:还:huán": {
+      "key": "read:还:huán",
+      "text": "(huan2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "还 huán",
+      "file": "4bfd7697790a87459a.mp3",
+      "sha256": "20b31dbc6224319a75339f3ff9c9326e45740278ccba3b7c59f5bfb2401b5594",
+      "requestSha256": "61e5e844ad90f13d3a8d107c6a0f220c089471d5b2316747196ee1f6ae366232",
+      "duration": 0.952,
+      "metadata": {
+        "audio_length": 1008,
+        "audio_sample_rate": 32000,
+        "audio_size": 17844,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:能:néng": {
+      "key": "read:能:néng",
+      "text": "(neng2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "能 néng",
+      "file": "618493de92b9990bd5.mp3",
+      "sha256": "b1c75162ea330ff76173437bca9ff241ed359c21d74125ab4edf57dde0083ab2",
+      "requestSha256": "fbac0e169fbd82aab0d449684edd237515852fe0ac1295a50bfa56084ac93d8c",
+      "duration": 0.801,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:起:qǐ": {
+      "key": "read:起:qǐ",
+      "text": "(qi3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "起 qǐ",
+      "file": "0cea1f2fa69fc74e63.mp3",
+      "sha256": "240b2124499fc25bf88b89a93772dde6064906cfa7dac164e4b5ebc709eee2ec",
+      "requestSha256": "4e7e6f169f429e02d88d58865a3e50a0b17206117428d8b1fcdd977d8c06bcdc",
+      "duration": 0.998,
+      "metadata": {
+        "audio_length": 1044,
+        "audio_sample_rate": 32000,
+        "audio_size": 18420,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:儿:ér": {
+      "key": "read:儿:ér",
+      "text": "(er2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "儿 ér",
+      "file": "bd6cc0c94eadf8ad46.mp3",
+      "sha256": "9dc3c0c111b372412bb8b0075b8032a8f3ddef2adb35cd554916c8a7a0403386",
+      "requestSha256": "706a2c3e84f80b00f7e889e86d1d3612988a25b433ce0847dc4acefd831dcd8c",
+      "duration": 0.998,
+      "metadata": {
+        "audio_length": 1044,
+        "audio_sample_rate": 32000,
+        "audio_size": 18420,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:子:zǐ": {
+      "key": "read:子:zǐ",
+      "text": "(zi3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "子 zǐ",
+      "file": "57f01eceafa1b67f65.mp3",
+      "sha256": "fa9b5d5b224c866ac4562aa9c53d379a80654e850e8b833b349467966f949a4d",
+      "requestSha256": "c200a947362a3ce9c349616361259f122c904857f320e4f40d0cda889b085767",
+      "duration": 0.952,
+      "metadata": {
+        "audio_length": 1008,
+        "audio_sample_rate": 32000,
+        "audio_size": 17844,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:也:yě": {
+      "key": "read:也:yě",
+      "text": "(ye3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "也 yě",
+      "file": "5f23d8b8d0f65fdbb6.mp3",
+      "sha256": "1f1370db8ec0722f4da21c48f2085bfdd1e6ffcb3c8c22c526d417b6419772cd",
+      "requestSha256": "5b209c30486a762870124609b5b7e8c49f6c87a4bcd7b482e949a4c5ee0d81a2",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:都:dōu": {
+      "key": "read:都:dōu",
+      "text": "(dou1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "都 dōu",
+      "file": "054b20729d69ae346b.mp3",
+      "sha256": "9637c33d40dceb3a5b70b404d5c86ac535e99cde47156e58fcd9821747874a59",
+      "requestSha256": "77b987677bbd397bc40335cac5f001f9125fe15654675081fcda6f7962b78619",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:都:dū": {
+      "key": "read:都:dū",
+      "text": "(du1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "都 dū",
+      "file": "c791729a0ef90c7e14.mp3",
+      "sha256": "bb50c9be70b3bbb8783f07675f75b0718c39bea09e03d38622268176693d60da",
+      "requestSha256": "56d10ae0002b0ca746264489df2ee4d8c8034fdd561315fd66e0e1effccc09a7",
+      "duration": 0.801,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:没:méi": {
+      "key": "read:没:méi",
+      "text": "(mei2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "没 méi",
+      "file": "09ad3e8eaf805d63f0.mp3",
+      "sha256": "797e1ca12d77beb9146fefc9706fe0744a848745c25c7f8680359f51ec3e3f2f",
+      "requestSha256": "0fe05a85a448ec64d8a5fef2b5d4d060856f00f1df1bcfd9708ea8ee3d484e13",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:没:mò": {
+      "key": "read:没:mò",
+      "text": "(mo4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "没 mò",
+      "file": "6e150400c51bd8ca70.mp3",
+      "sha256": "18286267cd6f7fcfcf9a74fb3e394cee32e622b7bb4a106b75f66e8b2fadc7ff",
+      "requestSha256": "567ce8a343dc8e480e2fc7c3cc4080337762206c775f2084be80e3c4f817ce5b",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:不:bù": {
+      "key": "read:不:bù",
+      "text": "(bu4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "不 bù",
+      "file": "196ec4387a7bd5797b.mp3",
+      "sha256": "331644a4b099c32b0a6f9bb6aaecdb5e336e1cf91cb07fbd95cf1be77f9c83d4",
+      "requestSha256": "af899e8cf016c30ab82ff00905af2116d833097951450817dda025b029b635b0",
+      "duration": 0.65,
+      "metadata": {
+        "audio_length": 720,
+        "audio_sample_rate": 32000,
+        "audio_size": 13236,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:可:kě": {
+      "key": "read:可:kě",
+      "text": "(ke3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "可 kě",
+      "file": "4da8b79ec79feea40e.mp3",
+      "sha256": "da2d3ef74e14c22bb70f04a211e6d9e31800a2d02a89eaf3085a1ff30df1b752",
+      "requestSha256": "6128f706c364d0215d17dd72127c471018613dc0cf476c573962cc1c02e1e468",
+      "duration": 0.894,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:以:yǐ": {
+      "key": "read:以:yǐ",
+      "text": "(yi3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "以 yǐ",
+      "file": "3c2f01a89d8b80064c.mp3",
+      "sha256": "4012ec7450d50d0e0874a614bcbc1d94bbc82c222f85369be742057da1e981a4",
+      "requestSha256": "63a7380f18370ac42a5fbc3a0d9f3ba03471fa394940323b1690651277d5e431",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:大:dà": {
+      "key": "read:大:dà",
+      "text": "(da4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "大 dà",
+      "file": "0bc20742e91a7d627c.mp3",
+      "sha256": "ba85c7efabd1bd8e4120dd1fe1b3afa5299bd6ea2c0e55757dfc04eb7951859a",
+      "requestSha256": "4cf5a92a169a5d1952eca8dc460f7c3e2f7e509b6eaab6a79687f6be9e0b01a5",
+      "duration": 0.592,
+      "metadata": {
+        "audio_length": 648,
+        "audio_sample_rate": 32000,
+        "audio_size": 12084,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:小:xiǎo": {
+      "key": "read:小:xiǎo",
+      "text": "(xiao3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "小 xiǎo",
+      "file": "0cd58e4d3c34c9a54b.mp3",
+      "sha256": "df2836eb8cbd93594f45b1cebc6da8c8362cd0f7d059887e5c8b3e66a791b374",
+      "requestSha256": "ab173d3b09242fc75c1e8f7679d780eeaa3f1a282bd5f26af8e19ef8a895b4d4",
+      "duration": 0.998,
+      "metadata": {
+        "audio_length": 1044,
+        "audio_sample_rate": 32000,
+        "audio_size": 18420,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:少:shǎo": {
+      "key": "read:少:shǎo",
+      "text": "(shao3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "少 shǎo",
+      "file": "cb578d433e27bf22b0.mp3",
+      "sha256": "1b7279b4ee9ebb48858ce8c70f210ba1a680862c4e4b07c9010107442c6c2c3d",
+      "requestSha256": "850287cbcc9c5787bcf80af6b5452c3fd567f24cc210f8c4667ef183e2ecfeae",
+      "duration": 0.894,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:少:shào": {
+      "key": "read:少:shào",
+      "text": "(shao4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "少 shào",
+      "file": "46bd89b0fdc5c29f9c.mp3",
+      "sha256": "4f1a554bfee7c190bdc27047f63f6dac965801bf5eb80e6cdd5d826485ef20ae",
+      "requestSha256": "60b360d1209790428a474d18c2b9ef0eed4166f5e67e824e3663c544b610b3aa",
+      "duration": 0.894,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:多:duō": {
+      "key": "read:多:duō",
+      "text": "(duo1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "多 duō",
+      "file": "64b86fb75439796e6f.mp3",
+      "sha256": "a9b274388589ec789b1fdf9fda3d63ebb837162351ef8f177bb00d86b4880804",
+      "requestSha256": "cfbb450b01c89bffa7969e80ca06c5b795639526a4f957b2fd82e0452ba22092",
+      "duration": 0.592,
+      "metadata": {
+        "audio_length": 648,
+        "audio_sample_rate": 32000,
+        "audio_size": 12084,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:过:guò": {
+      "key": "read:过:guò",
+      "text": "(guo4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "过 guò",
+      "file": "2e12d8fc49db278f1d.mp3",
+      "sha256": "c7c974d795262c5d40a2dec5be7a4849f627867f948929e5ff4c5e1d40c8563a",
+      "requestSha256": "afe82c258275e6b326f6ebe501954176fbb85341e528cd9119a0a3ceb9d8c829",
+      "duration": 0.65,
+      "metadata": {
+        "audio_length": 720,
+        "audio_sample_rate": 32000,
+        "audio_size": 13236,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:一:yī": {
+      "key": "read:一:yī",
+      "text": "(yi1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "一 yī",
+      "file": "6037a4ea414afbb1de.mp3",
+      "sha256": "0aec2b1f78e89cf506a4dc4ff687c0558b030697dd0bf99e905303929038c6d4",
+      "requestSha256": "63356d12274fa1a7eeffa09cfe9ababc5cf2e06cb09fb54d5866d199da646f02",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:二:èr": {
+      "key": "read:二:èr",
+      "text": "(er4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "二 èr",
+      "file": "60c9f5f02bb2439382.mp3",
+      "sha256": "3b585ea132824f337160a3ef133c98ed71d1c3743caa57b0122f0e2b75bae32f",
+      "requestSha256": "5d5362bea804fc0326377ebf0fa1d08b0b7656b94fa0c6c9711cffd70ec8e09b",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:三:sān": {
+      "key": "read:三:sān",
+      "text": "(san1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "三 sān",
+      "file": "3950a752bd823d3b8d.mp3",
+      "sha256": "f0e3162548061b6875031ab64ce895a71bc20d598ea164b64d7979ed2f1d3f00",
+      "requestSha256": "517377406e9e95f747161a25a261d83d8183a22824eacc5c5a8e935ae48b8db1",
+      "duration": 0.894,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:方:fāng": {
+      "key": "read:方:fāng",
+      "text": "(fang1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "方 fāng",
+      "file": "164be29ad9d120c020.mp3",
+      "sha256": "9c6f969d5c9e6d7b0a77da20dacda325346f2ce2a4b6a258c7ae6b9922e2e74e",
+      "requestSha256": "99b362d287910101020134963b505fbfce6bcc4cc5bd1e17247f04efd871007f",
+      "duration": 0.697,
+      "metadata": {
+        "audio_length": 756,
+        "audio_sample_rate": 32000,
+        "audio_size": 13812,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:对:duì": {
+      "key": "read:对:duì",
+      "text": "(dui4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "对 duì",
+      "file": "eafd7b8c83b53e83c5.mp3",
+      "sha256": "437d9f91be91897f443bc02b83e15266944c6f78784e90a06fdff79fdbfe2c00",
+      "requestSha256": "ec931ec25ef0312164220f453bcb47a008699df8102cfbabca011e171ed0c504",
+      "duration": 0.65,
+      "metadata": {
+        "audio_length": 720,
+        "audio_sample_rate": 32000,
+        "audio_size": 13236,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:面:miàn": {
+      "key": "read:面:miàn",
+      "text": "(mian4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "面 miàn",
+      "file": "05c7dc818135b0b21c.mp3",
+      "sha256": "11c0d83420a7697bcbda06a7c6b80febf1b25227be9e0adb0d87cea6e890c6cc",
+      "requestSha256": "cc7b3ae9221a7684564260e3f5da4005e0e1f6465139d215808246ab8fb580fb",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:到:dào": {
+      "key": "read:到:dào",
+      "text": "(dao4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "到 dào",
+      "file": "f940013290ffde2bd3.mp3",
+      "sha256": "16e45658b7691debce2c9155c21b25ee02d397cfede9843bc81297fd2fea9376",
+      "requestSha256": "a77a1c151b85ff61eccf6dd614ab7882c9b4e795f0efccfbd799b1788d653e90",
+      "duration": 0.7,
+      "metadata": {
+        "audio_length": 756,
+        "audio_sample_rate": 32000,
+        "audio_size": 13812,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:好:hǎo": {
+      "key": "read:好:hǎo",
+      "text": "(hao3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "好 hǎo",
+      "file": "92cca7bd292da28bfe.mp3",
+      "sha256": "5d2f4a1ef2f979401f64e0ca52458502e8ab1064fc5efe1d68f9a486f2e52ecf",
+      "requestSha256": "bbfad80bdd9c77cab6457c1b827aabf29455955bd317fcd177e6eb07b24a74df",
+      "duration": 0.998,
+      "metadata": {
+        "audio_length": 1044,
+        "audio_sample_rate": 32000,
+        "audio_size": 18420,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:好:hào": {
+      "key": "read:好:hào",
+      "text": "(hao4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "好 hào",
+      "file": "1f1d6ca33ffb9a01f1.mp3",
+      "sha256": "271c5f5069345d15ba9d6dc273e1c755d0b2071f8599bea69ae653ae6a815aa4",
+      "requestSha256": "34c4f6b9565395e3898456f96e3fa8a0218cba1256cd022fd31f233f70b3f598",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:了:le": {
+      "key": "read:了:le",
+      "text": "(le5)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "了 le",
+      "file": "f6739c766f39da60a7.mp3",
+      "sha256": "692acd1f03d2e8c063c4a26f2bfa7d6f1dc09252f08420fc1778c40f90af1d83",
+      "requestSha256": "62536af62b932c3ec1bd640ab832d17a375123a6dac8cb93d25b5424ba226ddf",
+      "duration": 0.65,
+      "metadata": {
+        "audio_length": 720,
+        "audio_sample_rate": 32000,
+        "audio_size": 13236,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:了:liǎo": {
+      "key": "read:了:liǎo",
+      "text": "(liao3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "了 liǎo",
+      "file": "28a7f8f1ecc26844e0.mp3",
+      "sha256": "e0cf0c29ae77a2d38a0637b7aac27dfd90b3d0fef80c40f5c3a5dea3fed4b720",
+      "requestSha256": "4bc0c1e50baba324844b9297bbcb0d05dae6eeabf913f7a6cd5a2494477bd1cd",
+      "duration": 0.9,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:有:yǒu": {
+      "key": "read:有:yǒu",
+      "text": "(you3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "有 yǒu",
+      "file": "e7810383ce588c7a08.mp3",
+      "sha256": "191c49f3ee48595adf4ad951d99f653780b7dd39992330fbdeaef0c1cd883d3d",
+      "requestSha256": "0983e9a5117bb54626850d34c0e08e3fff8caad7e2fd654b23cfae370d407e15",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:天:tiān": {
+      "key": "read:天:tiān",
+      "text": "(tian1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "天 tiān",
+      "file": "a733c6d23fa12a28da.mp3",
+      "sha256": "a5562fb7917738c8ae3fafd659c0e6ad60661a39987d94c7e2946b223cd9c01d",
+      "requestSha256": "41cb9650b235fed9a96a49b90f6f3576b2ba7d53d325dace8418f6ee7990bdc1",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:地:dì": {
+      "key": "read:地:dì",
+      "text": "(di4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "地 dì",
+      "file": "353cae55d0f56a4651.mp3",
+      "sha256": "d8019657c542245fcf9f465f837d67f8ca257c0a8dba371852f6d35b76bef9a6",
+      "requestSha256": "e696201342159b09771b533072621736ff6d549f0d10fe728b4412628b0ac3cf",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:地:de": {
+      "key": "read:地:de",
+      "text": "(de5)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "地 de",
+      "file": "b9edcacb35e3879edd.mp3",
+      "sha256": "52869e3f1ae1e4e2a68d9470981180d422e4b17b40ced35eb60cd44cef200b32",
+      "requestSha256": "5a0bce8aad7925404ff4d81e16a0e356c4e7ed650201f76f2d7613229b50625f",
+      "duration": 0.65,
+      "metadata": {
+        "audio_length": 720,
+        "audio_sample_rate": 32000,
+        "audio_size": 13236,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:人:rén": {
+      "key": "read:人:rén",
+      "text": "(ren2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "人 rén",
+      "file": "3787f43edc19c9c4e2.mp3",
+      "sha256": "eed595f8cde13bde84536886dea3c375781fd87d773c504b2ca87051c152cd6e",
+      "requestSha256": "6c478eab1bc9f5ecb9756bd11a90e475261813d66204956a5e465f65c07e3734",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:们:men": {
+      "key": "read:们:men",
+      "text": "(men5)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "们 men",
+      "file": "ac933776a0d70ca80f.mp3",
+      "sha256": "89802d2f91ca4dd38983c81b2666e9dd25133b86153a890dd505ad2b2b36d62d",
+      "requestSha256": "38ac24f6d5f6722479131e67ada0e3e1c167c48bf3ca54e8d1659bce7e09cea9",
+      "duration": 0.952,
+      "metadata": {
+        "audio_length": 1008,
+        "audio_sample_rate": 32000,
+        "audio_size": 17844,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:山:shān": {
+      "key": "read:山:shān",
+      "text": "(shan1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "山 shān",
+      "file": "b2f3ca96c583dd2a97.mp3",
+      "sha256": "98b407a7d75d128497a07b3388603e85397ece26ed0e4defe62f6e2df3049b06",
+      "requestSha256": "c055d22a7de319f2b554c2f3ee34df751ca378d327a99467e4610f5ac88ad00c",
+      "duration": 0.894,
+      "metadata": {
+        "audio_length": 936,
+        "audio_sample_rate": 32000,
+        "audio_size": 16692,
+        "audio_format": "mp3",
+        "usage_characters": 7
+      }
+    },
+    "read:日:rì": {
+      "key": "read:日:rì",
+      "text": "(ri4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "日 rì",
+      "file": "e0f43306dc471cf003.mp3",
+      "sha256": "512396991ac3cac09544a84d97dacb10ca27009627cfc41ada234fb0031a1478",
+      "requestSha256": "d2472496e802189bae77c3d088118fe02a8a6a1c32b87679eb70eab96dd2042b",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 5
+      }
+    },
+    "read:出:chū": {
+      "key": "read:出:chū",
+      "text": "(chu1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "出 chū",
+      "file": "c3d53a002b8b289fce.mp3",
+      "sha256": "1a4af10868e06b4b899b4fe82eea3d55bca3b7ab50857a0d168414945627d181",
+      "requestSha256": "69aebe4772955ee1da8baddb8085db5cb3d20e6fd8909048ed03c53e58e69fc2",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "read:上:shàng": {
+      "key": "read:上:shàng",
+      "text": "(shang4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "上 shàng",
+      "file": "c5104534384d120263.mp3",
+      "sha256": "598d8645987417891028d41cd24da8e9d56b4461e5365bd011f526eca3feefd6",
+      "requestSha256": "db2fee7c731d4df94cf2a47b047bca97c453cfb575d7e38aca6e36e0dd35400a",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 8
+      }
+    },
+    "read:中:zhōng": {
+      "key": "read:中:zhōng",
+      "text": "(zhong1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "中 zhōng",
+      "file": "0e2db95ab4915702bf.mp3",
+      "sha256": "04aa93981a6b4f901068af3ac872b573337ab2d176e7b5552c1018ac9b65dfae",
+      "requestSha256": "25c4b1e0412a4d1ac8ec5f5fb86a21e247ee1b530525ec474dd2d7847e00660c",
+      "duration": 0.743,
+      "metadata": {
+        "audio_length": 792,
+        "audio_sample_rate": 32000,
+        "audio_size": 14388,
+        "audio_format": "mp3",
+        "usage_characters": 8
+      }
+    },
+    "read:中:zhòng": {
+      "key": "read:中:zhòng",
+      "text": "(zhong4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "中 zhòng",
+      "file": "5db437743ab14d716e.mp3",
+      "sha256": "f8ec4b4433f6d2ec92557423f23c8273d21393303f5dcd0b651a2959374d15a9",
+      "requestSha256": "743b548b2aff60b63e0d3db0dd9ed822c684de92026180274eb08539a8780687",
+      "duration": 0.801,
+      "metadata": {
+        "audio_length": 864,
+        "audio_sample_rate": 32000,
+        "audio_size": 15540,
+        "audio_format": "mp3",
+        "usage_characters": 8
+      }
+    },
+    "read:下:xià": {
+      "key": "read:下:xià",
+      "text": "(xia4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "read",
+      "label": "下 xià",
+      "file": "cb17a9542040d52e06.mp3",
+      "sha256": "b2a14ae6558ce87978beaa4af0cde983627e3a5f8820fec9821638e9f0443276",
+      "requestSha256": "b579cc09ee10d31e1f5581d9bc5591915e9562dbd29bb717b6079a7863c0610f",
+      "duration": 0.848,
+      "metadata": {
+        "audio_length": 900,
+        "audio_sample_rate": 32000,
+        "audio_size": 16116,
+        "audio_format": "mp3",
+        "usage_characters": 6
+      }
+    },
+    "spell:大:dà": {
+      "key": "spell:大:dà",
+      "text": "(de1)<#0.45#>(a4)<#0.45#>(da4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "大 dà",
+      "file": "92c38fd25a34c500dc.mp3",
+      "sha256": "4a479769d09a17bb6b561a17f234dd0a3e4eb2c414c3d53870b98763f1ede90d",
+      "requestSha256": "bf802156f3d71d34f7ae474a17ff877c638efbfe96ed3634a616414ea82cd034",
+      "duration": 3.443,
+      "metadata": {
+        "audio_length": 3492,
+        "audio_sample_rate": 32000,
+        "audio_size": 57588,
+        "audio_format": "mp3",
+        "usage_characters": 30
+      }
+    },
+    "spell:人:rén": {
+      "key": "spell:人:rén",
+      "text": "(ri1)<#0.45#>(en2)<#0.45#>(ren2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "人 rén",
+      "file": "9c9ec7391c94a2d6ca.mp3",
+      "sha256": "46c9553cf70ccf9ab897ac7d68126d7b27b3b872baa87b88cf519242323a3306",
+      "requestSha256": "efb6bc9d5b06c6e81c31d58ceaa02a5a21c370935e7d104dd7b4c77b8879f25c",
+      "duration": 3.385,
+      "metadata": {
+        "audio_length": 3456,
+        "audio_sample_rate": 32000,
+        "audio_size": 57012,
+        "audio_format": "mp3",
+        "usage_characters": 32
+      }
+    },
+    "spell:好:hǎo": {
+      "key": "spell:好:hǎo",
+      "text": "(he1)<#0.45#>(ao3)<#0.45#>(hao3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "好 hǎo",
+      "file": "375a1c62aeb6cfb155.mp3",
+      "sha256": "7c168fe410b1456f28ad1077164ed11d3a89e04d9b0117b320648e48cb7ab6ed",
+      "requestSha256": "182d9e3ca68c1d84db327ac78a0a449fede6788263dc7c0c63ed02459c8bb740",
+      "duration": 3.338,
+      "metadata": {
+        "audio_length": 3384,
+        "audio_sample_rate": 32000,
+        "audio_size": 55860,
+        "audio_format": "mp3",
+        "usage_characters": 32
+      }
+    },
+    "spell:三:sān": {
+      "key": "spell:三:sān",
+      "text": "(si1)<#0.45#>(an1)<#0.45#>(san1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "三 sān",
+      "file": "81ec044c07e2d5eefa.mp3",
+      "sha256": "1e2a3c3748fbc32cf7c672431034daf2e4008220ddf782e7681e66369616f2b0",
+      "requestSha256": "576d962dc7e8850a94fcded221e98b1483a745ccc95a06c884b78463385e17c0",
+      "duration": 3.141,
+      "metadata": {
+        "audio_length": 3204,
+        "audio_sample_rate": 32000,
+        "audio_size": 52980,
+        "audio_format": "mp3",
+        "usage_characters": 32
+      }
+    },
+    "spell:上:shàng": {
+      "key": "spell:上:shàng",
+      "text": "(shi1)<#0.45#>(ang4)<#0.45#>(shang4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "上 shàng",
+      "file": "95bdd491f996a07f24.mp3",
+      "sha256": "740b2398145ad22c2bb121d0cc4be49e615d1ae522f52a232a27d7ed8123921c",
+      "requestSha256": "587acbb023ed543fe858b34d9c563404747aeea6d3b74007e884dcf326803598",
+      "duration": 3.234,
+      "metadata": {
+        "audio_length": 3276,
+        "audio_sample_rate": 32000,
+        "audio_size": 54132,
+        "audio_format": "mp3",
+        "usage_characters": 36
+      }
+    },
+    "spell:下:xià": {
+      "key": "spell:下:xià",
+      "text": "(xi1)<#0.45#>(yi1)<#0.45#>(a4)<#0.45#>(xia4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "下 xià",
+      "file": "182f920a83e0356ba8.mp3",
+      "sha256": "8e51655ae342ea195d7dd8d600f0ac87a154984cc583c42b7efd9bff990f38ee",
+      "requestSha256": "e96bc69c4b70fc093b942a1fef6e6d2be3bbfba24dad53a57a9611d08aee64d6",
+      "duration": 4.531,
+      "metadata": {
+        "audio_length": 4572,
+        "audio_sample_rate": 32000,
+        "audio_size": 74868,
+        "audio_format": "mp3",
+        "usage_characters": 44
+      }
+    },
+    "spell:天:tiān": {
+      "key": "spell:天:tiān",
+      "text": "(te1)<#0.45#>(yi1)<#0.45#>(an1)<#0.45#>(tian1)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "天 tiān",
+      "file": "2be5f5ed47316ab46b.mp3",
+      "sha256": "6370cfff48fe60031b21cca73cbd95115ad339235f5a0315e31140fd40bdceaa",
+      "requestSha256": "7e083c923e177129f0949e915f72c804a8d1f82ef5889f01a9c0aff88f5f8b50",
+      "duration": 4.543,
+      "metadata": {
+        "audio_length": 4608,
+        "audio_sample_rate": 32000,
+        "audio_size": 75444,
+        "audio_format": "mp3",
+        "usage_characters": 46
+      }
+    },
+    "spell:地:dì": {
+      "key": "spell:地:dì",
+      "text": "(de1)<#0.45#>(i4)<#0.45#>(di4)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "地 dì",
+      "file": "8d46a70c0bce9f8737.mp3",
+      "sha256": "53c7cafa71bd7764f9d948871d2ffa1cba2c5755e850caa53fd953c201dfd21e",
+      "requestSha256": "d4485a0c6d9a64c58adccee5515d2e6393e8b82c650a2033d35e3a6212a6b71b",
+      "duration": 3.443,
+      "metadata": {
+        "audio_length": 3492,
+        "audio_sample_rate": 32000,
+        "audio_size": 57588,
+        "audio_format": "mp3",
+        "usage_characters": 30
+      }
+    },
+    "spell:来:lái": {
+      "key": "spell:来:lái",
+      "text": "(le1)<#0.45#>(ai2)<#0.45#>(lai2)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "来 lái",
+      "file": "669b01f3ccbb73ddd6.mp3",
+      "sha256": "2649814004c3ee6823b40d0ed4abd261f1bd58023f2a72df02fea2613ce0a1c4",
+      "requestSha256": "e35df4dbdf95eb24eda540896be4e7a01159a71f20798256ac40f0caf1d7bc28",
+      "duration": 3.338,
+      "metadata": {
+        "audio_length": 3384,
+        "audio_sample_rate": 32000,
+        "audio_size": 55860,
+        "audio_format": "mp3",
+        "usage_characters": 32
+      }
+    },
+    "spell:小:xiǎo": {
+      "key": "spell:小:xiǎo",
+      "text": "(xi1)<#0.45#>(yi1)<#0.45#>(ao3)<#0.45#>(xiao3)",
+      "voice": "male-qn-qingse",
+      "language": "Chinese",
+      "kind": "spell",
+      "label": "小 xiǎo",
+      "file": "c6c2b4a1a76516dee1.mp3",
+      "sha256": "99696a3b32345e4b1c0b93a107a4f0fe2493399b99ed11a9e8eca4e7644bc4f3",
+      "requestSha256": "d54767e604479d894aebea08356d4df4a5807dbf34ac2f94cd98ef17640e4997",
+      "duration": 4.949,
+      "metadata": {
+        "audio_length": 5004,
+        "audio_sample_rate": 32000,
+        "audio_size": 81780,
+        "audio_format": "mp3",
+        "usage_characters": 46
+      }
+    }
+  }
+}

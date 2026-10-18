@@ -1,0 +1,264 @@
+[
+  {
+    "task": "班",
+    "wrongToneReference": false,
+    "status": "scored",
+    "score": 86,
+    "pass": true,
+    "parts": [
+      {
+        "label": "b",
+        "score": 86.91442108154297,
+        "tone": "none",
+        "matched": true,
+        "phones": [
+          {
+            "label": "b",
+            "heard": "b",
+            "score": 86.91442108154297,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "ān",
+        "score": 90.88326263427734,
+        "tone": "phoneme",
+        "matched": true,
+        "phones": [
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 90.88326263427734,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "班",
+        "score": 86.803466796875,
+        "tone": "match",
+        "matched": true,
+        "phones": [
+          {
+            "label": "b",
+            "heard": "b",
+            "score": 95.12671661376953,
+            "matched": true
+          },
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 98.28819274902344,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "reason": "读得真棒！"
+  },
+  {
+    "task": "班",
+    "wrongToneReference": true,
+    "status": "scored",
+    "score": 66,
+    "pass": false,
+    "parts": [
+      {
+        "label": "b",
+        "score": 86.91442108154297,
+        "tone": "none",
+        "matched": true,
+        "phones": [
+          {
+            "label": "b",
+            "heard": "b",
+            "score": 86.91442108154297,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "ān",
+        "score": 90.88326263427734,
+        "tone": "phoneme",
+        "matched": true,
+        "phones": [
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 90.88326263427734,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "班",
+        "score": 66.20046997070312,
+        "tone": "unknown",
+        "matched": true,
+        "phones": [
+          {
+            "label": "b",
+            "heard": "b",
+            "score": 95.12671661376953,
+            "matched": true
+          },
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 98.28819274902344,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "reason": "声调没听准，再读一次"
+  },
+  {
+    "task": "山",
+    "wrongToneReference": false,
+    "status": "scored",
+    "score": 92,
+    "pass": true,
+    "parts": [
+      {
+        "label": "sh",
+        "score": 75.22856140136719,
+        "tone": "none",
+        "matched": true,
+        "phones": [
+          {
+            "label": "sh",
+            "heard": "sh",
+            "score": 75.22856140136719,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "ān",
+        "score": 97.02554321289062,
+        "tone": "phoneme",
+        "matched": true,
+        "phones": [
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 97.02554321289062,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "山",
+        "score": 95.8585433959961,
+        "tone": "match",
+        "matched": true,
+        "phones": [
+          {
+            "label": "sh",
+            "heard": "sh",
+            "score": 96.59326934814453,
+            "matched": true
+          },
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 99.09503173828125,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "reason": "读得真棒！"
+  },
+  {
+    "task": "山",
+    "wrongToneReference": true,
+    "status": "scored",
+    "score": 63,
+    "pass": false,
+    "parts": [
+      {
+        "label": "sh",
+        "score": 75.22856140136719,
+        "tone": "none",
+        "matched": true,
+        "phones": [
+          {
+            "label": "sh",
+            "heard": "sh",
+            "score": 75.22856140136719,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "ān",
+        "score": 97.02554321289062,
+        "tone": "phoneme",
+        "matched": true,
+        "phones": [
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 97.02554321289062,
+            "matched": true
+          }
+        ]
+      },
+      {
+        "label": "山",
+        "score": 63.0715446472168,
+        "tone": "unknown",
+        "matched": true,
+        "phones": [
+          {
+            "label": "sh",
+            "heard": "sh",
+            "score": 96.59326934814453,
+            "matched": true
+          },
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 99.09503173828125,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "reason": "声调没听准，再读一次"
+  },
+  {
+    "task": "班",
+    "mode": "read",
+    "status": "scored",
+    "score": 86,
+    "pass": true,
+    "parts": [
+      {
+        "label": "bān",
+        "score": 86.803466796875,
+        "tone": "match",
+        "matched": true,
+        "phones": [
+          {
+            "label": "b",
+            "heard": "b",
+            "score": 64.79348754882812,
+            "matched": true
+          },
+          {
+            "label": "an1",
+            "heard": "an1",
+            "score": 97.80845642089844,
+            "matched": true
+          }
+        ]
+      }
+    ],
+    "reason": "读得真棒！"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 86.803466796875,
+    "PronAccuracy": 86.803466796875,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9700045585632324,
+    "Words": [
+      {
+        "Word": "班",
+        "ReferenceWord": "",
+        "PronAccuracy": 86.803466796875,
+        "MatchTag": 0,
+        "MemBeginTime": 110,
+        "MemEndTime": 490,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 1,
+          "HypothesisTone": 1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 64.79348754882812,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "",
+            "PronAccuracy": 97.80845642089844,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "班 ban1",
+  "mode": 1,
+  "audio": "local synthetic TTS / 16 kHz mono signed PCM; no human recording"
+}

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
-const source=readFileSync(new URL('../app/assets/hanzi-typing/reading-assessment.js',import.meta.url),'utf8');
+const source=readFileSync(new URL('../app/assets/shared/assessment.js',import.meta.url),'utf8')+readFileSync(new URL('../app/assets/hanzi-typing/reading-assessment.js',import.meta.url),'utf8');
 
 function setup(){
   let phase='idle',next=0,clock=0;const pending=new Map(),sockets=[];

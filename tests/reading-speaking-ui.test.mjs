@@ -16,3 +16,18 @@ test('原生页授权晚到时resume刷新可录状态，保持无自动录音�
 test('非默认多音读音与轻声不误播默认TTS示范，默认整字仍可读',()=>{const g=mock();try{let spoken=[];g.window.RugeTTS={speak:c=>{spoken.push(c);return true;},stop(){}};g.window.__reading.start('read',3);g.node('#readingSpeak').onclick();assert.equal(spoken.at(-1),'都');g.node('#readingPinyin').children[1].onclick();assert.equal(g.node('#readingSpeak').disabled,true);assert.equal(g.node('#readingSpeak').getAttribute('aria-label'),'此读音暂缺示范');g.node('#readingSpeak').onclick();assert.equal(spoken.length,1);}finally{g.dispose();}});
 test('轻声整字评测保持轻声标记并禁示范，不伪造独立声调',async()=>{const g=mock();try{g.window.__reading.start('read',0);for(let i=0;i<3;i++){const p=g.window.__reading.record(),t=g.window.__reading.state().task;g.window.__assessmentFixture.resolve(fixture(t));await p;g.node('#readingNext').onclick();}const t=g.window.__reading.state().task;assert.equal(t.char,'着');assert.equal(t.evalMode,0);assert.equal(g.node('#readingSpeak').disabled,true);assert.equal(g.node('#readingParts').children[0].children[1].textContent,'轻声');}finally{g.dispose();}});
 test('评测自行取消也返回可重试空分状态，不把取消伪装失败或卡在录音',async()=>{const g=mock();try{const p=g.window.__reading.record();g.window.__assessmentFixture.reject({code:'cancelled'});await p;assert.equal(g.window.__reading.state().inFlight,false);assert.equal(g.window.__reading.state().phase,'idle');assert.equal(g.node('#readingMic').disabled,false);assert.equal(g.node('#readingScore').textContent,'—');assert.equal(g.saved.size,0);}finally{g.dispose();}});
+
+test('完整拼读示范优先包内音频，开始评分先停示范，迟到失败不会转播整字',async()=>{
+ const g=mock();try{const calls=[];let rejectPlay;g.window.RugeTTS={speak:ch=>{calls.push('tts:'+ch);return true;},stop(){}};g.window.DemoAudio={available:()=>true,play:key=>{calls.push(key);return new Promise(resolve=>rejectPlay=resolve);},stop:()=>calls.push('stop')};g.emitWindow('ruge:resume');
+ assert.equal(g.node('#readingSpeak').disabled,false);const demo=g.node('#readingSpeak').onclick();assert.ok(calls.includes('spell:班:bān'));
+ const recording=g.window.__reading.record();rejectPlay(false);await demo;assert.ok(!calls.some(c=>c.startsWith('tts:')));assert.equal(calls.at(-1),'stop');g.window.__assessmentFixture.reject({code:'cancelled'});await recording;
+ }finally{g.dispose();}
+});
+
+test('包内指定读音让多音字与轻声也能示范，不再误播系统默认读音',async()=>{
+ const g=mock();try{const calls=[];g.window.DemoAudio={available:()=>true,play:async key=>{calls.push(key);return true;},stop(){}};g.window.RugeTTS={speak:()=>{throw Error('must not fallback');},stop(){}};
+ g.window.__reading.start('read',3);g.node('#readingPinyin').children[1].onclick();assert.equal(g.node('#readingSpeak').disabled,false);await g.node('#readingSpeak').onclick();assert.equal(calls.at(-1),'read:都:dū');
+ g.window.__reading.start('read',0);for(let i=0;i<3;i++){const p=g.window.__reading.record(),t=g.window.__reading.state().task;g.window.__assessmentFixture.resolve(fixture(t));await p;g.node('#readingNext').onclick();}
+ assert.equal(g.window.__reading.state().task.evalMode,0);await g.node('#readingSpeak').onclick();assert.equal(calls.at(-1),'read:着:zhe');assert.equal(g.node('#readingParts').children[0].children[1].textContent,'轻声');
+ }finally{g.dispose();}
+});

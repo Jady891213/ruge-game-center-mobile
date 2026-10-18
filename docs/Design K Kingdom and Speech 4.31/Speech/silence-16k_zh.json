@@ -1,0 +1,13 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 0,
+    "PronAccuracy": 0,
+    "PronCompletion": 0,
+    "SentenceId": -1,
+    "PronFluency": -1,
+    "Words": []
+  },
+  "engine": "16k_zh",
+  "audio": "one second synthetic digital silence"
+}

@@ -7,7 +7,7 @@ button,a{touch-action:manipulation}
 #homeHeader{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:0 2px}
 h1{font-size:22px;line-height:1.2;margin:0;white-space:nowrap;letter-spacing:0!important}
 .header-tools{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.header-toggle.ruge-pill{display:grid;place-items:center;min-height:44px;width:44px;height:44px;padding:9px;border-radius:16px;box-shadow:0 3px 0 #d7cdb8}
+.header-toggle.ruge-pill{display:grid;place-items:center;min-height:44px;width:44px;height:44px;padding:9px;text-decoration:none;color:inherit;border-radius:16px;box-shadow:0 3px 0 #d7cdb8}
 .header-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .header-toggle[aria-pressed=true]{background:#d7eddb;border-color:#a1ccb0;color:#456c55}
 #awake[aria-pressed=true]{background:#ffe7a8;border-color:#e4c77d;color:#997324}

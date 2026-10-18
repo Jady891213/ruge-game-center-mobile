@@ -1,0 +1,44 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 96.48684692382812,
+    "PronAccuracy": 96.48684692382812,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.7892706394195557,
+    "Words": [
+      {
+        "Word": "me",
+        "ReferenceWord": "me_0",
+        "PronAccuracy": 96.48684692382812,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 400,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "m",
+            "ReferencePhone": "",
+            "PronAccuracy": 93.94925689697266,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "iy",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.0244369506836,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "me",
+  "mode": 0,
+  "syntheticText": "me",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

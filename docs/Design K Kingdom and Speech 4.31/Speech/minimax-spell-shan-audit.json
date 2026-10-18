@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 95.8585433959961,
+    "PronAccuracy": 95.8585433959961,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9179282188415527,
+    "Words": [
+      {
+        "Word": "啊",
+        "ReferenceWord": "",
+        "PronAccuracy": 95.8585433959961,
+        "MatchTag": 0,
+        "MemBeginTime": 140,
+        "MemEndTime": 840,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 1,
+          "HypothesisTone": 1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "",
+            "PronAccuracy": 90.74822998046875,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "",
+            "PronAccuracy": 98.4136962890625,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "啊 shan1",
+  "mode": 1,
+  "audio": "same synthetic last-syllable PCM with 60ms margin",
+  "parent": "minimax-spell-shan",
+  "clipBeginMs": 2520.0,
+  "clipEndMs": 3291.6875,
+  "wrongToneReference": false
+}

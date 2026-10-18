@@ -1,0 +1,31 @@
+{
+  "state": {
+    "level": 1,
+    "words": [
+      "me"
+    ],
+    "word": "me",
+    "index": 0,
+    "hearts": 5,
+    "score": 94,
+    "phase": "won-word",
+    "draft": "me",
+    "hint": "full",
+    "last": {
+      "score": 94.29393768310547,
+      "accuracy": 94.29393768310547,
+      "passed": true,
+      "assessed": true,
+      "reason": "pass"
+    },
+    "paused": false,
+    "busy": false,
+    "save": {
+      "schema": 1,
+      "unlocked": 1,
+      "best": {}
+    }
+  },
+  "status": "读对啦！",
+  "native": "idle"
+}

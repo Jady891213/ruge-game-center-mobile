@@ -1,0 +1,56 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 97.13996124267578,
+    "PronAccuracy": 97.13996124267578,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9199892282485962,
+    "Words": [
+      {
+        "Word": "apple",
+        "ReferenceWord": "apple_0",
+        "PronAccuracy": 97.13996124267578,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 460,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "ae",
+            "ReferencePhone": "",
+            "PronAccuracy": 95.4703598022461,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "p",
+            "ReferencePhone": "",
+            "PronAccuracy": 96.46749877929688,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 97.1391372680664,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "l",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.48284912109375,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "apple",
+  "mode": 0,
+  "syntheticText": "apple",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

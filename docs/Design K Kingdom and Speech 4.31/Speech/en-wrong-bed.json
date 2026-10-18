@@ -1,0 +1,50 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 6.611288547515869,
+    "PronAccuracy": 6.611288547515869,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.7351983189582825,
+    "Words": [
+      {
+        "Word": "bed",
+        "ReferenceWord": "bed_0",
+        "PronAccuracy": 6.611288547515869,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 620,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 15.131452560424805,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "eh",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.8302103877067566,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "d",
+            "ReferencePhone": "",
+            "PronAccuracy": 3.8722009658813477,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "bed",
+  "mode": 0,
+  "syntheticText": "elephant",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

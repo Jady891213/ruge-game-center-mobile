@@ -1,0 +1,75 @@
+{
+  "state": {
+    "mode": "read",
+    "group": 0,
+    "index": 0,
+    "task": {
+      "id": "read:这:zhè",
+      "char": "这",
+      "pinyin": "zhè",
+      "choices": [
+        "zhè"
+      ],
+      "mode": "read",
+      "evalMode": 1,
+      "reference": "这 zhe4",
+      "items": [
+        {
+          "label": "zhè",
+          "reference": "zhe4",
+          "tone": 4,
+          "kind": "word"
+        }
+      ]
+    },
+    "result": {
+      "status": "scored",
+      "score": 93,
+      "pass": true,
+      "parts": [
+        {
+          "label": "zhè",
+          "score": 93.61699676513672,
+          "tone": "match",
+          "matched": true,
+          "phones": [
+            {
+              "label": "zh",
+              "heard": "zh",
+              "score": 94.39979553222656,
+              "matched": true
+            },
+            {
+              "label": "e4",
+              "heard": "e4",
+              "score": 92.83419036865234,
+              "matched": true
+            }
+          ]
+        }
+      ],
+      "reason": "读得真棒！"
+    },
+    "phase": "idle",
+    "paused": false,
+    "inFlight": false,
+    "records": {
+      "spell:班:bān": {
+        "char": "班",
+        "pinyin": "bān",
+        "mode": "spell",
+        "score": 74,
+        "passed": false
+      },
+      "read:这:zhè": {
+        "char": "这",
+        "pinyin": "zhè",
+        "mode": "read",
+        "score": 93,
+        "passed": true
+      }
+    }
+  },
+  "status": "点一下，开始读",
+  "native": "idle"
+}

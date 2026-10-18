@@ -1,0 +1,47 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 66.20046997070312,
+    "PronAccuracy": 66.20046997070312,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9694604873657227,
+    "Words": [
+      {
+        "Word": "啊",
+        "ReferenceWord": "",
+        "PronAccuracy": 66.20046997070312,
+        "MatchTag": 0,
+        "MemBeginTime": 110,
+        "MemEndTime": 490,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 4,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 48.3878173828125,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an4",
+            "ReferencePhone": "",
+            "PronAccuracy": 75.10679626464844,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "啊 ban4",
+  "mode": 1,
+  "audio": "same synthetic last-syllable PCM with 60ms margin",
+  "parent": "minimax-spell-ban",
+  "clipBeginMs": 2460.0,
+  "clipEndMs": 2885.3125,
+  "wrongToneReference": true
+}

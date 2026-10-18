@@ -1,0 +1,86 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 92.2596206665039,
+    "PronAccuracy": 92.2596206665039,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9384700655937195,
+    "Words": [
+      {
+        "Word": "sh",
+        "ReferenceWord": "sh",
+        "PronAccuracy": 78.89803314208984,
+        "MatchTag": 0,
+        "MemBeginTime": 180,
+        "MemEndTime": 570,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "sh",
+            "PronAccuracy": 78.89803314208984,
+            "MatchTag": 0
+          }
+        ]
+      },
+      {
+        "Word": "an1",
+        "ReferenceWord": "an1",
+        "PronAccuracy": 94.49578857421875,
+        "MatchTag": 0,
+        "MemBeginTime": 570,
+        "MemEndTime": 1330,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 94.49578857421875,
+            "MatchTag": 0
+          }
+        ]
+      },
+      {
+        "Word": "shan1",
+        "ReferenceWord": "shan1",
+        "PronAccuracy": 98.93119049072266,
+        "MatchTag": 0,
+        "MemBeginTime": 1330,
+        "MemEndTime": 1830,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "sh",
+            "PronAccuracy": 98.6061782836914,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 99.09368896484375,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "sh an1 shan1",
+  "mode": 8,
+  "syntheticText": "诗。安。山",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

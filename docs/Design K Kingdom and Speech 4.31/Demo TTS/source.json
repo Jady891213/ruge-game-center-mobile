@@ -1,0 +1,16 @@
+{
+  "provider": "MiniMax",
+  "model": "speech-2.8-hd",
+  "endpoint": "https://api.minimax.cn/v1/t2a_v2",
+  "references": [
+    "https://platform.minimax.cn/docs/api-reference/speech-t2a-http",
+    "https://platform.minimax.io/docs/api-reference/speech-t2a-http"
+  ],
+  "clips": 101,
+  "cloudSecretsPackaged": false,
+  "runtimeNetworkRequired": false,
+  "notes": [
+    "Split demos use Mandarin classroom 呼读音 followed by the final and combined syllable, with explicit tone-number pronunciation.",
+    "Samples require listening review; synthesis is not a child pronunciation score."
+  ]
+}

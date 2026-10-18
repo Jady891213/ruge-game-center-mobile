@@ -1,0 +1,50 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 8.098089218139648,
+    "PronAccuracy": 8.098089218139648,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9252639412879944,
+    "Words": [
+      {
+        "Word": "dad",
+        "ReferenceWord": "dad_0",
+        "PronAccuracy": 8.098089218139648,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 420,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "d",
+            "ReferencePhone": "",
+            "PronAccuracy": 23.8406925201416,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ae",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.12970741093158722,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "d",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.32386961579322815,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "dad",
+  "mode": 0,
+  "syntheticText": "elephant",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

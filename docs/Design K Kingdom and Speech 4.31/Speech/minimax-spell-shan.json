@@ -1,0 +1,86 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 92.03964233398438,
+    "PronAccuracy": 92.03964233398438,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.7323705554008484,
+    "Words": [
+      {
+        "Word": "sh",
+        "ReferenceWord": "sh",
+        "PronAccuracy": 75.22856140136719,
+        "MatchTag": 0,
+        "MemBeginTime": 490,
+        "MemEndTime": 1160,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "sh",
+            "PronAccuracy": 75.22856140136719,
+            "MatchTag": 0
+          }
+        ]
+      },
+      {
+        "Word": "an1",
+        "ReferenceWord": "an1",
+        "PronAccuracy": 97.02554321289062,
+        "MatchTag": 0,
+        "MemBeginTime": 1400,
+        "MemEndTime": 2080,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 97.02554321289062,
+            "MatchTag": 0
+          }
+        ]
+      },
+      {
+        "Word": "shan1",
+        "ReferenceWord": "shan1",
+        "PronAccuracy": 98.2611083984375,
+        "MatchTag": 0,
+        "MemBeginTime": 2580,
+        "MemEndTime": 3330,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "sh",
+            "PronAccuracy": 96.59326934814453,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 99.09503173828125,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "sh an1 shan1",
+  "mode": 8,
+  "audio": "MiniMax synthetic demo spell:山:shān",
+  "demoSha256": "2344b9e844b1100c940399625b52f84da9214f2f9f92bfa944e9e1a4aba38f4a"
+}

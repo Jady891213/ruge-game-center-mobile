@@ -1,0 +1,80 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 99.29827880859375,
+    "PronAccuracy": 99.29827880859375,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.969959020614624,
+    "Words": [
+      {
+        "Word": "computer",
+        "ReferenceWord": "computer_0",
+        "PronAccuracy": 99.29827880859375,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 600,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "k",
+            "ReferencePhone": "",
+            "PronAccuracy": 98.46903991699219,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 98.90132904052734,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "m",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.4001235961914,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "p",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.46815490722656,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "y",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.5102767944336,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "uw",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.57998657226562,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "t",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.48109436035156,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "er",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.57622528076172,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "computer",
+  "mode": 0,
+  "syntheticText": "computer",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

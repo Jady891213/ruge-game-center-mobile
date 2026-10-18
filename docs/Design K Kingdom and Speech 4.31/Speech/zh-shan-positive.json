@@ -1,0 +1,44 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 95.47853088378906,
+    "PronAccuracy": 95.47853088378906,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9455840587615967,
+    "Words": [
+      {
+        "Word": "shan1",
+        "ReferenceWord": "shan1",
+        "PronAccuracy": 95.47853088378906,
+        "MatchTag": 0,
+        "MemBeginTime": 150,
+        "MemEndTime": 680,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "sh",
+            "PronAccuracy": 91.30923461914062,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 97.56317138671875,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "shan1",
+  "mode": 8,
+  "syntheticText": "山",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

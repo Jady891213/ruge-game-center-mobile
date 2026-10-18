@@ -14,11 +14,44 @@ function harness({configured=true,available=true,nativeError='',foreign=false}={
  class WS{constructor(url){this.url=url;this.sent=[];this.closed=false;sockets.push(this);}send(v){this.sent.push(v);}close(){this.closed=true;}receive(msg){this.onmessage?.({data:JSON.stringify(msg)});}}
  const id='assessment-test-id',url='wss://soe.cloud.tencent.com/soe/api/123?voice_id='+id+'&rec_mode=1';
  const native={available:()=>available,configured:()=>configured,begin(){begin++;phase=nativeError?'error':'recording';},cancel(){cancels++;phase='idle';},finish(){finish++;phase='recorded';},read:()=>JSON.stringify({status:phase,sessionId:id,error:nativeError,level:.7,elapsedMs:750}),take(){takes++;return JSON.stringify({sessionId:foreign?'wrong':id,url,pcmBase64:Buffer.alloc(16000).toString('base64'),sampleRate:16000});}};
- const window={RugeAssessment:native,WebSocket:WS};const c=vm.createContext({window,document:{hidden:false},setTimeout,clearTimeout,Date,URL,atob,Uint8Array,Promise});vm.runInContext(source('hanzi-typing/reading-assessment.js'),c);const A=window.ReadingAssessment.create({onState:s=>onState.push(s)});
+ const window={RugeAssessment:native,WebSocket:WS};const c=vm.createContext({window,document:{hidden:false},setTimeout,clearTimeout,Date,URL,atob,Uint8Array,Promise});vm.runInContext(source('shared/assessment.js'),c);vm.runInContext(source('hanzi-typing/reading-assessment.js'),c);const A=window.ReadingAssessment.create({onState:s=>onState.push(s)});
  return{A,id,sockets,native,get counts(){return{begin,takes,cancels,finish};},get states(){return onState;},hidden(){c.document.hidden=true;}};
 }
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const task={reference:'b an1 ban1',evalMode:8};
 test('未配置/不支持不开始采集，更不连网/造分',async()=>{for(const o of [{configured:false},{available:false}]){const h=harness(o);try{await assert.rejects(h.A.start(task),e=>e.code===(o.configured===false?'unconfigured':'unavailable'));assert.equal(h.counts.begin,0);assert.equal(h.sockets.length,0);}finally{h.A.cancel();}}});
-test('录完只取一次PCM，等服务握手后上传；最终真实结果才返回，所有socket关闭',async()=>{const h=harness();try{const promise=h.A.start(task);await wait(100);assert.equal(h.states.at(-1).status,'recording');h.A.finish();await wait(100);const s=h.sockets[0];assert.ok(s);assert.equal(s.sent.length,0);s.receive({code:0,voice_id:h.id});assert.equal(s.sent.length,2);assert.equal(s.sent[0].byteLength,16000);const raw={SuggestedScore:86,Words:[],SentenceId:-1};s.receive({code:0,voice_id:h.id,result:raw});s.receive({code:0,voice_id:h.id,final:1});assert.equal((await promise).SuggestedScore,86);assert.equal(s.closed,true);assert.equal(h.counts.takes,1);}finally{h.A.cancel();}});
+test('录完只取一次PCM，等服务握手后上传；最终真实结果才返回，所有socket关闭',async()=>{const h=harness();try{const promise=h.A.start(task);await wait(100);assert.equal(h.states.at(-1).status,'recording');h.A.finish();await wait(100);const s=h.sockets[0];assert.ok(s);assert.equal(s.sent.length,0);s.receive({code:0,voice_id:h.id,final:0,result:null});assert.equal(s.sent.length,2);assert.equal(s.sent[0].byteLength,16000);const raw={SuggestedScore:86,Words:[],SentenceId:-1};s.receive({code:0,voice_id:h.id,result:raw});s.receive({code:0,voice_id:h.id,final:1});assert.equal((await promise).SuggestedScore,86);assert.equal(s.closed,true);assert.equal(h.counts.takes,1);}finally{h.A.cancel();}});
 test('取消/后台与过期会话不接受旧分；云无声不给0分冒充发音差',async()=>{for(const mode of ['cancel','background','foreign','no-speech','not-final','malformed']){const h=harness({foreign:mode==='foreign'});try{const promise=h.A.start(task);const assertion=assert.rejects(promise,e=>['cancelled','invalid-audio','no-speech','network','invalid-result'].includes(e.code));await wait(100);if(mode==='cancel')h.A.cancel();else if(mode==='background')h.hidden();else{h.A.finish();await wait(100);const s=h.sockets[0];if(s){if(mode==='no-speech')s.receive({code:4105,voice_id:h.id});else if(mode==='not-final'){s.receive({code:0,voice_id:h.id,result:{SuggestedScore:90,Words:[]}});s.onclose();}else if(mode==='malformed')s.receive({code:0,voice_id:h.id,final:1,result:'not json'});}}await assertion;}finally{h.A.cancel();}}});
+
+test('真实云端拼音高分不代表声调：班/半、山/善都不能用强制对齐音素假放行',()=>{
+ const C=core(),base=new URL('../docs/Design K Kingdom and Speech 4.31/Speech/',import.meta.url);
+ for(const [name,ch]of [['zh-ban','班'],['zh-ban-wrong-tone','班'],['zh-shan-positive','山'],['zh-shan-wrong-tone','山']]){
+  const raw=JSON.parse(readFileSync(new URL(name+'.json',base),'utf8')).result;
+  assert.ok(raw.SuggestedScore>=80);const g=C.grade(C.task(ch,'read'),raw);assert.equal(g.pass,false);assert.equal(g.parts[0].tone,'unknown');
+ }
+ const good=JSON.parse(readFileSync(new URL('zh-sentence-lan-positive.json',base),'utf8')).result;
+ const t={mode:'read',char:'蓝',items:[{label:'lán',reference:'lan2',tone:2,kind:'word'}]};
+ assert.equal(C.grade(t,good).pass,true);
+ const wrong=JSON.parse(readFileSync(new URL('zh-sentence-lan-wrong.json',base),'utf8')).result;
+ assert.equal(C.grade(t,wrong).pass,false);
+});
+test('拼读末字用独立Tone评测，未知、错调、低分与漏读均不能过；中间音素不冒充声调分',()=>{
+ const C=core(),t=C.task('山','spell'),raw=result(t);for(const w of raw.Words)w.Tone.Valid=false;
+ raw.ToneAudit={index:2,reference:'shan1',result:{SuggestedScore:88,Words:[{Word:'啊',MatchTag:0,PronAccuracy:88,Tone:{Valid:true,RefTone:1,HypothesisTone:1}}]}};
+ assert.equal(C.grade(t,raw).pass,true);assert.equal(C.grade(t,raw).score,88);assert.equal(C.grade(t,raw).parts[1].tone,'phoneme');
+ for(const mutate of [r=>r.ToneAudit.result.Words[0].Tone.HypothesisTone=-1,r=>r.ToneAudit.result.Words[0].Tone.HypothesisTone=4,r=>r.ToneAudit.result.SuggestedScore=70,r=>r.Words[0].MatchTag=2,r=>r.ToneAudit.index=0,r=>r.Words[1].PhoneInfos=[{Phone:'an4',ReferencePhone:'an1',MatchTag:0,PronAccuracy:85}]]){
+  const bad=structuredClone(raw);mutate(bad);assert.equal(C.grade(t,bad).pass,false);
+ }
+ assert.equal(C.task('班','read').reference,'班 ban1');assert.equal(C.task('班','read').evalMode,1);
+});
+
+test('MiniMax真实自然示范经两阶段专业评分可通过班/山，错误参考调与读字错调仍拒绝',()=>{
+ const C=core(),base=new URL('../docs/Design K Kingdom and Speech 4.31/Speech/',import.meta.url),get=name=>JSON.parse(readFileSync(new URL(name+'.json',base),'utf8')).result;
+ for(const[ch,name]of[['班','ban'],['山','shan']]){
+  const task=C.task(ch,'spell'),raw=get('minimax-spell-'+name);raw.ToneAudit={index:2,reference:name+'1',result:get('minimax-spell-'+name+'-audit')};
+  assert.equal(C.grade(task,raw).pass,true);assert.ok(C.grade(task,raw).score>=80);
+  raw.ToneAudit.result=get('minimax-spell-'+name+'-audit-wrong');assert.equal(C.grade(task,raw).pass,false);
+ }
+ assert.equal(C.grade(C.task('班','read'),get('minimax-read-ban')).pass,true);
+ assert.equal(C.grade(C.task('班','read'),get('zh-sentence-ban-wrong-tone')).pass,false);
+});

@@ -2,6 +2,7 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const games = [
+    {id:'english-k',cat:'learn',name:'K国王回家'},
     {id:'animal-balance',cat:'puzzle',name:'水果天平'},
     {id:'hat-trick',cat:'puzzle',name:'帽子小捣蛋'},
     {id:'pitch-adventure',cat:'react',name:'哼哼小飞机'},
@@ -64,40 +65,8 @@
   document.querySelectorAll('[data-cat]').forEach(button => button.addEventListener('click', () => {
     render(button.dataset.cat); window.RugeFX?.emit('tap');
   }));
-  const icons = {
-    sound:'<path d="M4 9v6h4l5 4V5L8 9zM17 8a7 7 0 0 1 0 8M20 5a11 11 0 0 1 0 14"/>',
-    vibration:'<rect x="7" y="4" width="10" height="16" rx="3"/><path d="M3 7v10M21 7v10M1 10v4M23 10v4"/>',
-    awake:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>',
-  };
-  function showToggle(button, kind, label, on) {
-    button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + icons[kind] + (on ? '' : '<path class="off-mark" d="m3 3 18 18"/>') + '</svg>';
-    button.setAttribute('aria-pressed', String(on));
-    button.setAttribute('aria-label', label + (on ? '开启' : '关闭'));
-    button.setAttribute('title', label + (on ? '开启' : '关闭'));
-  }
-  function refreshFeedback() {
-    showToggle($('#soundToggle'), 'sound', '音效', window.RugeFX.enabled('sound'));
-    showToggle($('#vibrationToggle'), 'vibration', '震动', window.RugeFX.enabled('vibration'));
-  }
-  $('#soundToggle').addEventListener('click', () => {
-    const on = window.RugeFX.setSound(!window.RugeFX.enabled('sound')); refreshFeedback();
-    if (on) window.RugeFX.emit('select');
-  });
-  $('#vibrationToggle').addEventListener('click', () => {
-    const on = window.RugeFX.setVibration(!window.RugeFX.enabled('vibration')); refreshFeedback();
-    if (on) window.RugeFX.emit('select');
-  });
-  let awake = true;
-  try { awake = window.RugeScreen ? window.RugeScreen.keepAwakeEnabled() : localStorage.getItem('rugeAwake') !== 'false'; } catch (_) {}
-  const showAwake = () => showToggle($('#awake'), 'awake', '屏幕常亮', awake);
-  $('#awake').addEventListener('click', () => {
-    awake = !awake;
-    try { window.RugeScreen?.keepAwake(awake); localStorage.setItem('rugeAwake', String(awake)); } catch (_) {}
-    showAwake(); window.RugeFX?.emit('tap');
-  });
-  window.addEventListener('ruge:feedback-change', refreshFeedback);
-  window.addEventListener('ruge:resume', () => { render(category, false); refreshFeedback(); });
-  window.addEventListener('pageshow', () => { render(category, false); refreshFeedback(); });
-  showAwake(); refreshFeedback(); render('all');
+  window.addEventListener('ruge:resume', () => render(category, false));
+  window.addEventListener('pageshow', () => render(category, false));
+  render('all');
   try { window.RugeScreen?.set('portrait'); } catch (_) {}
 })();

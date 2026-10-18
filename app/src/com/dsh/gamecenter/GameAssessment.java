@@ -46,10 +46,11 @@ public final class GameAssessment {
     private final ExecutorService worker = Executors.newSingleThreadExecutor();
     private final SharedPreferences preferences;
     private final SecureRandom random = new SecureRandom();
-    private boolean configured, finishRequested;
+    private boolean configured, minimaxConfigured, finishRequested;
     private volatile boolean closed;
     private int generation;
     private int evalMode;
+    private String engine = "16k_zh";
     private AudioRecord recorder;
     private byte[] pcm;
     private String status = "unconfigured", error = "", sessionId = "", reference = "", recordedSessionId = "";
@@ -67,7 +68,7 @@ public final class GameAssessment {
         this.host = host;
         preferences = activity.getSharedPreferences("assessment-private", Context.MODE_PRIVATE);
         if (Build.VERSION.SDK_INT >= 23) {
-            try { configured = credentials() != null; } catch (Exception ignored) { configured = false; }
+            try { JSONObject initial = credentials(); configured = initial != null; minimaxConfigured = initial != null && initial.has("minimaxToken") && !initial.getString("minimaxToken").isEmpty(); } catch (Exception ignored) { configured = false; }
         }
         status = configured ? "idle" : "unconfigured";
     }
@@ -86,9 +87,10 @@ public final class GameAssessment {
         try {
             JSONObject value = new JSONObject(json);
             String appId = value.getString("appId"), secretId = value.getString("secretId"), secretKey = value.getString("secretKey");
-            if (value.length() != 3 || !appId.matches("[0-9]{5,20}")
+            String minimaxToken = value.has("minimaxToken") ? value.getString("minimaxToken") : minimaxToken();
+            if (value.length() != (value.has("minimaxToken") ? 4 : 3) || (!minimaxToken.isEmpty() && !minimaxToken.matches("[A-Za-z0-9._+/=\\-]{8,4096}")) || !appId.matches("[0-9]{5,20}")
                     || !secretId.matches("[A-Za-z0-9]{8,128}") || !secretKey.matches("[A-Za-z0-9+/=_-]{8,256}")) return false;
-            plain = new JSONObject().put("appId", appId).put("secretId", secretId).put("secretKey", secretKey).toString().getBytes(StandardCharsets.UTF_8);
+            plain = new JSONObject().put("appId", appId).put("secretId", secretId).put("secretKey", secretKey).put("minimaxToken", minimaxToken).toString().getBytes(StandardCharsets.UTF_8);
             Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey());
             cipher.updateAAD(KEY_ALIAS.getBytes(StandardCharsets.UTF_8));
@@ -98,7 +100,7 @@ public final class GameAssessment {
                     .putString("ciphertext", Base64.encodeToString(encrypted, Base64.NO_WRAP)).commit();
             if (!stored) { error = "configuration-unavailable"; return false; }
             cancelInternal();
-            configured = true; status = "ready"; error = "";
+            configured = true; minimaxConfigured = !minimaxToken.isEmpty(); status = "ready"; error = "";
             return true;
         } catch (Exception ignored) { error = "configuration-unavailable"; return false; }
         finally { if (plain != null) Arrays.fill(plain, (byte) 0); if (encrypted != null) Arrays.fill(encrypted, (byte) 0); }
@@ -108,11 +110,13 @@ public final class GameAssessment {
         if (!allowed()) return;
         final String accepted;
         final int acceptedMode;
+        final String acceptedEngine;
         try {
             JSONObject value = new JSONObject(json);
             acceptedMode = value.optInt("evalMode", -1);
-            if ((acceptedMode != 0 && acceptedMode != 8) || value.length() != 2) throw new IllegalArgumentException();
-            accepted = validateReference(value.getString("reference"), acceptedMode);
+            acceptedEngine = value.has("engine") ? value.getString("engine") : "16k_zh";
+            if (value.length() != (value.has("engine") ? 3 : 2)) throw new IllegalArgumentException();
+            accepted = validateReference(value.getString("reference"), acceptedMode, acceptedEngine);
         } catch (Exception ignored) { fail("invalid-reference"); return; }
         final int requestedGeneration;
         synchronized (this) {
@@ -135,6 +139,7 @@ public final class GameAssessment {
                 if (!allowed()) return;
                 reference = accepted;
                 evalMode = acceptedMode;
+                engine = acceptedEngine;
                 sessionId = UUID.randomUUID().toString();
                 status = "ready"; error = ""; finishRequested = false;
                 final int token = generation;
@@ -173,18 +178,35 @@ public final class GameAssessment {
             parameters.put("timestamp", Long.toString(now));
             parameters.put("expired", Long.toString(now + 90));
             parameters.put("nonce", Integer.toString(1 + random.nextInt(Integer.MAX_VALUE - 1)));
-            parameters.put("server_engine_type", "16k_zh");
+            parameters.put("server_engine_type", engine);
             parameters.put("voice_id", sessionId);
             parameters.put("voice_format", "0");
             parameters.put("text_mode", "0");
-            parameters.put("ref_text", (evalMode == 8 ? "{::cmd{F_TDET=true}}" : "") + reference);
+            parameters.put("ref_text", "16k_en".equals(engine) ? reference : assessmentReference(reference, evalMode));
             parameters.put("eval_mode", Integer.toString(evalMode));
             parameters.put("score_coeff", "1.0");
             parameters.put("sentence_info_enabled", "0");
             parameters.put("rec_mode", "1");
             String url = signedUrl(configuration.getString("appId"), configuration.getString("secretKey"), parameters);
-            String output = new JSONObject().put("sessionId", sessionId).put("url", url)
-                    .put("pcmBase64", Base64.encodeToString(bytes, Base64.NO_WRAP)).put("sampleRate", RATE).toString();
+            JSONObject payload = new JSONObject().put("sessionId", sessionId).put("url", url)
+                    .put("pcmBase64", Base64.encodeToString(bytes, Base64.NO_WRAP)).put("sampleRate", RATE);
+            if (evalMode == 8) {
+                String[] parts = reference.split(" ");
+                String last = parts[parts.length - 1];
+                if (last.matches("[a-z]+[1-4]")) {
+                    // Independently request the final syllable's real Tone result. The page
+                    // clips only that aligned interval from the same RAM recording.
+                    String auditId = UUID.randomUUID().toString();
+                    TreeMap<String, String> audit = new TreeMap<String, String>(parameters);
+                    audit.put("voice_id", auditId); audit.put("eval_mode", "1");
+                    audit.put("nonce", Integer.toString(1 + random.nextInt(Integer.MAX_VALUE - 1)));
+                    audit.put("ref_text", assessmentReference("啊 " + last, 1));
+                    payload.put("toneAudit", new JSONObject().put("sessionId", auditId)
+                            .put("index", parts.length - 1).put("reference", last)
+                            .put("url", signedUrl(configuration.getString("appId"), configuration.getString("secretKey"), audit)));
+                }
+            }
+            String output = payload.toString();
             reference = ""; recordedSessionId = ""; status = "idle"; error = "";
             return output;
         } catch (Exception ignored) { reference = ""; recordedSessionId = ""; status = "error"; error = "signing-unavailable"; return "{\"error\":\"signing-unavailable\"}"; }
@@ -199,7 +221,7 @@ public final class GameAssessment {
         AudioRecord local = recorder;
         if (local != null) try { local.stop(); } catch (RuntimeException ignored) { }
         if (pcm != null) { Arrays.fill(pcm, (byte) 0); pcm = null; }
-        reference = ""; sessionId = ""; recordedSessionId = ""; elapsedMs = 0; level = 0; error = "";
+        reference = ""; engine = "16k_zh"; sessionId = ""; recordedSessionId = ""; elapsedMs = 0; level = 0; error = "";
         status = configured ? "idle" : "unconfigured";
     }
 
@@ -304,14 +326,41 @@ public final class GameAssessment {
         } finally { Arrays.fill(ciphertext, (byte) 0); Arrays.fill(nonce, (byte) 0); if (plain != null) Arrays.fill(plain, (byte) 0); }
     }
 
+    synchronized boolean minimaxConfigured() { return !closed && minimaxConfigured; }
+    synchronized boolean privateConfigured() { return !closed && configured; }
+    synchronized String minimaxToken() {
+        if (closed) return "";
+        try { JSONObject value = credentials(); return value != null && value.has("minimaxToken") ? value.getString("minimaxToken") : ""; }
+        catch (Exception ignored) { return ""; }
+    }
+
     // Pure request helpers are package-visible so deterministic tests execute the actual code.
     static String validateReference(String input, int mode) {
         if (input == null) throw new IllegalArgumentException();
         String text = input.trim().replaceAll("\\s+", " ");
-        if (text.isEmpty() || text.length() > 80 || (mode != 0 && mode != 8)) throw new IllegalArgumentException();
+        if (text.isEmpty() || text.length() > 80 || (mode != 0 && mode != 1 && mode != 8)) throw new IllegalArgumentException();
         if (mode == 0 && !text.matches("[\\u3400-\\u9FFF]{1,10}")) throw new IllegalArgumentException();
+        if (mode == 1 && !text.matches("[\\u3400-\\u9FFF] [a-z]+[1-4]")) throw new IllegalArgumentException();
         if (mode == 8 && !text.matches("[a-z]+[1-4]?( [a-z]+[1-4]?){0,11}")) throw new IllegalArgumentException();
         return text;
+    }
+
+    static String validateReference(String input, int mode, String engine) {
+        if ("16k_zh".equals(engine)) return validateReference(input, mode);
+        if (!"16k_en".equals(engine) || mode != 0 || input == null) throw new IllegalArgumentException();
+        String word = input.trim();
+        // The first English game has a fixed nine-word child vocabulary; no free prompts.
+        if (!word.matches("apple|banana|bed|computer|dad|mom|brother|me|sister")) throw new IllegalArgumentException();
+        return word;
+    }
+
+    static String assessmentReference(String reference, int mode) {
+        String valid = validateReference(reference, mode);
+        if (mode == 1) {
+            String[] parts = valid.split(" ");
+            return "{::cmd{F_TDET=true}}" + parts[0] + "{::pron{" + parts[1] + "}}";
+        }
+        return (mode == 8 ? "{::cmd{F_TDET=true}}" : "") + valid;
     }
 
     static String signedUrl(String appId, String signingKey, TreeMap<String, String> parameters) throws Exception {

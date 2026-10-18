@@ -46,6 +46,8 @@ public class MainActivity extends Activity {
     private GameFeedback feedback;
     private GameAudio audio;
     private GameAssessment assessment;
+    private GameServices services;
+    private volatile boolean servicesPage = false;
     private volatile boolean assessmentPage = false;
     private GameCamera camera;
     private volatile TextToSpeech tts;
@@ -55,6 +57,7 @@ public class MainActivity extends Activity {
     private String devPageRoot;
     private String devResourceVersion;
     private volatile boolean ttsReady = false;
+    private volatile Locale ttsChineseLocale = Locale.SIMPLIFIED_CHINESE;
     private volatile String ttsWhy = "not-started";
 
     // ── 重力计（倾斜控制）───────────────────────────────
@@ -165,6 +168,9 @@ public class MainActivity extends Activity {
                 stopSpeech();
             }
         });
+        services = new GameServices(this, assessment, new GameServices.Host() {
+            public boolean servicesPageAllowed() { return foreground && !destroyed && servicesPage; }
+        });
         camera = new GameCamera(this, web);
         if (BuildConfig.DEV) WebView.setWebContentsDebuggingEnabled(true);
         WebSettings s = web.getSettings();
@@ -196,6 +202,7 @@ public class MainActivity extends Activity {
         web.addJavascriptInterface(feedback, "RugeFeedback");
         web.addJavascriptInterface(audio, "RugeAudioNative");
         web.addJavascriptInterface(assessment, "RugeAssessment");
+        web.addJavascriptInterface(services, "RugeServices");
         web.addJavascriptInterface(camera, "RugeCamera");
 
         setContentView(web);
@@ -215,8 +222,24 @@ public class MainActivity extends Activity {
             if (assessment != null && assessment.recording()) return false;
             if (!foreground || destroyed || !ttsReady || engine == null || text == null || text.isEmpty()) return false;
             try {
+                int language = engine.setLanguage(ttsChineseLocale);
+                if (language < TextToSpeech.LANG_AVAILABLE) return false;
+                engine.setSpeechRate(0.82f); engine.setPitch(1.12f);
                 return engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "ruge") != TextToSpeech.ERROR;
             } catch (Throwable t) { return false; }
+        }
+        @JavascriptInterface
+        public boolean speakEnglish(String text) {
+            TextToSpeech engine = tts;
+            if (assessment != null && assessment.recording()) return false;
+            if (!foreground || destroyed || !ttsReady || engine == null || text == null
+                    || !text.matches("apple|banana|bed|computer|dad|mom|brother|me|sister")) return false;
+            try {
+                if (engine.isLanguageAvailable(Locale.US) < TextToSpeech.LANG_AVAILABLE
+                        || engine.setLanguage(Locale.US) < TextToSpeech.LANG_AVAILABLE) return false;
+                engine.setSpeechRate(0.8f); engine.setPitch(1.0f);
+                return engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "ruge-en") != TextToSpeech.ERROR;
+            } catch (Throwable ignored) { return false; }
         }
         @JavascriptInterface
         public boolean available() { return ttsReady; }
@@ -461,6 +484,7 @@ public class MainActivity extends Activity {
                             }
                             tts.setSpeechRate(0.82f);
                             tts.setPitch(1.12f);
+                            ttsChineseLocale = loc;
                             ttsReady = true;
                             ttsWhy = "ok lang=" + loc + " avail=" + a;
                             return;
@@ -538,6 +562,8 @@ public class MainActivity extends Activity {
         public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
             // Leaving a game always closes its capture, even if pagehide never executes.
             assessmentPage = false;
+            servicesPage = false;
+            if (services != null) services.cancelInternal();
             if (assessment != null) assessment.cancelInternal();
             if (audio != null) audio.stop();
             if (camera != null) camera.stop();
@@ -562,8 +588,9 @@ public class MainActivity extends Activity {
             // Privileged provisioning/PCM/signing are never exposed to dev overrides,
             // other games, query variants, iframes or remote pages. speaking.html also
             // enforces frame-src 'none' in its own CSP.
-            assessmentPage = "file:///android_asset/hanzi-typing/speaking.html".equals(url)
-                    && url.equals(view.getUrl());
+            assessmentPage = ("file:///android_asset/hanzi-typing/speaking.html".equals(url)
+                    || "file:///android_asset/english-k/index.html".equals(url)) && url.equals(view.getUrl());
+            servicesPage = "file:///android_asset/settings/index.html".equals(url) && url.equals(view.getUrl());
             if (isAllowedLocalUrl(url)) dispatchLifecycle(foreground ? "resume" : "pause");
         }
     }
@@ -673,6 +700,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onPause() {
         foreground = false;
+        if (services != null) services.cancelInternal();
         if (assessment != null) assessment.cancelInternal();
         if (feedback != null) feedback.foreground(false);
         if (audio != null) audio.foreground(false);
@@ -718,6 +746,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         destroyed = true;
+        servicesPage = false;
+        if (services != null) services.close();
         assessmentPage = false;
         if (assessment != null) assessment.close();
         if (feedback != null) feedback.release();
@@ -743,6 +773,7 @@ public class MainActivity extends Activity {
             web.removeJavascriptInterface("RugeFeedback");
             web.removeJavascriptInterface("RugeAudioNative");
             web.removeJavascriptInterface("RugeAssessment");
+            web.removeJavascriptInterface("RugeServices");
             web.removeJavascriptInterface("RugeCamera");
             if (web.getParent() instanceof ViewGroup) ((ViewGroup) web.getParent()).removeView(web);
             web.destroy();

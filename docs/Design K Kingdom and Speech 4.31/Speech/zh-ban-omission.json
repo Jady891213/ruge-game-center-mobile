@@ -1,0 +1,72 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 53.7120475769043,
+    "PronAccuracy": 96.68168640136719,
+    "PronCompletion": 0.3333333432674408,
+    "SentenceId": -1,
+    "PronFluency": 0.959486722946167,
+    "Words": [
+      {
+        "Word": "b",
+        "ReferenceWord": "b",
+        "PronAccuracy": -1,
+        "MatchTag": 2,
+        "MemBeginTime": 50,
+        "MemEndTime": 50,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": []
+      },
+      {
+        "Word": "an1",
+        "ReferenceWord": "an1",
+        "PronAccuracy": -1,
+        "MatchTag": 2,
+        "MemBeginTime": 50,
+        "MemEndTime": 50,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": []
+      },
+      {
+        "Word": "ban1",
+        "ReferenceWord": "ban1",
+        "PronAccuracy": 96.68168640136719,
+        "MatchTag": 0,
+        "MemBeginTime": 150,
+        "MemEndTime": 580,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "b",
+            "PronAccuracy": 96.45466613769531,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 96.79518127441406,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "b an1 ban1",
+  "mode": 8,
+  "syntheticText": "班",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

@@ -1,0 +1,24 @@
+{
+  "package": "com.dsh.gamecenter",
+  "versionName": "4.31",
+  "versionCode": 54,
+  "installedFormal": true,
+  "apkSha256": "01e3c900c43fbf57ec183605cfb1e410fd7f39f9cbcc6f248b7af7f6811f4a92",
+  "sourceDevReleaseAssetsExact": 401,
+  "nativeLibrariesUnchanged": [
+    "lib/arm64-v8a/libonnxruntime.so",
+    "lib/arm64-v8a/libsherpa-onnx-jni.so"
+  ],
+  "notDebuggable": true,
+  "webViewCDPClosed": true,
+  "adbForwardsEmpty": true,
+  "secretsAbsentFromSourceDocsAndApk": true,
+  "cloudAssessmentConfigured": true,
+  "realCloudAssessmentTested": true,
+  "progressRestore": {
+    "exact": true,
+    "keys": 27,
+    "nativePreferencesExact": true,
+    "delayedSeconds": 6
+  }
+}

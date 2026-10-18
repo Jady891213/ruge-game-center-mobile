@@ -1,0 +1,50 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 0.4102613925933838,
+    "PronAccuracy": 0.4102613925933838,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9364504814147949,
+    "Words": [
+      {
+        "Word": "mom",
+        "ReferenceWord": "mom_0",
+        "PronAccuracy": 0.4102613925933838,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 220,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "m",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.7675407528877258,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "aa",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.03623361513018608,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "m",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.4270097613334656,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "mom",
+  "mode": 0,
+  "syntheticText": "elephant",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

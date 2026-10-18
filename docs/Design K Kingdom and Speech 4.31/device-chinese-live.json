@@ -1,0 +1,88 @@
+{
+  "state": {
+    "mode": "spell",
+    "group": 0,
+    "index": 0,
+    "task": {
+      "id": "spell:班:bān",
+      "char": "班",
+      "pinyin": "bān",
+      "choices": [
+        "bān"
+      ],
+      "mode": "spell",
+      "evalMode": 8,
+      "reference": "b an1 ban1",
+      "items": [
+        {
+          "label": "b",
+          "reference": "b",
+          "tone": 0,
+          "kind": "part"
+        },
+        {
+          "label": "ān",
+          "reference": "an1",
+          "tone": 1,
+          "kind": "part"
+        },
+        {
+          "label": "班",
+          "reference": "ban1",
+          "tone": 1,
+          "kind": "word"
+        }
+      ]
+    },
+    "result": {
+      "status": "scored",
+      "score": 41,
+      "pass": false,
+      "parts": [
+        {
+          "label": "b",
+          "score": null,
+          "tone": "none",
+          "matched": false,
+          "phones": []
+        },
+        {
+          "label": "ān",
+          "score": null,
+          "tone": "phoneme",
+          "matched": false,
+          "phones": []
+        },
+        {
+          "label": "班",
+          "score": null,
+          "tone": "unknown",
+          "matched": false,
+          "phones": []
+        }
+      ],
+      "reason": "每一段都读出来"
+    },
+    "phase": "idle",
+    "paused": false,
+    "inFlight": false,
+    "records": {
+      "spell:班:bān": {
+        "char": "班",
+        "pinyin": "bān",
+        "mode": "spell",
+        "score": 74,
+        "passed": false
+      },
+      "read:这:zhè": {
+        "char": "这",
+        "pinyin": "zhè",
+        "mode": "read",
+        "score": 93,
+        "passed": true
+      }
+    }
+  },
+  "status": "点一下，开始读",
+  "native": "idle"
+}

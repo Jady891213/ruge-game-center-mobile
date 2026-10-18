@@ -1,0 +1,44 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 45.80613327026367,
+    "PronAccuracy": 45.80613327026367,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9751818180084229,
+    "Words": [
+      {
+        "Word": "班",
+        "ReferenceWord": "",
+        "PronAccuracy": 45.80613327026367,
+        "MatchTag": 0,
+        "MemBeginTime": 650,
+        "MemEndTime": 990,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 5.647670269012451,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "",
+            "PronAccuracy": 65.88536834716797,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "班",
+  "mode": 1,
+  "syntheticText": "班",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

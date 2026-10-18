@@ -1,0 +1,68 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 2.0800364017486572,
+    "PronAccuracy": 2.0800364017486572,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9787691235542297,
+    "Words": [
+      {
+        "Word": "banana",
+        "ReferenceWord": "banana_0",
+        "PronAccuracy": 2.0800364017486572,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 450,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 11.642704010009766,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.27188631892204285,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "n",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.06693092733621597,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "aa",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.06749420613050461,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "n",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.14941716194152832,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.2817869782447815,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "banana",
+  "mode": 0,
+  "syntheticText": "elephant",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

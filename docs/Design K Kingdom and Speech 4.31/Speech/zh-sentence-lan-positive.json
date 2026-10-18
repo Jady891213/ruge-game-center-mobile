@@ -1,0 +1,44 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 96.33378601074219,
+    "PronAccuracy": 96.33378601074219,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.933819055557251,
+    "Words": [
+      {
+        "Word": "蓝",
+        "ReferenceWord": "",
+        "PronAccuracy": 96.33378601074219,
+        "MatchTag": 0,
+        "MemBeginTime": 90,
+        "MemEndTime": 650,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 2,
+          "HypothesisTone": 2
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "l",
+            "ReferencePhone": "",
+            "PronAccuracy": 95.70928955078125,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an2",
+            "ReferencePhone": "",
+            "PronAccuracy": 96.64602661132812,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "蓝",
+  "mode": 1,
+  "syntheticText": "蓝",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

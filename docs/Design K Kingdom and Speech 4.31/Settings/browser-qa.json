@@ -1,0 +1,211 @@
+{
+  "fixturesOnly": true,
+  "layouts": [
+    {
+      "width": 392,
+      "height": 872,
+      "scrollWidth": 392,
+      "content": {
+        "x": 0,
+        "y": 72,
+        "width": 392,
+        "height": 800,
+        "top": 72,
+        "right": 392,
+        "bottom": 872,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 392,
+        "height": 72,
+        "top": 0,
+        "right": 392,
+        "bottom": 72,
+        "left": 0
+      },
+      "buttons": [
+        {
+          "id": "back",
+          "x": 20,
+          "w": 46
+        },
+        {
+          "id": "sound",
+          "x": 288,
+          "w": 62
+        },
+        {
+          "id": "vibration",
+          "x": 288,
+          "w": 62
+        },
+        {
+          "id": "awake",
+          "x": 288,
+          "w": 62
+        },
+        {
+          "id": "",
+          "x": 285,
+          "w": 66
+        },
+        {
+          "id": "",
+          "x": 266,
+          "w": 85
+        },
+        {
+          "id": "",
+          "x": 285,
+          "w": 66
+        },
+        {
+          "id": "",
+          "x": 266,
+          "w": 85
+        }
+      ],
+      "headerFixedOnScroll": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "content": {
+        "x": 0,
+        "y": 72,
+        "width": 320,
+        "height": 496,
+        "top": 72,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 72,
+        "top": 0,
+        "right": 320,
+        "bottom": 72,
+        "left": 0
+      },
+      "buttons": [
+        {
+          "id": "back",
+          "x": 14,
+          "w": 46
+        },
+        {
+          "id": "sound",
+          "x": 226,
+          "w": 62
+        },
+        {
+          "id": "vibration",
+          "x": 226,
+          "w": 62
+        },
+        {
+          "id": "awake",
+          "x": 226,
+          "w": 62
+        },
+        {
+          "id": "",
+          "x": 222,
+          "w": 66
+        },
+        {
+          "id": "",
+          "x": 203,
+          "w": 85
+        },
+        {
+          "id": "",
+          "x": 222,
+          "w": 66
+        },
+        {
+          "id": "",
+          "x": 203,
+          "w": 85
+        }
+      ],
+      "headerFixedOnScroll": true
+    },
+    {
+      "width": 872,
+      "height": 392,
+      "scrollWidth": 872,
+      "content": {
+        "x": 0,
+        "y": 62,
+        "width": 872,
+        "height": 330,
+        "top": 62,
+        "right": 872,
+        "bottom": 392,
+        "left": 0
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 872,
+        "height": 62,
+        "top": 0,
+        "right": 872,
+        "bottom": 62,
+        "left": 0
+      },
+      "buttons": [
+        {
+          "id": "back",
+          "x": 20,
+          "w": 41
+        },
+        {
+          "id": "sound",
+          "x": 303.1875,
+          "w": 62
+        },
+        {
+          "id": "vibration",
+          "x": 303.1875,
+          "w": 62
+        },
+        {
+          "id": "awake",
+          "x": 303.1875,
+          "w": 62
+        },
+        {
+          "id": "",
+          "x": 765,
+          "w": 66
+        },
+        {
+          "id": "",
+          "x": 746,
+          "w": 85
+        },
+        {
+          "id": "",
+          "x": 765,
+          "w": 66
+        },
+        {
+          "id": "",
+          "x": 746,
+          "w": 85
+        }
+      ],
+      "headerFixedOnScroll": true
+    }
+  ],
+  "errors": [],
+  "expiresLocallyWithoutNetworkRefresh": true
+}

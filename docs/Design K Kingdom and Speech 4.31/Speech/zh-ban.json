@@ -1,0 +1,43 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 96.2812271118164,
+    "PronAccuracy": 96.2812271118164,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.968350350856781,
+    "Words": [
+      {
+        "Word": "ban1",
+        "ReferenceWord": "ban1",
+        "PronAccuracy": 96.2812271118164,
+        "MatchTag": 0,
+        "MemBeginTime": 150,
+        "MemEndTime": 530,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "b",
+            "PronAccuracy": 95.41334533691406,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "an1",
+            "PronAccuracy": 96.71516418457031,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "ban1",
+  "mode": 8,
+  "audio": "local synthetic TTS / 16 kHz mono signed PCM; no human recording"
+}

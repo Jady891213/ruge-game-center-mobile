@@ -1,0 +1,56 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 99.38626861572266,
+    "PronAccuracy": 99.38626861572266,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.885749101638794,
+    "Words": [
+      {
+        "Word": "apple",
+        "ReferenceWord": "apple_0",
+        "PronAccuracy": 99.38626861572266,
+        "MatchTag": 0,
+        "MemBeginTime": 150,
+        "MemEndTime": 600,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "ae",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.02576446533203,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "p",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.48576354980469,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.59796142578125,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "l",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.43559265136719,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "apple",
+  "mode": 0,
+  "audio": "MiniMax synthetic demo en:apple",
+  "demoSha256": "1d06861cdd0bf36ff67723d2427bf5fff7a0587b198139e52d3eb2082380db48"
+}

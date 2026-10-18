@@ -1,0 +1,18 @@
+{
+  "clips": 101,
+  "categories": {
+    "englishWords": 9,
+    "chineseReadings": 80,
+    "chineseSpelling": 12
+  },
+  "allTasksCovered": true,
+  "allSha256Verified": true,
+  "allDecodeVerified": true,
+  "codec": "mp3",
+  "sampleRate": 32000,
+  "channels": 1,
+  "totalBytes": 2170308,
+  "officialSynthesisRequests": 102,
+  "failedRateLimitRequests": 1,
+  "errors": []
+}

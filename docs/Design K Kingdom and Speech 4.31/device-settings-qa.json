@@ -1,0 +1,84 @@
+{
+  "before": {
+    "url": "file:///android_asset/settings/index.html",
+    "bridge": {
+      "version": "4.31",
+      "services": [
+        {
+          "id": "tencent-soe",
+          "name": "腾讯云口语评测",
+          "status": "unsupported",
+          "configured": true,
+          "quota": null,
+          "updatedAt": null,
+          "error": "quota-console-only"
+        },
+        {
+          "id": "minimax-token-plan",
+          "name": "MiniMax 共享套餐",
+          "status": "stale",
+          "configured": true,
+          "quota": null,
+          "updatedAt": null,
+          "error": ""
+        }
+      ]
+    },
+    "assessmentEnabled": false
+  },
+  "sound": {
+    "before": "true",
+    "toggled": "false",
+    "restored": "true"
+  },
+  "vibration": {
+    "before": "true",
+    "toggled": "false",
+    "restored": "true"
+  },
+  "awake": {
+    "before": "true",
+    "toggled": "false",
+    "restored": "true"
+  },
+  "live": {
+    "version": "4.31",
+    "services": [
+      {
+        "id": "tencent-soe",
+        "name": "腾讯云口语评测",
+        "status": "unsupported",
+        "configured": true,
+        "quota": null,
+        "updatedAt": null,
+        "error": "quota-console-only"
+      },
+      {
+        "id": "minimax-token-plan",
+        "name": "MiniMax 共享套餐",
+        "status": "ready",
+        "configured": true,
+        "quota": {
+          "remaining": 99,
+          "total": 100,
+          "unit": "%",
+          "expiresAt": 1792343603240,
+          "windowLabel": "5小时窗口剩余",
+          "weeklyLabel": "本周剩余",
+          "expiresLabel": "重置",
+          "weeklyRemaining": 2,
+          "weeklyTotal": 100,
+          "weeklyExpiresAt": 1792433106270
+        },
+        "updatedAt": 1792326791800,
+        "error": ""
+      }
+    ]
+  },
+  "secondRefreshCooldown": false,
+  "outside": {
+    "url": "file:///android_asset/index.html",
+    "services": [],
+    "assessmentEnabled": false
+  }
+}

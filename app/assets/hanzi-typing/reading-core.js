@@ -11,17 +11,39 @@ function deck(mode,group=0){if(mode==='spell')return Array.from(INTRO);if(mode!=
 function task(ch,mode='read',pinyin){const choices=readings(ch);if(!choices.length||!['read','spell'].includes(mode))throw new Error('invalid-task');const p=pinyin||choices[0];if(!choices.includes(p))throw new Error('invalid-reading');let refs;
 if(mode==='spell'){if(!SPLIT[ch])throw new Error('not-in-spelling-deck');refs=SPLIT[ch].slice();if(refs.at(-1)!==numeric(p))throw new Error('invalid-spelling-reading');}else refs=[numeric(p)];
 const neutral=mode==='read'&&!/[1-4]$/.test(refs[0]);
-return{id:mode+':'+ch+':'+p,char:ch,pinyin:p,choices,mode,evalMode:neutral?0:8,reference:neutral?ch:refs.join(' '),items:refs.map((reference,i)=>({label:i===refs.length-1&&mode==='spell'?ch:marked(reference),reference:neutral?ch:reference,tone:Number(/[1-4]$/.exec(reference)?.[0]||0),kind:i===refs.length-1?'word':'part'}))};}
+return{id:mode+':'+ch+':'+p,char:ch,pinyin:p,choices,mode,evalMode:neutral?0:mode==='read'?1:8,reference:neutral?ch:mode==='read'?ch+' '+refs[0]:refs.join(' '),items:refs.map((reference,i)=>({label:i===refs.length-1&&mode==='spell'?ch:marked(reference),reference:neutral?ch:reference,tone:Number(/[1-4]$/.exec(reference)?.[0]||0),kind:i===refs.length-1?'word':'part'}))};}
 function number(v){return typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=100?v:null;}
 function norm(s){return String(s||'').toLowerCase().replace(/ü/g,'v').replace(/\s/g,'');}
+function detectedTone(word,expected){
+  if(!expected)return 'none';const tone=word?.Tone;
+  if(tone?.Valid!==true||tone.RefTone!==expected||![1,2,3,4].includes(tone.HypothesisTone??tone.HypTone))return 'unknown';
+  return (tone.HypothesisTone??tone.HypTone)===expected?'match':'mismatch';
+}
 function grade(t,raw){const unavailable=reason=>({status:'unavailable',score:null,pass:false,parts:[],reason});if(!t||!raw||typeof raw!=='object')return unavailable('评分暂不可用');
-const score=number(raw.SuggestedScore);if(score===null||!Array.isArray(raw.Words))return unavailable('评分暂不可用');
-const words=raw.Words,parts=t.items.map((item,i)=>{const word=words[i]||{},value=number(word.PronAccuracy),reference=norm(word.ReferenceWord||word.Word),expected=norm(item.reference);const matches=reference===expected||(item.kind==='word'&&reference===t.char);const tag=word.MatchTag;
-const tone=item.tone?word.Tone?.Valid===true&&word.Tone.RefTone===item.tone?[word.Tone.HypothesisTone,word.Tone.HypTone].includes(item.tone)?'match':'mismatch':'unknown':'none';
-return{label:item.label,score:value,tone,matched:matches&&tag===0,phones:Array.isArray(word.PhoneInfos)?word.PhoneInfos.map(p=>({label:String(p.ReferencePhone||p.Phone||''),score:number(p.PronAccuracy)})):[]};});
-const complete=words.length===t.items.length&&parts.every(p=>p.matched&&p.score!==null);const toneWrong=parts.some(p=>p.tone==='mismatch'),toneUnknown=parts.some(p=>p.tone==='unknown');
-const pass=complete&&!toneWrong&&!toneUnknown&&score>=80&&parts.every(p=>p.score>=60);
-const reason=pass?'读得真棒！':!complete?'每一段都读出来':toneWrong?'声调再试试':toneUnknown?'声调没听清，再读一次':score<80||parts.some(p=>p.score<60)?'再读清楚一点':'再试一次';
+let score=number(raw.SuggestedScore);if(score===null||!Array.isArray(raw.Words))return unavailable('评分暂不可用');
+if(score===0&&raw.Words.length===0)return unavailable('没听清，再读一次');
+const words=raw.Words,parts=t.items.map((item,i)=>{
+ const word=words[i]||{},value=number(word.PronAccuracy),reference=norm(word.ReferenceWord||word.Word),expected=norm(item.reference),matches=reference===expected||(item.kind==='word'&&reference===t.char);
+ let tone=detectedTone(word,item.tone),partScore=value;
+ const phones=Array.isArray(word.PhoneInfos)?word.PhoneInfos.map(p=>({label:String(p.ReferencePhone||p.Phone||''),heard:String(p.Phone||''),score:number(p.PronAccuracy),matched:p.MatchTag===0})):[];
+ // eval8 does not expose an independent Tone result. Its intermediate phoneme
+ // score remains a phoneme score; never label a forced-aligned suffix as correct tone.
+ if(t.mode==='spell'&&item.kind==='part'&&item.tone&&tone==='unknown'){
+   tone=phones.some(p=>/[1-4]$/.test(p.label)&&/[1-4]$/.test(p.heard)&&p.label!==p.heard)?'mismatch':'phoneme';
+ }
+ if(t.mode==='spell'&&item.kind==='word'&&raw.ToneAudit){
+   const audit=raw.ToneAudit,a=audit.result,aw=a?.Words;
+   if(audit.index===i&&audit.reference===item.reference&&number(a?.SuggestedScore)!==null&&Array.isArray(aw)&&aw.length===1&&aw[0].MatchTag===0&&number(aw[0].PronAccuracy)!==null){
+     tone=detectedTone(aw[0],item.tone);partScore=value===null?null:Math.min(value,aw[0].PronAccuracy);score=Math.min(score,a.SuggestedScore);
+   }else tone='unknown';
+ }
+ return{label:item.label,score:partScore,tone,matched:matches&&word.MatchTag===0,phones};
+});
+const complete=words.length===t.items.length&&parts.every(p=>p.matched&&p.score!==null);
+const toneWrong=parts.some(p=>p.tone==='mismatch'),toneUnknown=parts.some(p=>p.tone==='unknown');
+const phonesWrong=parts.some(p=>p.phones.some(q=>q.score===null||q.score<45||!q.matched));
+const pass=complete&&!toneWrong&&!toneUnknown&&!phonesWrong&&score>=80&&parts.every(p=>p.score>=60);
+const reason=pass?'读得真棒！':!complete?'每一段都读出来':toneWrong?'声调再试试':toneUnknown?'声调没听准，再读一次':score<80||parts.some(p=>p.score<60)||phonesWrong?'再读清楚一点':'再试一次';
 return{status:'scored',score:Math.floor(score),pass,parts,reason};}
 w.ReadingCore=Object.freeze({deck,task,grade,readings,numeric,marked,INTRO,PASS_SCORE:80});
 })(window);

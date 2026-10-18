@@ -1,0 +1,25 @@
+TAP version 13
+# Subtest: 专业朗读签名、参考文本与原生联网权限策略
+ok 1 - 专业朗读签名、参考文本与原生联网权限策略
+  ---
+  duration_ms: 1893.414292
+  ...
+# Subtest: 真实原生余量解析保留MiniMax双窗口百分比，零count不冒充次数，控制台目标固定
+ok 2 - 真实原生余量解析保留MiniMax双窗口百分比，零count不冒充次数，控制台目标固定
+  ---
+  duration_ms: 410.432542
+  ...
+# Subtest: 服务桥只授予包内设置页，后台及导航取消，设置不获得录音签名
+ok 3 - 服务桥只授予包内设置页，后台及导航取消，设置不获得录音签名
+  ---
+  duration_ms: 1.467041
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1921.196375

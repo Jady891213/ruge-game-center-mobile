@@ -1,14 +1,14 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十七款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，游戏资源离线打包；专业语音评分需联网，尚待开通服务。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。应用用 Android WebView 加载本地网页，当前共有十九款在架游戏，包括益智、认字、动作、重力、声音与摄像头玩法，游戏资源离线打包；专业语音评分需联网。
 
-当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.30 / versionCode 53**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
+当前 Android 包名为 `com.dsh.gamecenter`，版本为 **4.31 / versionCode 54**，以 [manifest](app/AndroidManifest.xml) 为准。网页游戏在 Mac 开发与测试，统一构建 APK 后安装到手机验证。
 
 ## 项目目录
 
 | 目录 | 用途 |
 |---|---|
-| `app/assets/` | 当前菜单、十七款在架游戏和离线素材源码；另保留已暂停的小熊点心店原型 |
+| `app/assets/` | 当前菜单、十九款在架游戏和离线素材源码；另保留已暂停的小熊点心店原型 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -20,6 +20,18 @@
 开发修改 `app/`。`reference/` 保留迁移快照，不能把它当作最新源码或构建输入。第三方字形数据的来源和许可见 [许可说明](THIRD_PARTY_NOTICES.md)。GitHub 仓库：[Jady891213/ruge-game-center-mobile](https://github.com/Jady891213/ruge-game-center-mobile)。Mac 维护 `main`，手机 DeepCode 使用 `deepcode-dev`。
 
 逐项审查、截图和本轮修改见 [游戏中心审查](docs/Review%20Game%20Center/game-center-review.md)。
+
+## K国王回家与专业读音（4.31）
+
+新增 **K国王回家**：横屏20关，覆盖孩子指定的9个英语词。先拼写、再朗读，真实专业评分通过后施法救伙伴；每关5颗心，网络、没听清或服务异常不扣心。先给完整拼写提示，后续逐渐隐藏，支持大字母块和实体键盘。
+
+开口读拼音已接通腾讯专业评测：整字按指定读音检查真实声调；拼读分别评声母/韵母/合读，再用末字音频独立检查声调。缺少有效声调时明确重试，不能只凭识别出目标字或高分算通过。
+
+首页新增齿轮设置，集中音效、震动、常亮与网络服务。MiniMax可刷新真实5小时/本周剩余百分比及重置时间；腾讯余量暂未接入自动查询，提供官方控制台入口。
+
+中英文示范使用MiniMax生成后离线打包，中文含80种指定读法和12条完整拼读，英语9词。播放示范、开始录音、后台和返回共用取消规则；API密钥不进入APK或Git。角色、词图、背景先用GPT生成原型和素材，再接入实际UI。
+
+详见[4.31设计与验收](docs/Design%20K%20Kingdom%20and%20Speech%204.31/review.md)。合成标准音测试用于验证接口与规则，儿童口音和家庭噪声效果仍需试玩。
 
 ## 连续色盘与开口读拼音（4.30）
 

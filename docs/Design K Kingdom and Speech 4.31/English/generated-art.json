@@ -1,0 +1,138 @@
+{
+  "method": "Built-in image_gen; original generated PNG alpha preserved, no bitmap modifications. Sprite rectangles from alpha>=96 connected components +3px; computer merges mouse component. Runtime aspect ratio matches source subject rectangles.",
+  "assets": [
+    {
+      "path": "app/assets/english-k/art/characters.png",
+      "sha256": "3270fc0c18b5c44bfec6c2472e6b6d2df172c952f0e314062e169b10592bdd0a",
+      "size": 1564249,
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a14ee3-11e5-70c3-b870-472a179898f6/exec-38aa6fab-c6a2-4cd2-a79e-317765901de8.png"
+    },
+    {
+      "path": "app/assets/english-k/art/words.png",
+      "sha256": "94afbc255ec47e92fa94feb7c05bac92f72515ecfe685066b3be59b12b4005a3",
+      "size": 1699222,
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a14ee3-11e5-70c3-b870-472a179898f6/exec-47ef4387-71d7-4d47-a3e1-8397a1b19d9d.png"
+    },
+    {
+      "path": "app/assets/english-k/art/world.png",
+      "sha256": "3e0537152e7b12c90e491bee986b5763d69df28f8e1067d741043a4e0a0c250a",
+      "size": 1278699,
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a14ee3-11e5-70c3-b870-472a179898f6/exec-34da7d9f-ea9e-4d00-8ad2-0861d22c1c24.png"
+    }
+  ],
+  "geometry": {
+    "characters": {
+      "king": {
+        "x": 91,
+        "y": 9,
+        "w": 576,
+        "h": 543,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "blob": {
+        "x": 873,
+        "y": 64,
+        "w": 532,
+        "h": 444,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "friend": {
+        "x": 188,
+        "y": 582,
+        "w": 399,
+        "h": 427,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "castle": {
+        "x": 897,
+        "y": 525,
+        "w": 513,
+        "h": 472,
+        "iw": 1536,
+        "ih": 1024
+      }
+    },
+    "words": {
+      "apple": {
+        "x": 138,
+        "y": 20,
+        "w": 274,
+        "h": 308,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "banana": {
+        "x": 588,
+        "y": 27,
+        "w": 374,
+        "h": 309,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "bed": {
+        "x": 1104,
+        "y": 24,
+        "w": 386,
+        "h": 315,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "computer": {
+        "x": 98,
+        "y": 372,
+        "w": 359,
+        "h": 296,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "dad": {
+        "x": 618,
+        "y": 347,
+        "w": 313,
+        "h": 327,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "mom": {
+        "x": 1126,
+        "y": 357,
+        "w": 315,
+        "h": 317,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "brother": {
+        "x": 155,
+        "y": 693,
+        "w": 238,
+        "h": 318,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "me": {
+        "x": 649,
+        "y": 690,
+        "w": 249,
+        "h": 320,
+        "iw": 1536,
+        "ih": 1024
+      },
+      "sister": {
+        "x": 1087,
+        "y": 705,
+        "w": 390,
+        "h": 306,
+        "iw": 1536,
+        "ih": 1024
+      }
+    }
+  },
+  "prototype": {
+    "path": "docs/Design K Kingdom and Speech 4.31/English/prototype.png",
+    "source": "/Users/wuzhiruge/.codex/generated_images/01a14ee3-11e5-70c3-b870-472a179898f6/exec-279ff855-2418-4881-b407-2a15138a39ef.png",
+    "sha256": "452d1b971bb494a1d2536485d2d338c22c97be3e7ce853e12aa0dd27991cea0d"
+  }
+}

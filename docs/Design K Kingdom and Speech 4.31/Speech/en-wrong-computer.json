@@ -1,0 +1,80 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 1.2465428113937378,
+    "PronAccuracy": 1.2465428113937378,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9898400902748108,
+    "Words": [
+      {
+        "Word": "computer",
+        "ReferenceWord": "computer_0",
+        "PronAccuracy": 1.2465428113937378,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 460,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "k",
+            "ReferencePhone": "",
+            "PronAccuracy": 6.663921356201172,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 1.7219752073287964,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "m",
+            "ReferencePhone": "",
+            "PronAccuracy": 1.1196626424789429,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "p",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.08488492667675018,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "y",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.23852263391017914,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "uw",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.0025469730608165264,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "t",
+            "ReferencePhone": "",
+            "PronAccuracy": 5.9447946114232764e-05,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "er",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.1407681703567505,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "computer",
+  "mode": 0,
+  "syntheticText": "apple",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

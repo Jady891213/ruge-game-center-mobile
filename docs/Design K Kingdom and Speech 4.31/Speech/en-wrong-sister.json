@@ -1,0 +1,62 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 22.15222930908203,
+    "PronAccuracy": 22.15222930908203,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9962869882583618,
+    "Words": [
+      {
+        "Word": "sister",
+        "ReferenceWord": "sister_0",
+        "PronAccuracy": 22.15222930908203,
+        "MatchTag": 0,
+        "MemBeginTime": 280,
+        "MemEndTime": 620,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "s",
+            "ReferencePhone": "",
+            "PronAccuracy": 11.09872055053711,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ih",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.5692583322525024,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "s",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.09416548162698746,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "t",
+            "ReferencePhone": "",
+            "PronAccuracy": 0.014267507009208202,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "er",
+            "ReferencePhone": "",
+            "PronAccuracy": 98.98473358154297,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "sister",
+  "mode": 0,
+  "syntheticText": "elephant",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 89.54979705810547,
+    "PronAccuracy": 89.54979705810547,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9411481022834778,
+    "Words": [
+      {
+        "Word": "山",
+        "ReferenceWord": "",
+        "PronAccuracy": 89.54979705810547,
+        "MatchTag": 0,
+        "MemBeginTime": 100,
+        "MemEndTime": 660,
+        "Tone": {
+          "Valid": true,
+          "RefTone": 1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "sh",
+            "ReferencePhone": "",
+            "PronAccuracy": 88.14292907714844,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "an1",
+            "ReferencePhone": "",
+            "PronAccuracy": 90.25321960449219,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_zh",
+  "reference": "山",
+  "mode": 1,
+  "syntheticText": "善",
+  "audio": "local macOS synthetic TTS, not child recording"
+}

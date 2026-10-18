@@ -33,6 +33,8 @@ class Base64 {static final int NO_WRAP=2; static String encodeToString(byte[] by
 public class AssessmentHarness {
 ''' + methods + '''
 public static void main(String[] args) throws Exception {
+ if(args[0].equals("request")) {try {System.out.print(assessmentReference(args[2],Integer.parseInt(args[1])));}catch(IllegalArgumentException e){System.out.print("INVALID");} return;}
+ if(args[0].equals("engine")) {try {System.out.print(validateReference(args[3],Integer.parseInt(args[1]),args[2]));}catch(IllegalArgumentException e){System.out.print("INVALID");} return;}
  if(args[0].equals("reference")) {try {System.out.print(validateReference(args[2],Integer.parseInt(args[1])));}catch(IllegalArgumentException e){System.out.print("INVALID");} return;}
  TreeMap<String,String> p=new TreeMap<String,String>();for(int i=3;i<args.length;i+=2)p.put(args[i],args[i+1]);
  System.out.print(signedUrl(args[1],args[2],p));
@@ -69,7 +71,17 @@ public static void main(String[] args) throws Exception {
         self.assertEqual(self.java('reference', '0', '班'), '班')
         self.assertEqual(self.java('reference', '0', '的'), '的')
         self.assertEqual(self.java('reference', '8', 'b an1 ban1'), 'b an1 ban1')
+        self.assertEqual(self.java('reference', '1', '班 ban1'), '班 ban1')
+        self.assertEqual(self.java('request', '1', '班 ban1'), '{::cmd{F_TDET=true}}班{::pron{ban1}}')
+        self.assertEqual(self.java('request', '1', '啊 an1'), '{::cmd{F_TDET=true}}啊{::pron{an1}}')
+        self.assertEqual(self.java('request', '1', '班{::cmd{bad}} ban1'), 'INVALID')
         self.assertEqual(self.java('reference', '8', '  sh  an1\nshan1  '), 'sh an1 shan1')
+
+    def test_english_fixed_vocabulary_and_engine_gate(self):
+        for word in 'apple banana bed computer dad mom brother me sister'.split():
+            self.assertEqual(self.java('engine', '0', '16k_en', word), word)
+        for mode, engine, text in [('8', '16k_en', 'apple'), ('0', 'unknown', 'apple'), ('0', '16k_en', 'apple&nonce=1'), ('0', '16k_en', 'elephant'), ('0', '16k_en', 'APPLE'), ('8', '16k_zh', '班')]:
+            self.assertEqual(self.java('engine', mode, engine, text), 'INVALID')
 
     def test_injected_commands_and_mixed_reference_rejected(self):
         for text in ('{::cmd{F_TDET=false}}b an1', 'b an1&secretid=other', 'b 班', '<script>', 'a0', 'a5', 'a9', '', 'a' * 81):
@@ -117,9 +129,9 @@ public void startRecording(){starts++;started.countDown();}public int read(short
 }''',
             'org/json/JSONObject.java': '''package org.json; public class JSONObject {
 private final java.util.Map<String,Object> map=new java.util.HashMap<String,Object>();public JSONObject(){}public JSONObject(String text){
-java.util.regex.Matcher m=java.util.regex.Pattern.compile("\\\"(reference|evalMode)\\\"\\\\s*:\\\\s*(?:\\\"([^\\\"]*)\\\"|([0-9]+))").matcher(text);
+java.util.regex.Matcher m=java.util.regex.Pattern.compile("\\\"(reference|evalMode|engine)\\\"\\\\s*:\\\\s*(?:\\\"([^\\\"]*)\\\"|([0-9]+))").matcher(text);
 while(m.find())map.put(m.group(1),m.group(2)==null?Integer.valueOf(m.group(3)):m.group(2));}
-public JSONObject put(String key,Object value){map.put(key,value);return this;}public String getString(String key){return (String)map.get(key);}public int optInt(String key,int fallback){Object v=map.get(key);return v instanceof Integer?((Integer)v).intValue():fallback;}public int length(){return map.size();}public String toString(){return "{}";}
+public JSONObject put(String key,Object value){map.put(key,value);return this;}public String getString(String key){return (String)map.get(key);}public int optInt(String key,int fallback){Object v=map.get(key);return v instanceof Integer?((Integer)v).intValue():fallback;}public boolean has(String key){return map.containsKey(key);}public int length(){return map.size();}public String toString(){return "{}";}
 }''',
             'com/dsh/gamecenter/BuildConfig.java': '''package com.dsh.gamecenter; public class BuildConfig {public static final boolean DEV=true;}''',
             'com/dsh/gamecenter/AssessmentQueueHarness.java': '''package com.dsh.gamecenter;

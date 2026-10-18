@@ -1,0 +1,62 @@
+{
+  "status": "scored",
+  "result": {
+    "SuggestedScore": 96.65447998046875,
+    "PronAccuracy": 96.65447998046875,
+    "PronCompletion": 1,
+    "SentenceId": -1,
+    "PronFluency": 0.9345486760139465,
+    "Words": [
+      {
+        "Word": "brother",
+        "ReferenceWord": "brother_0",
+        "PronAccuracy": 96.65447998046875,
+        "MatchTag": 0,
+        "MemBeginTime": 0,
+        "MemEndTime": 430,
+        "Tone": {
+          "Valid": false,
+          "RefTone": -1,
+          "HypothesisTone": -1
+        },
+        "PhoneInfos": [
+          {
+            "Phone": "b",
+            "ReferencePhone": "",
+            "PronAccuracy": 88.17005157470703,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "r",
+            "ReferencePhone": "",
+            "PronAccuracy": 96.70487976074219,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "ah",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.36695861816406,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "dh",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.5618896484375,
+            "MatchTag": 0
+          },
+          {
+            "Phone": "er",
+            "ReferencePhone": "",
+            "PronAccuracy": 99.4686508178711,
+            "MatchTag": 0
+          }
+        ]
+      }
+    ]
+  },
+  "engine": "16k_en",
+  "reference": "brother",
+  "mode": 0,
+  "syntheticText": "brother",
+  "audio": "local macOS synthetic TTS, not child recording"
+}
