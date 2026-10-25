@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "source": "GPT image generation, original assets; Nintendo imagery is research only and is not bundled",
+  "implementation": "One local atlas, shared by all 20 games. Per-subject source rectangles prevent adjacent-cell bleed and maintain aspect ratio. Prototype is a design reference; rules and text are real code, never baked into a screen image.",
+  "assets": [
+    {
+      "path": "app/assets/brain-school/sprites.png",
+      "useCase": "illustration-story",
+      "prompt": "Generate an original transparent sprite atlas with exactly 4 columns and 3 rows. Row 1: orange cat, brown dog, blue bird, pink fish. Row 2: cream rabbit, green frog, red apple, yellow banana. Row 3: teal toy car, blue sailboat, pink flower with green stem, golden five-point star. Bright flat preschool animation, thick rounded brown outlines, simple expressive faces, no text, no frame, generous transparent padding, landscape 4:3. Original designs; no copyrighted characters.",
+      "sha256": "709403fcd2c55c9443b797621a17ada82bff9bd17206b804993e57dc3ae2c4fd"
+    },
+    {
+      "path": "docs/Design Brain School 20/ui-prototype.png",
+      "useCase": "ui-mockup",
+      "prompt": "Original preschool mobile brain puzzle UI concept, three portrait screens side by side: collection menu titled 脑力游乐园 with narrow category column and two-column illustrated cards; number block deletion game targeting 10; spatial perspective game with four colored toy balls and a red viewing arrow. Cream paper, mint and sky blue rounded panels, warm yellow accents, very large Chinese type and touch controls, minimal text, flat animation-ready style. No Nintendo marks or copyrighted characters. Reference prototype, not final coded UI.",
+      "sha256": "9cbc7728c8d9545f3f95dcdefd6c045f3179ba63370d3324e16d6aa5812962fe"
+    }
+  ]
+}

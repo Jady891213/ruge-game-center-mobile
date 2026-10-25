@@ -1,8 +1,8 @@
 # 乳鸽游戏中心
 
-从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。Android WebView 加载本地网页，当前十九款在架游戏覆盖益智、认字、动作、重力、声音与摄像头玩法。游戏资源和示范朗读离线打包；专业语音评分需联网。
+从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。Android WebView 加载本地网页，当前20个入口覆盖益智、认字、动作、重力、声音与摄像头玩法。新增“脑力游乐园”内含20种随机脑力玩法，原19个入口保留。游戏资源和示范朗读离线打包；专业语音评分需联网。
 
-当前 Android 包名 **`com.dsh.gamecenter`**，版本 **4.34 / versionCode 57**，以 [manifest](app/AndroidManifest.xml) 为准。Mac 开发、测试和签名构建，手机覆盖安装与试玩验收。
+当前 Android 包名 **`com.dsh.gamecenter`**，版本 **4.35 / versionCode 58**，以 [manifest](app/AndroidManifest.xml) 为准。Mac 开发、测试和签名构建，手机覆盖安装与试玩验收。
 
 [更新记录](ChangeLog.md) · [开发约定](AGENTS.md) · [第三方许可](THIRD_PARTY_NOTICES.md) · [GitHub 仓库](https://github.com/Jady891213/ruge-game-center-mobile)
 
@@ -13,24 +13,25 @@
 | 分类 | 在架游戏与源码 |
 | --- | --- |
 | 认字 | [K国王回家](app/assets/english-k/) · [字里找字](app/assets/hanzi-puzzle/) · [看字打拼音](app/assets/hanzi-typing/) · [识字库](app/assets/hanzi-library/) |
-| 益智 | [水果天平](app/assets/animal-balance/) · [帽子小捣蛋](app/assets/hat-trick/) · [颜色小侦探](app/assets/camera-color/) · [森林果汁屋](app/assets/forest-juice/) · [小小密码箱](app/assets/code-breaker/) · [接水管](app/assets/pipe-flow/) · [小小调色师](app/assets/paint-mixing/) |
+| 益智 | [脑力游乐园：20种随机玩法](app/assets/brain-school/) · [水果天平](app/assets/animal-balance/) · [帽子小捣蛋](app/assets/hat-trick/) · [颜色小侦探](app/assets/camera-color/) · [森林果汁屋](app/assets/forest-juice/) · [小小密码箱](app/assets/code-breaker/) · [接水管](app/assets/pipe-flow/) · [小小调色师](app/assets/paint-mixing/) |
 | 重力 | [口袋探宝](app/assets/pocket-radar/) · [钢珠迷宫](app/assets/gravity-maze/) · [数字碰碰](app/assets/number-merge/) · [翻转星星盒](app/assets/tilt-star-box/) |
 | 反应 | [哼哼小飞机](app/assets/pitch-adventure/) · [口令小冒险](app/assets/voice-quest/) · [扑翼小鸟](app/assets/flappy-bird/) · [小青蛙跳池塘](app/assets/frog-pond/) |
 
 - **固定关卡**：十四款游戏含十五种固定玩法，共564关。字里找字保留60关，其余固定玩法至少36关；帽子与翻牌各36关。新增固定闯关游戏也遵循至少36关，追加保留旧题目编号与进度。
 - **字库与练习**：看字打拼音有36个练习包，复用原60字；识字库保留六组60字资料，开口读拼音从打字菜单进入。复习包不算新汉字条目。
+- **随机脑力**：脑力游乐园内含五类各四种玩法，随机组合、10档递进、60秒挑战与独立最高分，没有固定关卡或36关上限。题目与验收见 [20种脑力玩法](docs/Design%20Brain%20School%2020/review.md)。
 - **无限玩法**：扑翼小鸟、小青蛙跳池塘、哼哼小飞机、口袋探宝保持无限模式，不添加36关上限。口袋探宝含开锁与空间寻宝两种模式。
 - **返回层级**：顶部返回箭头与 Android 侧滑先退弹层、详情、子玩法或游戏内选关，再回游戏中心。字库详情先回列表；从打字进入字库时回打字入口。关闭暂停层仍暂停，需点“继续”；输入法打开时先收起键盘。
 
 小熊点心店已撤下入口，原型源码和素材保留；小恐龙冲刺当前实现与专属素材已删除。两者的旧分数、迁移快照与验收资料保留，详见 [更新记录](ChangeLog.md)。
 
-当前关卡清单和解法见 [36关与分层返回验收](docs/Design%2036%20Levels%20and%20Back%20Navigation%204.33/review.md)，最新实体侧滑与暂停触摸补验见 [4.34记录](docs/Review%20Android%20Gesture%20Followup%204.34/review.md)。
+当前关卡清单和解法见 [36关与分层返回验收](docs/Design%2036%20Levels%20and%20Back%20Navigation%204.33/review.md)，旧入口实体侧滑与暂停触摸补验见 [4.34记录](docs/Review%20Android%20Gesture%20Followup%204.34/review.md)。
 
 ## 项目目录
 
 | 目录 | 用途 |
 | --- | --- |
-| `app/assets/` | 当前菜单、十九款在架游戏和离线素材源码；另保留已暂停的小熊点心店原型 |
+| `app/assets/` | 当前菜单、二十个在架入口和离线素材源码；另保留已暂停的小熊点心店原型 |
 | `app/assets/shared/` | 共用反馈、输入、返回、评测与示范音频；各游戏保留自己的规则和布局 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建、素材生成和开发版 WebView 检查脚本 |
@@ -75,7 +76,7 @@ python3 scripts/build.py
 
 公开仓库不包含签名密钥；首次克隆需要自备签名材料并通过参数指定。覆盖更新已有应用必须使用原签名，由 Mac 发布端保管。已有 SDK 时可跳过安装步骤。本机已验证 JDK 18.0.2.1；JDK、SDK 和签名路径都可以通过构建参数或环境变量覆盖，详见 [构建说明](docs/build.md)。脚本只构建与校验，不会安装到手机。
 
-产物为 `out/game-center-v4.34-dev.apk` 和 `out/game-center-v4.34.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
+产物为 `out/game-center-v4.35-dev.apk` 和 `out/game-center-v4.35.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
 
 普通切后台会保留游戏状态并发送暂停/恢复事件；开发页面只有资源变化时才于回前台刷新。明确刷新开发页会重置页面状态。正式版关闭调试和外部开发页面能力。
 
@@ -100,7 +101,7 @@ export GAME_CENTER_ADB="$(pwd)/../../03-Android工具/platform-tools/adb"
 "$GAME_CENTER_ADB" connect '<手机IP:连接端口>'
 "$GAME_CENTER_ADB" devices -l
 export GAME_CENTER_SERIAL='<devices 列表中的目标设备标识>'
-"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.34-dev.apk
+"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.35-dev.apk
 "$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" shell am start -n com.dsh.gamecenter/.MainActivity
 ```
 

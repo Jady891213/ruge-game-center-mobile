@@ -1,0 +1,20 @@
+{
+  "versionName": "4.35",
+  "versionCode": 58,
+  "development": false,
+  "assetCount": 420,
+  "formalDevSourceAssetsIdentical": true,
+  "installedApkSha256": "b750c9dd9d25464d4652eea80b2544c26e5146ee9026f2a759be5737cf8c7aed",
+  "localApkSha256": "b750c9dd9d25464d4652eea80b2544c26e5146ee9026f2a759be5737cf8c7aed",
+  "webViewDebugSocket": false,
+  "originalProgressKeys": 31,
+  "progressRestoredBeforeFormalInstall": true,
+  "formalEntryTap": {
+    "x": 437.75001525878906,
+    "y": 514.8984336853027
+  },
+  "finalProgressRestoreAfterFormalEntryTest": true,
+  "formalEntryOpenedByPhysicalAdbTap": true,
+  "finalInstalledApkSha256": "b750c9dd9d25464d4652eea80b2544c26e5146ee9026f2a759be5737cf8c7aed",
+  "originalKeysRestored": 31
+}

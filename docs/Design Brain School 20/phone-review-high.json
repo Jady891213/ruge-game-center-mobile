@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "id": "match-blast",
+      "level": 10,
+      "touches": 6,
+      "correct": 1,
+      "score": 360,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "covered-cages",
+      "level": 10,
+      "touches": 5,
+      "correct": 1,
+      "score": 360,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "train-turn",
+      "level": 10,
+      "touches": 7,
+      "correct": 1,
+      "score": 360,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "true-view",
+      "level": 10,
+      "touches": 3,
+      "correct": 1,
+      "score": 360,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "tick-tock",
+      "level": 10,
+      "touches": 6,
+      "correct": 1,
+      "score": 360,
+      "pause": true,
+      "next": true
+    }
+  ],
+  "gestures": [
+    "pause",
+    "detail",
+    "hub",
+    "home"
+  ],
+  "progressRestored": true,
+  "originalKeys": 31,
+  "progressSHA256": "61947329b1979d61c126ee831da4da6536ad646e4af774dd514257dc72cf0b90"
+}

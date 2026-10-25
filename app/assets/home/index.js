@@ -2,6 +2,7 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const games = [
+    {id:'brain-school',cat:'puzzle',name:'脑力游乐园'},
     {id:'english-k',cat:'learn',name:'K国王回家'},
     {id:'animal-balance',cat:'puzzle',name:'水果天平'},
     {id:'hat-trick',cat:'puzzle',name:'帽子小捣蛋'},

@@ -1,0 +1,1354 @@
+{
+  "type": "real-chrome-pointer-memory",
+  "createdAt": "2026-10-25T18:16:52.335Z",
+  "cases": [
+    {
+      "id": "flash-memory",
+      "level": 1,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "0",
+            "w": 93.328125,
+            "h": 58
+          },
+          {
+            "label": "1",
+            "w": 93.328125,
+            "h": 58
+          },
+          {
+            "label": "2",
+            "w": 93.34375,
+            "h": 58
+          },
+          {
+            "label": "3",
+            "w": 93.328125,
+            "h": 58
+          },
+          {
+            "label": "4",
+            "w": 93.328125,
+            "h": 58
+          },
+          {
+            "label": "5",
+            "w": 93.34375,
+            "h": 58
+          }
+        ]
+      }
+    },
+    {
+      "id": "flash-memory",
+      "level": 5,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "0",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "1",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "2",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "3",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "4",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "5",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "6",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "7",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "8",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "9",
+            "w": 68,
+            "h": 58
+          }
+        ]
+      }
+    },
+    {
+      "id": "flash-memory",
+      "level": 10,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "0",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "1",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "2",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "3",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "4",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "5",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "6",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "7",
+            "w": 68,
+            "h": 58
+          },
+          {
+            "label": "8",
+            "w": 68,
+            "h": 59
+          },
+          {
+            "label": "9",
+            "w": 68,
+            "h": 59
+          },
+          {
+            "label": "★",
+            "w": 68,
+            "h": 59
+          },
+          {
+            "label": "♥",
+            "w": 68,
+            "h": 59
+          }
+        ]
+      }
+    },
+    {
+      "id": "memo-random",
+      "level": 1,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "记好啦",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "label": "小鱼",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "帆船",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "香蕉",
+            "w": 93.34375,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "小汽车",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "memo-random",
+      "level": 5,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "记好啦",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "label": "苹果",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小汽车",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "花朵",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小兔",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小鸟",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "帆船",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小猫",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "memo-random",
+      "level": 10,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "记好啦",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "label": "小鸟",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "苹果",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小猫",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "青蛙",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小汽车",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小兔",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "花朵",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "小狗",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "香蕉",
+            "w": 52.796875,
+            "h": 60
+          },
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse-retention",
+      "level": 1,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "小鱼",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "小汽车",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 93.34375,
+            "h": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse-retention",
+      "level": 5,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "小兔",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "小猫",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "小鸟",
+            "w": 93.34375,
+            "h": 85
+          },
+          {
+            "label": "帆船",
+            "w": 93.328125,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 93.328125,
+            "h": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse-retention",
+      "level": 10,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "小鸟",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "小汽车",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "小狗",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "小猫",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "青蛙",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "小兔",
+            "w": 68,
+            "h": 85
+          },
+          {
+            "label": "花朵",
+            "w": 68,
+            "h": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "covered-cages",
+      "level": 1,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "第1个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第2个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第3个鸟笼",
+            "w": 74,
+            "h": 80
+          }
+        ]
+      }
+    },
+    {
+      "id": "covered-cages",
+      "level": 5,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "第1个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第4个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第2个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第3个鸟笼",
+            "w": 74,
+            "h": 80
+          }
+        ]
+      }
+    },
+    {
+      "id": "covered-cages",
+      "level": 10,
+      "width": 320,
+      "height": 568,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 320,
+        "height": 568,
+        "bodyWidth": 320,
+        "stageHeight": 453,
+        "stageContentHeight": 453,
+        "tiles": [
+          {
+            "label": "第5个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第1个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第6个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第2个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第3个鸟笼",
+            "w": 74,
+            "h": 80
+          },
+          {
+            "label": "第4个鸟笼",
+            "w": 74,
+            "h": 80
+          }
+        ]
+      }
+    },
+    {
+      "type": "pause-and-layered-back",
+      "width": 320,
+      "height": 568,
+      "pauseFrozenMs": 2500,
+      "passed": true
+    },
+    {
+      "id": "flash-memory",
+      "level": 1,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "0",
+            "w": 112,
+            "h": 72
+          },
+          {
+            "label": "1",
+            "w": 112,
+            "h": 72
+          },
+          {
+            "label": "2",
+            "w": 112,
+            "h": 72
+          },
+          {
+            "label": "3",
+            "w": 112,
+            "h": 72
+          },
+          {
+            "label": "4",
+            "w": 112,
+            "h": 72
+          },
+          {
+            "label": "5",
+            "w": 112,
+            "h": 72
+          }
+        ]
+      }
+    },
+    {
+      "id": "flash-memory",
+      "level": 5,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "0",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "1",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "2",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "3",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "4",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "5",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "6",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "7",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "8",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "9",
+            "w": 81,
+            "h": 72
+          }
+        ]
+      }
+    },
+    {
+      "id": "flash-memory",
+      "level": 10,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "0",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "1",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "2",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "3",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "4",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "5",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "6",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "7",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "8",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "9",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "★",
+            "w": 81,
+            "h": 72
+          },
+          {
+            "label": "♥",
+            "w": 81,
+            "h": 72
+          }
+        ]
+      }
+    },
+    {
+      "id": "memo-random",
+      "level": 1,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "记好啦",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "label": "小鱼",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "帆船",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "香蕉",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "小汽车",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "memo-random",
+      "level": 5,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "记好啦",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "label": "苹果",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "小汽车",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "花朵",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "小兔",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "小鸟",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "帆船",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "小猫",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "memo-random",
+      "level": 10,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "记好啦",
+            "w": 0,
+            "h": 0
+          },
+          {
+            "label": "小鸟",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "苹果",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "小猫",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "青蛙",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "小汽车",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "小兔",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "花朵",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "小狗",
+            "w": 62.390625,
+            "h": 60
+          },
+          {
+            "label": "香蕉",
+            "w": 62.40625,
+            "h": 60
+          },
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse-retention",
+      "level": 1,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "小鱼",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "小汽车",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 112,
+            "h": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse-retention",
+      "level": 5,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "小兔",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "小猫",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "小鸟",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "帆船",
+            "w": 112,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 112,
+            "h": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "reverse-retention",
+      "level": 10,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "退回一格",
+            "w": 44,
+            "h": 46
+          },
+          {
+            "label": "小鸟",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "小汽车",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "小狗",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "小猫",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "青蛙",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "苹果",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "小兔",
+            "w": 81,
+            "h": 85
+          },
+          {
+            "label": "花朵",
+            "w": 81,
+            "h": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "covered-cages",
+      "level": 1,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 135,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "第1个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第2个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第3个鸟笼",
+            "w": 84,
+            "h": 92
+          }
+        ]
+      }
+    },
+    {
+      "id": "covered-cages",
+      "level": 5,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 235,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "第1个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第4个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第2个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第3个鸟笼",
+            "w": 84,
+            "h": 92
+          }
+        ]
+      }
+    },
+    {
+      "id": "covered-cages",
+      "level": 10,
+      "width": 392,
+      "height": 872,
+      "correct": 1,
+      "score": 360,
+      "nextRound": 2,
+      "metrics": {
+        "width": 392,
+        "height": 872,
+        "bodyWidth": 392,
+        "stageHeight": 743,
+        "stageContentHeight": 743,
+        "tiles": [
+          {
+            "label": "第5个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第1个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第6个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第2个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第3个鸟笼",
+            "w": 84,
+            "h": 92
+          },
+          {
+            "label": "第4个鸟笼",
+            "w": 84,
+            "h": 92
+          }
+        ]
+      }
+    },
+    {
+      "type": "pause-and-layered-back",
+      "width": 392,
+      "height": 872,
+      "pauseFrozenMs": 2500,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
