@@ -8,16 +8,16 @@ function create(options={}){
   let generation=0,timer=0,socket=null,pendingReject=null;
   function available(){try{return !!native?.available()&&typeof Socket==='function';}catch(_){return false;}}
   function configured(){try{return !!native?.configured();}catch(_){return false;}}
-  function cancel(){generation++;clearTimeout(timer);timer=0;if(socket){socket.onopen=socket.onmessage=socket.onerror=socket.onclose=null;try{socket.close();}catch(_){}socket=null;}try{native?.cancel();}catch(_){}if(pendingReject){const reject=pendingReject;pendingReject=null;reject(failure('cancelled'));}emit({status:'idle',level:0,elapsedMs:0});}
+  function cancel(){generation++;clearTimeout(timer);timer=0;if(socket){socket.onopen=socket.onmessage=socket.onerror=socket.onclose=null;try{socket.close();}catch(_){}socket=null;}try{native?.cancel();}catch(_){}w.RugeMusic?.resume('assessment');if(pendingReject){const reject=pendingReject;pendingReject=null;reject(failure('cancelled'));}emit({status:'idle',level:0,elapsedMs:0});}
   function finish(){try{native?.finish();}catch(_){}}
   async function start(task){
     cancel();if(!available())throw failure('unavailable');if(!configured())throw failure('unconfigured');if(document.hidden)throw failure('cancelled');
     const engine=task?.engine||'16k_zh';
     if(!task||typeof task.reference!=='string'||task.reference.length>80||!((engine==='16k_zh'&&[0,1,8].includes(task.evalMode))||(engine==='16k_en'&&task.evalMode===0&&/^(apple|banana|bed|computer|dad|mom|brother|me|sister)$/.test(task.reference))))throw failure('invalid-task');
-    const token=generation;
+    const token=generation;w.RugeMusic?.suspend('assessment');
     return new Promise((resolve,reject)=>{
       let done=false,recordSession='',recordStarted=false,recordingPcm=null,auditPcm=null;pendingReject=error=>end(error?.code||'cancelled');
-      function end(error,value){if(done)return;done=true;if(auditPcm){auditPcm.fill(0);auditPcm=null;}if(recordingPcm){recordingPcm.fill(0);recordingPcm=null;}clearTimeout(timer);timer=0;pendingReject=null;if(socket){socket.onopen=socket.onmessage=socket.onerror=socket.onclose=null;try{socket.close();}catch(_){}socket=null;}try{native.cancel();}catch(_){}if(error){emit({status:'idle',level:0,elapsedMs:0});reject(failure(error));}else{emit({status:'idle',level:0,elapsedMs:0});resolve(value);}}
+      function end(error,value){if(done)return;done=true;if(auditPcm){auditPcm.fill(0);auditPcm=null;}if(recordingPcm){recordingPcm.fill(0);recordingPcm=null;}clearTimeout(timer);timer=0;pendingReject=null;if(socket){socket.onopen=socket.onmessage=socket.onerror=socket.onclose=null;try{socket.close();}catch(_){}socket=null;}try{native.cancel();}catch(_){}w.RugeMusic?.resume('assessment');if(error){emit({status:'idle',level:0,elapsedMs:0});reject(failure(error));}else{emit({status:'idle',level:0,elapsedMs:0});resolve(value);}}
       function endpoint(value,id){
         const url=new URL(value);if(url.protocol!=='wss:'||url.hostname!=='soe.cloud.tencent.com'||url.port||url.username||url.password||!/^\/soe\/api\/\d+$/.test(url.pathname)||url.searchParams.get('voice_id')!==id||url.searchParams.get('rec_mode')!=='1')throw failure('invalid-endpoint');return url.href;
       }

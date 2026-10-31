@@ -1,0 +1,68 @@
+{
+  "scope": "Desktop Chromium real OGG decoding and HTMLAudio playback state; not Android speaker listening or WebView lifecycle acceptance.",
+  "tracks": [
+    {
+      "id": "meadow",
+      "duration": 38.4,
+      "channels": 2,
+      "sampleRate": 48000,
+      "playing": 1
+    },
+    {
+      "id": "orchard",
+      "duration": 34.284,
+      "channels": 2,
+      "sampleRate": 48000,
+      "playing": 1
+    },
+    {
+      "id": "paper",
+      "duration": 36.924,
+      "channels": 2,
+      "sampleRate": 48000,
+      "playing": 1
+    },
+    {
+      "id": "cloud",
+      "duration": 41.74,
+      "channels": 2,
+      "sampleRate": 48000,
+      "playing": 1
+    },
+    {
+      "id": "starlight",
+      "duration": 35.556,
+      "channels": 2,
+      "sampleRate": 48000,
+      "playing": 1
+    }
+  ],
+  "checks": [
+    {
+      "name": "independent actual HTMLAudio / WebAudio volume",
+      "audio": 0.11,
+      "fx": 0.35,
+      "vibration": true,
+      "music": 0.11
+    },
+    {
+      "name": "overlapping recorder/demo reason protection",
+      "paused": true,
+      "reasons": [
+        "microphone"
+      ]
+    },
+    {
+      "name": "zero volume remains silent after gesture",
+      "paused": true,
+      "volume": 0,
+      "enabled": true
+    },
+    {
+      "name": "page departure stays silent",
+      "paused": true,
+      "exited": true
+    }
+  ],
+  "errors": []
+}

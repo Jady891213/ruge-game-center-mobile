@@ -2,13 +2,13 @@
 
 从小米 MIX 4 上由 DeepCode 开发的游戏中心迁出的独立源码项目。Android WebView 加载本地网页，当前20个入口覆盖益智、认字、动作、重力、声音与摄像头玩法。新增“脑力游乐园”内含20种随机脑力玩法，原19个入口保留。游戏资源和示范朗读离线打包；专业语音评分需联网。
 
-当前 Android 包名 **`com.dsh.gamecenter`**，版本 **4.35 / versionCode 58**，以 [manifest](app/AndroidManifest.xml) 为准。Mac 开发、测试和签名构建，手机覆盖安装与试玩验收。
+当前 Android 包名 **`com.dsh.gamecenter`**，版本 **4.36 / versionCode 59**，以 [manifest](app/AndroidManifest.xml) 为准。Mac 开发、测试和签名构建，手机覆盖安装与试玩验收。
 
 [更新记录](ChangeLog.md) · [开发约定](AGENTS.md) · [第三方许可](THIRD_PARTY_NOTICES.md) · [GitHub 仓库](https://github.com/Jady891213/ruge-game-center-mobile)
 
 ## 游戏与入口
 
-首页按“全部、最近、认字、益智、重力、反应”过滤，标题和左侧分类固定，右侧双列游戏区滚动。名称与目录以 [首页目录](app/assets/home/index.js) 为准。
+首页按“全部、最近、认字、益智、重力、反应”过滤，标题和左侧分类固定，右侧双列游戏区滚动。顶部头像可新增、切换或编辑本地玩家；每个玩家分别保存游戏进度、最高分和最近记录，可具名确认后清空所选玩家进度。原有进度归入默认玩家，切换和重置不影响其它玩家或全局设置；没有联网账号或云同步。名称与目录以 [首页目录](app/assets/home/index.js) 为准。
 
 | 分类 | 在架游戏与源码 |
 | --- | --- |
@@ -19,7 +19,7 @@
 
 - **固定关卡**：十四款游戏含十五种固定玩法，共564关。字里找字保留60关，其余固定玩法至少36关；帽子与翻牌各36关。新增固定闯关游戏也遵循至少36关，追加保留旧题目编号与进度。
 - **字库与练习**：看字打拼音有36个练习包，复用原60字；识字库保留六组60字资料，开口读拼音从打字菜单进入。复习包不算新汉字条目。
-- **随机脑力**：脑力游乐园内含五类各四种玩法，随机组合、10档递进、60秒挑战与独立最高分，没有固定关卡或36关上限。题目与验收见 [20种脑力玩法](docs/Design%20Brain%20School%2020/review.md)。
+- **随机脑力**：脑力游乐园内含五类各四种玩法，随机组合、10档递进、60秒挑战与独立最高分，没有固定关卡或36关上限。题目与规则见 [20种脑力玩法](docs/Design%20Brain%20School%2020/review.md)，当前界面采用草地与玩具教室场景插画，菜单、题牌、数字积木和大选项对齐原型，见 [脑力界面记录](docs/Design%20Game%20Music%20Players%20and%20Brain%20UI/brain-ui-review.md)。
 - **无限玩法**：扑翼小鸟、小青蛙跳池塘、哼哼小飞机、口袋探宝保持无限模式，不添加36关上限。口袋探宝含开锁与空间寻宝两种模式。
 - **返回层级**：顶部返回箭头与 Android 侧滑先退弹层、详情、子玩法或游戏内选关，再回游戏中心。字库详情先回列表；从打字进入字库时回打字入口。关闭暂停层仍暂停，需点“继续”；输入法打开时先收起键盘。
 
@@ -32,7 +32,7 @@
 | 目录 | 用途 |
 | --- | --- |
 | `app/assets/` | 当前菜单、二十个在架入口和离线素材源码；另保留已暂停的小熊点心店原型 |
-| `app/assets/shared/` | 共用反馈、输入、返回、评测与示范音频；各游戏保留自己的规则和布局 |
+| `app/assets/shared/` | 本地玩家、共用反馈、背景音乐、输入、返回、评测与示范音频；各游戏保留自己的规则和布局 |
 | `app/src/`、`app/res/`、`app/AndroidManifest.xml` | 原生外壳、图标、资源及权限声明 |
 | `scripts/` | 固定 SDK 安装、APK 构建、素材生成和开发版 WebView 检查脚本 |
 | `tests/` | 直接执行真实页面脚本的 Node 回归测试 |
@@ -51,12 +51,16 @@
 | 共用能力 | 实现与边界 |
 | --- | --- |
 | 倾斜与方向 | `shared/motion.js`及原生重力/姿态桥；格子游戏共用四向门限，各玩法规则和物理独立 |
-| 音效、震动与常亮 | 共用反馈和原生服务；设置页集中开关，原有静音按钮同步；离开页面/后台停止输出 |
+| 本地玩家与进度 | `shared/players.js` 管理玩家档案、30个明确进度键与事务恢复；旧存档保留，设置和服务配置全局共用 |
+| 背景音乐 | `shared/music.js` 与原生 `GameMusic` 共用五首原创离线 OGG，按页面和脑力类别选曲；默认开启、音量22%，独立开关与音量 |
+| 音效、震动与常亮 | 共用反馈和原生服务；设置页集中开关，音效有独立音量，默认70%；离开页面/后台停止输出 |
 | 返回 | `shared/back-navigation.js`协调页面`onRugeBack`与原生系统返回；不以浏览器历史代替业务层级 |
 | 声音输入 | `shared/audio-input.js`与原生`GameAudio`；口令用离线sherpa-onnx关键词识别，不是自由对话；音高控制无需大模型 |
 | 摄像头 | `GameCamera`提供低分辨率实时取景与颜色采样，不识别任意物体，不保存或上传照片 |
 | 示范朗读 | 四个入口共用`shared/demo-audio/`的101条MiniMax预生成MP3；播放离线，无系统/浏览器TTS兜底 |
 | 专业评分 | 中英文共用`shared/assessment.js`及原生腾讯评测桥；按用户配置联网，未配置不收音、不显示模拟分 |
+
+五首背景音乐为本项目原创程序作曲与合成，不使用第三方录音或在线音乐服务。录音、专业评测和播放示范语音时暂停背景音乐；全部暂停原因解除后才恢复，离开页面与后台停止播放，不调整系统媒体音量。音乐和音效音量彼此独立，也不随玩家切换或重置。来源、接口及验收见 [4.36设计与验收目录](docs/Design%20Game%20Music%20Players%20and%20Brain%20UI/)。
 
 只有进入对应玩法并明确开始才请求麦克风/摄像头；拒绝时保留可用的手指练习入口，后台与退出停止采集。示范朗读、开始评分和返回共用取消规则；评测密钥不进入JS、APK或Git，录音不落盘。设置页可显式刷新MiniMax实际套餐余量；腾讯余量未接入自动查询，提供官方控制台入口，不用本机请求次数估算。
 
@@ -76,7 +80,7 @@ python3 scripts/build.py
 
 公开仓库不包含签名密钥；首次克隆需要自备签名材料并通过参数指定。覆盖更新已有应用必须使用原签名，由 Mac 发布端保管。已有 SDK 时可跳过安装步骤。本机已验证 JDK 18.0.2.1；JDK、SDK 和签名路径都可以通过构建参数或环境变量覆盖，详见 [构建说明](docs/build.md)。脚本只构建与校验，不会安装到手机。
 
-产物为 `out/game-center-v4.35-dev.apk` 和 `out/game-center-v4.35.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
+产物为 `out/game-center-v4.36-dev.apk` 和 `out/game-center-v4.36.apk`，同名 JSON 记录版本、资源校验值与签名验证结果。正式版使用 APK 内 assets；开发版开启 WebView CDP，并可读取 `/sdcard/Android/data/com.dsh.gamecenter/files/dev/` 下的开发页面。
 
 普通切后台会保留游戏状态并发送暂停/恢复事件；开发页面只有资源变化时才于回前台刷新。明确刷新开发页会重置页面状态。正式版关闭调试和外部开发页面能力。
 
@@ -101,7 +105,7 @@ export GAME_CENTER_ADB="$(pwd)/../../03-Android工具/platform-tools/adb"
 "$GAME_CENTER_ADB" connect '<手机IP:连接端口>'
 "$GAME_CENTER_ADB" devices -l
 export GAME_CENTER_SERIAL='<devices 列表中的目标设备标识>'
-"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.35-dev.apk
+"$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" install -r out/game-center-v4.36-dev.apk
 "$GAME_CENTER_ADB" -s "$GAME_CENTER_SERIAL" shell am start -n com.dsh.gamecenter/.MainActivity
 ```
 

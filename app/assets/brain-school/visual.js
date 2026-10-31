@@ -2,7 +2,7 @@
 (function(root){
 'use strict';
 const B=root.BrainSchool;
-const colors=['#ff8b95','#65bfd5','#f4c34f','#9c8ee2','#75c49c','#eea168','#a8ca65','#dc91c3'];
+const colors=['#f96e65','#2faef1','#ffd137','#9d88e1','#62bf63','#ffa948','#a5ce55','#e980b3'];
 const integer=(n,min,max)=>Number.isInteger(n)&&n>=min&&n<=max;
 const validSet=(a,b)=>Array.isArray(a)&&a.length===b.length&&new Set(a).size===a.length&&a.every(x=>b.includes(x));
 function button(text,handler,cls='secondary'){const e=B.el('button',cls,text);e.type='button';e.addEventListener('click',handler);return e;}
@@ -167,18 +167,23 @@ function project(point,yaw,scale=47){const [x,y,z]=point,c=Math.cos(yaw),s=Math.
 function pointString(points,yaw,scale){return points.map(p=>project(p,yaw,scale).map(n=>n.toFixed(2)).join(',')).join(' ');}
 function shade(hex,factor){const n=parseInt(hex.slice(1),16);return '#'+[n>>16,(n>>8)&255,n&255].map(v=>Math.max(0,Math.min(255,Math.round(v*factor))).toString(16).padStart(2,'0')).join('');}
 function sceneMarkup(scene,yaw,arrowView){
- let str=`<polygon points="${pointString([[-1.9,0,-1.9],[1.9,0,-1.9],[1.9,0,1.9],[-1.9,0,1.9]],yaw,43)}" fill="#e2efee" stroke="#b5d3cf" stroke-width="3"/>`;
+ // This SVG is presentation only: the original 3D coordinates, camera and answer checks stay unchanged.
+ const woodTop=[[-1.8,0,-1.8],[1.8,0,-1.8],[1.8,0,1.8],[-1.8,0,1.8]];
+ let str='<defs>'+colors.map((c,i)=>`<radialGradient id="brainBall${i}" cx="32%" cy="24%" r="76%"><stop offset="0" stop-color="${shade(c,1.22)}"/><stop offset=".65" stop-color="${c}"/><stop offset="1" stop-color="${shade(c,.79)}"/></radialGradient>`).join('')+'</defs>';
+ str+=`<polygon points="${pointString(woodTop.map(([x,y,z])=>[x,y-.3,z]),yaw,43)}" fill="#c9944e" stroke="#a37943" stroke-width="2"/>`;
+ // Individual ground tiles maintain the real perspective and the object/arrow relationships.
+ for(let z=0;z<3;z++)for(let x=0;x<3;x++){
+  const a=-1.8+x*1.2,b=-1.8+z*1.2;
+  str+=`<polygon points="${pointString([[a,0,b],[a+1.2,0,b],[a+1.2,0,b+1.2],[a,0,b+1.2]],yaw,43)}" fill="${(x+z)%2?'#85796b':'#fff4d8'}" stroke="#e6d5ad" stroke-width="1"/>`;
+ }
  const sorted=scene.slice().sort((a,b)=>(a.x*Math.sin(yaw)+a.z*Math.cos(yaw))-(b.x*Math.sin(yaw)+b.z*Math.cos(yaw)));
  sorted.forEach(obj=>{
-  const {x,z,h,color}=obj,r=.38,c=colors[color%colors.length];
-  const sx=Math.sin(yaw)>=0?1:-1,sz=Math.cos(yaw)>=0?1:-1;
-  const xface=[[x+sx*r,0,z-r],[x+sx*r,0,z+r],[x+sx*r,h,z+r],[x+sx*r,h,z-r]];
-  const zface=[[x-r,0,z+sz*r],[x+r,0,z+sz*r],[x+r,h,z+sz*r],[x-r,h,z+sz*r]];
-  const top=[[x-r,h,z-r],[x+r,h,z-r],[x+r,h,z+r],[x-r,h,z+r]];
-  if(Math.abs(Math.sin(yaw))>.01)str+=`<polygon points="${pointString(xface,yaw,43)}" fill="${shade(c,.86)}" stroke="#496877" stroke-width="1.4" stroke-linejoin="round"/>`;
-  if(Math.abs(Math.cos(yaw))>.01)str+=`<polygon points="${pointString(zface,yaw,43)}" fill="${c}" stroke="#496877" stroke-width="1.4" stroke-linejoin="round"/>`;
-  str+=`<polygon points="${pointString(top,yaw,43)}" fill="${shade(c,1.12)}" stroke="#496877" stroke-width="1.4" stroke-linejoin="round"/>`;
-  if(h>1){const a=project([x-r,1,z+sz*r],yaw,43),b=project([x+r,1,z+sz*r],yaw,43);str+=`<path d="M ${a.join(' ')} L ${b.join(' ')}" stroke="#496877" stroke-width="1" opacity=".5"/>`;}
+  const {x,z,h,color}=obj,base=project([x,0,z],yaw,43);
+  str+=`<ellipse cx="${base[0]}" cy="${base[1]}" rx="19" ry="7" fill="#403b2d" opacity=".2"/>`;
+  for(let level=0;level<h;level++){
+   const p=project([x,level+.5,z],yaw,43);
+   str+=`<circle cx="${p[0]}" cy="${p[1]}" r="20" fill="url(#brainBall${color%colors.length})" stroke="${shade(colors[color%colors.length],.8)}" stroke-width="1"/><ellipse cx="${p[0]-6}" cy="${p[1]-9}" rx="5" ry="3.5" fill="#fff" opacity=".55" transform="rotate(-30 ${p[0]-6} ${p[1]-9})"/>`;
+  }
  });
  if(arrowView!==undefined){
   const a=arrowView*Math.PI/2,side=[Math.sin(a),Math.cos(a)],base=[side[0]*2.5,.02,side[1]*2.5],tip=[side[0]*1.7,.02,side[1]*1.7];
@@ -200,7 +205,7 @@ B.register({id:'true-view',name:'选择视角',category:'visual',icon:11,
  create:makeView,check:(q,a)=>integer(a,0,q.options.length-1)&&q.options[a]===q.view,solution:q=>q.options.indexOf(q.view),
  mount(stage,q,api){
   B.prompt(stage,'从箭头那边看');
-  let yaw=Math.PI/4;const scene=B.el('div','scene visual-view-scene'),drawing=B.svg(sceneMarkup(q.scene,yaw,q.view),'0 0 320 240');scene.appendChild(drawing);stage.appendChild(scene);
+  let yaw=Math.PI/4;const scene=B.el('div','scene visual-view-scene'),drawing=B.svg(sceneMarkup(q.scene,yaw,q.view),'20 35 280 190');scene.appendChild(drawing);stage.appendChild(scene);
   const orbit=button('↻ 转一转',()=>{if(!api.active())return;yaw+=Math.PI/2;drawing.innerHTML=sceneMarkup(q.scene,yaw,q.view);api.fx('tap');},'secondary visual-orbit');scene.appendChild(orbit);
   const choices=B.el('div','choices visual-view-choices');choices.style.gridTemplateColumns=`repeat(${q.options.length===4?2:q.options.length},minmax(0,1fr))`;stage.appendChild(choices);
   q.options.forEach((view,i)=>{const tile=button('',()=>{if(api.active())api.answer(i);},'tile visual-view-choice');tile.setAttribute('aria-label','视图'+(i+1));tile.appendChild(B.svg(sceneMarkup(q.scene,view*Math.PI/2),'60 55 200 170'));choices.appendChild(tile);});

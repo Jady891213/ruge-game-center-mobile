@@ -24,6 +24,12 @@
 
 `app/res/raw/fx_*.wav` 共13个短音效由本项目 `scripts/generate-feedback-sounds.py` 独立合成，使用正弦泛音和音量包络；单声道24kHz、16位PCM。没有引用、采样或下载第三方音乐及音效。网页降级的音序由 `app/assets/shared/feedback.js` 实现。基础导航图标与反馈动画为代码绘制。
 
+## 离线背景音乐与脑力场景（4.36）
+
+`app/assets/shared/music/` 的五首 OGG 为本项目原创程序作曲与合成，以 CC0-1.0 提供；没有下载第三方曲目、采样或旋律。完整谱面事件、编码器、音量和 SHA-256 保存在该目录的 `manifest.json`，生成器为 `scripts/generate-background-music.py`。
+
+`app/assets/brain-school/art/meadow-sky.png` 与 `toy-classroom.png` 为内置 GPT 图片生成工具生成的原创场景；参考本项目原型的色彩和布局，没有提取任天堂游戏素材。提示词与来源见同目录 `sources.json`；文字、按钮、题目和互动均由真实 HTML/SVG 呈现。
+
 ## 钢珠迷宫与翻转星星盒：GPT 生成美术
 
 `app/assets/shared/gravity-art.png` 与 `docs/Design Gravity Games/gravity-ui-prototype.png` 由内置 GPT 图片生成工具为本项目生成。两款游戏共用一张透明图集，包含钢珠、星星、钥匙、出口及两色星球/目标。墙体与碰撞几何由程序统一计算；未提取参考硬件游戏的代码、美术。完整提示词和输出来源见 `docs/Design Gravity Games/art-prompts.json`。

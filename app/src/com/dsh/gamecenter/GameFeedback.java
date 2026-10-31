@@ -28,6 +28,7 @@ public final class GameFeedback {
     private SoundPool pool;
     private Vibrator vibrator;
     private volatile boolean active, released, sound, vibration;
+    private volatile float level;
     private volatile int generation;
     private long lastAt = -10000;
     private long lastPulseAt = -10000;
@@ -40,6 +41,8 @@ public final class GameFeedback {
         prefs=preferences;
         sound=prefs.getBoolean("feedback-sound",true);
         vibration=prefs.getBoolean("feedback-vibration",true);
+        float stored=prefs.getFloat("feedback-volume",.70f);
+        level=Float.isNaN(stored)||Float.isInfinite(stored)?.70f:Math.max(0,Math.min(1,stored));
         try {
             if(Build.VERSION.SDK_INT>=31) {
                 VibratorManager manager=(VibratorManager)context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE);
@@ -66,6 +69,12 @@ public final class GameFeedback {
     @JavascriptInterface public boolean configured(){return prefs.contains("feedback-sound")||prefs.contains("feedback-vibration");}
     @JavascriptInterface public boolean soundEnabled(){return sound;}
     @JavascriptInterface public boolean vibrationEnabled(){return vibration;}
+    @JavascriptInterface public double volume(){return level;}
+    @JavascriptInterface public void setVolume(double value){
+        if(released||Double.isNaN(value)||Double.isInfinite(value))return;
+        level=(float)Math.max(0,Math.min(1,value));prefs.edit().putFloat("feedback-volume",level).apply();
+        handler.post(new Runnable(){public void run(){if(pool!=null&&!released)for(Integer stream:streams)try{pool.setVolume(stream,level,level);}catch(RuntimeException ignored){}}});
+    }
     @JavascriptInterface public boolean hasVibrator(){try{return vibrator!=null&&vibrator.hasVibrator();}catch(RuntimeException e){return false;}}
     @JavascriptInterface public boolean amplitudeControl(){try{return Build.VERSION.SDK_INT>=26&&hasVibrator()&&vibrator.hasAmplitudeControl();}catch(RuntimeException e){return false;}}
     /** Bounded directional signals; shared preferences, lifecycle and queue cancellation still apply. */
@@ -98,7 +107,7 @@ public final class GameFeedback {
             boolean played=false,shaken=false;
             Integer id=samples.get(name);
             if(sound&&pool!=null&&id!=null&&loaded.contains(id)){
-                try{final int stream=pool.play(id,.70f,.70f,p,0,1f);if(stream>0){streams.add(stream);soundCount++;played=true;handler.postDelayed(new Runnable(){public void run(){streams.remove(stream);}},750);}}catch(RuntimeException ignored){}
+                try{final int stream=level>0?pool.play(id,level,level,p,0,1f):0;if(stream>0){streams.add(stream);soundCount++;played=true;handler.postDelayed(new Runnable(){public void run(){streams.remove(stream);}},750);}}catch(RuntimeException ignored){}
             }
             if(vibration&&hasVibrator()){
                 try{

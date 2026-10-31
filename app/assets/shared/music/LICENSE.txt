@@ -1,0 +1,13 @@
+Original generated Game Center soundtracks
+
+The five OGG files and their original score data in this directory are dedicated
+to the public domain under CC0 1.0 Universal, to the extent any rights exist.
+They may be copied, modified, distributed, performed and used commercially
+without attribution. No third-party samples or recordings are incorporated.
+
+CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The generator source remains subject to the repository's source-code license.
+No warranty is provided.

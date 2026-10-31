@@ -6,7 +6,7 @@ import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import assert from 'node:assert/strict';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const {chromium}=loadPlaywright(),out=resolve(root,'docs/Design Brain School 20');mkdirSync(out,{recursive:true});
+const {chromium}=loadPlaywright(),out=resolve(root,process.env.BRAIN_QA_OUTPUT||'docs/Design Brain School 20');mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({channel:'chrome',headless:true,args:['--mute-audio']}),results=[],errors=[];
 const ids=['whack-match','species-spotlight','frame-filler','fast-focus','add-agency','mallet-math','tick-tock','balloon-burst'];
 try{

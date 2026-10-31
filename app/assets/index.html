@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"><script src="shared/players.js"></script><script src="shared/music.js"></script>
+
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#fff6e8">
   <link rel="icon" href="data:,">
   <title>乳鸽游戏中心</title>
   <link rel="stylesheet" href="shared/ui.css">
   <link rel="stylesheet" href="home/style.css">
+  <link rel="stylesheet" href="shared/players.css">
 </head>
 <body>
 <main id="homeApp">
   <header id="homeHeader">
     <h1 class="ruge-title">乳鸽游戏中心</h1>
-    <div class="header-tools" aria-label="游戏设置">
+    <div class="header-tools" aria-label="玩家和设置">
+      <button id="playerButton" class="player-entry" type="button" aria-label="切换玩家" aria-haspopup="dialog" aria-expanded="false"><span id="playerAvatar" class="player-face"></span><span id="playerName" class="player-entry-name">小玩家</span></button>
       <a id="settingsLink" class="ruge-pill header-toggle" href="settings/index.html" aria-label="设置"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 3-.6 2.4-2 .9-2.2-.7-2 3.4 1.6 1.8v2.4L3.2 15l2 3.4 2.2-.7 2 .9L10 21h4l.6-2.4 2-.9 2.2.7 2-3.4-1.6-1.8v-2.4l1.6-1.8-2-3.4-2.2.7-2-.9L14 3Z"/><circle cx="12" cy="12" r="3"/></svg></a>
     </div>
   </header>
@@ -35,7 +38,34 @@
     </section>
   </div>
 </main>
+<div id="playersOverlay" class="players-overlay" hidden>
+  <section class="players-panel" role="dialog" aria-modal="true" aria-labelledby="playersTitle">
+    <div class="players-heading"><h2 id="playersTitle">谁来玩？</h2><button id="playersClose" class="players-close" type="button" aria-label="关闭玩家管理"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div id="playersList">
+      <div id="playersChoices" class="players-choices"></div>
+      <button id="playerAdd" class="players-action" type="button">＋ 新玩家</button>
+    </div>
+    <div id="playersEdit" hidden>
+      <form id="playerForm">
+        <label class="player-name-label" for="playerNameInput">你的名字</label>
+        <input id="playerNameInput" class="player-name-input" autocomplete="off" maxlength="16" placeholder="写 1 到 8 个字" required>
+        <div id="playerAvatars" class="player-avatars" role="group" aria-label="选一个头像"></div>
+        <button class="players-action" type="submit">保存</button>
+        <button id="playerCancel" class="players-action secondary" type="button">返回</button>
+        <button id="playerReset" class="players-action danger" type="button">清空进度</button>
+      </form>
+    </div>
+    <div id="playersConfirm" hidden>
+      <p id="playerResetName" class="player-reset-name"></p>
+      <p class="player-reset-note">关卡、分数和最近记录会重新开始。</p>
+      <button id="playerKeep" class="players-action secondary" type="button">保留进度</button>
+      <button id="playerConfirmReset" class="players-action danger" type="button">清空进度</button>
+    </div>
+    <p id="playersError" class="players-error" role="status" aria-live="polite"></p>
+  </section>
+</div>
 <script src="shared/feedback.js"></script>
+<script src="shared/players-ui.js"></script>
 <script src="home/index.js"></script>
 </body>
 </html>

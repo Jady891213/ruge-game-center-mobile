@@ -68,6 +68,7 @@
   }));
   window.addEventListener('ruge:resume', () => render(category, false));
   window.addEventListener('pageshow', () => render(category, false));
+  window.RugePlayersUI?.mount();
   render('all');
   try { window.RugeScreen?.set('portrait'); } catch (_) {}
 })();

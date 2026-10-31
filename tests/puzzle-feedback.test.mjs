@@ -6,7 +6,8 @@ import {loadGame} from './helpers/html-vm.mjs';
 // actual packaged game. Device audio/haptics are covered by the native review.
 function puzzle(t,name,{storage={},cover=false}={}) {
   const h=loadGame(name,{storage,instrument(source,index){
-    if(index===0)return `window.__feedback=[];window.RugeFX={emit:name=>window.__feedback.push(name)};${cover?"location.search='?cover=1';":''}`;
+    if(index===0&&cover)source="location.search='?cover=1';\n"+source;
+    if(source.includes("KEY='rugeFeedbackV1'"))return `window.__feedback=[];window.RugeFX={emit:name=>window.__feedback.push(name)};${cover?"location.search='?cover=1';":''}`;
     return source;
   }});
   t.after(()=>h.dispose());

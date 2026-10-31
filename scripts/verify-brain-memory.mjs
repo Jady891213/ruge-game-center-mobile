@@ -9,7 +9,7 @@ import {loadPlaywright} from './brain-browser-runtime.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ASSETS = resolve(ROOT, 'app/assets');
-const OUTPUT = resolve(ROOT, 'docs/Design Brain School 20');
+const OUTPUT = resolve(ROOT, process.env.BRAIN_QA_OUTPUT||'docs/Design Brain School 20');
 const playwright=loadPlaywright();
 
 await mkdir(OUTPUT, {recursive:true});
@@ -101,7 +101,7 @@ try {
       await page.goto(`http://127.0.0.1:${port}/brain-school/index.html`,{waitUntil:'load'});
       await page.evaluate(()=>localStorage.clear());
       // Verify the actual menu path once, before seeded level diagnostics.
-      await tap(page,page.getByRole('button',{name:'记忆',exact:true}));
+      await tap(page,page.getByRole('button',{name:'记忆挑战',exact:true}));
       assert.equal(await page.locator('.game-card').count(),4);
       await tap(page,page.locator('[data-game="flash-memory"]'));
       assert.equal((await state(page)).screen,'detail');

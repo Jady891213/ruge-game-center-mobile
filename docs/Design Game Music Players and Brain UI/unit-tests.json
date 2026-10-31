@@ -1,0 +1,9 @@
+{
+  "command": "npm test",
+  "node": "v20.19.6",
+  "tests": 589,
+  "pass": 589,
+  "fail": 0,
+  "cancelled": 0,
+  "skipped": 0
+}

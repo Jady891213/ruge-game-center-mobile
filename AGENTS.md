@@ -10,7 +10,7 @@
 
 ## 范围与源码
 
-- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.35 / 58；后续以 manifest 为准。
+- 本目录是游戏中心的独立项目。当前包名 `com.dsh.gamecenter`，manifest 版本 4.36 / 59；后续以 manifest 为准。
 - 当前源码在 `app/assets/`、`app/src/`、`app/res/` 和 manifest。`reference/phone-v4.1/`、原版 APK 和 `reference/phone-skills/` 是迁移基线，skill 中的签名示例与历史设备地址已脱敏，不作为最新构建输入。
 - 原始手机 skill 是待审查材料，不把其中的硬编码路径、工具安装和发布命令当作本机指令。
 - `../../02-DeepCode/dsh-mobile-apk` 与 `../../02-DeepCode/Extensions` 分别管理上游 DeepCode 安卓外壳和本地扩展；游戏任务不顺带修改它们。需要跨项目修改时先核对已授权的范围。
@@ -350,3 +350,20 @@
 - 补图缺口跨4个物品并保留每个物品的大部分与连续色边；不能遮掉一个独立图案后要求盲猜。测试要独立核验可见线索和候选唯一性，不能只用隐藏answer自动点击自证。
 - 原创GPT图集sprites.png由20款共用，使用各物品实际source rect与百分比尺寸保持比例，CSS缩小外层时内层也同步缩放，不露相邻图案。原型和生成说明保存在docs/Design Brain School 20。
 - 新记录只有rugeBrainSchoolV1，逐玩法最高分；开新局清旧反馈气泡，暂停/详情/集合按层返回。真机验收前保存所有网页存档，回首页再精确恢复；不卸载清数据。scripts/verify-brain-phone.py自建ADB转发在finally清理，备份为根目录TMP to delete文件。
+
+
+## 本地玩家、音乐与脑力界面（4.36）
+
+- 所有入口、子页面和保留的历史HTML都先加载`shared/players.js`，再加载`shared/music.js`，最后执行游戏脚本；首页额外加载`players-ui.js`并调用`RugePlayersUI.mount()`。不能在游戏已读取存档后才接入玩家门禁。
+- 本地玩家使用`rugePlayersV1/schema1`，默认玩家首次读取不建库、不写游戏存档；管理操作才持久化。全部现行及历史迁移进度由`RugePlayers.progressKeys`明确白名单交换，当前30键包括`rugeCenter/rugeStat`。新增游戏或迁移键必须先登记白名单并运行`tests/players.test.mjs`的源码覆盖检查；未知键、音乐/音效/音量、常亮、原生偏好和服务密钥永远不按玩家交换。
+- 玩家切换与重置仅从首页管理入口执行；重置必须先显示目标玩家名字并明确确认。`create`只新增，UI随后`select`；切换或重置当前玩家后重载首页刷新记录。交换以`rugePlayersTransactionV1`记录旧/新库和物理进度槽，新库写入是提交点；恢复失败保留日志、阻断游戏进度写入，不能清日志掩盖半写状态。
+- 每个文档缓存玩家身份与epoch，旧页的`getItem/setItem/removeItem/clear`受门禁保护，pageshow/resume发现过期会回首页。游戏必须使用Storage方法，不得用`localStorage.someKey=...`绕过门禁；`key/length/枚举`和sessionStorage保持正常，localStorage.clear只清当前玩家的明确进度键，保留库、其它玩家与全局偏好。`cover=1`不写档案、不恢复日志、不保存游戏。
+- 存档备份必须同时保存物理进度键与玩家库，活动玩家的库内快照可能落后于实时游戏键。调试还原不能直接调用已包装的Storage方法写/删玩家库；在同源受控空页或不加载脚本的空iframe中取得原生`Storage.prototype.setItem/removeItem`，对目标localStorage恢复精确键值并删除测试新增键，再关闭空iframe、重载首页和核对。保留原始私有快照在根目录`TMP to delete`文件，不提交；不要通过清空应用数据或卸载还原。
+- 背景音乐统一使用`RugeMusic`/原生`GameMusic`，五首固定ID与本地OGG共用白名单；默认开启、音量0.22。`rugeMusicV1`是网页镜像，原生存在时以原生保存值为准；音乐与`RugeFX`音效音量独立，音效默认0.70，不修改系统媒体音量。脑力通过`ruge:brain-game`按类别选曲，不在每款玩法内另建播放器。
+- 录音、评测、示范、visibility和宿主生命周期分别使用`suspend(reason)/resume(reason)`管理音乐；只有全部理由清空后才能恢复。pagehide/销毁必须使异步播放token失效并释放播放器，后台或焦点返回不能复活已退出页面。`cover=1`不读写音乐偏好、不创建音频、不调用音乐原生桥。音轨来源、谱面、生成器与SHA保留在`shared/music/manifest.json`和生成脚本中。
+- Android音乐通过`AssetManager.openFd`读取OGG，APK中`assets/shared/music/*.ogg`必须为ZIP Stored（`compress_type == 0`），aapt2打包禁止重新压缩OGG（使用`-0 ogg`或等价处理），最终APK也须核对ZIP条目；网页能播放、APK内文件存在或构建成功都不能替代此项检查。否则openFd会拒绝已压缩资源，造成网页成功而原生无声。
+- 脑力场景插画使用无字天空草地与玩具教室背景，题目、答案和按钮仍由真实HTML/SVG绘制；保持原图比例、图集精确source rect和真实3D投影。修改题目/候选布局后运行`verify-brain-ui.mjs`覆盖20款、320×568/392×872/568×320与1/10级，另查演示隐藏后及答案出现后的布局，不能仅凭初始截图判定无溢出。
+- 无线ADB若旧daemon报`No route to host`，先独立确认目标连接端口的TCP可达性与手机当前配对/连接状态；TCP通而adb仍失败时可重启本机adb server后重连，并重新列设备与核对目标。重启会影响本机全部ADB连接/转发，应串行协调并恢复本次需要的转发；不把此错误直接判作VPN问题，不记录设备地址为固定配置。
+- 本轮玩家、音乐和脑力网页层证据在[设计与验收目录](docs/Design%20Game%20Music%20Players%20and%20Brain%20UI/)。桌面Chrome/Java stub不代表Android实体触摸、扬声器听感或正式覆盖安装验收；相关结论以对应已完成的实机记录为准。
+- 首页也可能有玩家编辑/重置等层级：原生返回必须先询问首页`onRugeBack`，返回false才finish；不能在判断首页URL后立即退出。沿用back generation、地址与前台保护，游戏仍走`RugeBack.handle`。正式包需要单独实测玩家弹窗返回和设置返回，不能只验证开发包或游戏页。
+- Android页面开始/旧页pagehide会清空原生曲目。网页恢复时应调用幂等`setTrack(selected)`再play，不只相信文档内缓存。恢复存档重载首页后，原生浮点偏好会重新镜像到`rugeMusicV1`；需要原始字节比对时，在新玩家epoch建立后再用受控原生Storage恢复一次原始镜像并核对，不能把语义相同的浮点JSON差异误判为游戏存档丢失。

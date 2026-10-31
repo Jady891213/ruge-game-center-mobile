@@ -9,7 +9,8 @@ const plain = value => JSON.parse(JSON.stringify(value));
 const center = (level, cell) => ({x:C.PAD+(cell%level.cols+.5)*C.CELL,y:C.PAD+(Math.floor(cell/level.cols)+.5)*C.CELL});
 function game(t, {storage={},native=false,cover=false}={}) {
   const h=loadGame('gravity-maze',{storage,instrument(source,index){
-    if(index===0) return `window.__feedback=[];window.RugeFX={emit:n=>window.__feedback.push(n)};${cover?"location.search='?cover=1';":''}${native?`window.__tilt={x:0,y:0,z:1,age:0,available:true};window.RugeTilt={gx:()=>window.__tilt.x,gy:()=>window.__tilt.y,gz:()=>window.__tilt.z,available:()=>window.__tilt.available,sampleAgeMs:()=>window.__tilt.age,coordinateSystem:()=>"screen-down-v1"};`:''}`;
+    if(index===0&&cover)source="location.search='?cover=1';\n"+source;
+    if(source.includes("KEY='rugeFeedbackV1'")) return `window.__feedback=[];window.RugeFX={emit:n=>window.__feedback.push(n)};${cover?"location.search='?cover=1';":''}${native?`window.__tilt={x:0,y:0,z:1,age:0,available:true};window.RugeTilt={gx:()=>window.__tilt.x,gy:()=>window.__tilt.y,gz:()=>window.__tilt.z,available:()=>window.__tilt.available,sampleAgeMs:()=>window.__tilt.age,coordinateSystem:()=>"screen-down-v1"};`:''}`;
     return source;
   }}); t.after(()=>h.dispose());return{h,g:h.window.__game,events:h.window.__feedback};
 }

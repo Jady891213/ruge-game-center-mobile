@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "kind": "real desktop Chrome; synthetic data only",
+  "phone": false,
+  "passed": 5,
+  "records": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "geometry": {
+        "viewport": 320,
+        "scroll": 320,
+        "header": {
+          "x": 9,
+          "right": 311,
+          "bottom": 60
+        },
+        "children": [
+          {
+            "x": 11,
+            "right": 125,
+            "w": 114
+          },
+          {
+            "x": 175,
+            "right": 309,
+            "w": 134
+          },
+          {
+            "x": 175,
+            "right": 262,
+            "w": 87
+          },
+          {
+            "x": 267,
+            "right": 309,
+            "w": 42
+          }
+        ],
+        "cols": 2
+      },
+      "defaultUnchanged": true,
+      "roundTripAll30Keys": true,
+      "resetInactiveOnly": true,
+      "globalSettingsRetained": true,
+      "namedConfirmation": true,
+      "backClosesDialog": true
+    },
+    {
+      "viewport": {
+        "width": 392,
+        "height": 872
+      },
+      "geometry": {
+        "viewport": 392,
+        "scroll": 392,
+        "header": {
+          "x": 12,
+          "right": 380,
+          "bottom": 64
+        },
+        "children": [
+          {
+            "x": 14,
+            "right": 146,
+            "w": 132
+          },
+          {
+            "x": 230,
+            "right": 378,
+            "w": 148
+          },
+          {
+            "x": 230,
+            "right": 328,
+            "w": 98
+          },
+          {
+            "x": 334,
+            "right": 378,
+            "w": 44
+          }
+        ],
+        "cols": 2
+      },
+      "defaultUnchanged": true,
+      "roundTripAll30Keys": true,
+      "resetInactiveOnly": true,
+      "globalSettingsRetained": true,
+      "namedConfirmation": true,
+      "backClosesDialog": true
+    },
+    {
+      "actualCodebreakerUISaved": true,
+      "cachedPageLateWriteBlocked": true,
+      "cachedPageHideSaveBlocked": true,
+      "originalRestoredExactly": true,
+      "stalePageshowReturnsHome": true
+    },
+    {
+      "realChromeInjectedQuotaRollback": true,
+      "persistentFailureKeepsJournal": true,
+      "coverDoesNotRecoverOrWrite": true,
+      "nextDocumentRecoversExactly": true
+    },
+    {
+      "actualBrowserQuotaFullPreservesOriginal": true
+    }
+  ],
+  "errors": []
+}

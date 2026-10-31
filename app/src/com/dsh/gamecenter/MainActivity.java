@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
     private volatile long backGeneration = 0L;
     private long lastBackAt = 0L;
     private GameFeedback feedback;
+    private GameMusic music;
     private GameAudio audio;
     private GameAssessment assessment;
     private GameServices services;
@@ -150,6 +151,7 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         keepAwake = getPreferences(MODE_PRIVATE).getBoolean("keep-awake", true);
         feedback = new GameFeedback(this, getPreferences(MODE_PRIVATE));
+        music = new GameMusic(this, getPreferences(MODE_PRIVATE));
         if (keepAwake) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (BuildConfig.DEV) {
             File external = getExternalFilesDir(null);
@@ -168,6 +170,7 @@ public class MainActivity extends Activity {
         assessment = new GameAssessment(this, new GameAssessment.Host() {
             public boolean assessmentPageAllowed() { return foreground && !destroyed && assessmentPage; }
             public void prepareAssessmentMicrophone() {
+                if (music != null) music.setSuppressed(true);
                 if (audio != null) audio.stop();
                 stopSpeech();
             }
@@ -204,6 +207,7 @@ public class MainActivity extends Activity {
         web.addJavascriptInterface(new ScreenBridge(), "RugeScreen");
         web.addJavascriptInterface(new NavBridge(), "RugeNav");
         web.addJavascriptInterface(feedback, "RugeFeedback");
+        web.addJavascriptInterface(music, "RugeMusicNative");
         web.addJavascriptInterface(audio, "RugeAudioNative");
         web.addJavascriptInterface(assessment, "RugeAssessment");
         web.addJavascriptInterface(services, "RugeServices");
@@ -579,6 +583,7 @@ public class MainActivity extends Activity {
             if (audio != null) audio.stop();
             if (camera != null) camera.stop();
             if (feedback != null) feedback.stop();
+            if (music != null) music.stop();
             stopSpeech();
         }
         @Override
@@ -697,15 +702,16 @@ public class MainActivity extends Activity {
         lastBackAt = now;
         final String current = web.getUrl();
         final String home = startUrl();
-        boolean atHome = current != null
+        final boolean atHome = current != null
                 && android.net.Uri.parse(home).getPath().equals(android.net.Uri.parse(current).getPath());
-        if (atHome) {
-            finish();
-            return;
-        }
         backPending = true;
         final long generation = ++backGeneration;
-        web.evaluateJavascript("(function(){if(window.RugeNav && typeof window.RugeNav.backRequestActive === 'function' && !window.RugeNav.backRequestActive(" + generation + "))return true;return !!(window.RugeBack && window.RugeBack.handle());})()", new ValueCallback<String>() {
+        // The home page also owns layers (player editor/reset confirmation).
+        // Let it consume those before treating back as an application exit.
+        final String pageHandler = atHome
+                ? "return !!(typeof window.onRugeBack === 'function' && window.onRugeBack());"
+                : "return !!(window.RugeBack && window.RugeBack.handle());";
+        web.evaluateJavascript("(function(){if(window.RugeNav && typeof window.RugeNav.backRequestActive === 'function' && !window.RugeNav.backRequestActive(" + generation + "))return true;" + pageHandler + "})()", new ValueCallback<String>() {
             @Override public void onReceiveValue(String value) {
                 if (destroyed || web == null || generation != backGeneration) return;
                 backPending = false;
@@ -713,8 +719,11 @@ public class MainActivity extends Activity {
                 // Missing page code can fall back, but a slow/stale callback cannot
                 // send a newer page home. Internal handlers cancel their own media.
                 if (!"true".equals(value)) {
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-                    web.loadUrl(home);
+                    if (atHome) finish();
+                    else {
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+                        web.loadUrl(home);
+                    }
                 }
             }
         });
@@ -734,6 +743,7 @@ public class MainActivity extends Activity {
         if (services != null) services.cancelInternal();
         if (assessment != null) assessment.cancelInternal();
         if (feedback != null) feedback.foreground(false);
+        if (music != null) music.foreground(false);
         if (audio != null) audio.foreground(false);
         if (camera != null) camera.onPause();
         dispatchLifecycle("pause");
@@ -751,6 +761,7 @@ public class MainActivity extends Activity {
         super.onResume();
         foreground = true;
         if (feedback != null) feedback.foreground(true);
+        if (music != null) music.foreground(true);
         if (audio != null) audio.foreground(true);
         if (camera != null) camera.onResume();
         updateDisplayRotation();
@@ -782,6 +793,7 @@ public class MainActivity extends Activity {
         assessmentPage = false;
         if (assessment != null) assessment.close();
         if (feedback != null) feedback.release();
+        if (music != null) music.release();
         if (audio != null) audio.close();
         if (camera != null) camera.onDestroy();
         foreground = false;
@@ -797,6 +809,7 @@ public class MainActivity extends Activity {
         if (web != null) {
             web.stopLoading();
             web.removeJavascriptInterface("RugeTTS");
+            web.removeJavascriptInterface("RugeMusicNative");
             web.removeJavascriptInterface("RugeTilt");
             web.removeJavascriptInterface("RugeOrientation");
             web.removeJavascriptInterface("RugeScreen");

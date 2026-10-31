@@ -1,0 +1,28 @@
+{
+  "generator": "OpenAI built-in image_gen",
+  "created": "2026-10-31",
+  "reference": "docs/Design Brain School 20/ui-prototype.png (style only; not embedded as a game screen)",
+  "assets": [
+    {
+      "file": "meadow-sky.png",
+      "use": "All outdoor games, hub card thumbnails",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a1924e-eb8e-7230-b8a8-e881491f6c58/exec-3a775dd5-96a7-49cb-bcac-2c10968ae3d4.png",
+      "prompt": "Use case: illustration-story. Asset type: production background for a children's brain-training mobile game, portrait 1024x1536. Primary request: a joyful polished flat picture-book meadow scene matching a premium preschool learning game: bright cyan-blue sky, fluffy soft white clouds, layered mint and apple-green rounded hills, a sunny lime grass clearing, bushes and a few small yellow/white flowers along the edges, cozy rounded trees at the very far left and right. Composition: top 70 percent is mostly clean open sky with subtle clouds near edges; bottom 30 percent grassy ground, foreground side bushes; quiet readable empty center for real HTML game UI. View straight on, not top down. Crisp simple shapes, candy colors, very slight soft gradient shading and friendly thick rounded edges. Palette sky #71d8f7, cream #fff4d5, grass #b8df60, leaves #59b873. The center remains clean and bright. Constraints: absolutely no text, letters, numbers, signs, boards, panels, buttons, game objects, checkerboards, toys, people, animals, frames, watermarks, logos. This is scenery only, not a screenshot or mockup."
+    },
+    {
+      "file": "toy-classroom.png",
+      "use": "Number tower, clock and memory indoor games",
+      "size": [
+        1024,
+        1536
+      ],
+      "source": "/Users/wuzhiruge/.codex/generated_images/01a1924e-eb8e-7230-b8a8-e881491f6c58/exec-ba065fab-97f5-4717-b970-b5596cd25aab.png",
+      "prompt": "Use case: illustration-story. Asset type: production scenery background for a preschool brain-training mobile game, portrait 1024x1536. Primary request: a polished cheerful toy classroom in a children's flat picture-book game, bright turquoise sky-blue wall and warm golden wooden floor, a large mint green circular rug centered on the floor, side furniture and a few lovely toys at the extreme edges only: a small plush teddy bear bottom left, a beach ball bottom right, a low toy shelf left, potted rounded plant, very simple wall pictures without text. Camera front on, interior floor occupies bottom 35%, wall top 65%. Open empty central 65% width from top to rug for real HTML interactive number blocks and game controls, do not put any toy or furniture in the center. Soft rounded corners, clean flat vector-like illustration, candy colors and subtle friendly dimensional shading, beautifully crisp. Palette cyan #8eddf2, floor #ffcd87, mint rug #8ece75 and pale yellow. Constraints: no UI, buttons, panels, signs, labels, numbers, letters, text, people, watermark, logos. Scenery only, not a screenshot or app mockup."
+    }
+  ],
+  "integration": "Portrait scenery is displayed with background-size:cover preserving aspect ratio. Images contain no real game text or controls. All questions, numeric blocks, choices and buttons are DOM/SVG. Original sprites.png and its source rectangles are retained."
+}

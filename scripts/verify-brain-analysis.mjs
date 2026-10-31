@@ -7,7 +7,7 @@ import {fileURLToPath,pathToFileURL} from 'node:url';
 import path from 'node:path';
 const playwright=loadPlaywright();
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const out=path.join(root,'docs/Design Brain School 20');
+const out=path.resolve(root,process.env.BRAIN_QA_OUTPUT||'docs/Design Brain School 20');
 await mkdir(out,{recursive:true});
 const records=[],errors=[];
 const browser=await playwright.chromium.launch({channel:'chrome',headless:true});

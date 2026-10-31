@@ -1,0 +1,35 @@
+{
+  "dev": {
+    "file": "game-center-v4.36-dev.apk",
+    "sha256": "7d7e70fc34ca0a0d773938a196a390c06d73c8bb1b7c73b7dad491a5f164b7dc",
+    "assets": 435,
+    "sourceAssetsExact": true,
+    "fiveOGGStored": true,
+    "size": 90899975
+  },
+  "formal": {
+    "file": "game-center-v4.36.apk",
+    "sha256": "cfa0d0acd75f6ff785a3e5d7532591e349f7b0e8e851bf6644bdd22d0b682871",
+    "assets": 435,
+    "sourceAssetsExact": true,
+    "fiveOGGStored": true,
+    "size": 90621447
+  },
+  "installed": {
+    "version": "4.36",
+    "versionCode": 59,
+    "sha256": "cfa0d0acd75f6ff785a3e5d7532591e349f7b0e8e851bf6644bdd22d0b682871",
+    "sameAsFormal": true,
+    "debuggable": false,
+    "cdpSocket": false,
+    "audioPlaybackStatus": [
+      "AudioPlaybackConfiguration piid:3047 deviceId:0 type:android.media.SoundPool u/pid:10543/27908 state:idle attr:AudioAttributes: usage=USAGE_GAME content=CONTENT_TYPE_SONIFICATION flags=0xC00 tags= bundle=null sessionId:0 mutedState:none  FormatInfo{isSpatialized=false, channelMask=0x0, sampleRate=0}",
+      "AudioPlaybackConfiguration piid:3143 deviceId:3 type:android.media.MediaPlayer u/pid:10543/27908 state:started attr:AudioAttributes: usage=USAGE_GAME content=CONTENT_TYPE_MUSIC flags=0xC00 tags= bundle=null sessionId:3169 mutedState:none  FormatInfo{isSpatialized=false, channelMask=0x3, sampleRate=32000}"
+    ]
+  },
+  "formalControls": {
+    "playerModalBackClosesWithoutExit": true,
+    "settingsShowsVersion436": true,
+    "settingsBackHome": true
+  }
+}

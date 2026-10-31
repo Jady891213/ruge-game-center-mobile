@@ -1,0 +1,218 @@
+{
+  "kind": "MIX 4 actual packaged DEV WebView; real touch controls",
+  "version": "4.36",
+  "homeMusicPlaying": true,
+  "settings": {
+    "realTouchSliders": {
+      "m": 0.5,
+      "s": 0.5,
+      "n": 0.5
+    },
+    "independentSwitches": true
+  },
+  "players": {
+    "emptyNewPlayer": true,
+    "actualGameDraftSeparated": true,
+    "switchRestoresRawDraft": true,
+    "namedResetCancelAndConfirm": true
+  },
+  "demoMusicSuppression": true,
+  "realMicrophoneSuppression": true,
+  "backgroundStopsForegroundResumes": true,
+  "brain": [
+    {
+      "id": "whack-match",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "species-spotlight",
+      "level": 1,
+      "touches": 5,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "frame-filler",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "fast-focus",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "flash-memory",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "memo-random",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "reverse-retention",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "covered-cages",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "cube-count",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "heavyweight",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "match-blast",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "speed-sorting",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "add-agency",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "mallet-math",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "tick-tock",
+      "level": 1,
+      "touches": 9,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "balloon-burst",
+      "level": 1,
+      "touches": 5,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "shape-parts",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "shadow-shift",
+      "level": 1,
+      "touches": 4,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "train-turn",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    },
+    {
+      "id": "true-view",
+      "level": 1,
+      "touches": 3,
+      "correct": 1,
+      "score": 135,
+      "pause": true,
+      "next": true
+    }
+  ],
+  "brainCategoryTracks": [
+    "cloud",
+    "meadow",
+    "orchard",
+    "paper",
+    "starlight"
+  ],
+  "androidLayeredBack": true,
+  "restore": {
+    "exactRawStorage": true,
+    "keys": 32,
+    "nativePreferences": true
+  },
+  "touches": 102
+}
